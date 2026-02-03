@@ -51,7 +51,7 @@ export function HeroSection({
   const midgroundOffset = 25 + scrollProgress * 42;
 
   return (
-    <section ref={sectionRef} className="relative bg-dirt-deep" style={{ gridColumn: "1 / -1" }}>
+    <section ref={sectionRef} className="relative w-full bg-dirt-deep" style={{ gridColumn: "1 / -1" }}>
       {heading && (
         <div className="px-8 pt-12 max-w-md sm:max-w-lg md:max-w-3xl">
           <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-7xl text-dirt-pop uppercase">
@@ -95,6 +95,7 @@ export function HeroSection({
             href={ctaLink || "#"}
             className="inline-flex items-center justify-center gap-1 bg-dirt-pop hover:bg-dirt-pop/80 px-8 py-4 w-full transition-colors"
           >
+            <Image src={`/90deg Arrow.png`} alt={`90 Degrees Arrow`} width={50} height={50} className={`w-6`} />
             <span className="text-dirt-deep text-xl font-display font-bold uppercase">
               {ctaLabel}
             </span>
