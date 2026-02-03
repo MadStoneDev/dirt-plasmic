@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 export interface TestimonialSectionProps {
-  backgroundColor?: "dirt-deep" | "dirt-pop" | "dirt-green" | "white" | "black" | "custom";
+  backgroundColor?: "dirt-deep" | "dirt-pop" | "dirt-green" | "dirt-blue" | "white" | "black" | "custom";
   customBackgroundColor?: string;
   customTextColor?: "light" | "dark";
   logo?: string;
@@ -17,6 +17,7 @@ const bgColorClasses: Record<string, string> = {
   "dirt-deep": "bg-dirt-deep",
   "dirt-pop": "bg-dirt-pop",
   "dirt-green": "bg-dirt-green",
+  "dirt-blue": "bg-dirt-blue",
   white: "bg-white",
   black: "bg-black",
 };
@@ -25,6 +26,7 @@ const textColorClasses: Record<string, string> = {
   "dirt-deep": "text-white",
   "dirt-pop": "text-white",
   "dirt-green": "text-dirt-deep",
+  "dirt-blue": "text-dirt-blue",
   white: "text-dirt-deep",
   black: "text-white",
 };
@@ -120,3 +122,5 @@ export function TestimonialSection({
     </section>
   );
 }
+
+

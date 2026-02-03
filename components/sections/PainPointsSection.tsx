@@ -1,84 +1,102 @@
 "use client";
 
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import Image from "next/image";
 
 export interface PainPointsSectionProps {
   heading?: string;
   subheading?: string;
-  checkboxItems?: string[];
+  children?: ReactNode;
+  caption?: string;
   image0?: string;
   image1?: string;
   image2?: string;
   image3?: string;
   image4?: string;
   image5?: string;
+  image6?: string;
+  image7?: string;
+  image8?: string;
+  image9?: string;
 }
 
 export function PainPointsSection({
   heading,
   subheading,
-  checkboxItems,
+  children,
+  caption,
   image0,
   image1,
   image2,
   image3,
   image4,
   image5,
+  image6,
+  image7,
+  image8,
+  image9,
 }: PainPointsSectionProps) {
-  const [checkedItems, setCheckedItems] = useState<Record<number, boolean>>({});
+  const [checkedCount, setCheckedCount] = useState(0);
 
-  const selectedCount = Object.values(checkedItems).filter(Boolean).length;
+  const images = [image0, image1, image2, image3, image4, image5, image6, image7, image8, image9];
+  const validImages = images.filter(Boolean);
+  const maxIndex = validImages.length - 1;
+  const currentImage = validImages[Math.min(checkedCount, maxIndex)] || image0;
 
-  const handleCheckboxChange = (index: number, isChecked: boolean) => {
-    setCheckedItems((prev) => ({ ...prev, [index]: isChecked }));
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      setCheckedCount((prev) => prev + 1);
+    } else {
+      setCheckedCount((prev) => Math.max(0, prev - 1));
+    }
   };
 
-  const images = [image0, image1, image2, image3, image4, image5];
-  const currentImage = images[Math.min(selectedCount, 5)] || image0;
-
   return (
-    <section className="py-16 px-4 bg-gray-50" style={{ gridColumn: "1 / -1" }}>
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{heading}</h2>
-          {subheading && <p className="text-lg text-gray-600 mb-8">{subheading}</p>}
-
-          <div className="space-y-4">
-            {checkboxItems?.map((item, index) => (
-              <label key={index} className="flex items-start gap-3 cursor-pointer group">
-                <input
-                  type="checkbox"
-                  checked={checkedItems[index] || false}
-                  onChange={(e) => handleCheckboxChange(index, e.target.checked)}
-                  className="mt-1 w-5 h-5 rounded border-gray-300"
-                />
-                <span className="text-gray-700 group-hover:text-gray-900">{item}</span>
-              </label>
-            ))}
-          </div>
-
-          {selectedCount > 0 && (
-            <p className="mt-8 text-dirt-pop font-medium">
-              {selectedCount === 1
-                ? "Even one of these can hurt your business..."
-                : `${selectedCount} issues identified.`}
-            </p>
+    <section className="py-16 px-4 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
+        {/* Left Column - Headings and Checkboxes */}
+        <div className="flex flex-col">
+          {heading && (
+            <h2 className="font-display font-bold text-3xl md:text-5xl text-dirt-deep uppercase mb-4">
+              {heading}
+            </h2>
           )}
+
+          {subheading && (
+            <h3 className="font-display font-bold text-xl md:text-2xl text-dirt-deep/70 uppercase mb-8">
+              {subheading}
+            </h3>
+          )}
+
+          <div
+            className="space-y-4"
+            onChange={handleCheckboxChange}
+          >
+            {children}
+          </div>
         </div>
 
-        <div className="relative aspect-square">
-          {currentImage ? (
-            <Image
-              src={currentImage}
-              alt="Building visualization"
-              fill
-              className="object-contain transition-opacity duration-500"
-            />
-          ) : (
-            <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center">
-              <span className="text-gray-400">Upload building images</span>
-            </div>
+        {/* Right Column - Photo with Border and Caption */}
+        <div className="flex flex-col h-full">
+          <div className="relative flex-grow border border-dirt-pop">
+            {currentImage ? (
+              <Image
+                src={currentImage}
+                alt=""
+                fill
+                className="object-cover transition-opacity duration-500"
+              />
+            ) : (
+              <div className="w-full h-full min-h-[400px] bg-dirt-deep/10 flex items-center justify-center">
+                <span className="text-dirt-deep/50 font-sans">Upload images</span>
+              </div>
+            )}
+          </div>
+
+          {caption && (
+            <p className="mt-4 text-dirt-deep/70 font-sans text-sm italic">
+              {caption}
+            </p>
           )}
         </div>
       </div>

@@ -136,6 +136,48 @@
           "name": "BrandItem",
           "displayName": "BrandItem",
           "componentImportPath": "./components/sections/BrandItem"
+        },
+        {
+          "id": "SignsCTA001",
+          "name": "SignsCTASection",
+          "displayName": "SignsCTASection",
+          "componentImportPath": "./components/sections/SignsCTASection"
+        },
+        {
+          "id": "ThreeReasons001",
+          "name": "ThreeReasonsSection",
+          "displayName": "ThreeReasonsSection",
+          "componentImportPath": "./components/sections/ThreeReasonsSection"
+        },
+        {
+          "id": "DirtFramework001",
+          "name": "DirtFrameworkSection",
+          "displayName": "DirtFrameworkSection",
+          "componentImportPath": "./components/sections/DirtFrameworkSection"
+        },
+        {
+          "id": "DirtProcess001",
+          "name": "DirtProcessSection",
+          "displayName": "DirtProcessSection",
+          "componentImportPath": "./components/sections/DirtProcessSection"
+        },
+        {
+          "id": "DirtFiles001",
+          "name": "DirtFilesSection",
+          "displayName": "DirtFilesSection",
+          "componentImportPath": "./components/sections/DirtFilesSection"
+        },
+        {
+          "id": "ProsCons001",
+          "name": "ProsConsSection",
+          "displayName": "ProsConsSection",
+          "componentImportPath": "./components/sections/ProsConsSection"
+        },
+        {
+          "id": "Footer001",
+          "name": "FooterSection",
+          "displayName": "FooterSection",
+          "componentImportPath": "./components/sections/FooterSection"
         }
       ],
       "customFunctions": []
