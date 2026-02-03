@@ -286,8 +286,9 @@ function PlasmicHomepage__RenderFunc(props: {
               "__wab_instance",
               sty.testimonialSection__idmN
             )}
-            customTextColor={"dark"}
+            customTextColor={``}
             logo={"/plasmic/dirt/images/deSimoneLogoPng.png"}
+            textColor={"dirt-deep"}
           />
 
           <ThreeReasonsSection
@@ -340,8 +341,9 @@ Huge thanks to Nikita for creating  and her team!`}
               sty.testimonialSection__xAfa
             )}
             customBackgroundColor={``}
-            customTextColor={"dark"}
+            customTextColor={``}
             logo={"/plasmic/dirt/images/studiomxLogoPng.png"}
+            textColor={"dirt-deep"}
           />
 
           <FooterSection
