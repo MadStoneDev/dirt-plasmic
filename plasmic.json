@@ -44,7 +44,33 @@
         }
       ],
       "icons": [],
-      "images": [],
+      "images": [
+        {
+          "id": "4aoFJJQs3QQe",
+          "name": "companies-dirt-bg.png",
+          "filePath": "../public/plasmic/dirt/images/companiesDirtBgPng.png"
+        },
+        {
+          "id": "F2-doLga44RQ",
+          "name": "cut-companies-dirt-bg.png",
+          "filePath": "../public/plasmic/dirt/images/cutCompaniesDirtBgPng.png"
+        },
+        {
+          "id": "2QoNJemhHudP",
+          "name": "dirt-back.png",
+          "filePath": "../public/plasmic/dirt/images/dirtBackPng.png"
+        },
+        {
+          "id": "8FTQ1WSJHE95",
+          "name": "DIRT– Final Identity - Logos-06.png",
+          "filePath": "../public/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"
+        },
+        {
+          "id": "TdJ554RK_Cvb",
+          "name": "dirt-front.png",
+          "filePath": "../public/plasmic/dirt/images/dirtFrontPng.png"
+        }
+      ],
       "indirect": false,
       "globalContextsFilePath": "",
       "splitsProviderFilePath": "",
@@ -63,6 +89,42 @@
           "name": "Fetcher",
           "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        },
+        {
+          "id": "oYTAqFgzizOu",
+          "name": "HeroSection",
+          "displayName": "HeroSection",
+          "componentImportPath": "./components/sections/HeroSection"
+        },
+        {
+          "id": "UzUry5mU4ozT",
+          "name": "CompanyCarouselSection",
+          "displayName": "CompanyCarouselSection",
+          "componentImportPath": "./components/sections/CompanyCarouselSection"
+        },
+        {
+          "id": "19614fshNGrI",
+          "name": "TestimonialSection",
+          "displayName": "TestimonialSection",
+          "componentImportPath": "./components/sections/TestimonialSection"
+        },
+        {
+          "id": "a6zcK0cc2pSa",
+          "name": "PainPointsSection",
+          "displayName": "PainPointsSection",
+          "componentImportPath": "./components/sections/PainPointsSection"
+        },
+        {
+          "id": "3w9ZT_4EuJCw",
+          "name": "InfoSection",
+          "displayName": "InfoSection",
+          "componentImportPath": "./components/sections/InfoSection"
+        },
+        {
+          "id": "gUtbY7_7yW6Q",
+          "name": "ContactFormSection",
+          "displayName": "ContactFormSection",
+          "componentImportPath": "./components/sections/ContactFormSection"
         }
       ],
       "customFunctions": []

@@ -59,6 +59,9 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { HeroSection } from "../../sections/HeroSection"; // plasmic-import: oYTAqFgzizOu/codeComponent
+import { CompanyCarouselSection } from "../../sections/CompanyCarouselSection"; // plasmic-import: UzUry5mU4ozT/codeComponent
+import { InfoSection } from "../../sections/InfoSection"; // plasmic-import: 3w9ZT_4EuJCw/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
 
@@ -80,6 +83,9 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   home?: Flex__<"div">;
+  heroSection?: Flex__<typeof HeroSection>;
+  companiesWeCoveredInDirt?: Flex__<typeof CompanyCarouselSection>;
+  infoSection?: Flex__<typeof InfoSection>;
 };
 
 export interface DefaultHomepageProps {}
@@ -162,20 +168,61 @@ function PlasmicHomepage__RenderFunc(props: {
             styleTokensClassNames,
             sty.home
           )}
-        />
+        >
+          <HeroSection
+            data-plasmic-name={"heroSection"}
+            data-plasmic-override={overrides.heroSection}
+            backgroundImage={"/plasmic/dirt/images/dirtBackPng.png"}
+            className={classNames("__wab_instance", sty.heroSection)}
+            ctaLabel={"Dig in with a call"}
+            description={
+              "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities."
+            }
+            foregroundImage={"/plasmic/dirt/images/dirtFrontPng.png"}
+            heading={"Fresh messaging, branding, and positioning"}
+            midgroundImage={
+              "/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"
+            }
+            subheading={"From the ground up"}
+          />
+
+          <CompanyCarouselSection
+            data-plasmic-name={"companiesWeCoveredInDirt"}
+            data-plasmic-override={overrides.companiesWeCoveredInDirt}
+            backgroundImage={"/plasmic/dirt/images/cutCompaniesDirtBgPng.png"}
+            className={classNames(
+              "__wab_instance",
+              sty.companiesWeCoveredInDirt
+            )}
+            heading={"Companies we covered in"}
+            highlightedWord={"dirt"}
+          />
+
+          <InfoSection
+            data-plasmic-name={"infoSection"}
+            data-plasmic-override={overrides.infoSection}
+            className={classNames("__wab_instance", sty.infoSection)}
+          />
+        </div>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  home: ["home"]
+  home: ["home", "heroSection", "companiesWeCoveredInDirt", "infoSection"],
+  heroSection: ["heroSection"],
+  companiesWeCoveredInDirt: ["companiesWeCoveredInDirt"],
+  infoSection: ["infoSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   home: "div";
+  heroSection: typeof HeroSection;
+  companiesWeCoveredInDirt: typeof CompanyCarouselSection;
+  infoSection: typeof InfoSection;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -240,6 +287,9 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("home"),
   {
     // Helper components rendering sub-elements
+    heroSection: makeNodeComponent("heroSection"),
+    companiesWeCoveredInDirt: makeNodeComponent("companiesWeCoveredInDirt"),
+    infoSection: makeNodeComponent("infoSection"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
