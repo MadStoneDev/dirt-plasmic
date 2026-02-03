@@ -1,26 +1,20 @@
 "use client";
 
 import Image from "next/image";
-
-export interface Brand {
-  title: string;
-  image?: string;
-  altText?: string;
-  link?: string;
-}
+import { ReactNode } from "react";
 
 export interface CompanyCarouselSectionProps {
   heading?: string;
   highlightedWord?: string;
   backgroundImage?: string;
-  brands?: Brand[];
+  children?: ReactNode;
 }
 
 export function CompanyCarouselSection({
   heading,
   highlightedWord,
   backgroundImage,
-  brands,
+  children,
 }: CompanyCarouselSectionProps) {
   return (
     <section className="relative pt-24 pb-60 px-8 bg-dirt-pop overflow-hidden" style={{ gridColumn: "1 / -1" }}>
@@ -53,48 +47,7 @@ export function CompanyCarouselSection({
             msOverflowStyle: "none",
           }}
         >
-          {brands?.map((brand, index) => {
-            const content = (
-              <div className="group shrink-0 snap-center flex flex-col items-center" key={index}>
-                <div
-                  className="relative w-36 md:w-44 transition-all duration-300 ease-out group-hover:-translate-y-2"
-                  style={{
-                    aspectRatio: "1/0.87",
-                    clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-                  }}
-                >
-                  <div className="absolute inset-0 bg-dirt-deep group-hover:bg-dirt-green transition-colors duration-300" />
-                  {brand.image && (
-                    <div className="absolute inset-0 flex items-center justify-center p-4">
-                      <Image
-                        src={brand.image}
-                        alt={brand.altText || brand.title}
-                        width={100}
-                        height={100}
-                        className="object-contain max-w-full max-h-full"
-                      />
-                    </div>
-                  )}
-                </div>
-              </div>
-            );
-
-            if (brand.link) {
-              return (
-                <a
-                  key={index}
-                  href={brand.link}
-                  className="shrink-0 snap-center"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {content}
-                </a>
-              );
-            }
-
-            return content;
-          })}
+          {children}
         </div>
       </div>
     </section>

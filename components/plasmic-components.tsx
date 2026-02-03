@@ -1,6 +1,7 @@
 import { registerComponent } from "@plasmicapp/host";
 import { HeroSection } from "./sections/HeroSection";
 import { CompanyCarouselSection } from "./sections/CompanyCarouselSection";
+import { BrandItem } from "./sections/BrandItem";
 import { TestimonialSection } from "./sections/TestimonialSection";
 import { PainPointsSection } from "./sections/PainPointsSection";
 import { InfoSection } from "./sections/InfoSection";
@@ -22,14 +23,40 @@ registerComponent(HeroSection, {
   importPath: "./components/sections/HeroSection",
 });
 
+// Brand Item - individual brand for the carousel
+registerComponent(BrandItem, {
+  name: "BrandItem",
+  props: {
+    title: "string",
+    image: "imageUrl",
+    altText: "string",
+    link: "string",
+  },
+  importPath: "./components/sections/BrandItem",
+});
+
 // Company Carousel Section - horizontal scrolling brand logos
-// Note: brands array needs to be managed in code for now
 registerComponent(CompanyCarouselSection, {
   name: "CompanyCarouselSection",
   props: {
     heading: "string",
     highlightedWord: "string",
     backgroundImage: "imageUrl",
+    children: {
+      type: "slot",
+      defaultValue: [
+        {
+          type: "component",
+          name: "BrandItem",
+          props: { title: "Brand 1" },
+        },
+        {
+          type: "component",
+          name: "BrandItem",
+          props: { title: "Brand 2" },
+        },
+      ],
+    },
   },
   importPath: "./components/sections/CompanyCarouselSection",
 });
@@ -57,7 +84,6 @@ registerComponent(TestimonialSection, {
 });
 
 // Pain Points Section - interactive checklist with changing images
-// Note: checkboxItems managed separately for simplicity
 registerComponent(PainPointsSection, {
   name: "PainPointsSection",
   props: {
