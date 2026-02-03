@@ -74,6 +74,41 @@
           "id": "M23NloPCDCkM",
           "name": "Webflow Logo.png",
           "filePath": "../public/plasmic/dirt/images/webflowLogoPng.png"
+        },
+        {
+          "id": "kd90JAPr2IJ8",
+          "name": "DeSimone_logo.png",
+          "filePath": "../public/plasmic/dirt/images/deSimoneLogoPng.png"
+        },
+        {
+          "id": "tig3ST8Uchmv",
+          "name": "David Koren Photo.jpg",
+          "filePath": "../public/plasmic/dirt/images/davidKorenPhotoJpg.jpg"
+        },
+        {
+          "id": "TzwPcs7gxcnP",
+          "name": "studiomx_logo.png",
+          "filePath": "../public/plasmic/dirt/images/studiomxLogoPng.png"
+        },
+        {
+          "id": "5ypSdMiK90os",
+          "name": "Jason Dunlop Photo.jpg",
+          "filePath": "../public/plasmic/dirt/images/jasonDunlopPhotoJpg.jpg"
+        },
+        {
+          "id": "kPV-1c0WlEiZ",
+          "name": "Footer Image.png",
+          "filePath": "../public/plasmic/dirt/images/footerImagePng.png"
+        },
+        {
+          "id": "V2WJ7cXzSQuJ",
+          "name": "Line 2.png",
+          "filePath": "../public/plasmic/dirt/images/line2Png.png"
+        },
+        {
+          "id": "yh4HkZPfgdh9",
+          "name": "Dirt Logo.png",
+          "filePath": "../public/plasmic/dirt/images/dirtLogoPng.png"
         }
       ],
       "indirect": false,
@@ -138,43 +173,43 @@
           "componentImportPath": "./components/sections/BrandItem"
         },
         {
-          "id": "SignsCTA001",
+          "id": "3hNXXIJF-DSf",
           "name": "SignsCTASection",
           "displayName": "SignsCTASection",
           "componentImportPath": "./components/sections/SignsCTASection"
         },
         {
-          "id": "ThreeReasons001",
+          "id": "wg-w-3Zg2_WL",
           "name": "ThreeReasonsSection",
           "displayName": "ThreeReasonsSection",
           "componentImportPath": "./components/sections/ThreeReasonsSection"
         },
         {
-          "id": "DirtFramework001",
+          "id": "hjSOs7Mv8Nv8",
           "name": "DirtFrameworkSection",
           "displayName": "DirtFrameworkSection",
           "componentImportPath": "./components/sections/DirtFrameworkSection"
         },
         {
-          "id": "DirtProcess001",
+          "id": "RtT6x1K_HM6p",
           "name": "DirtProcessSection",
           "displayName": "DirtProcessSection",
           "componentImportPath": "./components/sections/DirtProcessSection"
         },
         {
-          "id": "DirtFiles001",
+          "id": "BPSe7oQrItqb",
           "name": "DirtFilesSection",
           "displayName": "DirtFilesSection",
           "componentImportPath": "./components/sections/DirtFilesSection"
         },
         {
-          "id": "ProsCons001",
+          "id": "qgjtoWkw9uzC",
           "name": "ProsConsSection",
           "displayName": "ProsConsSection",
           "componentImportPath": "./components/sections/ProsConsSection"
         },
         {
-          "id": "Footer001",
+          "id": "I7Z-mxcvFz5C",
           "name": "FooterSection",
           "displayName": "FooterSection",
           "componentImportPath": "./components/sections/FooterSection"
@@ -191,6 +226,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.355",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.355/dist/plasmic.schema.json"
+  "cliVersion": "0.1.356",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.356/dist/plasmic.schema.json"
 }

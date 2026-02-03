@@ -63,6 +63,15 @@ import { HeroSection } from "../../sections/HeroSection"; // plasmic-import: oYT
 import { CompanyCarouselSection } from "../../sections/CompanyCarouselSection"; // plasmic-import: UzUry5mU4ozT/codeComponent
 import { BrandItem } from "../../sections/BrandItem"; // plasmic-import: n6yARC8wCw5J/codeComponent
 import { InfoSection } from "../../sections/InfoSection"; // plasmic-import: 3w9ZT_4EuJCw/codeComponent
+import { PainPointsSection } from "../../sections/PainPointsSection"; // plasmic-import: a6zcK0cc2pSa/codeComponent
+import { SignsCTASection } from "../../sections/SignsCTASection"; // plasmic-import: 3hNXXIJF-DSf/codeComponent
+import { TestimonialSection } from "../../sections/TestimonialSection"; // plasmic-import: 19614fshNGrI/codeComponent
+import { ThreeReasonsSection } from "../../sections/ThreeReasonsSection"; // plasmic-import: wg-w-3Zg2_WL/codeComponent
+import { DirtFrameworkSection } from "../../sections/DirtFrameworkSection"; // plasmic-import: hjSOs7Mv8Nv8/codeComponent
+import { DirtProcessSection } from "../../sections/DirtProcessSection"; // plasmic-import: RtT6x1K_HM6p/codeComponent
+import { DirtFilesSection } from "../../sections/DirtFilesSection"; // plasmic-import: BPSe7oQrItqb/codeComponent
+import { ProsConsSection } from "../../sections/ProsConsSection"; // plasmic-import: qgjtoWkw9uzC/codeComponent
+import { FooterSection } from "../../sections/FooterSection"; // plasmic-import: I7Z-mxcvFz5C/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
 
@@ -86,7 +95,14 @@ export type PlasmicHomepage__OverridesType = {
   home?: Flex__<"div">;
   heroSection?: Flex__<typeof HeroSection>;
   companiesWeCoveredInDirt?: Flex__<typeof CompanyCarouselSection>;
-  infoSection?: Flex__<typeof InfoSection>;
+  painPointsSection?: Flex__<typeof PainPointsSection>;
+  signsCtaSection?: Flex__<typeof SignsCTASection>;
+  threeReasonsSection?: Flex__<typeof ThreeReasonsSection>;
+  dirtFrameworkSection?: Flex__<typeof DirtFrameworkSection>;
+  dirtProcessSection?: Flex__<typeof DirtProcessSection>;
+  dirtFilesSection?: Flex__<typeof DirtFilesSection>;
+  prosConsSection?: Flex__<typeof ProsConsSection>;
+  footerSection?: Flex__<typeof FooterSection>;
 };
 
 export interface DefaultHomepageProps {}
@@ -241,9 +257,129 @@ function PlasmicHomepage__RenderFunc(props: {
             />
           </CompanyCarouselSection>
           <InfoSection
-            data-plasmic-name={"infoSection"}
-            data-plasmic-override={overrides.infoSection}
-            className={classNames("__wab_instance", sty.infoSection)}
+            className={classNames("__wab_instance", sty.infoSection__tRzrb)}
+          />
+
+          <PainPointsSection
+            data-plasmic-name={"painPointsSection"}
+            data-plasmic-override={overrides.painPointsSection}
+            className={classNames("__wab_instance", sty.painPointsSection)}
+          />
+
+          <SignsCTASection
+            data-plasmic-name={"signsCtaSection"}
+            data-plasmic-override={overrides.signsCtaSection}
+            className={classNames("__wab_instance", sty.signsCtaSection)}
+          />
+
+          <TestimonialSection
+            authorName={"David Koren"}
+            authorPhoto={"/plasmic/dirt/images/davidKorenPhotoJpg.jpg"}
+            authorRole={
+              "Director of Marketing, DeSimone Consulting Engineering"
+            }
+            backgroundColor={"dirt-green"}
+            body={
+              "We struggled to tell our story in a way that felt true to who we are. Now, our website copy is clear, energised, and genuinely reflects our firm.\n\nThe process reconnected our team to what we stand for and gave us real confidence in how we communicate our value.\n\nThank you, Nikita! Our brand finally feels like us."
+            }
+            className={classNames(
+              "__wab_instance",
+              sty.testimonialSection__idmN
+            )}
+            customTextColor={"dark"}
+            logo={"/plasmic/dirt/images/deSimoneLogoPng.png"}
+          />
+
+          <ThreeReasonsSection
+            data-plasmic-name={"threeReasonsSection"}
+            data-plasmic-override={overrides.threeReasonsSection}
+            className={classNames("__wab_instance", sty.threeReasonsSection)}
+          />
+
+          <DirtFrameworkSection
+            data-plasmic-name={"dirtFrameworkSection"}
+            data-plasmic-override={overrides.dirtFrameworkSection}
+            className={classNames("__wab_instance", sty.dirtFrameworkSection)}
+          />
+
+          <DirtProcessSection
+            data-plasmic-name={"dirtProcessSection"}
+            data-plasmic-override={overrides.dirtProcessSection}
+            className={classNames("__wab_instance", sty.dirtProcessSection)}
+          />
+
+          <DirtFilesSection
+            data-plasmic-name={"dirtFilesSection"}
+            data-plasmic-override={overrides.dirtFilesSection}
+            className={classNames("__wab_instance", sty.dirtFilesSection)}
+          />
+
+          <InfoSection
+            className={classNames("__wab_instance", sty.infoSection__wf3C9)}
+            richText={null}
+          />
+
+          <ProsConsSection
+            data-plasmic-name={"prosConsSection"}
+            data-plasmic-override={overrides.prosConsSection}
+            className={classNames("__wab_instance", sty.prosConsSection)}
+          />
+
+          <TestimonialSection
+            authorName={"Jason Dunlop"}
+            authorPhoto={"/plasmic/dirt/images/jasonDunlopPhotoJpg.jpg"}
+            authorRole={"President, StudioMX"}
+            backgroundColor={"dirt-blue"}
+            body={`Since launching the new website, clients have commented on how clear and strong the messaging is.
+
+The process helped us articulate what we’d always known about our practice but never put into words and that clarity has changed how we talk about our business, inside and out.
+
+Huge thanks to Nikita for creating  and her team!`}
+            className={classNames(
+              "__wab_instance",
+              sty.testimonialSection__xAfa
+            )}
+            customBackgroundColor={``}
+            customTextColor={"dark"}
+            logo={"/plasmic/dirt/images/studiomxLogoPng.png"}
+          />
+
+          <FooterSection
+            data-plasmic-name={"footerSection"}
+            data-plasmic-override={overrides.footerSection}
+            backgroundColor={``}
+            backgroundImage={"/plasmic/dirt/images/footerImagePng.png"}
+            bottomRightLink={"/"}
+            bottomRightText={"Click here to toss some DIRT on the competition"}
+            className={classNames("__wab_instance", sty.footerSection)}
+            contactDescription={`Dig what we're doing but don't need us at the moment? Refer a client to DIRT. 
+
+When they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT)`}
+            contactHeading={"Refer & Earn"}
+            copyrightText={
+              "\u00a9 2025 DIRT Agency. All rights reserved. Built from the ground up."
+            }
+            description={
+              "Tell us your DIRTiest dreams and we'll make them come true:"
+            }
+            footerDescription={
+              "Fresh messaging, branding, and positioning from the ground up."
+            }
+            footerLogo={"/plasmic/dirt/images/dirtLogoPng.png"}
+            heading1={"Brilliant brands don't grow on trees."}
+            heading2={"They grow in the DIRT."}
+            link1Text={"Work"}
+            link2Text={"About"}
+            link2Url={``}
+            link3Text={"Contact"}
+            linksHeading={"Get your hands Dirty"}
+            newsletterDescription={
+              "Gritty strategic insights to help you win more clients. Delivered with love (and a smidge of mud) once monthly."
+            }
+            newsletterHeading={"Get DIRT Dispatch"}
+            recipientEmail={"hello@thedirtagency.com"}
+            separatorImage={"/plasmic/dirt/images/line2Png.png"}
+            submitButtonText={"Get Dirty"}
           />
         </div>
       </div>
@@ -252,10 +388,29 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  home: ["home", "heroSection", "companiesWeCoveredInDirt", "infoSection"],
+  home: [
+    "home",
+    "heroSection",
+    "companiesWeCoveredInDirt",
+    "painPointsSection",
+    "signsCtaSection",
+    "threeReasonsSection",
+    "dirtFrameworkSection",
+    "dirtProcessSection",
+    "dirtFilesSection",
+    "prosConsSection",
+    "footerSection"
+  ],
   heroSection: ["heroSection"],
   companiesWeCoveredInDirt: ["companiesWeCoveredInDirt"],
-  infoSection: ["infoSection"]
+  painPointsSection: ["painPointsSection"],
+  signsCtaSection: ["signsCtaSection"],
+  threeReasonsSection: ["threeReasonsSection"],
+  dirtFrameworkSection: ["dirtFrameworkSection"],
+  dirtProcessSection: ["dirtProcessSection"],
+  dirtFilesSection: ["dirtFilesSection"],
+  prosConsSection: ["prosConsSection"],
+  footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -264,7 +419,14 @@ type NodeDefaultElementType = {
   home: "div";
   heroSection: typeof HeroSection;
   companiesWeCoveredInDirt: typeof CompanyCarouselSection;
-  infoSection: typeof InfoSection;
+  painPointsSection: typeof PainPointsSection;
+  signsCtaSection: typeof SignsCTASection;
+  threeReasonsSection: typeof ThreeReasonsSection;
+  dirtFrameworkSection: typeof DirtFrameworkSection;
+  dirtProcessSection: typeof DirtProcessSection;
+  dirtFilesSection: typeof DirtFilesSection;
+  prosConsSection: typeof ProsConsSection;
+  footerSection: typeof FooterSection;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -331,7 +493,14 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     heroSection: makeNodeComponent("heroSection"),
     companiesWeCoveredInDirt: makeNodeComponent("companiesWeCoveredInDirt"),
-    infoSection: makeNodeComponent("infoSection"),
+    painPointsSection: makeNodeComponent("painPointsSection"),
+    signsCtaSection: makeNodeComponent("signsCtaSection"),
+    threeReasonsSection: makeNodeComponent("threeReasonsSection"),
+    dirtFrameworkSection: makeNodeComponent("dirtFrameworkSection"),
+    dirtProcessSection: makeNodeComponent("dirtProcessSection"),
+    dirtFilesSection: makeNodeComponent("dirtFilesSection"),
+    prosConsSection: makeNodeComponent("prosConsSection"),
+    footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
