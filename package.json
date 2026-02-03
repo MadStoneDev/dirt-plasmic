@@ -9,8 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@plasmicapp/cli": "^0.1.355",
     "@plasmicapp/loader-nextjs": "^1.0.451",
     "@plasmicapp/nextjs-app-router": "^1.0.20",
+    "@plasmicapp/react-web": "^0.2.415",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
