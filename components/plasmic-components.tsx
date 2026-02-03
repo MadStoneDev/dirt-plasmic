@@ -74,7 +74,7 @@ registerComponent(TestimonialSection, {
   props: {
     backgroundColor: {
       type: "choice",
-      options: ["dirt-deep", "dirt-pop", "dirt-green", "white", "black", "custom"],
+      options: ["dirt-deep", "dirt-pop", "dirt-green", "dirt-blue", "white", "black", "custom"],
     },
     customBackgroundColor: "string",
     customTextColor: {

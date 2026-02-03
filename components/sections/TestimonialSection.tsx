@@ -23,12 +23,12 @@ const bgColorClasses: Record<string, string> = {
 };
 
 const textColorClasses: Record<string, string> = {
-  "dirt-deep": "text-white",
-  "dirt-pop": "text-white",
-  "dirt-green": "text-dirt-deep",
+  "dirt-deep": "text-dirt-deep",
+  "dirt-pop": "text-dirt-pop",
+  "dirt-green": "text-dirt-green",
   "dirt-blue": "text-dirt-blue",
-  white: "text-dirt-deep",
-  black: "text-white",
+  white: "text-white",
+  black: "text-black",
 };
 
 export function TestimonialSection({
