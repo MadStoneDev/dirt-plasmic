@@ -69,6 +69,11 @@
           "id": "TdJ554RK_Cvb",
           "name": "dirt-front.png",
           "filePath": "../public/plasmic/dirt/images/dirtFrontPng.png"
+        },
+        {
+          "id": "M23NloPCDCkM",
+          "name": "Webflow Logo.png",
+          "filePath": "../public/plasmic/dirt/images/webflowLogoPng.png"
         }
       ],
       "indirect": false,
@@ -125,6 +130,12 @@
           "name": "ContactFormSection",
           "displayName": "ContactFormSection",
           "componentImportPath": "./components/sections/ContactFormSection"
+        },
+        {
+          "id": "n6yARC8wCw5J",
+          "name": "BrandItem",
+          "displayName": "BrandItem",
+          "componentImportPath": "./components/sections/BrandItem"
         }
       ],
       "customFunctions": []

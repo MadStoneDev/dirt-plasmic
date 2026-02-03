@@ -61,6 +61,7 @@ import {
 
 import { HeroSection } from "../../sections/HeroSection"; // plasmic-import: oYTAqFgzizOu/codeComponent
 import { CompanyCarouselSection } from "../../sections/CompanyCarouselSection"; // plasmic-import: UzUry5mU4ozT/codeComponent
+import { BrandItem } from "../../sections/BrandItem"; // plasmic-import: n6yARC8wCw5J/codeComponent
 import { InfoSection } from "../../sections/InfoSection"; // plasmic-import: 3w9ZT_4EuJCw/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
@@ -196,8 +197,49 @@ function PlasmicHomepage__RenderFunc(props: {
             )}
             heading={"Companies we covered in"}
             highlightedWord={"dirt"}
-          />
+          >
+            <BrandItem
+              className={classNames("__wab_instance", sty.brandItem__xo4H1)}
+              image={"/plasmic/dirt/images/webflowLogoPng.png"}
+              title={"Webflow"}
+            />
 
+            <BrandItem
+              className={classNames("__wab_instance", sty.brandItem__kuCv1)}
+              image={"/plasmic/dirt/images/webflowLogoPng.png"}
+              title={"Webflow"}
+            />
+
+            <BrandItem
+              className={classNames("__wab_instance", sty.brandItem___7Nr7D)}
+              image={"/plasmic/dirt/images/webflowLogoPng.png"}
+              title={"Webflow"}
+            />
+
+            <BrandItem
+              className={classNames("__wab_instance", sty.brandItem__qTIp)}
+              image={"/plasmic/dirt/images/webflowLogoPng.png"}
+              title={"Webflow"}
+            />
+
+            <BrandItem
+              className={classNames("__wab_instance", sty.brandItem__yl83X)}
+              image={"/plasmic/dirt/images/webflowLogoPng.png"}
+              title={"Webflow"}
+            />
+
+            <BrandItem
+              className={classNames("__wab_instance", sty.brandItem__r12W1)}
+              image={"/plasmic/dirt/images/webflowLogoPng.png"}
+              title={"Webflow"}
+            />
+
+            <BrandItem
+              className={classNames("__wab_instance", sty.brandItem__zI2R)}
+              image={"/plasmic/dirt/images/webflowLogoPng.png"}
+              title={"Webflow"}
+            />
+          </CompanyCarouselSection>
           <InfoSection
             data-plasmic-name={"infoSection"}
             data-plasmic-override={overrides.infoSection}

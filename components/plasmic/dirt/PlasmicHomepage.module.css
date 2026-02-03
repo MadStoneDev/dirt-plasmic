@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   align-content: flex-start;
-  justify-items: center;
+  justify-items: stretch;
   min-width: 0;
   min-height: 0;
   grid-template-columns:
@@ -24,6 +24,34 @@
   object-fit: cover;
 }
 .companiesWeCoveredInDirt:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.brandItem__xo4H1:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.brandItem__kuCv1:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.brandItem___7Nr7D:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.brandItem__qTIp:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.brandItem__yl83X:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.brandItem__r12W1:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.brandItem__zI2R:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
