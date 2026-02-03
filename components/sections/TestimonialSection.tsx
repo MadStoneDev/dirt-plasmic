@@ -3,9 +3,10 @@
 import Image from "next/image";
 
 export interface TestimonialSectionProps {
-  backgroundColor?: "dirt-deep" | "dirt-pop" | "dirt-green" | "dirt-blue" | "white" | "black" | "custom";
+  backgroundColor?: "dirt-deep" | "dirt-pop" | "dirt-green" | "dirt-blue" | "dirt-off-white" | "white" | "black" | "custom";
   customBackgroundColor?: string;
-  customTextColor?: "light" | "dark";
+  textColor?: "dirt-deep" | "dirt-pop" | "dirt-green" | "dirt-blue" | "dirt-off-white" | "white" | "black" | "custom";
+  customTextColor?: string;
   logo?: string;
   body?: string;
   authorName?: string;
@@ -18,6 +19,7 @@ const bgColorClasses: Record<string, string> = {
   "dirt-pop": "bg-dirt-pop",
   "dirt-green": "bg-dirt-green",
   "dirt-blue": "bg-dirt-blue",
+  "dirt-off-white": "bg-dirt-off-white",
   white: "bg-white",
   black: "bg-black",
 };
@@ -27,6 +29,7 @@ const textColorClasses: Record<string, string> = {
   "dirt-pop": "text-dirt-pop",
   "dirt-green": "text-dirt-green",
   "dirt-blue": "text-dirt-blue",
+  "dirt-off-white": "text-dirt-off-white",
   white: "text-white",
   black: "text-black",
 };
@@ -34,6 +37,7 @@ const textColorClasses: Record<string, string> = {
 export function TestimonialSection({
   backgroundColor = "dirt-deep",
   customBackgroundColor,
+  textColor = "dirt-off-white",
   customTextColor,
   logo,
   body,
@@ -41,18 +45,17 @@ export function TestimonialSection({
   authorRole,
   authorPhoto,
 }: TestimonialSectionProps) {
-  const isCustom = backgroundColor === "custom";
-  const bgClass = isCustom ? "" : bgColorClasses[backgroundColor] || "bg-dirt-deep";
-  const textClass = isCustom
-    ? customTextColor === "dark"
-      ? "text-dirt-deep"
-      : "text-white"
-    : textColorClasses[backgroundColor] || "text-white";
+  const isBgCustom = backgroundColor === "custom";
+  const isTextCustom = textColor === "custom";
+  const bgClass = isBgCustom ? "" : bgColorClasses[backgroundColor] || "bg-dirt-deep";
+  const textClass = isTextCustom ? "" : textColorClasses[textColor] || "text-dirt-off-white";
+
+  const customTextStyle = isTextCustom && customTextColor ? { color: customTextColor } : {};
 
   return (
     <section
       className={`relative py-40 px-20 ${bgClass} overflow-hidden`}
-      style={{ gridColumn: "1 / -1", ...(isCustom && customBackgroundColor ? { backgroundColor: customBackgroundColor } : {}) }}
+      style={{ gridColumn: "1 / -1", ...(isBgCustom && customBackgroundColor ? { backgroundColor: customBackgroundColor } : {}) }}
     >
       <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
         {logo && (
@@ -70,6 +73,7 @@ export function TestimonialSection({
         {body && (
           <blockquote
             className={`text-xl md:text-4xl font-sans font-bold tracking-tight leading-relaxed whitespace-pre-line ${textClass} mb-12`}
+            style={customTextStyle}
           >
             <span className="inline-block text-dirt-deep h-[1em] overflow-visible align-baseline -mb-2">
               &ldquo;
@@ -108,13 +112,21 @@ export function TestimonialSection({
             )}
 
             {authorName && (
-              <p className={`mt-8 font-display font-bold text-xl uppercase ${textClass}`}>
+              <p
+                className={`mt-8 font-display font-bold text-xl uppercase ${textClass}`}
+                style={customTextStyle}
+              >
                 {authorName}
               </p>
             )}
 
             {authorRole && (
-              <p className={`text-xs font-sans ${textClass} opacity-80`}>{authorRole}</p>
+              <p
+                className={`text-xs font-sans ${textClass} opacity-80`}
+                style={customTextStyle}
+              >
+                {authorRole}
+              </p>
             )}
           </div>
         )}

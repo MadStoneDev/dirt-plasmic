@@ -74,13 +74,14 @@ registerComponent(TestimonialSection, {
   props: {
     backgroundColor: {
       type: "choice",
-      options: ["dirt-deep", "dirt-pop", "dirt-green", "dirt-blue", "white", "black", "custom"],
+      options: ["dirt-deep", "dirt-pop", "dirt-green", "dirt-blue", "dirt-off-white", "white", "black", "custom"],
     },
     customBackgroundColor: "string",
-    customTextColor: {
+    textColor: {
       type: "choice",
-      options: ["light", "dark"],
+      options: ["dirt-deep", "dirt-pop", "dirt-green", "dirt-blue", "dirt-off-white", "white", "black", "custom"],
     },
+    customTextColor: "string",
     logo: "imageUrl",
     body: "string",
     authorName: "string",
