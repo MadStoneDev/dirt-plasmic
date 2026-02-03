@@ -16,9 +16,9 @@ export function BrandItem({
   link,
 }: BrandItemProps) {
   const content = (
-    <div className="group shrink-0 snap-center flex flex-col items-center">
+    <div className="group shrink-0 py-6 snap-center flex flex-col items-center">
       <div
-        className="relative w-36 md:w-44 transition-all duration-300 ease-out group-hover:-translate-y-8.75"
+        className="relative w-36 md:w-58 transition-all duration-300 ease-out group-hover:-translate-y-8.75"
         style={{
           aspectRatio: "1/0.87",
           clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
@@ -26,12 +26,12 @@ export function BrandItem({
       >
         <div className="absolute inset-0 bg-dirt-deep group-hover:bg-dirt-green transition-colors duration-300" />
         {image && (
-          <div className="absolute inset-0 flex items-center justify-center p-4">
+          <div className="absolute inset-0 flex items-center justify-center p-5">
             <Image
               src={image}
               alt={altText || title}
-              width={100}
-              height={100}
+              width={200}
+              height={200}
               className="object-contain max-w-full max-h-full"
             />
           </div>

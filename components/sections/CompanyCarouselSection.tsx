@@ -17,7 +17,7 @@ export function CompanyCarouselSection({
   children,
 }: CompanyCarouselSectionProps) {
   return (
-    <section className="relative w-full pt-24 pb-60 px-8 bg-dirt-pop overflow-hidden" style={{ gridColumn: "1 / -1" }}>
+    <section className="relative w-full pt-40 pb-46 pl-8 bg-dirt-pop overflow-hidden" style={{ gridColumn: "1 / -1" }}>
       {backgroundImage && (
         <div className="absolute flex items-end inset-0 bottom-0 z-0 pointer-events-none">
           <Image
@@ -30,7 +30,7 @@ export function CompanyCarouselSection({
         </div>
       )}
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10">
         {heading && (
           <h2 className="flex gap-2 text-3xl sm:text-5xl md:text-7xl font-display font-bold text-white mb-24">
             {heading}
@@ -41,7 +41,7 @@ export function CompanyCarouselSection({
         )}
 
         <div
-          className="py-4 flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+          className="py-4 pr-8 flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",

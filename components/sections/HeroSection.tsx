@@ -48,7 +48,7 @@ export function HeroSection({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const midgroundOffset = 25 + scrollProgress * 42;
+  const midgroundOffset = 25 + scrollProgress * 52;
 
   return (
     <section ref={sectionRef} className="relative w-full bg-dirt-deep" style={{ gridColumn: "1 / -1" }}>
