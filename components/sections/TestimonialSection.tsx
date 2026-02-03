@@ -35,9 +35,9 @@ const textColorClasses: Record<string, string> = {
 };
 
 export function TestimonialSection({
-  backgroundColor = "dirt-deep",
+  backgroundColor = "dirt-green",
   customBackgroundColor,
-  textColor = "dirt-off-white",
+  textColor = "dirt-deep",
   customTextColor,
   logo,
   body,
