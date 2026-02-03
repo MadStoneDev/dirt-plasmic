@@ -14,9 +14,9 @@ export interface TestimonialSectionProps {
 }
 
 const bgColorClasses: Record<string, string> = {
-  "dirt-deep": "bg-[#5C0004]",
-  "dirt-pop": "bg-[#FE5C02]",
-  "dirt-green": "bg-[#00FF00]",
+  "dirt-deep": "bg-dirt-deep",
+  "dirt-pop": "bg-dirt-pop",
+  "dirt-green": "bg-dirt-green",
   white: "bg-white",
   black: "bg-black",
 };
@@ -24,8 +24,8 @@ const bgColorClasses: Record<string, string> = {
 const textColorClasses: Record<string, string> = {
   "dirt-deep": "text-white",
   "dirt-pop": "text-white",
-  "dirt-green": "text-[#5C0004]",
-  white: "text-[#5C0004]",
+  "dirt-green": "text-dirt-deep",
+  white: "text-dirt-deep",
   black: "text-white",
 };
 
@@ -40,10 +40,10 @@ export function TestimonialSection({
   authorPhoto,
 }: TestimonialSectionProps) {
   const isCustom = backgroundColor === "custom";
-  const bgClass = isCustom ? "" : bgColorClasses[backgroundColor] || "bg-[#5C0004]";
+  const bgClass = isCustom ? "" : bgColorClasses[backgroundColor] || "bg-dirt-deep";
   const textClass = isCustom
     ? customTextColor === "dark"
-      ? "text-[#5C0004]"
+      ? "text-dirt-deep"
       : "text-white"
     : textColorClasses[backgroundColor] || "text-white";
 
@@ -69,11 +69,11 @@ export function TestimonialSection({
           <blockquote
             className={`text-xl md:text-4xl font-sans font-bold tracking-tight leading-relaxed whitespace-pre-line ${textClass} mb-12`}
           >
-            <span className="inline-block text-[#5C0004] h-[1em] overflow-visible align-baseline -mb-2">
+            <span className="inline-block text-dirt-deep h-[1em] overflow-visible align-baseline -mb-2">
               &ldquo;
             </span>
             {body}
-            <span className="inline-block text-[#5C0004] h-[1em] overflow-visible align-baseline -mb-2">
+            <span className="inline-block text-dirt-deep h-[1em] overflow-visible align-baseline -mb-2">
               &rdquo;
             </span>
           </blockquote>
@@ -83,7 +83,7 @@ export function TestimonialSection({
           <div className="flex flex-col items-center mt-4">
             {authorPhoto && (
               <div
-                className="relative w-24 md:w-28 bg-[#5C0004]"
+                className="relative w-24 md:w-28 bg-dirt-deep"
                 style={{
                   aspectRatio: "1/0.87",
                   clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",

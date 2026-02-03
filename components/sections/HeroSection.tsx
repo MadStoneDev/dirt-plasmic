@@ -51,10 +51,10 @@ export function HeroSection({
   const midgroundOffset = 25 + scrollProgress * 42;
 
   return (
-    <section ref={sectionRef} className="relative bg-[#5C0004]">
+    <section ref={sectionRef} className="relative bg-dirt-deep">
       {heading && (
         <div className="px-8 pt-12 max-w-md sm:max-w-lg md:max-w-3xl">
-          <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-7xl text-[#FE5C02] uppercase">
+          <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-7xl text-dirt-pop uppercase">
             {heading}
           </h1>
         </div>
@@ -69,7 +69,7 @@ export function HeroSection({
               return (
                 <span
                   key={index}
-                  className="absolute font-display font-bold text-3xl sm:text-5xl md:text-7xl text-[#FE5C02] uppercase"
+                  className="absolute font-display font-bold text-3xl sm:text-5xl md:text-7xl text-dirt-pop uppercase"
                   style={{
                     bottom: `${progress * 85}%`,
                     left: `${progress * 90}%`,
@@ -93,9 +93,9 @@ export function HeroSection({
         <section className="px-8">
           <a
             href={ctaLink || "#"}
-            className="inline-flex items-center justify-center gap-1 bg-[#FE5C02] hover:bg-[#FE5C02]/80 px-8 py-4 w-full transition-colors"
+            className="inline-flex items-center justify-center gap-1 bg-dirt-pop hover:bg-dirt-pop/80 px-8 py-4 w-full transition-colors"
           >
-            <span className="text-[#5C0004] text-xl font-display font-bold uppercase">
+            <span className="text-dirt-deep text-xl font-display font-bold uppercase">
               {ctaLabel}
             </span>
           </a>

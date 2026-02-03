@@ -23,7 +23,7 @@ export function CompanyCarouselSection({
   brands,
 }: CompanyCarouselSectionProps) {
   return (
-    <section className="relative pt-24 pb-60 px-8 bg-[#FE5C02] overflow-hidden">
+    <section className="relative pt-24 pb-60 px-8 bg-dirt-pop overflow-hidden">
       {backgroundImage && (
         <div className="absolute flex items-end inset-0 bottom-0 z-0 pointer-events-none">
           <Image
@@ -41,7 +41,7 @@ export function CompanyCarouselSection({
           <h2 className="flex gap-2 text-3xl sm:text-5xl md:text-7xl font-display font-bold text-white mb-24">
             {heading}
             {highlightedWord && (
-              <span className="text-[#5C0004] uppercase">{highlightedWord}</span>
+              <span className="text-dirt-deep uppercase">{highlightedWord}</span>
             )}
           </h2>
         )}
@@ -63,7 +63,7 @@ export function CompanyCarouselSection({
                     clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
                   }}
                 >
-                  <div className="absolute inset-0 bg-[#5C0004] group-hover:bg-[#00FF00] transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-dirt-deep group-hover:bg-dirt-green transition-colors duration-300" />
                   {brand.image && (
                     <div className="absolute inset-0 flex items-center justify-center p-4">
                       <Image

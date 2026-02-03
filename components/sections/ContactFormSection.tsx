@@ -59,7 +59,7 @@ export function ContactFormSection({
               value={formData.name}
               onChange={(e) => setFormData((p) => ({ ...p, name: e.target.value }))}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FE5C02] focus:border-[#FE5C02] outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dirt-pop focus:border-dirt-pop outline-none"
             />
           </div>
           <div>
@@ -72,7 +72,7 @@ export function ContactFormSection({
               value={formData.email}
               onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FE5C02] focus:border-[#FE5C02] outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dirt-pop focus:border-dirt-pop outline-none"
             />
           </div>
           <div>
@@ -85,13 +85,13 @@ export function ContactFormSection({
               value={formData.message}
               onChange={(e) => setFormData((p) => ({ ...p, message: e.target.value }))}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FE5C02] focus:border-[#FE5C02] outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dirt-pop focus:border-dirt-pop outline-none"
             />
           </div>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#FE5C02] hover:bg-[#FE5C02]/80 disabled:bg-[#FE5C02]/40 text-white font-semibold px-8 py-4 rounded-lg transition-colors"
+            className="w-full bg-dirt-pop hover:bg-dirt-pop/80 disabled:bg-dirt-pop/40 text-white font-semibold px-8 py-4 rounded-lg transition-colors"
           >
             {isSubmitting ? "Sending..." : submitButtonText}
           </button>

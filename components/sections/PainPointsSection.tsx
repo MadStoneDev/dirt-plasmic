@@ -59,7 +59,7 @@ export function PainPointsSection({
           </div>
 
           {selectedCount > 0 && (
-            <p className="mt-8 text-[#FE5C02] font-medium">
+            <p className="mt-8 text-dirt-pop font-medium">
               {selectedCount === 1
                 ? "Even one of these can hurt your business..."
                 : `${selectedCount} issues identified.`}

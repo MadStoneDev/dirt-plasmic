@@ -1,11 +1,58 @@
 @import "tailwindcss";
 
+@theme {
+  /* Colors */
+  --color-dirt-pop: #FE5C02;
+  --color-dirt-deep: #5C0004;
+  --color-dirt-off-white: #FAFAF2;
+  --color-dirt-black: #30261D;
+  --color-dirt-green: #C2D500;
+  --color-dirt-blue: #C0D6FF;
+
+  /* Fonts */
+  --font-display: "Roboto Condensed", sans-serif;
+  --font-sans: "Uncut Sans", sans-serif;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("/fonts/Roboto_Condensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Uncut Sans";
+  src: url("/fonts/UncutSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Uncut Sans";
+  src: url("/fonts/UncutSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+  font-family: "Uncut Sans", sans-serif;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.font-display {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.font-sans {
+  font-family: "Uncut Sans", sans-serif;
 }
