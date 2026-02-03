@@ -17,7 +17,7 @@ export function InfoSection({
   const showImage = layout !== "noImage" && image;
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4" style={{ gridColumn: "1 / -1" }}>
       <div
         className={`max-w-7xl mx-auto flex flex-col ${showImage ? "lg:flex-row" : ""} gap-12 items-center ${imageOnLeft ? "lg:flex-row-reverse" : ""}`}
       >

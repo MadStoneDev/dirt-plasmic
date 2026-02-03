@@ -38,7 +38,7 @@ export function PainPointsSection({
   const currentImage = images[Math.min(selectedCount, 5)] || image0;
 
   return (
-    <section className="py-16 px-4 bg-gray-50">
+    <section className="py-16 px-4 bg-gray-50" style={{ gridColumn: "1 / -1" }}>
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{heading}</h2>

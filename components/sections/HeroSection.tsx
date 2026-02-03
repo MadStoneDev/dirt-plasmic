@@ -51,7 +51,7 @@ export function HeroSection({
   const midgroundOffset = 25 + scrollProgress * 42;
 
   return (
-    <section ref={sectionRef} className="relative bg-dirt-deep">
+    <section ref={sectionRef} className="relative bg-dirt-deep" style={{ gridColumn: "1 / -1" }}>
       {heading && (
         <div className="px-8 pt-12 max-w-md sm:max-w-lg md:max-w-3xl">
           <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-7xl text-dirt-pop uppercase">

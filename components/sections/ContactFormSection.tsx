@@ -30,7 +30,7 @@ export function ContactFormSection({
 
   if (isSubmitted) {
     return (
-      <section className="py-16 px-4">
+      <section className="py-16 px-4" style={{ gridColumn: "1 / -1" }}>
         <div className="max-w-xl mx-auto text-center bg-green-50 text-green-800 p-8 rounded-xl">
           <p className="text-xl">{successMessage}</p>
         </div>
@@ -39,7 +39,7 @@ export function ContactFormSection({
   }
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4" style={{ gridColumn: "1 / -1" }}>
       <div className="max-w-xl mx-auto">
         {heading && (
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">

@@ -50,7 +50,7 @@ export function TestimonialSection({
   return (
     <section
       className={`relative py-40 px-20 ${bgClass} overflow-hidden`}
-      style={isCustom && customBackgroundColor ? { backgroundColor: customBackgroundColor } : undefined}
+      style={{ gridColumn: "1 / -1", ...(isCustom && customBackgroundColor ? { backgroundColor: customBackgroundColor } : {}) }}
     >
       <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
         {logo && (
