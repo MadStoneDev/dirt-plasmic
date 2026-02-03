@@ -17,7 +17,7 @@ export function CompanyCarouselSection({
   children,
 }: CompanyCarouselSectionProps) {
   return (
-    <section className="relative pt-24 pb-60 px-8 bg-dirt-pop overflow-hidden" style={{ gridColumn: "1 / -1" }}>
+    <section className="relative w-full pt-24 pb-60 px-8 bg-dirt-pop overflow-hidden" style={{ gridColumn: "1 / -1" }}>
       {backgroundImage && (
         <div className="absolute flex items-end inset-0 bottom-0 z-0 pointer-events-none">
           <Image

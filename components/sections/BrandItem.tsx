@@ -18,7 +18,7 @@ export function BrandItem({
   const content = (
     <div className="group shrink-0 snap-center flex flex-col items-center">
       <div
-        className="relative w-36 md:w-44 transition-all duration-300 ease-out group-hover:-translate-y-2"
+        className="relative w-36 md:w-44 transition-all duration-300 ease-out group-hover:-translate-y-8.75"
         style={{
           aspectRatio: "1/0.87",
           clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
