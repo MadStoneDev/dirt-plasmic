@@ -99,22 +99,22 @@ export function FooterSection({
   };
 
   return (
-    <footer style={{ gridColumn: "1 / -1" }}>
+    <footer className={`pt-40 min-h-[2460px]`} style={{ gridColumn: "1 / -1", backgroundColor: backgroundColor }}>
       {/* Hero/Form Section */}
       <div
-        className="relative py-16 px-4"
-        style={{ backgroundColor }}
+        className="relative flex flex-col justify-end"
+        
       >
         {backgroundImage && (
           <Image
             src={backgroundImage}
             alt=""
             fill
-            className="object-cover"
+            className="w-full object-contain"
           />
         )}
 
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
+        <div className="relative h-[970px] z-10 max-w-3xl mx-auto text-center">
           {heading1 && (
             <h2 className="font-display font-bold text-3xl md:text-5xl text-dirt-off-white uppercase mb-2">
               {heading1}
