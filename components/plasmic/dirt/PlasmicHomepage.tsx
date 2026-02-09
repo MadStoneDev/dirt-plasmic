@@ -596,13 +596,75 @@ function PlasmicHomepage__RenderFunc(props: {
 
           <InfoSection
             className={classNames("__wab_instance", sty.infoSection__wf3C9)}
-            richText={null}
+            ctaLabel={"We make it happen"}
+            ctaLink={"/"}
+            heading={"Our reputation is soiled"}
+            layout={"imageLeft"}
+            richText={
+              <React.Fragment>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__x6629
+                  )}
+                >
+                  {
+                    "DIRT was born from a decade of up-close and personal work with architects. Founder Nikita Morell has worked with over 200 architecture firms across 10 countries, and taught hundreds more how to win more (and better) projects. Now we\u2019re going deeper. "
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__v4TnA
+                  )}
+                >
+                  {
+                    "Every DIRT client gets a custom-assembled team of property, construction, and tech specialists to do the heavy lifting. And unlike other branding firms, we start with your message first \u2013 because as you know, it doesn\u2019t matter how lovely something looks on the outside if the inside is hollow."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__uaaAw
+                  )}
+                >
+                  {
+                    "In these industries, every bid counts. You need to hit the right people hard, so your business can hit pay dirt."
+                  }
+                </div>
+              </React.Fragment>
+            }
+            subheading={"10+ years of foundational strategy for fertile brands"}
           />
 
           <ProsConsSection
             data-plasmic-name={"prosConsSection"}
             data-plasmic-override={overrides.prosConsSection}
             className={classNames("__wab_instance", sty.prosConsSection)}
+            con1={
+              "If you love nothingburger words like innovative, cutting-edge, and solutions"
+            }
+            con2={
+              "If you want an agency that nods politely and says \u201cyes\u201d to all your ideas \u2014 even if they\u2019re bad"
+            }
+            con3={
+              "If you want to play it safe (That\u2019s OSHA\u2019s job. Let\u2019s have some fun)"
+            }
+            consHeading={"Scroll past"}
+            headingEnd={"is right for you"}
+            headingHighlight={" DIRT "}
+            headingStart={"Ask your mother if playing in the"}
+            pro1={
+              "If you want a brand built for the present \u2014 not for 50 years ago"
+            }
+            pro2={
+              "If you\u2019d rather test construction-grade adhesives on your face than be boring"
+            }
+            pro3={"If you find this stock photo as funny as we do"}
+            prosHeading={"Dig in"}
           />
 
           <TestimonialSection

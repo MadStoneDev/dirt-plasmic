@@ -170,6 +170,46 @@
   max-width: 100%;
   object-fit: cover;
 }
+.text__x6629 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 15px;
+  font-family: "Uncut Sans";
+  font-size: 20px;
+  color: #30261d;
+  text-align: justify;
+  line-height: 150%;
+  min-width: 0;
+}
+.text__v4TnA {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-family: "Uncut Sans";
+  color: #30261d;
+  font-size: 20px;
+  text-align: justify;
+  line-height: 150%;
+  margin-bottom: 15px;
+  min-width: 0;
+}
+.text__uaaAw {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: #30261d;
+  font-family: "Uncut Sans";
+  font-size: 20px;
+  font-weight: 700;
+  text-align: justify;
+  line-height: 150%;
+  margin-bottom: 15px;
+  min-width: 0;
+}
 .prosConsSection:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
