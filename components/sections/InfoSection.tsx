@@ -44,7 +44,7 @@ export function InfoSection({
                 alt=""
                 width={800}
                 height={600}
-                className="object-cover w-full"
+                className="border-[1.5px] border-dirt-black object-cover w-full"
               />
             </div>
           )}
