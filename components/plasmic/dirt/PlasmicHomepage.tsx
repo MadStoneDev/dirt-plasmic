@@ -335,7 +335,18 @@ function PlasmicHomepage__RenderFunc(props: {
           <PainPointsSection
             data-plasmic-name={"painPointsSection"}
             data-plasmic-override={overrides.painPointsSection}
+            caption={"Solid. You\u2019re all good."}
             className={classNames("__wab_instance", sty.painPointsSection)}
+            heading={"What\u2019s stopping clients from choosing you?"}
+            image0={"/plasmic/dirt/images/painPointsBuilding0Jpg.jpg"}
+            image1={"/plasmic/dirt/images/painPointsBuilding1Jpg.jpg"}
+            image2={"/plasmic/dirt/images/painPointsBuilding2Jpg.jpg"}
+            image3={"/plasmic/dirt/images/painPointsBuilding3Jpg.jpg"}
+            image4={"/plasmic/dirt/images/painPointsBuilding4Jpg.jpg"}
+            image5={"/plasmic/dirt/images/painPointsBuilding5Jpg.jpg"}
+            subheading={
+              "Check the boxes that feel true to see if DIRT can help:"
+            }
           />
 
           <SignsCTASection
