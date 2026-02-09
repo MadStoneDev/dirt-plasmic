@@ -73,12 +73,22 @@ export function DirtFrameworkSection({
   const displayBlocks = reversed ? [...blocks].reverse() : blocks;
   const blockCount = displayBlocks.length;
 
-  // Extra scroll distance for the pin effect — more blocks = more scroll room
-  const scrollDistance = Math.max(blockCount * 300, 1000);
-
-  // Overlap in stacked state: ~50% of card height
+  // Block and layout dimensions (px) — no vh units, Plasmic-safe
+  const BLOCK_HEIGHT = 200; // matches min-h-50
   const OVERLAP = 110;
   const GAP = 0;
+  const STICKY_PAD = 64; // py-8 = 32px * 2
+  const HEADER_BUFFER = 250; // header area with padding
+
+  // Sticky container: tall enough to show all blocks fully expanded
+  const expandedHeight = blockCount * (BLOCK_HEIGHT + GAP);
+  const stickyHeight = expandedHeight + STICKY_PAD;
+
+  // Scroll animation distance — how much scrolling drives the 0→1 expansion
+  const animationDistance = Math.max(blockCount * 250, 800);
+
+  // Total section height = header + sticky content + animation scroll room
+  const sectionHeight = HEADER_BUFFER + stickyHeight + animationDistance;
 
   useEffect(() => {
     let ticking = false;
@@ -122,7 +132,7 @@ export function DirtFrameworkSection({
       ref={sectionRef}
       className="relative bg-dirt-off-white"
       style={{
-        height: `${scrollDistance + 1000}px`,
+        height: `${sectionHeight}px`,
         gridColumn: "1 / -1",
       }}
     >
@@ -146,7 +156,7 @@ export function DirtFrameworkSection({
       <div ref={triggerRef} />
 
       {/* Sticky blocks — pins when reaching viewport top */}
-      <div className="sticky top-0 h-screen overflow-hidden">
+      <div className="sticky top-0" style={{ height: `${stickyHeight}px` }}>
         <div className="h-full px-4 py-8">
           <div className="max-w-7xl mx-auto h-full">
             <div className="relative h-full">
