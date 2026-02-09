@@ -105,7 +105,7 @@ export function PainPointsSection({
                 src={currentImage}
                 alt=""
                 fill
-                className="object-cover transition-opacity duration-500"
+                className="object-cover transition-opacity duration-300"
               />
             ) : (
               <div className="w-full h-full min-h-100 bg-dirt-deep/10 flex items-center justify-center">

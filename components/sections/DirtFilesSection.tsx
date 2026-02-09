@@ -176,7 +176,7 @@ export function DirtFilesSection({
                 <div key={index} className="mb-2">
                   <button
                     onClick={() => setActiveIndex(isActive ? null : index)}
-                    className={`w-full text-left p-4 transition-all duration-300 ${
+                    className={`w-full text-left p-8 transition-all duration-300 ${
                       isActive
                         ? "bg-dirt-pop"
                         : "bg-transparent hover:bg-dirt-pop/10"
@@ -236,12 +236,12 @@ export function DirtFilesSection({
                             style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
                           >
                             {item.heading && (
-                              <h4 className="font-display font-bold text-lg text-dirt-off-white uppercase mb-2">
+                              <h4 className="font-display font-bold text-lg text-dirt-off-white uppercase mb-2" style={{ letterSpacing: "1px" }}>
                                 {item.heading}
                               </h4>
                             )}
                             {item.description && (
-                              <p className="text-dirt-off-white/80 font-sans text-sm">
+                              <p className="text-dirt-off-white/80 font-sans text-base text-justify" style={{ letterSpacing: "-5%", lineHeight: "150%"}}>
                                 {item.description}
                               </p>
                             )}
@@ -256,13 +256,13 @@ export function DirtFilesSection({
           </div>
 
           {/* Right - Image */}
-          <div className="relative min-h-[400px]">
+          <div className="relative border-[1.5px] border-dirt-pop">
             {currentImage ? (
               <Image
                 src={currentImage}
                 alt=""
                 fill
-                className="object-cover transition-opacity duration-500"
+                className="object-cover transition-opacity duration-300"
               />
             ) : (
               <div className="w-full h-full bg-dirt-deep/10 flex items-center justify-center">
