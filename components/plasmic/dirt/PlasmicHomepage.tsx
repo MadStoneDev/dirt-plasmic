@@ -501,19 +501,71 @@ function PlasmicHomepage__RenderFunc(props: {
             headingEnd={"framework"}
             headingHighlight={"DIRT"}
             headingStart={"The"}
-            reversed={false}
+            reversed={true}
           />
 
           <DirtProcessSection
             data-plasmic-name={"dirtProcessSection"}
             data-plasmic-override={overrides.dirtProcessSection}
+            bottomDescription={
+              "DIRT nails your positioning and messaging first. Then we bring in a designer with a style that matches your message. Instead of a generic template, you get the perfect creative partner for your project."
+            }
+            bottomHeading={"*Note: The DIRT Design Bench is deep and wide"}
             className={classNames("__wab_instance", sty.dirtProcessSection)}
+            headingEnd={", we get to work"}
+            headingHighlight={"grounded"}
+            headingStart={"Once you're"}
+            step1Description={
+              "Bold visuals that make you unforgettable. (Including your distinctive new logo.)"
+            }
+            step1Heading={"Visual brand identity"}
+            step1Image={"/plasmic/dirt/images/handOutOfDirtHoldingPhoneJpg.jpg"}
+            step1Tags={"Logo, Palette, Design Elements"}
+            step2Description={
+              "Your work is state-of-the-art. Your website should be, too."
+            }
+            step2Heading={"Website"}
+            step2Image={"/plasmic/dirt/images/laptopOnDirtJpg.jpg"}
+            step2Tags={"Copywriting, Design*, Development, Maintenance"}
+            step3Description={
+              "Persuasive, plain-English tools that make it easy for clients to say \u201cYou\u2019re the one.\u201d"
+            }
+            step3Heading={"Winning assets"}
+            step3Image={"/plasmic/dirt/images/tradieUsingTabletJpg.jpg"}
+            step3Tags={
+              "Fee Proposals, Bid Submissions, Pitch Decks, Case Studies, Safety & Compliance Content"
+            }
           />
 
           <DirtFilesSection
             data-plasmic-name={"dirtFilesSection"}
             data-plasmic-override={overrides.dirtFilesSection}
             className={classNames("__wab_instance", sty.dirtFilesSection)}
+            description={"Scratch the surface of our latest work and launches."}
+            file1ButtonLabel={"Crack the File"}
+            file1ButtonLink={"/"}
+            file1Heading={"Core FDM"}
+            file1Image={"/plasmic/dirt/images/handOutOfDirtHoldingPhoneJpg.jpg"}
+            file1Item1Description={
+              "Core FDM was delivering major facade projects, but their brand didn\u2019t match the scale of the work. The website made them look like technical specialists, not the end-to-end facade partner they\u2019d become. As projects grew more complex, the gap started to hurt."
+            }
+            file1Item1Heading={"The Pinch"}
+            file1Item2Description={
+              "\u201cDelivering custom building envelope solutions.\u201d Technically true, but interchangeable with half the industry. It gave architects no clue when to bring Core FDM in, how they actually work, or why they\u2019re different when things get complicated."
+            }
+            file1Item2Heading={"The Cringe"}
+            file1Item3Description={
+              "We turned complex facade expertise into language architects immediately understand, without dumbing it down. Clear, confident messaging (with just enough personality) positioned Core FDM as a true facade management partner, not just a consultant. The brand finally sounds like the team behind it and attracts better-fit enquiries."
+            }
+            file1Item3Heading={"The Solve"}
+            file1Tag1={"Website"}
+            file1Tag2={"Branding"}
+            file2Heading={"StudioMX"}
+            file2Item1Heading={``}
+            file3Heading={"Techne"}
+            headingEnd={"Files"}
+            headingHighlight={"Dirt"}
+            headingStart={"The"}
           />
 
           <InfoSection

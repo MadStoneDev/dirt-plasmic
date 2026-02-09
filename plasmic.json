@@ -169,6 +169,21 @@
           "id": "Fd1Wreo1yB5E",
           "name": "Tell Background.jpg",
           "filePath": "../public/plasmic/dirt/images/tellBackgroundJpg.jpg"
+        },
+        {
+          "id": "ksIbBOjUrCIQ",
+          "name": "Hand out of dirt holding phone.jpg",
+          "filePath": "../public/plasmic/dirt/images/handOutOfDirtHoldingPhoneJpg.jpg"
+        },
+        {
+          "id": "XDZ6K2HABmBX",
+          "name": "Laptop on dirt.jpg",
+          "filePath": "../public/plasmic/dirt/images/laptopOnDirtJpg.jpg"
+        },
+        {
+          "id": "wiAE_qtkoDVC",
+          "name": "Tradie using tablet.jpg",
+          "filePath": "../public/plasmic/dirt/images/tradieUsingTabletJpg.jpg"
         }
       ],
       "indirect": false,
