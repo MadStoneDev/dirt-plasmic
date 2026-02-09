@@ -52,8 +52,10 @@ export function HeroSection({
 
   return (
     <section ref={sectionRef} className="relative w-full bg-dirt-deep" style={{ gridColumn: "1 / -1" }}>
+      {/*<div className={`px-8 mx-auto max-w-7xl`}>*/}
+      <div className={`px-8 mx-auto`}>
       {heading && (
-        <div className="px-8 pt-12 max-w-md sm:max-w-lg md:max-w-3xl">
+        <div className="pt-12 max-w-md sm:max-w-lg md:max-w-3xl">
           <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-7xl text-dirt-pop uppercase">
             {heading}
           </h1>
@@ -61,7 +63,7 @@ export function HeroSection({
       )}
 
       {subheading && (
-        <div className="px-8 pointer-events-auto">
+        <div className="pointer-events-auto">
           <div className="relative h-40 sm:h-60 md:h-80 w-full">
             {subheading.split(" ").map((word, index, arr) => {
               const totalWords = arr.length;
@@ -84,16 +86,16 @@ export function HeroSection({
       )}
 
       {description && (
-        <section className="px-8 py-12 max-w-md sm:max-w-xl">
+        <section className="py-12 max-w-md sm:max-w-xl">
           <p className="font-sans text-lg sm:text-xl text-white">{description}</p>
         </section>
       )}
 
       {ctaLabel && (
-        <section className="px-8">
+        <section>
           <a
             href={ctaLink || "#"}
-            className="inline-flex items-center justify-center gap-1 bg-dirt-pop hover:bg-dirt-pop/80 px-8 py-4 w-full transition-colors"
+            className="inline-flex items-center justify-center gap-1 bg-dirt-pop hover:bg-dirt-pop-hover px-8 py-4 w-full transition-all duration-300"
           >
             <Image src={`/90deg Arrow.png`} alt={`90 Degrees Arrow`} width={50} height={50} className={`w-6`} />
             <span className="text-dirt-deep text-xl font-display font-bold uppercase">
@@ -102,6 +104,7 @@ export function HeroSection({
           </a>
         </section>
       )}
+      </div>
 
       <div className="sticky top-0 h-[63vw] overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-0 right-0 h-[60vw] max-h-215.75">

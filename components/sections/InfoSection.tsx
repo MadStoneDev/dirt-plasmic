@@ -25,8 +25,9 @@ export function InfoSection({
   const isReversed = layout === "imageRight";
 
   return (
-    <section className="py-16 px-4 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
-      <div className="max-w-7xl mx-auto">
+    <section className="py-40 px-4 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
+      {/*<div className="mx-auto max-w-7xl">*/}
+      <div className="px-8 mx-auto">
         {heading && (
           <h2 className="font-display font-bold text-4xl md:text-6xl text-dirt-pop uppercase mb-12">
             {heading}
@@ -66,9 +67,10 @@ export function InfoSection({
             {ctaLabel && ctaLink && (
               <a
                 href={ctaLink}
-                className="inline-block px-8 py-4 bg-dirt-pop text-white font-display font-bold uppercase text-lg hover:bg-dirt-deep transition-colors duration-300 w-fit"
+                className="inline-flex justify-center items-center gap-1 px-8 py-4 bg-dirt-pop hover:bg-dirt-pop-hover text-dirt-deep font-display font-bold uppercase text-lg transition-colors duration-300 w-full"
               >
-                {ctaLabel}
+                <Image src={`/90deg Arrow.png`} alt={`90 Degrees Arrow`} width={50} height={50} className={`w-4.5 h-3`} />
+                <span>{ctaLabel}</span>
               </a>
             )}
           </div>

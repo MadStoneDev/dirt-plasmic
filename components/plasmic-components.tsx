@@ -4,6 +4,7 @@ import { CompanyCarouselSection } from "./sections/CompanyCarouselSection";
 import { BrandItem } from "./sections/BrandItem";
 import { TestimonialSection } from "./sections/TestimonialSection";
 import { PainPointsSection } from "./sections/PainPointsSection";
+import { PainPointCheckbox } from "./sections/PainPointCheckbox";
 import { InfoSection } from "./sections/InfoSection";
 import { ContactFormSection } from "./sections/ContactFormSection";
 import { SignsCTASection } from "./sections/SignsCTASection";
@@ -91,16 +92,40 @@ registerComponent(TestimonialSection, {
   importPath: "./components/sections/TestimonialSection",
 });
 
+// Pain Point Checkbox - branded checkbox for the PainPointsSection
+registerComponent(PainPointCheckbox, {
+  name: "PainPointCheckbox",
+  props: {
+    label: "string",
+  },
+  importPath: "./components/sections/PainPointCheckbox",
+});
+
 // Pain Points Section - interactive checklist with changing images
 registerComponent(PainPointsSection, {
   name: "PainPointsSection",
   props: {
     heading: "string",
     subheading: "string",
-    caption: "string",
     children: {
       type: "slot",
-      defaultValue: [],
+      defaultValue: [
+        {
+          type: "component",
+          name: "PainPointCheckbox",
+          props: { label: "Pain point 1" },
+        },
+        {
+          type: "component",
+          name: "PainPointCheckbox",
+          props: { label: "Pain point 2" },
+        },
+        {
+          type: "component",
+          name: "PainPointCheckbox",
+          props: { label: "Pain point 3" },
+        },
+      ],
     },
     image0: "imageUrl",
     image1: "imageUrl",
@@ -112,6 +137,16 @@ registerComponent(PainPointsSection, {
     image7: "imageUrl",
     image8: "imageUrl",
     image9: "imageUrl",
+    caption0: "string",
+    caption1: "string",
+    caption2: "string",
+    caption3: "string",
+    caption4: "string",
+    caption5: "string",
+    caption6: "string",
+    caption7: "string",
+    caption8: "string",
+    caption9: "string",
   },
   importPath: "./components/sections/PainPointsSection",
 });
