@@ -99,7 +99,8 @@ export function FooterSection({
   };
 
   return (
-    <footer className={`p-7.5`}
+    <footer
+      className={`p-7.5`}
       style={{
         gridColumn: "1 / -1",
         backgroundColor: backgroundColor || "#5C0004",
@@ -122,12 +123,18 @@ export function FooterSection({
 
         <div className="relative pt-40 pb-233.75 z-10 max-w-3xl mx-auto text-center">
           {heading1 && (
-            <h2 className="font-display font-bold text-3xl md:text-5xl text-dirt-off-white uppercase mb-2">
+            <h2
+              className="mx-auto max-w-112.5 font-display font-bold text-4xl md:text-6xl text-dirt-off-white mb-2"
+              style={{ lineHeight: "105%", letterSpacing: "-2%" }}
+            >
               {heading1}
             </h2>
           )}
           {heading2 && (
-            <h2 className="font-display font-bold text-3xl md:text-5xl text-dirt-pop uppercase mb-6">
+            <h2
+              className="font-display font-bold text-4xl md:text-6xl text-dirt-pop mb-8"
+              style={{ lineHeight: "105%", letterSpacing: "-2%" }}
+            >
               {heading2}
             </h2>
           )}
@@ -138,8 +145,11 @@ export function FooterSection({
           )}
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div className="grid md:grid-cols-2 gap-4">
+          <form
+            onSubmit={handleSubmit}
+            className="mx-auto flex flex-col gap-6 max-w-xl"
+          >
+            <div className="grid md:grid-cols-2 gap-6">
               <input
                 type="text"
                 placeholder="Name"
@@ -147,7 +157,7 @@ export function FooterSection({
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="px-4 py-3 bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+                className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
               />
               <input
                 type="email"
@@ -156,7 +166,7 @@ export function FooterSection({
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                className="px-4 py-3 bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+                className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
               />
             </div>
             <input
@@ -166,7 +176,7 @@ export function FooterSection({
               onChange={(e) =>
                 setFormData({ ...formData, company: e.target.value })
               }
-              className="px-4 py-3 bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+              className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
             />
             <textarea
               placeholder="Tell us about your project"
@@ -175,12 +185,19 @@ export function FooterSection({
               onChange={(e) =>
                 setFormData({ ...formData, message: e.target.value })
               }
-              className="px-4 py-3 bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop resize-none"
+              className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop resize-none"
             />
             <button
               type="submit"
-              className="px-8 py-4 bg-dirt-pop text-white font-display font-bold uppercase text-lg hover:bg-dirt-green hover:text-dirt-deep transition-colors duration-300"
+              className="px-8 py-4 flex items-center justify-center gap-1 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-lg hover:bg-dirt-green hover:text-dirt-deep transition-colors duration-300"
             >
+              <Image
+                src={`/90deg Arrow.png`}
+                alt={`90 Degrees Arrow`}
+                width={50}
+                height={50}
+                className={`w-6`}
+              />
               {submitButtonText}
             </button>
           </form>
@@ -284,7 +301,7 @@ export function FooterSection({
               />
             </div>
           ) : (
-            <div className="h-[1px] bg-dirt-off-white/20 mb-8" />
+            <div className="h-px bg-dirt-off-white/20 mb-8" />
           )}
 
           {/* Copyright */}
@@ -294,17 +311,18 @@ export function FooterSection({
             </p>
           )}
         </div>
+      </div>
 
-        {/* Bottom Right Badge */}
-        {bottomRightText && bottomRightLink && (
+      {/* Bottom Right Badge */}
+      {bottomRightText && bottomRightLink && (
           <a
-            href={bottomRightLink}
-            className="absolute right-0 bottom-0 px-4 py-2 bg-dirt-green text-dirt-deep font-display font-bold text-sm uppercase hover:bg-dirt-pop transition-colors"
+              href={bottomRightLink}
+              className="absolute right-0 bottom-0 px-3 py-2 max-w-43.75 bg-dirt-green text-dirt-deep text-center font-sans font-medium text-sm hover:bg-dirt-pop transition-colors"
+              style={{ lineHeight: "115%", letterSpacing: "-2%" }}
           >
             {bottomRightText}
           </a>
-        )}
-      </div>
+      )}
     </footer>
   );
 }
