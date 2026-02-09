@@ -519,19 +519,23 @@ function PlasmicHomepage__RenderFunc(props: {
               "Bold visuals that make you unforgettable. (Including your distinctive new logo.)"
             }
             step1Heading={"Visual brand identity"}
-            step1Image={"/plasmic/dirt/images/handOutOfDirtHoldingPhoneJpg.jpg"}
+            step1Image={
+              "/plasmic/dirt/images/handComingOutOfDirtHoldingPhoneJpg.jpg"
+            }
             step1Tags={"Logo, Palette, Design Elements"}
             step2Description={
               "Your work is state-of-the-art. Your website should be, too."
             }
             step2Heading={"Website"}
-            step2Image={"/plasmic/dirt/images/laptopOnDirtJpg.jpg"}
+            step2Image={"/plasmic/dirt/images/modernLaptopOnDirtJpg.jpg"}
             step2Tags={"Copywriting, Design*, Development, Maintenance"}
             step3Description={
               "Persuasive, plain-English tools that make it easy for clients to say \u201cYou\u2019re the one.\u201d"
             }
             step3Heading={"Winning assets"}
-            step3Image={"/plasmic/dirt/images/tradieUsingTabletJpg.jpg"}
+            step3Image={
+              "/plasmic/dirt/images/tradieWithGlovesUsingTabletJpg.jpg"
+            }
             step3Tags={
               "Fee Proposals, Bid Submissions, Pitch Decks, Case Studies, Safety & Compliance Content"
             }
@@ -560,12 +564,34 @@ function PlasmicHomepage__RenderFunc(props: {
             file1Item3Heading={"The Solve"}
             file1Tag1={"Website"}
             file1Tag2={"Branding"}
+            file2ButtonLabel={"Crack the File"}
+            file2ButtonLink={"/"}
             file2Heading={"StudioMX"}
-            file2Item1Heading={``}
+            file2Item1Description={
+              "StudioMX delivered high-quality Revit modelling, coordination, and rendering for U.S. architects, but their brand didn\u2019t show it. The website read like a services list, which made them look like just another outsourcing team."
+            }
+            file2Item1Heading={"The Pinch"}
+            file2Item2Description={
+              "\u201cStudioMX provides Autodesk Revit, BIM, Renderings, and VDC support\u2026\u201d told you what they did, but nothing about what it\u2019s actually like to work with them. It didn\u2019t address the trust issues architects already have with outsourcing."
+            }
+            file2Item2Heading={"The Cringe"}
+            file2Item3Description={
+              "We stopped leading with services and repositioned StudioMX around reassurance, carried through the messaging, brand, and website. With NDAs limiting project imagery, the brand had to do the heavy lifting, so we focused on how StudioMX really shows up: capable, collaborative, and genuinely good humans."
+            }
+            file2Item3Heading={"The Solve"}
+            file2Tag1={"Website"}
+            file2Tag2={"Branding"}
+            file3ButtonLabel={"Crack the file"}
+            file3ButtonLink={"/"}
             file3Heading={"Techne"}
-            headingEnd={"Files"}
+            file3Item1Heading={"The Pinch"}
+            file3Item2Heading={"The Cringe"}
+            file3Item3Heading={"The Solve"}
+            file3Tag1={"Website"}
+            file3Tag2={"Branding"}
+            headingEnd={" files"}
             headingHighlight={"Dirt"}
-            headingStart={"The"}
+            headingStart={"The "}
           />
 
           <InfoSection

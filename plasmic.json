@@ -184,6 +184,21 @@
           "id": "wiAE_qtkoDVC",
           "name": "Tradie using tablet.jpg",
           "filePath": "../public/plasmic/dirt/images/tradieUsingTabletJpg.jpg"
+        },
+        {
+          "id": "LwFf0jZhmfgW",
+          "name": "Hand coming out of dirt holding phone.jpg",
+          "filePath": "../public/plasmic/dirt/images/handComingOutOfDirtHoldingPhoneJpg.jpg"
+        },
+        {
+          "id": "MnXvK-3eBdO2",
+          "name": "Modern laptop on dirt.jpg",
+          "filePath": "../public/plasmic/dirt/images/modernLaptopOnDirtJpg.jpg"
+        },
+        {
+          "id": "AZg0qSaCsCGo",
+          "name": "Tradie with gloves using tablet.jpg",
+          "filePath": "../public/plasmic/dirt/images/tradieWithGlovesUsingTabletJpg.jpg"
         }
       ],
       "indirect": false,
