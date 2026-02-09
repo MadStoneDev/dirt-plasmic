@@ -28,7 +28,7 @@ export function InfoSection({
     <section className="py-16 px-4 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
       <div className="max-w-7xl mx-auto">
         {heading && (
-          <h2 className="font-display font-bold text-3xl md:text-5xl text-dirt-deep uppercase mb-12">
+          <h2 className="font-display font-bold text-4xl md:text-6xl text-dirt-pop uppercase mb-12">
             {heading}
           </h2>
         )}
@@ -52,7 +52,7 @@ export function InfoSection({
           {/* Info Column */}
           <div className="lg:w-1/2 flex flex-col gap-6">
             {subheading && (
-              <h3 className="font-display font-bold text-2xl md:text-3xl text-dirt-deep uppercase">
+              <h3 className="font-display font-bold text-2xl md:text-4xl text-dirt-pop uppercase">
                 {subheading}
               </h3>
             )}
