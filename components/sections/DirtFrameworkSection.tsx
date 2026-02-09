@@ -122,8 +122,7 @@ export function DirtFrameworkSection({
       ref={sectionRef}
       className="relative bg-dirt-off-white"
       style={{
-        height: `calc(100vh + ${scrollDistance}px)`,
-        maxHeight: "250vh",
+        height: `${scrollDistance + 1000}px`,
         gridColumn: "1 / -1",
       }}
     >
