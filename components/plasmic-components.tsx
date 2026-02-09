@@ -386,6 +386,9 @@ registerComponent(ProsConsSection, {
     pro6: "string",
     pro7: "string",
     pro8: "string",
+    ctaLabel: { type: "string", displayName: "CTA Label" },
+    ctaLink: { type: "string", displayName: "CTA Link" },
+    tagline: "string",
   },
   importPath: "./components/sections/ProsConsSection",
 });
