@@ -76,15 +76,15 @@ export function PainPointsSection({
     <section className="py-40 px-4 bg-dirt-deep" style={{ gridColumn: "1 / -1" }}>
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
         {/* Left Column - Headings and Checkboxes */}
-        <div className="flex flex-col">
+        <div className="flex flex-col justify-center">
           {heading && (
-            <h2 className="font-display font-bold text-3xl md:text-5xl text-dirt-pop uppercase mb-4">
+            <h2 className="font-display font-bold text-4xl md:text-7xl text-dirt-pop uppercase mb-4">
               {heading}
             </h2>
           )}
 
           {subheading && (
-            <h3 className="font-display font-bold text-xl md:text-2xl text-dirt-pop uppercase mb-8">
+            <h3 className="mt-16 font-display font-bold text-xl md:text-4xl text-dirt-pop uppercase mb-8">
               {subheading}
             </h3>
           )}
@@ -98,8 +98,8 @@ export function PainPointsSection({
         </div>
 
         {/* Right Column - Photo with Border and Caption */}
-        <div className="flex flex-col h-full">
-          <div className="relative grow border border-dirt-pop">
+        <div className="flex flex-col">
+          <div className="relative grow w-full aspect-square border border-dirt-pop">
             {currentImage ? (
               <Image
                 src={currentImage}
