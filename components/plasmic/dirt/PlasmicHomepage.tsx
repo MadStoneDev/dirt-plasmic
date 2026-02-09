@@ -275,7 +275,40 @@ function PlasmicHomepage__RenderFunc(props: {
                   )}
                 >
                   {
-                    "Building materials, methods, and tech have changed a LOT in the last 100 years.\n\nFrom 3D printing, advanced composites, and self-healing concrete to AI-driven predictive analytics, 5D BIM, and Digital Twins.\n\nBut your current brand isn't telling customers any of that. In fact, it's not telling them anything.\n\nYour business does so much more than your current messaging reflects. "
+                    "Building materials, methods, and tech have changed a LOT in the last 100 years."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aUagl
+                  )}
+                >
+                  {
+                    "From 3D printing, advanced composites, and self-healing concrete to AI-driven predictive analytics, 5D BIM, and Digital Twins."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fAXw2
+                  )}
+                >
+                  {
+                    "But your current brand isn't telling customers any of that. In fact, it's not telling them anything."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__roSGp
+                  )}
+                >
+                  {
+                    "Your business does so much more than your current messaging reflects. "
                   }
                 </div>
                 <div

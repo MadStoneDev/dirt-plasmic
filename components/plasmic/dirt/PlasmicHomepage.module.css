@@ -65,6 +65,46 @@
   height: auto;
   max-width: 100%;
   font-size: 20px;
+  color: #30261d;
+  font-family: "Uncut Sans";
+  line-height: 150%;
+  margin-bottom: 15px;
+  min-width: 0;
+}
+.text__aUagl {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-family: "Uncut Sans";
+  font-size: 20px;
+  color: #30261d;
+  line-height: 150%;
+  margin-bottom: 15px;
+  min-width: 0;
+}
+.text__fAXw2 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-family: "Uncut Sans";
+  font-size: 20px;
+  color: #30261d;
+  line-height: 150%;
+  margin-bottom: 15px;
+  min-width: 0;
+}
+.text__roSGp {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-family: "Uncut Sans";
+  font-size: 20px;
+  color: #30261d;
+  line-height: 150%;
+  margin-bottom: 15px;
   min-width: 0;
 }
 .text__eDUmi {
@@ -74,6 +114,8 @@
   max-width: 100%;
   font-size: 28px;
   font-weight: 700;
+  font-family: "Uncut Sans";
+  color: #30261d;
   min-width: 0;
 }
 .painPointsSection:global(.__wab_instance) {
