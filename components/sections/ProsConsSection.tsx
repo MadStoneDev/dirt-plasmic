@@ -73,9 +73,9 @@ export function ProsConsSection({
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <h2 className="font-display font-bold text-3xl md:text-5xl uppercase mb-12 text-center">
-          <span className="text-dirt-deep">{headingStart} </span>
+          <span className="text-dirt-deep">{headingStart}</span>
           <span className="text-dirt-off-white">{headingHighlight}</span>
-          <span className="text-dirt-deep"> {headingEnd}</span>
+          <span className="text-dirt-deep">{headingEnd}</span>
         </h2>
 
         {/* Two Columns */}

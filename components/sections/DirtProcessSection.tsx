@@ -84,9 +84,9 @@ export function DirtProcessSection({
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <h2 className="font-display font-bold text-3xl md:text-5xl uppercase mb-16 text-center">
-          <span className="text-dirt-deep">{headingStart} </span>
+          <span className="text-dirt-deep">{headingStart}</span>
           <span className="text-dirt-pop">{headingHighlight}</span>
-          <span className="text-dirt-deep"> {headingEnd}</span>
+          <span className="text-dirt-deep">{headingEnd}</span>
         </h2>
 
         {/* Process Steps */}
@@ -97,22 +97,20 @@ export function DirtProcessSection({
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row gap-12 ${isEven ? "" : "lg:flex-row-reverse"}`}
-                style={{ minHeight: "800px" }}
+                className={`flex flex-col gap-12 ${isEven ? "lg:flex-row-reverse" : "lg:flex-row"}`}
               >
                 {/* Info Column */}
                 <div
-                  className="bg-dirt-deep p-8 flex flex-col"
-                  style={{ width: "100%", maxWidth: "512px" }}
-                >
+                  className="bg-dirt-deep p-12 w-full max-w-[37%] flex flex-col"
+                  >
                   {step.heading && (
-                    <h3 className="font-display font-bold text-2xl md:text-3xl text-dirt-pop uppercase mb-4">
+                    <h3 className="font-display font-bold text-2xl md:text-4xl text-dirt-pop uppercase mb-4">
                       {step.heading}
                     </h3>
                   )}
 
                   {step.description && (
-                    <p className="text-dirt-pop font-sans whitespace-pre-line flex-grow">
+                    <p className="text-dirt-pop font-san text-lg whitespace-pre-line flex-grow">
                       {step.description}
                     </p>
                   )}
@@ -122,8 +120,8 @@ export function DirtProcessSection({
                       {step.tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="px-4 py-2 font-sans text-sm text-dirt-pop"
-                          style={{ backgroundColor: "rgba(254, 92, 2, 0.15)" }}
+                          className="px-3 py-1 font-display uppercase text-xs font-medium text-dirt-pop"
+                          style={{ backgroundColor: "rgba(254, 92, 2, 0.15)", letterSpacing: "1px" }}
                         >
                           {tag}
                         </span>
@@ -133,7 +131,7 @@ export function DirtProcessSection({
                 </div>
 
                 {/* Image Column */}
-                <div className="flex-grow relative min-h-[400px] lg:min-h-0">
+                <div className="grow relative min-h-100 lg:min-h-0 aspect-square border-[1.5px] border-dirt-black">
                   {step.image ? (
                     <Image
                       src={step.image}
@@ -155,17 +153,17 @@ export function DirtProcessSection({
         {/* Bottom CTA Rectangle */}
         {(bottomHeading || bottomDescription) && (
           <div className="mt-16 bg-dirt-green p-8 md:p-12">
-            <div className="grid lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-1">
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-5">
                 {bottomHeading && (
-                  <h3 className="font-display font-bold text-2xl md:text-3xl text-dirt-deep uppercase">
+                  <h3 className="font-display font-bold text-2xl md:text-4xl text-dirt-deep">
                     {bottomHeading}
                   </h3>
                 )}
               </div>
-              <div className="lg:col-span-2">
+              <div className="lg:col-span-7 items-center">
                 {bottomDescription && (
-                  <p className="text-dirt-deep font-sans text-lg whitespace-pre-line">
+                  <p className="text-dirt-deep font-sans text-base whitespace-pre-line">
                     {bottomDescription}
                   </p>
                 )}

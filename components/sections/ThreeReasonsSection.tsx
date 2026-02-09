@@ -42,9 +42,9 @@ export function ThreeReasonsSection({
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           <div className="lg:col-span-2">
             <h2 className="font-display font-bold text-3xl md:text-5xl uppercase mb-6">
-              <span className="text-dirt-deep">{headingStart} </span>
+              <span className="text-dirt-deep">{headingStart}</span>
               <span className="text-dirt-pop">{headingHighlight}</span>
-              <span className="text-dirt-deep"> {headingEnd}</span>
+              <span className="text-dirt-deep">{headingEnd}</span>
             </h2>
             {description && (
               <p className="text-lg text-dirt-deep/80 font-sans whitespace-pre-line">

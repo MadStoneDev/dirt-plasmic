@@ -96,7 +96,7 @@ export function DirtFilesSection({
   file3Item3Heading,
   file3Item3Description,
 }: DirtFilesSectionProps) {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const files = [
     {
@@ -140,27 +140,33 @@ export function DirtFilesSection({
     },
   ].filter((f) => f.heading);
 
-  const currentImage = activeIndex !== null ? files[activeIndex]?.image : files[0]?.image;
+  const currentImage =
+    activeIndex !== null ? files[activeIndex]?.image : files[0]?.image;
 
   return (
-    <section className="py-16 px-4 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
+    <section
+      className="py-40 px-8 bg-dirt-deep"
+      style={{ gridColumn: "1 / -1" }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-12">
-          <h2 className="font-display font-bold text-3xl md:text-5xl uppercase mb-6">
-            <span className="text-dirt-deep">{headingStart} </span>
-            <span className="text-dirt-pop">{headingHighlight}</span>
-            <span className="text-dirt-deep"> {headingEnd}</span>
+        <div className="mb-20">
+          <h2 className="font-display font-bold text-5xl md:text-7xl mb-6">
+            <span className="text-dirt-pop">{headingStart}</span>
+            <span className="text-dirt-off-white uppercase">
+              {headingHighlight}
+            </span>
+            <span className="text-dirt-pop">{headingEnd}</span>
           </h2>
           {description && (
-            <p className="text-lg text-dirt-deep/80 font-sans max-w-3xl whitespace-pre-line">
+            <p className="text-2xl text-dirt-pop font-sans max-w-3xl whitespace-pre-line">
               {description}
             </p>
           )}
         </div>
 
         {/* Two Column Layout - 45% / 55% */}
-        <div className="grid lg:grid-cols-[45fr_55fr] gap-8">
+        <div className="grid lg:grid-cols-[40fr_60fr] gap-8">
           {/* Left - Accordion */}
           <div className="flex flex-col">
             {files.map((file, index) => {
@@ -177,25 +183,36 @@ export function DirtFilesSection({
                     }`}
                   >
                     {isActive && (
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex gap-2">
-                          {file.tag1 && (
-                            <span className="px-3 py-1 bg-dirt-deep/20 text-dirt-off-white text-sm font-sans">
+                      <div className="flex items-stretch justify-end gap-2 mb-4">
+                        {file.tag1 && (
+                            <span
+                              className="px-3 py-1 flex items-center justify-center bg-white/10 text-dirt-off-white uppercase text-xs font-display font-medium"
+                              style={{ letterSpacing: "1px" }}
+                            >
                               {file.tag1}
                             </span>
                           )}
                           {file.tag2 && (
-                            <span className="px-3 py-1 bg-dirt-deep/20 text-dirt-off-white text-sm font-sans">
+                            <span
+                              className="px-3 py-1 flex items-center justify-center bg-white/10 text-dirt-off-white uppercase text-xs font-display font-medium"
+                              style={{ letterSpacing: "1px" }}
+                            >
                               {file.tag2}
                             </span>
                           )}
-                        </div>
                         {file.buttonLabel && file.buttonLink && (
                           <a
                             href={file.buttonLink}
-                            className="px-4 py-2 bg-dirt-deep text-dirt-off-white font-sans text-sm hover:bg-dirt-deep/80 transition-colors"
+                            className="px-4 py-1 flex items-center gap-1 bg-dirt-deep text-dirt-off-white uppercase font-display text-sm font-bold hover:bg-dirt-deep/80 transition-colors"
                             onClick={(e) => e.stopPropagation()}
                           >
+                            <Image
+                              src={"/Download 90deg Arrow.png"}
+                              alt={"Download Arrow"}
+                              width={20}
+                              height={14}
+                              className={`w-3 h-2`}
+                            />
                             {file.buttonLabel}
                           </a>
                         )}
@@ -203,7 +220,7 @@ export function DirtFilesSection({
                     )}
 
                     <h3
-                      className={`font-display font-bold text-xl md:text-2xl uppercase transition-colors ${
+                      className={`font-display font-bold text-3xl md:text-5xl uppercase transition-colors ${
                         isActive ? "text-dirt-off-white" : "text-dirt-pop/50"
                       }`}
                     >
@@ -249,7 +266,9 @@ export function DirtFilesSection({
               />
             ) : (
               <div className="w-full h-full bg-dirt-deep/10 flex items-center justify-center">
-                <span className="text-dirt-deep/50 font-sans">Upload images</span>
+                <span className="text-dirt-deep/50 font-sans">
+                  Upload images
+                </span>
               </div>
             )}
           </div>

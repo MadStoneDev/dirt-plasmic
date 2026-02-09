@@ -140,9 +140,9 @@ export function DirtFrameworkSection({
       <div className="px-4 pt-16 pb-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display font-bold text-3xl md:text-5xl uppercase mb-6">
-            <span className="text-dirt-deep">{headingStart} </span>
+            <span className="text-dirt-deep">{headingStart}</span>
             <span className="text-dirt-pop">{headingHighlight}</span>
-            <span className="text-dirt-deep"> {headingEnd}</span>
+            <span className="text-dirt-deep">{headingEnd}</span>
           </h2>
           {description && (
             <p className="text-lg text-dirt-deep/80 font-sans max-w-3xl whitespace-pre-line">
