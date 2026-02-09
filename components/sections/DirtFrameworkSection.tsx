@@ -187,7 +187,7 @@ export function DirtFrameworkSection({
                         className="absolute inset-0"
                         style={{
                           backgroundColor: `var(--color-${block.overlayColor || "dirt-deep"})`,
-                          opacity: 0.5,
+                          opacity: 0.75
                         }}
                       />
 
