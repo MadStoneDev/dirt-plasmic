@@ -18,13 +18,13 @@ export function PainPointCheckbox({ label }: PainPointCheckboxProps) {
         className="sr-only peer"
       />
       <span
-        className={`flex items-center justify-center w-6 h-6 shrink-0 rounded border border-dirt-pop transition-all duration-200 ${
+        className={`flex items-center justify-center w-10 h-10 shrink-0 border border-dirt-pop transition-all duration-200 ${
           checked ? "bg-dirt-pop opacity-100" : "bg-white opacity-20"
         }`}
       >
         {checked && (
           <svg
-            className="w-4 h-4 text-dirt-deep"
+            className="w-6 h-6 text-dirt-deep"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

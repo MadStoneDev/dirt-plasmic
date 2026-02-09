@@ -115,7 +115,7 @@ export function PainPointsSection({
           </div>
 
           {currentCaption && (
-            <p className="p-2 bg-dirt-pop font-sans text-center uppercase transition-all duration-300">
+            <p className="py-2 px-6 bg-dirt-pop font-display text-dirt-deep font-bold text-center text-xl uppercase transition-all duration-300">
               {currentCaption}
             </p>
           )}
