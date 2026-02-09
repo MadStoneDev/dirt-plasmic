@@ -109,6 +109,11 @@
           "id": "yh4HkZPfgdh9",
           "name": "Dirt Logo.png",
           "filePath": "../public/plasmic/dirt/images/dirtLogoPng.png"
+        },
+        {
+          "id": "DExKdeRTgw9F",
+          "name": "man sitting on a chair on the moon.jpg",
+          "filePath": "../public/plasmic/dirt/images/manSittingOnAChairOnTheMoonJpg.jpg"
         }
       ],
       "indirect": false,

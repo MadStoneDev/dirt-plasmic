@@ -258,6 +258,45 @@ function PlasmicHomepage__RenderFunc(props: {
           </CompanyCarouselSection>
           <InfoSection
             className={classNames("__wab_instance", sty.infoSection__tRzrb)}
+            ctaLabel={"Dig in with a call"}
+            ctaLink={"/"}
+            heading={
+              "The next evolution of property, construction, and built-tech is here"
+            }
+            image={"/plasmic/dirt/images/manSittingOnAChairOnTheMoonJpg.jpg"}
+            layout={"imageLeft"}
+            richText={
+              <React.Fragment>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__wkMGr
+                  )}
+                >
+                  {
+                    "Building materials, methods, and tech have changed a LOT in the last 100 years.\n\nFrom 3D printing, advanced composites, and self-healing concrete to AI-driven predictive analytics, 5D BIM, and Digital Twins.\n\nBut your current brand isn't telling customers any of that. In fact, it's not telling them anything.\n\nYour business does so much more than your current messaging reflects. "
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__eDUmi
+                  )}
+                >
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"DIRT is here to change that."}
+                    </span>
+                  </React.Fragment>
+                </div>
+              </React.Fragment>
+            }
+            subheading={"Shouldn't your brand evolve too?"}
           />
 
           <PainPointsSection
