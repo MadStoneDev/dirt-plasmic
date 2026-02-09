@@ -99,22 +99,28 @@ export function FooterSection({
   };
 
   return (
-    <footer className={`pt-40 min-h-[2460px]`} style={{ gridColumn: "1 / -1", backgroundColor: backgroundColor }}>
+    <footer className={`p-7.5`}
+      style={{
+        gridColumn: "1 / -1",
+        backgroundColor: backgroundColor || "#5C0004",
+        backgroundImage: `url(${backgroundImage})` || "",
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center bottom",
+      }}
+    >
       {/* Hero/Form Section */}
-      <div
-        className="relative flex flex-col justify-end"
-        
-      >
-        {backgroundImage && (
-          <Image
-            src={backgroundImage}
-            alt=""
-            fill
-            className="w-full object-contain"
-          />
-        )}
+      <div className="relative flex flex-col justify-end">
+        {/*{backgroundImage && (*/}
+        {/*  <Image*/}
+        {/*    src={backgroundImage}*/}
+        {/*    alt=""*/}
+        {/*    fill*/}
+        {/*    className="w-full object-contain"*/}
+        {/*  />*/}
+        {/*)}*/}
 
-        <div className="relative h-[970px] z-10 max-w-3xl mx-auto text-center">
+        <div className="relative pt-40 pb-233.75 z-10 max-w-3xl mx-auto text-center">
           {heading1 && (
             <h2 className="font-display font-bold text-3xl md:text-5xl text-dirt-off-white uppercase mb-2">
               {heading1}
@@ -138,14 +144,18 @@ export function FooterSection({
                 type="text"
                 placeholder="Name"
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 className="px-4 py-3 bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
               />
               <input
                 type="email"
                 placeholder="Email"
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 className="px-4 py-3 bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
               />
             </div>
@@ -153,14 +163,18 @@ export function FooterSection({
               type="text"
               placeholder="Company"
               value={formData.company}
-              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, company: e.target.value })
+              }
               className="px-4 py-3 bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
             />
             <textarea
               placeholder="Tell us about your project"
               rows={4}
               value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
               className="px-4 py-3 bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop resize-none"
             />
             <button

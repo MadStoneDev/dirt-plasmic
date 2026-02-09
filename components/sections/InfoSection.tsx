@@ -22,7 +22,7 @@ export function InfoSection({
   ctaLink,
   layout = "imageRight",
 }: InfoSectionProps) {
-  const isReversed = layout === "imageLeft";
+  const isReversed = layout === "imageRight";
 
   return (
     <section className="py-16 px-4 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
