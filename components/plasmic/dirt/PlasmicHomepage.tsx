@@ -470,6 +470,7 @@ function PlasmicHomepage__RenderFunc(props: {
               "Dig deep to unearth your brand. This is the groundwork."
             }
             block1Heading={"Discover"}
+            block1OverlayColor={"dirt-deep"}
             block2BackgroundImage={
               "/plasmic/dirt/images/identifyBackgroundJpg.jpg"
             }
@@ -477,6 +478,7 @@ function PlasmicHomepage__RenderFunc(props: {
               "Find the X-factor that makes you different. Plant your stake."
             }
             block2Heading={"Identify"}
+            block2OverlayColor={"dirt-pop"}
             block3BackgroundImage={
               "/plasmic/dirt/images/refineBackgroundJpg.jpg"
             }
@@ -484,11 +486,14 @@ function PlasmicHomepage__RenderFunc(props: {
               "Sift out the jargon to find the jewels. This is where messaging and positioning combine."
             }
             block3Heading={"Refine"}
+            block3OverlayColor={"dirt-green"}
             block4BackgroundImage={"/plasmic/dirt/images/tellBackgroundJpg.jpg"}
             block4Description={
               "Share your message with the distinctive voice and vibe your brand has been missing."
             }
             block4Heading={"Tell"}
+            block4OverlayColor={"dirt-blue"}
+            block5OverlayColor={"dirt-deep"}
             className={classNames("__wab_instance", sty.dirtFrameworkSection)}
             description={
               "Whether you\u2019re reimagining a legacy brand, targeting new markets, or pushing for more clients, we\u2019ll position your brand to grow."
@@ -496,6 +501,7 @@ function PlasmicHomepage__RenderFunc(props: {
             headingEnd={"framework"}
             headingHighlight={"DIRT"}
             headingStart={"The"}
+            reversed={false}
           />
 
           <DirtProcessSection
