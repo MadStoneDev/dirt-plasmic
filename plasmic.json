@@ -144,6 +144,31 @@
           "id": "4uXaWHveaa-r",
           "name": "Pain Points - Building 4.jpg",
           "filePath": "../public/plasmic/dirt/images/painPointsBuilding4Jpg.jpg"
+        },
+        {
+          "id": "j8RUpS5ovWWe",
+          "name": "Crane in Dirt with Silos.png",
+          "filePath": "../public/plasmic/dirt/images/craneInDirtWithSilosPng.png"
+        },
+        {
+          "id": "8-AsJPC8IuXd",
+          "name": "Discover Background.jpg",
+          "filePath": "../public/plasmic/dirt/images/discoverBackgroundJpg.jpg"
+        },
+        {
+          "id": "wtdbcTE84OEG",
+          "name": "Identify Background.jpg",
+          "filePath": "../public/plasmic/dirt/images/identifyBackgroundJpg.jpg"
+        },
+        {
+          "id": "T-DvkdR9a9uJ",
+          "name": "Refine Background.jpg",
+          "filePath": "../public/plasmic/dirt/images/refineBackgroundJpg.jpg"
+        },
+        {
+          "id": "Fd1Wreo1yB5E",
+          "name": "Tell Background.jpg",
+          "filePath": "../public/plasmic/dirt/images/tellBackgroundJpg.jpg"
         }
       ],
       "indirect": false,

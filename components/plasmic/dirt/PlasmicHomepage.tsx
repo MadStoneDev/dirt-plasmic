@@ -402,6 +402,18 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-name={"signsCtaSection"}
             data-plasmic-override={overrides.signsCtaSection}
             className={classNames("__wab_instance", sty.signsCtaSection)}
+            ctaLabel={"Dig in with a call"}
+            ctaLink={"/"}
+            headingEnd={"y"}
+            headingHighlight={"DIRT"}
+            headingStart={"Signs it\u2019s time to get "}
+            item1Text={
+              "You\u2019re entering a new market or offering new services"
+            }
+            item2Text={
+              "You\u2019re getting ready to expand or merge your business, and need to look cohesive"
+            }
+            item3Text={"Your brand is outdated, undefined, or just plain weak"}
           />
 
           <TestimonialSection
@@ -427,12 +439,63 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-name={"threeReasonsSection"}
             data-plasmic-override={overrides.threeReasonsSection}
             className={classNames("__wab_instance", sty.threeReasonsSection)}
+            description={
+              "Whether you\u2019re reimagining a legacy brand, targeting new markets, or pushing for more clients, we\u2019ll position your brand to grow."
+            }
+            headerImage={"/plasmic/dirt/images/craneInDirtWithSilosPng.png"}
+            headingEnd={"gives you three things you won\u2019t find elsewhere"}
+            headingHighlight={"DIRT"}
+            headingStart={``}
+            reason1Description={
+              "Don\u2019t waste your time explaining the basics to us. We eat, sleep, and breathe construction, ConTech, PropTech, building materials, and property  development (which might explain the silicosis)."
+            }
+            reason1Heading={"ABC specialists"}
+            reason2Description={
+              "Smart strategy, memorable messaging, and striking design \u2014 all done under one roof."
+            }
+            reason2Heading={"Everything in one"}
+            reason3Description={
+              "Our DIRT Framework digs deep to unearth what makes you different. Then we build a brand that wins you more of the right projects."
+            }
+            reason3Heading={"Proven approach"}
           />
 
           <DirtFrameworkSection
             data-plasmic-name={"dirtFrameworkSection"}
             data-plasmic-override={overrides.dirtFrameworkSection}
+            block1BackgroundImage={
+              "/plasmic/dirt/images/discoverBackgroundJpg.jpg"
+            }
+            block1Description={
+              "Dig deep to unearth your brand. This is the groundwork."
+            }
+            block1Heading={"Discover"}
+            block2BackgroundImage={
+              "/plasmic/dirt/images/identifyBackgroundJpg.jpg"
+            }
+            block2Description={
+              "Find the X-factor that makes you different. Plant your stake."
+            }
+            block2Heading={"Identify"}
+            block3BackgroundImage={
+              "/plasmic/dirt/images/refineBackgroundJpg.jpg"
+            }
+            block3Description={
+              "Sift out the jargon to find the jewels. This is where messaging and positioning combine."
+            }
+            block3Heading={"Refine"}
+            block4BackgroundImage={"/plasmic/dirt/images/tellBackgroundJpg.jpg"}
+            block4Description={
+              "Share your message with the distinctive voice and vibe your brand has been missing."
+            }
+            block4Heading={"Tell"}
             className={classNames("__wab_instance", sty.dirtFrameworkSection)}
+            description={
+              "Whether you\u2019re reimagining a legacy brand, targeting new markets, or pushing for more clients, we\u2019ll position your brand to grow."
+            }
+            headingEnd={"framework"}
+            headingHighlight={"DIRT"}
+            headingStart={"The"}
           />
 
           <DirtProcessSection
