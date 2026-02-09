@@ -64,6 +64,7 @@ import { CompanyCarouselSection } from "../../sections/CompanyCarouselSection"; 
 import { BrandItem } from "../../sections/BrandItem"; // plasmic-import: n6yARC8wCw5J/codeComponent
 import { InfoSection } from "../../sections/InfoSection"; // plasmic-import: 3w9ZT_4EuJCw/codeComponent
 import { PainPointsSection } from "../../sections/PainPointsSection"; // plasmic-import: a6zcK0cc2pSa/codeComponent
+import { PainPointCheckbox } from "../../sections/PainPointCheckbox"; // plasmic-import: -4VXY6ZJhgvD/codeComponent
 import { SignsCTASection } from "../../sections/SignsCTASection"; // plasmic-import: 3hNXXIJF-DSf/codeComponent
 import { TestimonialSection } from "../../sections/TestimonialSection"; // plasmic-import: 19614fshNGrI/codeComponent
 import { ThreeReasonsSection } from "../../sections/ThreeReasonsSection"; // plasmic-import: wg-w-3Zg2_WL/codeComponent
@@ -335,7 +336,12 @@ function PlasmicHomepage__RenderFunc(props: {
           <PainPointsSection
             data-plasmic-name={"painPointsSection"}
             data-plasmic-override={overrides.painPointsSection}
-            caption={"Solid. You\u2019re all good."}
+            caption0={"Solid. You\u2019re all good."}
+            caption1={"Hmm...Some minor cracks"}
+            caption2={"Yep. You've got noticeable damage."}
+            caption3={"Things are starting to buckle."}
+            caption4={"Serious structural damage."}
+            caption5={"Total collapsing."}
             className={classNames("__wab_instance", sty.painPointsSection)}
             heading={"What\u2019s stopping clients from choosing you?"}
             image0={"/plasmic/dirt/images/painPointsBuilding0Jpg.jpg"}
@@ -347,8 +353,51 @@ function PlasmicHomepage__RenderFunc(props: {
             subheading={
               "Check the boxes that feel true to see if DIRT can help:"
             }
-          />
+          >
+            <PainPointCheckbox
+              className={classNames(
+                "__wab_instance",
+                sty.painPointCheckbox__xYxr
+              )}
+              label={"Trouble scaling beyond word-of-mouth referrals"}
+            />
 
+            <PainPointCheckbox
+              className={classNames(
+                "__wab_instance",
+                sty.painPointCheckbox__wNdgU
+              )}
+              label={
+                "Clients don\u2019t \u201cget\u201d what makes you different"
+              }
+            />
+
+            <PainPointCheckbox
+              className={classNames(
+                "__wab_instance",
+                sty.painPointCheckbox__m3L4Z
+              )}
+              label={"Losing bids to cheaper competitors"}
+            />
+
+            <PainPointCheckbox
+              className={classNames(
+                "__wab_instance",
+                sty.painPointCheckbox__nM1RJ
+              )}
+              label={"Limited visibility in new markets"}
+            />
+
+            <PainPointCheckbox
+              className={classNames(
+                "__wab_instance",
+                sty.painPointCheckbox__cYgsp
+              )}
+              label={
+                "Marketing results don\u2019t match the size of your ambitions"
+              }
+            />
+          </PainPointsSection>
           <SignsCTASection
             data-plasmic-name={"signsCtaSection"}
             data-plasmic-override={overrides.signsCtaSection}

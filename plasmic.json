@@ -248,6 +248,12 @@
           "name": "FooterSection",
           "displayName": "FooterSection",
           "componentImportPath": "./components/sections/FooterSection"
+        },
+        {
+          "id": "-4VXY6ZJhgvD",
+          "name": "PainPointCheckbox",
+          "displayName": "PainPointCheckbox",
+          "componentImportPath": "./components/sections/PainPointCheckbox"
         }
       ],
       "customFunctions": []
