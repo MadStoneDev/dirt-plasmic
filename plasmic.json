@@ -199,6 +199,16 @@
           "id": "AZg0qSaCsCGo",
           "name": "Tradie with gloves using tablet.jpg",
           "filePath": "../public/plasmic/dirt/images/tradieWithGlovesUsingTabletJpg.jpg"
+        },
+        {
+          "id": "smtel0GbCHmS",
+          "name": "Architect a table ontop of a dirt mound.jpg",
+          "filePath": "../public/plasmic/dirt/images/architectATableOntopOfADirtMoundJpg.jpg"
+        },
+        {
+          "id": "ec4-VeRxVcEh",
+          "name": "Laptop sitting on a dirt mound.jpg",
+          "filePath": "../public/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"
         }
       ],
       "indirect": false,

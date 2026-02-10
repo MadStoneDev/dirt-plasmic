@@ -549,7 +549,7 @@ function PlasmicHomepage__RenderFunc(props: {
             file1ButtonLabel={"Crack the File"}
             file1ButtonLink={"/"}
             file1Heading={"Core FDM"}
-            file1Image={"/plasmic/dirt/images/handOutOfDirtHoldingPhoneJpg.jpg"}
+            file1Image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
             file1Item1Description={
               "Core FDM was delivering major facade projects, but their brand didn\u2019t match the scale of the work. The website made them look like technical specialists, not the end-to-end facade partner they\u2019d become. As projects grew more complex, the gap started to hurt."
             }
@@ -567,6 +567,7 @@ function PlasmicHomepage__RenderFunc(props: {
             file2ButtonLabel={"Crack the File"}
             file2ButtonLink={"/"}
             file2Heading={"StudioMX"}
+            file2Image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
             file2Item1Description={
               "StudioMX delivered high-quality Revit modelling, coordination, and rendering for U.S. architects, but their brand didn\u2019t show it. The website read like a services list, which made them look like just another outsourcing team."
             }
@@ -584,6 +585,7 @@ function PlasmicHomepage__RenderFunc(props: {
             file3ButtonLabel={"Crack the file"}
             file3ButtonLink={"/"}
             file3Heading={"Techne"}
+            file3Image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
             file3Item1Heading={"The Pinch"}
             file3Item2Heading={"The Cringe"}
             file3Item3Heading={"The Solve"}
@@ -599,7 +601,10 @@ function PlasmicHomepage__RenderFunc(props: {
             ctaLabel={"We make it happen"}
             ctaLink={"/"}
             heading={"Our reputation is soiled"}
-            layout={"imageLeft"}
+            image={
+              "/plasmic/dirt/images/architectATableOntopOfADirtMoundJpg.jpg"
+            }
+            layout={"imageRight"}
             richText={
               <React.Fragment>
                 <div
@@ -654,6 +659,8 @@ function PlasmicHomepage__RenderFunc(props: {
               "If you want to play it safe (That\u2019s OSHA\u2019s job. Let\u2019s have some fun)"
             }
             consHeading={"Scroll past"}
+            ctaLabel={"Get in touch"}
+            ctaLink={"/"}
             headingEnd={"is right for you"}
             headingHighlight={" DIRT "}
             headingStart={"Ask your mother if playing in the"}
@@ -665,6 +672,7 @@ function PlasmicHomepage__RenderFunc(props: {
             }
             pro3={"If you find this stock photo as funny as we do"}
             prosHeading={"Dig in"}
+            tagline={"You can wash your hands later"}
           />
 
           <TestimonialSection
