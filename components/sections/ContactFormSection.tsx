@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { fmt } from "../../utils/formatText";
 
 export interface ContactFormSectionProps {
   heading?: string;
@@ -43,10 +44,10 @@ export function ContactFormSection({
       <div className="max-w-xl mx-auto">
         {heading && (
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-            {heading}
+            {fmt(heading)}
           </h2>
         )}
-        {subheading && <p className="text-lg text-gray-600 mb-8 text-center">{subheading}</p>}
+        {subheading && <p className="text-lg text-gray-600 mb-8 text-center">{fmt(subheading)}</p>}
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ReactNode } from "react";
+import { fmt } from "../../utils/formatText";
 
 export interface InfoSectionProps {
   heading?: string;
@@ -30,7 +31,7 @@ export function InfoSection({
       <div className="px-8 mx-auto">
         {heading && (
           <h2 className="font-display font-bold text-4xl md:text-6xl text-dirt-pop uppercase mb-12">
-            {heading}
+            {fmt(heading)}
           </h2>
         )}
 
@@ -54,7 +55,7 @@ export function InfoSection({
           <div className="lg:w-1/2 flex flex-col gap-6">
             {subheading && (
               <h3 className="font-display font-bold text-2xl md:text-4xl text-dirt-pop uppercase">
-                {subheading}
+                {fmt(subheading)}
               </h3>
             )}
 

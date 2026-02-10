@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { fmt } from "../../utils/formatText";
 
 export interface HeroSectionProps {
   heading?: string;
@@ -57,7 +58,7 @@ export function HeroSection({
       {heading && (
         <div className="pt-12 max-w-md sm:max-w-lg md:max-w-3xl">
           <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-7xl text-dirt-pop uppercase">
-            {heading}
+            {fmt(heading)}
           </h1>
         </div>
       )}

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ReactNode } from "react";
+import { fmt } from "../../utils/formatText";
 
 export interface ProcessTag {
   label: string;
@@ -84,9 +85,9 @@ export function DirtProcessSection({
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <h2 className="font-display font-bold text-3xl md:text-5xl uppercase mb-16 text-center">
-          <span className="text-dirt-deep">{headingStart}</span>
-          <span className="text-dirt-pop">{headingHighlight}</span>
-          <span className="text-dirt-deep">{headingEnd}</span>
+          <span className="text-dirt-deep">{fmt(headingStart)}</span>
+          <span className="text-dirt-pop">{fmt(headingHighlight)}</span>
+          <span className="text-dirt-deep">{fmt(headingEnd)}</span>
         </h2>
 
         {/* Process Steps */}

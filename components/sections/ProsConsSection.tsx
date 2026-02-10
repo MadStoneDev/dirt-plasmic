@@ -1,5 +1,7 @@
 "use client";
 
+import { fmt } from "../../utils/formatText";
+
 export interface ProsConsSectionProps {
   headingStart?: string;
   headingHighlight?: string;
@@ -79,9 +81,9 @@ export function ProsConsSection({
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <h2 className="mx-auto max-w-4xl font-display font-bold text-5xl md:text-7xl mb-20 text-center">
-          <span className="text-dirt-off-white">{headingStart}</span>
-          <span className="text-dirt-deep">{headingHighlight}</span>
-          <span className="text-dirt-off-white">{headingEnd}</span>
+          <span className="text-dirt-off-white">{fmt(headingStart)}</span>
+          <span className="text-dirt-deep">{fmt(headingHighlight)}</span>
+          <span className="text-dirt-off-white">{fmt(headingEnd)}</span>
         </h2>
 
         {/* Two Columns */}
@@ -89,7 +91,7 @@ export function ProsConsSection({
           {/* Cons Column */}
           <div className="bg-dirt-deep py-14 px-12">
             <h3 className="font-display font-bold text-4xl text-dirt-pop mb-10">
-              {consHeading}
+              {fmt(consHeading)}
             </h3>
             <div className="flex flex-col gap-10">
               {cons.map((con, index) => (
@@ -108,7 +110,7 @@ export function ProsConsSection({
           {/* Pros Column */}
           <div className="bg-dirt-deep py-14 px-12">
             <h3 className="font-display font-bold text-4xl text-dirt-green mb-10">
-              {prosHeading}
+              {fmt(prosHeading)}
             </h3>
             <div className="flex flex-col gap-10">
               {pros.map((pro, index) => (

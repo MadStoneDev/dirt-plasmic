@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { fmt } from "../../utils/formatText";
 
 export interface FooterSectionProps {
   // Hero area
@@ -118,7 +119,7 @@ export function FooterSection({
               className="mx-auto max-w-112.5 font-display font-bold text-4xl md:text-6xl text-dirt-off-white mb-2"
               style={{ lineHeight: "105%", letterSpacing: "-2%" }}
             >
-              {heading1}
+              {fmt(heading1)}
             </h2>
           )}
           {heading2 && (
@@ -126,7 +127,7 @@ export function FooterSection({
               className="font-display font-bold text-4xl md:text-6xl text-dirt-pop mb-8"
               style={{ lineHeight: "105%", letterSpacing: "-2%" }}
             >
-              {heading2}
+              {fmt(heading2)}
             </h2>
           )}
           {description && (

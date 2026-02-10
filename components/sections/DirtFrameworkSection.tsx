@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { fmt } from "../../utils/formatText";
 
 export interface DirtFrameworkSectionProps {
   headingStart?: string;
@@ -140,9 +141,9 @@ export function DirtFrameworkSection({
       <div className="px-4 pt-16 pb-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display font-bold text-3xl md:text-5xl uppercase mb-6">
-            <span className="text-dirt-deep">{headingStart}</span>
-            <span className="text-dirt-pop">{headingHighlight}</span>
-            <span className="text-dirt-deep">{headingEnd}</span>
+            <span className="text-dirt-deep">{fmt(headingStart)}</span>
+            <span className="text-dirt-pop">{fmt(headingHighlight)}</span>
+            <span className="text-dirt-deep">{fmt(headingEnd)}</span>
           </h2>
           {description && (
             <p className="text-lg text-dirt-deep/80 font-sans max-w-3xl whitespace-pre-line">
@@ -211,7 +212,7 @@ export function DirtFrameworkSection({
                       <div className="relative z-10 p-8 pt-20 grid md:grid-cols-2 gap-8">
                         {block.heading && (
                           <h4 className="font-display font-bold text-4xl md:text-6xl text-dirt-off-white uppercase">
-                            {block.heading}
+                            {fmt(block.heading)}
                           </h4>
                         )}
                         {block.description && (

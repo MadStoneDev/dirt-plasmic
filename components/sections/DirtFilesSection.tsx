@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { fmt } from "../../utils/formatText";
 
 export interface FileItem {
   heading: string;
@@ -152,11 +153,11 @@ export function DirtFilesSection({
         {/* Header */}
         <div className="mb-20">
           <h2 className="font-display font-bold text-5xl md:text-7xl mb-6">
-            <span className="text-dirt-pop">{headingStart}</span>
+            <span className="text-dirt-pop">{fmt(headingStart)}</span>
             <span className="text-dirt-off-white uppercase">
-              {headingHighlight}
+              {fmt(headingHighlight)}
             </span>
-            <span className="text-dirt-pop">{headingEnd}</span>
+            <span className="text-dirt-pop">{fmt(headingEnd)}</span>
           </h2>
           {description && (
             <p className="text-2xl text-dirt-pop font-sans max-w-3xl whitespace-pre-line">

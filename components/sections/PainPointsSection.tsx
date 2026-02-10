@@ -2,6 +2,7 @@
 
 import { useState, ReactNode } from "react";
 import Image from "next/image";
+import { fmt } from "../../utils/formatText";
 
 export interface PainPointsSectionProps {
   heading?: string;
@@ -79,13 +80,13 @@ export function PainPointsSection({
         <div className="flex flex-col justify-center">
           {heading && (
             <h2 className="font-display font-bold text-4xl md:text-7xl text-dirt-pop uppercase mb-4">
-              {heading}
+              {fmt(heading)}
             </h2>
           )}
 
           {subheading && (
             <h3 className="mt-16 font-display font-bold text-xl md:text-4xl text-dirt-pop uppercase mb-8">
-              {subheading}
+              {fmt(subheading)}
             </h3>
           )}
 

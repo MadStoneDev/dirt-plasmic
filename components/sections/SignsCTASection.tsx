@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
+import { fmt } from "../../utils/formatText";
 
 export interface SignsCTAItem {
   text?: string;
@@ -54,9 +55,9 @@ export function SignsCTASection({
       <div className="max-w-7xl mx-auto">
         {/* Heading with highlighted word */}
         <h2 className="font-display font-bold text-3xl md:text-5xl uppercase text-center mb-16">
-          <span className="text-dirt-deep">{headingStart}</span>
-          <span className="text-dirt-pop">{headingHighlight}</span>
-          <span className="text-dirt-deep">{headingEnd}</span>
+          <span className="text-dirt-deep">{fmt(headingStart)}</span>
+          <span className="text-dirt-pop">{fmt(headingHighlight)}</span>
+          <span className="text-dirt-deep">{fmt(headingEnd)}</span>
         </h2>
 
         {/* Three Column Section */}
