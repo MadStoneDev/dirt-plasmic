@@ -100,7 +100,7 @@ export function FooterSection({
 
   return (
     <footer
-      className={`p-7.5`}
+      className={`pt-40 px-8 pb-8`}
       style={{
         gridColumn: "1 / -1",
         backgroundColor: backgroundColor || "#5C0004",
@@ -111,17 +111,8 @@ export function FooterSection({
       }}
     >
       {/* Hero/Form Section */}
-      <div className="relative flex flex-col justify-end">
-        {/*{backgroundImage && (*/}
-        {/*  <Image*/}
-        {/*    src={backgroundImage}*/}
-        {/*    alt=""*/}
-        {/*    fill*/}
-        {/*    className="w-full object-contain"*/}
-        {/*  />*/}
-        {/*)}*/}
-
-        <div className="relative pt-40 pb-233.75 z-10 max-w-3xl mx-auto text-center">
+      <div className="pb-235 relative flex flex-col justify-end">
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
           {heading1 && (
             <h2
               className="mx-auto max-w-112.5 font-display font-bold text-4xl md:text-6xl text-dirt-off-white mb-2"
@@ -189,7 +180,7 @@ export function FooterSection({
             />
             <button
               type="submit"
-              className="px-8 py-4 flex items-center justify-center gap-1 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-lg hover:bg-dirt-green hover:text-dirt-deep transition-colors duration-300"
+              className="px-8 py-4 flex items-center justify-center gap-1 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-lg hover:bg-dirt-pop-hover transition-all duration-300"
             >
               <Image
                 src={`/90deg Arrow.png`}
@@ -205,11 +196,11 @@ export function FooterSection({
       </div>
 
       {/* Footer Columns Section */}
-      <div className="bg-dirt-deep py-16 px-4 relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div className="bg-dirt-deep p-12 relative">
+        <div className="mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
             {/* Column 1 - Logo & Description */}
-            <div>
+            <div className={`col-span-2 md:col-span-1`}>
               {footerLogo && (
                 <Image
                   src={footerLogo}
@@ -227,7 +218,7 @@ export function FooterSection({
             </div>
 
             {/* Column 2 - Newsletter */}
-            <div>
+            <div className={`col-span-2`}>
               {newsletterHeading && (
                 <h4 className="font-display font-bold text-lg text-dirt-pop uppercase mb-4">
                   {newsletterHeading}
@@ -256,7 +247,7 @@ export function FooterSection({
             </div>
 
             {/* Column 3 - Contact */}
-            <div>
+            <div className={`col-span-2`}>
               {contactHeading && (
                 <h4 className="font-display font-bold text-lg text-dirt-pop uppercase mb-4">
                   {contactHeading}
@@ -270,7 +261,7 @@ export function FooterSection({
             </div>
 
             {/* Column 4 - Links */}
-            <div>
+            <div className={`col-span-2 md:col-span-1`}>
               {linksHeading && (
                 <h4 className="font-display font-bold text-lg text-dirt-pop uppercase mb-4">
                   {linksHeading}
@@ -292,7 +283,7 @@ export function FooterSection({
 
           {/* Separator */}
           {separatorImage ? (
-            <div className="relative h-[2px] mb-8">
+            <div className="relative h-0.5 mb-12">
               <Image
                 src={separatorImage}
                 alt=""
