@@ -1,4 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700&family=Roboto+Condensed%3Aital%2Cwght%400%2C400%3B0%2C700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C700&family=Roboto+Condensed%3Aital%2Cwght%400%2C400%3B0%2C700%3B1%2C400%3B1%2C700&display=swap");
+
+.plasmic_tokens {
+  --token-_RnBOZOd29Kw: #ffffff;
+  --plasmic-token-unnamed-style-token: var(--token-_RnBOZOd29Kw);
+  --token-DH19M0EtFwnR: #fafaf2;
+  --plasmic-token-dirt-off-white: var(--token-DH19M0EtFwnR);
+  --token-88Oxp1lx31pA: #5c0004;
+  --plasmic-token-dirt-deep-red: var(--token-88Oxp1lx31pA);
+  --token-5joSP94EMVrt: #fe5c02;
+  --plasmic-token-dirt-pop-red: var(--token-5joSP94EMVrt);
+  --token-61WcDsxngnRl: #30261d;
+  --plasmic-token-dirt-black: var(--token-61WcDsxngnRl);
+  --token-AoZrGFsuVse6: #c0d6ff;
+  --plasmic-token-dirt-blue: var(--token-AoZrGFsuVse6);
+  --token-EcYcoCQukyZK: #c2d500;
+  --plasmic-token-dirt-green: var(--token-EcYcoCQukyZK);
+}
 
 .plasmic_tokens {
   --plsmc-standard-width: 800px;

@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { FooterSection } from "../../sections/FooterSection"; // plasmic-import: I7Z-mxcvFz5C/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
 
@@ -80,6 +81,12 @@ export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicAbout__OverridesType = {
   root?: Flex__<"div">;
+  aboutHero?: Flex__<"section">;
+  ifWeHearTheWord?: Flex__<"section">;
+  link?: Flex__<"a"> & Partial<LinkProps>;
+  builtWithSpecialists?: Flex__<"section">;
+  section?: Flex__<"section">;
+  footerSection?: Flex__<typeof FooterSection>;
 };
 
 export interface DefaultAboutProps {}
@@ -123,6 +130,8 @@ function PlasmicAbout__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const globalVariants = _useGlobalVariants();
+
   const styleTokensClassNames = _useStyleTokens();
 
   return (
@@ -149,20 +158,448 @@ function PlasmicAbout__RenderFunc(props: {
             styleTokensClassNames,
             sty.root
           )}
-        />
+        >
+          <section
+            data-plasmic-name={"aboutHero"}
+            data-plasmic-override={overrides.aboutHero}
+            className={classNames(projectcss.all, sty.aboutHero)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox___8QbQv)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__hOtI
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{"We build "}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "var(--token-5joSP94EMVrt)" }}
+                  >
+                    {"brands"}
+                  </span>
+                  <React.Fragment>{" that win "}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "var(--token-5joSP94EMVrt)" }}
+                  >
+                    {"bids"}
+                  </span>
+                </React.Fragment>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__x8Tmz
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "In industries where every bid and every project counts, the brands that communicate best will win again and again. "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {
+                      "We know exactly how to create memorable, project-winning brands."
+                    }
+                  </span>
+                  <React.Fragment>
+                    {" In fact, we\u2019ve done it for years."}
+                  </React.Fragment>
+                </React.Fragment>
+              </div>
+            </div>
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__qdgeG)}
+              displayHeight={"auto"}
+              displayMaxHeight={"725px"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"100%"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/dirt/images/abstractConstructionWorkTradiesDirtTrucksJpg.jpg",
+                fullWidth: 1248,
+                fullHeight: 699,
+                aspectRatio: undefined
+              }}
+            />
+          </section>
+          <section
+            data-plasmic-name={"ifWeHearTheWord"}
+            data-plasmic-override={overrides.ifWeHearTheWord}
+            className={classNames(projectcss.all, sty.ifWeHearTheWord)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__w0WrB)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__kqBug
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "If we hear the word \n\u201cinnovative\u201d one more time, \n"
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "var(--token-5joSP94EMVrt)" }}
+                  >
+                    {"we\u2019re going to scream"}
+                  </span>
+                </React.Fragment>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox___3AIGw)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__eNcf
+                  )}
+                >
+                  {
+                    "Branding in the construction and property industries gets a bad rap. Honestly, it deserves it."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__kqWR
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "We can\u2019t throw a rock without hitting yet another business offering \u201cinnovative solutions\u201d (and we\u2019re not apologising for the rock). "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {
+                        "From builders to designers to technology companies, everyone sounds and looks the same."
+                      }
+                    </span>
+                    <React.Fragment>
+                      {
+                        "\n\nOther sectors regularly reinvent and refresh themselves. They change and grow with the times. But most property and construction brands are still working with websites that haven\u2019t been updated since Y2K.\n\n"
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"It shouldn\u2019t be this way. "}
+                    </span>
+                    <React.Fragment>
+                      {
+                        "\n\nAt DIRT, we believe the future of your business lies in your willingness to stand out. We\u2019re not just a \u201ccreative agency\u201d slapping a logo on more bland corporate speak. "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {
+                        "We\u2019re your strategic partner, helping you show up and grow up."
+                      }
+                    </span>
+                    <React.Fragment>
+                      {
+                        "\n\nBecause safe brands fade more with each passing year. But bold brands \u2014 the ones with a little grit under their nails \u2014 will structure and shape humanity for generations.\n\n"
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"Which would you rather be?"}
+                    </span>
+                  </React.Fragment>
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__lZoP)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img___3JiCs)}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "auto"
+                        : "312px"
+                    }
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "100%"
+                        : "312px"
+                    }
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/dirt/images/nikitaMorellHeadshotPng.png",
+                      fullWidth: 468,
+                      fullHeight: 468,
+                      aspectRatio: undefined
+                    }}
+                  />
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__cpQpp)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__uCcVs
+                      )}
+                    >
+                      {"Nikita Morell*"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__zYg7H
+                      )}
+                    >
+                      {"Founder, DIRT"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__gxtGd
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>
+                          {"* Feel like you\u2019ve seen this name before? "}
+                        </React.Fragment>
+                        {
+                          <PlasmicLink__
+                            data-plasmic-name={"link"}
+                            data-plasmic-override={overrides.link}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link
+                            )}
+                            component={Link}
+                            href={"https://nikitamorell.com"}
+                            platform={"nextjs"}
+                          >
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{
+                                  textDecorationLine: "underline",
+                                  color: "var(--token-5joSP94EMVrt)"
+                                }}
+                              >
+                                {"You probably have."}
+                              </span>
+                            </React.Fragment>
+                          </PlasmicLink__>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            data-plasmic-name={"builtWithSpecialists"}
+            data-plasmic-override={overrides.builtWithSpecialists}
+            className={classNames(projectcss.all, sty.builtWithSpecialists)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__hRrt8
+              )}
+            >
+              {"Built with Specialists"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ermkI
+              )}
+            >
+              {
+                "Every member of our team is exceptional. We\u2019re strategists, copywriters, designers, and developers. More importantly, we\u2019re all specialists in the property and construction industries."
+              }
+            </div>
+          </section>
+          <section
+            data-plasmic-name={"section"}
+            data-plasmic-override={overrides.section}
+            className={classNames(projectcss.all, sty.section)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox___2AbB)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__hXn1P)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={
+                  hasVariant(globalVariants, "screen", "mobile")
+                    ? "100%"
+                    : "41%"
+                }
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/dirt/images/markTaylorJpg.jpg",
+                  fullWidth: 383,
+                  fullHeight: 496,
+                  aspectRatio: undefined
+                }}
+              />
+
+              <div className={classNames(projectcss.all, sty.freeBox__oPSn)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__mSIq)}
+                  displayHeight={"65px"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/dirt/images/webflowLogoDarkPng.png",
+                    fullWidth: 240,
+                    fullHeight: 96,
+                    aspectRatio: undefined
+                  }}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fCg2
+                  )}
+                >
+                  {
+                    "\"Nikita and her team helped us go from 'coming soon' to a website we can be proud of. I needed somebody to organise my thoughts, and their structured process helped me see the light at the end of the tunnel and the confidence to embrace a distinct brand voice.\""
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__znlVg
+                  )}
+                >
+                  {"Mark Taylor"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__cZgom
+                  )}
+                >
+                  {"Core FDM"}
+                </div>
+              </div>
+            </div>
+          </section>
+          <FooterSection
+            data-plasmic-name={"footerSection"}
+            data-plasmic-override={overrides.footerSection}
+            backgroundImage={"/plasmic/dirt/images/footerImagePng.png"}
+            bottomRightLink={"/"}
+            bottomRightText={"Click here to  toss some DIRT on the competition"}
+            className={classNames("__wab_instance", sty.footerSection)}
+            contactDescription={`Dig what we're doing but don't need us at the moment? Refer a client to DIRT. 
+
+When they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT)`}
+            contactHeading={"Refer & Earn"}
+            copyrightText={
+              "\u00a9 2025 DIRT Agency. All rights reserved. Built from the ground up."
+            }
+            description={
+              "Tell us your DIRTiest dreams and we'll make them come true:"
+            }
+            footerDescription={
+              "Fresh messaging, branding, and positioning from the ground up."
+            }
+            footerLogo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
+            heading1={"Brilliant brands don\u2019t grow on trees."}
+            heading2={"They grow in the DIRT."}
+            link1Text={"About"}
+            link1Url={"/about"}
+            link2Text={"Contact"}
+            link2Url={"/contact"}
+            linksHeading={"Get your hands dirty"}
+            newsletterDescription={
+              "Gritty strategic insights to help you win more clients. Delivered with love (and a smidge of mud) once monthly."
+            }
+            newsletterHeading={"Get Dirt Dispatch"}
+          />
+        </div>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: [
+    "root",
+    "aboutHero",
+    "ifWeHearTheWord",
+    "link",
+    "builtWithSpecialists",
+    "section",
+    "footerSection"
+  ],
+  aboutHero: ["aboutHero"],
+  ifWeHearTheWord: ["ifWeHearTheWord", "link"],
+  link: ["link"],
+  builtWithSpecialists: ["builtWithSpecialists"],
+  section: ["section"],
+  footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  aboutHero: "section";
+  ifWeHearTheWord: "section";
+  link: "a";
+  builtWithSpecialists: "section";
+  section: "section";
+  footerSection: typeof FooterSection;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -227,6 +664,12 @@ export const PlasmicAbout = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    aboutHero: makeNodeComponent("aboutHero"),
+    ifWeHearTheWord: makeNodeComponent("ifWeHearTheWord"),
+    link: makeNodeComponent("link"),
+    builtWithSpecialists: makeNodeComponent("builtWithSpecialists"),
+    section: makeNodeComponent("section"),
+    footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicAbout
     internalVariantProps: PlasmicAbout__VariantProps,

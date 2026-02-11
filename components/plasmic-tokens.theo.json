@@ -1,5 +1,76 @@
 {
-  "props": [],
+  "props": [
+    {
+      "name": "Dirt - Black",
+      "type": "color",
+      "value": "#30261D",
+      "category": "color",
+      "meta": {
+        "projectId": "8kaaMUEQHxomwqwuKNMozy",
+        "id": "61WcDsxngnRl"
+      }
+    },
+    {
+      "name": "Dirt - Blue",
+      "type": "color",
+      "value": "#C0D6FF",
+      "category": "color",
+      "meta": {
+        "projectId": "8kaaMUEQHxomwqwuKNMozy",
+        "id": "AoZrGFsuVse6"
+      }
+    },
+    {
+      "name": "Dirt - Deep Red",
+      "type": "color",
+      "value": "#5C0004",
+      "category": "color",
+      "meta": {
+        "projectId": "8kaaMUEQHxomwqwuKNMozy",
+        "id": "88Oxp1lx31pA"
+      }
+    },
+    {
+      "name": "Dirt - Green",
+      "type": "color",
+      "value": "#C2D500",
+      "category": "color",
+      "meta": {
+        "projectId": "8kaaMUEQHxomwqwuKNMozy",
+        "id": "EcYcoCQukyZK"
+      }
+    },
+    {
+      "name": "Dirt - Off White",
+      "type": "color",
+      "value": "#FAFAF2",
+      "category": "color",
+      "meta": {
+        "projectId": "8kaaMUEQHxomwqwuKNMozy",
+        "id": "DH19M0EtFwnR"
+      }
+    },
+    {
+      "name": "Dirt - Pop Red",
+      "type": "color",
+      "value": "#FE5C02",
+      "category": "color",
+      "meta": {
+        "projectId": "8kaaMUEQHxomwqwuKNMozy",
+        "id": "5joSP94EMVrt"
+      }
+    },
+    {
+      "name": "Unnamed Style Token",
+      "type": "color",
+      "value": "#FFFFFF",
+      "category": "color",
+      "meta": {
+        "projectId": "8kaaMUEQHxomwqwuKNMozy",
+        "id": "_RnBOZOd29Kw"
+      }
+    }
+  ],
   "global": {
     "meta": {
       "source": "plasmic.app"
