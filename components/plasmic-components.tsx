@@ -155,7 +155,9 @@ registerComponent(PainPointsSection, {
 registerComponent(InfoSection, {
   name: "InfoSection",
   props: {
-    heading: "string",
+    heading: { type: "string", displayName: "Heading Start" },
+    headingHighlight: { type: "string", displayName: "Heading Highlight" },
+    headingEnd: { type: "string", displayName: "Heading End" },
     subheading: "string",
     richText: {
       type: "slot",

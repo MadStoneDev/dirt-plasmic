@@ -6,6 +6,8 @@ import { fmt } from "../../utils/formatText";
 
 export interface InfoSectionProps {
   heading?: string;
+  headingHighlight?: string;
+  headingEnd?: string;
   subheading?: string;
   richText?: ReactNode;
   image?: string;
@@ -16,6 +18,8 @@ export interface InfoSectionProps {
 
 export function InfoSection({
   heading,
+  headingHighlight,
+  headingEnd,
   subheading,
   richText,
   image,
@@ -29,9 +33,11 @@ export function InfoSection({
     <section className="py-40 px-4 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
       {/*<div className="mx-auto max-w-7xl">*/}
       <div className="px-8 mx-auto">
-        {heading && (
-          <h2 className="font-display font-bold text-4xl md:text-6xl text-dirt-pop uppercase mb-12">
-            {fmt(heading)}
+        {(heading || headingHighlight || headingEnd) && (
+          <h2 className="font-display font-bold text-4xl md:text-6xl uppercase mb-12">
+            {heading && <span className="text-dirt-pop">{fmt(heading)} </span>}
+            {headingHighlight && <span className="text-dirt-deep">{fmt(headingHighlight)}</span>}
+            {headingEnd && <span className="text-dirt-pop"> {fmt(headingEnd)}</span>}
           </h2>
         )}
 
