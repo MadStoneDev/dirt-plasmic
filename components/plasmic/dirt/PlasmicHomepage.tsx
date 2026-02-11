@@ -444,7 +444,7 @@ function PlasmicHomepage__RenderFunc(props: {
             }
             headerImage={"/plasmic/dirt/images/craneInDirtWithSilosPng.png"}
             headingEnd={"gives you three things you won\u2019t find elsewhere"}
-            headingHighlight={"DIRT"}
+            headingHighlight={"DIRT "}
             headingStart={``}
             reason1Description={
               "Don\u2019t waste your time explaining the basics to us. We eat, sleep, and breathe construction, ConTech, PropTech, building materials, and property  development (which might explain the silicosis)."
@@ -600,7 +600,7 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames("__wab_instance", sty.infoSection__wf3C9)}
             ctaLabel={"We make it happen"}
             ctaLink={"/"}
-            heading={"Our reputation is soiled"}
+            heading={"Our reputation is ~~soiled~~"}
             image={
               "/plasmic/dirt/images/architectATableOntopOfADirtMoundJpg.jpg"
             }

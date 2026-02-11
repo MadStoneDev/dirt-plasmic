@@ -41,6 +41,48 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/"
+        },
+        {
+          "id": "NOUe36PuEWFr",
+          "name": "About",
+          "type": "managed",
+          "projectId": "8kaaMUEQHxomwqwuKNMozy",
+          "renderModuleFilePath": "plasmic/dirt/PlasmicAbout.tsx",
+          "importSpec": {
+            "modulePath": "../pages/about.tsx"
+          },
+          "cssFilePath": "plasmic/dirt/PlasmicAbout.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/about"
+        },
+        {
+          "id": "6kvHo9Srlgvs",
+          "name": "Contact",
+          "type": "managed",
+          "projectId": "8kaaMUEQHxomwqwuKNMozy",
+          "renderModuleFilePath": "plasmic/dirt/PlasmicContact.tsx",
+          "importSpec": {
+            "modulePath": "../pages/contact.tsx"
+          },
+          "cssFilePath": "plasmic/dirt/PlasmicContact.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/contact"
+        },
+        {
+          "id": "OYBzaRbhDGXt",
+          "name": "_404",
+          "type": "managed",
+          "projectId": "8kaaMUEQHxomwqwuKNMozy",
+          "renderModuleFilePath": "plasmic/dirt/Plasmic_404.tsx",
+          "importSpec": {
+            "modulePath": "../pages/404.tsx"
+          },
+          "cssFilePath": "plasmic/dirt/Plasmic_404.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/404"
         }
       ],
       "icons": [],
@@ -209,6 +251,16 @@
           "id": "ec4-VeRxVcEh",
           "name": "Laptop sitting on a dirt mound.jpg",
           "filePath": "../public/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"
+        },
+        {
+          "id": "7R3SWerW3bQ_",
+          "name": "404-Dirt Image.png",
+          "filePath": "../public/plasmic/dirt/images/_404DirtImagePng.png"
+        },
+        {
+          "id": "govPCbe-LQ54",
+          "name": "90deg Arrow.png",
+          "filePath": "../public/plasmic/dirt/images/_90DegArrowPng.png"
         }
       ],
       "indirect": false,
@@ -325,13 +377,20 @@
     }
   ],
   "globalVariants": {
-    "variantGroups": []
+    "variantGroups": [
+      {
+        "id": "zo7FK0idbz_1",
+        "name": "Screen",
+        "projectId": "8kaaMUEQHxomwqwuKNMozy",
+        "contextFilePath": "plasmic/dirt/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
   },
   "wrapPagesWithGlobalContexts": true,
   "preserveJsImportExtensions": false,
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.356",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.356/dist/plasmic.schema.json"
+  "cliVersion": "0.1.357",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.357/dist/plasmic.schema.json"
 }
