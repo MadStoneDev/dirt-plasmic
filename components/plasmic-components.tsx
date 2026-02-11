@@ -5,15 +5,26 @@ import { BrandItem } from "./sections/BrandItem";
 import { TestimonialSection } from "./sections/TestimonialSection";
 import { PainPointsSection } from "./sections/PainPointsSection";
 import { PainPointCheckbox } from "./sections/PainPointCheckbox";
+import { PainPointSlide } from "./sections/PainPointSlide";
 import { InfoSection } from "./sections/InfoSection";
 import { ContactFormSection } from "./sections/ContactFormSection";
 import { SignsCTASection } from "./sections/SignsCTASection";
+import { SignsCTAItem } from "./sections/SignsCTAItem";
 import { ThreeReasonsSection } from "./sections/ThreeReasonsSection";
+import { ThreeReasonsItem } from "./sections/ThreeReasonsItem";
 import { DirtFrameworkSection } from "./sections/DirtFrameworkSection";
+import { DirtFrameworkBlock } from "./sections/DirtFrameworkBlock";
 import { DirtProcessSection } from "./sections/DirtProcessSection";
+import { DirtProcessStep } from "./sections/DirtProcessStep";
 import { DirtFilesSection } from "./sections/DirtFilesSection";
+import { DirtFile } from "./sections/DirtFile";
+import { DirtFileSubItem } from "./sections/DirtFileSubItem";
 import { ProsConsSection } from "./sections/ProsConsSection";
+import { ProsConsItem } from "./sections/ProsConsItem";
 import { FooterSection } from "./sections/FooterSection";
+import { WhatWeBelieveSection } from "./sections/WhatWeBelieveSection";
+import { WhatWeBelieveItem } from "./sections/WhatWeBelieveItem";
+import { WhatWeBelieveDetail } from "./sections/WhatWeBelieveDetail";
 
 // Hero Section - parallax hero with multiple image layers
 registerComponent(HeroSection, {
@@ -101,6 +112,16 @@ registerComponent(PainPointCheckbox, {
   importPath: "./components/sections/PainPointCheckbox",
 });
 
+// Pain Point Slide - image with caption for the PainPointsSection
+registerComponent(PainPointSlide, {
+  name: "PainPointSlide",
+  props: {
+    image: "imageUrl",
+    caption: "string",
+  },
+  importPath: "./components/sections/PainPointSlide",
+});
+
 // Pain Points Section - interactive checklist with changing images
 registerComponent(PainPointsSection, {
   name: "PainPointsSection",
@@ -109,6 +130,7 @@ registerComponent(PainPointsSection, {
     subheading: "string",
     children: {
       type: "slot",
+      displayName: "Checkboxes",
       defaultValue: [
         {
           type: "component",
@@ -127,26 +149,22 @@ registerComponent(PainPointsSection, {
         },
       ],
     },
-    image0: "imageUrl",
-    image1: "imageUrl",
-    image2: "imageUrl",
-    image3: "imageUrl",
-    image4: "imageUrl",
-    image5: "imageUrl",
-    image6: "imageUrl",
-    image7: "imageUrl",
-    image8: "imageUrl",
-    image9: "imageUrl",
-    caption0: "string",
-    caption1: "string",
-    caption2: "string",
-    caption3: "string",
-    caption4: "string",
-    caption5: "string",
-    caption6: "string",
-    caption7: "string",
-    caption8: "string",
-    caption9: "string",
+    slides: {
+      type: "slot",
+      displayName: "Slides",
+      defaultValue: [
+        {
+          type: "component",
+          name: "PainPointSlide",
+          props: { caption: "Default" },
+        },
+        {
+          type: "component",
+          name: "PainPointSlide",
+          props: { caption: "Slide 2" },
+        },
+      ],
+    },
   },
   importPath: "./components/sections/PainPointsSection",
 });
@@ -186,23 +204,60 @@ registerComponent(ContactFormSection, {
   importPath: "./components/sections/ContactFormSection",
 });
 
-// Signs CTA Section - heading with 3 plus icons and CTA
+// Signs CTA Item - plus icon with text
+registerComponent(SignsCTAItem, {
+  name: "SignsCTAItem",
+  props: {
+    text: "string",
+  },
+  importPath: "./components/sections/SignsCTAItem",
+});
+
+// Signs CTA Section - heading with plus icons and CTA
 registerComponent(SignsCTASection, {
   name: "SignsCTASection",
   props: {
     headingStart: "string",
     headingHighlight: "string",
     headingEnd: "string",
-    item1Text: "string",
-    item2Text: "string",
-    item3Text: "string",
+    children: {
+      type: "slot",
+      displayName: "Items",
+      defaultValue: [
+        {
+          type: "component",
+          name: "SignsCTAItem",
+          props: { text: "Sign 1" },
+        },
+        {
+          type: "component",
+          name: "SignsCTAItem",
+          props: { text: "Sign 2" },
+        },
+        {
+          type: "component",
+          name: "SignsCTAItem",
+          props: { text: "Sign 3" },
+        },
+      ],
+    },
     ctaLabel: "string",
     ctaLink: "string",
   },
   importPath: "./components/sections/SignsCTASection",
 });
 
-// Three Reasons Section - header with description and image, plus 3 numbered reasons
+// Three Reasons Item - numbered reason with heading and description
+registerComponent(ThreeReasonsItem, {
+  name: "ThreeReasonsItem",
+  props: {
+    heading: "string",
+    description: "string",
+  },
+  importPath: "./components/sections/ThreeReasonsItem",
+});
+
+// Three Reasons Section - header with description and image, plus numbered reasons
 registerComponent(ThreeReasonsSection, {
   name: "ThreeReasonsSection",
   props: {
@@ -211,14 +266,46 @@ registerComponent(ThreeReasonsSection, {
     headingEnd: "string",
     description: "string",
     headerImage: "imageUrl",
-    reason1Heading: "string",
-    reason1Description: "string",
-    reason2Heading: "string",
-    reason2Description: "string",
-    reason3Heading: "string",
-    reason3Description: "string",
+    children: {
+      type: "slot",
+      displayName: "Reasons",
+      defaultValue: [
+        {
+          type: "component",
+          name: "ThreeReasonsItem",
+          props: { heading: "Reason 1", description: "Description for reason 1" },
+        },
+        {
+          type: "component",
+          name: "ThreeReasonsItem",
+          props: { heading: "Reason 2", description: "Description for reason 2" },
+        },
+        {
+          type: "component",
+          name: "ThreeReasonsItem",
+          props: { heading: "Reason 3", description: "Description for reason 3" },
+        },
+      ],
+    },
   },
   importPath: "./components/sections/ThreeReasonsSection",
+});
+
+// Dirt Framework Block - individual block for the framework section
+registerComponent(DirtFrameworkBlock, {
+  name: "DirtFrameworkBlock",
+  props: {
+    heading: "string",
+    description: "string",
+    backgroundImage: "imageUrl",
+    overlayColor: {
+      type: "choice",
+      displayName: "Overlay Colour",
+      options: ["dirt-deep", "dirt-pop", "dirt-green", "dirt-blue", "dirt-off-white", "dirt-black"],
+      defaultValue: "dirt-deep",
+    },
+  },
+  importPath: "./components/sections/DirtFrameworkBlock",
 });
 
 // Dirt Framework Section - stacked blocks that expand on scroll
@@ -230,53 +317,41 @@ registerComponent(DirtFrameworkSection, {
     headingEnd: "string",
     description: "string",
     reversed: "boolean",
-    block1Heading: { type: "string", displayName: "Block 1 Heading" },
-    block1Description: { type: "string", displayName: "Block 1 Description" },
-    block1BackgroundImage: { type: "imageUrl", displayName: "Block 1 Background Image" },
-    block1OverlayColor: {
-      type: "choice",
-      displayName: "Block 1 Overlay Colour",
-      options: ["dirt-deep", "dirt-pop", "dirt-green", "dirt-blue", "dirt-off-white", "dirt-black"],
-      defaultValue: "dirt-deep",
-    },
-    block2Heading: { type: "string", displayName: "Block 2 Heading" },
-    block2Description: { type: "string", displayName: "Block 2 Description" },
-    block2BackgroundImage: { type: "imageUrl", displayName: "Block 2 Background Image" },
-    block2OverlayColor: {
-      type: "choice",
-      displayName: "Block 2 Overlay Colour",
-      options: ["dirt-deep", "dirt-pop", "dirt-green", "dirt-blue", "dirt-off-white", "dirt-black"],
-      defaultValue: "dirt-deep",
-    },
-    block3Heading: { type: "string", displayName: "Block 3 Heading" },
-    block3Description: { type: "string", displayName: "Block 3 Description" },
-    block3BackgroundImage: { type: "imageUrl", displayName: "Block 3 Background Image" },
-    block3OverlayColor: {
-      type: "choice",
-      displayName: "Block 3 Overlay Colour",
-      options: ["dirt-deep", "dirt-pop", "dirt-green", "dirt-blue", "dirt-off-white", "dirt-black"],
-      defaultValue: "dirt-deep",
-    },
-    block4Heading: { type: "string", displayName: "Block 4 Heading" },
-    block4Description: { type: "string", displayName: "Block 4 Description" },
-    block4BackgroundImage: { type: "imageUrl", displayName: "Block 4 Background Image" },
-    block4OverlayColor: {
-      type: "choice",
-      displayName: "Block 4 Overlay Colour",
-      options: ["dirt-deep", "dirt-pop", "dirt-green", "dirt-blue", "dirt-off-white", "dirt-black"],
-      defaultValue: "dirt-deep",
-    },
-    block5Heading: { type: "string", displayName: "Block 5 Heading" },
-    block5Description: { type: "string", displayName: "Block 5 Description" },
-    block5BackgroundImage: { type: "imageUrl", displayName: "Block 5 Background Image" },
-    block5OverlayColor: {
-      type: "choice",
-      displayName: "Block 5 Overlay Colour",
-      options: ["dirt-deep", "dirt-pop", "dirt-green", "dirt-blue", "dirt-off-white", "dirt-black"],
-      defaultValue: "dirt-deep",
+    children: {
+      type: "slot",
+      displayName: "Blocks",
+      defaultValue: [
+        {
+          type: "component",
+          name: "DirtFrameworkBlock",
+          props: { heading: "Block 1" },
+        },
+        {
+          type: "component",
+          name: "DirtFrameworkBlock",
+          props: { heading: "Block 2" },
+        },
+        {
+          type: "component",
+          name: "DirtFrameworkBlock",
+          props: { heading: "Block 3" },
+        },
+      ],
     },
   },
   importPath: "./components/sections/DirtFrameworkSection",
+});
+
+// Dirt Process Step - individual step with heading, description, image and tags
+registerComponent(DirtProcessStep, {
+  name: "DirtProcessStep",
+  props: {
+    heading: "string",
+    description: "string",
+    image: "imageUrl",
+    tags: { type: "string", displayName: "Tags (comma-separated)" },
+  },
+  importPath: "./components/sections/DirtProcessStep",
 });
 
 // Dirt Process Section - alternating image/info columns with tags
@@ -286,30 +361,71 @@ registerComponent(DirtProcessSection, {
     headingStart: "string",
     headingHighlight: "string",
     headingEnd: "string",
-    step1Heading: "string",
-    step1Description: "string",
-    step1Image: "imageUrl",
-    step1Tags: "string",
-    step2Heading: "string",
-    step2Description: "string",
-    step2Image: "imageUrl",
-    step2Tags: "string",
-    step3Heading: "string",
-    step3Description: "string",
-    step3Image: "imageUrl",
-    step3Tags: "string",
-    step4Heading: "string",
-    step4Description: "string",
-    step4Image: "imageUrl",
-    step4Tags: "string",
-    step5Heading: "string",
-    step5Description: "string",
-    step5Image: "imageUrl",
-    step5Tags: "string",
+    children: {
+      type: "slot",
+      displayName: "Steps",
+      defaultValue: [
+        {
+          type: "component",
+          name: "DirtProcessStep",
+          props: { heading: "Step 1" },
+        },
+        {
+          type: "component",
+          name: "DirtProcessStep",
+          props: { heading: "Step 2" },
+        },
+        {
+          type: "component",
+          name: "DirtProcessStep",
+          props: { heading: "Step 3" },
+        },
+      ],
+    },
     bottomHeading: "string",
     bottomDescription: "string",
   },
   importPath: "./components/sections/DirtProcessSection",
+});
+
+// Dirt File Sub Item - individual item inside a file accordion
+registerComponent(DirtFileSubItem, {
+  name: "DirtFileSubItem",
+  props: {
+    heading: "string",
+    description: "string",
+  },
+  importPath: "./components/sections/DirtFileSubItem",
+});
+
+// Dirt File - individual file for the accordion
+registerComponent(DirtFile, {
+  name: "DirtFile",
+  props: {
+    heading: "string",
+    tag1: "string",
+    tag2: "string",
+    buttonLabel: "string",
+    buttonLink: "string",
+    image: "imageUrl",
+    children: {
+      type: "slot",
+      displayName: "Sub Items",
+      defaultValue: [
+        {
+          type: "component",
+          name: "DirtFileSubItem",
+          props: { heading: "Item 1", description: "Description for item 1" },
+        },
+        {
+          type: "component",
+          name: "DirtFileSubItem",
+          props: { heading: "Item 2", description: "Description for item 2" },
+        },
+      ],
+    },
+  },
+  importPath: "./components/sections/DirtFile",
 });
 
 // Dirt Files Section - accordion with changing images
@@ -320,47 +436,38 @@ registerComponent(DirtFilesSection, {
     headingHighlight: "string",
     headingEnd: "string",
     description: "string",
-    // File 1
-    file1Heading: "string",
-    file1Tag1: "string",
-    file1Tag2: "string",
-    file1ButtonLabel: "string",
-    file1ButtonLink: "string",
-    file1Image: "imageUrl",
-    file1Item1Heading: "string",
-    file1Item1Description: "string",
-    file1Item2Heading: "string",
-    file1Item2Description: "string",
-    file1Item3Heading: "string",
-    file1Item3Description: "string",
-    // File 2
-    file2Heading: "string",
-    file2Tag1: "string",
-    file2Tag2: "string",
-    file2ButtonLabel: "string",
-    file2ButtonLink: "string",
-    file2Image: "imageUrl",
-    file2Item1Heading: "string",
-    file2Item1Description: "string",
-    file2Item2Heading: "string",
-    file2Item2Description: "string",
-    file2Item3Heading: "string",
-    file2Item3Description: "string",
-    // File 3
-    file3Heading: "string",
-    file3Tag1: "string",
-    file3Tag2: "string",
-    file3ButtonLabel: "string",
-    file3ButtonLink: "string",
-    file3Image: "imageUrl",
-    file3Item1Heading: "string",
-    file3Item1Description: "string",
-    file3Item2Heading: "string",
-    file3Item2Description: "string",
-    file3Item3Heading: "string",
-    file3Item3Description: "string",
+    children: {
+      type: "slot",
+      displayName: "Files",
+      defaultValue: [
+        {
+          type: "component",
+          name: "DirtFile",
+          props: { heading: "File 1" },
+        },
+        {
+          type: "component",
+          name: "DirtFile",
+          props: { heading: "File 2" },
+        },
+        {
+          type: "component",
+          name: "DirtFile",
+          props: { heading: "File 3" },
+        },
+      ],
+    },
   },
   importPath: "./components/sections/DirtFilesSection",
+});
+
+// Pros Cons Item - individual item for the pros/cons columns
+registerComponent(ProsConsItem, {
+  name: "ProsConsItem",
+  props: {
+    text: "string",
+  },
+  importPath: "./components/sections/ProsConsItem",
 });
 
 // Pros and Cons Section - two columns with x/check icons
@@ -372,27 +479,124 @@ registerComponent(ProsConsSection, {
     headingEnd: "string",
     consHeading: "string",
     prosHeading: "string",
-    con1: "string",
-    con2: "string",
-    con3: "string",
-    con4: "string",
-    con5: "string",
-    con6: "string",
-    con7: "string",
-    con8: "string",
-    pro1: "string",
-    pro2: "string",
-    pro3: "string",
-    pro4: "string",
-    pro5: "string",
-    pro6: "string",
-    pro7: "string",
-    pro8: "string",
+    cons: {
+      type: "slot",
+      displayName: "Cons",
+      defaultValue: [
+        {
+          type: "component",
+          name: "ProsConsItem",
+          props: { text: "Con 1" },
+        },
+        {
+          type: "component",
+          name: "ProsConsItem",
+          props: { text: "Con 2" },
+        },
+        {
+          type: "component",
+          name: "ProsConsItem",
+          props: { text: "Con 3" },
+        },
+      ],
+    },
+    pros: {
+      type: "slot",
+      displayName: "Pros",
+      defaultValue: [
+        {
+          type: "component",
+          name: "ProsConsItem",
+          props: { text: "Pro 1" },
+        },
+        {
+          type: "component",
+          name: "ProsConsItem",
+          props: { text: "Pro 2" },
+        },
+        {
+          type: "component",
+          name: "ProsConsItem",
+          props: { text: "Pro 3" },
+        },
+      ],
+    },
     ctaLabel: { type: "string", displayName: "CTA Label" },
     ctaLink: { type: "string", displayName: "CTA Link" },
     tagline: "string",
   },
   importPath: "./components/sections/ProsConsSection",
+});
+
+// What We Believe - list item (left column)
+registerComponent(WhatWeBelieveItem, {
+  name: "WhatWeBelieveItem",
+  props: {
+    label: "string",
+  },
+  importPath: "./components/sections/WhatWeBelieveItem",
+});
+
+// What We Believe - detail panel (right column)
+registerComponent(WhatWeBelieveDetail, {
+  name: "WhatWeBelieveDetail",
+  props: {
+    image: "imageUrl",
+    heading: "string",
+    description: "string",
+  },
+  importPath: "./components/sections/WhatWeBelieveDetail",
+});
+
+// What We Believe Section - interactive list with changing right column
+registerComponent(WhatWeBelieveSection, {
+  name: "WhatWeBelieveSection",
+  props: {
+    heading: "string",
+    children: {
+      type: "slot",
+      displayName: "List Items",
+      defaultValue: [
+        {
+          type: "component",
+          name: "WhatWeBelieveItem",
+          props: { label: "Belief 1" },
+        },
+        {
+          type: "component",
+          name: "WhatWeBelieveItem",
+          props: { label: "Belief 2" },
+        },
+        {
+          type: "component",
+          name: "WhatWeBelieveItem",
+          props: { label: "Belief 3" },
+        },
+      ],
+    },
+    details: {
+      type: "slot",
+      displayName: "Detail Panels",
+      defaultValue: [
+        {
+          type: "component",
+          name: "WhatWeBelieveDetail",
+          props: { heading: "Detail 1", description: "Description for belief 1" },
+        },
+        {
+          type: "component",
+          name: "WhatWeBelieveDetail",
+          props: { heading: "Detail 2", description: "Description for belief 2" },
+        },
+        {
+          type: "component",
+          name: "WhatWeBelieveDetail",
+          props: { heading: "Detail 3", description: "Description for belief 3" },
+        },
+      ],
+    },
+  },
+  importPath: "./components/sections/WhatWeBelieveSection",
 });
 
 // Footer Section - hero form with footer columns

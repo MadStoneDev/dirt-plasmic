@@ -1,5 +1,6 @@
 "use client";
 
+import React, { ReactNode } from "react";
 import { fmt } from "../../utils/formatText";
 
 export interface ProsConsSectionProps {
@@ -8,43 +9,11 @@ export interface ProsConsSectionProps {
   headingEnd?: string;
   consHeading?: string;
   prosHeading?: string;
-  // Cons (up to 8)
-  con1?: string;
-  con2?: string;
-  con3?: string;
-  con4?: string;
-  con5?: string;
-  con6?: string;
-  con7?: string;
-  con8?: string;
-  // Pros (up to 8)
-  pro1?: string;
-  pro2?: string;
-  pro3?: string;
-  pro4?: string;
-  pro5?: string;
-  pro6?: string;
-  pro7?: string;
-  pro8?: string;
+  cons?: ReactNode;
+  pros?: ReactNode;
   ctaLabel?: string;
   ctaLink?: string;
   tagline?: string;
-}
-
-function XIcon() {
-  return (
-    <svg className="w-6 h-6 text-dirt-deep" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap={"square"} strokeLinejoin={"miter"} strokeWidth={6} d="M6 18L18 6M6 6l12 12" />
-    </svg>
-  );
-}
-
-function CheckIcon() {
-  return (
-    <svg className="w-6 h-6 text-dirt-deep" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap={"square"} strokeLinejoin={"miter"} strokeWidth={6} d="M5 13l4 4L19 7" />
-    </svg>
-  );
 }
 
 export function ProsConsSection({
@@ -53,28 +22,23 @@ export function ProsConsSection({
   headingEnd,
   consHeading = "Without DIRT",
   prosHeading = "With DIRT",
-  con1,
-  con2,
-  con3,
-  con4,
-  con5,
-  con6,
-  con7,
-  con8,
-  pro1,
-  pro2,
-  pro3,
-  pro4,
-  pro5,
-  pro6,
-  pro7,
-  pro8,
+  cons,
+  pros,
   ctaLabel,
   ctaLink,
   tagline,
 }: ProsConsSectionProps) {
-  const cons = [con1, con2, con3, con4, con5, con6, con7, con8].filter(Boolean);
-  const pros = [pro1, pro2, pro3, pro4, pro5, pro6, pro7, pro8].filter(Boolean);
+  // Inject type="con" into each cons child
+  const consItems = React.Children.map(cons, (child) => {
+    if (!React.isValidElement(child)) return null;
+    return React.cloneElement(child as React.ReactElement<any>, { type: "con" });
+  });
+
+  // Inject type="pro" into each pros child
+  const prosItems = React.Children.map(pros, (child) => {
+    if (!React.isValidElement(child)) return null;
+    return React.cloneElement(child as React.ReactElement<any>, { type: "pro" });
+  });
 
   return (
     <section className="py-40 px-8 bg-dirt-pop" style={{ gridColumn: "1 / -1" }}>
@@ -94,16 +58,7 @@ export function ProsConsSection({
               {fmt(consHeading)}
             </h3>
             <div className="flex flex-col gap-10">
-              {cons.map((con, index) => (
-                  <div key={index} className="flex items-center gap-6">
-                  <div className="w-10 h-10 bg-dirt-pop shrink-0 flex items-center justify-center">
-                    <XIcon />
-                  </div>
-                  <p className="text-dirt-off-white font-sans pt-1">
-                    {con}
-                  </p>
-                </div>
-              ))}
+              {consItems}
             </div>
           </div>
 
@@ -113,16 +68,7 @@ export function ProsConsSection({
               {fmt(prosHeading)}
             </h3>
             <div className="flex flex-col gap-10">
-              {pros.map((pro, index) => (
-                <div key={index} className="flex items-center gap-6">
-                  <div className="w-10 h-10 bg-dirt-green shrink-0 flex items-center justify-center">
-                    <CheckIcon />
-                  </div>
-                  <p className="text-white font-sans">
-                    {pro}
-                  </p>
-                </div>
-              ))}
+              {prosItems}
             </div>
           </div>
         </div>

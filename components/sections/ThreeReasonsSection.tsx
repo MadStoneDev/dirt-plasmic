@@ -1,5 +1,6 @@
 "use client";
 
+import React, { ReactNode } from "react";
 import Image from "next/image";
 import { fmt } from "../../utils/formatText";
 
@@ -9,12 +10,7 @@ export interface ThreeReasonsSectionProps {
   headingEnd?: string;
   description?: string;
   headerImage?: string;
-  reason1Heading?: string;
-  reason1Description?: string;
-  reason2Heading?: string;
-  reason2Description?: string;
-  reason3Heading?: string;
-  reason3Description?: string;
+  children?: ReactNode;
 }
 
 export function ThreeReasonsSection({
@@ -23,18 +19,13 @@ export function ThreeReasonsSection({
   headingEnd,
   description,
   headerImage,
-  reason1Heading,
-  reason1Description,
-  reason2Heading,
-  reason2Description,
-  reason3Heading,
-  reason3Description,
+  children,
 }: ThreeReasonsSectionProps) {
-  const reasons = [
-    { number: 1, heading: reason1Heading, description: reason1Description },
-    { number: 2, heading: reason2Heading, description: reason2Description },
-    { number: 3, heading: reason3Heading, description: reason3Description },
-  ].filter((r) => r.heading || r.description);
+  // Inject index into each child for numbering
+  const items = React.Children.map(children, (child, index) => {
+    if (!React.isValidElement(child)) return null;
+    return React.cloneElement(child as React.ReactElement<any>, { index });
+  });
 
   return (
     <section className="relative py-40 px-8 bg-dirt-pop" style={{ gridColumn: "1 / -1" }}>
@@ -72,30 +63,9 @@ export function ThreeReasonsSection({
           )}
         </div>
 
-        {/* Three Columns with Numbers */}
+        {/* Columns with Numbers */}
         <div className="grid md:grid-cols-3 gap-12">
-          {reasons.map((reason) => (
-            <div key={reason.number} className="flex flex-col">
-              {/* Number in square */}
-              <div className="w-16 h-16 bg-dirt-deep flex items-center justify-center mb-10">
-                <span className="text-white font-sans font-bold text-3xl">
-                  {reason.number}
-                </span>
-              </div>
-
-              {reason.heading && (
-                <h3 className="font-display font-bold text-xl md:text-4xl text-dirt-off-white uppercase mb-5">
-                  {reason.heading}
-                </h3>
-              )}
-
-              {reason.description && (
-                <p className="text-lg text-justify text-dirt-off-white font-sans whitespace-pre-line">
-                  {reason.description}
-                </p>
-              )}
-            </div>
-          ))}
+          {items}
         </div>
       </div>
     </section>

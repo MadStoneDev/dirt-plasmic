@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import React, { useEffect, useRef, useState, ReactNode } from "react";
 import { fmt } from "../../utils/formatText";
 
 export interface DirtFrameworkSectionProps {
@@ -10,26 +9,7 @@ export interface DirtFrameworkSectionProps {
   headingEnd?: string;
   description?: string;
   reversed?: boolean;
-  block1Heading?: string;
-  block1Description?: string;
-  block1BackgroundImage?: string;
-  block2Heading?: string;
-  block2Description?: string;
-  block2BackgroundImage?: string;
-  block3Heading?: string;
-  block3Description?: string;
-  block3BackgroundImage?: string;
-  block4Heading?: string;
-  block4Description?: string;
-  block4BackgroundImage?: string;
-  block5Heading?: string;
-  block5Description?: string;
-  block5BackgroundImage?: string;
-  block1OverlayColor?: string;
-  block2OverlayColor?: string;
-  block3OverlayColor?: string;
-  block4OverlayColor?: string;
-  block5OverlayColor?: string;
+  children?: ReactNode;
 }
 
 export function DirtFrameworkSection({
@@ -38,41 +18,15 @@ export function DirtFrameworkSection({
   headingEnd,
   description,
   reversed = true,
-  block1Heading,
-  block1Description,
-  block1BackgroundImage,
-  block2Heading,
-  block2Description,
-  block2BackgroundImage,
-  block3Heading,
-  block3Description,
-  block3BackgroundImage,
-  block4Heading,
-  block4Description,
-  block4BackgroundImage,
-  block5Heading,
-  block5Description,
-  block5BackgroundImage,
-  block1OverlayColor,
-  block2OverlayColor,
-  block3OverlayColor,
-  block4OverlayColor,
-  block5OverlayColor,
+  children,
 }: DirtFrameworkSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  const blocks = [
-    { heading: block1Heading, description: block1Description, backgroundImage: block1BackgroundImage, overlayColor: block1OverlayColor },
-    { heading: block2Heading, description: block2Description, backgroundImage: block2BackgroundImage, overlayColor: block2OverlayColor },
-    { heading: block3Heading, description: block3Description, backgroundImage: block3BackgroundImage, overlayColor: block3OverlayColor },
-    { heading: block4Heading, description: block4Description, backgroundImage: block4BackgroundImage, overlayColor: block4OverlayColor },
-    { heading: block5Heading, description: block5Description, backgroundImage: block5BackgroundImage, overlayColor: block5OverlayColor },
-  ].filter((b) => b.heading || b.description);
-
-  const displayBlocks = reversed ? [...blocks].reverse() : blocks;
-  const blockCount = displayBlocks.length;
+  const allChildren = React.Children.toArray(children);
+  const displayChildren = reversed ? [...allChildren].reverse() : allChildren;
+  const blockCount = allChildren.length;
 
   // Block and layout dimensions (px) — no vh units, Plasmic-safe
   const BLOCK_HEIGHT = 200; // matches min-h-50
@@ -161,8 +115,8 @@ export function DirtFrameworkSection({
         <div className="h-full px-4 py-8">
           <div className="max-w-7xl mx-auto h-full">
             <div className="relative h-full">
-              {displayBlocks.map((block, displayIndex) => {
-                const originalIndex = reversed ? blocks.length - 1 - displayIndex : displayIndex;
+              {displayChildren.map((child, displayIndex) => {
+                const originalIndex = reversed ? allChildren.length - 1 - displayIndex : displayIndex;
                 const zIndex = reversed ? displayIndex + 1 : blockCount - displayIndex;
 
                 // Stacked: negative margin pulls cards up to overlap
@@ -181,47 +135,9 @@ export function DirtFrameworkSection({
                       marginTop: displayIndex === 0 ? 0 : `${mt}px`,
                     }}
                   >
-                    <div className="relative min-h-50 overflow-hidden">
-                      {/* Background Image */}
-                      {block.backgroundImage && (
-                        <Image
-                          src={block.backgroundImage}
-                          alt=""
-                          fill
-                          className="object-cover"
-                        />
-                      )}
-
-                      {/* Colour Overlay */}
-                      <div
-                        className="absolute inset-0"
-                        style={{
-                          backgroundColor: `var(--color-${block.overlayColor || "dirt-deep"})`,
-                          opacity: 0.75
-                        }}
-                      />
-
-                      {/* Number Badge */}
-                      <div className="absolute top-0 left-0 w-12 h-12 bg-dirt-black flex items-center justify-center">
-                        <span className="text-dirt-off-white font-sans font-bold text-2xl">
-                          {originalIndex + 1}
-                        </span>
-                      </div>
-
-                      {/* Content */}
-                      <div className="relative z-10 p-8 pt-20 grid md:grid-cols-2 gap-8">
-                        {block.heading && (
-                          <h4 className="font-display font-bold text-4xl md:text-6xl text-dirt-off-white uppercase">
-                            {fmt(block.heading)}
-                          </h4>
-                        )}
-                        {block.description && (
-                          <p className="text-dirt-off-white/90 text-lg font-sans whitespace-pre-line">
-                            {block.description}
-                          </p>
-                        )}
-                      </div>
-                    </div>
+                    {React.isValidElement(child)
+                      ? React.cloneElement(child as React.ReactElement<any>, { originalIndex })
+                      : child}
                   </div>
                 );
               })}
