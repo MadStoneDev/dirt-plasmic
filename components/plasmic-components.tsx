@@ -7,6 +7,7 @@ import { PainPointsSection } from "./sections/PainPointsSection";
 import { PainPointCheckbox } from "./sections/PainPointCheckbox";
 import { PainPointSlide } from "./sections/PainPointSlide";
 import { InfoSection } from "./sections/InfoSection";
+import { DirtRichText } from "./sections/DirtRichText";
 import { ContactFormSection } from "./sections/ContactFormSection";
 import { SignsCTASection } from "./sections/SignsCTASection";
 import { SignsCTAItem } from "./sections/SignsCTAItem";
@@ -190,6 +191,15 @@ registerComponent(InfoSection, {
     },
   },
   importPath: "./components/sections/InfoSection",
+});
+
+// Dirt Rich Text - paragraph with highlighted words, grungy underlines & tooltips
+registerComponent(DirtRichText, {
+  name: "DirtRichText",
+  props: {
+    text: { type: "string", displayName: "Rich Text" },
+  },
+  importPath: "./components/sections/DirtRichText",
 });
 
 // Contact Form Section

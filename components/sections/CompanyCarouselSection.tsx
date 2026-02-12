@@ -33,7 +33,7 @@ export function CompanyCarouselSection({
 
       <div className="relative z-10">
         {heading && (
-          <h2 className="flex gap-2 text-3xl sm:text-5xl md:text-7xl font-display font-bold text-white mb-24">
+          <h2 className="flex gap-2 text-3xl sm:text-5xl md:text-8xl font-display font-bold text-white mb-24">
             {fmt(heading)}
             {highlightedWord && (
               <span className="text-dirt-deep uppercase">{fmt(highlightedWord)}</span>
