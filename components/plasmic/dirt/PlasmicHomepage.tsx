@@ -680,7 +680,7 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames("__wab_instance", sty.dirtProcessSection)}
             headingEnd={", we get to work"}
             headingHighlight={"grounded"}
-            headingStart={"Once you're"}
+            headingStart={"Once you're "}
             step1Description={
               "Bold visuals that make you unforgettable. (Including your distinctive new logo.)"
             }
