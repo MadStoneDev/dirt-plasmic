@@ -65,6 +65,7 @@ import { BrandItem } from "../../sections/BrandItem"; // plasmic-import: n6yARC8
 import { InfoSection } from "../../sections/InfoSection"; // plasmic-import: 3w9ZT_4EuJCw/codeComponent
 import { PainPointsSection } from "../../sections/PainPointsSection"; // plasmic-import: a6zcK0cc2pSa/codeComponent
 import { PainPointCheckbox } from "../../sections/PainPointCheckbox"; // plasmic-import: -4VXY6ZJhgvD/codeComponent
+import { PainPointSlide } from "../../sections/PainPointSlide"; // plasmic-import: 5HzjLrOXVhOC/codeComponent
 import { SignsCTASection } from "../../sections/SignsCTASection"; // plasmic-import: 3hNXXIJF-DSf/codeComponent
 import { TestimonialSection } from "../../sections/TestimonialSection"; // plasmic-import: 19614fshNGrI/codeComponent
 import { ThreeReasonsSection } from "../../sections/ThreeReasonsSection"; // plasmic-import: wg-w-3Zg2_WL/codeComponent
@@ -350,6 +351,63 @@ function PlasmicHomepage__RenderFunc(props: {
             image3={"/plasmic/dirt/images/painPointsBuilding3Jpg.jpg"}
             image4={"/plasmic/dirt/images/painPointsBuilding4Jpg.jpg"}
             image5={"/plasmic/dirt/images/painPointsBuilding5Jpg.jpg"}
+            slides={
+              <React.Fragment>
+                <PainPointSlide
+                  caption={"Solid. You\u2019re all good."}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.painPointSlide___2Y8Wq
+                  )}
+                  image={"/plasmic/dirt/images/painPointsBuilding0Jpg.jpg"}
+                />
+
+                <PainPointSlide
+                  caption={"HMMM...SOME MINOR CRACKS"}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.painPointSlide__iphHp
+                  )}
+                  image={"/plasmic/dirt/images/painPointsBuilding1Jpg.jpg"}
+                />
+
+                <PainPointSlide
+                  caption={"Yep. You've got noticeable damage."}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.painPointSlide__ilCRm
+                  )}
+                  image={"/plasmic/dirt/images/painPointsBuilding2Jpg.jpg"}
+                />
+
+                <PainPointSlide
+                  caption={"Things are starting to buckle."}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.painPointSlide__bORrK
+                  )}
+                  image={"/plasmic/dirt/images/painPointsBuilding3Jpg.jpg"}
+                />
+
+                <PainPointSlide
+                  caption={"Serious structural damage."}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.painPointSlide__kslG6
+                  )}
+                  image={"/plasmic/dirt/images/painPointsBuilding4Jpg.jpg"}
+                />
+
+                <PainPointSlide
+                  caption={"Total collapsing."}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.painPointSlide__iJ8UF
+                  )}
+                  image={"/plasmic/dirt/images/painPointsBuilding5Jpg.jpg"}
+                />
+              </React.Fragment>
+            }
             subheading={
               "Check the boxes that feel true to see if DIRT can help:"
             }

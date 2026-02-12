@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@plasmicapp/cli": "^0.1.357",
+    "@plasmicapp/cli": "^0.1.358",
     "@plasmicapp/host": "^1.0.234",
     "@plasmicapp/loader-nextjs": "^1.0.451",
     "@plasmicapp/nextjs-app-router": "^1.0.20",

@@ -403,6 +403,7 @@ function PlasmicAbout__RenderFunc(props: {
                             )}
                             component={Link}
                             href={"https://nikitamorell.com"}
+                            legacyBehavior={false}
                             platform={"nextjs"}
                           >
                             <React.Fragment>

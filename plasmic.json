@@ -391,6 +391,72 @@
           "name": "PainPointCheckbox",
           "displayName": "PainPointCheckbox",
           "componentImportPath": "./components/sections/PainPointCheckbox"
+        },
+        {
+          "id": "5HzjLrOXVhOC",
+          "name": "PainPointSlide",
+          "displayName": "PainPointSlide",
+          "componentImportPath": "./components/sections/PainPointSlide"
+        },
+        {
+          "id": "qYuP0KLLo7r4",
+          "name": "SignsCTAItem",
+          "displayName": "SignsCTAItem",
+          "componentImportPath": "./components/sections/SignsCTAItem"
+        },
+        {
+          "id": "it6z1sUkm2kP",
+          "name": "ThreeReasonsItem",
+          "displayName": "ThreeReasonsItem",
+          "componentImportPath": "./components/sections/ThreeReasonsItem"
+        },
+        {
+          "id": "ks6B6gJ4vFGq",
+          "name": "DirtFrameworkBlock",
+          "displayName": "DirtFrameworkBlock",
+          "componentImportPath": "./components/sections/DirtFrameworkBlock"
+        },
+        {
+          "id": "eRsQ7U7TAK34",
+          "name": "DirtProcessStep",
+          "displayName": "DirtProcessStep",
+          "componentImportPath": "./components/sections/DirtProcessStep"
+        },
+        {
+          "id": "3uB7FZW9uHTa",
+          "name": "DirtFileSubItem",
+          "displayName": "DirtFileSubItem",
+          "componentImportPath": "./components/sections/DirtFileSubItem"
+        },
+        {
+          "id": "dvgTT-ZEN2C8",
+          "name": "DirtFile",
+          "displayName": "DirtFile",
+          "componentImportPath": "./components/sections/DirtFile"
+        },
+        {
+          "id": "xQe3SecThtay",
+          "name": "ProsConsItem",
+          "displayName": "ProsConsItem",
+          "componentImportPath": "./components/sections/ProsConsItem"
+        },
+        {
+          "id": "bRva4mBEYkA1",
+          "name": "WhatWeBelieveItem",
+          "displayName": "WhatWeBelieveItem",
+          "componentImportPath": "./components/sections/WhatWeBelieveItem"
+        },
+        {
+          "id": "_ATHPXNl57FV",
+          "name": "WhatWeBelieveDetail",
+          "displayName": "WhatWeBelieveDetail",
+          "componentImportPath": "./components/sections/WhatWeBelieveDetail"
+        },
+        {
+          "id": "rpUptHcqPy6y",
+          "name": "WhatWeBelieveSection",
+          "displayName": "WhatWeBelieveSection",
+          "componentImportPath": "./components/sections/WhatWeBelieveSection"
         }
       ],
       "customFunctions": []
@@ -411,6 +477,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.357",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.357/dist/plasmic.schema.json"
+  "cliVersion": "0.1.358",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.358/dist/plasmic.schema.json"
 }
