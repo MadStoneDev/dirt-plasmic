@@ -18,7 +18,15 @@ export function PainPointsSection({
 }: PainPointsSectionProps) {
   const [checkedCount, setCheckedCount] = useState(0);
 
-  const slidesArray = React.Children.toArray(slides);
+  // Plasmic wraps slot children in a React.Fragment — unwrap to get individual slides
+  const rawSlides = React.Children.toArray(slides);
+  const slidesArray =
+    rawSlides.length === 1 &&
+    React.isValidElement(rawSlides[0]) &&
+    rawSlides[0].type === React.Fragment
+      ? React.Children.toArray((rawSlides[0].props as { children?: ReactNode }).children)
+      : rawSlides;
+
   const maxIndex = slidesArray.length - 1;
   const currentIndex = Math.min(checkedCount, maxIndex);
 
