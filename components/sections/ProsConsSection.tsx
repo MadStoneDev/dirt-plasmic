@@ -28,14 +28,29 @@ export function ProsConsSection({
   ctaLink,
   tagline,
 }: ProsConsSectionProps) {
+  // Plasmic wraps slot children in a React.Fragment — unwrap to get individual items
+  const unwrapSlot = (slot: ReactNode): React.ReactNode[] => {
+    const arr = React.Children.toArray(slot);
+    if (
+      arr.length === 1 &&
+      React.isValidElement(arr[0]) &&
+      arr[0].type === React.Fragment
+    ) {
+      return React.Children.toArray(
+        (arr[0].props as { children?: ReactNode }).children
+      );
+    }
+    return arr;
+  };
+
   // Inject type="con" into each cons child
-  const consItems = React.Children.map(cons, (child) => {
+  const consItems = unwrapSlot(cons).map((child) => {
     if (!React.isValidElement(child)) return null;
     return React.cloneElement(child as React.ReactElement<any>, { type: "con" });
   });
 
   // Inject type="pro" into each pros child
-  const prosItems = React.Children.map(pros, (child) => {
+  const prosItems = unwrapSlot(pros).map((child) => {
     if (!React.isValidElement(child)) return null;
     return React.cloneElement(child as React.ReactElement<any>, { type: "pro" });
   });
