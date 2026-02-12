@@ -24,6 +24,14 @@
 }
 
 @font-face {
+  font-family: "Roboto Condensed";
+  src: url("/fonts/Roboto_Condensed-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Uncut Sans";
   src: url("/fonts/UncutSans-Regular.woff") format("woff");
   font-weight: 400;

@@ -27,13 +27,13 @@ export function DirtProcessSection({
   });
 
   return (
-    <section className="py-16 px-4 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
-      <div className="max-w-7xl mx-auto">
+    <section className="py-40 px-8 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
+      {/*<div className="max-w-7xl mx-auto">*/}
         {/* Header */}
-        <h2 className="font-display font-bold text-3xl md:text-5xl uppercase mb-16 text-center">
-          <span className="text-dirt-deep">{fmt(headingStart)}</span>
-          <span className="text-dirt-pop">{fmt(headingHighlight)}</span>
-          <span className="text-dirt-deep">{fmt(headingEnd)}</span>
+        <h2 className="max-w-4xl mx-auto font-display font-bold text-5xl md:text-8xl mb-16 text-center">
+          <span className="text-dirt-pop">{fmt(headingStart)}</span>
+          <span className="text-dirt-deep">{fmt(headingHighlight)}</span>
+          <span className="text-dirt-pop">{fmt(headingEnd)}</span>
         </h2>
 
         {/* Process Steps */}
@@ -44,17 +44,22 @@ export function DirtProcessSection({
         {/* Bottom CTA Rectangle */}
         {(bottomHeading || bottomDescription) && (
           <div className="mt-16 bg-dirt-green p-8 md:p-12">
-            <div className="grid lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-5">
+            <div className="grid lg:grid-cols-10 gap-8 items-center">
+              <div className="lg:col-span-4">
                 {bottomHeading && (
-                  <h3 className="font-display font-bold text-2xl md:text-4xl text-dirt-deep">
+                  <h3 className="font-display font-bold text-3xl md:text-5xl text-dirt-deep" style={{
+                    lineHeight: "1.25",
+                    letterSpacing: "-2%"
+                  }}>
                     {bottomHeading}
                   </h3>
                 )}
               </div>
-              <div className="lg:col-span-7 items-center">
+              <div className="lg:col-span-6 items-center">
                 {bottomDescription && (
-                  <p className="text-dirt-deep font-sans text-base whitespace-pre-line">
+                  <p className="text-dirt-deep font-sans text-lg md:text-xl whitespace-pre-line" style={{
+                    lineHeight: "1.5"
+                  }}>
                     {bottomDescription}
                   </p>
                 )}
@@ -62,7 +67,7 @@ export function DirtProcessSection({
             </div>
           </div>
         )}
-      </div>
+      {/*</div>*/}
     </section>
   );
 }

@@ -85,22 +85,22 @@ export function DirtFrameworkSection({
   return (
     <section
       ref={sectionRef}
-      className="relative bg-dirt-off-white"
+      className="relative py-40 px-8 bg-dirt-off-white"
       style={{
         height: `${sectionHeight}px`,
         gridColumn: "1 / -1",
       }}
     >
       {/* Header — scrolls away naturally before blocks pin */}
-      <div className="px-4 pt-16 pb-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-display font-bold text-3xl md:text-5xl uppercase mb-6">
-            <span className="text-dirt-deep">{fmt(headingStart)}</span>
-            <span className="text-dirt-pop">{fmt(headingHighlight)}</span>
-            <span className="text-dirt-deep">{fmt(headingEnd)}</span>
+      <div className="pb-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-center font-display font-bold text-5xl md:text-8xl mb-6">
+            <span className="text-dirt-pop">{fmt(headingStart)}</span>
+            <span className="text-dirt-deep">{fmt(headingHighlight)}</span>
+            <span className="text-dirt-pop">{fmt(headingEnd)}</span>
           </h2>
           {description && (
-            <p className="text-lg text-dirt-deep/80 font-sans max-w-3xl whitespace-pre-line">
+            <p className="text-center text-3xl text-dirt-deep/80 font-sans whitespace-pre-line">
               {description}
             </p>
           )}
@@ -112,8 +112,8 @@ export function DirtFrameworkSection({
 
       {/* Sticky blocks — pins when reaching viewport top */}
       <div className="sticky top-0" style={{ height: `${stickyHeight}px` }}>
-        <div className="h-full px-4 py-8">
-          <div className="max-w-7xl mx-auto h-full">
+        <div className="h-full py-8">
+          <div className="h-full">
             <div className="relative h-full">
               {displayChildren.map((child, displayIndex) => {
                 const originalIndex = reversed ? allChildren.length - 1 - displayIndex : displayIndex;

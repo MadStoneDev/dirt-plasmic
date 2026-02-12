@@ -26,9 +26,9 @@ function PlusIcon() {
 
 export function SignsCTAItem({ text }: SignsCTAItemProps) {
   return (
-    <div className="flex flex-col items-center text-center px-10">
+    <div className="flex flex-col items-center text-center">
       <PlusIcon />
-      <p className="mt-6 text-dirt-off-white font-sans text-2xl font-bold">
+      <p className="mt-6 text-dirt-off-white font-sans text-3xl font-bold">
         {text}
       </p>
     </div>

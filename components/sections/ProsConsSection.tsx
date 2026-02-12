@@ -2,6 +2,7 @@
 
 import React, { ReactNode } from "react";
 import { fmt } from "../../utils/formatText";
+import Image from "next/image";
 
 export interface ProsConsSectionProps {
   headingStart?: string;
@@ -59,7 +60,7 @@ export function ProsConsSection({
     <section className="py-40 px-8 bg-dirt-pop" style={{ gridColumn: "1 / -1" }}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <h2 className="mx-auto max-w-4xl font-display font-bold text-5xl md:text-7xl mb-20 text-center">
+        <h2 className="mx-auto max-w-6xl font-display font-bold text-5xl md:text-8xl mb-20 text-center">
           <span className="text-dirt-off-white">{fmt(headingStart)}</span>
           <span className="text-dirt-deep">{fmt(headingHighlight)}</span>
           <span className="text-dirt-off-white">{fmt(headingEnd)}</span>
@@ -94,13 +95,20 @@ export function ProsConsSection({
             {ctaLabel && (
               <a
                 href={ctaLink || "#"}
-                className="inline-block bg-dirt-deep text-dirt-off-white font-display font-bold text-lg uppercase px-10 py-4 hover:bg-dirt-black transition-colors"
+                className="inline-flex items-center gap-2 bg-dirt-deep text-dirt-off-white font-display font-bold text-lg uppercase px-10 py-4 hover:bg-dirt-black transition-colors"
               >
+                <Image
+                    src={`/90deg Arrow - White.png`}
+                    alt={`90 Degrees Arrow`}
+                    width={50}
+                    height={50}
+                    className={`w-4`}
+                />
                 {ctaLabel}
               </a>
             )}
             {tagline && (
-              <p className="mt-4 text-dirt-off-white font-sans font-light">
+              <p className="mt-6 text-dirt-off-white/70 font-sans text-xl font-light">
                 {tagline}
               </p>
             )}

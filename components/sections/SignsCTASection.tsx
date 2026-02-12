@@ -26,16 +26,16 @@ export function SignsCTASection({
       className="py-40 px-8 bg-dirt-black"
       style={{ gridColumn: "1 / -1" }}
     >
-      <div className="max-w-7xl mx-auto">
+      {/*<div className="max-w-7xl mx-auto">*/}
         {/* Heading with highlighted word */}
-        <h2 className="font-display font-bold text-5xl md:text-7xl text-center mb-20">
+        <h2 className="font-display font-bold text-5xl md:text-8xl text-center mb-20">
           <span className="text-dirt-off-white">{fmt(headingStart)}</span>
           <span className="text-dirt-pop">{fmt(headingHighlight)}</span>
           <span className="text-dirt-off-white">{fmt(headingEnd)}</span>
         </h2>
 
         {/* Three Column Section */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        <div className="grid md:grid-cols-3 gap-10 mb-20">
           {children}
         </div>
 
@@ -57,7 +57,7 @@ export function SignsCTASection({
             </a>
           </div>
         )}
-      </div>
+      {/*</div>*/}
     </section>
   );
 }

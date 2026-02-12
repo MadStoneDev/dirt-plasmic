@@ -16,7 +16,7 @@ export function DirtFileSubItem({
     >
       {heading && (
         <h4
-          className="font-display font-bold text-lg text-dirt-off-white uppercase mb-2"
+          className="font-display font-bold text-base text-dirt-off-white uppercase mb-3"
           style={{ letterSpacing: "1px" }}
         >
           {heading}
@@ -24,8 +24,8 @@ export function DirtFileSubItem({
       )}
       {description && (
         <p
-          className="text-dirt-off-white/80 font-sans text-base text-justify"
-          style={{ letterSpacing: "-5%", lineHeight: "150%" }}
+          className="text-dirt-off-white/80 font-sans text-base text-justify hyphens-none"
+          style={{ letterSpacing: "-3%", lineHeight: "150%" }}
         >
           {description}
         </p>

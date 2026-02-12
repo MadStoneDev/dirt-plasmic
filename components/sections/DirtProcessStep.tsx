@@ -28,15 +28,17 @@ export function DirtProcessStep({
       className={`flex flex-col gap-12 ${isEven ? "lg:flex-row-reverse" : "lg:flex-row"}`}
     >
       {/* Info Column */}
-      <div className="bg-dirt-deep p-12 w-full max-w-[37%] flex flex-col">
+      <div className="bg-dirt-deep p-16 w-full max-w-[40%] flex flex-col">
         {heading && (
-          <h3 className="font-display font-bold text-2xl md:text-4xl text-dirt-pop uppercase mb-4">
+          <h3 className="font-display font-bold text-2xl md:text-6xl text-dirt-pop mb-4" style={{
+            letterSpacing: "-2%"
+          }}>
             {heading}
           </h3>
         )}
 
         {description && (
-          <p className="text-dirt-pop font-san text-lg whitespace-pre-line flex-grow">
+          <p className="text-dirt-pop font-sans text-2xl whitespace-pre-line grow">
             {description}
           </p>
         )}
@@ -46,7 +48,7 @@ export function DirtProcessStep({
             {parsedTags.map((tag, tagIndex) => (
               <span
                 key={tagIndex}
-                className="px-3 py-1 font-display uppercase text-xs font-medium text-dirt-pop"
+                className="px-3 py-1 font-display uppercase text-sm md:text-base font-medium text-dirt-pop"
                 style={{ backgroundColor: "rgba(254, 92, 2, 0.15)", letterSpacing: "1px" }}
               >
                 {tag}

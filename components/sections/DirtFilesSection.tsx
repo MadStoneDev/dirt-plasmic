@@ -43,10 +43,10 @@ export function DirtFilesSection({
       className="py-40 px-8 bg-dirt-deep"
       style={{ gridColumn: "1 / -1" }}
     >
-      <div className="max-w-7xl mx-auto">
+      {/*<div className="max-w-7xl mx-auto">*/}
         {/* Header */}
         <div className="mb-20">
-          <h2 className="font-display font-bold text-5xl md:text-7xl mb-6">
+          <h2 className="font-display font-bold text-5xl md:text-8xl mb-6">
             <span className="text-dirt-pop">{fmt(headingStart)}</span>
             <span className="text-dirt-off-white uppercase">
               {fmt(headingHighlight)}
@@ -54,14 +54,14 @@ export function DirtFilesSection({
             <span className="text-dirt-pop">{fmt(headingEnd)}</span>
           </h2>
           {description && (
-            <p className="text-2xl text-dirt-pop font-sans max-w-3xl whitespace-pre-line">
+            <p className="text-3xl text-dirt-pop font-sans max-w-3xl whitespace-pre-line">
               {description}
             </p>
           )}
         </div>
 
         {/* Two Column Layout - 40% / 60% */}
-        <div className="grid lg:grid-cols-[40fr_60fr] gap-8">
+        <div className="grid lg:grid-cols-[45fr_55fr] gap-8">
           {/* Left - Accordion */}
           <div className="flex flex-col">
             {files}
@@ -85,7 +85,7 @@ export function DirtFilesSection({
             )}
           </div>
         </div>
-      </div>
+      {/*</div>*/}
     </section>
   );
 }

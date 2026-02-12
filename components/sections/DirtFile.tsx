@@ -40,7 +40,7 @@ export function DirtFile({
           <div className="flex items-stretch justify-end gap-2 mb-4">
             {tag1 && (
               <span
-                className="px-3 py-1 flex items-center justify-center bg-white/10 text-dirt-off-white uppercase text-xs font-display font-medium"
+                className="px-3 py-1 flex items-center justify-center bg-white/10 text-dirt-off-white uppercase text-sm font-display font-medium"
                 style={{ letterSpacing: "1px" }}
               >
                 {tag1}
@@ -48,7 +48,7 @@ export function DirtFile({
             )}
             {tag2 && (
               <span
-                className="px-3 py-1 flex items-center justify-center bg-white/10 text-dirt-off-white uppercase text-xs font-display font-medium"
+                  className="px-3 py-1 flex items-center justify-center bg-white/10 text-dirt-off-white uppercase text-sm font-display font-medium"
                 style={{ letterSpacing: "1px" }}
               >
                 {tag2}
@@ -74,7 +74,7 @@ export function DirtFile({
         )}
 
         <h3
-          className={`font-display font-bold text-3xl md:text-5xl uppercase transition-colors ${
+          className={`font-display font-bold text-4xl md:text-6xl uppercase transition-colors ${
             isActive ? "text-dirt-off-white" : "text-dirt-pop/50"
           }`}
         >

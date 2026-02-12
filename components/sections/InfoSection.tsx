@@ -34,7 +34,7 @@ export function InfoSection({
       {/*<div className="mx-auto max-w-7xl">*/}
       <div className="px-8 mx-auto">
         {(heading || headingHighlight || headingEnd) && (
-          <h2 className="font-display font-bold text-4xl md:text-6xl uppercase mb-12">
+          <h2 className="font-display font-bold text-5xl md:text-8xl mb-12">
             {heading && <span className="text-dirt-pop">{fmt(heading)} </span>}
             {headingHighlight && <span className="text-dirt-deep">{fmt(headingHighlight)}</span>}
             {headingEnd && <span className="text-dirt-pop"> {fmt(headingEnd)}</span>}
@@ -60,13 +60,13 @@ export function InfoSection({
           {/* Info Column */}
           <div className="lg:w-1/2 flex flex-col gap-6">
             {subheading && (
-              <h3 className="font-display font-bold text-2xl md:text-4xl text-dirt-pop uppercase">
+              <h3 className="max-w-lg font-display font-bold text-4xl md:text-5xl text-dirt-pop">
                 {fmt(subheading)}
               </h3>
             )}
 
             {richText && (
-              <div className="text-lg text-dirt-deep/80 font-sans whitespace-pre-line">
+              <div className="text-base md:text-xl text-dirt-deep/80 font-sans whitespace-pre-line">
                 {richText}
               </div>
             )}
