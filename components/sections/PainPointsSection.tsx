@@ -64,21 +64,19 @@ export function PainPointsSection({
         </div>
 
         {/* Right Column - Slide Carousel */}
-        <div className="relative overflow-hidden">
+        <div className="grid overflow-hidden">
           {slidesArray.length > 0 ? (
             slidesArray.map((slide, i) => (
               <div
                 key={i}
-                className={`w-full transition-transform duration-500 ease-in-out ${
-                  i !== 0 ? "absolute top-0 left-0 right-0" : ""
-                }`}
+                className="col-start-1 row-start-1 transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateY(${(i - currentIndex) * 100}%)` }}
               >
                 {slide}
               </div>
             ))
           ) : (
-            <div className="relative grow w-full aspect-square border border-dirt-pop">
+            <div className="relative w-full aspect-square border border-dirt-pop">
               <div className="w-full h-full min-h-100 bg-dirt-deep/10 flex items-center justify-center">
                 <span className="text-dirt-deep/50 font-sans">Upload images</span>
               </div>
