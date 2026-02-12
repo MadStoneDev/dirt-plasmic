@@ -21,7 +21,6 @@ export function PainPointsSection({
   const slidesArray = React.Children.toArray(slides);
   const maxIndex = slidesArray.length - 1;
   const currentIndex = Math.min(checkedCount, maxIndex);
-  const activeSlide = slidesArray[currentIndex] || null;
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
@@ -56,9 +55,21 @@ export function PainPointsSection({
           </div>
         </div>
 
-        {/* Right Column - Photo with Border and Caption */}
-        <div className="flex flex-col">
-          {activeSlide || (
+        {/* Right Column - Slide Carousel */}
+        <div className="relative overflow-hidden">
+          {slidesArray.length > 0 ? (
+            slidesArray.map((slide, i) => (
+              <div
+                key={i}
+                className={`w-full transition-transform duration-500 ease-in-out ${
+                  i !== 0 ? "absolute top-0 left-0 right-0" : ""
+                }`}
+                style={{ transform: `translateY(${(i - currentIndex) * 100}%)` }}
+              >
+                {slide}
+              </div>
+            ))
+          ) : (
             <div className="relative grow w-full aspect-square border border-dirt-pop">
               <div className="w-full h-full min-h-100 bg-dirt-deep/10 flex items-center justify-center">
                 <span className="text-dirt-deep/50 font-sans">Upload images</span>

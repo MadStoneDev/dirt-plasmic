@@ -26,19 +26,22 @@ export function HeroSection({
   ctaLink,
 }: HeroSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  const ANIMATION_RUNWAY = 600;
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current) return;
+      if (!sectionRef.current || !textRef.current) return;
 
       const rect = sectionRef.current.getBoundingClientRect();
-      const sectionHeight = sectionRef.current.offsetHeight;
-      const viewportHeight = window.innerHeight;
+      const scrolled = Math.max(0, -rect.top);
+      const textHeight = textRef.current.offsetHeight;
 
-      const scrolled = -rect.top;
-      const scrollableDistance = sectionHeight - viewportHeight;
-      const progress = Math.max(0, Math.min(1, scrolled / scrollableDistance));
+      // Animation starts when the image area becomes stuck (text has scrolled past)
+      const animationScrolled = scrolled - textHeight;
+      const progress = Math.max(0, Math.min(1, animationScrolled / ANIMATION_RUNWAY));
 
       setScrollProgress(progress);
     };
@@ -54,7 +57,7 @@ export function HeroSection({
   return (
     <section ref={sectionRef} className="relative w-full bg-dirt-deep" style={{ gridColumn: "1 / -1" }}>
       {/*<div className={`px-8 mx-auto max-w-7xl`}>*/}
-      <div className={`px-8 mx-auto`}>
+      <div ref={textRef} className={`px-8 mx-auto`}>
       {heading && (
         <div className="pt-12 max-w-md sm:max-w-lg md:max-w-3xl">
           <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-7xl text-dirt-pop uppercase">
@@ -164,6 +167,9 @@ export function HeroSection({
           )}
         </div>
       </div>
+
+      {/* Scroll runway — midground animation plays while images are stuck */}
+      <div style={{ height: ANIMATION_RUNWAY }} aria-hidden="true" />
     </section>
   );
 }
