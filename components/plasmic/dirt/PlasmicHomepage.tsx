@@ -67,12 +67,19 @@ import { PainPointsSection } from "../../sections/PainPointsSection"; // plasmic
 import { PainPointCheckbox } from "../../sections/PainPointCheckbox"; // plasmic-import: -4VXY6ZJhgvD/codeComponent
 import { PainPointSlide } from "../../sections/PainPointSlide"; // plasmic-import: 5HzjLrOXVhOC/codeComponent
 import { SignsCTASection } from "../../sections/SignsCTASection"; // plasmic-import: 3hNXXIJF-DSf/codeComponent
+import { SignsCTAItem } from "../../sections/SignsCTAItem"; // plasmic-import: qYuP0KLLo7r4/codeComponent
 import { TestimonialSection } from "../../sections/TestimonialSection"; // plasmic-import: 19614fshNGrI/codeComponent
 import { ThreeReasonsSection } from "../../sections/ThreeReasonsSection"; // plasmic-import: wg-w-3Zg2_WL/codeComponent
+import { ThreeReasonsItem } from "../../sections/ThreeReasonsItem"; // plasmic-import: it6z1sUkm2kP/codeComponent
 import { DirtFrameworkSection } from "../../sections/DirtFrameworkSection"; // plasmic-import: hjSOs7Mv8Nv8/codeComponent
+import { DirtFrameworkBlock } from "../../sections/DirtFrameworkBlock"; // plasmic-import: ks6B6gJ4vFGq/codeComponent
 import { DirtProcessSection } from "../../sections/DirtProcessSection"; // plasmic-import: RtT6x1K_HM6p/codeComponent
+import { DirtProcessStep } from "../../sections/DirtProcessStep"; // plasmic-import: eRsQ7U7TAK34/codeComponent
 import { DirtFilesSection } from "../../sections/DirtFilesSection"; // plasmic-import: BPSe7oQrItqb/codeComponent
+import { DirtFile } from "../../sections/DirtFile"; // plasmic-import: dvgTT-ZEN2C8/codeComponent
+import { DirtFileSubItem } from "../../sections/DirtFileSubItem"; // plasmic-import: 3uB7FZW9uHTa/codeComponent
 import { ProsConsSection } from "../../sections/ProsConsSection"; // plasmic-import: qgjtoWkw9uzC/codeComponent
+import { ProsConsItem } from "../../sections/ProsConsItem"; // plasmic-import: xQe3SecThtay/codeComponent
 import { FooterSection } from "../../sections/FooterSection"; // plasmic-import: I7Z-mxcvFz5C/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
@@ -472,8 +479,26 @@ function PlasmicHomepage__RenderFunc(props: {
               "You\u2019re getting ready to expand or merge your business, and need to look cohesive"
             }
             item3Text={"Your brand is outdated, undefined, or just plain weak"}
-          />
+          >
+            <SignsCTAItem
+              className={classNames("__wab_instance", sty.signsCtaItem__tnyCd)}
+              text={
+                "You\u2019re entering a new market or offering new services"
+              }
+            />
 
+            <SignsCTAItem
+              className={classNames("__wab_instance", sty.signsCtaItem__jjiZe)}
+              text={
+                "You\u2019re getting ready to expand or merge your business, and need to look cohesive"
+              }
+            />
+
+            <SignsCTAItem
+              className={classNames("__wab_instance", sty.signsCtaItem__dgV7L)}
+              text={"Your brand is outdated, undefined, or just plain weak"}
+            />
+          </SignsCTASection>
           <TestimonialSection
             authorName={"David Koren"}
             authorPhoto={"/plasmic/dirt/images/davidKorenPhotoJpg.jpg"}
@@ -516,8 +541,40 @@ function PlasmicHomepage__RenderFunc(props: {
               "Our DIRT Framework digs deep to unearth what makes you different. Then we build a brand that wins you more of the right projects."
             }
             reason3Heading={"Proven approach"}
-          />
+          >
+            <ThreeReasonsItem
+              className={classNames(
+                "__wab_instance",
+                sty.threeReasonsItem___8VKnb
+              )}
+              description={
+                "Don\u2019t waste your time explaining the basics to us. We eat, sleep, and breathe construction, ConTech, PropTech, building materials, and property  development (which might explain the silicosis)."
+              }
+              heading={"ABC specialists"}
+            />
 
+            <ThreeReasonsItem
+              className={classNames(
+                "__wab_instance",
+                sty.threeReasonsItem__exwEv
+              )}
+              description={
+                "Smart strategy, memorable messaging, and striking design \u2014 all done under one roof."
+              }
+              heading={"Everything in one"}
+            />
+
+            <ThreeReasonsItem
+              className={classNames(
+                "__wab_instance",
+                sty.threeReasonsItem__pAoFq
+              )}
+              description={
+                "Our DIRT Framework digs deep to unearth what makes you different. Then we build a brand that wins you more of the right projects."
+              }
+              heading={"Proven approach"}
+            />
+          </ThreeReasonsSection>
           <DirtFrameworkSection
             data-plasmic-name={"dirtFrameworkSection"}
             data-plasmic-override={overrides.dirtFrameworkSection}
@@ -560,8 +617,59 @@ function PlasmicHomepage__RenderFunc(props: {
             headingHighlight={"DIRT"}
             headingStart={"The"}
             reversed={true}
-          />
+          >
+            <DirtFrameworkBlock
+              backgroundImage={"/plasmic/dirt/images/discoverBackgroundJpg.jpg"}
+              className={classNames(
+                "__wab_instance",
+                sty.dirtFrameworkBlock__r8Q2R
+              )}
+              description={
+                "Dig deep to unearth your brand. This is the groundwork."
+              }
+              heading={"Discover"}
+              overlayColor={"dirt-deep"}
+            />
 
+            <DirtFrameworkBlock
+              backgroundImage={"/plasmic/dirt/images/identifyBackgroundJpg.jpg"}
+              className={classNames(
+                "__wab_instance",
+                sty.dirtFrameworkBlock___6ZNob
+              )}
+              description={
+                "Find the X-factor that makes you different. Plant your stake."
+              }
+              heading={"Identify"}
+              overlayColor={"dirt-pop"}
+            />
+
+            <DirtFrameworkBlock
+              backgroundImage={"/plasmic/dirt/images/refineBackgroundJpg.jpg"}
+              className={classNames(
+                "__wab_instance",
+                sty.dirtFrameworkBlock__gCvvr
+              )}
+              description={
+                "Sift out the jargon to find the jewels. This is where messaging and positioning combine."
+              }
+              heading={"Refine"}
+              overlayColor={"dirt-green"}
+            />
+
+            <DirtFrameworkBlock
+              backgroundImage={"/plasmic/dirt/images/tellBackgroundJpg.jpg"}
+              className={classNames(
+                "__wab_instance",
+                sty.dirtFrameworkBlock__c8Sit
+              )}
+              description={
+                "Share your message with the distinctive voice and vibe your brand has been missing."
+              }
+              heading={"Tell"}
+              overlayColor={"dirt-blue"}
+            />
+          </DirtFrameworkSection>
           <DirtProcessSection
             data-plasmic-name={"dirtProcessSection"}
             data-plasmic-override={overrides.dirtProcessSection}
@@ -597,8 +705,50 @@ function PlasmicHomepage__RenderFunc(props: {
             step3Tags={
               "Fee Proposals, Bid Submissions, Pitch Decks, Case Studies, Safety & Compliance Content"
             }
-          />
+          >
+            <DirtProcessStep
+              className={classNames(
+                "__wab_instance",
+                sty.dirtProcessStep__bx3J3
+              )}
+              description={
+                "Bold visuals that make you unforgettable. (Including your distinctive new logo.)"
+              }
+              heading={"Visual brand identity"}
+              image={
+                "/plasmic/dirt/images/handComingOutOfDirtHoldingPhoneJpg.jpg"
+              }
+              tags={"Logo, Palette, Design Elements"}
+            />
 
+            <DirtProcessStep
+              className={classNames(
+                "__wab_instance",
+                sty.dirtProcessStep__a2Shk
+              )}
+              description={
+                "Your work is state-of-the-art. Your website should be, too."
+              }
+              heading={"Website"}
+              image={"/plasmic/dirt/images/modernLaptopOnDirtJpg.jpg"}
+              tags={"Copywriting, Design*, Development, Maintenance"}
+            />
+
+            <DirtProcessStep
+              className={classNames(
+                "__wab_instance",
+                sty.dirtProcessStep___2398S
+              )}
+              description={
+                "Persuasive, plain-English tools that make it easy for clients to say \u201cYou\u2019re the one.\u201d"
+              }
+              heading={"Winning assets"}
+              image={"/plasmic/dirt/images/tradieWithGlovesUsingTabletJpg.jpg"}
+              tags={
+                "Fee Proposals, Bid Submissions, Pitch Decks, Case Studies, Safety & Compliance Content"
+              }
+            />
+          </DirtProcessSection>
           <DirtFilesSection
             data-plasmic-name={"dirtFilesSection"}
             data-plasmic-override={overrides.dirtFilesSection}
@@ -652,13 +802,140 @@ function PlasmicHomepage__RenderFunc(props: {
             headingEnd={" files"}
             headingHighlight={"Dirt"}
             headingStart={"The "}
-          />
+          >
+            <DirtFile
+              buttonLabel={"Crack the file"}
+              buttonLink={"/"}
+              className={classNames("__wab_instance", sty.dirtFile__gr4Vv)}
+              heading={"Core FDM"}
+              image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
+              tag1={"Website"}
+              tag2={"Branding"}
+            >
+              <DirtFileSubItem
+                className={classNames(
+                  "__wab_instance",
+                  sty.dirtFileSubItem__lhmj8
+                )}
+                description={
+                  "Core FDM was delivering major facade projects, but their brand didn\u2019t match the scale of the work. The website made them look like technical specialists, not the end-to-end facade partner they\u2019d become. As projects grew more complex, the gap started to hurt."
+                }
+                heading={"The Pinch"}
+              />
 
+              <DirtFileSubItem
+                className={classNames(
+                  "__wab_instance",
+                  sty.dirtFileSubItem__hmthr
+                )}
+                description={
+                  "\u201cDelivering custom building envelope solutions.\u201d Technically true, but interchangeable with half the industry. It gave architects no clue when to bring Core FDM in, how they actually work, or why they\u2019re different when things get complicated."
+                }
+                heading={"The Cringe"}
+              />
+
+              <DirtFileSubItem
+                className={classNames(
+                  "__wab_instance",
+                  sty.dirtFileSubItem___0PJf
+                )}
+                description={
+                  "We turned complex facade expertise into language architects immediately understand, without dumbing it down. Clear, confident messaging (with just enough personality) positioned Core FDM as a true facade management partner, not just a consultant. The brand finally sounds like the team behind it and attracts better-fit enquiries."
+                }
+                heading={"The Solve"}
+              />
+            </DirtFile>
+            <DirtFile
+              buttonLabel={"Crack the file"}
+              buttonLink={"/"}
+              className={classNames("__wab_instance", sty.dirtFile__nulPg)}
+              heading={"StudioMX"}
+              image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
+              tag1={"Website"}
+              tag2={"Branding"}
+            >
+              <DirtFileSubItem
+                className={classNames(
+                  "__wab_instance",
+                  sty.dirtFileSubItem__xetvY
+                )}
+                description={
+                  "StudioMX delivered high-quality Revit modelling, coordination, and rendering for U.S. architects, but their brand didn\u2019t show it. The website read like a services list, which made them look like just another outsourcing team."
+                }
+                heading={"The Pinch"}
+              />
+
+              <DirtFileSubItem
+                className={classNames(
+                  "__wab_instance",
+                  sty.dirtFileSubItem___9BYrz
+                )}
+                description={
+                  "\u201cStudioMX provides Autodesk Revit, BIM, Renderings, and VDC support\u2026\u201d told you what they did, but nothing about what it\u2019s actually like to work with them. It didn\u2019t address the trust issues architects already have with outsourcing."
+                }
+                heading={"The Cringe"}
+              />
+
+              <DirtFileSubItem
+                className={classNames(
+                  "__wab_instance",
+                  sty.dirtFileSubItem__dfcuG
+                )}
+                description={
+                  "We stopped leading with services and repositioned StudioMX around reassurance, carried through the messaging, brand, and website. With NDAs limiting project imagery, the brand had to do the heavy lifting, so we focused on how StudioMX really shows up: capable, collaborative, and genuinely good humans."
+                }
+                heading={"The Solve"}
+              />
+            </DirtFile>
+            <DirtFile
+              buttonLabel={"Crack the file"}
+              buttonLink={"/"}
+              className={classNames("__wab_instance", sty.dirtFile__sKsj)}
+              heading={"Techne"}
+              image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
+              tag1={"Website"}
+              tag2={"Branding"}
+            >
+              <DirtFileSubItem
+                className={classNames(
+                  "__wab_instance",
+                  sty.dirtFileSubItem__waNvn
+                )}
+                description={
+                  "Core FDM was delivering major facade projects, but their brand didn\u2019t match the scale of the work. The website made them look like technical specialists, not the end-to-end facade partner they\u2019d become. As projects grew more complex, the gap started to hurt."
+                }
+                heading={"The Pinch"}
+              />
+
+              <DirtFileSubItem
+                className={classNames(
+                  "__wab_instance",
+                  sty.dirtFileSubItem___4Grda
+                )}
+                description={
+                  "\u201cDelivering custom building envelope solutions.\u201d Technically true, but interchangeable with half the industry. It gave architects no clue when to bring Core FDM in, how they actually work, or why they\u2019re different when things get complicated."
+                }
+                heading={"The Cringe"}
+              />
+
+              <DirtFileSubItem
+                className={classNames(
+                  "__wab_instance",
+                  sty.dirtFileSubItem__smvPy
+                )}
+                description={
+                  "We turned complex facade expertise into language architects immediately understand, without dumbing it down. Clear, confident messaging (with just enough personality) positioned Core FDM as a true facade management partner, not just a consultant. The brand finally sounds like the team behind it and attracts better-fit enquiries."
+                }
+                heading={"The Solve"}
+              />
+            </DirtFile>
+          </DirtFilesSection>
           <InfoSection
             className={classNames("__wab_instance", sty.infoSection__wf3C9)}
             ctaLabel={"We make it happen"}
             ctaLink={"/"}
             heading={"Our reputation is ~~soiled~~"}
+            headingHighlight={"solid"}
             image={
               "/plasmic/dirt/images/architectATableOntopOfADirtMoundJpg.jpg"
             }
@@ -716,6 +993,39 @@ function PlasmicHomepage__RenderFunc(props: {
             con3={
               "If you want to play it safe (That\u2019s OSHA\u2019s job. Let\u2019s have some fun)"
             }
+            cons={
+              <React.Fragment>
+                <ProsConsItem
+                  className={classNames(
+                    "__wab_instance",
+                    sty.prosConsItem__xzItK
+                  )}
+                  text={
+                    "If you love nothingburger words like innovative, cutting-edge, and solutions"
+                  }
+                />
+
+                <ProsConsItem
+                  className={classNames(
+                    "__wab_instance",
+                    sty.prosConsItem__qkDw1
+                  )}
+                  text={
+                    "If you want an agency that nods politely and says \u201cyes\u201d to all your ideas \u2014 even if they\u2019re bad"
+                  }
+                />
+
+                <ProsConsItem
+                  className={classNames(
+                    "__wab_instance",
+                    sty.prosConsItem___1GmA1
+                  )}
+                  text={
+                    "If you want to play it safe (That\u2019s OSHA\u2019s job. Let\u2019s have some fun)"
+                  }
+                />
+              </React.Fragment>
+            }
             consHeading={"Scroll past"}
             ctaLabel={"Get in touch"}
             ctaLink={"/"}
@@ -729,6 +1039,37 @@ function PlasmicHomepage__RenderFunc(props: {
               "If you\u2019d rather test construction-grade adhesives on your face than be boring"
             }
             pro3={"If you find this stock photo as funny as we do"}
+            pros={
+              <React.Fragment>
+                <ProsConsItem
+                  className={classNames(
+                    "__wab_instance",
+                    sty.prosConsItem__tzSdv
+                  )}
+                  text={
+                    "If you want a brand built for the present \u2014 not for 50 years ago"
+                  }
+                />
+
+                <ProsConsItem
+                  className={classNames(
+                    "__wab_instance",
+                    sty.prosConsItem__zcjTr
+                  )}
+                  text={
+                    "If you\u2019d rather test construction-grade adhesives on your face than be boring"
+                  }
+                />
+
+                <ProsConsItem
+                  className={classNames(
+                    "__wab_instance",
+                    sty.prosConsItem__cAaui
+                  )}
+                  text={"If you find this stock photo as funny as we do"}
+                />
+              </React.Fragment>
+            }
             prosHeading={"Dig in"}
             tagline={"You can wash your hands later"}
           />
