@@ -92,9 +92,9 @@ export function DirtFrameworkSection({
       }}
     >
       {/* Header — scrolls away naturally before blocks pin */}
-      <div className="pb-8">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-center font-display font-bold text-5xl md:text-8xl mb-6">
+      <div className="px-4 pt-16 pb-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="font-display font-bold text-5xl md:text-8xl mb-6">
             <span className="text-dirt-pop">{fmt(headingStart)}</span>
             <span className="text-dirt-deep">{fmt(headingHighlight)}</span>
             <span className="text-dirt-pop">{fmt(headingEnd)}</span>
