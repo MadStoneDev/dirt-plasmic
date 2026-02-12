@@ -457,6 +457,12 @@
           "name": "WhatWeBelieveSection",
           "displayName": "WhatWeBelieveSection",
           "componentImportPath": "./components/sections/WhatWeBelieveSection"
+        },
+        {
+          "id": "nKt2zrpkFSyY",
+          "name": "DirtRichText",
+          "displayName": "DirtRichText",
+          "componentImportPath": "./components/sections/DirtRichText"
         }
       ],
       "customFunctions": []

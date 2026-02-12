@@ -63,6 +63,7 @@ import { HeroSection } from "../../sections/HeroSection"; // plasmic-import: oYT
 import { CompanyCarouselSection } from "../../sections/CompanyCarouselSection"; // plasmic-import: UzUry5mU4ozT/codeComponent
 import { BrandItem } from "../../sections/BrandItem"; // plasmic-import: n6yARC8wCw5J/codeComponent
 import { InfoSection } from "../../sections/InfoSection"; // plasmic-import: 3w9ZT_4EuJCw/codeComponent
+import { DirtRichText } from "../../sections/DirtRichText"; // plasmic-import: nKt2zrpkFSyY/codeComponent
 import { PainPointsSection } from "../../sections/PainPointsSection"; // plasmic-import: a6zcK0cc2pSa/codeComponent
 import { PainPointCheckbox } from "../../sections/PainPointCheckbox"; // plasmic-import: -4VXY6ZJhgvD/codeComponent
 import { PainPointSlide } from "../../sections/PainPointSlide"; // plasmic-import: 5HzjLrOXVhOC/codeComponent
@@ -104,6 +105,7 @@ export type PlasmicHomepage__OverridesType = {
   home?: Flex__<"div">;
   heroSection?: Flex__<typeof HeroSection>;
   companiesWeCoveredInDirt?: Flex__<typeof CompanyCarouselSection>;
+  dirtRichText?: Flex__<typeof DirtRichText>;
   painPointsSection?: Flex__<typeof PainPointsSection>;
   signsCtaSection?: Flex__<typeof SignsCTASection>;
   threeReasonsSection?: Flex__<typeof ThreeReasonsSection>;
@@ -287,6 +289,15 @@ function PlasmicHomepage__RenderFunc(props: {
                     "Building materials, methods, and tech have changed a LOT in the last 100 years."
                   }
                 </div>
+                <DirtRichText
+                  data-plasmic-name={"dirtRichText"}
+                  data-plasmic-override={overrides.dirtRichText}
+                  className={classNames("__wab_instance", sty.dirtRichText)}
+                  text={
+                    "From  {green|3D printing|First, they did houses and offices.},  {pop|advanced composites|First, they did houses and offices.}, and  {blue|self-healing concrete|First, they did houses and offices.}  to {blue|AI-driven predictive analytics|First, they did houses and offices.}, {pop|5D BIM|First, they did houses and offices.}, and {green|Digital Twins|First, they did houses and offices.}."
+                  }
+                />
+
                 <div
                   className={classNames(
                     projectcss.all,
@@ -344,20 +355,8 @@ function PlasmicHomepage__RenderFunc(props: {
           <PainPointsSection
             data-plasmic-name={"painPointsSection"}
             data-plasmic-override={overrides.painPointsSection}
-            caption0={"Solid. You\u2019re all good."}
-            caption1={"Hmm...Some minor cracks"}
-            caption2={"Yep. You've got noticeable damage."}
-            caption3={"Things are starting to buckle."}
-            caption4={"Serious structural damage."}
-            caption5={"Total collapsing."}
             className={classNames("__wab_instance", sty.painPointsSection)}
             heading={"What\u2019s stopping clients from choosing you?"}
-            image0={"/plasmic/dirt/images/painPointsBuilding0Jpg.jpg"}
-            image1={"/plasmic/dirt/images/painPointsBuilding1Jpg.jpg"}
-            image2={"/plasmic/dirt/images/painPointsBuilding2Jpg.jpg"}
-            image3={"/plasmic/dirt/images/painPointsBuilding3Jpg.jpg"}
-            image4={"/plasmic/dirt/images/painPointsBuilding4Jpg.jpg"}
-            image5={"/plasmic/dirt/images/painPointsBuilding5Jpg.jpg"}
             slides={
               <React.Fragment>
                 <PainPointSlide
@@ -472,13 +471,6 @@ function PlasmicHomepage__RenderFunc(props: {
             headingEnd={"y"}
             headingHighlight={"DIRT"}
             headingStart={"Signs it\u2019s time to get "}
-            item1Text={
-              "You\u2019re entering a new market or offering new services"
-            }
-            item2Text={
-              "You\u2019re getting ready to expand or merge your business, and need to look cohesive"
-            }
-            item3Text={"Your brand is outdated, undefined, or just plain weak"}
           >
             <SignsCTAItem
               className={classNames("__wab_instance", sty.signsCtaItem__tnyCd)}
@@ -529,18 +521,6 @@ function PlasmicHomepage__RenderFunc(props: {
             headingEnd={"gives you three things you won\u2019t find elsewhere"}
             headingHighlight={"DIRT "}
             headingStart={``}
-            reason1Description={
-              "Don\u2019t waste your time explaining the basics to us. We eat, sleep, and breathe construction, ConTech, PropTech, building materials, and property  development (which might explain the silicosis)."
-            }
-            reason1Heading={"ABC specialists"}
-            reason2Description={
-              "Smart strategy, memorable messaging, and striking design \u2014 all done under one roof."
-            }
-            reason2Heading={"Everything in one"}
-            reason3Description={
-              "Our DIRT Framework digs deep to unearth what makes you different. Then we build a brand that wins you more of the right projects."
-            }
-            reason3Heading={"Proven approach"}
           >
             <ThreeReasonsItem
               className={classNames(
@@ -578,37 +558,6 @@ function PlasmicHomepage__RenderFunc(props: {
           <DirtFrameworkSection
             data-plasmic-name={"dirtFrameworkSection"}
             data-plasmic-override={overrides.dirtFrameworkSection}
-            block1BackgroundImage={
-              "/plasmic/dirt/images/discoverBackgroundJpg.jpg"
-            }
-            block1Description={
-              "Dig deep to unearth your brand. This is the groundwork."
-            }
-            block1Heading={"Discover"}
-            block1OverlayColor={"dirt-deep"}
-            block2BackgroundImage={
-              "/plasmic/dirt/images/identifyBackgroundJpg.jpg"
-            }
-            block2Description={
-              "Find the X-factor that makes you different. Plant your stake."
-            }
-            block2Heading={"Identify"}
-            block2OverlayColor={"dirt-pop"}
-            block3BackgroundImage={
-              "/plasmic/dirt/images/refineBackgroundJpg.jpg"
-            }
-            block3Description={
-              "Sift out the jargon to find the jewels. This is where messaging and positioning combine."
-            }
-            block3Heading={"Refine"}
-            block3OverlayColor={"dirt-green"}
-            block4BackgroundImage={"/plasmic/dirt/images/tellBackgroundJpg.jpg"}
-            block4Description={
-              "Share your message with the distinctive voice and vibe your brand has been missing."
-            }
-            block4Heading={"Tell"}
-            block4OverlayColor={"dirt-blue"}
-            block5OverlayColor={"dirt-deep"}
             className={classNames("__wab_instance", sty.dirtFrameworkSection)}
             description={
               "Whether you\u2019re reimagining a legacy brand, targeting new markets, or pushing for more clients, we\u2019ll position your brand to grow."
@@ -681,30 +630,6 @@ function PlasmicHomepage__RenderFunc(props: {
             headingEnd={", we get to work"}
             headingHighlight={"grounded"}
             headingStart={"Once you're "}
-            step1Description={
-              "Bold visuals that make you unforgettable. (Including your distinctive new logo.)"
-            }
-            step1Heading={"Visual brand identity"}
-            step1Image={
-              "/plasmic/dirt/images/handComingOutOfDirtHoldingPhoneJpg.jpg"
-            }
-            step1Tags={"Logo, Palette, Design Elements"}
-            step2Description={
-              "Your work is state-of-the-art. Your website should be, too."
-            }
-            step2Heading={"Website"}
-            step2Image={"/plasmic/dirt/images/modernLaptopOnDirtJpg.jpg"}
-            step2Tags={"Copywriting, Design*, Development, Maintenance"}
-            step3Description={
-              "Persuasive, plain-English tools that make it easy for clients to say \u201cYou\u2019re the one.\u201d"
-            }
-            step3Heading={"Winning assets"}
-            step3Image={
-              "/plasmic/dirt/images/tradieWithGlovesUsingTabletJpg.jpg"
-            }
-            step3Tags={
-              "Fee Proposals, Bid Submissions, Pitch Decks, Case Studies, Safety & Compliance Content"
-            }
           >
             <DirtProcessStep
               className={classNames(
@@ -754,51 +679,6 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.dirtFilesSection}
             className={classNames("__wab_instance", sty.dirtFilesSection)}
             description={"Scratch the surface of our latest work and launches."}
-            file1ButtonLabel={"Crack the File"}
-            file1ButtonLink={"/"}
-            file1Heading={"Core FDM"}
-            file1Image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
-            file1Item1Description={
-              "Core FDM was delivering major facade projects, but their brand didn\u2019t match the scale of the work. The website made them look like technical specialists, not the end-to-end facade partner they\u2019d become. As projects grew more complex, the gap started to hurt."
-            }
-            file1Item1Heading={"The Pinch"}
-            file1Item2Description={
-              "\u201cDelivering custom building envelope solutions.\u201d Technically true, but interchangeable with half the industry. It gave architects no clue when to bring Core FDM in, how they actually work, or why they\u2019re different when things get complicated."
-            }
-            file1Item2Heading={"The Cringe"}
-            file1Item3Description={
-              "We turned complex facade expertise into language architects immediately understand, without dumbing it down. Clear, confident messaging (with just enough personality) positioned Core FDM as a true facade management partner, not just a consultant. The brand finally sounds like the team behind it and attracts better-fit enquiries."
-            }
-            file1Item3Heading={"The Solve"}
-            file1Tag1={"Website"}
-            file1Tag2={"Branding"}
-            file2ButtonLabel={"Crack the File"}
-            file2ButtonLink={"/"}
-            file2Heading={"StudioMX"}
-            file2Image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
-            file2Item1Description={
-              "StudioMX delivered high-quality Revit modelling, coordination, and rendering for U.S. architects, but their brand didn\u2019t show it. The website read like a services list, which made them look like just another outsourcing team."
-            }
-            file2Item1Heading={"The Pinch"}
-            file2Item2Description={
-              "\u201cStudioMX provides Autodesk Revit, BIM, Renderings, and VDC support\u2026\u201d told you what they did, but nothing about what it\u2019s actually like to work with them. It didn\u2019t address the trust issues architects already have with outsourcing."
-            }
-            file2Item2Heading={"The Cringe"}
-            file2Item3Description={
-              "We stopped leading with services and repositioned StudioMX around reassurance, carried through the messaging, brand, and website. With NDAs limiting project imagery, the brand had to do the heavy lifting, so we focused on how StudioMX really shows up: capable, collaborative, and genuinely good humans."
-            }
-            file2Item3Heading={"The Solve"}
-            file2Tag1={"Website"}
-            file2Tag2={"Branding"}
-            file3ButtonLabel={"Crack the file"}
-            file3ButtonLink={"/"}
-            file3Heading={"Techne"}
-            file3Image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
-            file3Item1Heading={"The Pinch"}
-            file3Item2Heading={"The Cringe"}
-            file3Item3Heading={"The Solve"}
-            file3Tag1={"Website"}
-            file3Tag2={"Branding"}
             headingEnd={" files"}
             headingHighlight={"Dirt"}
             headingStart={"The "}
@@ -984,15 +864,6 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-name={"prosConsSection"}
             data-plasmic-override={overrides.prosConsSection}
             className={classNames("__wab_instance", sty.prosConsSection)}
-            con1={
-              "If you love nothingburger words like innovative, cutting-edge, and solutions"
-            }
-            con2={
-              "If you want an agency that nods politely and says \u201cyes\u201d to all your ideas \u2014 even if they\u2019re bad"
-            }
-            con3={
-              "If you want to play it safe (That\u2019s OSHA\u2019s job. Let\u2019s have some fun)"
-            }
             cons={
               <React.Fragment>
                 <ProsConsItem
@@ -1032,13 +903,6 @@ function PlasmicHomepage__RenderFunc(props: {
             headingEnd={"is right for you"}
             headingHighlight={" DIRT "}
             headingStart={"Ask your mother if playing in the"}
-            pro1={
-              "If you want a brand built for the present \u2014 not for 50 years ago"
-            }
-            pro2={
-              "If you\u2019d rather test construction-grade adhesives on your face than be boring"
-            }
-            pro3={"If you find this stock photo as funny as we do"}
             pros={
               <React.Fragment>
                 <ProsConsItem
@@ -1142,6 +1006,7 @@ const PlasmicDescendants = {
     "home",
     "heroSection",
     "companiesWeCoveredInDirt",
+    "dirtRichText",
     "painPointsSection",
     "signsCtaSection",
     "threeReasonsSection",
@@ -1153,6 +1018,7 @@ const PlasmicDescendants = {
   ],
   heroSection: ["heroSection"],
   companiesWeCoveredInDirt: ["companiesWeCoveredInDirt"],
+  dirtRichText: ["dirtRichText"],
   painPointsSection: ["painPointsSection"],
   signsCtaSection: ["signsCtaSection"],
   threeReasonsSection: ["threeReasonsSection"],
@@ -1169,6 +1035,7 @@ type NodeDefaultElementType = {
   home: "div";
   heroSection: typeof HeroSection;
   companiesWeCoveredInDirt: typeof CompanyCarouselSection;
+  dirtRichText: typeof DirtRichText;
   painPointsSection: typeof PainPointsSection;
   signsCtaSection: typeof SignsCTASection;
   threeReasonsSection: typeof ThreeReasonsSection;
@@ -1243,6 +1110,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     heroSection: makeNodeComponent("heroSection"),
     companiesWeCoveredInDirt: makeNodeComponent("companiesWeCoveredInDirt"),
+    dirtRichText: makeNodeComponent("dirtRichText"),
     painPointsSection: makeNodeComponent("painPointsSection"),
     signsCtaSection: makeNodeComponent("signsCtaSection"),
     threeReasonsSection: makeNodeComponent("threeReasonsSection"),
