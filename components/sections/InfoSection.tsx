@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ReactNode } from "react";
-import { fmt } from "../../utils/formatText";
+import { fmt } from "@/utils/formatText";
 
 export interface InfoSectionProps {
   heading?: string;
@@ -30,9 +30,9 @@ export function InfoSection({
   const isReversed = layout === "imageRight";
 
   return (
-    <section className="py-40 px-4 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
+    <section className="py-16 md:py-40 px-5 md:px-8 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
       {/*<div className="mx-auto max-w-7xl">*/}
-      <div className="px-8 mx-auto">
+      <div className="mx-auto">
         {(heading || headingHighlight || headingEnd) && (
           <h2 className="font-display font-bold text-5xl md:text-8xl mb-12">
             {heading && <span className="text-dirt-pop">{fmt(heading)} </span>}
@@ -42,7 +42,7 @@ export function InfoSection({
         )}
 
         <div
-          className={`flex flex-col lg:flex-row gap-12 items-center ${isReversed ? "lg:flex-row-reverse" : ""}`}
+          className={`flex gap-20 md:gap-12 items-center ${isReversed ? "flex-col-reverse md:flex-row-reverse" : "flex-col md:flex-row"}`}
         >
           {/* Image Column */}
           {image && (

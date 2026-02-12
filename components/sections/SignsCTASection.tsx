@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { fmt } from "../../utils/formatText";
+import { fmt } from "@/utils/formatText";
 import Image from "next/image";
 
 export interface SignsCTASectionProps {
@@ -23,7 +23,7 @@ export function SignsCTASection({
 }: SignsCTASectionProps) {
   return (
     <section
-      className="py-40 px-8 bg-dirt-black"
+      className="py-16 md:py-40 px-8 bg-dirt-black"
       style={{ gridColumn: "1 / -1" }}
     >
       {/*<div className="max-w-7xl mx-auto">*/}
@@ -35,7 +35,7 @@ export function SignsCTASection({
         </h2>
 
         {/* Three Column Section */}
-        <div className="grid md:grid-cols-3 gap-10 mb-20">
+        <div className="grid md:grid-cols-3 gap-16 md:gap-10 mb-20">
           {children}
         </div>
 
@@ -44,7 +44,7 @@ export function SignsCTASection({
           <div className="flex justify-center">
             <a
               href={ctaLink}
-              className="inline-flex items-center gap-1 px-8 py-3 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-lg hover:bg-dirt-pop-hover transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-lg hover:bg-dirt-pop-hover transition-colors duration-300"
             >
               <Image
                 src={`/90deg Arrow.png`}

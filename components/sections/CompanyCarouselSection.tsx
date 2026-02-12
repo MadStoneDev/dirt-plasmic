@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ReactNode } from "react";
-import { fmt } from "../../utils/formatText";
+import { fmt } from "@/utils/formatText";
 
 export interface CompanyCarouselSectionProps {
   heading?: string;
@@ -18,7 +18,7 @@ export function CompanyCarouselSection({
   children,
 }: CompanyCarouselSectionProps) {
   return (
-    <section className="relative w-full pt-40 pb-46 pl-8 bg-dirt-pop overflow-hidden" style={{ gridColumn: "1 / -1" }}>
+    <section className="relative w-full pt-16 md:pt-40 pb-16 md:pb-46 bg-dirt-pop overflow-hidden" style={{ gridColumn: "1 / -1" }}>
       {backgroundImage && (
         <div className="absolute flex items-end inset-0 bottom-0 z-0 pointer-events-none">
           <Image
@@ -26,14 +26,14 @@ export function CompanyCarouselSection({
             alt=""
             width={1440}
             height={600}
-            className="w-full object-contain"
+            className="object-bottom h-[85%] md:w-full object-cover md:object-contain"
           />
         </div>
       )}
 
-      <div className="relative z-10">
+      <div className="relative pl-5 md:pl-8 z-10">
         {heading && (
-          <h2 className="flex gap-2 text-3xl sm:text-5xl md:text-8xl font-display font-bold text-white mb-24">
+          <h2 className="pr-5 text-5xl md:text-8xl font-display font-bold text-white mb-8 md:mb-24">
             {fmt(heading)}
             {highlightedWord && (
               <span className="text-dirt-deep uppercase">{fmt(highlightedWord)}</span>

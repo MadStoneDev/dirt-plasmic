@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState, ReactNode } from "react";
-import { fmt } from "../../utils/formatText";
+import { fmt } from "@/utils/formatText";
 
 export interface DirtFrameworkSectionProps {
   headingStart?: string;
@@ -23,6 +23,7 @@ export function DirtFrameworkSection({
   const sectionRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMd, setIsMd] = useState(false);
 
   const allChildren = React.Children.toArray(children);
   const displayChildren = reversed ? [...allChildren].reverse() : allChildren;
@@ -45,7 +46,22 @@ export function DirtFrameworkSection({
   // Total section height = header + sticky content + animation scroll room
   const sectionHeight = HEADER_BUFFER + stickyHeight + animationDistance;
 
+  // Track md breakpoint (768px)
   useEffect(() => {
+    const mql = window.matchMedia("(min-width: 768px)");
+    const onChange = () => setIsMd(mql.matches);
+    onChange();
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    // On mobile, skip scroll mechanic — blocks are fully expanded
+    if (!isMd) {
+      setScrollProgress(1);
+      return;
+    }
+
     let ticking = false;
 
     const updateProgress = () => {
@@ -80,41 +96,41 @@ export function DirtFrameworkSection({
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isMd]);
 
   return (
     <section
       ref={sectionRef}
-      className="relative py-40 px-8 bg-dirt-off-white"
+      className="relative pt-16 md:pt-40 pb-2 md:pb-40 px-5 md:px-8 bg-dirt-off-white"
       style={{
-        height: `${sectionHeight}px`,
+        height: isMd ? `${sectionHeight}px` : "auto",
         gridColumn: "1 / -1",
       }}
     >
       {/* Header — scrolls away naturally before blocks pin */}
-      <div className="px-4 pt-16 pb-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-display font-bold text-5xl md:text-8xl mb-6">
+      <div className="mb-0">
+        {/*<div className="max-w-7xl mx-auto">*/}
+          <h2 className="max-w-xs md:max-w-none mx-auto font-display font-bold text-5xl md:text-8xl mb-6">
             <span className="text-dirt-pop">{fmt(headingStart)}</span>
             <span className="text-dirt-deep">{fmt(headingHighlight)}</span>
             <span className="text-dirt-pop">{fmt(headingEnd)}</span>
           </h2>
           {description && (
-            <p className="text-center text-3xl text-dirt-deep/80 font-sans whitespace-pre-line">
+            <p className="text-center text-xl md:text-3xl text-dirt-deep/80 font-sans whitespace-pre-line">
               {description}
             </p>
           )}
-        </div>
+        {/*</div>*/}
       </div>
 
       {/* Trigger — marks where the sticky pin begins */}
       <div ref={triggerRef} />
 
       {/* Sticky blocks — pins when reaching viewport top */}
-      <div className="sticky top-0" style={{ height: `${stickyHeight}px` }}>
-        <div className="h-full py-8">
-          <div className="h-full">
-            <div className="relative h-full">
+      <div className="md:sticky top-0" style={{ height: isMd ? `${stickyHeight}px` : "auto" }}>
+        <div className={`${isMd ? "h-full" : ""} py-8`}>
+          <div className={isMd ? "h-full" : ""}>
+            <div className={`relative ${isMd ? "h-full" : ""}`}>
               {displayChildren.map((child, displayIndex) => {
                 const originalIndex = reversed ? allChildren.length - 1 - displayIndex : displayIndex;
                 const zIndex = reversed ? displayIndex + 1 : blockCount - displayIndex;

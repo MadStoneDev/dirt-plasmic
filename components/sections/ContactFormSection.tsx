@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { fmt } from "../../utils/formatText";
+import { fmt } from "@/utils/formatText";
 
 export interface ContactFormSectionProps {
   heading?: string;

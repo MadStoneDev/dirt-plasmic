@@ -25,12 +25,12 @@ export function DirtProcessStep({
 
   return (
     <div
-      className={`flex flex-col gap-12 ${isEven ? "lg:flex-row-reverse" : "lg:flex-row"}`}
+      className={`flex flex-col-reverse gap-4 md:gap-12 ${isEven ? "md:flex-row-reverse" : "md:flex-row"}`}
     >
       {/* Info Column */}
-      <div className="bg-dirt-deep p-16 w-full max-w-[40%] flex flex-col">
+      <div className="bg-dirt-deep p-6 md:p-16 w-full md:max-w-[40%] flex flex-col">
         {heading && (
-          <h3 className="font-display font-bold text-2xl md:text-6xl text-dirt-pop mb-4" style={{
+          <h3 className="font-display font-bold text-5xl md:text-6xl text-dirt-pop mb-4" style={{
             letterSpacing: "-2%"
           }}>
             {heading}
@@ -38,17 +38,17 @@ export function DirtProcessStep({
         )}
 
         {description && (
-          <p className="text-dirt-pop font-sans text-2xl whitespace-pre-line grow">
+          <p className="text-dirt-pop font-sans text-xl md:text-2xl whitespace-pre-line grow">
             {description}
           </p>
         )}
 
         {parsedTags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-8">
+          <div className="max-w-xs md:max-w-none flex flex-wrap gap-2 mt-30 md:mt-8">
             {parsedTags.map((tag, tagIndex) => (
               <span
                 key={tagIndex}
-                className="px-3 py-1 font-display uppercase text-sm md:text-base font-medium text-dirt-pop"
+                className="px-3 py-1 font-display uppercase text-base font-medium text-dirt-pop"
                 style={{ backgroundColor: "rgba(254, 92, 2, 0.15)", letterSpacing: "1px" }}
               >
                 {tag}

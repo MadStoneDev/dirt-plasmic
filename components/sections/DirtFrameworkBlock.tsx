@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { fmt } from "../../utils/formatText";
+import { fmt } from "@/utils/formatText";
 
 export interface DirtFrameworkBlockProps {
   heading?: string;
@@ -20,42 +20,45 @@ export function DirtFrameworkBlock({
   originalIndex = 0,
 }: DirtFrameworkBlockProps) {
   return (
-    <div className="relative min-h-50 overflow-hidden">
-      {/* Background Image */}
-      {backgroundImage && (
-        <Image
-          src={backgroundImage}
-          alt=""
-          fill
-          className="object-cover"
-        />
-      )}
-
+    <div className="relative md:min-h-50 overflow-hidden">
       {/* Colour Overlay */}
       <div
         className="absolute inset-0"
         style={{
           backgroundColor: `var(--color-${overlayColor || "dirt-deep"})`,
-          opacity: 0.75,
+          opacity: 1,
         }}
       />
 
+        {/* Background Image */}
+        {backgroundImage && (
+            <Image
+                src={backgroundImage}
+                alt=""
+                fill
+                className="object-cover opacity-70"
+                style={{
+                    mixBlendMode: "soft-light"
+                }}
+            />
+        )}
+
       {/* Number Badge */}
-      <div className="absolute top-0 left-0 w-12 h-12 bg-dirt-black flex items-center justify-center">
-        <span className="text-dirt-off-white font-sans font-bold text-2xl">
+      <div className="absolute top-0 left-0 w-16 md:w-20 h-16 md:h-20 bg-dirt-black flex items-center justify-center">
+        <span className="text-dirt-off-white font-sans font-bold text-3xl md:text-[40px]">
           {originalIndex + 1}
         </span>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 p-8 pt-20 grid md:grid-cols-2 gap-8">
+      <div className="relative z-10 px-6 py-8 md:px-8 pt-24 md:pt-20 grid md:grid-cols-2 gap-4 md:gap-8">
         {heading && (
-          <h4 className="font-display font-bold text-4xl md:text-6xl text-dirt-off-white uppercase">
+          <h4 className="font-display font-bold text-5xl md:text-6xl text-dirt-off-white uppercase">
             {fmt(heading)}
           </h4>
         )}
         {description && (
-          <p className="text-dirt-off-white/90 text-lg font-sans whitespace-pre-line">
+          <p className="text-dirt-off-white/90 text-xl font-sans whitespace-pre-line">
             {description}
           </p>
         )}

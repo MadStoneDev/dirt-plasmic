@@ -1,6 +1,6 @@
 "use client";
 
-import { fmt } from "../../utils/formatText";
+import { fmt } from "@/utils/formatText";
 
 export interface WhatWeBelieveItemProps {
   label?: string;

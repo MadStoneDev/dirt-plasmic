@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { fmt } from "../../utils/formatText";
+import { fmt } from "@/utils/formatText";
 
 export interface HeroSectionProps {
   heading?: string;
@@ -29,7 +29,18 @@ export function HeroSection({
   const textRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  const ANIMATION_RUNWAY = 600;
+  // Scale runway with viewport so it's proportional on mobile vs desktop
+  const [animationRunway, setAnimationRunway] = useState(600);
+
+  useEffect(() => {
+    const updateRunway = () => {
+      // ~40vw, clamped between 200px and 600px
+      setAnimationRunway(Math.min(600, Math.max(200, window.innerWidth * 0.4)));
+    };
+    updateRunway();
+    window.addEventListener("resize", updateRunway);
+    return () => window.removeEventListener("resize", updateRunway);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,10 +49,17 @@ export function HeroSection({
       const rect = sectionRef.current.getBoundingClientRect();
       const scrolled = Math.max(0, -rect.top);
       const textHeight = textRef.current.offsetHeight;
+      const imageHeight = window.innerWidth * 0.63;
 
-      // Animation starts when the image area becomes stuck (text has scrolled past)
-      const animationScrolled = scrolled - textHeight;
-      const progress = Math.max(0, Math.min(1, animationScrolled / ANIMATION_RUNWAY));
+      // Animation starts when the sticky kicks in:
+      // image sticks when its natural top (textHeight from section top)
+      // reaches the sticky threshold (100vh - 63vw from viewport top)
+      const stickyStart = Math.max(0, textHeight - window.innerHeight + imageHeight);
+      const animationScrolled = scrolled - stickyStart;
+      const progress = Math.max(
+        0,
+        Math.min(1, animationScrolled / animationRunway),
+      );
 
       setScrollProgress(progress);
     };
@@ -50,67 +68,77 @@ export function HeroSection({
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [animationRunway]);
 
   const midgroundOffset = 25 + scrollProgress * 52;
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-dirt-deep" style={{ gridColumn: "1 / -1" }}>
-      {/*<div className={`px-8 mx-auto max-w-7xl`}>*/}
-      <div ref={textRef} className={`px-8 mx-auto`}>
-      {heading && (
-        <div className="pt-12 max-w-md sm:max-w-lg md:max-w-3xl">
-          <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-7xl text-dirt-pop uppercase">
+    <section
+      ref={sectionRef}
+      className="relative pt-12 w-full bg-dirt-deep"
+      style={{ gridColumn: "1 / -1" }}
+    >
+      <div className={`px-5 md:px-8`}>
+      <div ref={textRef} className={`mx-auto`}>
+        {heading && (
+          <h1 className="mb-6 max-w-3xl font-display font-bold text-5xl md:text-8xl text-dirt-pop uppercase">
             {fmt(heading)}
           </h1>
-        </div>
-      )}
+        )}
 
-      {subheading && (
-        <div className="pointer-events-auto">
-          <div className="relative h-40 sm:h-60 md:h-80 w-full">
-            {subheading.split(" ").map((word, index, arr) => {
-              const totalWords = arr.length;
-              const progress = index / (totalWords - 1 || 1);
-              return (
-                <span
-                  key={index}
-                  className="absolute font-display font-bold text-3xl sm:text-5xl md:text-7xl text-dirt-pop uppercase"
-                  style={{
-                    bottom: `${progress * 85}%`,
-                    left: `${progress * 90}%`,
-                  }}
-                >
-                  {word}
-                </span>
-              );
-            })}
+        {subheading && (
+          <div className="pointer-events-auto">
+            <div className="flex justify-between h-56 md:h-80 w-full">
+              {subheading.split(" ").map((word, index, arr) => {
+                const totalWords = arr.length;
+                const progress = index / (totalWords - 1 || 1);
+                return (
+                  <div key={index} className="flex flex-col h-full">
+                    <div style={{ flexGrow: 1 - progress }} />
+                    <span className="font-display font-bold text-5xl md:text-8xl text-dirt-pop uppercase leading-none">
+                      {word}
+                    </span>
+                    <div style={{ flexGrow: progress }} />
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {description && (
-        <section className="py-12 max-w-md sm:max-w-xl">
-          <p className="font-sans text-lg sm:text-xl text-white">{description}</p>
-        </section>
-      )}
+        {description && (
+          <section className="my-12 max-w-md sm:max-w-xl">
+            <p className="font-sans text-justify text-xl md:text-2xl text-dirt-pop" style={{
+              lineHeight: "1.25"
+            }}>
+              {description}
+            </p>
+          </section>
+        )}
 
-      {ctaLabel && (
-        <section>
-          <a
-            href={ctaLink || "#"}
-            className="inline-flex items-center justify-center gap-1 bg-dirt-pop hover:bg-dirt-pop-hover px-8 py-4 w-full transition-all duration-300"
-          >
-            <Image src={`/90deg Arrow.png`} alt={`90 Degrees Arrow`} width={50} height={50} className={`w-6`} />
-            <span className="text-dirt-deep text-xl font-display font-bold uppercase">
-              {ctaLabel}
-            </span>
-          </a>
-        </section>
-      )}
+        {ctaLabel && (
+          <section>
+            <a
+              href={ctaLink || "#"}
+              className="inline-flex items-center justify-center gap-1 bg-dirt-pop hover:bg-dirt-pop-hover px-8 py-4 w-full transition-all duration-300"
+            >
+              <Image
+                src={`/90deg Arrow.png`}
+                alt={`90 Degrees Arrow`}
+                width={50}
+                height={50}
+                className={`w-6`}
+              />
+              <span className="text-dirt-deep text-xl font-display font-bold uppercase">
+                {ctaLabel}
+              </span>
+            </a>
+          </section>
+        )}
+      </div>
       </div>
 
-      <div className="sticky top-0 h-[63vw] overflow-hidden pointer-events-none">
+      <div className="sticky h-[63vw] overflow-hidden pointer-events-none" style={{ top: "calc(100vh - 63vw)" }}>
         <div className="absolute bottom-0 left-0 right-0 h-[60vw] max-h-215.75">
           {backgroundImage && (
             <Image
@@ -169,7 +197,7 @@ export function HeroSection({
       </div>
 
       {/* Scroll runway — midground animation plays while images are stuck */}
-      <div style={{ height: ANIMATION_RUNWAY }} aria-hidden="true" />
+      <div style={{ height: animationRunway }} aria-hidden="true" />
     </section>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { fmt } from "../../utils/formatText";
+import { fmt } from "@/utils/formatText";
 
 export interface WhatWeBelieveDetailProps {
   image?: string;

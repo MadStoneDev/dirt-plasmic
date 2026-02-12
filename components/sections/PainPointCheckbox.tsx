@@ -40,7 +40,7 @@ export function PainPointCheckbox({ label }: PainPointCheckboxProps) {
       </span>
       {label && (
         <span
-          className={`text-dirt-pop font-sans text-lg transition-opacity duration-200 ${
+          className={`text-dirt-pop font-sans text-base md:text-lg transition-opacity duration-200 ${
             checked ? "opacity-100" : "opacity-70 group-hover:opacity-100"
           }`}
         >

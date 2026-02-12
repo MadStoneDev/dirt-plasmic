@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, ReactNode } from "react";
-import { fmt } from "../../utils/formatText";
+import { fmt } from "@/utils/formatText";
 
 export interface PainPointsSectionProps {
   heading?: string;
@@ -39,18 +39,18 @@ export function PainPointsSection({
   };
 
   return (
-    <section className="py-40 px-4 bg-dirt-deep" style={{ gridColumn: "1 / -1" }}>
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
+    <section className="py-16 md:py-40 px-4 bg-dirt-deep" style={{ gridColumn: "1 / -1" }}>
+      <div className="grid lg:grid-cols-2 gap-12">
         {/* Left Column - Headings and Checkboxes */}
         <div className="flex flex-col justify-center">
           {heading && (
-            <h2 className="font-display font-bold text-4xl md:text-7xl text-dirt-pop uppercase mb-4">
+            <h2 className="font-display font-bold text-5xl md:text-8xl text-dirt-pop uppercase">
               {fmt(heading)}
             </h2>
           )}
 
           {subheading && (
-            <h3 className="mt-16 font-display font-bold text-xl md:text-4xl text-dirt-pop uppercase mb-8">
+            <h3 className="mt-16 font-display font-bold text-3xl md:text-4xl text-dirt-pop uppercase mb-8">
               {fmt(subheading)}
             </h3>
           )}

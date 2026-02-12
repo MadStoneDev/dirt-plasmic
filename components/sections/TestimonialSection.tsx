@@ -54,7 +54,7 @@ export function TestimonialSection({
 
   return (
     <section
-      className={`relative py-40 px-20 ${bgClass} overflow-hidden`}
+      className={`relative py-16 md:py-40 px-5 md:px-20 ${bgClass} overflow-hidden`}
       style={{ gridColumn: "1 / -1", ...(isBgCustom && customBackgroundColor ? { backgroundColor: customBackgroundColor } : {}) }}
     >
       <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
@@ -63,9 +63,9 @@ export function TestimonialSection({
             <Image
               src={logo}
               alt="Company logo"
-              width={180}
-              height={60}
-              className="object-contain max-h-16"
+              width={600}
+              height={200}
+              className="object-contain md:max-h-16"
             />
           </div>
         )}
@@ -86,10 +86,10 @@ export function TestimonialSection({
         )}
 
         {(authorName || authorPhoto) && (
-          <div className="flex flex-col items-center mt-4">
+          <div className="flex flex-col items-center max-w-sm md:max-w-none mt-4">
             {authorPhoto && (
               <div
-                className="relative w-24 md:w-28 bg-dirt-deep"
+                className="relative w-32 bg-dirt-deep"
                 style={{
                   aspectRatio: "1/0.87",
                   clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
@@ -113,7 +113,7 @@ export function TestimonialSection({
 
             {authorName && (
               <p
-                className={`mt-8 font-display font-bold text-xl uppercase ${textClass}`}
+                className={`mt-8 font-display font-bold text-3xl uppercase ${textClass}`}
                 style={customTextStyle}
               >
                 {authorName}
@@ -122,7 +122,7 @@ export function TestimonialSection({
 
             {authorRole && (
               <p
-                className={`text-xs font-sans ${textClass} opacity-80`}
+                className={`text-xl font-sans ${textClass} md:opacity-80`}
                 style={customTextStyle}
               >
                 {authorRole}

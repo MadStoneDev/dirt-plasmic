@@ -2,7 +2,7 @@
 
 import React, { ReactNode } from "react";
 import Image from "next/image";
-import { fmt } from "../../utils/formatText";
+import { fmt } from "@/utils/formatText";
 
 export interface ThreeReasonsSectionProps {
   headingStart?: string;
@@ -28,12 +28,12 @@ export function ThreeReasonsSection({
   });
 
   return (
-    <section className="relative py-40 px-8 bg-dirt-pop" style={{ gridColumn: "1 / -1" }}>
+    <section className="relative py-16 md:py-40 px-5 md:px-8 bg-dirt-pop" style={{ gridColumn: "1 / -1" }}>
       {/*<div className="max-w-7xl mx-auto">*/}
         {/* Header Section - 2/3 to 1/3 split */}
-        <div className="mb-32">
+        <div className="mb-16 md:mb-32">
           <div className="max-w-200">
-            <h2 className="font-display font-bold text-5xl md:text-8xl mb-8" style={{
+            <h2 className="max-w-xs md:max-w-none font-display font-bold text-5xl md:text-8xl mb-8" style={{
               lineHeight: "105%",
               letterSpacing: "-2%",
             }}>
@@ -51,7 +51,7 @@ export function ThreeReasonsSection({
           </div>
 
           {headerImage && (
-            <div className="absolute top-0 right-0">
+            <div className="hidden md:block absolute top-0 right-0">
               <Image
                 src={headerImage}
                 alt=""
@@ -64,7 +64,7 @@ export function ThreeReasonsSection({
         </div>
 
         {/* Columns with Numbers */}
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-16 md:gap-12">
           {items}
         </div>
       {/*</div>*/}

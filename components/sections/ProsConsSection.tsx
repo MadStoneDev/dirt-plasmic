@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ReactNode } from "react";
-import { fmt } from "../../utils/formatText";
+import { fmt } from "@/utils/formatText";
 import Image from "next/image";
 
 export interface ProsConsSectionProps {
@@ -57,33 +57,33 @@ export function ProsConsSection({
   });
 
   return (
-    <section className="py-40 px-8 bg-dirt-pop" style={{ gridColumn: "1 / -1" }}>
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 md:py-40 px-5 md:px-8 bg-dirt-pop" style={{ gridColumn: "1 / -1" }}>
+      {/*<div className="max-w-7xl mx-auto">*/}
         {/* Header */}
-        <h2 className="mx-auto max-w-6xl font-display font-bold text-5xl md:text-8xl mb-20 text-center">
+        <h2 className="mx-auto max-w-6xl font-display font-bold text-5xl md:text-8xl mb-16 md:mb-20 text-center">
           <span className="text-dirt-off-white">{fmt(headingStart)}</span>
           <span className="text-dirt-deep">{fmt(headingHighlight)}</span>
           <span className="text-dirt-off-white">{fmt(headingEnd)}</span>
         </h2>
 
         {/* Two Columns */}
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Cons Column */}
-          <div className="bg-dirt-deep py-14 px-12">
+          <div className="bg-dirt-deep py-8 md:py-14 px-6 md:px-12">
             <h3 className="font-display font-bold text-4xl text-dirt-pop mb-10">
               {fmt(consHeading)}
             </h3>
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-8 md:gap-10">
               {consItems}
             </div>
           </div>
 
           {/* Pros Column */}
-          <div className="bg-dirt-deep py-14 px-12">
+          <div className="bg-dirt-deep py-8 md:py-14 px-6 md:px-12">
             <h3 className="font-display font-bold text-4xl text-dirt-green mb-10">
               {fmt(prosHeading)}
             </h3>
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-8 md:gap-10">
               {prosItems}
             </div>
           </div>
@@ -114,7 +114,7 @@ export function ProsConsSection({
             )}
           </div>
         )}
-      </div>
+      {/*</div>*/}
     </section>
   );
 }

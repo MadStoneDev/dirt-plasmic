@@ -198,6 +198,27 @@ registerComponent(DirtRichText, {
   name: "DirtRichText",
   props: {
     text: { type: "string", displayName: "Rich Text" },
+    textColour: {
+      type: "choice",
+      displayName: "Text Colour",
+      options: [
+        "dirt-black",
+        "dirt-deep",
+        "dirt-pop",
+        "dirt-green",
+        "dirt-blue",
+        "dirt-off-white",
+        "white",
+        "black",
+        "custom",
+      ],
+      defaultValue: "dirt-black",
+    },
+    customTextColour: {
+      type: "string",
+      displayName: "Custom Text Colour (hex)",
+      hidden: (props: any) => props.textColour !== "custom",
+    },
   },
   importPath: "./components/sections/DirtRichText",
 });

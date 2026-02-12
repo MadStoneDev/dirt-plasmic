@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { fmt } from "../../utils/formatText";
+import { fmt } from "@/utils/formatText";
 
 export interface FooterSectionProps {
   // Hero area
@@ -101,22 +101,21 @@ export function FooterSection({
 
   return (
     <footer
-      className={`pt-40 px-8 pb-8`}
+      className={`pt-16 md:pt-40 px-5 md:px-8 pb-8 bg-contain`}
       style={{
         gridColumn: "1 / -1",
         backgroundColor: backgroundColor || "#5C0004",
         backgroundImage: `url(${backgroundImage})` || "",
-        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center bottom",
       }}
     >
       {/* Hero/Form Section */}
-      <div className="pb-235 relative flex flex-col justify-end">
+      <div className="pb-74 md:pb-235 relative flex flex-col justify-end">
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           {heading1 && (
             <h2
-              className="mx-auto max-w-112.5 font-display font-bold text-4xl md:text-6xl text-dirt-off-white mb-2"
+              className="mx-auto max-w-80 md:max-w-112.5 font-display font-bold text-5xl md:text-6xl text-dirt-off-white mb-2"
               style={{ lineHeight: "105%", letterSpacing: "-2%" }}
             >
               {fmt(heading1)}
@@ -124,7 +123,7 @@ export function FooterSection({
           )}
           {heading2 && (
             <h2
-              className="font-display font-bold text-4xl md:text-6xl text-dirt-pop mb-8"
+              className="max-w-60 md:max-w-none mx-auto font-display font-bold text-5xl md:text-6xl text-dirt-pop mb-8"
               style={{ lineHeight: "105%", letterSpacing: "-2%" }}
             >
               {fmt(heading2)}
@@ -197,7 +196,7 @@ export function FooterSection({
       </div>
 
       {/* Footer Columns Section */}
-      <div className="bg-dirt-deep p-12 relative">
+      <div className="bg-dirt-deep p-6 md:p-12 relative">
         <div className="mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
             {/* Column 1 - Logo & Description */}
