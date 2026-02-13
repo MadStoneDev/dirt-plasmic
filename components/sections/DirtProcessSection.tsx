@@ -27,7 +27,7 @@ export function DirtProcessSection({
   });
 
   return (
-    <section className="pb-4 pt-16 md:py-40 px-5 md:px-8 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
+    <section className="pb-4 md:pb-8 pt-16 md:pt-40 px-5 md:px-8 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
       {/*<div className="max-w-7xl mx-auto">*/}
         {/* Header */}
         <h2 className="max-w-90 md:max-w-4xl mx-auto font-display font-bold text-5xl md:text-8xl mb-16 text-center">
@@ -47,7 +47,7 @@ export function DirtProcessSection({
             <div className="grid lg:grid-cols-10 gap-4 md:gap-8 items-center">
               <div className="lg:col-span-4">
                 {bottomHeading && (
-                  <h3 className="max-w-60 font-sans font-bold text-3xl md:text-5xl text-dirt-deep" style={{
+                  <h3 className="max-w-60 md:max-w-none font-sans font-bold text-3xl md:text-5xl text-dirt-deep" style={{
                     lineHeight: "1.25",
                     letterSpacing: "-2%"
                   }}>
