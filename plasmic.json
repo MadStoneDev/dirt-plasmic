@@ -281,6 +281,11 @@
           "id": "7hBJJqeag1d1",
           "name": "Pain Points - Building 5.jpg",
           "filePath": "../public/plasmic/dirt/images/painPointsBuilding5Jpg.jpg"
+        },
+        {
+          "id": "J-tImhRbDjF9",
+          "name": "Mobile - Footer DIRT Background.png",
+          "filePath": "../public/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
         }
       ],
       "indirect": false,
