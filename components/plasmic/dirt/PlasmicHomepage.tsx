@@ -550,7 +550,7 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.dirtFrameworkSection}
             className={classNames("__wab_instance", sty.dirtFrameworkSection)}
             description={
-              "Whether you\u2019re reimagining a legacy brand, targeting new markets, or pushing for more clients, *we\u2019ll position your brand to grow*."
+              "Whether you\u2019re reimagining a legacy brand, targeting new markets, or pushing for more clients, **we\u2019ll position your brand to grow**."
             }
             headingEnd={"framework"}
             headingHighlight={" DIRT "}
@@ -613,7 +613,7 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-name={"dirtProcessSection"}
             data-plasmic-override={overrides.dirtProcessSection}
             bottomDescription={
-              "DIRT nails your *positioning and messaging first*. Then we bring in a designer with a style that matches your message. Instead of a generic template, you get the *perfect creative partner for your project*."
+              "DIRT nails your **positioning and messaging first**. Then we bring in a designer with a style that matches your message. Instead of a generic template, you get the **perfect creative partner for your project**."
             }
             bottomHeading={"*Note: The DIRT Design Bench is deep and wide"}
             className={classNames("__wab_instance", sty.dirtProcessSection)}
