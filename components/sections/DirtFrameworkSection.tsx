@@ -117,7 +117,7 @@ export function DirtFrameworkSection({
           </h2>
           {description && (
             <p className="text-center text-xl md:text-3xl text-dirt-deep/80 font-sans whitespace-pre-line">
-              {description}
+              {fmt(description)}
             </p>
           )}
         {/*</div>*/}

@@ -60,7 +60,7 @@ export function DirtProcessSection({
                   <p className="text-dirt-deep font-sans text-base md:text-xl whitespace-pre-line" style={{
                     lineHeight: "1.5"
                   }}>
-                    {bottomDescription}
+                    {fmt(bottomDescription)}
                   </p>
                 )}
               </div>
