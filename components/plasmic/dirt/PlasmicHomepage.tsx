@@ -959,41 +959,38 @@ Huge thanks to Nikita for creating  and her team!`}
           />
 
           <FooterSection
-            data-plasmic-name={"footerSection"}
-            data-plasmic-override={overrides.footerSection}
-            backgroundColor={``}
-            backgroundImage={"/plasmic/dirt/images/footerImagePng.png"}
-            bottomRightLink={"/"}
-            bottomRightText={"Click here to toss some DIRT on the competition"}
-            className={classNames("__wab_instance", sty.footerSection)}
-            contactDescription={`Dig what we're doing but don't need us at the moment? Refer a client to DIRT. 
+              data-plasmic-name={"footerSection"}
+              data-plasmic-override={overrides.footerSection}
+              backgroundImage={"/plasmic/dirt/images/footerImagePng.png"}
+              mobileBackgroundImage={""}
+              bottomRightLink={"/"}
+              bottomRightText={"Click here to  toss some DIRT on the competition"}
+              className={classNames("__wab_instance", sty.footerSection)}
+              contactDescription={`Dig what we're doing but don't need us at the moment? Refer a client to DIRT. 
 
 When they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT)`}
-            contactHeading={"Refer & Earn"}
-            copyrightText={
-              "\u00a9 2025 DIRT Agency. All rights reserved. Built from the ground up."
-            }
-            description={
-              "Tell us your DIRTiest dreams and we'll make them come true:"
-            }
-            footerDescription={
-              "Fresh messaging, branding, and positioning from the ground up."
-            }
-            footerLogo={"/plasmic/dirt/images/dirtLogoPng.png"}
-            heading1={"Brilliant brands don't grow on trees."}
-            heading2={"They grow in the DIRT."}
-            link1Text={"Work"}
-            link2Text={"About"}
-            link2Url={``}
-            link3Text={"Contact"}
-            linksHeading={"Get your hands Dirty"}
-            newsletterDescription={
-              "Gritty strategic insights to help you win more clients. Delivered with love (and a smidge of mud) once monthly."
-            }
-            newsletterHeading={"Get DIRT Dispatch"}
-            recipientEmail={"hello@thedirtagency.com"}
-            separatorImage={"/plasmic/dirt/images/line2Png.png"}
-            submitButtonText={"Get Dirty"}
+              contactHeading={"Refer & Earn"}
+              copyrightText={
+                "\u00a9 2025 DIRT Agency. All rights reserved. Built from the ground up."
+              }
+              description={
+                "Tell us your DIRTiest dreams and we'll make them come true:"
+              }
+              footerDescription={
+                "Fresh messaging, branding, and positioning from the ground up."
+              }
+              footerLogo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
+              heading1={"Brilliant brands don\u2019t grow on trees."}
+              heading2={"They grow in the DIRT."}
+              link1Text={"About"}
+              link1Url={"/about"}
+              link2Text={"Contact"}
+              link2Url={"/contact"}
+              linksHeading={"Get your hands dirty"}
+              newsletterDescription={
+                "Gritty strategic insights to help you win more clients. Delivered with love (and a smidge of mud) once monthly."
+              }
+              newsletterHeading={"Get Dirt Dispatch"}
           />
         </div>
       </div>

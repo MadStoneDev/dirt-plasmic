@@ -7,6 +7,7 @@ import { fmt } from "@/utils/formatText";
 export interface FooterSectionProps {
   // Hero area
   backgroundImage?: string;
+  mobileBackgroundImage?: string;
   backgroundColor?: string;
   heading1?: string;
   heading2?: string;
@@ -44,6 +45,7 @@ export interface FooterSectionProps {
 
 export function FooterSection({
   backgroundImage,
+  mobileBackgroundImage,
   backgroundColor = "#5C0004",
   heading1,
   heading2,
@@ -101,15 +103,35 @@ export function FooterSection({
 
   return (
     <footer
-      className={`pt-16 md:pt-40 px-5 md:px-8 pb-8 bg-contain`}
+      className="relative pt-16 md:pt-40 px-5 md:px-8 pb-8 overflow-hidden"
       style={{
         gridColumn: "1 / -1",
         backgroundColor: backgroundColor || "#5C0004",
-        backgroundImage: `url(${backgroundImage})` || "",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center bottom",
       }}
     >
+      {/* Background images — mobile vs desktop */}
+      {(mobileBackgroundImage || backgroundImage) && (
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Mobile */}
+          {(mobileBackgroundImage || backgroundImage) && (
+            <Image
+              src={mobileBackgroundImage || backgroundImage!}
+              alt=""
+              fill
+              className="object-contain object-bottom md:hidden"
+            />
+          )}
+          {/* Desktop */}
+          {backgroundImage && (
+            <Image
+              src={backgroundImage}
+              alt=""
+              fill
+              className="object-contain object-bottom hidden md:block"
+            />
+          )}
+        </div>
+      )}
       {/* Hero/Form Section */}
       <div className="pb-74 md:pb-235 relative flex flex-col justify-end">
         <div className="relative z-10 max-w-3xl mx-auto text-center">

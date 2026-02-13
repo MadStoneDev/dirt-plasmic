@@ -635,7 +635,8 @@ registerComponent(FooterSection, {
   name: "FooterSection",
   props: {
     // Hero area
-    backgroundImage: "imageUrl",
+    backgroundImage: { type: "imageUrl", displayName: "Background Image (Desktop)" },
+    mobileBackgroundImage: { type: "imageUrl", displayName: "Background Image (Mobile)" },
     backgroundColor: "string",
     heading1: "string",
     heading2: "string",

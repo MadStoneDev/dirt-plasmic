@@ -538,6 +538,7 @@ function PlasmicAbout__RenderFunc(props: {
             data-plasmic-name={"footerSection"}
             data-plasmic-override={overrides.footerSection}
             backgroundImage={"/plasmic/dirt/images/footerImagePng.png"}
+            mobileBackgroundImage={""}
             bottomRightLink={"/"}
             bottomRightText={"Click here to  toss some DIRT on the competition"}
             className={classNames("__wab_instance", sty.footerSection)}
