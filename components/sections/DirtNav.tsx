@@ -141,7 +141,7 @@ export function DirtNav({
       <nav
         ref={navRef}
         className={`${navBg} ${
-          isSticky ? "fixed top-0 left-0 right-0 z-50 shadow-lg" : "relative"
+          isSticky ? "fixed top-0 left-0 right-0 z-50 shadow-lg" : "relative w-full"
         }`}
         style={{ gridColumn: "1 / -1", height: NAV_HEIGHT }}
       >
@@ -244,7 +244,7 @@ export function DirtNav({
               <img
                   src={menuImage}
                   alt=""
-                  className="max-h-32 md:max-h-48 w-auto"
+                  className="max-h-32 md:max-h-60 w-full object-bottom object-cover"
               />
             </div>
         )}
