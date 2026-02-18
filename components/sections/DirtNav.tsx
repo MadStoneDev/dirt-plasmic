@@ -34,18 +34,39 @@ export function DirtNav({
   navBackground = "dirt-deep",
 }: DirtNavProps) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
+  const [navMode, setNavMode] = useState<"relative" | "hidden" | "visible">("relative");
   const [isMobile, setIsMobile] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const linksContainerRef = useRef<HTMLDivElement>(null);
   const [offsets, setOffsets] = useState<number[]>([]);
+  const prevScrollY = useRef(0);
+  const prevNavMode = useRef(navMode);
 
-  /* ── sticky on scroll ── */
+  /* ── show on scroll-up / hide on scroll-down ── */
   useEffect(() => {
-    const onScroll = () => setIsSticky(window.scrollY > 150);
+    const THRESHOLD = 150;
+    const DELTA = 5;
+
+    const onScroll = () => {
+      const y = window.scrollY;
+      const diff = y - prevScrollY.current;
+      prevScrollY.current = y;
+
+      if (y <= THRESHOLD) {
+        setNavMode("relative");
+      } else if (diff < -DELTA) {
+        setNavMode("visible");
+      } else if (diff > DELTA) {
+        setNavMode("hidden");
+      }
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  /* ── track previous navMode so we can skip the transition on relative → hidden ── */
+  useEffect(() => { prevNavMode.current = navMode; });
 
   /* ── responsive flag ── */
   useEffect(() => {
@@ -133,15 +154,19 @@ export function DirtNav({
 
   return (
     <>
-      {/* Spacer to prevent layout shift when sticky */}
-      {isSticky && (
+      {/* Spacer to prevent layout shift when fixed */}
+      {navMode !== "relative" && (
         <div style={{ height: NAV_HEIGHT, gridColumn: "1 / -1" }} />
       )}
 
       <nav
         ref={navRef}
         className={`${navBg} ${
-          isSticky ? "fixed top-0 left-0 right-0 z-50 shadow-lg" : "relative w-full"
+          navMode === "relative"
+            ? "relative w-full"
+            : `fixed left-0 right-0 z-50 shadow-lg ${
+                prevNavMode.current !== "relative" ? "transition-transform duration-300 ease-in-out" : ""
+              } ${navMode === "visible" ? "translate-y-0" : "-translate-y-full"}`
         }`}
         style={{ gridColumn: "1 / -1", height: NAV_HEIGHT }}
       >
