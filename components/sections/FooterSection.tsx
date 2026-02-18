@@ -137,7 +137,7 @@ export function FooterSection({
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           {heading1 && (
             <h2
-              className="mx-auto max-w-80 md:max-w-112.5 font-display font-bold text-5xl md:text-6xl text-dirt-off-white mb-2"
+              className="mx-auto max-w-80 md:max-w-120 font-display font-bold text-5xl md:text-6xl text-dirt-off-white mb-2"
               style={{ lineHeight: "105%", letterSpacing: "-2%" }}
             >
               {fmt(heading1)}
@@ -257,7 +257,7 @@ export function FooterSection({
                   placeholder="Your email"
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
-                  className="flex-grow px-3 py-2 bg-white text-dirt-deep font-sans text-sm placeholder:text-dirt-deep/50 outline-none"
+                  className="grow px-3 py-2 bg-white text-dirt-deep font-sans text-sm placeholder:text-dirt-deep/50 outline-none"
                 />
                 <button
                   type="submit"
@@ -330,7 +330,7 @@ export function FooterSection({
       {bottomRightText && bottomRightLink && (
           <a
               href={bottomRightLink}
-              className="absolute right-0 bottom-0 px-3 py-2 max-w-43.75 bg-dirt-green text-dirt-deep text-center font-sans font-medium text-sm hover:bg-dirt-pop transition-colors"
+              className="absolute right-0 bottom-0 px-3 py-2 max-w-48 bg-dirt-green text-dirt-deep text-center font-sans font-medium text-sm hover:bg-dirt-pop transition-colors"
               style={{ lineHeight: "115%", letterSpacing: "-2%" }}
           >
             {bottomRightText}

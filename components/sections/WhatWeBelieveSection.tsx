@@ -41,32 +41,50 @@ export function WhatWeBelieveSection({
     });
   });
 
-  // Pick the matching detail for the active index, or nothing
-  const detailsArray = unwrapSlot(details);
+  // Read labels from items so we can inject them into matching details
+  const rawItems = unwrapSlot(children);
+  const labels = rawItems.map((child) =>
+    React.isValidElement(child) ? (child.props as any).label : undefined
+  );
+
+  // Inject itemLabel into each detail
+  const detailsArray = unwrapSlot(details).map((child, i) => {
+    if (!React.isValidElement(child)) return child;
+    return React.cloneElement(child as React.ReactElement<any>, {
+      itemLabel: labels[i],
+    });
+  });
+
   const activeDetail = detailsArray[activeIndex] || null;
 
   return (
-    <section className="py-20 md:py-40 px-5 md:px-8 w-full bg-dirt-pop" style={{ gridColumn: "1 / -1" }}>
+    <section className="py-16 md:py-40 px-5 md:px-8 w-full bg-dirt-pop" style={{ gridColumn: "1 / -1" }}>
       {/*<div className="max-w-7xl mx-auto">*/}
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+        <div className="flex flex-col md:flex-row md:items-center md:gap-12">
           {/* Left Column — 45% */}
-          <div className="lg:w-[45%] flex flex-col">
+          <div className="md:w-[45%] flex flex-col">
             {heading && (
               <h2 className="font-display font-bold text-5xl md:text-8xl text-dirt-off-white mb-12">
                 {fmt(heading)}
               </h2>
             )}
 
-            <div className="flex flex-col gap-8">
+            <div className="hidden md:flex flex-col gap-8">
               {items}
             </div>
           </div>
 
           {/* Right Column — 55% */}
-          <div className="relative lg:w-[55%] overflow-hidden" style={{
+          {/* Desktop: show only the active detail */}
+          <div className="relative hidden md:block md:w-[55%] overflow-hidden" style={{
             aspectRatio: "740/720"
           }}>
             {activeDetail}
+          </div>
+
+          {/* Mobile: show all details stacked */}
+          <div className="flex flex-col gap-8 md:hidden">
+            {detailsArray}
           </div>
         </div>
       {/*</div>*/}
