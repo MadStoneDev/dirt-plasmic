@@ -1,4 +1,6 @@
 import { registerComponent } from "@plasmicapp/host";
+import { DirtNavLink } from "./sections/DirtNavLink";
+import { DirtNav } from "./sections/DirtNav";
 import { HeroSection } from "./sections/HeroSection";
 import { CompanyCarouselSection } from "./sections/CompanyCarouselSection";
 import { BrandItem } from "./sections/BrandItem";
@@ -26,6 +28,68 @@ import { FooterSection } from "./sections/FooterSection";
 import { WhatWeBelieveSection } from "./sections/WhatWeBelieveSection";
 import { WhatWeBelieveItem } from "./sections/WhatWeBelieveItem";
 import { WhatWeBelieveDetail } from "./sections/WhatWeBelieveDetail";
+
+// Dirt Nav Link - individual link for the navigation menu
+registerComponent(DirtNavLink, {
+  name: "DirtNavLink",
+  props: {
+    label: "string",
+    href: "string",
+  },
+  importPath: "./components/sections/DirtNavLink",
+});
+
+// Dirt Nav - sticky navigation bar with full-screen menu
+registerComponent(DirtNav, {
+  name: "DirtNav",
+  props: {
+    logo: "imageUrl",
+    actions: {
+      type: "slot",
+      displayName: "Actions",
+    },
+    menuLinks: {
+      type: "slot",
+      displayName: "Menu Links",
+      defaultValue: [
+        {
+          type: "component",
+          name: "DirtNavLink",
+          props: { label: "Home", href: "/" },
+        },
+        {
+          type: "component",
+          name: "DirtNavLink",
+          props: { label: "About", href: "/about" },
+        },
+        {
+          type: "component",
+          name: "DirtNavLink",
+          props: { label: "Services", href: "/services" },
+        },
+        {
+          type: "component",
+          name: "DirtNavLink",
+          props: { label: "Contact", href: "/contact" },
+        },
+      ],
+    },
+    menuImage: "imageUrl",
+    menuBackground: {
+      type: "choice",
+      displayName: "Menu Background",
+      options: ["dirt-pop", "dirt-deep", "dirt-black"],
+      defaultValue: "dirt-pop",
+    },
+    navBackground: {
+      type: "choice",
+      displayName: "Nav Background",
+      options: ["dirt-deep", "dirt-black", "transparent"],
+      defaultValue: "dirt-deep",
+    },
+  },
+  importPath: "./components/sections/DirtNav",
+});
 
 // Hero Section - parallax hero with multiple image layers
 registerComponent(HeroSection, {
