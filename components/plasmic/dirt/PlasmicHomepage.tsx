@@ -257,6 +257,7 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames("__wab_instance", sty.dirtNav)}
             logo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
             menuBackground={"dirt-pop"}
+            menuImage={"/plasmic/dirt/images/menuImagePng.png"}
             menuLinks={
               <React.Fragment>
                 <DirtNavLink
