@@ -161,6 +161,16 @@
       }
     },
     {
+      "name": "Dirt - Pop Red Hover",
+      "type": "color",
+      "value": "#DD4A03",
+      "category": "color",
+      "meta": {
+        "projectId": "8kaaMUEQHxomwqwuKNMozy",
+        "id": "BdW42BIhE9o2"
+      }
+    },
+    {
       "name": "Font-LG",
       "type": "fontsize",
       "value": "1.25rem",
@@ -478,6 +488,16 @@
       "meta": {
         "projectId": "8kaaMUEQHxomwqwuKNMozy",
         "id": "_RnBOZOd29Kw"
+      }
+    },
+    {
+      "name": "Unnamed Style Token 2",
+      "type": "color",
+      "value": "#DD4A03",
+      "category": "color",
+      "meta": {
+        "projectId": "8kaaMUEQHxomwqwuKNMozy",
+        "id": "ysCr0wQG_rZ-"
       }
     },
     {

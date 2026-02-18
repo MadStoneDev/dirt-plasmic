@@ -39,7 +39,14 @@
   background: var(--token-5joSP94EMVrt);
   text-align: center;
   text-transform: uppercase;
+  transition-property: all;
+  transition-duration: 0.3s;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.3s;
   padding: 8px 20px;
+}
+.home .link:hover {
+  background: var(--token-BdW42BIhE9o2);
 }
 .heroSection:global(.__wab_instance) {
   max-width: 100%;
