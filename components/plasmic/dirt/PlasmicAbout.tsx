@@ -61,6 +61,9 @@ import {
 
 import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
 import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
+import { WhatWeBelieveSection } from "../../sections/WhatWeBelieveSection"; // plasmic-import: rpUptHcqPy6y/codeComponent
+import { WhatWeBelieveItem } from "../../sections/WhatWeBelieveItem"; // plasmic-import: bRva4mBEYkA1/codeComponent
+import { WhatWeBelieveDetail } from "../../sections/WhatWeBelieveDetail"; // plasmic-import: _ATHPXNl57FV/codeComponent
 import { FooterSection } from "../../sections/FooterSection"; // plasmic-import: I7Z-mxcvFz5C/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
@@ -121,6 +124,7 @@ export type PlasmicAbout__OverridesType = {
   dirtNav?: Flex__<typeof DirtNav>;
   aboutHero?: Flex__<"section">;
   ifWeHearTheWord?: Flex__<"section">;
+  whatWeBelieveSection?: Flex__<typeof WhatWeBelieveSection>;
   builtWithSpecialists?: Flex__<"section">;
   section?: Flex__<"section">;
   footerSection?: Flex__<typeof FooterSection>;
@@ -542,6 +546,93 @@ function PlasmicAbout__RenderFunc(props: {
               </div>
             </div>
           </section>
+          <WhatWeBelieveSection
+            data-plasmic-name={"whatWeBelieveSection"}
+            data-plasmic-override={overrides.whatWeBelieveSection}
+            className={classNames("__wab_instance", sty.whatWeBelieveSection)}
+            details={
+              <React.Fragment>
+                <WhatWeBelieveDetail
+                  className={classNames(
+                    "__wab_instance",
+                    sty.whatWeBelieveDetail__eyeLn
+                  )}
+                  description={
+                    "We dig into the raw, unpolished work first, because we believe strong brands are built from the ground up."
+                  }
+                  heading={"01"}
+                  image={
+                    "/plasmic/dirt/images/whatWeBelieveLeatherBackgroundPng.png"
+                  }
+                />
+
+                <WhatWeBelieveDetail
+                  className={classNames(
+                    "__wab_instance",
+                    sty.whatWeBelieveDetail___5TwTx
+                  )}
+                  description={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "It\u2019s what we build on together. We take responsibility for the work we create and stand behind it. For us, that\u2019s what accountability and collaboration looks like."
+                      : "Description for belief 2"
+                  }
+                  heading={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "02"
+                      : "Detail 2"
+                  }
+                  image={
+                    "/plasmic/dirt/images/whatWeBelieveLeatherBackgroundPng.png"
+                  }
+                />
+
+                <WhatWeBelieveDetail
+                  className={classNames(
+                    "__wab_instance",
+                    sty.whatWeBelieveDetail__n8Vby
+                  )}
+                  description={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "We don\u2019t slap on a coat of paint and call it branding. We help you create something grounded, gutsy, and impossible to ignore."
+                      : "Description for belief 3"
+                  }
+                  heading={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "03"
+                      : "Detail 3"
+                  }
+                  image={
+                    "/plasmic/dirt/images/whatWeBelieveLeatherBackgroundPng.png"
+                  }
+                />
+              </React.Fragment>
+            }
+            heading={"What we believe..."}
+          >
+            <WhatWeBelieveItem
+              className={classNames(
+                "__wab_instance",
+                sty.whatWeBelieveItem__tbCzi
+              )}
+              label={"Guts comes before glory"}
+            />
+
+            <WhatWeBelieveItem
+              className={classNames(
+                "__wab_instance",
+                sty.whatWeBelieveItem__zp2Ch
+              )}
+              label={"DIRT isn't something to hide"}
+            />
+
+            <WhatWeBelieveItem
+              className={classNames(
+                "__wab_instance",
+                sty.whatWeBelieveItem__pXbd3
+              )}
+              label={"Build it bold"}
+            />
+          </WhatWeBelieveSection>
           <section
             data-plasmic-name={"builtWithSpecialists"}
             data-plasmic-override={overrides.builtWithSpecialists}
@@ -692,6 +783,7 @@ const PlasmicDescendants = {
     "dirtNav",
     "aboutHero",
     "ifWeHearTheWord",
+    "whatWeBelieveSection",
     "builtWithSpecialists",
     "section",
     "footerSection"
@@ -699,6 +791,7 @@ const PlasmicDescendants = {
   dirtNav: ["dirtNav"],
   aboutHero: ["aboutHero"],
   ifWeHearTheWord: ["ifWeHearTheWord"],
+  whatWeBelieveSection: ["whatWeBelieveSection"],
   builtWithSpecialists: ["builtWithSpecialists"],
   section: ["section"],
   footerSection: ["footerSection"]
@@ -711,6 +804,7 @@ type NodeDefaultElementType = {
   dirtNav: typeof DirtNav;
   aboutHero: "section";
   ifWeHearTheWord: "section";
+  whatWeBelieveSection: typeof WhatWeBelieveSection;
   builtWithSpecialists: "section";
   section: "section";
   footerSection: typeof FooterSection;
@@ -781,6 +875,7 @@ export const PlasmicAbout = Object.assign(
     dirtNav: makeNodeComponent("dirtNav"),
     aboutHero: makeNodeComponent("aboutHero"),
     ifWeHearTheWord: makeNodeComponent("ifWeHearTheWord"),
+    whatWeBelieveSection: makeNodeComponent("whatWeBelieveSection"),
     builtWithSpecialists: makeNodeComponent("builtWithSpecialists"),
     section: makeNodeComponent("section"),
     footerSection: makeNodeComponent("footerSection"),

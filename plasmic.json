@@ -315,6 +315,11 @@
           "id": "wBvxyuFLtvtg",
           "name": "Menu Image.png",
           "filePath": "../public/plasmic/dirt/images/menuImagePng.png"
+        },
+        {
+          "id": "CYq8EbwyeGIG",
+          "name": "What we believe leather background.png",
+          "filePath": "../public/plasmic/dirt/images/whatWeBelieveLeatherBackgroundPng.png"
         }
       ],
       "indirect": false,

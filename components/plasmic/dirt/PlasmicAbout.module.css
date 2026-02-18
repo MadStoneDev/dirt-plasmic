@@ -391,6 +391,34 @@
     align-self: flex-start;
   }
 }
+.whatWeBelieveSection:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.whatWeBelieveItem__tbCzi:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.whatWeBelieveItem__zp2Ch:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.whatWeBelieveItem__pXbd3:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.whatWeBelieveDetail__eyeLn:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.whatWeBelieveDetail___5TwTx:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.whatWeBelieveDetail__n8Vby:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
 .builtWithSpecialists {
   display: grid;
   position: relative;
