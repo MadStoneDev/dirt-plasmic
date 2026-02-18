@@ -68,6 +68,30 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectcss
 import sty from "./PlasmicAbout.module.css"; // plasmic-import: NOUe36PuEWFr/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    openGraph: {},
+    twitter: {
+      card: "summary"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicAbout__VariantMembers = {};
@@ -131,6 +155,11 @@ function PlasmicAbout__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const globalVariants = _useGlobalVariants();
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -538,7 +567,6 @@ function PlasmicAbout__RenderFunc(props: {
             data-plasmic-name={"footerSection"}
             data-plasmic-override={overrides.footerSection}
             backgroundImage={"/plasmic/dirt/images/footerImagePng.png"}
-            mobileBackgroundImage={""}
             bottomRightLink={"/"}
             bottomRightText={"Click here to  toss some DIRT on the competition"}
             className={classNames("__wab_instance", sty.footerSection)}
@@ -677,13 +705,11 @@ export const PlasmicAbout = Object.assign(
     internalVariantProps: PlasmicAbout__VariantProps,
     internalArgProps: PlasmicAbout__ArgProps,
 
-    // Page metadata
-    pageMetadata: {
-      title: "",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/about",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

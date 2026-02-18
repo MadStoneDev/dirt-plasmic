@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
+import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
 import { HeroSection } from "../../sections/HeroSection"; // plasmic-import: oYTAqFgzizOu/codeComponent
 import { CompanyCarouselSection } from "../../sections/CompanyCarouselSection"; // plasmic-import: UzUry5mU4ozT/codeComponent
 import { BrandItem } from "../../sections/BrandItem"; // plasmic-import: n6yARC8wCw5J/codeComponent
@@ -90,6 +92,35 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: PsrXtMg1_Gbw/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "DIRT - ",
+
+    openGraph: {
+      title: "DIRT - "
+    },
+    twitter: {
+      card: "summary",
+      title: "DIRT - "
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicHomepage__VariantMembers = {};
@@ -103,6 +134,8 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   home?: Flex__<"div">;
+  dirtNav?: Flex__<typeof DirtNav>;
+  link?: Flex__<"a"> & Partial<LinkProps>;
   heroSection?: Flex__<typeof HeroSection>;
   companiesWeCoveredInDirt?: Flex__<typeof CompanyCarouselSection>;
   dirtRichText?: Flex__<typeof DirtRichText>;
@@ -157,22 +190,23 @@ function PlasmicHomepage__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
+
   const styleTokensClassNames = _useStyleTokens();
 
   return (
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">{PlasmicHomepage.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicHomepage.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicHomepage.pageMetadata.title}
+          content={pageMetadata.title}
         />
       </Head>
 
@@ -197,6 +231,54 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.home
           )}
         >
+          <DirtNav
+            data-plasmic-name={"dirtNav"}
+            data-plasmic-override={overrides.dirtNav}
+            actions={
+              <PlasmicLink__
+                data-plasmic-name={"link"}
+                data-plasmic-override={overrides.link}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link
+                )}
+                component={Link}
+                href={"https://www.plasmic.app/"}
+                legacyBehavior={false}
+                platform={"nextjs"}
+              >
+                {"Contact Us"}
+              </PlasmicLink__>
+            }
+            className={classNames("__wab_instance", sty.dirtNav)}
+            logo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
+            menuBackground={"dirt-pop"}
+            menuLinks={
+              <React.Fragment>
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.dirtNavLink__miR1Z
+                  )}
+                  href={"/about"}
+                  label={"About"}
+                />
+
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.dirtNavLink__yXRrJ
+                  )}
+                  href={"/contact"}
+                  label={"Contact"}
+                />
+              </React.Fragment>
+            }
+            navBackground={"dirt-deep"}
+          />
+
           <HeroSection
             data-plasmic-name={"heroSection"}
             data-plasmic-override={overrides.heroSection}
@@ -997,6 +1079,8 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
 const PlasmicDescendants = {
   home: [
     "home",
+    "dirtNav",
+    "link",
     "heroSection",
     "companiesWeCoveredInDirt",
     "dirtRichText",
@@ -1009,6 +1093,8 @@ const PlasmicDescendants = {
     "prosConsSection",
     "footerSection"
   ],
+  dirtNav: ["dirtNav", "link"],
+  link: ["link"],
   heroSection: ["heroSection"],
   companiesWeCoveredInDirt: ["companiesWeCoveredInDirt"],
   dirtRichText: ["dirtRichText"],
@@ -1026,6 +1112,8 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   home: "div";
+  dirtNav: typeof DirtNav;
+  link: "a";
   heroSection: typeof HeroSection;
   companiesWeCoveredInDirt: typeof CompanyCarouselSection;
   dirtRichText: typeof DirtRichText;
@@ -1101,6 +1189,8 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("home"),
   {
     // Helper components rendering sub-elements
+    dirtNav: makeNodeComponent("dirtNav"),
+    link: makeNodeComponent("link"),
     heroSection: makeNodeComponent("heroSection"),
     companiesWeCoveredInDirt: makeNodeComponent("companiesWeCoveredInDirt"),
     dirtRichText: makeNodeComponent("dirtRichText"),
@@ -1117,13 +1207,11 @@ export const PlasmicHomepage = Object.assign(
     internalVariantProps: PlasmicHomepage__VariantProps,
     internalArgProps: PlasmicHomepage__ArgProps,
 
-    // Page metadata
-    pageMetadata: {
-      title: "DIRT - ",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

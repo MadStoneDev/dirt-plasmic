@@ -19,6 +19,27 @@
 .home > * {
   grid-column: 4;
 }
+.dirtNav:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.dirtNavLink__miR1Z:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.dirtNavLink__yXRrJ:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.link {
+  color: var(--token-88Oxp1lx31pA);
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  width: 125px;
+  background: var(--token-5joSP94EMVrt);
+  text-align: center;
+  padding: 8px 20px;
+}
 .heroSection:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;

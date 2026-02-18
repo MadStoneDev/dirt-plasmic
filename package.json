@@ -13,7 +13,9 @@
     "@plasmicapp/host": "^1.0.234",
     "@plasmicapp/loader-nextjs": "^1.0.451",
     "@plasmicapp/nextjs-app-router": "^1.0.20",
-    "@plasmicapp/react-web": "^0.2.415",
+    "@plasmicapp/react-web": "^0.2.422",
+    "@plasmicpkgs/plasmic-nav": "^0.0.209",
+    "@plasmicpkgs/react-aria": "^0.0.167",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
