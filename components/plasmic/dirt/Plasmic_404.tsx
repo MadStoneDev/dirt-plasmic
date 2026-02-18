@@ -230,28 +230,10 @@ function Plasmic_404__RenderFunc(props: {
                 <DirtNavLink
                   className={classNames(
                     "__wab_instance",
-                    sty.dirtNavLink__lbtYr
-                  )}
-                  href={"/"}
-                  label={"Home"}
-                />
-
-                <DirtNavLink
-                  className={classNames(
-                    "__wab_instance",
                     sty.dirtNavLink__pbNik
                   )}
                   href={"/about"}
                   label={"About"}
-                />
-
-                <DirtNavLink
-                  className={classNames(
-                    "__wab_instance",
-                    sty.dirtNavLink__yh918
-                  )}
-                  href={"/services"}
-                  label={"Services"}
                 />
 
                 <DirtNavLink

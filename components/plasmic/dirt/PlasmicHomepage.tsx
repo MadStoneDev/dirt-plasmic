@@ -1072,7 +1072,7 @@ Huge thanks to Nikita for creating  and her team!`}
 When they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT)`}
             contactHeading={"Refer & Earn"}
             copyrightText={
-              "\u00a9 2025 DIRT Agency. All rights reserved. Built from the ground up."
+              "\u00a9 2026 DIRT Agency. All rights reserved. Built from the ground up."
             }
             description={
               "Tell us your DIRTiest dreams and we'll make them come true:"
@@ -1083,10 +1083,11 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             footerLogo={"/plasmic/dirt/images/dirtLogoPng.png"}
             heading1={"Brilliant brands don't grow on trees."}
             heading2={"They grow in the DIRT."}
-            link1Text={"Work"}
-            link2Text={"About"}
-            link2Url={``}
-            link3Text={"Contact"}
+            link1Text={"About"}
+            link1Url={"/aout"}
+            link2Text={"Contact"}
+            link2Url={"/contact"}
+            link3Text={``}
             linksHeading={"Get your hands Dirty"}
             mobileBackgroundImage={
               "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"

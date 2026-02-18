@@ -574,12 +574,10 @@ function PlasmicAbout__RenderFunc(props: {
                   description={
                     hasVariant(globalVariants, "screen", "mobile")
                       ? "It\u2019s what we build on together. We take responsibility for the work we create and stand behind it. For us, that\u2019s what accountability and collaboration looks like."
-                      : "Description for belief 2"
+                      : "It\u2019s what we build on together. We take responsibility for the work we create and stand behind it. For us, that\u2019s what accountability and collaboration looks like."
                   }
                   heading={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "02"
-                      : "Detail 2"
+                    hasVariant(globalVariants, "screen", "mobile") ? "02" : "02"
                   }
                   image={
                     "/plasmic/dirt/images/whatWeBelieveLeatherBackgroundPng.png"
@@ -594,12 +592,10 @@ function PlasmicAbout__RenderFunc(props: {
                   description={
                     hasVariant(globalVariants, "screen", "mobile")
                       ? "We don\u2019t slap on a coat of paint and call it branding. We help you create something grounded, gutsy, and impossible to ignore."
-                      : "Description for belief 3"
+                      : "We don\u2019t slap on a coat of paint and call it branding. We help you create something grounded, gutsy, and impossible to ignore."
                   }
                   heading={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "03"
-                      : "Detail 3"
+                    hasVariant(globalVariants, "screen", "mobile") ? "03" : "03"
                   }
                   image={
                     "/plasmic/dirt/images/whatWeBelieveLeatherBackgroundPng.png"
@@ -750,7 +746,7 @@ function PlasmicAbout__RenderFunc(props: {
 When they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT)`}
             contactHeading={"Refer & Earn"}
             copyrightText={
-              "\u00a9 2025 DIRT Agency. All rights reserved. Built from the ground up."
+              "\u00a9 2026 DIRT Agency. All rights reserved. Built from the ground up."
             }
             description={
               "Tell us your DIRTiest dreams and we'll make them come true:"
@@ -766,11 +762,26 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             link2Text={"Contact"}
             link2Url={"/contact"}
             linksHeading={"Get your hands dirty"}
+            mobileBackgroundImage={
+              "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
+            }
             newsletterDescription={
               "Gritty strategic insights to help you win more clients. Delivered with love (and a smidge of mud) once monthly."
             }
             newsletterHeading={"Get Dirt Dispatch"}
+            recipientEmail={"hello@thedirtagency.com"}
+            separatorImage={"/plasmic/dirt/images/line2Png.png"}
           />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__iw0Fr
+            )}
+          >
+            {"Enter some text"}
+          </div>
         </div>
       </div>
     </React.Fragment>

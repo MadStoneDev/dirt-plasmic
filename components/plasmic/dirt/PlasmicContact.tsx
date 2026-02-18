@@ -61,6 +61,7 @@ import {
 
 import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
 import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
+import { FooterSection } from "../../sections/FooterSection"; // plasmic-import: I7Z-mxcvFz5C/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
 
@@ -114,6 +115,7 @@ export type PlasmicContact__OverridesType = {
   root?: Flex__<"div">;
   dirtNav?: Flex__<typeof DirtNav>;
   link?: Flex__<"a"> & Partial<LinkProps>;
+  footerSection?: Flex__<typeof FooterSection>;
 };
 
 export interface DefaultContactProps {}
@@ -248,7 +250,47 @@ function PlasmicContact__RenderFunc(props: {
                 />
               </React.Fragment>
             }
-            navBackground={"transparent"}
+            navBackground={"dirt-deep"}
+          />
+
+          <FooterSection
+            data-plasmic-name={"footerSection"}
+            data-plasmic-override={overrides.footerSection}
+            backgroundImage={"/plasmic/dirt/images/footerImagePng.png"}
+            bottomRightLink={"/"}
+            bottomRightText={"Click here to  toss some DIRT on the competition"}
+            className={classNames("__wab_instance", sty.footerSection)}
+            contactDescription={`Dig what we're doing but don't need us at the moment? **Refer a client to DIRT**. 
+
+When they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT)`}
+            contactHeading={"Refer & Learn"}
+            copyrightText={
+              "\u00a9 2026 DIRT Agency. All rights reserved. Built from the ground up."
+            }
+            description={
+              "Tell us your DIRTiest dreams and we'll make them come true:"
+            }
+            footerDescription={
+              "Fresh messaging, branding, and positioning from the ground up."
+            }
+            footerLogo={"/plasmic/dirt/images/dirtLogoPng.png"}
+            heading1={"Brilliant brands don\u2019t grow on trees."}
+            heading2={"They grow in the DIRT."}
+            link1Text={"About"}
+            link1Url={"/about"}
+            link2Text={"Contact"}
+            link2Url={"/contact"}
+            linksHeading={"Get your hands dirty"}
+            mobileBackgroundImage={
+              "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
+            }
+            newsletterDescription={
+              "Gritty strategic insights to help you win more clients. Delivered with love (and a smidge of mud) once monthly."
+            }
+            newsletterHeading={"Get Dirt Dispatch"}
+            recipientEmail={"hello@thedirtagency.com"}
+            separatorImage={"/plasmic/dirt/images/line2Png.png"}
+            submitButtonText={"Get Dirty"}
           />
         </div>
       </div>
@@ -257,9 +299,10 @@ function PlasmicContact__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "dirtNav", "link"],
+  root: ["root", "dirtNav", "link", "footerSection"],
   dirtNav: ["dirtNav", "link"],
-  link: ["link"]
+  link: ["link"],
+  footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -268,6 +311,7 @@ type NodeDefaultElementType = {
   root: "div";
   dirtNav: typeof DirtNav;
   link: "a";
+  footerSection: typeof FooterSection;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -334,6 +378,7 @@ export const PlasmicContact = Object.assign(
     // Helper components rendering sub-elements
     dirtNav: makeNodeComponent("dirtNav"),
     link: makeNodeComponent("link"),
+    footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicContact
     internalVariantProps: PlasmicContact__VariantProps,
