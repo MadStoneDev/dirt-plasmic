@@ -16,8 +16,23 @@ export function WhatWeBelieveSection({
 }: WhatWeBelieveSectionProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // Plasmic wraps slot children in a React.Fragment — unwrap to get individual items
+  const unwrapSlot = (slot: ReactNode): React.ReactNode[] => {
+    const arr = React.Children.toArray(slot);
+    if (
+      arr.length === 1 &&
+      React.isValidElement(arr[0]) &&
+      arr[0].type === React.Fragment
+    ) {
+      return React.Children.toArray(
+        (arr[0].props as { children?: ReactNode }).children
+      );
+    }
+    return arr;
+  };
+
   // Inject index, isActive, onClick into each left-side item
-  const items = React.Children.map(children, (child, index) => {
+  const items = unwrapSlot(children).map((child, index) => {
     if (!React.isValidElement(child)) return null;
     return React.cloneElement(child as React.ReactElement<any>, {
       index,
@@ -27,12 +42,12 @@ export function WhatWeBelieveSection({
   });
 
   // Pick the matching detail for the active index, or nothing
-  const detailsArray = React.Children.toArray(details);
+  const detailsArray = unwrapSlot(details);
   const activeDetail = detailsArray[activeIndex] || null;
 
   return (
-    <section className="py-40 px-8 bg-dirt-pop" style={{ gridColumn: "1 / -1" }}>
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 md:py-40 px-5 md:px-8 w-full bg-dirt-pop" style={{ gridColumn: "1 / -1" }}>
+      {/*<div className="max-w-7xl mx-auto">*/}
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left Column — 45% */}
           <div className="lg:w-[45%] flex flex-col">
@@ -42,17 +57,19 @@ export function WhatWeBelieveSection({
               </h2>
             )}
 
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-8">
               {items}
             </div>
           </div>
 
           {/* Right Column — 55% */}
-          <div className="lg:w-[55%] relative min-h-100 overflow-hidden">
+          <div className="relative lg:w-[55%] overflow-hidden" style={{
+            aspectRatio: "740/720"
+          }}>
             {activeDetail}
           </div>
         </div>
-      </div>
+      {/*</div>*/}
     </section>
   );
 }

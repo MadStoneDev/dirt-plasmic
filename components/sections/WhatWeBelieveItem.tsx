@@ -21,13 +21,12 @@ export function WhatWeBelieveItem({
   return (
     <button
       onClick={onClick}
-      className="flex items-stretch gap-6 text-left py-6 cursor-pointer group"
+      className="flex items-stretch gap-5 text-left min-h-18.5 cursor-pointer group"
     >
       {/* Indicator bar */}
       <div
-        className="shrink-0 rounded-full transition-all duration-300"
+        className={`shrink-0 ${isActive ? "w-2" : "w-1 group-hover:w-2"} transition-all duration-300`}
         style={{
-          width: isActive ? "5px" : "2px",
           backgroundColor: isActive
             ? "var(--color-dirt-off-white)"
             : "var(--color-dirt-deep)",
@@ -36,17 +35,14 @@ export function WhatWeBelieveItem({
 
       {/* Number + Label */}
       <div className="flex items-center gap-4">
-        <span
-          className={`font-sans text-sm transition-opacity duration-300 ${
-            isActive ? "text-dirt-off-white opacity-100" : "text-dirt-off-white opacity-50"
-          }`}
-        >
+        <span className={`font-sans text-xl text-dirt-off-white opacity-100`}>
           {number}
         </span>
         <h3
-          className={`font-display font-bold text-xl md:text-2xl uppercase transition-opacity duration-300 ${
-            isActive ? "text-dirt-off-white opacity-100" : "text-dirt-off-white opacity-50"
-          }`}
+          className={`font-display font-bold text-[40px] text-dirt-off-white opacity-100`}
+          style={{
+            letterSpacing: "-2%",
+          }}
         >
           {fmt(label)}
         </h3>
