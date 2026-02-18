@@ -38,6 +38,7 @@
   width: 125px;
   background: var(--token-5joSP94EMVrt);
   text-align: center;
+  text-transform: uppercase;
   padding: 8px 20px;
 }
 .heroSection:global(.__wab_instance) {

@@ -245,7 +245,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   sty.link
                 )}
                 component={Link}
-                href={"https://www.plasmic.app/"}
+                href={`/contact`}
                 legacyBehavior={false}
                 platform={"nextjs"}
               >

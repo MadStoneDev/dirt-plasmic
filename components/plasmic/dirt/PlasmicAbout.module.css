@@ -22,6 +22,28 @@
 .root > * {
   grid-column: 4;
 }
+.dirtNav:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.dirtNavLink__feNxp:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.dirtNavLink___0Gx4:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.link___9CiQl {
+  width: 125px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  color: var(--token-88Oxp1lx31pA);
+  text-align: center;
+  text-transform: uppercase;
+  background: var(--token-5joSP94EMVrt);
+  padding: 8px 20px;
+}
 .aboutHero {
   display: grid;
   position: relative;

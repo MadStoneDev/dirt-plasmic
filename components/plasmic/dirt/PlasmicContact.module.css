@@ -21,3 +21,33 @@
 .root > * {
   grid-column: 4;
 }
+.dirtNav:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.dirtNavLink__zvm3W:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.dirtNavLink___5Jhnt:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.dirtNavLink___5G5Qb:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.dirtNavLink__utceo:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.link {
+  width: 125px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  color: var(--token-88Oxp1lx31pA);
+  text-align: center;
+  text-transform: uppercase;
+  background: var(--token-5joSP94EMVrt);
+  padding: 8px 20px;
+}

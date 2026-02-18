@@ -310,6 +310,11 @@
           "id": "J-tImhRbDjF9",
           "name": "Mobile - Footer DIRT Background.png",
           "filePath": "../public/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
+        },
+        {
+          "id": "wBvxyuFLtvtg",
+          "name": "Menu Image.png",
+          "filePath": "../public/plasmic/dirt/images/menuImagePng.png"
         }
       ],
       "indirect": false,

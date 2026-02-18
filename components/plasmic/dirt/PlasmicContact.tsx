@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
+import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
 
@@ -104,6 +106,8 @@ export const PlasmicContact__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicContact__OverridesType = {
   root?: Flex__<"div">;
+  dirtNav?: Flex__<typeof DirtNav>;
+  link?: Flex__<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultContactProps {}
@@ -178,20 +182,91 @@ function PlasmicContact__RenderFunc(props: {
             styleTokensClassNames,
             sty.root
           )}
-        />
+        >
+          <DirtNav
+            data-plasmic-name={"dirtNav"}
+            data-plasmic-override={overrides.dirtNav}
+            actions={
+              <PlasmicLink__
+                data-plasmic-name={"link"}
+                data-plasmic-override={overrides.link}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link
+                )}
+                component={Link}
+                href={`/contact`}
+                legacyBehavior={false}
+                platform={"nextjs"}
+              >
+                {"Contact us"}
+              </PlasmicLink__>
+            }
+            className={classNames("__wab_instance", sty.dirtNav)}
+            logo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
+            menuBackground={"dirt-pop"}
+            menuImage={"/plasmic/dirt/images/menuImagePng.png"}
+            menuLinks={
+              <React.Fragment>
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.dirtNavLink__zvm3W
+                  )}
+                  href={"/"}
+                  label={"Home"}
+                />
+
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.dirtNavLink___5Jhnt
+                  )}
+                  href={"/about"}
+                  label={"About"}
+                />
+
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.dirtNavLink___5G5Qb
+                  )}
+                  href={"/services"}
+                  label={"Services"}
+                />
+
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.dirtNavLink__utceo
+                  )}
+                  href={"/contact"}
+                  label={"Contact"}
+                />
+              </React.Fragment>
+            }
+            navBackground={"transparent"}
+          />
+        </div>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "dirtNav", "link"],
+  dirtNav: ["dirtNav", "link"],
+  link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  dirtNav: typeof DirtNav;
+  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -256,6 +331,8 @@ export const PlasmicContact = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    dirtNav: makeNodeComponent("dirtNav"),
+    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicContact
     internalVariantProps: PlasmicContact__VariantProps,

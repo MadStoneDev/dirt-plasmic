@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
+import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
 import { FooterSection } from "../../sections/FooterSection"; // plasmic-import: I7Z-mxcvFz5C/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
@@ -105,9 +107,9 @@ export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicAbout__OverridesType = {
   root?: Flex__<"div">;
+  dirtNav?: Flex__<typeof DirtNav>;
   aboutHero?: Flex__<"section">;
   ifWeHearTheWord?: Flex__<"section">;
-  link?: Flex__<"a"> & Partial<LinkProps>;
   builtWithSpecialists?: Flex__<"section">;
   section?: Flex__<"section">;
   footerSection?: Flex__<typeof FooterSection>;
@@ -188,6 +190,53 @@ function PlasmicAbout__RenderFunc(props: {
             sty.root
           )}
         >
+          <DirtNav
+            data-plasmic-name={"dirtNav"}
+            data-plasmic-override={overrides.dirtNav}
+            actions={
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link___9CiQl
+                )}
+                component={Link}
+                href={`/contact`}
+                legacyBehavior={false}
+                platform={"nextjs"}
+              >
+                {"Contact Us"}
+              </PlasmicLink__>
+            }
+            className={classNames("__wab_instance", sty.dirtNav)}
+            logo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
+            menuBackground={"dirt-pop"}
+            menuImage={"/plasmic/dirt/images/menuImagePng.png"}
+            menuLinks={
+              <React.Fragment>
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.dirtNavLink__feNxp
+                  )}
+                  href={"/about"}
+                  label={"About"}
+                />
+
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.dirtNavLink___0Gx4
+                  )}
+                  href={"/contact"}
+                  label={"Contact"}
+                />
+              </React.Fragment>
+            }
+            navBackground={"transparent"}
+          />
+
           <section
             data-plasmic-name={"aboutHero"}
             data-plasmic-override={overrides.aboutHero}
@@ -421,14 +470,12 @@ function PlasmicAbout__RenderFunc(props: {
                         </React.Fragment>
                         {
                           <PlasmicLink__
-                            data-plasmic-name={"link"}
-                            data-plasmic-override={overrides.link}
                             className={classNames(
                               projectcss.all,
                               projectcss.a,
                               projectcss.__wab_text,
                               projectcss.plasmic_default__inline,
-                              sty.link
+                              sty.link__reuHx
                             )}
                             component={Link}
                             href={"https://nikitamorell.com"}
@@ -605,16 +652,16 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
 const PlasmicDescendants = {
   root: [
     "root",
+    "dirtNav",
     "aboutHero",
     "ifWeHearTheWord",
-    "link",
     "builtWithSpecialists",
     "section",
     "footerSection"
   ],
+  dirtNav: ["dirtNav"],
   aboutHero: ["aboutHero"],
-  ifWeHearTheWord: ["ifWeHearTheWord", "link"],
-  link: ["link"],
+  ifWeHearTheWord: ["ifWeHearTheWord"],
   builtWithSpecialists: ["builtWithSpecialists"],
   section: ["section"],
   footerSection: ["footerSection"]
@@ -624,9 +671,9 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  dirtNav: typeof DirtNav;
   aboutHero: "section";
   ifWeHearTheWord: "section";
-  link: "a";
   builtWithSpecialists: "section";
   section: "section";
   footerSection: typeof FooterSection;
@@ -694,9 +741,9 @@ export const PlasmicAbout = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    dirtNav: makeNodeComponent("dirtNav"),
     aboutHero: makeNodeComponent("aboutHero"),
     ifWeHearTheWord: makeNodeComponent("ifWeHearTheWord"),
-    link: makeNodeComponent("link"),
     builtWithSpecialists: makeNodeComponent("builtWithSpecialists"),
     section: makeNodeComponent("section"),
     footerSection: makeNodeComponent("footerSection"),

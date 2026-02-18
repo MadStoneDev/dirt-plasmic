@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
+import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
 
@@ -104,8 +106,8 @@ export const Plasmic_404__ArgProps = new Array<ArgPropType>();
 
 export type Plasmic_404__OverridesType = {
   root?: Flex__<"div">;
+  dirtNav?: Flex__<typeof DirtNav>;
   h1?: Flex__<"h1">;
-  link?: Flex__<"a"> & Partial<LinkProps>;
 };
 
 export interface Default_404Props {}
@@ -183,6 +185,71 @@ function Plasmic_404__RenderFunc(props: {
             sty.root
           )}
         >
+          <DirtNav
+            data-plasmic-name={"dirtNav"}
+            data-plasmic-override={overrides.dirtNav}
+            actions={
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__jszHm
+                )}
+                component={Link}
+                href={`/contact`}
+                legacyBehavior={false}
+                platform={"nextjs"}
+              >
+                {"Contact Us"}
+              </PlasmicLink__>
+            }
+            className={classNames("__wab_instance", sty.dirtNav)}
+            logo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
+            menuBackground={"dirt-pop"}
+            menuImage={"/plasmic/dirt/images/menuImagePng.png"}
+            menuLinks={
+              <React.Fragment>
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.dirtNavLink__lbtYr
+                  )}
+                  href={"/"}
+                  label={"Home"}
+                />
+
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.dirtNavLink__pbNik
+                  )}
+                  href={"/about"}
+                  label={"About"}
+                />
+
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.dirtNavLink__yh918
+                  )}
+                  href={"/services"}
+                  label={"Services"}
+                />
+
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
+                    sty.dirtNavLink__n2Sju
+                  )}
+                  href={"/contact"}
+                  label={"Contact"}
+                />
+              </React.Fragment>
+            }
+            navBackground={"transparent"}
+          />
+
           <h1
             data-plasmic-name={"h1"}
             data-plasmic-override={overrides.h1}
@@ -235,9 +302,11 @@ function Plasmic_404__RenderFunc(props: {
             }
           </div>
           <PlasmicLink__
-            data-plasmic-name={"link"}
-            data-plasmic-override={overrides.link}
-            className={classNames(projectcss.all, projectcss.a, sty.link)}
+            className={classNames(
+              projectcss.all,
+              projectcss.a,
+              sty.link___6CbZc
+            )}
             component={Link}
             legacyBehavior={false}
             platform={"nextjs"}
@@ -279,17 +348,17 @@ function Plasmic_404__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1", "link"],
-  h1: ["h1"],
-  link: ["link"]
+  root: ["root", "dirtNav", "h1"],
+  dirtNav: ["dirtNav"],
+  h1: ["h1"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  dirtNav: typeof DirtNav;
   h1: "h1";
-  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -354,8 +423,8 @@ export const Plasmic_404 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    dirtNav: makeNodeComponent("dirtNav"),
     h1: makeNodeComponent("h1"),
-    link: makeNodeComponent("link"),
 
     // Metadata about props expected for Plasmic_404
     internalVariantProps: Plasmic_404__VariantProps,
