@@ -15,7 +15,7 @@ export function WhatWeBelieveDetail({
   description,
 }: WhatWeBelieveDetailProps) {
   return (
-    <div className="relative w-full h-full min-h-[400px]">
+    <div className="relative w-full h-full min-h-100">
       {/* Background Image */}
       {image && (
         <Image
@@ -30,9 +30,9 @@ export function WhatWeBelieveDetail({
       <div className="absolute inset-0 bg-dirt-deep/40" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-end h-full p-10">
+      <div className="relative z-10 flex flex-col justify-end h-full py-40 px-32.5">
         {heading && (
-          <h3 className="font-display font-bold text-3xl md:text-4xl text-dirt-pop uppercase mb-4">
+          <h3 className="font-display font-bold text-3xl md:text-9xl text-dirt-pop uppercase mb-4">
             {fmt(heading)}
           </h3>
         )}

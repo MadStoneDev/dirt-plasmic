@@ -33,11 +33,11 @@ export function WhatWeBelieveSection({
   return (
     <section className="py-40 px-8 bg-dirt-pop" style={{ gridColumn: "1 / -1" }}>
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left Column — 45% */}
           <div className="lg:w-[45%] flex flex-col">
             {heading && (
-              <h2 className="font-display font-bold text-4xl md:text-6xl text-dirt-off-white uppercase mb-12">
+              <h2 className="font-display font-bold text-5xl md:text-8xl text-dirt-off-white mb-12">
                 {fmt(heading)}
               </h2>
             )}
@@ -48,7 +48,7 @@ export function WhatWeBelieveSection({
           </div>
 
           {/* Right Column — 55% */}
-          <div className="lg:w-[55%] relative min-h-[400px] overflow-hidden">
+          <div className="lg:w-[55%] relative min-h-100 overflow-hidden">
             {activeDetail}
           </div>
         </div>
