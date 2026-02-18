@@ -37,6 +37,8 @@ export function DirtNav({
   const [isSticky, setIsSticky] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const linksContainerRef = useRef<HTMLDivElement>(null);
+  const [offsets, setOffsets] = useState<number[]>([]);
 
   /* ── sticky on scroll ── */
   useEffect(() => {
@@ -90,9 +92,44 @@ export function DirtNav({
     });
   });
 
+  /* ── measure link widths for staircase layout ── */
+  useEffect(() => {
+    if (isMobile || !linksContainerRef.current) {
+      setOffsets([]);
+      return;
+    }
+
+    const items = linksContainerRef.current.querySelectorAll<HTMLElement>(
+      ":scope > [data-nav-link]"
+    );
+
+    const measure = () => {
+      const next: number[] = [];
+      let cumulative = 0;
+      items.forEach((el) => {
+        next.push(cumulative);
+        cumulative += el.offsetWidth;
+      });
+      setOffsets((prev) => {
+        if (
+          prev.length === next.length &&
+          prev.every((v, i) => v === next[i])
+        )
+          return prev;
+        return next;
+      });
+    };
+
+    const ro = new ResizeObserver(measure);
+    items.forEach((el) => ro.observe(el));
+    document.fonts.ready.then(measure);
+
+    return () => ro.disconnect();
+  }, [isMobile, linkItems.length]);
+
   const navBg = navBgMap[navBackground] ?? "bg-dirt-deep";
   const menuBg = menuBgMap[menuBackground] ?? "bg-dirt-pop";
-  const NAV_HEIGHT = 80;
+  const NAV_HEIGHT = 72;
 
   return (
     <>
@@ -115,7 +152,7 @@ export function DirtNav({
               <img
                 src={logo}
                 alt="Logo"
-                className="h-10 md:h-12 w-auto"
+                className="h-10 md:h-9 w-auto"
               />
             </a>
           ) : (
@@ -129,12 +166,10 @@ export function DirtNav({
             {/* Hamburger button */}
             <button
               onClick={() => setMenuOpen(true)}
-              className="relative flex flex-col justify-center items-center w-10 h-10 gap-[6px] cursor-pointer bg-transparent border-0"
+              className="relative flex flex-col justify-center items-center bg-dirt-pop hover:bg-dirt-pop-hover w-10 h-10 gap-1.5 cursor-pointer border-0"
               aria-label="Open menu"
             >
-              <span className="block w-7 h-[3px] bg-dirt-off-white rounded-sm" />
-              <span className="block w-7 h-[3px] bg-dirt-off-white rounded-sm" />
-              <span className="block w-7 h-[3px] bg-dirt-off-white rounded-sm" />
+              <img src={`/Hamburger Button.png`} className={`w-6 h-auto`}  alt={`Menu Button`} />
             </button>
           </div>
         </div>
@@ -142,21 +177,31 @@ export function DirtNav({
 
       {/* ── Full-screen menu overlay ── */}
       <div
-        className={`fixed inset-0 z-[9999] ${menuBg} transition-transform duration-400 ease-in-out ${
+        className={`fixed inset-0 z-9999 ${menuBg} transition-transform duration-400 ease-in-out ${
           menuOpen
             ? "translate-x-0 pointer-events-auto"
             : "-translate-x-full pointer-events-none"
         }`}
       >
+        {/* Logo */}
+        <a href="/" className="shrink-0 absolute top-5 left-5 md:top-8.5 md:left-8">
+          <img
+              src={`/Dirt Dark Logo.png`}
+              alt="Logo"
+              className="h-7 md:h-9 w-auto"
+          />
+        </a>
+        
         {/* Close button */}
         <button
           onClick={() => setMenuOpen(false)}
-          className="absolute top-5 right-5 md:top-8 md:right-8 w-10 h-10 flex items-center justify-center cursor-pointer bg-transparent border-0 z-10"
-          aria-label="Close menu"
+          className="absolute top-5 right-5 md:top-8 md:right-8 p-2 pr-3 flex items-center justify-center cursor-pointer bg-dirt-deep border-0 z-10"
+          aria-label="Close menu" 
         >
+          <div className={`flex items-center gap-1`}>
           <svg
-            width="28"
-            height="28"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -169,26 +214,40 @@ export function DirtNav({
               d="M6 18L18 6M6 6l12 12"
             />
           </svg>
+          <span className={`font-display font-bold text-dirt-off-white uppercase text-base`}>Close</span>
+          </div>
         </button>
 
         {/* Menu content */}
-        <div className="flex flex-col justify-between h-full px-5 md:px-8 py-20 md:py-24 overflow-y-auto">
+        <div className="flex flex-col justify-between h-full px-5 md:px-8 py-20 md:py-40 overflow-y-auto">
           {/* Links */}
-          <div className="flex flex-col gap-2 md:gap-4 items-start">
-            {linkItems}
+          <div ref={linksContainerRef} className="grow flex flex-col gap-2 md:gap-4 justify-start">
+            {linkItems.map((child, i) => (
+              <div
+                key={i}
+                data-nav-link
+                style={{
+                  width: "fit-content",
+                  marginLeft: !isMobile ? (offsets[i] ?? 0) : 0,
+                  transition: "margin-left 0.4s ease",
+                }}
+              >
+                {child}
+              </div>
+            ))}
           </div>
+        </div>
 
-          {/* Bottom image */}
-          {menuImage && (
-            <div className="mt-8 shrink-0">
+        {/* Bottom image */}
+        {menuImage && (
+            <div className="absolute bottom-0 left-0 right-0 shrink-0">
               <img
-                src={menuImage}
-                alt=""
-                className="max-h-32 md:max-h-48 w-auto"
+                  src={menuImage}
+                  alt=""
+                  className="max-h-32 md:max-h-48 w-auto"
               />
             </div>
-          )}
-        </div>
+        )}
       </div>
     </>
   );
