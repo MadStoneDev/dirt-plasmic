@@ -86,10 +86,16 @@ function wrapQueriesWithLoadingProxy($q: any): any {
 
 export function generateDynamicMetadata($q: any, $ctx: any) {
   return {
-    openGraph: {},
+    title: "404 - DIRT",
+
+    openGraph: {
+      title: "404 - DIRT"
+    },
     twitter: {
-      card: "summary"
-    }
+      card: "summary",
+      title: "404 - DIRT"
+    },
+    alternates: { canonical: "/404" }
   };
 }
 
@@ -162,7 +168,18 @@ function Plasmic_404__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary" />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
+        <meta
+          key="twitter:title"
+          property="twitter:title"
+          content={pageMetadata.title}
+        />
+
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
+      </Head>
 
       <style>{`
         body {

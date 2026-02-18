@@ -109,15 +109,24 @@ function wrapQueriesWithLoadingProxy($q: any): any {
 
 export function generateDynamicMetadata($q: any, $ctx: any) {
   return {
-    title: "DIRT - ",
-
+    title:
+      "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
+    description:
+      "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities.",
     openGraph: {
-      title: "DIRT - "
+      title:
+        "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
+      description:
+        "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
     twitter: {
       card: "summary",
-      title: "DIRT - "
-    }
+      title:
+        "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
+      description:
+        "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities."
+    },
+    alternates: { canonical: "/" }
   };
 }
 
@@ -210,6 +219,23 @@ function PlasmicHomepage__RenderFunc(props: {
           property="twitter:title"
           content={pageMetadata.title}
         />
+        <meta
+          key="description"
+          property="description"
+          content={pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          property="twitter:description"
+          content={pageMetadata.description}
+        />
+
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
       </Head>
 
       <style>{`

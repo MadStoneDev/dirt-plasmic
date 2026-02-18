@@ -87,10 +87,21 @@ function wrapQueriesWithLoadingProxy($q: any): any {
 
 export function generateDynamicMetadata($q: any, $ctx: any) {
   return {
-    openGraph: {},
+    title: "About - DIRT",
+    description:
+      "In industries where every bid and every project counts, the brands that communicate best will win again and again. We know exactly how to create memorable, project-winning brands. In fact, we’ve done it for years.",
+    openGraph: {
+      title: "About - DIRT",
+      description:
+        "In industries where every bid and every project counts, the brands that communicate best will win again and again. We know exactly how to create memorable, project-winning brands. In fact, we’ve done it for years."
+    },
     twitter: {
-      card: "summary"
-    }
+      card: "summary",
+      title: "About - DIRT",
+      description:
+        "In industries where every bid and every project counts, the brands that communicate best will win again and again. We know exactly how to create memorable, project-winning brands. In fact, we’ve done it for years."
+    },
+    alternates: { canonical: "/about" }
   };
 }
 
@@ -167,7 +178,33 @@ function PlasmicAbout__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary" />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
+        <meta
+          key="twitter:title"
+          property="twitter:title"
+          content={pageMetadata.title}
+        />
+        <meta
+          key="description"
+          property="description"
+          content={pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          property="twitter:description"
+          content={pageMetadata.description}
+        />
+
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
+      </Head>
 
       <style>{`
         body {
