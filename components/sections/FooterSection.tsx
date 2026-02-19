@@ -103,7 +103,7 @@ export function FooterSection({
 
   return (
     <footer
-      className="relative pt-16 md:pt-40 px-5 md:px-8 pb-8 overflow-hidden"
+      className="relative pt-16 md:pt-40 px-5 md:px-8 pb-110 md:pb-8 overflow-hidden"
       style={{
         gridColumn: "1 / -1",
         backgroundColor: backgroundColor || "#5C0004",
@@ -118,7 +118,7 @@ export function FooterSection({
               src={mobileBackgroundImage || backgroundImage!}
               alt=""
               fill
-              className="object-contain object-bottom md:hidden"
+              className="mt-76 w-full object-cover object-top md:hidden"
             />
           )}
           {/* Desktop */}
@@ -305,7 +305,7 @@ export function FooterSection({
 
           {/* Separator */}
           {separatorImage ? (
-            <div className="relative h-0.5 mb-12">
+            <div className="relative h-0.5 mb-6 md:mb-12">
               <Image
                 src={separatorImage}
                 alt=""
@@ -319,12 +319,16 @@ export function FooterSection({
 
           {/* Copyright */}
           {copyrightText && (
-            <p className="text-dirt-off-white/70 font-sans text-sm text-center">
+            <p className="mx-auto max-w-md text-dirt-off-white/50 font-sans text-sm text-center">
               {copyrightText}
             </p>
           )}
         </div>
       </div>
+      
+      {/* Dirt Mound */}
+      <img src={`/Mobile Footer DIRT Mound with Shovel.png`} alt="" className={`md:hidden absolute bottom-0 left-0 right-0 w-full h-auto object-contain`} />
+      <img src={`/Dirt and Shovel.png`} alt="" className={`hidden md:block absolute bottom-0 left-auto right-0 w-120 h-auto object-contain`} />
 
       {/* Bottom Right Badge */}
       {bottomRightText && bottomRightLink && (
