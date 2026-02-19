@@ -282,7 +282,7 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             link2Url={"/contact"}
             linksHeading={"Get your hands dirty"}
             mobileBackgroundImage={
-              "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
+              "/plasmic/dirt/images/mobileFooterDirtBackgroundPng2.png"
             }
             newsletterDescription={
               "Gritty strategic insights to help you win more clients. Delivered with love (and a smidge of mud) once monthly."
