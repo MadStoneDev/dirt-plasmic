@@ -93,7 +93,7 @@ export function HeroSection({
                 const totalWords = arr.length;
                 const progress = index / (totalWords - 1 || 1);
                 return (
-                  <div key={index} className="flex flex-col h-full">
+                  <div key={index} className="flex flex-col h-full min-w-0">
                     <div style={{ flexGrow: 1 - progress }} />
                     <span className="font-display font-bold text-5xl md:text-8xl text-dirt-pop uppercase leading-none">
                       {word}
@@ -138,7 +138,7 @@ export function HeroSection({
       </div>
       </div>
 
-      <div className="sticky h-[63vw] overflow-hidden pointer-events-none" style={{ top: "calc(100vh - 63vw)" }}>
+      <div className="sticky h-[63vw] overflow-hidden pointer-events-none" style={{ top: "calc(100dvh - 63vw)" }}>
         <div className="absolute bottom-0 left-0 right-0 h-[60vw] max-h-215.75">
           {backgroundImage && (
             <Image

@@ -27,7 +27,7 @@ export function DirtProcessSection({
   });
 
   return (
-    <section className="pb-4 md:pb-8 pt-16 md:pt-40 px-5 md:px-8 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
+    <section className="pb-4 md:pb-8 pt-16 lg:pt-40 px-5 lg:px-8 bg-dirt-off-white" style={{ gridColumn: "1 / -1" }}>
       {/*<div className="max-w-7xl mx-auto">*/}
         {/* Header */}
         <h2 className="max-w-90 md:max-w-4xl mx-auto font-display font-bold text-5xl md:text-8xl mb-16 text-center">
@@ -37,7 +37,7 @@ export function DirtProcessSection({
         </h2>
 
         {/* Process Steps */}
-        <div className="flex flex-col gap-4 md:gap-12">
+        <div className="flex flex-col gap-4 lg:gap-12">
           {steps}
         </div>
 

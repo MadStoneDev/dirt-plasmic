@@ -58,7 +58,7 @@ export function InfoSection({
           )}
 
           {/* Info Column */}
-          <div className="lg:w-1/2 flex flex-col gap-6">
+          <div className="md:w-1/2 flex flex-col gap-6">
             {subheading && (
               <h3 className="max-w-lg font-display font-bold text-4xl md:text-5xl text-dirt-pop">
                 {fmt(subheading)}
