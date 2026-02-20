@@ -99,14 +99,14 @@
         },
         {
           "id": "wWD7id8LzFyR",
-          "name": "About2",
+          "name": "Newsletter",
           "type": "managed",
           "projectId": "8kaaMUEQHxomwqwuKNMozy",
-          "renderModuleFilePath": "plasmic/dirt/PlasmicAbout2.tsx",
+          "renderModuleFilePath": "plasmic/dirt/PlasmicNewsletter.tsx",
           "importSpec": {
             "modulePath": "../pages/newsletter.tsx"
           },
-          "cssFilePath": "plasmic/dirt/PlasmicAbout2.module.css",
+          "cssFilePath": "plasmic/dirt/PlasmicNewsletter.module.css",
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/newsletter"
