@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState, useRef, useEffect, useCallback } from "react";
+import { ReactNode, useState, useRef, useEffect, useCallback, useId } from "react";
 import { fmt } from "@/utils/formatText";
 
 /* ─── Brand colour map ─── */
@@ -152,10 +152,21 @@ export interface DirtRichTextProps {
   text?: string;
   textColour?: string;
   customTextColour?: string;
+  fontSize?: number;
+  mobileFontSize?: number;
 }
 
-export function DirtRichText({ text, textColour = "dirt-black", customTextColour }: DirtRichTextProps) {
+export function DirtRichText({
+  text,
+  textColour = "dirt-black",
+  customTextColour,
+  fontSize,
+  mobileFontSize,
+}: DirtRichTextProps) {
   if (!text) return null;
+
+  const uid = useId().replace(/:/g, "");
+  const hasCustomSize = fontSize != null || mobileFontSize != null;
 
   const resolvedTextColour =
     textColour === "custom" && customTextColour
@@ -196,12 +207,22 @@ export function DirtRichText({ text, textColour = "dirt-black", customTextColour
     parts.push(<span key={key++}>{fmt(text.slice(lastIndex))}</span>);
   }
 
+  const scopedClass = `drt-${uid}`;
+
   return (
-    <p
-      className="text-base md:text-xl font-sans"
-      style={{ lineHeight: 1.7, color: resolvedTextColour }}
-    >
-      {parts}
-    </p>
+    <>
+      {hasCustomSize && (
+        <style>{`
+          .${scopedClass} { font-size: ${mobileFontSize ?? fontSize}px; }
+          @media (min-width: 768px) { .${scopedClass} { font-size: ${fontSize ?? mobileFontSize}px; } }
+        `}</style>
+      )}
+      <p
+        className={`${hasCustomSize ? scopedClass : "text-base md:text-xl"} font-sans`}
+        style={{ lineHeight: 1.7, color: resolvedTextColour }}
+      >
+        {parts}
+      </p>
+    </>
   );
 }
