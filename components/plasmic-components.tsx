@@ -11,6 +11,7 @@ import { PainPointSlide } from "./sections/PainPointSlide";
 import { InfoSection } from "./sections/InfoSection";
 import { DirtRichText } from "./sections/DirtRichText";
 import { ContactFormSection } from "./sections/ContactFormSection";
+import { NewsletterFormSection } from "./sections/NewsletterFormSection";
 import { SignsCTASection } from "./sections/SignsCTASection";
 import { SignsCTAItem } from "./sections/SignsCTAItem";
 import { ThreeReasonsSection } from "./sections/ThreeReasonsSection";
@@ -297,6 +298,55 @@ registerComponent(ContactFormSection, {
     successMessage: "string",
   },
   importPath: "./components/sections/ContactFormSection",
+});
+
+// Newsletter Form Section - email capture with ActiveCampaign integration
+registerComponent(NewsletterFormSection, {
+  name: "NewsletterFormSection",
+  props: {
+    listId: {
+      type: "string",
+      displayName: "ActiveCampaign List ID",
+      description: "The AC list ID to subscribe contacts to",
+    },
+    tags: {
+      type: "string",
+      displayName: "ActiveCampaign Tags",
+      description: "Comma-separated tag names to apply to the contact",
+    },
+    submitButtonLabel: {
+      type: "string",
+      displayName: "Submit Button Label",
+      defaultValue: "Subscribe",
+    },
+    successMessage: {
+      type: "string",
+      displayName: "Success Message",
+      defaultValue: "Thanks for subscribing!",
+    },
+    successMessageColour: {
+      type: "choice",
+      displayName: "Success Message Colour",
+      options: [
+        "dirt-deep",
+        "dirt-pop",
+        "dirt-green",
+        "dirt-blue",
+        "dirt-off-white",
+        "dirt-black",
+        "white",
+        "black",
+        "custom",
+      ],
+      defaultValue: "dirt-green",
+    },
+    customSuccessMessageColour: {
+      type: "string",
+      displayName: "Custom Success Message Colour (hex)",
+      hidden: (props: any) => props.successMessageColour !== "custom",
+    },
+  },
+  importPath: "./components/sections/NewsletterFormSection",
 });
 
 // Signs CTA Item - plus icon with text
