@@ -119,7 +119,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
 
   return (
     <footer
-      className={`relative ${showHeroForm ? "pt-16 md:pt-40" : "pt-250"} px-5 md:px-8 pb-110 md:pb-8 overflow-hidden`}
+      className={`relative ${showHeroForm ? "pt-16 md:pt-40" : "pt-0 md:pt-250"} px-5 md:px-8 pb-110 md:pb-8 overflow-hidden`}
       style={{
         gridColumn: "1 / -1",
         backgroundColor: backgroundColor || "#5C0004",
