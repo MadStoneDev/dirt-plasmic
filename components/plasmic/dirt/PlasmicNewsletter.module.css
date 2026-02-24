@@ -526,7 +526,7 @@
 }
 .img__irJma {
   object-fit: contain;
-  max-width: 100%;
+  max-width: 70px;
   align-self: center;
   object-position: left 50%;
   margin-bottom: 12px;

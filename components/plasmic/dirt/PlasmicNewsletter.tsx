@@ -567,7 +567,7 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
                 className={classNames(sty.img__irJma)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
+                displayMaxWidth={"70px"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
                 displayWidth={"auto"}
