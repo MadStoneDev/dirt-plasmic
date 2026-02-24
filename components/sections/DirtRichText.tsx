@@ -153,7 +153,8 @@ export interface DirtRichTextProps {
   textColour?: string;
   customTextColour?: string;
   fontSize?: number;
-  mobileFontSize?: number;
+  tabletFontSize?: number;
+  desktopFontSize?: number;
 }
 
 export function DirtRichText({
@@ -161,12 +162,14 @@ export function DirtRichText({
   textColour = "dirt-black",
   customTextColour,
   fontSize,
-  mobileFontSize,
+  tabletFontSize,
+  desktopFontSize,
 }: DirtRichTextProps) {
   if (!text) return null;
 
   const uid = useId().replace(/:/g, "");
-  const hasCustomSize = fontSize != null || mobileFontSize != null;
+  const hasCustomSize =
+    fontSize != null || tabletFontSize != null || desktopFontSize != null;
 
   const resolvedTextColour =
     textColour === "custom" && customTextColour
@@ -212,10 +215,15 @@ export function DirtRichText({
   return (
     <>
       {hasCustomSize && (
-        <style>{`
-          .${scopedClass} { font-size: ${mobileFontSize ?? fontSize}px; }
-          @media (min-width: 768px) { .${scopedClass} { font-size: ${fontSize ?? mobileFontSize}px; } }
-        `}</style>
+        <style>{
+          `.${scopedClass} { font-size: ${fontSize ?? 16}px; }` +
+          (tabletFontSize != null
+            ? `\n@media (min-width: 768px) { .${scopedClass} { font-size: ${tabletFontSize}px; } }`
+            : "") +
+          (desktopFontSize != null
+            ? `\n@media (min-width: 1024px) { .${scopedClass} { font-size: ${desktopFontSize}px; } }`
+            : "")
+        }</style>
       )}
       <p
         className={`${hasCustomSize ? scopedClass : "text-base md:text-xl"} font-sans`}

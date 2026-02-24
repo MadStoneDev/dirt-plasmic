@@ -119,7 +119,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
 
   return (
     <footer
-      className={`relative ${showHeroForm ? "pt-16 md:pt-40" : "pt-0"} px-5 md:px-8 pb-110 md:pb-8 overflow-hidden`}
+      className={`relative ${showHeroForm ? "pt-16 md:pt-40" : "pt-250"} px-5 md:px-8 pb-110 md:pb-8 overflow-hidden`}
       style={{
         gridColumn: "1 / -1",
         backgroundColor: backgroundColor || "#5C0004",
@@ -143,7 +143,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
               src={backgroundImage}
               alt=""
               fill
-              className="object-contain 2xl:object-cover object-bottom 2xl:object-top hidden md:block"
+              className={`hidden md:block ${showHeroForm ? "object-contain 2xl:object-cover object-bottom 2xl:object-top" : "object-cover object-bottom"}`}
             />
           )}
         </div>
@@ -236,7 +236,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
       )}
 
       {/* Footer Columns Section */}
-      <div className="bg-dirt-deep p-6 md:p-12 relative">
+      <div className={`bg-dirt-deep p-6 md:p-12 relative`}>
         <div className="mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
             {/* Column 1 - Logo & Description */}

@@ -284,6 +284,21 @@ registerComponent(DirtRichText, {
       displayName: "Custom Text Colour (hex)",
       hidden: (props: any) => props.textColour !== "custom",
     },
+    fontSize: {
+      type: "number",
+      displayName: "Font Size — Base (px)",
+      description: "Base font size applied at all widths. Leave empty for default (16px).",
+    },
+    tabletFontSize: {
+      type: "number",
+      displayName: "Font Size — Tablet (px)",
+      description: "Overrides base from 768px up. Leave empty to keep base.",
+    },
+    desktopFontSize: {
+      type: "number",
+      displayName: "Font Size — Desktop (px)",
+      description: "Overrides tablet from 1024px up. Leave empty to keep tablet/base.",
+    },
   },
   importPath: "./components/sections/DirtRichText",
 });

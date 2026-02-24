@@ -84,50 +84,47 @@ export function NewsletterFormSection({
   }
 
   return (
-    <section className="py-16 px-5 md:px-8" style={{ gridColumn: "1 / -1" }}>
-      <div className="max-w-xl mx-auto">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div className="grid md:grid-cols-2 gap-4">
-            <input
-              type="text"
-              placeholder="First Name"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              required
-              className="px-4 py-4 text-lg bg-transparent text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
-              style={{ border: "2px solid #30261D" }}
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="px-4 py-4 text-lg bg-transparent text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
-              style={{ border: "2px solid #30261D" }}
-            />
-          </div>
+    <section className="w-full" style={{ gridColumn: "1 / -1" }}>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col items-stretch w-full gap-6"
+      >
+        <input
+          type="text"
+          placeholder="First Name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          required
+          className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-black/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+          style={{ border: "2px solid #30261D" }}
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-black/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+          style={{ border: "2px solid #30261D" }}
+        />
 
-          {error && (
-            <p className="text-red-600 font-sans text-sm">{error}</p>
-          )}
+        {error && <p className="text-red-600 font-sans text-sm">{error}</p>}
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="px-8 py-4 flex items-center justify-center gap-1 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-lg hover:bg-dirt-pop-hover disabled:opacity-50 transition-all duration-300"
-          >
-            <Image
-              src="/90deg Arrow.png"
-              alt="Arrow"
-              width={50}
-              height={50}
-              className="w-6"
-            />
-            {isSubmitting ? "Subscribing..." : submitButtonLabel}
-          </button>
-        </form>
-      </div>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="px-8 py-4 flex items-center justify-center gap-2 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-3xl hover:bg-dirt-pop-hover disabled:opacity-50 transition-all duration-300"
+        >
+          <Image
+            src="/90deg Arrow.png"
+            alt="Arrow"
+            width={50}
+            height={50}
+            className="w-6"
+          />
+          {isSubmitting ? "Subscribing..." : submitButtonLabel}
+        </button>
+      </form>
     </section>
   );
 }
