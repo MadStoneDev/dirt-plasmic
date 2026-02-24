@@ -562,7 +562,10 @@ function PlasmicAbout__RenderFunc(props: {
                   }
                   heading={"01"}
                   image={
-                    "/plasmic/dirt/images/whatWeBelieveLeatherBackgroundPng.png"
+                    "/plasmic/dirt/images/whatWeBelieveDetailBackgroundPng.png"
+                  }
+                  overlayImage={
+                    "/plasmic/dirt/images/whatWeBelieveAccentPng.png"
                   }
                 />
 
@@ -771,6 +774,7 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             newsletterHeading={"Get Dirt Dispatch"}
             recipientEmail={"hello@thedirtagency.com"}
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
+            showHeroForm={true}
           />
 
           <div

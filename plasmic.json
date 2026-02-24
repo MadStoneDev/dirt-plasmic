@@ -354,6 +354,16 @@
           "id": "KueywA82RKwI",
           "name": "Testimonial - 03.jpg",
           "filePath": "../public/plasmic/dirt/images/testimonial03Jpg.jpg"
+        },
+        {
+          "id": "eYN4LUcosbix",
+          "name": "WhatWeBelieve Detail Background.png",
+          "filePath": "../public/plasmic/dirt/images/whatWeBelieveDetailBackgroundPng.png"
+        },
+        {
+          "id": "RxcCHdgGltvK",
+          "name": "WhatWeBelieve Accent.png",
+          "filePath": "../public/plasmic/dirt/images/whatWeBelieveAccentPng.png"
         }
       ],
       "indirect": false,

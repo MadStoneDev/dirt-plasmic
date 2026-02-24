@@ -497,6 +497,7 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             newsletterHeading={"Get Dirt Dispatch"}
             recipientEmail={"hello@thedirtagency.com"}
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
+            showHeroForm={true}
           />
 
           <div

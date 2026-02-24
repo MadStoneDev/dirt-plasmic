@@ -1098,6 +1098,7 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             newsletterHeading={"Get DIRT Dispatch"}
             recipientEmail={"hello@thedirtagency.com"}
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
+            showHeroForm={true}
             submitButtonText={"Get Dirty"}
           />
         </div>
