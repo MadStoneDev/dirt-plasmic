@@ -491,13 +491,32 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             mobileBackgroundImage={
               "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
             }
+            newsletterChildren={
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__irJma)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/dirt/images/dirtDispatchLogoPng.png",
+                  fullWidth: 65,
+                  fullHeight: 36,
+                  aspectRatio: undefined
+                }}
+              />
+            }
             newsletterDescription={
               "Gritty strategic insights to help you win more clients. Delivered with love (and a smidge of mud) once monthly."
             }
             newsletterHeading={"Get Dirt Dispatch"}
             recipientEmail={"hello@thedirtagency.com"}
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
-            showHeroForm={true}
+            showHeroForm={false}
           />
 
           <div

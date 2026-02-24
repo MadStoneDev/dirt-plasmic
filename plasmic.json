@@ -364,6 +364,11 @@
           "id": "RxcCHdgGltvK",
           "name": "WhatWeBelieve Accent.png",
           "filePath": "../public/plasmic/dirt/images/whatWeBelieveAccentPng.png"
+        },
+        {
+          "id": "Vkk-lLy1frUi",
+          "name": "Dirt Dispatch - Logo.png",
+          "filePath": "../public/plasmic/dirt/images/dirtDispatchLogoPng.png"
         }
       ],
       "indirect": false,
