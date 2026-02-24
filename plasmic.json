@@ -369,6 +369,16 @@
           "id": "Vkk-lLy1frUi",
           "name": "Dirt Dispatch - Logo.png",
           "filePath": "../public/plasmic/dirt/images/dirtDispatchLogoPng.png"
+        },
+        {
+          "id": "U0P_-IQ-VBCZ",
+          "name": "Dirt Dispatch.png",
+          "filePath": "../public/plasmic/dirt/images/dirtDispatchPng.png"
+        },
+        {
+          "id": "loiQ9HYvhUl8",
+          "name": "Large - Dirt Dispatch.png",
+          "filePath": "../public/plasmic/dirt/images/largeDirtDispatchPng.png"
         }
       ],
       "indirect": false,
@@ -563,6 +573,12 @@
           "name": "DirtNav",
           "displayName": "DirtNav",
           "componentImportPath": "./components/sections/DirtNav"
+        },
+        {
+          "id": "XfKpmE3Hd3LP",
+          "name": "NewsletterFormSection",
+          "displayName": "NewsletterFormSection",
+          "componentImportPath": "./components/sections/NewsletterFormSection"
         }
       ],
       "customFunctions": []

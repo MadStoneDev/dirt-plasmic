@@ -61,6 +61,7 @@ import {
 
 import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
 import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
+import { NewsletterFormSection } from "../../sections/NewsletterFormSection"; // plasmic-import: XfKpmE3Hd3LP/codeComponent
 import { DirtRichText } from "../../sections/DirtRichText"; // plasmic-import: nKt2zrpkFSyY/codeComponent
 import { FooterSection } from "../../sections/FooterSection"; // plasmic-import: I7Z-mxcvFz5C/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
@@ -276,6 +277,64 @@ function PlasmicNewsletter__RenderFunc(props: {
           />
 
           <section className={classNames(projectcss.all, sty.section__r2Ok8)}>
+            <div className={classNames(projectcss.all, sty.freeBox__zuBr)}>
+              <div className={classNames(projectcss.all, sty.freeBox__jBvT)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___4HDF
+                  )}
+                >
+                  {"Subscribe to"}
+                </div>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__wrqD)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "270px"
+                      : "470px"
+                  }
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"100%"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/dirt/images/largeDirtDispatchPng.png",
+                    fullWidth: 402,
+                    fullHeight: 215,
+                    aspectRatio: undefined
+                  }}
+                />
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__pvBdK
+                )}
+              >
+                {
+                  "The best newsletter in your inbox. If it\u2019s not, we\u2019ll backfill "
+                }
+              </div>
+              <section
+                className={classNames(projectcss.all, sty.section__pqGmV)}
+              >
+                <NewsletterFormSection
+                  className={classNames(
+                    "__wab_instance",
+                    sty.newsletterFormSection__y7ZHg
+                  )}
+                  submitButtonLabel={"Yes, Get me dirty"}
+                  successMessage={"Thanks for subscribing!"}
+                  successMessageColour={"dirt-green"}
+                />
+              </section>
+            </div>
             <div className={classNames(projectcss.all, sty.freeBox__b2Ydi)}>
               <div
                 className={classNames(
@@ -339,6 +398,17 @@ function PlasmicNewsletter__RenderFunc(props: {
             >
               {"Unearth the good stuff"}
             </div>
+            <section className={classNames(projectcss.all, sty.section__mHVvw)}>
+              <NewsletterFormSection
+                className={classNames(
+                  "__wab_instance",
+                  sty.newsletterFormSection__zabzP
+                )}
+                submitButtonLabel={"Yes, Get me Dirty"}
+                successMessage={"Thanks for subscribing!"}
+                successMessageColour={"dirt-green"}
+              />
+            </section>
           </section>
           <section className={classNames(projectcss.all, sty.section___3HbcW)}>
             <div
