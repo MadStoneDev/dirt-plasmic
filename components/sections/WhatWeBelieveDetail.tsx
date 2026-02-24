@@ -5,6 +5,7 @@ import { fmt } from "@/utils/formatText";
 
 export interface WhatWeBelieveDetailProps {
   image?: string;
+  overlayImage?: string;
   heading?: string;
   description?: string;
   // Injected by parent
@@ -13,6 +14,7 @@ export interface WhatWeBelieveDetailProps {
 
 export function WhatWeBelieveDetail({
   image,
+  overlayImage,
   heading,
   description,
   itemLabel,
@@ -25,6 +27,15 @@ export function WhatWeBelieveDetail({
       {image && (
         <Image
           src={image}
+          alt=""
+          fill
+          className="object-contain object-top-left"
+        />
+      )}
+      {/* Overlay Image */}
+      {overlayImage && (
+        <Image
+          src={overlayImage}
           alt=""
           fill
           className="object-contain object-top-left"

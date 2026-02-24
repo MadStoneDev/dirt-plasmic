@@ -51,7 +51,7 @@ export function ThreeReasonsSection({
           </div>
 
           {headerImage && (
-            <div className="hidden md:block absolute top-0 right-0">
+            <div className="hidden xl:block absolute top-0 right-0">
               <Image
                 src={headerImage}
                 alt=""

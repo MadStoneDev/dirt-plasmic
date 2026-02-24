@@ -636,7 +636,8 @@ registerComponent(WhatWeBelieveItem, {
 registerComponent(WhatWeBelieveDetail, {
   name: "WhatWeBelieveDetail",
   props: {
-    image: "imageUrl",
+    image: { type: "imageUrl", displayName: "Background Image" },
+    overlayImage: { type: "imageUrl", displayName: "Overlay Image" },
     heading: "string",
     description: "string",
   },
@@ -695,24 +696,33 @@ registerComponent(WhatWeBelieveSection, {
 });
 
 // Footer Section - hero form with footer columns
+// Props left blank in Plasmic use defaults from config/section-defaults.ts
 registerComponent(FooterSection, {
   name: "FooterSection",
   props: {
+    // Visibility
+    showHeroForm: {
+      type: "boolean",
+      defaultValue: true,
+      displayName: "Show Heading & Form",
+      description: "Toggle the hero heading and contact form. Disable for pages that only need the footer columns.",
+    },
     // Hero area
     backgroundImage: { type: "imageUrl", displayName: "Background Image (Desktop)" },
     mobileBackgroundImage: { type: "imageUrl", displayName: "Background Image (Mobile)" },
     backgroundColor: "string",
-    heading1: "string",
-    heading2: "string",
-    description: "string",
+    heading1: { type: "string", hidden: (props: any) => !props.showHeroForm },
+    heading2: { type: "string", hidden: (props: any) => !props.showHeroForm },
+    description: { type: "string", hidden: (props: any) => !props.showHeroForm },
     // Form settings
-    submitButtonText: "string",
-    recipientEmail: "string",
+    submitButtonText: { type: "string", hidden: (props: any) => !props.showHeroForm },
+    recipientEmail: { type: "string", hidden: (props: any) => !props.showHeroForm },
     // Footer columns
     footerLogo: "imageUrl",
     footerDescription: "string",
     // Newsletter column
     newsletterHeading: "string",
+    newsletterChildren: { type: "slot", displayName: "Newsletter Content" },
     newsletterDescription: "string",
     // Contact column
     contactHeading: "string",

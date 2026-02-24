@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import Image from "next/image";
 import { fmt } from "@/utils/formatText";
+import { footerDefaults } from "@/config/section-defaults";
 
 export interface FooterSectionProps {
+  // Visibility
+  showHeroForm?: boolean;
   // Hero area
   backgroundImage?: string;
   mobileBackgroundImage?: string;
@@ -20,6 +23,7 @@ export interface FooterSectionProps {
   footerDescription?: string;
   // Newsletter column
   newsletterHeading?: string;
+  newsletterChildren?: ReactNode;
   newsletterDescription?: string;
   // Contact column
   contactHeading?: string;
@@ -43,37 +47,49 @@ export interface FooterSectionProps {
   bottomRightLink?: string;
 }
 
-export function FooterSection({
-  backgroundImage,
-  mobileBackgroundImage,
-  backgroundColor = "#5C0004",
-  heading1,
-  heading2,
-  description,
-  submitButtonText = "Get Dirty",
-  recipientEmail,
-  footerLogo,
-  footerDescription,
-  newsletterHeading,
-  newsletterDescription,
-  contactHeading,
-  contactDescription,
-  linksHeading,
-  link1Text,
-  link1Url,
-  link2Text,
-  link2Url,
-  link3Text,
-  link3Url,
-  link4Text,
-  link4Url,
-  link5Text,
-  link5Url,
-  separatorImage,
-  copyrightText,
-  bottomRightText,
-  bottomRightLink,
-}: FooterSectionProps) {
+export function FooterSection(plasmicProps: FooterSectionProps) {
+  // Merge: global defaults < Plasmic-provided props
+  // Only non-undefined Plasmic props override the defaults
+  const mergedProps = { ...footerDefaults };
+  for (const [key, value] of Object.entries(plasmicProps)) {
+    if (value !== undefined) {
+      (mergedProps as Record<string, unknown>)[key] = value;
+    }
+  }
+
+  const {
+    showHeroForm = true,
+    backgroundImage,
+    mobileBackgroundImage,
+    backgroundColor,
+    heading1,
+    heading2,
+    description,
+    submitButtonText,
+    recipientEmail,
+    footerLogo,
+    footerDescription,
+    newsletterHeading,
+    newsletterChildren,
+    newsletterDescription,
+    contactHeading,
+    contactDescription,
+    linksHeading,
+    link1Text,
+    link1Url,
+    link2Text,
+    link2Url,
+    link3Text,
+    link3Url,
+    link4Text,
+    link4Url,
+    link5Text,
+    link5Url,
+    separatorImage,
+    copyrightText,
+    bottomRightText,
+    bottomRightLink,
+  } = mergedProps;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -103,7 +119,7 @@ export function FooterSection({
 
   return (
     <footer
-      className="relative pt-16 md:pt-40 px-5 md:px-8 pb-110 md:pb-8 overflow-hidden"
+      className={`relative ${showHeroForm ? "pt-16 md:pt-40" : "pt-0"} px-5 md:px-8 pb-110 md:pb-8 overflow-hidden`}
       style={{
         gridColumn: "1 / -1",
         backgroundColor: backgroundColor || "#5C0004",
@@ -127,95 +143,97 @@ export function FooterSection({
               src={backgroundImage}
               alt=""
               fill
-              className="object-contain object-bottom hidden md:block"
+              className="object-contain 2xl:object-cover object-bottom 2xl:object-top hidden md:block"
             />
           )}
         </div>
       )}
       {/* Hero/Form Section */}
-      <div className="pb-74 md:pb-235 relative flex flex-col justify-end">
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
-          {heading1 && (
-            <h2
-              className="mx-auto max-w-80 md:max-w-120 font-display font-bold text-5xl md:text-6xl text-dirt-off-white mb-2"
-              style={{ lineHeight: "105%", letterSpacing: "-2%" }}
-            >
-              {fmt(heading1)}
-            </h2>
-          )}
-          {heading2 && (
-            <h2
-              className="max-w-60 md:max-w-none mx-auto font-display font-bold text-5xl md:text-6xl text-dirt-pop mb-8"
-              style={{ lineHeight: "105%", letterSpacing: "-2%" }}
-            >
-              {fmt(heading2)}
-            </h2>
-          )}
-          {description && (
-            <p className="text-dirt-off-white/80 font-sans text-lg mb-12">
-              {description}
-            </p>
-          )}
+      {showHeroForm && (
+        <div className="pb-74 md:pb-235 relative flex flex-col justify-end">
+          <div className="relative z-10 max-w-3xl mx-auto text-center">
+            {heading1 && (
+              <h2
+                className="mx-auto max-w-80 md:max-w-120 font-display font-bold text-5xl md:text-6xl text-dirt-off-white mb-2"
+                style={{ lineHeight: "105%", letterSpacing: "-2%" }}
+              >
+                {fmt(heading1)}
+              </h2>
+            )}
+            {heading2 && (
+              <h2
+                className="max-w-60 md:max-w-none mx-auto font-display font-bold text-5xl md:text-6xl text-dirt-pop mb-8"
+                style={{ lineHeight: "105%", letterSpacing: "-2%" }}
+              >
+                {fmt(heading2)}
+              </h2>
+            )}
+            {description && (
+              <p className="text-dirt-off-white/80 font-sans text-lg mb-12">
+                {description}
+              </p>
+            )}
 
-          {/* Contact Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="mx-auto flex flex-col gap-6 max-w-xl"
-          >
-            <div className="grid md:grid-cols-2 gap-6">
+            {/* Contact Form */}
+            <form
+              onSubmit={handleSubmit}
+              className="mx-auto flex flex-col gap-6 max-w-xl"
+            >
+              <div className="grid md:grid-cols-2 gap-6">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+                />
+              </div>
               <input
                 type="text"
-                placeholder="Name"
-                value={formData.name}
+                placeholder="Company"
+                value={formData.company}
                 onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
+                  setFormData({ ...formData, company: e.target.value })
                 }
                 className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
               />
-              <input
-                type="email"
-                placeholder="Email"
-                value={formData.email}
+              <textarea
+                placeholder="Tell us about your project"
+                rows={4}
+                value={formData.message}
                 onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
+                  setFormData({ ...formData, message: e.target.value })
                 }
-                className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+                className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop resize-none"
               />
-            </div>
-            <input
-              type="text"
-              placeholder="Company"
-              value={formData.company}
-              onChange={(e) =>
-                setFormData({ ...formData, company: e.target.value })
-              }
-              className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
-            />
-            <textarea
-              placeholder="Tell us about your project"
-              rows={4}
-              value={formData.message}
-              onChange={(e) =>
-                setFormData({ ...formData, message: e.target.value })
-              }
-              className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop resize-none"
-            />
-            <button
-              type="submit"
-              className="px-8 py-4 flex items-center justify-center gap-1 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-lg hover:bg-dirt-pop-hover transition-all duration-300"
-            >
-              <Image
-                src={`/90deg Arrow.png`}
-                alt={`90 Degrees Arrow`}
-                width={50}
-                height={50}
-                className={`w-6`}
-              />
-              {submitButtonText}
-            </button>
-          </form>
+              <button
+                type="submit"
+                className="px-8 py-4 flex items-center justify-center gap-1 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-lg hover:bg-dirt-pop-hover shadow-xl shadow-black/40 transition-all duration-300"
+              >
+                <Image
+                  src={`/90deg Arrow.png`}
+                  alt={`90 Degrees Arrow`}
+                  width={50}
+                  height={50}
+                  className={`w-6`}
+                />
+                {submitButtonText}
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Footer Columns Section */}
       <div className="bg-dirt-deep p-6 md:p-12 relative">
@@ -246,6 +264,7 @@ export function FooterSection({
                   {newsletterHeading}
                 </h4>
               )}
+              {newsletterChildren}
               {newsletterDescription && (
                 <p className="text-dirt-off-white/80 font-sans text-sm mb-4">
                   {newsletterDescription}

@@ -145,7 +145,7 @@ export function HeroSection({
               src={backgroundImage}
               alt=""
               fill
-              className="object-contain object-bottom z-0"
+              className="object-contain 2xl:object-cover object-bottom z-0"
               priority
             />
           )}
@@ -190,7 +190,7 @@ export function HeroSection({
               src={foregroundImage}
               alt=""
               fill
-              className="object-contain object-bottom z-20"
+              className="object-contain 2xl:object-cover object-bottom z-20"
             />
           )}
         </div>
