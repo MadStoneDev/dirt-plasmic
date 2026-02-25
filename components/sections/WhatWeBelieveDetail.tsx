@@ -20,44 +20,53 @@ export function WhatWeBelieveDetail({
   itemLabel,
 }: WhatWeBelieveDetailProps) {
   return (
-    <div className="relative w-full h-full border-[1.5px] border-dirt-off-white" style={{
-      aspectRatio: "740/720"
-    }}>
+    <div
+      className="relative w-full md:aspect-740/720 border-[1.5px] border-dirt-off-white"
+    >
       {/* Background Image */}
       {image && (
         <Image
           src={image}
           alt=""
           fill
-          className="object-contain object-top-left"
+          className="object-cover object-top-left"
         />
       )}
+
       {/* Overlay Image */}
       {overlayImage && (
-        <Image
-          src={overlayImage}
-          alt=""
-          fill
-          className="object-contain object-top-left"
-        />
+        <div className={`absolute top-0 left-0`}>
+          <Image
+            src={overlayImage}
+            alt=""
+            width={300}
+            height={300}
+            className={`w-32 md:w-68 xl:w-80 3xl:w-120 h-auto object-contain object-top-left`}
+          />
+        </div>
       )}
-        
+
       {/* Content */}
-      <div className="relative z-10 flex flex-col h-full py-28 lg:py-40 px-24 lg:px-32.5">
+      <div className={`py-16 md:py-36 xl:py-40 3xl:py-68 px-16 md:px-32.5 3xl:px-52 relative flex flex-col h-full z-10`}>
         {heading && (
-          <h3 className="font-display font-bold text-[56px] lg:text-9xl text-dirt-pop uppercase mb-6">
+          <h3 className="font-display font-bold text-[54px] md:text-8xl xl:text-9xl text-dirt-pop uppercase mb-2 md:mb-6 3xl:mb-20">
             {fmt(heading)}
           </h3>
         )}
         {itemLabel && (
-          <p className="inline-block lg:hidden font-display font-bold text-[32px] text-dirt-off-white mb-4">
+          <p className="inline-block md:hidden font-sans font-bold text-[32px] text-dirt-off-white mb-4" style={{
+            letterSpacing: "1.15",
+          }}>
             {fmt(itemLabel)}
           </p>
         )}
         {description && (
-          <p className="text-dirt-off-white font-sans text-xl lg:text-4xl whitespace-pre-line" style={{
-              lineHeight: "1.25"
-          }}>
+          <p
+            className="text-dirt-off-white font-sans text-xl md:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-[56px] whitespace-pre-line"
+            style={{
+              lineHeight: "1.25",
+            }}
+          >
             {description}
           </p>
         )}

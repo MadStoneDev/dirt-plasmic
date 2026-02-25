@@ -13,6 +13,9 @@
   /* Fonts */
   --font-display: "Roboto Condensed", sans-serif;
   --font-sans: "Uncut Sans", sans-serif;
+  
+  /* Breakpoints */
+  --breakpoint-3xl: 120rem;
 }
 
 @font-face {

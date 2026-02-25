@@ -34,12 +34,12 @@ export function WhatWeBelieveItem({
       />
 
       {/* Number + Label */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 2xl:gap-6">
         <span className={`font-sans text-xl text-dirt-off-white opacity-100`}>
           {number}
         </span>
         <h3
-          className={`font-display font-bold text-[40px] text-dirt-off-white opacity-100`}
+          className={`font-display font-bold text-[40px] 2xl:text-6xl text-dirt-off-white opacity-100`}
           style={{
             letterSpacing: "-2%",
           }}
