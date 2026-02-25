@@ -314,6 +314,7 @@ function PlasmicHomepage__RenderFunc(props: {
             backgroundImage={"/plasmic/dirt/images/dirtBackPng.png"}
             className={classNames("__wab_instance", sty.heroSection)}
             ctaLabel={"Dig in with a call"}
+            ctaLink={"/contact"}
             description={
               "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities."
             }
@@ -381,7 +382,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <InfoSection
             className={classNames("__wab_instance", sty.infoSection__tRzrb)}
             ctaLabel={"Dig in with a call"}
-            ctaLink={"/"}
+            ctaLink={"/contact"}
             heading={
               "The next evolution of property, construction, and built-tech is here"
             }
@@ -568,7 +569,7 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.signsCtaSection}
             className={classNames("__wab_instance", sty.signsCtaSection)}
             ctaLabel={"Dig in with a call"}
-            ctaLink={"/"}
+            ctaLink={"/contact"}
             headingEnd={"y"}
             headingHighlight={"DIRT"}
             headingStart={"Signs it\u2019s time to get "}
@@ -914,7 +915,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <InfoSection
             className={classNames("__wab_instance", sty.infoSection__wf3C9)}
             ctaLabel={"We make it happen"}
-            ctaLink={"/"}
+            ctaLink={"/contact"}
             heading={"Our reputation is ~~soiled~~"}
             headingHighlight={"solid"}
             image={
@@ -1000,7 +1001,7 @@ function PlasmicHomepage__RenderFunc(props: {
             }
             consHeading={"Scroll past"}
             ctaLabel={"Get in touch"}
-            ctaLink={"/"}
+            ctaLink={"/contact"}
             headingEnd={"is right for you"}
             headingHighlight={" DIRT "}
             headingStart={"Ask your mother if playing in the"}
@@ -1064,7 +1065,7 @@ Huge thanks to Nikita for creating  and her team!`}
             data-plasmic-override={overrides.footerSection}
             backgroundColor={``}
             backgroundImage={"/plasmic/dirt/images/footerImagePng.png"}
-            bottomRightLink={"/"}
+            bottomRightLink={"/contact"}
             bottomRightText={"Click here to toss some DIRT on the competition"}
             className={classNames("__wab_instance", sty.footerSection)}
             contactDescription={`Dig what we're doing but don't need us at the moment? Refer a client to DIRT. 
