@@ -23,6 +23,7 @@ export interface DirtNavProps {
   menuImage?: string;
   menuBackground?: string;
   navBackground?: string;
+  stickyOnScroll?: boolean;
 }
 
 export function DirtNav({
@@ -32,6 +33,7 @@ export function DirtNav({
   menuImage,
   menuBackground = "dirt-pop",
   navBackground = "dirt-deep",
+  stickyOnScroll = true,
 }: DirtNavProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [navMode, setNavMode] = useState<"relative" | "hidden" | "visible">("relative");
@@ -44,6 +46,11 @@ export function DirtNav({
 
   /* ── show on scroll-up / hide on scroll-down ── */
   useEffect(() => {
+    if (!stickyOnScroll) {
+      setNavMode("relative");
+      return;
+    }
+
     const THRESHOLD = 150;
     const DELTA = 5;
 
@@ -63,7 +70,7 @@ export function DirtNav({
 
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [stickyOnScroll]);
 
   /* ── track previous navMode so we can skip the transition on relative → hidden ── */
   useEffect(() => { prevNavMode.current = navMode; });

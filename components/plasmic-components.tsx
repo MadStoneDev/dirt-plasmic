@@ -88,6 +88,12 @@ registerComponent(DirtNav, {
       options: ["dirt-deep", "dirt-black", "transparent"],
       defaultValue: "dirt-deep",
     },
+    stickyOnScroll: {
+      type: "boolean",
+      defaultValue: true,
+      displayName: "Sticky on Scroll",
+      description: "When enabled, the nav reappears on scroll-up. When disabled, the nav stays relative at the top only.",
+    },
   },
   importPath: "./components/sections/DirtNav",
 });
