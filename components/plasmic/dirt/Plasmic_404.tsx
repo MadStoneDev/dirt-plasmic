@@ -247,6 +247,7 @@ function Plasmic_404__RenderFunc(props: {
               </React.Fragment>
             }
             navBackground={"transparent"}
+            stickyOnScroll={false}
           />
 
           <h1

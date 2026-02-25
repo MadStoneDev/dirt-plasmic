@@ -276,6 +276,7 @@ function PlasmicAbout__RenderFunc(props: {
               </React.Fragment>
             }
             navBackground={"transparent"}
+            stickyOnScroll={true}
           />
 
           <section

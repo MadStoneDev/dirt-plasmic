@@ -274,6 +274,7 @@ function PlasmicNewsletter__RenderFunc(props: {
               </React.Fragment>
             }
             navBackground={"transparent"}
+            stickyOnScroll={true}
           />
 
           <section className={classNames(projectcss.all, sty.section__r2Ok8)}>

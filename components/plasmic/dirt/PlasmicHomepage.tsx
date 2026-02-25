@@ -306,6 +306,7 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             }
             navBackground={"dirt-deep"}
+            stickyOnScroll={true}
           />
 
           <HeroSection

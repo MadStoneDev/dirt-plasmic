@@ -251,6 +251,7 @@ function PlasmicContact__RenderFunc(props: {
               </React.Fragment>
             }
             navBackground={"dirt-deep"}
+            stickyOnScroll={false}
           />
 
           <FooterSection
