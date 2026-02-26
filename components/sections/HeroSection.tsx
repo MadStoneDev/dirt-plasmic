@@ -107,8 +107,8 @@ export function HeroSection({
         )}
 
         {description && (
-          <section className="my-12 max-w-md sm:max-w-xl">
-            <p className="font-sans text-justify text-xl md:text-2xl text-dirt-pop" style={{
+          <section className="mt-12 mb-16 max-w-md sm:max-w-230">
+            <p className="font-sans text-left text-xl md:text-4xl text-dirt-pop" style={{
               lineHeight: "1.25"
             }}>
               {description}

@@ -20,7 +20,7 @@ export function DirtFrameworkBlock({
   originalIndex = 0,
 }: DirtFrameworkBlockProps) {
   return (
-    <div className="relative md:min-h-50 overflow-hidden">
+    <div className="relative md:h-72 overflow-hidden">
       {/* Colour Overlay */}
       <div
         className="absolute inset-0"
@@ -51,9 +51,9 @@ export function DirtFrameworkBlock({
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-6 py-8 md:px-8 pt-24 md:pt-20 grid md:grid-cols-2 gap-4 md:gap-8">
+      <div className="relative px-6 py-8 md:px-8 grid md:grid-cols-2 items-center gap-4 md:gap-8 min-h-full border z-10">
         {heading && (
-          <h4 className="font-display font-bold text-5xl md:text-6xl text-dirt-off-white uppercase">
+          <h4 className="font-display font-bold text-5xl md:text-6xl text-dirt-off-white">
             {fmt(heading)}
           </h4>
         )}

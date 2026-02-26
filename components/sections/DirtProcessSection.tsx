@@ -47,7 +47,7 @@ export function DirtProcessSection({
             <div className="grid lg:grid-cols-10 gap-4 md:gap-8 items-center">
               <div className="lg:col-span-4">
                 {bottomHeading && (
-                  <h3 className="max-w-60 md:max-w-none font-sans font-bold text-3xl md:text-5xl text-dirt-deep" style={{
+                  <h3 className="max-w-60 md:max-w-none font-sans font-bold text-3xl md:text-5xl text-dirt-black" style={{
                     lineHeight: "1.25",
                     letterSpacing: "-2%"
                   }}>
@@ -57,7 +57,7 @@ export function DirtProcessSection({
               </div>
               <div className="lg:col-span-6 items-center">
                 {bottomDescription && (
-                  <p className="text-dirt-deep font-sans text-base md:text-xl whitespace-pre-line" style={{
+                  <p className="text-dirt-black font-sans text-base md:text-xl whitespace-pre-line" style={{
                     lineHeight: "1.5"
                   }}>
                     {fmt(bottomDescription)}

@@ -30,8 +30,8 @@ export function DirtFrameworkSection({
   const blockCount = allChildren.length;
 
   // Block and layout dimensions (px) — no vh units, Plasmic-safe
-  const BLOCK_HEIGHT = 200; // matches min-h-50
-  const OVERLAP = 110;
+  const BLOCK_HEIGHT = 288; // matches min-h-72
+  const OVERLAP = 140;
   const GAP = 0;
   const STICKY_PAD = 64; // py-8 = 32px * 2
   const HEADER_BUFFER = 250; // header area with padding
@@ -101,7 +101,7 @@ export function DirtFrameworkSection({
   return (
     <section
       ref={sectionRef}
-      className="relative pt-16 md:pt-40 pb-2 md:pb-40 px-5 md:px-8 bg-dirt-off-white"
+      className="relative pt-16 md:pt-40 pb-2 md:pb-8 px-5 md:px-8 bg-dirt-off-white"
       style={{
         height: isMd ? `${sectionHeight}px` : "auto",
         gridColumn: "1 / -1",

@@ -56,7 +56,7 @@ export function PainPointsSection({
           )}
 
           <div
-            className="space-y-4"
+            className="space-y-6"
             onChange={handleCheckboxChange}
           >
             {children}
@@ -67,13 +67,11 @@ export function PainPointsSection({
         <div className="grid overflow-hidden">
           {slidesArray.length > 0 ? (
             slidesArray.map((slide, i) => (
-              <div
-                key={i}
-                className="col-start-1 row-start-1 transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateY(${(i - currentIndex) * 100}%)` }}
-              >
-                {slide}
-              </div>
+              i === currentIndex && (
+                <div key={i} className="col-start-1 row-start-1">
+                  {slide}
+                </div>
+              )
             ))
           ) : (
             <div className="relative w-full aspect-square border border-dirt-pop">
