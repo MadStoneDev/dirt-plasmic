@@ -43,11 +43,11 @@ export function DirtProcessSection({
 
         {/* Bottom CTA Rectangle */}
         {(bottomHeading || bottomDescription) && (
-          <div className="mt-4 md:mt-16 bg-dirt-green p-6 md:p-12">
+          <div className="mt-4 md:mt-16 bg-dirt-green p-6 md:p-16">
             <div className="grid lg:grid-cols-10 gap-4 md:gap-8 items-center">
               <div className="lg:col-span-4">
                 {bottomHeading && (
-                  <h3 className="max-w-60 md:max-w-none font-sans font-bold text-3xl md:text-5xl text-dirt-black" style={{
+                  <h3 className="max-w-60 md:max-w-xl font-sans font-bold text-3xl md:text-5xl text-dirt-black" style={{
                     lineHeight: "1.25",
                     letterSpacing: "-2%"
                   }}>
