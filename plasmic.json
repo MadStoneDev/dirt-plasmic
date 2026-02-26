@@ -379,6 +379,46 @@
           "id": "loiQ9HYvhUl8",
           "name": "Large - Dirt Dispatch.png",
           "filePath": "../public/plasmic/dirt/images/largeDirtDispatchPng.png"
+        },
+        {
+          "id": "sz8f8I81nAgJ",
+          "name": "Buildings Background.jpg",
+          "filePath": "../public/plasmic/dirt/images/buildingsBackgroundJpg.jpg"
+        },
+        {
+          "id": "gr7vXd_Ea99O",
+          "name": "Dirt Stack 01.png",
+          "filePath": "../public/plasmic/dirt/images/dirtStack01Png.png"
+        },
+        {
+          "id": "NYhAAzHTz-XN",
+          "name": "Dirt Stack 02.png",
+          "filePath": "../public/plasmic/dirt/images/dirtStack02Png.png"
+        },
+        {
+          "id": "bmt67i1DRRbj",
+          "name": "Dirt Stack01.png 2",
+          "filePath": "../public/plasmic/dirt/images/dirtStack01Png2.png"
+        },
+        {
+          "id": "b35C9gO940jf",
+          "name": "Dirt Stack02.png 2",
+          "filePath": "../public/plasmic/dirt/images/dirtStack02Png2.png"
+        },
+        {
+          "id": "M7yJJYdYX-Q9",
+          "name": "Dirt Stack03.png",
+          "filePath": "../public/plasmic/dirt/images/dirtStack03Png.png"
+        },
+        {
+          "id": "OfJkJZKkcA5y",
+          "name": "Dirt Stack04.png",
+          "filePath": "../public/plasmic/dirt/images/dirtStack04Png.png"
+        },
+        {
+          "id": "isW3Bbr3Ilos",
+          "name": "Dirt Stack05.png",
+          "filePath": "../public/plasmic/dirt/images/dirtStack05Png.png"
         }
       ],
       "indirect": false,
