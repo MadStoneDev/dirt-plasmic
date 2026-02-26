@@ -69,6 +69,8 @@ import { DirtRichText } from "../../sections/DirtRichText"; // plasmic-import: n
 import { PainPointsSection } from "../../sections/PainPointsSection"; // plasmic-import: a6zcK0cc2pSa/codeComponent
 import { PainPointCheckbox } from "../../sections/PainPointCheckbox"; // plasmic-import: -4VXY6ZJhgvD/codeComponent
 import { PainPointSlide } from "../../sections/PainPointSlide"; // plasmic-import: 5HzjLrOXVhOC/codeComponent
+import { SliderSection } from "../../sections/SliderSection"; // plasmic-import: rEkupWVe7ncE/codeComponent
+import { SliderStop } from "../../sections/SliderStop"; // plasmic-import: 8ktG5wYjJs7S/codeComponent
 import { SignsCTASection } from "../../sections/SignsCTASection"; // plasmic-import: 3hNXXIJF-DSf/codeComponent
 import { SignsCTAItem } from "../../sections/SignsCTAItem"; // plasmic-import: qYuP0KLLo7r4/codeComponent
 import { TestimonialSection } from "../../sections/TestimonialSection"; // plasmic-import: 19614fshNGrI/codeComponent
@@ -149,6 +151,7 @@ export type PlasmicHomepage__OverridesType = {
   companiesWeCoveredInDirt?: Flex__<typeof CompanyCarouselSection>;
   dirtRichText?: Flex__<typeof DirtRichText>;
   painPointsSection?: Flex__<typeof PainPointsSection>;
+  sliderSection?: Flex__<typeof SliderSection>;
   signsCtaSection?: Flex__<typeof SignsCTASection>;
   threeReasonsSection?: Flex__<typeof ThreeReasonsSection>;
   dirtFrameworkSection?: Flex__<typeof DirtFrameworkSection>;
@@ -565,6 +568,62 @@ function PlasmicHomepage__RenderFunc(props: {
               }
             />
           </PainPointsSection>
+          <SliderSection
+            data-plasmic-name={"sliderSection"}
+            data-plasmic-override={overrides.sliderSection}
+            className={classNames("__wab_instance", sty.sliderSection)}
+            headingEnd={"the message"}
+            headingMiddle={"DIRT-ify "}
+            headingStart={"Slide to "}
+          >
+            <SliderStop
+              className={classNames("__wab_instance", sty.sliderStop__azpEe)}
+              label={"Squeaky clean \u2028(and boring af)"}
+              text={
+                "\u201cWe provide tailored branding and messaging solutions to help construction companies position themselves effectively.\u201d"
+              }
+            />
+
+            <SliderStop
+              className={classNames("__wab_instance", sty.sliderStop__j4AKf)}
+              label={"Well-washed"}
+              text={
+                "\u201cWe help construction and built-environment brands stand out with clear positioning and stronger messaging.\u201d"
+              }
+            />
+
+            <SliderStop
+              className={classNames("__wab_instance", sty.sliderStop__vludv)}
+              label={"Slightly \u2028smudged"}
+              text={
+                "\u201cWe nudge your brand out of the \u2018safe and samey\u2019 zone and into territory with a little more edge.\u201d"
+              }
+            />
+
+            <SliderStop
+              className={classNames("__wab_instance", sty.sliderStop___7LV8G)}
+              label={"Grimy"}
+              text={
+                "\u201cStrategic brand messaging that\u2019s so on-point it wipes years of dust off your reputation.\u201d"
+              }
+            />
+
+            <SliderStop
+              className={classNames("__wab_instance", sty.sliderStop__uwXxm)}
+              label={"Filthy"}
+              text={
+                "\u201cOther generic messaging agencies panic at the smell of wet cement. We breathe that sh*t in.\u201d"
+              }
+            />
+
+            <SliderStop
+              className={classNames("__wab_instance", sty.sliderStop__cvXh)}
+              label={"downright dirt-y"}
+              text={
+                "\u201cWe take your limp, half-baked brand, drag it face-first through the mud and rebuild it so hard your competitors feel it in their kidneys.\u201d"
+              }
+            />
+          </SliderSection>
           <SignsCTASection
             data-plasmic-name={"signsCtaSection"}
             data-plasmic-override={overrides.signsCtaSection}
@@ -1066,7 +1125,9 @@ Huge thanks to Nikita for creating  and her team!`}
             data-plasmic-override={overrides.footerSection}
             backgroundColor={``}
             backgroundImage={"/plasmic/dirt/images/footerImagePng.png"}
-            bottomRightLink={"/contact"}
+            bottomRightLink={
+              "https://www.reddit.com/r/NatureIsFuckingLit/comments/1g015ns/elephant_throwing_dirt_on_a_crocodile_for_some/"
+            }
             bottomRightText={"Click here to toss some DIRT on the competition"}
             className={classNames("__wab_instance", sty.footerSection)}
             contactDescription={`Dig what we're doing but don't need us at the moment? Refer a client to DIRT. 
@@ -1118,6 +1179,7 @@ const PlasmicDescendants = {
     "companiesWeCoveredInDirt",
     "dirtRichText",
     "painPointsSection",
+    "sliderSection",
     "signsCtaSection",
     "threeReasonsSection",
     "dirtFrameworkSection",
@@ -1132,6 +1194,7 @@ const PlasmicDescendants = {
   companiesWeCoveredInDirt: ["companiesWeCoveredInDirt"],
   dirtRichText: ["dirtRichText"],
   painPointsSection: ["painPointsSection"],
+  sliderSection: ["sliderSection"],
   signsCtaSection: ["signsCtaSection"],
   threeReasonsSection: ["threeReasonsSection"],
   dirtFrameworkSection: ["dirtFrameworkSection"],
@@ -1151,6 +1214,7 @@ type NodeDefaultElementType = {
   companiesWeCoveredInDirt: typeof CompanyCarouselSection;
   dirtRichText: typeof DirtRichText;
   painPointsSection: typeof PainPointsSection;
+  sliderSection: typeof SliderSection;
   signsCtaSection: typeof SignsCTASection;
   threeReasonsSection: typeof ThreeReasonsSection;
   dirtFrameworkSection: typeof DirtFrameworkSection;
@@ -1228,6 +1292,7 @@ export const PlasmicHomepage = Object.assign(
     companiesWeCoveredInDirt: makeNodeComponent("companiesWeCoveredInDirt"),
     dirtRichText: makeNodeComponent("dirtRichText"),
     painPointsSection: makeNodeComponent("painPointsSection"),
+    sliderSection: makeNodeComponent("sliderSection"),
     signsCtaSection: makeNodeComponent("signsCtaSection"),
     threeReasonsSection: makeNodeComponent("threeReasonsSection"),
     dirtFrameworkSection: makeNodeComponent("dirtFrameworkSection"),
