@@ -30,14 +30,17 @@ export function SliderSection({
     }));
 
   // Default stops if none provided
-  const stopsData = stops.length > 0 ? stops : [
-    { label: "Stop 1", text: "Content for stop 1", image: "" },
-    { label: "Stop 2", text: "Content for stop 2", image: "" },
-    { label: "Stop 3", text: "Content for stop 3", image: "" },
-    { label: "Stop 4", text: "Content for stop 4", image: "" },
-    { label: "Stop 5", text: "Content for stop 5", image: "" },
-    { label: "Stop 6", text: "Content for stop 6", image: "" },
-  ];
+  const stopsData =
+    stops.length > 0
+      ? stops
+      : [
+          { label: "Stop 1", text: "Content for stop 1", image: "" },
+          { label: "Stop 2", text: "Content for stop 2", image: "" },
+          { label: "Stop 3", text: "Content for stop 3", image: "" },
+          { label: "Stop 4", text: "Content for stop 4", image: "" },
+          { label: "Stop 5", text: "Content for stop 5", image: "" },
+          { label: "Stop 6", text: "Content for stop 6", image: "" },
+        ];
 
   // Calculate the offset needed for the label to reach the edge
   // Thumb is 64px, label is 150px
@@ -50,13 +53,16 @@ export function SliderSection({
 
   return (
     <section
-      className="relative px-5 md:px-8 bg-dirt-off-white bg-cover md:bg-contain"
+      className="relative px-5 md:px-8 h-250 bg-dirt-off-white bg-cover md:bg-contain"
       style={{
         gridColumn: "1 / -1",
         paddingTop: "160px",
         paddingBottom: "215px",
-        backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+        backgroundImage: backgroundImage
+          ? `url(${backgroundImage})`
+          : undefined,
         backgroundPosition: "bottom center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       {/* Step Images - fills section, changes with current step */}
@@ -66,6 +72,7 @@ export function SliderSection({
           style={{
             backgroundImage: `url(${stopsData[currentStep].image})`,
             backgroundPosition: "bottom center",
+              backgroundRepeat: "no-repeat",
             zIndex: 0,
           }}
         />
@@ -95,7 +102,13 @@ export function SliderSection({
         }}
       >
         {/* Slider Wrapper */}
-        <div className="relative" style={{ paddingLeft: `${EDGE_OFFSET}px`, paddingRight: `${EDGE_OFFSET}px` }}>
+        <div
+          className="relative"
+          style={{
+            paddingLeft: `${EDGE_OFFSET}px`,
+            paddingRight: `${EDGE_OFFSET}px`,
+          }}
+        >
           {/* Fake Track Background */}
           <div
             className="absolute top-1/2 left-0 right-0 bg-dirt-off-white"
@@ -138,7 +151,8 @@ export function SliderSection({
                   style={{
                     width: "64px",
                     height: "64px",
-                    clipPath: "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
+                    clipPath:
+                      "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
                   }}
                 />
 
@@ -152,9 +166,12 @@ export function SliderSection({
                     textAlign: "center",
                   }}
                 >
-                  <span className="text-dirt-pop uppercase font-sans font-semibold text-xl" style={{
+                  <span
+                    className="text-dirt-pop uppercase font-sans font-semibold text-xl"
+                    style={{
                       lineHeight: "135%",
-                  }}>
+                    }}
+                  >
                     {stopsData[currentStep]?.label}
                   </span>
                 </div>
