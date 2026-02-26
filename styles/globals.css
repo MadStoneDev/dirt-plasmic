@@ -68,3 +68,13 @@ body {
 .font-sans {
   font-family: "Uncut Sans", sans-serif;
 }
+
+/* Override Plasmic's default link hover color */
+/* This prevents buttons/links from turning blue on hover */
+:where(.root_reset) a:where(.a):hover,
+a:where(.root_reset.a):hover,
+:where(.root_reset .__wab_expr_html_text) a:hover,
+:where(.root_reset_tags) a:hover,
+a:where(.root_reset_tags):hover {
+  color: inherit !important;
+}
