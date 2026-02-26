@@ -3,17 +3,12 @@
 import React, { useState, ReactNode } from "react";
 import { fmt } from "@/utils/formatText";
 
-export interface SliderStop {
-  label: string;
-  text: string;
-}
-
 export interface SliderSectionProps {
   headingStart?: string;
   headingMiddle?: string;
   headingEnd?: string;
   backgroundImage?: string;
-  stops?: SliderStop[];
+  children?: ReactNode;
 }
 
 export function SliderSection({
@@ -21,16 +16,27 @@ export function SliderSection({
   headingMiddle,
   headingEnd,
   backgroundImage,
-  stops = [
+  children,
+}: SliderSectionProps) {
+  const [currentStep, setCurrentStep] = useState(0);
+
+  // Extract stops from children (SliderStop components)
+  const stops = React.Children.toArray(children)
+    .filter(React.isValidElement)
+    .map((child: any) => ({
+      label: child.props?.label || "",
+      text: child.props?.text || "",
+    }));
+
+  // Default stops if none provided
+  const stopsData = stops.length > 0 ? stops : [
     { label: "Stop 1", text: "Content for stop 1" },
     { label: "Stop 2", text: "Content for stop 2" },
     { label: "Stop 3", text: "Content for stop 3" },
     { label: "Stop 4", text: "Content for stop 4" },
     { label: "Stop 5", text: "Content for stop 5" },
     { label: "Stop 6", text: "Content for stop 6" },
-  ],
-}: SliderSectionProps) {
-  const [currentStep, setCurrentStep] = useState(0);
+  ];
 
   // Calculate the offset needed for the label to reach the edge
   // Thumb is 64px, label is 150px
@@ -91,7 +97,7 @@ export function SliderSection({
             <input
               type="range"
               min="0"
-              max={stops.length - 1}
+              max={stopsData.length - 1}
               value={currentStep}
               onChange={handleSliderChange}
               step="1"
@@ -105,7 +111,7 @@ export function SliderSection({
             <div
               className="absolute pointer-events-none transition-all duration-200 ease-out"
               style={{
-                left: `calc(${(currentStep / (stops.length - 1)) * 100}%)`,
+                left: `calc(${(currentStep / (stopsData.length - 1)) * 100}%)`,
                 top: "calc(50% + 40px)",
                 transform: "translate(-50%, 0)",
                 width: "150px",
@@ -113,7 +119,7 @@ export function SliderSection({
               }}
             >
               <span className="text-dirt-pop uppercase font-sans font-bold text-sm">
-                {stops[currentStep]?.label}
+                {stopsData[currentStep]?.label}
               </span>
             </div>
           </div>
@@ -129,7 +135,7 @@ export function SliderSection({
               letterSpacing: "-2%",
             }}
           >
-            {stops[currentStep]?.text}
+            {stopsData[currentStep]?.text}
           </p>
         </div>
       </div>

@@ -29,6 +29,8 @@ import { FooterSection } from "./sections/FooterSection";
 import { WhatWeBelieveSection } from "./sections/WhatWeBelieveSection";
 import { WhatWeBelieveItem } from "./sections/WhatWeBelieveItem";
 import { WhatWeBelieveDetail } from "./sections/WhatWeBelieveDetail";
+import { SliderSection } from "./sections/SliderSection";
+import { SliderStop } from "./sections/SliderStop";
 
 // Dirt Nav Link - individual link for the navigation menu
 registerComponent(DirtNavLink, {
@@ -817,4 +819,62 @@ registerComponent(FooterSection, {
     bottomRightLink: "string",
   },
   importPath: "./components/sections/FooterSection",
+});
+
+// Slider Stop - individual stop for the slider
+registerComponent(SliderStop, {
+  name: "SliderStop",
+  props: {
+    label: "string",
+    text: "string",
+  },
+  importPath: "./components/sections/SliderStop",
+});
+
+// Slider Section - interactive slider with changing content
+registerComponent(SliderSection, {
+  name: "SliderSection",
+  props: {
+    headingStart: "string",
+    headingMiddle: "string",
+    headingEnd: "string",
+    backgroundImage: "imageUrl",
+    children: {
+      type: "slot",
+      displayName: "Stops",
+      defaultValue: [
+        {
+          type: "component",
+          name: "SliderStop",
+          props: { label: "Stop 1", text: "Content for stop 1" },
+        },
+        {
+          type: "component",
+          name: "SliderStop",
+          props: { label: "Stop 2", text: "Content for stop 2" },
+        },
+        {
+          type: "component",
+          name: "SliderStop",
+          props: { label: "Stop 3", text: "Content for stop 3" },
+        },
+        {
+          type: "component",
+          name: "SliderStop",
+          props: { label: "Stop 4", text: "Content for stop 4" },
+        },
+        {
+          type: "component",
+          name: "SliderStop",
+          props: { label: "Stop 5", text: "Content for stop 5" },
+        },
+        {
+          type: "component",
+          name: "SliderStop",
+          props: { label: "Stop 6", text: "Content for stop 6" },
+        },
+      ],
+    },
+  },
+  importPath: "./components/sections/SliderSection",
 });
