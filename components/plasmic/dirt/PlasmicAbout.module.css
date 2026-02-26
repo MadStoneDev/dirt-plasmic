@@ -628,10 +628,11 @@
   max-width: 100%;
   object-fit: cover;
 }
-.text__iw0Fr {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
+.img__gYm {
+  object-fit: cover;
+  max-width: 70px;
+  margin-bottom: 12px;
+}
+.img__gYm > picture > img {
+  object-fit: cover;
 }

@@ -439,3 +439,11 @@
   max-width: 100%;
   object-fit: cover;
 }
+.img {
+  object-fit: contain;
+  max-width: 70px;
+  margin-bottom: 12px;
+}
+.img > picture > img {
+  object-fit: contain;
+}

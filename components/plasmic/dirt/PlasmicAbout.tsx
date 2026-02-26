@@ -785,24 +785,33 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             mobileBackgroundImage={
               "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
             }
+            newsletterChildren={
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__gYm)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"70px"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/dirt/images/dirtDispatchFooterLogoPng.png",
+                  fullWidth: 98,
+                  fullHeight: 53,
+                  aspectRatio: undefined
+                }}
+              />
+            }
             newsletterDescription={
-              "Gritty strategic insights to help you win more clients. Delivered with love (and a smidge of mud) once monthly."
+              "Digging up branding insights, concrete messaging examples, and sharp takes on positioning. Delivered bi-monthly(ish)."
             }
             newsletterHeading={"Get Dirt Dispatch"}
             recipientEmail={"hello@thedirtagency.com"}
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
             showHeroForm={true}
           />
-
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__iw0Fr
-            )}
-          >
-            {"Enter some text"}
-          </div>
         </div>
       </div>
     </React.Fragment>

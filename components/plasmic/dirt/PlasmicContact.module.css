@@ -54,3 +54,11 @@
   max-width: 100%;
   object-fit: cover;
 }
+.img {
+  object-fit: cover;
+  max-width: 70px;
+  margin-bottom: 12px;
+}
+.img > picture > img {
+  object-fit: cover;
+}

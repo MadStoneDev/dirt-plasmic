@@ -159,6 +159,7 @@ export type PlasmicHomepage__OverridesType = {
   dirtFilesSection?: Flex__<typeof DirtFilesSection>;
   prosConsSection?: Flex__<typeof ProsConsSection>;
   footerSection?: Flex__<typeof FooterSection>;
+  img?: Flex__<typeof PlasmicImg__>;
 };
 
 export interface DefaultHomepageProps {}
@@ -1161,8 +1162,29 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             mobileBackgroundImage={
               "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
             }
+            newsletterChildren={
+              <PlasmicImg__
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"70px"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/dirt/images/dirtDispatchFooterLogoPng.png",
+                  fullWidth: 98,
+                  fullHeight: 53,
+                  aspectRatio: undefined
+                }}
+              />
+            }
             newsletterDescription={
-              "Gritty strategic insights to help you win more clients. Delivered with love (and a smidge of mud) once monthly."
+              "Digging up branding insights, concrete messaging examples, and sharp takes on positioning. Delivered bi-monthly(ish)."
             }
             newsletterHeading={"Get DIRT Dispatch"}
             recipientEmail={"hello@thedirtagency.com"}
@@ -1192,7 +1214,8 @@ const PlasmicDescendants = {
     "dirtProcessSection",
     "dirtFilesSection",
     "prosConsSection",
-    "footerSection"
+    "footerSection",
+    "img"
   ],
   dirtNav: ["dirtNav", "link"],
   link: ["link"],
@@ -1207,7 +1230,8 @@ const PlasmicDescendants = {
   dirtProcessSection: ["dirtProcessSection"],
   dirtFilesSection: ["dirtFilesSection"],
   prosConsSection: ["prosConsSection"],
-  footerSection: ["footerSection"]
+  footerSection: ["footerSection", "img"],
+  img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1228,6 +1252,7 @@ type NodeDefaultElementType = {
   dirtFilesSection: typeof DirtFilesSection;
   prosConsSection: typeof ProsConsSection;
   footerSection: typeof FooterSection;
+  img: typeof PlasmicImg__;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1306,6 +1331,7 @@ export const PlasmicHomepage = Object.assign(
     dirtFilesSection: makeNodeComponent("dirtFilesSection"),
     prosConsSection: makeNodeComponent("prosConsSection"),
     footerSection: makeNodeComponent("footerSection"),
+    img: makeNodeComponent("img"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

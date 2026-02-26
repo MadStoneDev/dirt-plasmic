@@ -586,7 +586,7 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
               />
             }
             newsletterDescription={
-              "Gritty strategic insights to help you win more clients. Delivered with love (and a smidge of mud) once monthly."
+              "Digging up branding insights, concrete messaging examples, and sharp takes on positioning. Delivered bi-monthly(ish)."
             }
             newsletterHeading={"Get Dirt Dispatch"}
             recipientEmail={"hello@thedirtagency.com"}

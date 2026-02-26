@@ -419,6 +419,11 @@
           "id": "isW3Bbr3Ilos",
           "name": "Dirt Stack05.png",
           "filePath": "../public/plasmic/dirt/images/dirtStack05Png.png"
+        },
+        {
+          "id": "lxqoSKhOPQxf",
+          "name": "Dirt Dispatch Footer Logo.png",
+          "filePath": "../public/plasmic/dirt/images/dirtDispatchFooterLogoPng.png"
         }
       ],
       "indirect": false,
