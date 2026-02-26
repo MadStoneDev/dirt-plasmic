@@ -827,6 +827,7 @@ registerComponent(SliderStop, {
   props: {
     label: "string",
     text: "string",
+    image: "imageUrl",
   },
   importPath: "./components/sections/SliderStop",
 });

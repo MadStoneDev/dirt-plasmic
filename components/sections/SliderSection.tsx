@@ -26,22 +26,23 @@ export function SliderSection({
     .map((child: any) => ({
       label: child.props?.label || "",
       text: child.props?.text || "",
+      image: child.props?.image || "",
     }));
 
   // Default stops if none provided
   const stopsData = stops.length > 0 ? stops : [
-    { label: "Stop 1", text: "Content for stop 1" },
-    { label: "Stop 2", text: "Content for stop 2" },
-    { label: "Stop 3", text: "Content for stop 3" },
-    { label: "Stop 4", text: "Content for stop 4" },
-    { label: "Stop 5", text: "Content for stop 5" },
-    { label: "Stop 6", text: "Content for stop 6" },
+    { label: "Stop 1", text: "Content for stop 1", image: "" },
+    { label: "Stop 2", text: "Content for stop 2", image: "" },
+    { label: "Stop 3", text: "Content for stop 3", image: "" },
+    { label: "Stop 4", text: "Content for stop 4", image: "" },
+    { label: "Stop 5", text: "Content for stop 5", image: "" },
+    { label: "Stop 6", text: "Content for stop 6", image: "" },
   ];
 
   // Calculate the offset needed for the label to reach the edge
   // Thumb is 64px, label is 150px
   // Offset = (150 - 64) / 2 = 43px
-  const EDGE_OFFSET = 43;
+  const EDGE_OFFSET = 75;
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentStep(parseInt(e.target.value));
@@ -59,25 +60,40 @@ export function SliderSection({
         backgroundPosition: "center",
       }}
     >
+      {/* Step Images - fills section, changes with current step */}
+      {stopsData[currentStep]?.image && (
+        <div
+          className="absolute inset-0 transition-opacity duration-500"
+          style={{
+            backgroundImage: `url(${stopsData[currentStep].image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            zIndex: 0,
+          }}
+        />
+      )}
+
       {/* Heading */}
       <h2
-        className="font-display font-bold text-5xl md:text-8xl mb-20"
+        className="relative font-display font-bold text-5xl md:text-8xl mb-20 text-center"
         style={{
           lineHeight: "105%",
           letterSpacing: "-2%",
+          zIndex: 1,
         }}
       >
-        <span className="text-dirt-deep">{fmt(headingStart)}</span>
-        <span className="text-dirt-pop">{fmt(headingMiddle)}</span>
-        <span className="text-dirt-deep">{fmt(headingEnd)}</span>
+        <span className="text-dirt-pop">{fmt(headingStart)}</span>
+        <span className="text-dirt-deep">{fmt(headingMiddle)}</span>
+        <span className="text-dirt-pop">{fmt(headingEnd)}</span>
       </h2>
 
       {/* Slider Container */}
       <div
-        className="bg-dirt-deep mx-auto"
+        className="relative bg-dirt-deep mx-auto"
         style={{
           maxWidth: "1100px",
           padding: "50px 50px 90px",
+          zIndex: 1,
         }}
       >
         {/* Slider Wrapper */}
@@ -86,7 +102,7 @@ export function SliderSection({
           <div
             className="absolute top-1/2 left-0 right-0 bg-dirt-off-white"
             style={{
-              height: "4px",
+              height: "16px",
               transform: "translateY(-50%)",
               pointerEvents: "none",
             }}
@@ -107,26 +123,50 @@ export function SliderSection({
               }}
             />
 
-            {/* Thumb Label */}
+            {/* Custom Thumb with Label */}
             <div
               className="absolute pointer-events-none transition-all duration-200 ease-out"
               style={{
                 left: `calc(${(currentStep / (stopsData.length - 1)) * 100}%)`,
-                top: "calc(50% + 40px)",
-                transform: "translate(-50%, 0)",
-                width: "150px",
-                textAlign: "center",
+                top: "50%",
+                transform: "translate(-50%, -50%)",
               }}
             >
-              <span className="text-dirt-pop uppercase font-sans font-bold text-sm">
-                {stopsData[currentStep]?.label}
-              </span>
+              {/* Wrapper for thumb and label */}
+              <div className="relative">
+                {/* Octagon Thumb */}
+                <div
+                  className="bg-dirt-pop"
+                  style={{
+                    width: "64px",
+                    height: "64px",
+                    clipPath: "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
+                  }}
+                />
+
+                {/* Label positioned below thumb */}
+                <div
+                  className="absolute left-1/2"
+                  style={{
+                    transform: "translateX(-50%)",
+                    top: "calc(100% + 8px)",
+                    width: "200px",
+                    textAlign: "center",
+                  }}
+                >
+                  <span className="text-dirt-pop uppercase font-sans font-semibold text-xl" style={{
+                      lineHeight: "135%",
+                  }}>
+                    {stopsData[currentStep]?.label}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Step Content */}
-        <div className="mt-16">
+        <div className="mt-28">
           <p
             className="text-dirt-off-white font-sans font-bold"
             style={{
@@ -141,52 +181,33 @@ export function SliderSection({
       </div>
 
       <style jsx>{`
-        /* Hide default thumb */
+        /* Hide default thumb completely */
         .slider-input::-webkit-slider-thumb {
           appearance: none;
           width: 64px;
           height: 64px;
-          background-color: var(--dirt-pop);
+          background: transparent;
           cursor: pointer;
-          clip-path: polygon(
-            30% 0%,
-            70% 0%,
-            100% 30%,
-            100% 70%,
-            70% 100%,
-            30% 100%,
-            0% 70%,
-            0% 30%
-          );
+          border: none;
         }
 
         .slider-input::-moz-range-thumb {
           width: 64px;
           height: 64px;
-          background-color: var(--dirt-pop);
+          background: transparent;
           cursor: pointer;
           border: none;
-          clip-path: polygon(
-            30% 0%,
-            70% 0%,
-            100% 30%,
-            100% 70%,
-            70% 100%,
-            30% 100%,
-            0% 70%,
-            0% 30%
-          );
         }
 
         /* Remove default track styling */
         .slider-input::-webkit-slider-runnable-track {
           background: transparent;
-          height: 4px;
+          height: 16px;
         }
 
         .slider-input::-moz-range-track {
           background: transparent;
-          height: 4px;
+          height: 16px;
         }
       `}</style>
     </section>
