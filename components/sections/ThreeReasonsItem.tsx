@@ -30,7 +30,9 @@ export function ThreeReasonsItem({
       )}
 
       {description && (
-        <p className="md:text-xl text-justify text-dirt-off-white font-sans whitespace-pre-line">
+        <p className="md:text-xl text-justify text-dirt-off-white font-sans whitespace-pre-line" style={{
+          lineHeight: "125%",
+        }}>
           {description}
         </p>
       )}

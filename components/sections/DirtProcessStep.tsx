@@ -38,7 +38,9 @@ export function DirtProcessStep({
         )}
 
         {description && (
-          <p className="text-dirt-pop font-sans text-xl md:text-2xl whitespace-pre-line grow">
+          <p className="text-dirt-pop font-sans text-xl md:text-3xl whitespace-pre-line grow" style={{
+            lineHeight: "135%",
+          }}>
             {description}
           </p>
         )}
