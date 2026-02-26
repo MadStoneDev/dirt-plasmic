@@ -86,7 +86,7 @@ export function DirtFilesSection({
           </div>
 
           {/* Right - Image */}
-          <div className="hidden lg:block relative border-[1.5px] border-dirt-pop">
+          <div className="hidden lg:block relative border-[1.5px] border-dirt-pop min-h-225">
             {currentImage ? (
               <Image
                 src={currentImage}
