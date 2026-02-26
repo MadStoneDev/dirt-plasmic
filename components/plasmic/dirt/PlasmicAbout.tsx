@@ -586,12 +586,12 @@ function PlasmicAbout__RenderFunc(props: {
                   image={
                     hasVariant(globalVariants, "screen", "mobile")
                       ? "/plasmic/dirt/images/whatWeBelieveDetailBackgroundPng.png"
-                      : "/plasmic/dirt/images/whatWeBelieveLeatherBackgroundPng.png"
+                      : "/plasmic/dirt/images/whatWeBelieveDetailBackgroundPng.png"
                   }
                   overlayImage={
                     hasVariant(globalVariants, "screen", "mobile")
                       ? "/plasmic/dirt/images/whatWeBelieveAccentPng.png"
-                      : undefined
+                      : "/plasmic/dirt/images/whatWeBelieveAccentPng.png"
                   }
                 />
 
@@ -611,12 +611,12 @@ function PlasmicAbout__RenderFunc(props: {
                   image={
                     hasVariant(globalVariants, "screen", "mobile")
                       ? "/plasmic/dirt/images/whatWeBelieveDetailBackgroundPng.png"
-                      : "/plasmic/dirt/images/whatWeBelieveLeatherBackgroundPng.png"
+                      : "/plasmic/dirt/images/whatWeBelieveDetailBackgroundPng.png"
                   }
                   overlayImage={
                     hasVariant(globalVariants, "screen", "mobile")
                       ? "/plasmic/dirt/images/whatWeBelieveAccentPng.png"
-                      : undefined
+                      : "/plasmic/dirt/images/whatWeBelieveAccentPng.png"
                   }
                 />
               </React.Fragment>
