@@ -407,7 +407,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-override={overrides.dirtRichText}
                   className={classNames("__wab_instance", sty.dirtRichText)}
                   text={
-                    "From  {green|3D printing|First, they did houses and offices.},  {pop|advanced composites|First, they did houses and offices.}, and  {blue|self-healing concrete|First, they did houses and offices.}  to {blue|AI-driven predictive analytics|First, they did houses and offices.}, {pop|5D BIM|First, they did houses and offices.}, and {green|Digital Twins|First, they did houses and offices.}."
+                    "From  {green|3D printing|First, they did houses and offices. Next? Who knows.},  {pop|advanced composites|First, they did houses and offices.}, and  {blue|self-healing concrete|Water-activated bacteria produce calcium carbonate to seal cracks. Bonkers.}  to {blue|AI-driven predictive analytics|AI adoption in construction jumped from 26% in 2023 to 37% in 2025. We see where this is going.}, {pop|5D BIM|First, they did houses and offices.}, and {green|Digital Twins|We've thought about getting one for ourselves, but we've watched too much Black Mirror.}."
                   }
                   textColour={"dirt-black"}
                 />
@@ -508,7 +508,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 />
 
                 <PainPointSlide
-                  caption={"Total collapsing."}
+                  caption={"Total collapse."}
                   className={classNames(
                     "__wab_instance",
                     sty.painPointSlide__iJ8UF
@@ -726,7 +726,7 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-name={"dirtProcessSection"}
             data-plasmic-override={overrides.dirtProcessSection}
             bottomDescription={
-              "DIRT nails your **positioning and messaging first**. Then we bring in a designer with a style that matches your message. Instead of a generic template, you get the **perfect creative partner for your project**."
+              "DIRT nails your positioning and messaging first. Then we bring in a designer with a style that matches your message. Instead of a generic template, you get the perfect creative partner for your project."
             }
             bottomHeading={"*Note: The DIRT Design Bench is deep and wide"}
             className={classNames("__wab_instance", sty.dirtProcessSection)}

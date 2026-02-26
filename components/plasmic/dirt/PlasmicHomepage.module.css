@@ -118,8 +118,8 @@
   font-size: 20px;
   color: #30261d;
   line-height: 150%;
-  margin-bottom: 15px;
   min-width: 0;
+  margin: 15px 0px;
 }
 @media (max-width: 511px) {
   .text__fAXw2 {
