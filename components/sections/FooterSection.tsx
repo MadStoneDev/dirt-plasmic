@@ -353,6 +353,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
       {bottomRightText && bottomRightLink && (
           <a
               href={bottomRightLink}
+              target="_blank"
               className="absolute right-0 bottom-0 px-3 py-2 max-w-48 bg-dirt-green text-dirt-deep text-center font-sans font-medium text-sm hover:bg-dirt-pop transition-colors"
               style={{ lineHeight: "115%", letterSpacing: "-2%" }}
           >
