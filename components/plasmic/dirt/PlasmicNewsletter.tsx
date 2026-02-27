@@ -564,7 +564,9 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             link2Url={"/contact"}
             linksHeading={"Get your hands dirty"}
             mobileBackgroundImage={
-              "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
+              hasVariant(globalVariants, "screen", "mobile")
+                ? "/plasmic/dirt/images/mobileFooterDirtBackgroundPng2.png"
+                : "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
             }
             newsletterChildren={
               <PlasmicImg__

@@ -690,7 +690,9 @@ function PlasmicAbout__RenderFunc(props: {
                 displayWidth={
                   hasVariant(globalVariants, "screen", "mobile")
                     ? "100%"
-                    : "41%"
+                    : hasVariant(globalVariants, "screen", "tablet")
+                      ? "auto"
+                      : "41%"
                 }
                 loading={"lazy"}
                 src={{
@@ -783,7 +785,7 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             link2Url={"/contact"}
             linksHeading={"Get your hands dirty"}
             mobileBackgroundImage={
-              "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
+              "/plasmic/dirt/images/mobileFooterDirtBackgroundPng2.png"
             }
             newsletterChildren={
               <PlasmicImg__
