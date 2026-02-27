@@ -272,10 +272,10 @@ function PlasmicContact__RenderFunc(props: {
             }
             bottomRightText={"Click here to  toss some DIRT on the competition"}
             className={classNames("__wab_instance", sty.footerSection)}
-            contactDescription={`Dig what we're doing but don't need us at the moment? **Refer a client to DIRT**. 
-
-When they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT)`}
-            contactHeading={"Refer & Learn"}
+            contactDescription={
+              "Dig what we're doing but don't need us at the moment? Refer a client to DIRT. \n\nWhen they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT.)"
+            }
+            contactHeading={"Refer & Earn"}
             copyrightText={
               "\u00a9 2026 DIRT Agency. All rights reserved. Built from the ground up."
             }
@@ -286,8 +286,9 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
               "Fresh messaging, branding, and positioning from the ground up."
             }
             footerLogo={"/plasmic/dirt/images/dirtLogoPng.png"}
-            heading1={"BRILLIANT BRANDS DON\u2019T GROW ON TREES."}
-            heading2={"THEY GROW IN THE DIRT."}
+            heading1={"Brilliant brands don\u2019t grow on trees."}
+            heading1Uppercase={false}
+            heading2={"They grow in the dirt."}
             link1Text={"About"}
             link1Url={"/about"}
             link2Text={"Contact"}

@@ -329,7 +329,7 @@ function PlasmicHomepage__RenderFunc(props: {
             ctaLabel={"Dig in with a call"}
             ctaLink={"/contact"}
             description={
-              "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities."
+              "DIRT is the agency for construction, contech, property & building material companies who want a modern brand to match their capabilities."
             }
             foregroundImage={"/plasmic/dirt/images/dirtFrontPng.png"}
             heading={"Fresh messaging, branding, and positioning"}
@@ -1145,9 +1145,9 @@ Huge thanks to Nikita for creating  and her team!`}
             }
             bottomRightText={"Click here to toss some DIRT on the competition"}
             className={classNames("__wab_instance", sty.footerSection)}
-            contactDescription={`Dig what we're doing but don't need us at the moment? Refer a client to DIRT. 
-
-When they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT)`}
+            contactDescription={
+              "Dig what we're doing but don't need us at the moment? Refer a client to DIRT. \n\nWhen they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT.)"
+            }
             contactHeading={"Refer & Earn"}
             copyrightText={
               "\u00a9 2026 DIRT Agency. All rights reserved. Built from the ground up."
@@ -1160,6 +1160,7 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             }
             footerLogo={"/plasmic/dirt/images/dirtLogoPng.png"}
             heading1={"Brilliant brands don't grow on trees."}
+            heading1Uppercase={false}
             heading2={"They grow in the DIRT."}
             link1Text={"About"}
             link1Url={"/aout"}

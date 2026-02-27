@@ -125,6 +125,7 @@ export type PlasmicNewsletter__OverridesType = {
   dirtNav?: Flex__<typeof DirtNav>;
   link?: Flex__<"a"> & Partial<LinkProps>;
   dirtRichText?: Flex__<typeof DirtRichText>;
+  testimonials?: Flex__<"section">;
   footerSection?: Flex__<typeof FooterSection>;
 };
 
@@ -421,7 +422,11 @@ function PlasmicNewsletter__RenderFunc(props: {
               />
             </section>
           </section>
-          <section className={classNames(projectcss.all, sty.section___3HbcW)}>
+          <section
+            data-plasmic-name={"testimonials"}
+            data-plasmic-override={overrides.testimonials}
+            className={classNames(projectcss.all, sty.testimonials)}
+          >
             <div
               className={classNames(
                 projectcss.all,
@@ -550,9 +555,9 @@ function PlasmicNewsletter__RenderFunc(props: {
             }
             bottomRightText={"Click here to  toss some DIRT on the competition"}
             className={classNames("__wab_instance", sty.footerSection)}
-            contactDescription={`Dig what we're doing but don't need us at the moment? Refer a client to DIRT. 
-
-When they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT)`}
+            contactDescription={
+              "Dig what we're doing but don't need us at the moment? Refer a client to DIRT. \n\nWhen they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT.)"
+            }
             contactHeading={"Refer & Earn"}
             copyrightText={
               "\u00a9 2026 DIRT Agency. All rights reserved. Built from the ground up."
@@ -565,6 +570,7 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             }
             footerLogo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
             heading1={"Brilliant brands don\u2019t grow on trees."}
+            heading1Uppercase={false}
             heading2={"They grow in the DIRT."}
             link1Text={"About"}
             link1Url={"/about"}
@@ -603,16 +609,6 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
             showHeroForm={false}
           />
-
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text___9ZFcq
-            )}
-          >
-            {"Enter some text"}
-          </div>
         </div>
       </div>
     </React.Fragment>
@@ -626,12 +622,14 @@ const PlasmicDescendants = {
     "dirtNav",
     "link",
     "dirtRichText",
+    "testimonials",
     "footerSection"
   ],
   taglineBanner: ["taglineBanner"],
   dirtNav: ["dirtNav", "link"],
   link: ["link"],
   dirtRichText: ["dirtRichText"],
+  testimonials: ["testimonials"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -643,6 +641,7 @@ type NodeDefaultElementType = {
   dirtNav: typeof DirtNav;
   link: "a";
   dirtRichText: typeof DirtRichText;
+  testimonials: "section";
   footerSection: typeof FooterSection;
 };
 
@@ -712,6 +711,7 @@ export const PlasmicNewsletter = Object.assign(
     dirtNav: makeNodeComponent("dirtNav"),
     link: makeNodeComponent("link"),
     dirtRichText: makeNodeComponent("dirtRichText"),
+    testimonials: makeNodeComponent("testimonials"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicNewsletter
