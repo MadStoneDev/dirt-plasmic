@@ -278,8 +278,8 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
               "Fresh messaging, branding, and positioning from the ground up."
             }
             footerLogo={"/plasmic/dirt/images/dirtLogoPng.png"}
-            heading1={"Brilliant brands don\u2019t grow on trees."}
-            heading2={"They grow in the DIRT."}
+            heading1={"BRILLIANT BRANDS DON\u2019T GROW ON TREES."}
+            heading2={"THEY GROW IN THE DIRT."}
             link1Text={"About"}
             link1Url={"/about"}
             link2Text={"Contact"}
