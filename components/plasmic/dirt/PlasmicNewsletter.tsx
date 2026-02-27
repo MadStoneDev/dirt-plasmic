@@ -570,6 +570,7 @@ function PlasmicNewsletter__RenderFunc(props: {
             }
             footerLogo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
             heading1={"Brilliant brands don\u2019t grow on trees."}
+            heading1Uppercase={false}
             heading2={"They grow in the DIRT."}
             link1Text={"About"}
             link1Url={"/about"}
@@ -608,16 +609,6 @@ function PlasmicNewsletter__RenderFunc(props: {
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
             showHeroForm={false}
           />
-
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text___9ZFcq
-            )}
-          >
-            {"Enter some text"}
-          </div>
         </div>
       </div>
     </React.Fragment>

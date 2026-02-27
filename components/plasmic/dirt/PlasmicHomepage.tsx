@@ -1160,6 +1160,7 @@ Huge thanks to Nikita for creating  and her team!`}
             }
             footerLogo={"/plasmic/dirt/images/dirtLogoPng.png"}
             heading1={"Brilliant brands don't grow on trees."}
+            heading1Uppercase={false}
             heading2={"They grow in the DIRT."}
             link1Text={"About"}
             link1Url={"/aout"}

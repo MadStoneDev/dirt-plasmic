@@ -591,16 +591,6 @@
   min-width: 0;
   padding: 8px;
 }
-.img__mSIq {
-  object-fit: cover;
-  max-width: 100%;
-  height: 65px;
-  margin-bottom: 50px;
-  flex-shrink: 0;
-}
-.img__mSIq > picture > img {
-  object-fit: cover;
-}
 .text__fCg2 {
   position: relative;
   width: 100%;

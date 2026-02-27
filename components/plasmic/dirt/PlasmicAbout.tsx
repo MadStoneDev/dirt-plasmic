@@ -712,24 +712,6 @@ function PlasmicAbout__RenderFunc(props: {
               />
 
               <div className={classNames(projectcss.all, sty.freeBox__oPSn)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__mSIq)}
-                  displayHeight={"65px"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/dirt/images/webflowLogoDarkPng.png",
-                    fullWidth: 240,
-                    fullHeight: 96,
-                    aspectRatio: undefined
-                  }}
-                />
-
                 <div
                   className={classNames(
                     projectcss.all,
@@ -786,6 +768,7 @@ function PlasmicAbout__RenderFunc(props: {
             }
             footerLogo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
             heading1={"Brilliant brands don\u2019t grow on trees."}
+            heading1Uppercase={false}
             heading2={"They grow in the DIRT."}
             link1Text={"About"}
             link1Url={"/about"}
