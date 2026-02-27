@@ -429,6 +429,7 @@
   justify-items: stretch;
   width: 100%;
   justify-self: stretch;
+  grid-row-gap: 24px;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
   grid-template-columns:
