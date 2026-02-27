@@ -334,11 +334,6 @@
           "filePath": "../public/plasmic/dirt/images/painPointsBuilding5Jpg.jpg"
         },
         {
-          "id": "J-tImhRbDjF9",
-          "name": "Mobile - Footer DIRT Background.png",
-          "filePath": "../public/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
-        },
-        {
           "id": "wBvxyuFLtvtg",
           "name": "Menu Image.png",
           "filePath": "../public/plasmic/dirt/images/menuImagePng.png"
@@ -442,6 +437,11 @@
           "id": "7HDK0h3sbAxX",
           "name": "Right Arrow.png",
           "filePath": "../public/plasmic/dirt/images/rightArrowPng.png"
+        },
+        {
+          "id": "J-tImhRbDjF9",
+          "name": "Mobile - Footer DIRT Background.png",
+          "filePath": "../public/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
         }
       ],
       "indirect": false,
