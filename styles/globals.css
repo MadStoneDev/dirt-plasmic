@@ -71,10 +71,15 @@ body {
 
 /* Override Plasmic's default link hover color */
 /* This prevents buttons/links from turning blue on hover */
-:where(.root_reset) a:where(.a):hover,
-a:where(.root_reset.a):hover,
-:where(.root_reset .__wab_expr_html_text) a:hover,
-:where(.root_reset_tags) a:hover,
-a:where(.root_reset_tags):hover {
+[class*="root_reset"] a[class*="a"]:hover,
+a[class*="root_reset"][class*="a"]:hover,
+[class*="root_reset"] [class*="__wab_expr_html_text"] a:hover,
+[class*="root_reset_tags"] a:hover,
+a[class*="root_reset_tags"]:hover {
+  color: inherit !important;
+}
+
+/* Additional override for any Plasmic module variations */
+[class*="plasmic-module"] a:hover {
   color: inherit !important;
 }
