@@ -147,10 +147,7 @@ export function SliderSection({
               <div className="relative">
                 {/* Octagon Thumb */}
                 <div
-                  className="bg-dirt-pop"
-                  style={{
-                    width: "64px",
-                    height: "64px",
+                  className="bg-dirt-pop w-11.25 lg:w-16 h-11.25 lg:h-16" style={{
                     clipPath:
                       "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
                   }}
@@ -167,7 +164,7 @@ export function SliderSection({
                   }}
                 >
                   <span
-                    className="text-dirt-pop uppercase font-sans font-semibold text-xl"
+                    className="text-dirt-pop uppercase font-sans font-semibold text-[14px] lg:text-xl"
                     style={{
                       lineHeight: "135%",
                     }}
@@ -181,11 +178,10 @@ export function SliderSection({
         </div>
 
         {/* Step Content */}
-        <div className="mt-28">
+        <div className="mt-28 border-2 border-dirt-pop">
           <p
-            className="text-dirt-off-white font-sans font-bold"
+            className="text-dirt-off-white font-sans font-bold text-2xl lg:text-[40px]"
             style={{
-              fontSize: "40px",
               lineHeight: "125%",
               letterSpacing: "-2%",
             }}
