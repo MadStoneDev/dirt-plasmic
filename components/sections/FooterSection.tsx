@@ -127,26 +127,30 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
     >
       {/* Background images — mobile vs desktop */}
       {(mobileBackgroundImage || backgroundImage) && (
-        <div className="absolute inset-0 pointer-events-none">
+        <>
           {/* Mobile */}
           {(mobileBackgroundImage || backgroundImage) && (
-            <Image
-              src={mobileBackgroundImage || backgroundImage!}
-              alt=""
-              fill
-              className="mt-76 w-full object-cover object-top md:hidden"
-            />
+            <div className="absolute left-0 right-0 bottom-0 top-100 inset-0 pointer-events-none lg:hidden">
+              <Image
+                src={mobileBackgroundImage || backgroundImage!}
+                alt=""
+                fill
+                className="w-full object-cover object-top"
+              />
+            </div>
           )}
           {/* Desktop */}
           {backgroundImage && (
-            <Image
-              src={backgroundImage}
-              alt=""
-              fill
-              className={`hidden md:block ${showHeroForm ? "object-contain 2xl:object-cover object-bottom 2xl:object-top" : "object-cover object-bottom"}`}
-            />
+            <div className="absolute left-0 right-0 bottom-0 top-160 2xl:top-150 pointer-events-none hidden lg:block">
+              <Image
+                src={backgroundImage}
+                alt=""
+                fill
+                className={`object-top ${showHeroForm ? "object-contain xl:object-cover" : "object-cover"}`}
+              />
+            </div>
           )}
-        </div>
+        </>
       )}
       {/* Hero/Form Section */}
       {showHeroForm && (
