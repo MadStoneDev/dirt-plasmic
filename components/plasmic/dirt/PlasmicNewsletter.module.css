@@ -22,6 +22,9 @@
 .root > * {
   grid-column: 4;
 }
+.taglineBanner:global(.__wab_instance) {
+  max-width: 100%;
+}
 .dirtNav:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;

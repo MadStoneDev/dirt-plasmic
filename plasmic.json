@@ -110,6 +110,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/newsletter"
+        },
+        {
+          "id": "cGGZJPgn9EgF",
+          "name": "TaglineBanner",
+          "type": "managed",
+          "projectId": "8kaaMUEQHxomwqwuKNMozy",
+          "renderModuleFilePath": "plasmic/dirt/PlasmicTaglineBanner.tsx",
+          "importSpec": {
+            "modulePath": "TaglineBanner.tsx"
+          },
+          "cssFilePath": "plasmic/dirt/PlasmicTaglineBanner.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -424,6 +437,11 @@
           "id": "lxqoSKhOPQxf",
           "name": "Dirt Dispatch Footer Logo.png",
           "filePath": "../public/plasmic/dirt/images/dirtDispatchFooterLogoPng.png"
+        },
+        {
+          "id": "7HDK0h3sbAxX",
+          "name": "Right Arrow.png",
+          "filePath": "../public/plasmic/dirt/images/rightArrowPng.png"
         }
       ],
       "indirect": false,

@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import TaglineBanner from "../../TaglineBanner"; // plasmic-import: cGGZJPgn9EgF/component
 import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
 import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
 import { NewsletterFormSection } from "../../sections/NewsletterFormSection"; // plasmic-import: XfKpmE3Hd3LP/codeComponent
@@ -120,6 +121,7 @@ export const PlasmicNewsletter__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNewsletter__OverridesType = {
   root?: Flex__<"div">;
+  taglineBanner?: Flex__<typeof TaglineBanner>;
   dirtNav?: Flex__<typeof DirtNav>;
   link?: Flex__<"a"> & Partial<LinkProps>;
   dirtRichText?: Flex__<typeof DirtRichText>;
@@ -227,6 +229,12 @@ function PlasmicNewsletter__RenderFunc(props: {
             sty.root
           )}
         >
+          <TaglineBanner
+            data-plasmic-name={"taglineBanner"}
+            data-plasmic-override={overrides.taglineBanner}
+            className={classNames("__wab_instance", sty.taglineBanner)}
+          />
+
           <DirtNav
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
@@ -612,7 +620,15 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
 }
 
 const PlasmicDescendants = {
-  root: ["root", "dirtNav", "link", "dirtRichText", "footerSection"],
+  root: [
+    "root",
+    "taglineBanner",
+    "dirtNav",
+    "link",
+    "dirtRichText",
+    "footerSection"
+  ],
+  taglineBanner: ["taglineBanner"],
   dirtNav: ["dirtNav", "link"],
   link: ["link"],
   dirtRichText: ["dirtRichText"],
@@ -623,6 +639,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  taglineBanner: typeof TaglineBanner;
   dirtNav: typeof DirtNav;
   link: "a";
   dirtRichText: typeof DirtRichText;
@@ -691,6 +708,7 @@ export const PlasmicNewsletter = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    taglineBanner: makeNodeComponent("taglineBanner"),
     dirtNav: makeNodeComponent("dirtNav"),
     link: makeNodeComponent("link"),
     dirtRichText: makeNodeComponent("dirtRichText"),

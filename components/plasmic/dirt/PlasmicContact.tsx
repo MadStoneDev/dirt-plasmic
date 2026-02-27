@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import TaglineBanner from "../../TaglineBanner"; // plasmic-import: cGGZJPgn9EgF/component
 import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
 import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
 import { FooterSection } from "../../sections/FooterSection"; // plasmic-import: I7Z-mxcvFz5C/codeComponent
@@ -113,6 +114,7 @@ export const PlasmicContact__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicContact__OverridesType = {
   root?: Flex__<"div">;
+  taglineBanner?: Flex__<typeof TaglineBanner>;
   dirtNav?: Flex__<typeof DirtNav>;
   link?: Flex__<"a"> & Partial<LinkProps>;
   footerSection?: Flex__<typeof FooterSection>;
@@ -205,6 +207,12 @@ function PlasmicContact__RenderFunc(props: {
             sty.root
           )}
         >
+          <TaglineBanner
+            data-plasmic-name={"taglineBanner"}
+            data-plasmic-override={overrides.taglineBanner}
+            className={classNames("__wab_instance", sty.taglineBanner)}
+          />
+
           <DirtNav
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
@@ -325,7 +333,8 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
 }
 
 const PlasmicDescendants = {
-  root: ["root", "dirtNav", "link", "footerSection", "img"],
+  root: ["root", "taglineBanner", "dirtNav", "link", "footerSection", "img"],
+  taglineBanner: ["taglineBanner"],
   dirtNav: ["dirtNav", "link"],
   link: ["link"],
   footerSection: ["footerSection", "img"],
@@ -336,6 +345,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  taglineBanner: typeof TaglineBanner;
   dirtNav: typeof DirtNav;
   link: "a";
   footerSection: typeof FooterSection;
@@ -404,6 +414,7 @@ export const PlasmicContact = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    taglineBanner: makeNodeComponent("taglineBanner"),
     dirtNav: makeNodeComponent("dirtNav"),
     link: makeNodeComponent("link"),
     footerSection: makeNodeComponent("footerSection"),

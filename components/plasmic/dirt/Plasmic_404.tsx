@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import TaglineBanner from "../../TaglineBanner"; // plasmic-import: cGGZJPgn9EgF/component
 import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
 import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
@@ -112,8 +113,10 @@ export const Plasmic_404__ArgProps = new Array<ArgPropType>();
 
 export type Plasmic_404__OverridesType = {
   root?: Flex__<"div">;
+  taglineBanner?: Flex__<typeof TaglineBanner>;
   dirtNav?: Flex__<typeof DirtNav>;
   h1?: Flex__<"h1">;
+  freeBox?: Flex__<"div">;
 };
 
 export interface Default_404Props {}
@@ -202,6 +205,12 @@ function Plasmic_404__RenderFunc(props: {
             sty.root
           )}
         >
+          <TaglineBanner
+            data-plasmic-name={"taglineBanner"}
+            data-plasmic-override={overrides.taglineBanner}
+            className={classNames("__wab_instance", sty.taglineBanner)}
+          />
+
           <DirtNav
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
@@ -270,26 +279,31 @@ function Plasmic_404__RenderFunc(props: {
               </span>
             </React.Fragment>
           </h1>
-          <PlasmicImg__
-            alt={""}
-            className={classNames(sty.img__zHwOg)}
-            displayHeight={"auto"}
-            displayMaxHeight={"none"}
-            displayMaxWidth={"100%"}
-            displayMinHeight={"0"}
-            displayMinWidth={"0"}
-            displayWidth={
-              hasVariant(globalVariants, "screen", "mobile") ? "100%" : "100%"
-            }
-            loading={"lazy"}
-            src={{
-              src: "/plasmic/dirt/images/_404DirtImagePng.png",
-              fullWidth: 2160,
-              fullHeight: 1632,
-              aspectRatio: undefined
-            }}
-          />
-
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__zHwOg)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={
+                hasVariant(globalVariants, "screen", "mobile") ? "100%" : "100%"
+              }
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/dirt/images/_404DirtImagePng.png",
+                fullWidth: 2160,
+                fullHeight: 1632,
+                aspectRatio: undefined
+              }}
+            />
+          </div>
           <div
             className={classNames(
               projectcss.all,
@@ -376,17 +390,21 @@ function Plasmic_404__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "dirtNav", "h1"],
+  root: ["root", "taglineBanner", "dirtNav", "h1", "freeBox"],
+  taglineBanner: ["taglineBanner"],
   dirtNav: ["dirtNav"],
-  h1: ["h1"]
+  h1: ["h1"],
+  freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  taglineBanner: typeof TaglineBanner;
   dirtNav: typeof DirtNav;
   h1: "h1";
+  freeBox: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -451,8 +469,10 @@ export const Plasmic_404 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    taglineBanner: makeNodeComponent("taglineBanner"),
     dirtNav: makeNodeComponent("dirtNav"),
     h1: makeNodeComponent("h1"),
+    freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for Plasmic_404
     internalVariantProps: Plasmic_404__VariantProps,

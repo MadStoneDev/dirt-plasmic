@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import TaglineBanner from "../../TaglineBanner"; // plasmic-import: cGGZJPgn9EgF/component
 import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
 import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
 import { HeroSection } from "../../sections/HeroSection"; // plasmic-import: oYTAqFgzizOu/codeComponent
@@ -145,6 +146,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   home?: Flex__<"div">;
+  taglineBanner?: Flex__<typeof TaglineBanner>;
   dirtNav?: Flex__<typeof DirtNav>;
   link?: Flex__<"a"> & Partial<LinkProps>;
   heroSection?: Flex__<typeof HeroSection>;
@@ -263,6 +265,12 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.home
           )}
         >
+          <TaglineBanner
+            data-plasmic-name={"taglineBanner"}
+            data-plasmic-override={overrides.taglineBanner}
+            className={classNames("__wab_instance", sty.taglineBanner)}
+          />
+
           <DirtNav
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
@@ -1201,6 +1209,7 @@ When they sign on, we'll send you a 5% referral fee. (A little thank you for spr
 const PlasmicDescendants = {
   home: [
     "home",
+    "taglineBanner",
     "dirtNav",
     "link",
     "heroSection",
@@ -1217,6 +1226,7 @@ const PlasmicDescendants = {
     "footerSection",
     "img"
   ],
+  taglineBanner: ["taglineBanner"],
   dirtNav: ["dirtNav", "link"],
   link: ["link"],
   heroSection: ["heroSection"],
@@ -1238,6 +1248,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   home: "div";
+  taglineBanner: typeof TaglineBanner;
   dirtNav: typeof DirtNav;
   link: "a";
   heroSection: typeof HeroSection;
@@ -1317,6 +1328,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("home"),
   {
     // Helper components rendering sub-elements
+    taglineBanner: makeNodeComponent("taglineBanner"),
     dirtNav: makeNodeComponent("dirtNav"),
     link: makeNodeComponent("link"),
     heroSection: makeNodeComponent("heroSection"),
