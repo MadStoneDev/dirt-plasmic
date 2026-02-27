@@ -132,7 +132,9 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
         <>
           {/* Mobile */}
           {(mobileBackgroundImage || backgroundImage) && (
-            <div className="absolute left-0 right-0 bottom-0 top-100 inset-0 pointer-events-none lg:hidden">
+            <div className={`absolute left-0 right-0 bottom-0 ${showHeroForm ? "" : "top-100"} inset-0" +
+                " pointer-events-none" +
+                " lg:hidden`}>
               <Image
                 src={mobileBackgroundImage || backgroundImage!}
                 alt=""
@@ -143,7 +145,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
           )}
           {/* Desktop */}
           {backgroundImage && (
-            <div className="absolute left-0 right-0 bottom-0 top-160 2xl:top-150 pointer-events-none hidden lg:block">
+            <div className={`"absolute left-0 right-0 bottom-0 ${showHeroForm ? "" : "top-160 2xl:top-150"} pointer-events-none hidden lg:block"`}>
               <Image
                 src={backgroundImage}
                 alt=""
