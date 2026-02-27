@@ -785,6 +785,13 @@ registerComponent(FooterSection, {
     mobileBackgroundImage: { type: "imageUrl", displayName: "Background Image (Mobile)" },
     backgroundColor: "string",
     heading1: { type: "string", hidden: (props: any) => !props.showHeroForm },
+    heading1Uppercase: {
+      type: "boolean",
+      defaultValue: false,
+      displayName: "Heading 1 Uppercase",
+      description: "Toggle uppercase for heading 1 (also adjusts max-width)",
+      hidden: (props: any) => !props.showHeroForm
+    },
     heading2: { type: "string", hidden: (props: any) => !props.showHeroForm },
     description: { type: "string", hidden: (props: any) => !props.showHeroForm },
     // Form settings
