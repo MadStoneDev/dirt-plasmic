@@ -121,7 +121,9 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
 
   return (
     <footer
-      className={`relative ${showHeroForm ? "pt-16 md:pt-40" : "pt-0 md:pt-250"} px-5 md:px-8 pb-110 md:pb-8 overflow-hidden`}
+      className={`relative ${
+        showHeroForm ? "pt-16 md:pt-40" : "pt-0 md:pt-250 xl:pt-300"
+      } px-5 md:px-8 pb-110 md:pb-8 overflow-hidden`}
       style={{
         gridColumn: "1 / -1",
         backgroundColor: backgroundColor || "#5C0004",
@@ -131,31 +133,44 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
       {(mobileBackgroundImage || backgroundImage) && (
         <>
           {/* Mobile */}
-          {(mobileBackgroundImage || backgroundImage) && (
-            <div className={`absolute left-0 right-0 bottom-0 ${showHeroForm ? "" : "top-100"} inset-0" +
-                " pointer-events-none" +
-                " lg:hidden`}>
-              <Image
-                src={mobileBackgroundImage || backgroundImage!}
-                alt=""
-                fill
-                className="w-full object-cover object-top"
-              />
-            </div>
-          )}
+          <div
+            className={`absolute left-0 right-0 bottom-0 ${
+              showHeroForm ? "" : "top-100"
+            } inset-0" +
+                " pointer-events-none lg:hidden`}
+          >
+            <Image
+              src={mobileBackgroundImage || backgroundImage!}
+              alt=""
+              fill
+              className="w-full object-cover object-top"
+            />
+          </div>
+
           {/* Desktop */}
           {backgroundImage && (
-            <div className={`"absolute left-0 right-0 bottom-0 ${showHeroForm ? "" : "top-160 2xl:top-150"} pointer-events-none hidden lg:block"`}>
+            <div
+              className={`absolute left-0 right-0 bottom-0 ${
+                showHeroForm ? "" : "top-0"
+              } pointer-events-none hidden lg:block`}
+            >
               <Image
                 src={backgroundImage}
                 alt=""
                 fill
-                className={`object-top ${showHeroForm ? "object-contain xl:object-cover" : "object-cover"}`}
+                className={`${
+                  showHeroForm
+                    ? "object-contain xl:object-cover"
+                    : "object-cover"
+                }`} style={{
+                  objectPosition: showHeroForm ? "top" : "center 68%",
+              }}
               />
             </div>
           )}
         </>
       )}
+
       {/* Hero/Form Section */}
       {showHeroForm && (
         <div className="pb-74 md:pb-235 relative flex flex-col justify-end">
@@ -163,9 +178,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
             {heading1 && (
               <h2
                 className={`mx-auto max-w-80 font-display font-bold text-5xl md:text-6xl text-dirt-off-white mb-2 ${
-                  headingUppercase
-                    ? "md:max-w-150 uppercase"
-                    : "md:max-w-120"
+                  headingUppercase ? "md:max-w-150 uppercase" : "md:max-w-120"
                 }`}
                 style={{ lineHeight: "105%", letterSpacing: "-2%" }}
               >
@@ -175,7 +188,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
             {heading2 && (
               <h2
                 className={`max-w-60 md:max-w-none mx-auto font-display font-bold text-5xl md:text-6xl text-dirt-pop mb-8 ${
-                    headingUppercase ? "uppercase" : ""
+                  headingUppercase ? "uppercase" : ""
                 }`}
                 style={{ lineHeight: "105%", letterSpacing: "-2%" }}
               >
@@ -358,21 +371,29 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
           )}
         </div>
       </div>
-      
+
       {/* Dirt Mound */}
-      <img src={`/Mobile Footer DIRT Mound with Shovel.png`} alt="" className={`md:hidden absolute bottom-0 left-0 right-0 w-full h-auto object-contain`} />
-      <img src={`/Dirt and Shovel.png`} alt="" className={`hidden md:block absolute bottom-0 left-auto right-0 w-120 h-auto object-contain`} />
+      <img
+        src={`/Mobile Footer DIRT Mound with Shovel.png`}
+        alt=""
+        className={`md:hidden absolute bottom-0 left-0 right-0 w-full h-auto object-contain`}
+      />
+      <img
+        src={`/Dirt and Shovel.png`}
+        alt=""
+        className={`hidden md:block absolute bottom-0 left-auto right-0 w-120 h-auto object-contain`}
+      />
 
       {/* Bottom Right Badge */}
       {bottomRightText && bottomRightLink && (
-          <a
-              href={bottomRightLink}
-              target="_blank"
-              className="absolute right-0 bottom-0 px-3 py-2 max-w-48 bg-dirt-green text-dirt-deep text-center font-sans font-medium text-sm hover:bg-dirt-pop transition-colors"
-              style={{ lineHeight: "115%", letterSpacing: "-2%" }}
-          >
-            {bottomRightText}
-          </a>
+        <a
+          href={bottomRightLink}
+          target="_blank"
+          className="absolute right-0 bottom-0 px-3 py-2 max-w-48 bg-dirt-green text-dirt-deep text-center font-sans font-medium text-sm hover:bg-dirt-pop transition-colors"
+          style={{ lineHeight: "115%", letterSpacing: "-2%" }}
+        >
+          {bottomRightText}
+        </a>
       )}
     </footer>
   );
