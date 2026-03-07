@@ -100,7 +100,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       title: "404 - DIRT"
     },
     twitter: {
-      card: "summary",
+      card: "summary" as const,
       title: "404 - DIRT"
     },
     alternates: { canonical: "/404" }

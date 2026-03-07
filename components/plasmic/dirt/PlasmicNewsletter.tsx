@@ -107,7 +107,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
         "In industries where every bid and every project counts, the brands that communicate best will win again and again. We know exactly how to create memorable, project-winning brands. In fact, we’ve done it for years."
     },
     twitter: {
-      card: "summary",
+      card: "summary" as const,
       title: "Newsletter - DIRT",
       description:
         "In industries where every bid and every project counts, the brands that communicate best will win again and again. We know exactly how to create memorable, project-winning brands. In fact, we’ve done it for years."

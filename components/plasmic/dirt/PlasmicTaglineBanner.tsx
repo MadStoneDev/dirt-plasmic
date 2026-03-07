@@ -194,7 +194,7 @@ function PlasmicTaglineBanner__RenderFunc(props: {
             sty.text
           )}
         >
-          {"GET THE DIRT"}
+          {"GET THE DIRT. Click Here"}
         </div>
         <PlasmicImg__
           data-plasmic-name={"img"}
