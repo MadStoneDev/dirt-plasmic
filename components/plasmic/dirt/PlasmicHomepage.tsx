@@ -425,6 +425,9 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-name={"dirtRichText"}
                   data-plasmic-override={overrides.dirtRichText}
                   className={classNames("__wab_instance", sty.dirtRichText)}
+                  desktopFontSize={20}
+                  fontSize={16}
+                  tabletFontSize={20}
                   text={
                     "From  {green|3D printing|First, they did houses and offices. Next? Who knows.},  {pop|advanced composites|First, they did houses and offices.}, and  {blue|self-healing concrete|Water-activated bacteria produce calcium carbonate to seal cracks. Bonkers.}  to {blue|AI-driven predictive analytics|AI adoption in construction jumped from 26% in 2023 to 37% in 2025. We see where this is going.}, {pop|5D BIM|First, they did houses and offices.}, and {green|Digital Twins|We've thought about getting one for ourselves, but we've watched too much Black Mirror.}."
                   }
@@ -1167,7 +1170,7 @@ Huge thanks to Nikita for creating  and her team!`}
             }
             footerLogo={"/plasmic/dirt/images/dirtLogoPng.png"}
             heading1={"Brilliant brands don't grow on trees."}
-            heading1Uppercase={false}
+            heading1Uppercase={true}
             heading2={"They grow in the DIRT."}
             link1Text={"About"}
             link1Url={"/aout"}
