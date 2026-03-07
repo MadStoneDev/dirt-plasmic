@@ -51,10 +51,12 @@ export function HeroSection({
       const textHeight = textRef.current.offsetHeight;
       const imageHeight = window.innerWidth * 0.63;
 
-      // Animation starts when the sticky kicks in:
-      // image sticks when its natural top (textHeight from section top)
-      // reaches the sticky threshold (100vh - 63vw from viewport top)
-      const stickyStart = Math.max(0, textHeight - window.innerHeight + imageHeight);
+      // Animation starts when the image area enters full view, whichever comes first:
+      // 1. Bottom of image area hits bottom of viewport
+      const stickyStartBottom = Math.max(0, textHeight - window.innerHeight + imageHeight);
+      // 2. Top of image area hits top of viewport
+      const stickyStartTop = textHeight;
+      const stickyStart = Math.min(stickyStartTop, stickyStartBottom);
       const animationScrolled = scrolled - stickyStart;
       const progress = Math.max(
         0,
@@ -70,7 +72,12 @@ export function HeroSection({
     return () => window.removeEventListener("scroll", handleScroll);
   }, [animationRunway]);
 
-  const midgroundOffset = 25 + scrollProgress * 52;
+  // On tall viewports (mobile) the image doesn't need to rise as far
+  const aspectRatio = typeof window !== "undefined"
+    ? Math.min(1, window.innerWidth / window.innerHeight)
+    : 1;
+  const travelRange = 20 + aspectRatio * 22; // mobile ~30%, desktop ~52%
+  const midgroundOffset = 25 + scrollProgress * travelRange;
 
   return (
     <section
@@ -138,7 +145,7 @@ export function HeroSection({
       </div>
       </div>
 
-      <div className="sticky h-[63vw] overflow-hidden pointer-events-none" style={{ top: "calc(100dvh - 63vw)" }}>
+      <div className="sticky h-[63vw] overflow-hidden pointer-events-none" style={{ top: "max(0px, calc(100dvh - 63vw))" }}>
         <div className="absolute bottom-0 left-0 right-0 h-[60vw] max-h-215.75">
           {backgroundImage && (
             <Image

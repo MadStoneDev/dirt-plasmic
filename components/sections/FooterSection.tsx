@@ -98,6 +98,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
     company: "",
     message: "",
   });
+  const [newsletterFirstName, setNewsletterFirstName] = useState("");
   const [newsletterEmail, setNewsletterEmail] = useState("");
 
   const links = [
@@ -114,9 +115,23 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
     console.log("Form submitted:", formData, "to:", recipientEmail);
   };
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Newsletter signup:", newsletterEmail);
+    try {
+      await fetch("/api/newsletter-subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: newsletterEmail,
+          firstName: newsletterFirstName,
+          listId: "6",
+        }),
+      });
+      setNewsletterFirstName("");
+      setNewsletterEmail("");
+    } catch (err) {
+      console.error("Newsletter signup error:", err);
+    }
   };
 
   return (
@@ -134,25 +149,22 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
         <>
           {/* Mobile */}
           <div
-            className={`absolute left-0 right-0 bottom-0 ${
+            className={`absolute inset-0 ${
               showHeroForm ? "" : "top-100"
-            } inset-0" +
-                " pointer-events-none lg:hidden`}
+            } pointer-events-none sm:hidden`}
           >
             <Image
               src={mobileBackgroundImage || backgroundImage!}
               alt=""
               fill
-              className="w-full object-cover object-top"
+              className="w-full object-cover object-[50%_300px]"
             />
           </div>
 
           {/* Desktop */}
           {backgroundImage && (
             <div
-              className={`absolute left-0 right-0 bottom-0 ${
-                showHeroForm ? "" : "top-0"
-              } pointer-events-none hidden lg:block`}
+              className="absolute inset-0 pointer-events-none hidden sm:block"
             >
               <Image
                 src={backgroundImage}
@@ -160,11 +172,9 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                 fill
                 className={`${
                   showHeroForm
-                    ? "object-contain xl:object-cover"
-                    : "object-cover"
-                }`} style={{
-                  objectPosition: showHeroForm ? "top" : "center 68%",
-              }}
+                    ? "object-contain 2xl:object-cover object-[50%_650px] xl:object-[50%_580px]"
+                    : "object-cover object-[center_68%]"
+                }`}
               />
             </div>
           )}
@@ -209,7 +219,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
               <div className="grid md:grid-cols-2 gap-6">
                 <input
                   type="text"
-                  placeholder="Name"
+                  placeholder="First Name"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -246,7 +256,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
               />
               <button
                 type="submit"
-                className="px-8 py-4 flex items-center justify-center gap-1 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-lg hover:bg-dirt-pop-hover shadow-xl shadow-black/40 transition-all duration-300"
+                className="px-8 py-4 flex items-center justify-center gap-1 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-lg hover:bg-dirt-pop-hover transition-all duration-300"
               >
                 <Image
                   src={`/90deg Arrow.png`}
@@ -297,20 +307,31 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                   {newsletterDescription}
                 </p>
               )}
-              <form onSubmit={handleNewsletterSubmit} className="flex">
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-2">
                 <input
-                  type="email"
-                  placeholder="Your email"
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  className="grow px-3 py-2 bg-white text-dirt-deep font-sans text-sm placeholder:text-dirt-deep/50 outline-none"
+                  type="text"
+                  placeholder="First name"
+                  value={newsletterFirstName}
+                  onChange={(e) => setNewsletterFirstName(e.target.value)}
+                  required
+                  className="px-3 py-2 bg-white text-dirt-deep font-sans text-sm placeholder:text-dirt-deep/50 outline-none"
                 />
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-dirt-pop text-dirt-deep font-display font-bold text-sm uppercase hover:bg-dirt-green transition-colors"
-                >
-                  Subscribe
-                </button>
+                <div className="flex">
+                  <input
+                    type="email"
+                    placeholder="Your email"
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    required
+                    className="grow px-3 py-2 bg-white text-dirt-deep font-sans text-sm placeholder:text-dirt-deep/50 outline-none"
+                  />
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-dirt-pop text-dirt-deep font-display font-bold text-sm uppercase hover:bg-dirt-green transition-colors"
+                  >
+                    Subscribe
+                  </button>
+                </div>
               </form>
             </div>
 

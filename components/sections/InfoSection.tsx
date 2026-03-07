@@ -42,11 +42,11 @@ export function InfoSection({
         )}
 
         <div
-          className={`flex gap-20 md:gap-12 items-center ${isReversed ? "flex-col-reverse md:flex-row-reverse" : "flex-col md:flex-row"}`}
+          className={`flex gap-20 md:gap-12 items-center ${isReversed ? "flex-col-reverse lg:flex-row-reverse" : "flex-col lg:flex-row"}`}
         >
           {/* Image Column */}
           {image && (
-            <div className="lg:w-1/2">
+            <div className="w-full lg:w-1/2">
               <Image
                 src={image}
                 alt=""
@@ -58,7 +58,7 @@ export function InfoSection({
           )}
 
           {/* Info Column */}
-          <div className="md:w-1/2 flex flex-col gap-6">
+          <div className="w-full lg:w-1/2 flex flex-col gap-6">
             {subheading && (
               <h3 className="max-w-lg font-display font-bold text-4xl md:text-5xl text-dirt-pop">
                 {fmt(subheading)}

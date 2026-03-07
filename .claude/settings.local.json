@@ -12,7 +12,9 @@
       "WebSearch",
       "WebFetch(domain:dirt.ravenci.solutions)",
       "WebFetch(domain:docs.plasmic.app)",
-      "WebFetch(domain:forum.plasmic.app)"
+      "WebFetch(domain:forum.plasmic.app)",
+      "Bash(curl:*)",
+      "Bash(node:*)"
     ]
   }
 }

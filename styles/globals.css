@@ -83,3 +83,7 @@ a[class*="root_reset_tags"]:hover {
 [class*="plasmic-module"] a:hover {
   color: inherit !important;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
