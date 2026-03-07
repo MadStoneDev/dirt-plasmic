@@ -7,7 +7,12 @@
       "Bash(npx next build)",
       "Bash(ls:*)",
       "Bash(git commit:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "WebFetch(domain:dirt.com.au)",
+      "WebSearch",
+      "WebFetch(domain:dirt.ravenci.solutions)",
+      "WebFetch(domain:docs.plasmic.app)",
+      "WebFetch(domain:forum.plasmic.app)"
     ]
   }
 }

@@ -1,5 +1,7 @@
 "use client";
 
+import { DirtRichText } from "./DirtRichText";
+
 export interface ProsConsItemProps {
   text?: string;
   // Injected by parent
@@ -30,9 +32,11 @@ export function ProsConsItem({ text, type = "con" }: ProsConsItemProps) {
       <div className={`w-10 h-10 shrink-0 flex items-center justify-center ${isCon ? "bg-dirt-pop" : "bg-dirt-green"}`}>
         {isCon ? <XIcon /> : <CheckIcon />}
       </div>
-      <p className={`font-sans ${isCon ? "text-dirt-off-white pt-1" : "text-white"}`}>
-        {text}
-      </p>
+      <DirtRichText
+        text={text}
+        textColour={isCon ? "dirt-off-white" : "white"}
+        fontSize={20}
+      />
     </div>
   );
 }
