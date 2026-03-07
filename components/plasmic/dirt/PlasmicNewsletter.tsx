@@ -65,6 +65,7 @@ import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djx
 import { NewsletterFormSection } from "../../sections/NewsletterFormSection"; // plasmic-import: XfKpmE3Hd3LP/codeComponent
 import { DirtRichText } from "../../sections/DirtRichText"; // plasmic-import: nKt2zrpkFSyY/codeComponent
 import { FooterSection } from "../../sections/FooterSection"; // plasmic-import: I7Z-mxcvFz5C/codeComponent
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
 
@@ -88,7 +89,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "Newsletter - DIRT",
     description:
@@ -174,7 +182,7 @@ function PlasmicNewsletter__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -719,9 +727,10 @@ export const PlasmicNewsletter = Object.assign(
     internalArgProps: PlasmicNewsletter__ArgProps,
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/newsletter",
       pagePath: "/newsletter",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

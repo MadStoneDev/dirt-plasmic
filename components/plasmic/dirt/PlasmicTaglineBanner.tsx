@@ -145,7 +145,8 @@ function PlasmicTaglineBanner__RenderFunc(props: {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         styleTokensClassNames,
-        sty.taglineBanner
+        sty.taglineBanner,
+        "cursor-pointer"
       )}
       component={Link}
       legacyBehavior={false}
