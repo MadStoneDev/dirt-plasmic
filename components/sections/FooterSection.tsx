@@ -13,7 +13,7 @@ export interface FooterSectionProps {
   mobileBackgroundImage?: string;
   backgroundColor?: string;
   heading1?: string;
-  headingUppercase?: boolean;
+  heading1Uppercase?: boolean;
   heading2?: string;
   description?: string;
   // Form settings
@@ -64,7 +64,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
     mobileBackgroundImage,
     backgroundColor,
     heading1,
-    headingUppercase = false,
+    heading1Uppercase = false,
     heading2,
     description,
     submitButtonText,
@@ -188,7 +188,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
             {heading1 && (
               <h2
                 className={`mx-auto max-w-80 font-display font-bold text-5xl md:text-6xl text-dirt-off-white mb-2 ${
-                  headingUppercase ? "md:max-w-150 uppercase" : "md:max-w-120"
+                  heading1Uppercase ? "md:max-w-150 uppercase" : "md:max-w-120"
                 }`}
                 style={{ lineHeight: "105%", letterSpacing: "-2%" }}
               >
@@ -198,7 +198,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
             {heading2 && (
               <h2
                 className={`max-w-60 md:max-w-none mx-auto font-display font-bold text-5xl md:text-6xl text-dirt-pop mb-8 ${
-                  headingUppercase ? "uppercase" : ""
+                  heading1Uppercase ? "uppercase" : ""
                 }`}
                 style={{ lineHeight: "105%", letterSpacing: "-2%" }}
               >
