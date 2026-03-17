@@ -442,6 +442,16 @@
           "id": "J-tImhRbDjF9",
           "name": "Mobile - Footer DIRT Background.png",
           "filePath": "../public/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
+        },
+        {
+          "id": "yp0QSDuVVWhx",
+          "name": "Abstract DIRT - Nikita walking between buildings.jpg",
+          "filePath": "../public/plasmic/dirt/images/abstractDirtNikitaWalkingBetweenBuildingsJpg.jpg"
+        },
+        {
+          "id": "zYk_2keKxG68",
+          "name": "Nikita in Orange Dress Sitting over DIRT.png",
+          "filePath": "../public/plasmic/dirt/images/nikitaInOrangeDressSittingOverDirtPng.png"
         }
       ],
       "indirect": false,

@@ -65,6 +65,7 @@ import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djx
 import { WhatWeBelieveSection } from "../../sections/WhatWeBelieveSection"; // plasmic-import: rpUptHcqPy6y/codeComponent
 import { WhatWeBelieveItem } from "../../sections/WhatWeBelieveItem"; // plasmic-import: bRva4mBEYkA1/codeComponent
 import { WhatWeBelieveDetail } from "../../sections/WhatWeBelieveDetail"; // plasmic-import: _ATHPXNl57FV/codeComponent
+import { TestimonialSection } from "../../sections/TestimonialSection"; // plasmic-import: 19614fshNGrI/codeComponent
 import { FooterSection } from "../../sections/FooterSection"; // plasmic-import: I7Z-mxcvFz5C/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
@@ -135,7 +136,7 @@ export type PlasmicAbout__OverridesType = {
   ifWeHearTheWord?: Flex__<"section">;
   whatWeBelieveSection?: Flex__<typeof WhatWeBelieveSection>;
   builtWithSpecialists?: Flex__<"section">;
-  section?: Flex__<"section">;
+  testimonialSection?: Flex__<typeof TestimonialSection>;
   footerSection?: Flex__<typeof FooterSection>;
 };
 
@@ -362,9 +363,9 @@ function PlasmicAbout__RenderFunc(props: {
               displayWidth={"100%"}
               loading={"lazy"}
               src={{
-                src: "/plasmic/dirt/images/abstractConstructionWorkTradiesDirtTrucksJpg.jpg",
-                fullWidth: 1248,
-                fullHeight: 699,
+                src: "/plasmic/dirt/images/abstractDirtNikitaWalkingBetweenBuildingsJpg.jpg",
+                fullWidth: 2752,
+                fullHeight: 1448,
                 aspectRatio: undefined
               }}
             />
@@ -374,6 +375,24 @@ function PlasmicAbout__RenderFunc(props: {
             data-plasmic-override={overrides.ifWeHearTheWord}
             className={classNames(projectcss.all, sty.ifWeHearTheWord)}
           >
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__j6IHm)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"550px"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/dirt/images/nikitaInOrangeDressSittingOverDirtPng.png",
+                fullWidth: 2048,
+                fullHeight: 3070,
+                aspectRatio: undefined
+              }}
+            />
+
             <div className={classNames(projectcss.all, sty.freeBox__w0WrB)}>
               <div
                 className={classNames(
@@ -466,97 +485,67 @@ function PlasmicAbout__RenderFunc(props: {
                     </span>
                   </React.Fragment>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__lZoP)}>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img___3JiCs)}
-                    displayHeight={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "auto"
-                        : "312px"
-                    }
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "100%"
-                        : "312px"
-                    }
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/dirt/images/nikitaMorellHeadshotPng.png",
-                      fullWidth: 468,
-                      fullHeight: 468,
-                      aspectRatio: undefined
-                    }}
-                  />
-
+                <div className={classNames(projectcss.all, sty.freeBox__cpQpp)}>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__cpQpp)}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__uCcVs
+                    )}
                   >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__uCcVs
-                      )}
-                    >
-                      {"Nikita Morell*"}
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__zYg7H
-                      )}
-                    >
-                      {"Founder, DIRT"}
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__gxtGd
-                      )}
-                    >
+                    {"Nikita Morell*"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__zYg7H
+                    )}
+                  >
+                    {"Founder, DIRT"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__gxtGd
+                    )}
+                  >
+                    <React.Fragment>
                       <React.Fragment>
-                        <React.Fragment>
-                          {"* Feel like you\u2019ve seen this name before? "}
-                        </React.Fragment>
-                        {
-                          <PlasmicLink__
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__reuHx
-                            )}
-                            component={Link}
-                            href={"https://nikitamorell.com"}
-                            legacyBehavior={false}
-                            platform={"nextjs"}
-                          >
-                            <React.Fragment>
-                              <span
-                                className={
-                                  "plasmic_default__all plasmic_default__span"
-                                }
-                                style={{
-                                  textDecorationLine: "underline",
-                                  color: "var(--token-5joSP94EMVrt)"
-                                }}
-                              >
-                                {"You probably have."}
-                              </span>
-                            </React.Fragment>
-                          </PlasmicLink__>
-                        }
-                        <React.Fragment>{""}</React.Fragment>
+                        {"* Feel like you\u2019ve seen this name before? "}
                       </React.Fragment>
-                    </div>
+                      {
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link__reuHx
+                          )}
+                          component={Link}
+                          href={"https://nikitamorell.com"}
+                          legacyBehavior={false}
+                          platform={"nextjs"}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{
+                                textDecorationLine: "underline",
+                                color: "var(--token-5joSP94EMVrt)"
+                              }}
+                            >
+                              {"You probably have."}
+                            </span>
+                          </React.Fragment>
+                        </PlasmicLink__>
+                      }
+                      <React.Fragment>{""}</React.Fragment>
+                    </React.Fragment>
                   </div>
                 </div>
               </div>
@@ -688,69 +677,18 @@ function PlasmicAbout__RenderFunc(props: {
               }
             </div>
           </section>
-          <section
-            data-plasmic-name={"section"}
-            data-plasmic-override={overrides.section}
-            className={classNames(projectcss.all, sty.section)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox___2AbB)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__hXn1P)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? "100%"
-                    : hasVariant(globalVariants, "screen", "tablet")
-                      ? "auto"
-                      : "41%"
-                }
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/dirt/images/markTaylorJpg.jpg",
-                  fullWidth: 383,
-                  fullHeight: 496,
-                  aspectRatio: undefined
-                }}
-              />
+          <TestimonialSection
+            data-plasmic-name={"testimonialSection"}
+            data-plasmic-override={overrides.testimonialSection}
+            authorName={"Mark Taylor"}
+            authorPhoto={"/plasmic/dirt/images/markTaylorJpg.jpg"}
+            authorRole={"Core FDM"}
+            body={
+              "\"Nikita and her team helped us go from 'coming soon' to a website we can be proud of. I needed somebody to organise my thoughts, and their structured process helped me see the light at the end of the tunnel and the confidence to embrace a distinct brand voice.\""
+            }
+            className={classNames("__wab_instance", sty.testimonialSection)}
+          />
 
-              <div className={classNames(projectcss.all, sty.freeBox__oPSn)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__fCg2
-                  )}
-                >
-                  {
-                    "\"Nikita and her team helped us go from 'coming soon' to a website we can be proud of. I needed somebody to organise my thoughts, and their structured process helped me see the light at the end of the tunnel and the confidence to embrace a distinct brand voice.\""
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__znlVg
-                  )}
-                >
-                  {"Mark Taylor"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__cZgom
-                  )}
-                >
-                  {"Core FDM"}
-                </div>
-              </div>
-            </div>
-          </section>
           <FooterSection
             data-plasmic-name={"footerSection"}
             data-plasmic-override={overrides.footerSection}
@@ -827,7 +765,7 @@ const PlasmicDescendants = {
     "ifWeHearTheWord",
     "whatWeBelieveSection",
     "builtWithSpecialists",
-    "section",
+    "testimonialSection",
     "footerSection"
   ],
   taglineBanner: ["taglineBanner"],
@@ -836,7 +774,7 @@ const PlasmicDescendants = {
   ifWeHearTheWord: ["ifWeHearTheWord"],
   whatWeBelieveSection: ["whatWeBelieveSection"],
   builtWithSpecialists: ["builtWithSpecialists"],
-  section: ["section"],
+  testimonialSection: ["testimonialSection"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -850,7 +788,7 @@ type NodeDefaultElementType = {
   ifWeHearTheWord: "section";
   whatWeBelieveSection: typeof WhatWeBelieveSection;
   builtWithSpecialists: "section";
-  section: "section";
+  testimonialSection: typeof TestimonialSection;
   footerSection: typeof FooterSection;
 };
 
@@ -922,7 +860,7 @@ export const PlasmicAbout = Object.assign(
     ifWeHearTheWord: makeNodeComponent("ifWeHearTheWord"),
     whatWeBelieveSection: makeNodeComponent("whatWeBelieveSection"),
     builtWithSpecialists: makeNodeComponent("builtWithSpecialists"),
-    section: makeNodeComponent("section"),
+    testimonialSection: makeNodeComponent("testimonialSection"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicAbout

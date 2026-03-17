@@ -872,7 +872,7 @@ function PlasmicHomepage__RenderFunc(props: {
           >
             <DirtFile
               buttonLabel={"Crack the file"}
-              buttonLink={"/"}
+              buttonLink={"/contact"}
               className={classNames("__wab_instance", sty.dirtFile__gr4Vv)}
               heading={"Core FDM"}
               image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
@@ -914,7 +914,7 @@ function PlasmicHomepage__RenderFunc(props: {
             </DirtFile>
             <DirtFile
               buttonLabel={"Crack the file"}
-              buttonLink={"/"}
+              buttonLink={"/contact"}
               className={classNames("__wab_instance", sty.dirtFile__nulPg)}
               heading={"StudioMX"}
               image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
@@ -956,7 +956,7 @@ function PlasmicHomepage__RenderFunc(props: {
             </DirtFile>
             <DirtFile
               buttonLabel={"Crack the file"}
-              buttonLink={"/"}
+              buttonLink={"/contact"}
               className={classNames("__wab_instance", sty.dirtFile__sKsj)}
               heading={"Techne"}
               image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
