@@ -94,7 +94,7 @@ export function SliderSection({
 
       {/* Slider Container */}
       <div
-        className="relative bg-dirt-deep border-2 border-dirt-pop mx-auto"
+        className="relative mx-auto bg-dirt-deep border-2 border-dirt-pop"
         style={{
           maxWidth: "1100px",
           padding: "50px 50px 90px",

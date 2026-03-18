@@ -110,7 +110,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title:
       "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
@@ -123,7 +130,7 @@ export function generateDynamicMetadata($q: any, $ctx: any) {
         "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
     twitter: {
-      card: "summary",
+      card: "summary" as const,
       title:
         "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
       description:
@@ -209,7 +216,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -326,10 +333,10 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.heroSection}
             backgroundImage={"/plasmic/dirt/images/dirtBackPng.png"}
             className={classNames("__wab_instance", sty.heroSection)}
-            ctaLabel={"Dig in with a call"}
+            ctaLabel={"Get the DIRT"}
             ctaLink={"/contact"}
             description={
-              "DIRT is the agency for construction, contech, property & building material companies who want a modern brand to match their capabilities."
+              "DIRT is the agency for construction, ConTech, property & building material companies who want a modern brand to match their capabilities."
             }
             foregroundImage={"/plasmic/dirt/images/dirtFrontPng.png"}
             heading={"Fresh messaging, branding, and positioning"}
@@ -418,6 +425,9 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-name={"dirtRichText"}
                   data-plasmic-override={overrides.dirtRichText}
                   className={classNames("__wab_instance", sty.dirtRichText)}
+                  desktopFontSize={20}
+                  fontSize={16}
+                  tabletFontSize={20}
                   text={
                     "From  {green|3D printing|First, they did houses and offices. Next? Who knows.},  {pop|advanced composites|First, they did houses and offices.}, and  {blue|self-healing concrete|Water-activated bacteria produce calcium carbonate to seal cracks. Bonkers.}  to {blue|AI-driven predictive analytics|AI adoption in construction jumped from 26% in 2023 to 37% in 2025. We see where this is going.}, {pop|5D BIM|First, they did houses and offices.}, and {green|Digital Twins|We've thought about getting one for ourselves, but we've watched too much Black Mirror.}."
                   }
@@ -475,7 +485,7 @@ function PlasmicHomepage__RenderFunc(props: {
             slides={
               <React.Fragment>
                 <PainPointSlide
-                  caption={"Solid. You\u2019re all good."}
+                  caption={"Solid. You\u2019re all good"}
                   className={classNames(
                     "__wab_instance",
                     sty.painPointSlide___2Y8Wq
@@ -493,7 +503,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 />
 
                 <PainPointSlide
-                  caption={"Yep. You've got noticeable damage."}
+                  caption={"Yep. You've got noticeable damage"}
                   className={classNames(
                     "__wab_instance",
                     sty.painPointSlide__ilCRm
@@ -502,7 +512,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 />
 
                 <PainPointSlide
-                  caption={"Things are starting to buckle."}
+                  caption={"Things are starting to buckle"}
                   className={classNames(
                     "__wab_instance",
                     sty.painPointSlide__bORrK
@@ -511,7 +521,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 />
 
                 <PainPointSlide
-                  caption={"Serious structural damage."}
+                  caption={"Serious structural damage"}
                   className={classNames(
                     "__wab_instance",
                     sty.painPointSlide__kslG6
@@ -520,7 +530,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 />
 
                 <PainPointSlide
-                  caption={"Total collapse."}
+                  caption={"Total collapse"}
                   className={classNames(
                     "__wab_instance",
                     sty.painPointSlide__iJ8UF
@@ -833,7 +843,7 @@ function PlasmicHomepage__RenderFunc(props: {
               }
               heading={"Website"}
               image={"/plasmic/dirt/images/modernLaptopOnDirtJpg.jpg"}
-              tags={"Copywriting, Design*, Development, Maintenance"}
+              tags={"Copywriting, Design*, Development, Maintenance, Naming"}
             />
 
             <DirtProcessStep
@@ -862,7 +872,7 @@ function PlasmicHomepage__RenderFunc(props: {
           >
             <DirtFile
               buttonLabel={"Crack the file"}
-              buttonLink={"/"}
+              buttonLink={"/contact"}
               className={classNames("__wab_instance", sty.dirtFile__gr4Vv)}
               heading={"Core FDM"}
               image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
@@ -904,7 +914,7 @@ function PlasmicHomepage__RenderFunc(props: {
             </DirtFile>
             <DirtFile
               buttonLabel={"Crack the file"}
-              buttonLink={"/"}
+              buttonLink={"/contact"}
               className={classNames("__wab_instance", sty.dirtFile__nulPg)}
               heading={"StudioMX"}
               image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
@@ -946,7 +956,7 @@ function PlasmicHomepage__RenderFunc(props: {
             </DirtFile>
             <DirtFile
               buttonLabel={"Crack the file"}
-              buttonLink={"/"}
+              buttonLink={"/contact"}
               className={classNames("__wab_instance", sty.dirtFile__sKsj)}
               heading={"Techne"}
               image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
@@ -1160,7 +1170,7 @@ Huge thanks to Nikita for creating  and her team!`}
             }
             footerLogo={"/plasmic/dirt/images/dirtLogoPng.png"}
             heading1={"Brilliant brands don't grow on trees."}
-            heading1Uppercase={false}
+            heading1Uppercase={true}
             heading2={"They grow in the DIRT."}
             link1Text={"About"}
             link1Url={"/aout"}
@@ -1351,9 +1361,10 @@ export const PlasmicHomepage = Object.assign(
     internalArgProps: PlasmicHomepage__ArgProps,
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/",
       pagePath: "/",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

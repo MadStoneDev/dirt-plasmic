@@ -86,7 +86,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "Contact - DIRT",
 
@@ -94,7 +101,7 @@ export function generateDynamicMetadata($q: any, $ctx: any) {
       title: "Contact - DIRT"
     },
     twitter: {
-      card: "summary",
+      card: "summary" as const,
       title: "Contact - DIRT"
     },
     alternates: { canonical: "/contact" }
@@ -166,7 +173,7 @@ function PlasmicContact__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -287,7 +294,7 @@ function PlasmicContact__RenderFunc(props: {
             }
             footerLogo={"/plasmic/dirt/images/dirtLogoPng.png"}
             heading1={"Brilliant brands don\u2019t grow on trees."}
-            heading1Uppercase={false}
+            heading1Uppercase={true}
             heading2={"They grow in the dirt."}
             link1Text={"About"}
             link1Url={"/about"}
@@ -426,9 +433,10 @@ export const PlasmicContact = Object.assign(
     internalArgProps: PlasmicContact__ArgProps,
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/contact",
       pagePath: "/contact",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

@@ -145,7 +145,8 @@ function PlasmicTaglineBanner__RenderFunc(props: {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         styleTokensClassNames,
-        sty.taglineBanner
+        sty.taglineBanner,
+        "cursor-pointer"
       )}
       component={Link}
       legacyBehavior={false}
@@ -193,7 +194,7 @@ function PlasmicTaglineBanner__RenderFunc(props: {
             sty.text
           )}
         >
-          {"GET THE DIRT"}
+          {"GET THE DIRT. Click Here"}
         </div>
         <PlasmicImg__
           data-plasmic-name={"img"}
