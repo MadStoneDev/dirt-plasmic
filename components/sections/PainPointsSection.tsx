@@ -44,13 +44,13 @@ export function PainPointsSection({
         {/* Left Column - Headings and Checkboxes */}
         <div className="flex flex-col justify-center">
           {heading && (
-            <h2 className="font-display font-bold text-5xl md:text-8xl text-dirt-pop uppercase">
+            <h2 className="font-display font-bold text-5xl md:text-8xl text-dirt-pop">
               {fmt(heading)}
             </h2>
           )}
 
           {subheading && (
-            <h3 className="mt-16 font-display font-bold text-3xl md:text-4xl text-dirt-pop uppercase mb-8">
+            <h3 className="mt-16 font-display font-bold text-3xl md:text-4xl text-dirt-pop mb-8">
               {fmt(subheading)}
             </h3>
           )}

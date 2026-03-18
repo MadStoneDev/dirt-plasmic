@@ -94,7 +94,7 @@ export function SliderSection({
 
       {/* Slider Container */}
       <div
-        className="relative bg-dirt-deep mx-auto"
+        className="relative bg-dirt-deep border-2 border-dirt-pop mx-auto"
         style={{
           maxWidth: "1100px",
           padding: "50px 50px 90px",
@@ -178,7 +178,7 @@ export function SliderSection({
         </div>
 
         {/* Step Content */}
-        <div className="mt-28 border-2 border-dirt-pop">
+        <div className="mt-28">
           <p
             className="text-dirt-off-white font-sans font-bold text-2xl lg:text-[40px]"
             style={{
