@@ -24,7 +24,7 @@ export function DirtFileSubItem({
       )}
       {description && (
         <p
-          className="text-dirt-off-white/80 font-sans text-base text-justify hyphens-none leading-[125%] md:leading-[150%]"
+          className="text-dirt-off-white/80 font-sans text-base text-left sm:text-justify hyphens-none leading-[125%] md:leading-[150%]"
           style={{ letterSpacing: "-3%" }}
         >
           {description}

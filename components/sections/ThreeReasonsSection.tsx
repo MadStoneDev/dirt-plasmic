@@ -42,7 +42,7 @@ export function ThreeReasonsSection({
               <span className="text-dirt-off-white">{fmt(headingEnd)}</span>
             </h2>
             {description && (
-              <p className="text-3xl text-justify text-dirt-off-white font-sans whitespace-pre-line" style={{
+              <p className="text-3xl text-left sm:text-justify text-dirt-off-white font-sans whitespace-pre-line" style={{
                 lineHeight: "135%",
               }}>
                 {description}
