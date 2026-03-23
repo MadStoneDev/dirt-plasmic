@@ -884,7 +884,7 @@ function PlasmicHomepage__RenderFunc(props: {
               buttonLink={"/contact"}
               className={classNames("__wab_instance", sty.dirtFile__nulPg)}
               heading={"StudioMX"}
-              image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
+              image={"/plasmic/dirt/images/studioMxMockupLaptopInDirtPng.png"}
               tag1={"Website"}
               tag2={"Branding"}
             >
@@ -926,7 +926,9 @@ function PlasmicHomepage__RenderFunc(props: {
               buttonLink={"/contact"}
               className={classNames("__wab_instance", sty.dirtFile__sKsj)}
               heading={"Techne"}
-              image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
+              image={
+                "/plasmic/dirt/images/techneMockupLaptopOnAPileOfDirtPng.png"
+              }
               tag1={"Website"}
               tag2={"Branding"}
             >
@@ -936,7 +938,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   sty.dirtFileSubItem__waNvn
                 )}
                 description={
-                  "Core FDM was delivering major facade projects, but their brand didn\u2019t match the scale of the work. The website made them look like technical specialists, not the end-to-end facade partner they\u2019d become. As projects grew more complex, the gap started to hurt."
+                  "Techne brought together two facade studios who\u2019d been in the game a while. Each had a solid reputation and serious built work in their own markets, but once merged, they were suddenly \u201cnew\u201d. They needed a sharper voice and X-factor to build trust fast. The old website felt like a placeholder, underselling their depth, and experience."
                 }
                 heading={"The Pinch"}
               />
@@ -947,7 +949,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   sty.dirtFileSubItem___4Grda
                 )}
                 description={
-                  "\u201cDelivering custom building envelope solutions.\u201d Technically true, but interchangeable with half the industry. It gave architects no clue when to bring Core FDM in, how they actually work, or why they\u2019re different when things get complicated."
+                  "\u201cTechne personnel have participated in the design and construction of a vast variety of projects of all scales and types\u2026\u201d was safe and generic. The kind of copy you could swap out the logo and no one would notice. It didn\u2019t explain how they think, lead, or why architects should trust them on their most complex projects."
                 }
                 heading={"The Cringe"}
               />
@@ -958,7 +960,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   sty.dirtFileSubItem__smvPy
                 )}
                 description={
-                  "We turned complex facade expertise into language architects immediately understand, without dumbing it down. Clear, confident messaging (with just enough personality) positioned Core FDM as a true facade management partner, not just a consultant. The brand finally sounds like the team behind it and attracts better-fit enquiries."
+                  "We dug up Techne\u2019s X-factor as strategic thinkers bridging design, science, and humanism. It shows the architects they work alongside that their design won\u2019t be engineered away. Stronger together, they\u2019re now taking on major global projects."
                 }
                 heading={"The Solve"}
               />

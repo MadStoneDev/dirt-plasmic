@@ -452,6 +452,16 @@
           "id": "zYk_2keKxG68",
           "name": "Nikita in Orange Dress Sitting over DIRT.png",
           "filePath": "../public/plasmic/dirt/images/nikitaInOrangeDressSittingOverDirtPng.png"
+        },
+        {
+          "id": "JpOYvSsWsXjj",
+          "name": "StudioMX Mockup - Laptop in dirt.png",
+          "filePath": "../public/plasmic/dirt/images/studioMxMockupLaptopInDirtPng.png"
+        },
+        {
+          "id": "kg8Z6rV9-Cj-",
+          "name": "Techne Mockup - Laptop on a pile of dirt.png",
+          "filePath": "../public/plasmic/dirt/images/techneMockupLaptopOnAPileOfDirtPng.png"
         }
       ],
       "indirect": false,
