@@ -59,31 +59,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.brandItem__xo4H1:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.brandItem__kuCv1:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.brandItem___7Nr7D:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.brandItem__qTIp:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.brandItem__yl83X:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.brandItem__r12W1:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.brandItem__zI2R:global(.__wab_instance) {
+.brandItem:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -382,6 +358,7 @@
 @media (max-width: 511px) {
   .text__x6629 {
     letter-spacing: -3%;
+    text-align: left;
   }
 }
 .text__v4TnA {
@@ -400,6 +377,7 @@
 @media (max-width: 511px) {
   .text__v4TnA {
     letter-spacing: -3%;
+    text-align: left;
   }
 }
 .text__uaaAw {
@@ -419,6 +397,7 @@
 @media (max-width: 511px) {
   .text__uaaAw {
     letter-spacing: -3%;
+    text-align: left;
   }
 }
 .prosConsSection:global(.__wab_instance) {

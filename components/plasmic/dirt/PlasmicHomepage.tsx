@@ -158,6 +158,7 @@ export type PlasmicHomepage__OverridesType = {
   link?: Flex__<"a"> & Partial<LinkProps>;
   heroSection?: Flex__<typeof HeroSection>;
   companiesWeCoveredInDirt?: Flex__<typeof CompanyCarouselSection>;
+  brandItem?: Flex__<typeof BrandItem>;
   dirtRichText?: Flex__<typeof DirtRichText>;
   painPointsSection?: Flex__<typeof PainPointsSection>;
   sliderSection?: Flex__<typeof SliderSection>;
@@ -358,43 +359,9 @@ function PlasmicHomepage__RenderFunc(props: {
             highlightedWord={" dirt"}
           >
             <BrandItem
-              className={classNames("__wab_instance", sty.brandItem__xo4H1)}
-              image={"/plasmic/dirt/images/webflowLogoPng.png"}
-              title={"Webflow"}
-            />
-
-            <BrandItem
-              className={classNames("__wab_instance", sty.brandItem__kuCv1)}
-              image={"/plasmic/dirt/images/webflowLogoPng.png"}
-              title={"Webflow"}
-            />
-
-            <BrandItem
-              className={classNames("__wab_instance", sty.brandItem___7Nr7D)}
-              image={"/plasmic/dirt/images/webflowLogoPng.png"}
-              title={"Webflow"}
-            />
-
-            <BrandItem
-              className={classNames("__wab_instance", sty.brandItem__qTIp)}
-              image={"/plasmic/dirt/images/webflowLogoPng.png"}
-              title={"Webflow"}
-            />
-
-            <BrandItem
-              className={classNames("__wab_instance", sty.brandItem__yl83X)}
-              image={"/plasmic/dirt/images/webflowLogoPng.png"}
-              title={"Webflow"}
-            />
-
-            <BrandItem
-              className={classNames("__wab_instance", sty.brandItem__r12W1)}
-              image={"/plasmic/dirt/images/webflowLogoPng.png"}
-              title={"Webflow"}
-            />
-
-            <BrandItem
-              className={classNames("__wab_instance", sty.brandItem__zI2R)}
+              data-plasmic-name={"brandItem"}
+              data-plasmic-override={overrides.brandItem}
+              className={classNames("__wab_instance", sty.brandItem)}
               image={"/plasmic/dirt/images/webflowLogoPng.png"}
               title={"Webflow"}
             />
@@ -1225,6 +1192,7 @@ const PlasmicDescendants = {
     "link",
     "heroSection",
     "companiesWeCoveredInDirt",
+    "brandItem",
     "dirtRichText",
     "painPointsSection",
     "sliderSection",
@@ -1241,7 +1209,8 @@ const PlasmicDescendants = {
   dirtNav: ["dirtNav", "link"],
   link: ["link"],
   heroSection: ["heroSection"],
-  companiesWeCoveredInDirt: ["companiesWeCoveredInDirt"],
+  companiesWeCoveredInDirt: ["companiesWeCoveredInDirt", "brandItem"],
+  brandItem: ["brandItem"],
   dirtRichText: ["dirtRichText"],
   painPointsSection: ["painPointsSection"],
   sliderSection: ["sliderSection"],
@@ -1264,6 +1233,7 @@ type NodeDefaultElementType = {
   link: "a";
   heroSection: typeof HeroSection;
   companiesWeCoveredInDirt: typeof CompanyCarouselSection;
+  brandItem: typeof BrandItem;
   dirtRichText: typeof DirtRichText;
   painPointsSection: typeof PainPointsSection;
   sliderSection: typeof SliderSection;
@@ -1344,6 +1314,7 @@ export const PlasmicHomepage = Object.assign(
     link: makeNodeComponent("link"),
     heroSection: makeNodeComponent("heroSection"),
     companiesWeCoveredInDirt: makeNodeComponent("companiesWeCoveredInDirt"),
+    brandItem: makeNodeComponent("brandItem"),
     dirtRichText: makeNodeComponent("dirtRichText"),
     painPointsSection: makeNodeComponent("painPointsSection"),
     sliderSection: makeNodeComponent("sliderSection"),

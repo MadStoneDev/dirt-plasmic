@@ -347,9 +347,11 @@ function PlasmicNewsletter__RenderFunc(props: {
                     "__wab_instance",
                     sty.newsletterFormSection__y7ZHg
                   )}
+                  listId={"DIRT List"}
                   submitButtonLabel={"Yes, Get me dirty"}
                   successMessage={"Thanks for subscribing!"}
                   successMessageColour={"dirt-green"}
+                  tags={"DIRT form submission"}
                 />
               </section>
             </div>

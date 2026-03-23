@@ -713,7 +713,7 @@ function PlasmicAbout__RenderFunc(props: {
             }
             footerLogo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
             heading1={"Brilliant brands don\u2019t grow on trees."}
-            heading1Uppercase={false}
+            heading1Uppercase={true}
             heading2={"They grow in the DIRT."}
             link1Text={"About"}
             link1Url={"/about"}
