@@ -19,6 +19,47 @@ const UNDERLINE_SVGS: Record<string, string> = {
   deep: "/underline-deep.svg",
 };
 
+/* ─── Shared underline style ─── */
+function underlineStyle(colour: string): React.CSSProperties {
+  const underlineSvg = UNDERLINE_SVGS[colour] || UNDERLINE_SVGS.pop;
+  return {
+    display: "inline",
+    backgroundImage: `url("${underlineSvg}")`,
+    backgroundPosition: "bottom left",
+    backgroundSize: "100% 7px",
+    backgroundRepeat: "no-repeat",
+    WebkitBoxDecorationBreak: "clone",
+    boxDecorationBreak: "clone" as any,
+    paddingBottom: "4px",
+  };
+}
+
+/* ─── DirtHighlightLink ─── */
+interface LinkProps {
+  colour: string;
+  text: string;
+  href: string;
+  target: string;
+}
+
+function DirtHighlightLink({ colour, text, href, target }: LinkProps) {
+  return (
+    <a
+      href={href}
+      target={target}
+      rel={target === "_blank" ? "noopener noreferrer" : undefined}
+      style={{
+        ...underlineStyle(colour),
+        color: "inherit",
+        textDecoration: "none",
+        cursor: "pointer",
+      }}
+    >
+      {text}
+    </a>
+  );
+}
+
 /* ─── DirtHighlight ─── */
 interface HighlightProps {
   colour: string;
@@ -80,20 +121,12 @@ function DirtHighlight({ colour, text, tooltip }: HighlightProps) {
   }, [capturePos]);
 
   const resolvedColour = COLOURS[colour] || COLOURS.pop;
-  const underlineSvg = UNDERLINE_SVGS[colour] || UNDERLINE_SVGS.pop;
 
   return (
     <span
       ref={spanRef}
       style={{
-        display: "inline",
-        backgroundImage: `url("${underlineSvg}")`,
-        backgroundPosition: "bottom left",
-        backgroundSize: "100% 7px",
-        backgroundRepeat: "no-repeat",
-        WebkitBoxDecorationBreak: "clone",
-        boxDecorationBreak: "clone" as any,
-        paddingBottom: "4px",
+        ...underlineStyle(colour),
         cursor: "pointer",
       }}
       onMouseEnter={showTooltip}
@@ -132,8 +165,23 @@ function DirtHighlight({ colour, text, tooltip }: HighlightProps) {
 }
 
 /* ─── Shortcode regex ─── */
-// Matches {colour|text|tooltip}
+// Matches {colour|text|tooltip} or {colour|text|link:url} or {colour|text|link:url:_blank}
 const SHORTCODE_RE = /\{(pop|green|blue|deep)\|([^|]+)\|([^}]+)\}/g;
+
+/* ─── Link payload parser ─── */
+const VALID_TARGETS = new Set(["_blank", "_self", "_parent", "_top"]);
+
+function parseLinkPayload(payload: string): { href: string; target: string } {
+  // payload is everything after "link:" e.g. "https://example.com:_blank"
+  const lastColon = payload.lastIndexOf(":");
+  if (lastColon > 0) {
+    const possibleTarget = payload.slice(lastColon + 1);
+    if (VALID_TARGETS.has(possibleTarget)) {
+      return { href: payload.slice(0, lastColon), target: possibleTarget };
+    }
+  }
+  return { href: payload, target: "_self" };
+}
 
 /* ─── Text colour presets ─── */
 const TEXT_COLOURS: Record<string, string> = {
@@ -192,15 +240,29 @@ export function DirtRichText({
       );
     }
 
-    const [, colour, highlightedText, tooltip] = match;
-    parts.push(
-      <DirtHighlight
-        key={key++}
-        colour={colour}
-        text={highlightedText}
-        tooltip={tooltip}
-      />
-    );
+    const [, colour, highlightedText, thirdSegment] = match;
+
+    if (thirdSegment.startsWith("link:")) {
+      const { href, target } = parseLinkPayload(thirdSegment.slice(5));
+      parts.push(
+        <DirtHighlightLink
+          key={key++}
+          colour={colour}
+          text={highlightedText}
+          href={href}
+          target={target}
+        />
+      );
+    } else {
+      parts.push(
+        <DirtHighlight
+          key={key++}
+          colour={colour}
+          text={highlightedText}
+          tooltip={thirdSegment}
+        />
+      );
+    }
 
     lastIndex = SHORTCODE_RE.lastIndex;
   }

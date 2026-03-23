@@ -168,7 +168,7 @@ export function DirtNav({
 
       <nav
         ref={navRef}
-        className={`${navBg} ${
+        className={`${navBg} border-b-[0.5px] border-dirt-pop/20 ${
           navMode === "relative"
             ? "relative w-full"
             : `fixed left-0 right-0 z-50 shadow-lg ${
