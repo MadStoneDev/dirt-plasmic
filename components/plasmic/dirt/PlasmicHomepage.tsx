@@ -1086,7 +1086,9 @@ function PlasmicHomepage__RenderFunc(props: {
                     "__wab_instance",
                     sty.prosConsItem__cAaui
                   )}
-                  text={"If you find this stock photo as funny as we do"}
+                  text={
+                    "If you find {pop|this stock photo|link:https://www.gettyimages.com.au/detail/photo/smiling-workers-having-fun-while-testing-royalty-free-image/1260105466?adppopup=true:_blank} as funny as we do"
+                  }
                 />
               </React.Fragment>
             }
