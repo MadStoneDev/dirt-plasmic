@@ -158,7 +158,6 @@ export type PlasmicHomepage__OverridesType = {
   link?: Flex__<"a"> & Partial<LinkProps>;
   heroSection?: Flex__<typeof HeroSection>;
   companiesWeCoveredInDirt?: Flex__<typeof CompanyCarouselSection>;
-  brandItem?: Flex__<typeof BrandItem>;
   dirtRichText?: Flex__<typeof DirtRichText>;
   painPointsSection?: Flex__<typeof PainPointsSection>;
   sliderSection?: Flex__<typeof SliderSection>;
@@ -359,11 +358,28 @@ function PlasmicHomepage__RenderFunc(props: {
             highlightedWord={" dirt"}
           >
             <BrandItem
-              data-plasmic-name={"brandItem"}
-              data-plasmic-override={overrides.brandItem}
-              className={classNames("__wab_instance", sty.brandItem)}
-              image={"/plasmic/dirt/images/webflowLogoPng.png"}
-              title={"Webflow"}
+              altText={"Techne Logo"}
+              bgColour={"custom"}
+              className={classNames("__wab_instance", sty.brandItem__xo4H1)}
+              customBgColour={"#ECECEC"}
+              image={"/plasmic/dirt/images/techneJpg3.jpg"}
+              title={"Techne"}
+            />
+
+            <BrandItem
+              altText={"StudioMX Logo"}
+              bgColour={"white"}
+              className={classNames("__wab_instance", sty.brandItem___4PbjL)}
+              image={"/plasmic/dirt/images/studiomxLogoJpeg2.jpg"}
+              title={"StudioMX"}
+            />
+
+            <BrandItem
+              altText={"DeSimone Logo"}
+              bgColour={"black"}
+              className={classNames("__wab_instance", sty.brandItem___3Sb5Y)}
+              image={"/plasmic/dirt/images/deSimonePng2.png"}
+              title={"DeSimone"}
             />
           </CompanyCarouselSection>
           <InfoSection
@@ -1196,7 +1212,6 @@ const PlasmicDescendants = {
     "link",
     "heroSection",
     "companiesWeCoveredInDirt",
-    "brandItem",
     "dirtRichText",
     "painPointsSection",
     "sliderSection",
@@ -1213,8 +1228,7 @@ const PlasmicDescendants = {
   dirtNav: ["dirtNav", "link"],
   link: ["link"],
   heroSection: ["heroSection"],
-  companiesWeCoveredInDirt: ["companiesWeCoveredInDirt", "brandItem"],
-  brandItem: ["brandItem"],
+  companiesWeCoveredInDirt: ["companiesWeCoveredInDirt"],
   dirtRichText: ["dirtRichText"],
   painPointsSection: ["painPointsSection"],
   sliderSection: ["sliderSection"],
@@ -1237,7 +1251,6 @@ type NodeDefaultElementType = {
   link: "a";
   heroSection: typeof HeroSection;
   companiesWeCoveredInDirt: typeof CompanyCarouselSection;
-  brandItem: typeof BrandItem;
   dirtRichText: typeof DirtRichText;
   painPointsSection: typeof PainPointsSection;
   sliderSection: typeof SliderSection;
@@ -1318,7 +1331,6 @@ export const PlasmicHomepage = Object.assign(
     link: makeNodeComponent("link"),
     heroSection: makeNodeComponent("heroSection"),
     companiesWeCoveredInDirt: makeNodeComponent("companiesWeCoveredInDirt"),
-    brandItem: makeNodeComponent("brandItem"),
     dirtRichText: makeNodeComponent("dirtRichText"),
     painPointsSection: makeNodeComponent("painPointsSection"),
     sliderSection: makeNodeComponent("sliderSection"),

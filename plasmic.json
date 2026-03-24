@@ -462,6 +462,41 @@
           "id": "kg8Z6rV9-Cj-",
           "name": "Techne Mockup - Laptop on a pile of dirt.png",
           "filePath": "../public/plasmic/dirt/images/techneMockupLaptopOnAPileOfDirtPng.png"
+        },
+        {
+          "id": "x6nnKyOQGJbL",
+          "name": "techne.jpg",
+          "filePath": "../public/plasmic/dirt/images/techneJpg.jpg"
+        },
+        {
+          "id": "E3P8e5qT0Jxo",
+          "name": "techne.jpg 2",
+          "filePath": "../public/plasmic/dirt/images/techneJpg2.jpg"
+        },
+        {
+          "id": "qzedb1i6YWZu",
+          "name": "de_simone.png",
+          "filePath": "../public/plasmic/dirt/images/deSimonePng.png"
+        },
+        {
+          "id": "_3U_Po2fPAZf",
+          "name": "studiomx_logo.jpeg",
+          "filePath": "../public/plasmic/dirt/images/studiomxLogoJpeg.jpg"
+        },
+        {
+          "id": "__A4mxcnPd_L",
+          "name": "de_simone.png 2",
+          "filePath": "../public/plasmic/dirt/images/deSimonePng2.png"
+        },
+        {
+          "id": "MofBPyGqili1",
+          "name": "studiomx_logo.jpeg 2",
+          "filePath": "../public/plasmic/dirt/images/studiomxLogoJpeg2.jpg"
+        },
+        {
+          "id": "-W43FQfdHnX2",
+          "name": "techne.jpg 3",
+          "filePath": "../public/plasmic/dirt/images/techneJpg3.jpg"
         }
       ],
       "indirect": false,
