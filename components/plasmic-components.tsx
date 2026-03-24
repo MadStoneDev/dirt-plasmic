@@ -124,6 +124,27 @@ registerComponent(BrandItem, {
     image: "imageUrl",
     altText: "string",
     link: "string",
+    bgColour: {
+      type: "choice",
+      displayName: "Background Colour",
+      options: [
+        "dirt-deep",
+        "dirt-pop",
+        "dirt-green",
+        "dirt-blue",
+        "dirt-off-white",
+        "dirt-black",
+        "white",
+        "black",
+        "custom",
+      ],
+      defaultValue: "dirt-deep",
+    },
+    customBgColour: {
+      type: "string",
+      displayName: "Custom Background Colour (hex)",
+      hidden: (props: any) => props.bgColour !== "custom",
+    },
   },
   importPath: "./components/sections/BrandItem",
 });
