@@ -27,57 +27,95 @@ export function HeroSection({
 }: HeroSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  // Scale runway with viewport so it's proportional on mobile vs desktop
-  const [animationRunway, setAnimationRunway] = useState(600);
+  const imageAreaRef = useRef<HTMLDivElement>(null);
+  const [animationStarted, setAnimationStarted] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1024,
+  );
+  const [windowHeight, setWindowHeight] = useState(
+    typeof window !== "undefined" ? window.innerHeight : 768,
+  );
 
   useEffect(() => {
-    const updateRunway = () => {
-      // ~40vw, clamped between 200px and 600px
-      setAnimationRunway(Math.min(600, Math.max(200, window.innerWidth * 0.4)));
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
     };
-    updateRunway();
-    window.addEventListener("resize", updateRunway);
-    return () => window.removeEventListener("resize", updateRunway);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  /* ── Auto-trigger: start animation when image area enters viewport ── */
   useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current || !textRef.current) return;
+    const el = imageAreaRef.current;
+    if (!el) return;
 
-      const rect = sectionRef.current.getBoundingClientRect();
-      const scrolled = Math.max(0, -rect.top);
-      const textHeight = textRef.current.offsetHeight;
-      const imageHeight = window.innerWidth * 0.63;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimationStarted(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 },
+    );
 
-      // Animation starts when the image area enters full view, whichever comes first:
-      // 1. Bottom of image area hits bottom of viewport
-      const stickyStartBottom = Math.max(0, textHeight - window.innerHeight + imageHeight);
-      // 2. Top of image area hits top of viewport
-      const stickyStartTop = textHeight;
-      const stickyStart = Math.min(stickyStartTop, stickyStartBottom);
-      const animationScrolled = scrolled - stickyStart;
-      const progress = Math.max(
-        0,
-        Math.min(1, animationScrolled / animationRunway),
-      );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
-      setScrollProgress(progress);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [animationRunway]);
+  /* ── Scroll-driven animation (commented out — kept for potential reuse) ── */
+  // const [scrollProgress, setScrollProgress] = useState(0);
+  // const [animationRunway, setAnimationRunway] = useState(600);
+  //
+  // useEffect(() => {
+  //   const updateRunway = () => {
+  //     // ~40vw, clamped between 200px and 600px
+  //     setAnimationRunway(Math.min(600, Math.max(200, window.innerWidth * 0.4)));
+  //   };
+  //   updateRunway();
+  //   window.addEventListener("resize", updateRunway);
+  //   return () => window.removeEventListener("resize", updateRunway);
+  // }, []);
+  //
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!sectionRef.current || !textRef.current) return;
+  //
+  //     const rect = sectionRef.current.getBoundingClientRect();
+  //     const scrolled = Math.max(0, -rect.top);
+  //     const textHeight = textRef.current.offsetHeight;
+  //     const imageHeight = window.innerWidth * 0.63;
+  //
+  //     // Animation starts when the image area enters full view, whichever comes first:
+  //     // 1. Bottom of image area hits bottom of viewport
+  //     const stickyStartBottom = Math.max(0, textHeight - window.innerHeight + imageHeight);
+  //     // 2. Top of image area hits top of viewport
+  //     const stickyStartTop = textHeight;
+  //     const stickyStart = Math.min(stickyStartTop, stickyStartBottom);
+  //     const animationScrolled = scrolled - stickyStart;
+  //     const progress = Math.max(
+  //       0,
+  //       Math.min(1, animationScrolled / animationRunway),
+  //     );
+  //
+  //     setScrollProgress(progress);
+  //   };
+  //
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+  //   handleScroll();
+  //
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [animationRunway]);
 
   // On tall viewports (mobile) the image doesn't need to rise as far
-  const aspectRatio = typeof window !== "undefined"
-    ? Math.min(1, window.innerWidth / window.innerHeight)
-    : 1;
-  const travelRange = 20 + aspectRatio * 22; // mobile ~30%, desktop ~52%
-  const midgroundOffset = 25 + scrollProgress * travelRange;
+  const aspectRatio = Math.min(1, windowWidth / windowHeight);
+  // Extra boost for wide screens (1600px+)
+  const wideBoost = Math.max(0, (windowWidth - 1600) / 960) * 60;
+  const travelRange = 20 + aspectRatio * 23 + wideBoost;
+  const midgroundStart = 25;
+  const midgroundEnd = 25 + travelRange;
+  const midgroundOffset = animationStarted ? midgroundEnd : midgroundStart;
 
   return (
     <section
@@ -145,7 +183,7 @@ export function HeroSection({
       </div>
       </div>
 
-      <div className="sticky h-[63vw] overflow-hidden pointer-events-none" style={{ top: "max(0px, calc(100dvh - 63vw))" }}>
+      <div ref={imageAreaRef} className="relative h-[63vw] overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-0 right-0 h-[60vw] max-h-215.75">
           {backgroundImage && (
             <Image
@@ -163,6 +201,7 @@ export function HeroSection({
               style={{
                 bottom: `${midgroundOffset}%`,
                 transform: "translateY(50%)",
+                transition: "bottom 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
               }}
             >
               <Image
@@ -181,6 +220,7 @@ export function HeroSection({
               style={{
                 bottom: `${midgroundOffset}%`,
                 transform: "translateY(50%)",
+                transition: "bottom 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
               }}
             >
               <span
@@ -203,8 +243,8 @@ export function HeroSection({
         </div>
       </div>
 
-      {/* Scroll runway — midground animation plays while images are stuck */}
-      <div style={{ height: animationRunway }} aria-hidden="true" />
+      {/* Scroll runway — commented out, kept for potential reuse */}
+      {/* <div style={{ height: animationRunway }} aria-hidden="true" /> */}
     </section>
   );
 }

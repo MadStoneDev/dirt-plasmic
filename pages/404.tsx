@@ -2,6 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
+import { SEO } from "../components/SEO";
 
 import { Plasmic_404 } from "../components/plasmic/dirt/Plasmic_404";
 import { useRouter } from "next/router";
@@ -25,13 +26,16 @@ function _404() {
   // (https://nextjs.org/docs/advanced-features/custom-app).
 
   return (
-    <PageParamsProvider__
-      route={useRouter()?.pathname}
-      params={useRouter()?.query}
-      query={useRouter()?.query}
-    >
-      <Plasmic_404 />
-    </PageParamsProvider__>
+    <>
+      <SEO noIndex />
+      <PageParamsProvider__
+        route={useRouter()?.pathname}
+        params={useRouter()?.query}
+        query={useRouter()?.query}
+      >
+        <Plasmic_404 />
+      </PageParamsProvider__>
+    </>
   );
 }
 

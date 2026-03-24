@@ -2,6 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
+import { SEO } from "../components/SEO";
 
 import { PlasmicHomepage } from "../components/plasmic/dirt/PlasmicHomepage";
 import { useRouter } from "next/router";
@@ -20,13 +21,19 @@ function Homepage() {
   // 4. Props to set on the root node.
 
   return (
-    <PageParamsProvider__
-      route={useRouter()?.pathname}
-      params={useRouter()?.query}
-      query={useRouter()?.query}
-    >
-      <PlasmicHomepage />
-    </PageParamsProvider__>
+    <>
+      <SEO
+        description="DIRT is a brand and marketing consultancy that helps businesses uncover what makes them different, build strategy that sticks, and grow with intention."
+        ogType="website"
+      />
+      <PageParamsProvider__
+        route={useRouter()?.pathname}
+        params={useRouter()?.query}
+        query={useRouter()?.query}
+      >
+        <PlasmicHomepage />
+      </PageParamsProvider__>
+    </>
   );
 }
 

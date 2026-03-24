@@ -26,6 +26,8 @@ export interface FooterSectionProps {
   newsletterHeading?: string;
   newsletterChildren?: ReactNode;
   newsletterDescription?: string;
+  newsletterListId?: string;
+  newsletterTags?: string;
   // Contact column
   contactHeading?: string;
   contactDescription?: string;
@@ -74,6 +76,8 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
     newsletterHeading,
     newsletterChildren,
     newsletterDescription,
+    newsletterListId,
+    newsletterTags,
     contactHeading,
     contactDescription,
     linksHeading,
@@ -96,10 +100,15 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
     name: "",
     email: "",
     company: "",
+    heardAbout: "",
+    referralName: "",
     message: "",
   });
   const [newsletterFirstName, setNewsletterFirstName] = useState("");
   const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterSubmitting, setNewsletterSubmitting] = useState(false);
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
+  const [newsletterError, setNewsletterError] = useState("");
 
   const links = [
     { text: link1Text, url: link1Url },
@@ -117,20 +126,33 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setNewsletterError("");
+    setNewsletterSubmitting(true);
+
     try {
-      await fetch("/api/newsletter-subscribe", {
+      const res = await fetch("/api/newsletter-subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: newsletterEmail,
           firstName: newsletterFirstName,
-          listId: "6",
+          listId: newsletterListId,
+          tags: newsletterTags,
         }),
       });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong");
+      }
+
       setNewsletterFirstName("");
       setNewsletterEmail("");
-    } catch (err) {
-      console.error("Newsletter signup error:", err);
+      setNewsletterSubmitted(true);
+    } catch (err: any) {
+      setNewsletterError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setNewsletterSubmitting(false);
     }
   };
 
@@ -245,6 +267,36 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                 }
                 className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
               />
+              <select
+                value={formData.heardAbout}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    heardAbout: e.target.value,
+                    referralName: e.target.value !== "Referral" ? "" : formData.referralName,
+                  })
+                }
+                required
+                className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans outline-none focus:ring-2 focus:ring-dirt-pop appearance-none"
+                style={!formData.heardAbout ? { color: "rgba(92, 0, 4, 0.5)" } : undefined}
+              >
+                <option value="" disabled>How did you hear about us?</option>
+                <option value="Google">Google</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Podcast">Podcast</option>
+                <option value="Referral">Referral</option>
+              </select>
+              {formData.heardAbout === "Referral" && (
+                <input
+                  type="text"
+                  placeholder="Who referred you?"
+                  value={formData.referralName}
+                  onChange={(e) =>
+                    setFormData({ ...formData, referralName: e.target.value })
+                  }
+                  className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+                />
+              )}
               <textarea
                 placeholder="What are you hoping DIRT can help you change, fix, or build?"
                 rows={4}
@@ -307,32 +359,42 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                   {newsletterDescription}
                 </p>
               )}
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-2">
-                <input
-                  type="text"
-                  placeholder="First name"
-                  value={newsletterFirstName}
-                  onChange={(e) => setNewsletterFirstName(e.target.value)}
-                  required
-                  className="px-3 py-2 bg-white text-dirt-deep font-sans text-sm placeholder:text-dirt-deep/50 outline-none"
-                />
-                <div className="flex">
+              {newsletterSubmitted ? (
+                <p className="text-dirt-green font-display font-bold text-sm uppercase">
+                  Thanks for subscribing!
+                </p>
+              ) : (
+                <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-2">
                   <input
-                    type="email"
-                    placeholder="Your email"
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    type="text"
+                    placeholder="First name"
+                    value={newsletterFirstName}
+                    onChange={(e) => setNewsletterFirstName(e.target.value)}
                     required
-                    className="grow px-3 py-2 bg-white text-dirt-deep font-sans text-sm placeholder:text-dirt-deep/50 outline-none"
+                    className="px-3 py-2 bg-white text-dirt-deep font-sans text-sm placeholder:text-dirt-deep/50 outline-none"
                   />
-                  <button
-                    type="submit"
-                    className="px-4 py-2 bg-dirt-pop text-dirt-deep font-display font-bold text-sm uppercase hover:bg-dirt-green transition-colors"
-                  >
-                    Subscribe
-                  </button>
-                </div>
-              </form>
+                  <div className="flex">
+                    <input
+                      type="email"
+                      placeholder="Your email"
+                      value={newsletterEmail}
+                      onChange={(e) => setNewsletterEmail(e.target.value)}
+                      required
+                      className="grow px-3 py-2 bg-white text-dirt-deep font-sans text-sm placeholder:text-dirt-deep/50 outline-none"
+                    />
+                    <button
+                      type="submit"
+                      disabled={newsletterSubmitting}
+                      className="px-4 py-2 bg-dirt-pop text-dirt-deep font-display font-bold text-sm uppercase hover:bg-dirt-green disabled:opacity-50 transition-colors"
+                    >
+                      {newsletterSubmitting ? "..." : "Subscribe"}
+                    </button>
+                  </div>
+                  {newsletterError && (
+                    <p className="text-red-400 font-sans text-xs">{newsletterError}</p>
+                  )}
+                </form>
+              )}
             </div>
 
             {/* Column 3 - Contact */}

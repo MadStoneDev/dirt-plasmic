@@ -2,6 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
+import { SEO } from "../components/SEO";
 
 import { PlasmicContact } from "../components/plasmic/dirt/PlasmicContact";
 import { useRouter } from "next/router";
@@ -25,13 +26,19 @@ function Contact() {
   // (https://nextjs.org/docs/advanced-features/custom-app).
 
   return (
-    <PageParamsProvider__
-      route={useRouter()?.pathname}
-      params={useRouter()?.query}
-      query={useRouter()?.query}
-    >
-      <PlasmicContact />
-    </PageParamsProvider__>
+    <>
+      <SEO
+        description="Get in touch with DIRT. Tell us what you're hoping to change, fix, or build — and we'll dig in together."
+        jsonLdType="ContactPage"
+      />
+      <PageParamsProvider__
+        route={useRouter()?.pathname}
+        params={useRouter()?.query}
+        query={useRouter()?.query}
+      >
+        <PlasmicContact />
+      </PageParamsProvider__>
+    </>
   );
 }
 

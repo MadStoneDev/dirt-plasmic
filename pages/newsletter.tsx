@@ -3,6 +3,7 @@
 import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../components/plasmic/dirt/PlasmicGlobalContextsProvider";
+import { SEO } from "../components/SEO";
 
 import { PlasmicNewsletter } from "../components/plasmic/dirt/PlasmicNewsletter";
 import { useRouter } from "next/router";
@@ -27,17 +28,22 @@ function Newsletter() {
   // (https://nextjs.org/docs/advanced-features/custom-app).
 
   return (
-    <GlobalContextsProvider>
-      <PlasmicQueryDataProvider>
-        <PageParamsProvider__
-          route={useRouter()?.pathname}
-          params={useRouter()?.query}
-          query={useRouter()?.query}
-        >
-          <PlasmicNewsletter />
-        </PageParamsProvider__>
-      </PlasmicQueryDataProvider>
-    </GlobalContextsProvider>
+    <>
+      <SEO
+        description="Subscribe to the DIRT newsletter for brand strategy insights, marketing tips, and honest advice on growing your business."
+      />
+      <GlobalContextsProvider>
+        <PlasmicQueryDataProvider>
+          <PageParamsProvider__
+            route={useRouter()?.pathname}
+            params={useRouter()?.query}
+            query={useRouter()?.query}
+          >
+            <PlasmicNewsletter />
+          </PageParamsProvider__>
+        </PlasmicQueryDataProvider>
+      </GlobalContextsProvider>
+    </>
   );
 }
 

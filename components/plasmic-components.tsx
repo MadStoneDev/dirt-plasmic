@@ -825,6 +825,16 @@ registerComponent(FooterSection, {
     newsletterHeading: "string",
     newsletterChildren: { type: "slot", displayName: "Newsletter Content" },
     newsletterDescription: "string",
+    newsletterListId: {
+      type: "string",
+      displayName: "Newsletter AC List ID",
+      description: "ActiveCampaign list ID for the footer newsletter form",
+    },
+    newsletterTags: {
+      type: "string",
+      displayName: "Newsletter AC Tags",
+      description: "Comma-separated tag names for the footer newsletter form",
+    },
     // Contact column
     contactHeading: "string",
     contactDescription: "string",
