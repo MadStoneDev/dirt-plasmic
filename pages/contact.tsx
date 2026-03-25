@@ -28,7 +28,7 @@ function Contact() {
   return (
     <>
       <SEO
-        description="Get in touch with DIRT. Tell us what you're hoping to change, fix, or build — and we'll dig in together."
+        description="Have a ConTech, construction, property or building-product brand that needs better positioning, messaging, and branding. Get in touch and let’s dig in."
         jsonLdType="ContactPage"
       />
       <PageParamsProvider__

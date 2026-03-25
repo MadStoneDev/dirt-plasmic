@@ -28,7 +28,7 @@ function About() {
   return (
     <>
       <SEO
-        description="Learn about DIRT — who we are, what we believe, and why we do things differently."
+        description="Founded by Nikita Morell, DIRT helps construction, ConTech and product brands sharpen their positioning and messaging to win more work."
         jsonLdType="AboutPage"
       />
       <PageParamsProvider__

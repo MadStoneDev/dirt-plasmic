@@ -30,8 +30,8 @@ export function DirtFrameworkSection({
   const blockCount = allChildren.length;
 
   // Block and layout dimensions (px) — no vh units, Plasmic-safe
-  const BLOCK_HEIGHT = 288; // matches min-h-72
-  const OVERLAP = 140;
+  const BLOCK_HEIGHT = 144; // matches h-36
+  const OVERLAP = 100;
   const GAP = 0;
   const STICKY_PAD = 64; // py-8 = 32px * 2
   const HEADER_BUFFER = 250; // header area with padding
@@ -41,10 +41,12 @@ export function DirtFrameworkSection({
   const stickyHeight = expandedHeight + STICKY_PAD;
 
   // Scroll animation distance — how much scrolling drives the 0→1 expansion
-  const animationDistance = Math.max(blockCount * 250, 800);
+  const animationDistance = 500;
+  // Extra hold after cards are fully open before section releases
+  const holdDistance = 400;
 
-  // Total section height = header + sticky content + animation scroll room
-  const sectionHeight = HEADER_BUFFER + stickyHeight + animationDistance;
+  // Total section height = header + sticky content + animation + hold
+  const sectionHeight = HEADER_BUFFER + stickyHeight + animationDistance + holdDistance;
 
   // Track md breakpoint (768px)
   useEffect(() => {
@@ -69,20 +71,17 @@ export function DirtFrameworkSection({
         ticking = false;
         return;
       }
-      const sectionRect = sectionRef.current.getBoundingClientRect();
       const triggerRect = triggerRef.current.getBoundingClientRect();
+      const sectionRect = sectionRef.current.getBoundingClientRect();
 
-      // Distance from section top to trigger = header height
-      const headerHeight = triggerRect.top - sectionRect.top;
-      // Animation starts when trigger hits viewport top, ends when section bottom hits viewport bottom
-      const totalAnimationScroll =
-        sectionRef.current.offsetHeight - window.innerHeight - headerHeight;
-
-      if (totalAnimationScroll > 0) {
-        const scrolled = -triggerRect.top;
-        const progress = Math.max(0, Math.min(1, scrolled / totalAnimationScroll));
-        setScrollProgress(progress);
-      }
+      // triggerRef is at section top (absolute positioned).
+      // Once the section scrolls up and the sticky pins, triggerRect.top keeps decreasing.
+      // We want animation to start once the heading area has scrolled to viewport top
+      // (i.e. after the section's top padding has scrolled away).
+      const sectionPadding = 160; // md:pt-40
+      const scrolled = -(triggerRect.top + sectionPadding);
+      const progress = Math.max(0, Math.min(1, scrolled / animationDistance));
+      setScrollProgress(progress);
       ticking = false;
     };
 
@@ -107,9 +106,13 @@ export function DirtFrameworkSection({
         gridColumn: "1 / -1",
       }}
     >
-      {/* Header — scrolls away naturally before blocks pin */}
-      <div className="mb-0">
-        {/*<div className="max-w-7xl mx-auto">*/}
+      {/* Trigger — scrolls normally, drives animation progress */}
+      <div ref={triggerRef} className="absolute" style={{ top: 0, left: 0 }} />
+
+      {/* Sticky container — heading + blocks pin together */}
+      <div className="md:sticky top-0" style={{ height: isMd ? `${stickyHeight + HEADER_BUFFER}px` : "auto" }}>
+        {/* Header */}
+        <div className="mb-0 pt-4">
           <h2 className="max-w-xs md:max-w-none mx-auto font-display font-bold text-5xl md:text-8xl text-center mb-6">
             <span className="text-dirt-pop">{fmt(headingStart)}</span>
             <span className="text-dirt-deep">{fmt(headingHighlight)}</span>
@@ -120,15 +123,9 @@ export function DirtFrameworkSection({
               {fmt(description)}
             </p>
           )}
-        {/*</div>*/}
-      </div>
+        </div>
 
-      {/* Trigger — marks where the sticky pin begins */}
-      <div ref={triggerRef} />
-
-      {/* Sticky blocks — pins when reaching viewport top */}
-      <div className="md:sticky top-0" style={{ height: isMd ? `${stickyHeight}px` : "auto" }}>
-        <div className={`${isMd ? "h-full" : ""} py-8`}>
+        <div className={`${isMd ? "" : ""} py-8`}>
           <div className={isMd ? "h-full" : ""}>
             <div className={`relative ${isMd ? "h-full" : ""}`}>
               {displayChildren.map((child, displayIndex) => {
@@ -152,7 +149,7 @@ export function DirtFrameworkSection({
                     }}
                   >
                     {React.isValidElement(child)
-                      ? React.cloneElement(child as React.ReactElement<any>, { originalIndex })
+                      ? React.cloneElement(child as React.ReactElement<any>, { originalIndex, scrollProgress })
                       : child}
                   </div>
                 );

@@ -53,28 +53,27 @@ export function SliderSection({
 
   return (
     <section
-      className="relative px-5 md:px-8 h-250 bg-dirt-off-white bg-cover md:bg-contain"
+      className="relative px-5 md:px-8 h-250 bg-dirt-off-white pt-40 pb-[70px] md:pb-[215px]"
       style={{
         gridColumn: "1 / -1",
-        paddingTop: "160px",
-        paddingBottom: "215px",
-        backgroundImage: backgroundImage
-          ? `url(${backgroundImage})`
-          : undefined,
-        backgroundPosition: "bottom center",
-        backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Step Images - fills section, changes with current step */}
+      {/* Section background image — starts 240px from top to clear heading */}
+      {backgroundImage && (
+        <img
+          src={backgroundImage}
+          alt=""
+          className="absolute left-0 bottom-0 w-full object-cover"
+          style={{ top: "240px", height: "calc(100% - 240px)", zIndex: 0 }}
+        />
+      )}
+      {/* Step Images - fills section below 240px, changes with current step */}
       {stopsData[currentStep]?.image && (
-        <div
-          className="absolute inset-0 bg-cover md:bg-contain transition-opacity duration-500"
-          style={{
-            backgroundImage: `url(${stopsData[currentStep].image})`,
-            backgroundPosition: "bottom center",
-              backgroundRepeat: "no-repeat",
-            zIndex: 0,
-          }}
+        <img
+          src={stopsData[currentStep].image}
+          alt=""
+          className="absolute left-0 bottom-0 w-full object-cover transition-opacity duration-500"
+          style={{ top: "240px", height: "calc(100% - 240px)", zIndex: 0 }}
         />
       )}
 
