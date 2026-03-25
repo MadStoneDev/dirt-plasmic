@@ -497,6 +497,36 @@
           "id": "-W43FQfdHnX2",
           "name": "techne.jpg 3",
           "filePath": "../public/plasmic/dirt/images/techneJpg3.jpg"
+        },
+        {
+          "id": "_pVV3W4Dq9j-",
+          "name": "visual brand & identity.png",
+          "filePath": "../public/plasmic/dirt/images/visualBrandIdentityPng.png"
+        },
+        {
+          "id": "9a5Vp7r4ZoBc",
+          "name": "website.png",
+          "filePath": "../public/plasmic/dirt/images/websitePng.png"
+        },
+        {
+          "id": "_uVmf2_jkqL9",
+          "name": "winning assets.png",
+          "filePath": "../public/plasmic/dirt/images/winningAssetsPng.png"
+        },
+        {
+          "id": "yl_fpcqMleaO",
+          "name": "dirt files - core.png",
+          "filePath": "../public/plasmic/dirt/images/dirtFilesCorePng.png"
+        },
+        {
+          "id": "Zgxs_fNT7r9D",
+          "name": "dirt files - studiomx.png",
+          "filePath": "../public/plasmic/dirt/images/dirtFilesStudiomxPng.png"
+        },
+        {
+          "id": "M3t0o4B17ksA",
+          "name": "dirt files - techne.png",
+          "filePath": "../public/plasmic/dirt/images/dirtFilesTechnePng.png"
         }
       ],
       "indirect": false,

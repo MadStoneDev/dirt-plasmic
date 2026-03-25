@@ -810,9 +810,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 "Bold visuals that make you unforgettable. (Including your distinctive new logo.)"
               }
               heading={"Visual brand identity"}
-              image={
-                "/plasmic/dirt/images/handComingOutOfDirtHoldingPhoneJpg.jpg"
-              }
+              image={"/plasmic/dirt/images/visualBrandIdentityPng.png"}
               tags={"Logo, Palette, Design Elements"}
             />
 
@@ -825,7 +823,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 "Your work is state-of-the-art. Your website should be, too."
               }
               heading={"Website"}
-              image={"/plasmic/dirt/images/modernLaptopOnDirtJpg.jpg"}
+              image={"/plasmic/dirt/images/websitePng.png"}
               tags={"Copywriting, Design*, Development, Maintenance, Naming"}
             />
 
@@ -838,7 +836,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 "Persuasive, plain-English tools that make it easy for clients to say \u201cYou\u2019re the one.\u201d"
               }
               heading={"Winning assets"}
-              image={"/plasmic/dirt/images/tradieWithGlovesUsingTabletJpg.jpg"}
+              image={"/plasmic/dirt/images/winningAssetsPng.png"}
               tags={
                 "Fee Proposals, Bid Submissions, Pitch Decks, Case Studies, Safety & Compliance Content"
               }
@@ -858,7 +856,7 @@ function PlasmicHomepage__RenderFunc(props: {
               buttonLink={"/contact"}
               className={classNames("__wab_instance", sty.dirtFile__gr4Vv)}
               heading={"Core FDM"}
-              image={"/plasmic/dirt/images/laptopSittingOnADirtMoundJpg.jpg"}
+              image={"/plasmic/dirt/images/dirtFilesCorePng.png"}
               tag1={"Website"}
               tag2={"Branding"}
             >
@@ -900,7 +898,7 @@ function PlasmicHomepage__RenderFunc(props: {
               buttonLink={"/contact"}
               className={classNames("__wab_instance", sty.dirtFile__nulPg)}
               heading={"StudioMX"}
-              image={"/plasmic/dirt/images/studioMxMockupLaptopInDirtPng.png"}
+              image={"/plasmic/dirt/images/dirtFilesStudiomxPng.png"}
               tag1={"Website"}
               tag2={"Branding"}
             >
@@ -942,9 +940,7 @@ function PlasmicHomepage__RenderFunc(props: {
               buttonLink={"/contact"}
               className={classNames("__wab_instance", sty.dirtFile__sKsj)}
               heading={"Techne"}
-              image={
-                "/plasmic/dirt/images/techneMockupLaptopOnAPileOfDirtPng.png"
-              }
+              image={"/plasmic/dirt/images/dirtFilesTechnePng.png"}
               tag1={"Website"}
               tag2={"Branding"}
             >
