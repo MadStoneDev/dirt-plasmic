@@ -412,7 +412,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   fontSize={16}
                   tabletFontSize={20}
                   text={
-                    "From  {green|3D printing|First, they did houses and offices. Next? Who knows.},  {pop|advanced composites|First, they did houses and offices.}, and  {blue|self-healing concrete|Water-activated bacteria produce calcium carbonate to seal cracks. Bonkers.}  to {blue|AI-driven predictive analytics|AI adoption in construction jumped from 26% in 2023 to 37% in 2025. We see where this is going.}, {pop|5D BIM|First, they did houses and offices.}, and {green|Digital Twins|We've thought about getting one for ourselves, but we've watched too much Black Mirror.}."
+                    "From  {green|3D printing|First, they did houses and offices. Next? Who knows.}, Advanced Composites, and  {blue|self-healing concrete|Water-activated bacteria produce calcium carbonate to seal cracks. Bonkers.} to {pop|AI-driven predictive analytics|AI adoption in construction jumped from 26% in 2023 to 37% in 2025. We see where this is going.}, 5D BIM, and {green|Digital Twins|We've thought about getting one for ourselves, but we've watched too much Black Mirror.}."
                   }
                   textColour={"dirt-black"}
                 />
