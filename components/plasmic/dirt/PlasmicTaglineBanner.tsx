@@ -141,6 +141,7 @@ function PlasmicTaglineBanner__RenderFunc(props: {
       className={classNames(
         projectcss.all,
         projectcss.a,
+        projectcss.a__8kaaM,
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,

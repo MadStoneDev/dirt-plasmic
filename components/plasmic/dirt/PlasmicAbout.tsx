@@ -255,6 +255,7 @@ function PlasmicAbout__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
+                  projectcss.a__8kaaM,
                   projectcss.__wab_text,
                   sty.link___9CiQl
                 )}
@@ -311,14 +312,18 @@ function PlasmicAbout__RenderFunc(props: {
                 <React.Fragment>
                   <React.Fragment>{"We build "}</React.Fragment>
                   <span
-                    className={"plasmic_default__all plasmic_default__span"}
+                    className={
+                      "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                    }
                     style={{ color: "var(--token-5joSP94EMVrt)" }}
                   >
                     {"brands"}
                   </span>
                   <React.Fragment>{" that win "}</React.Fragment>
                   <span
-                    className={"plasmic_default__all plasmic_default__span"}
+                    className={
+                      "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                    }
                     style={{ color: "var(--token-5joSP94EMVrt)" }}
                   >
                     {"bids"}
@@ -339,7 +344,9 @@ function PlasmicAbout__RenderFunc(props: {
                     }
                   </React.Fragment>
                   <span
-                    className={"plasmic_default__all plasmic_default__span"}
+                    className={
+                      "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                    }
                     style={{ fontWeight: 700 }}
                   >
                     {
@@ -408,7 +415,9 @@ function PlasmicAbout__RenderFunc(props: {
                     }
                   </React.Fragment>
                   <span
-                    className={"plasmic_default__all plasmic_default__span"}
+                    className={
+                      "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                    }
                     style={{ color: "var(--token-5joSP94EMVrt)" }}
                   >
                     {"we\u2019re going to scream"}
@@ -441,7 +450,9 @@ function PlasmicAbout__RenderFunc(props: {
                       }
                     </React.Fragment>
                     <span
-                      className={"plasmic_default__all plasmic_default__span"}
+                      className={
+                        "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                      }
                       style={{ fontWeight: 700 }}
                     >
                       {
@@ -454,7 +465,9 @@ function PlasmicAbout__RenderFunc(props: {
                       }
                     </React.Fragment>
                     <span
-                      className={"plasmic_default__all plasmic_default__span"}
+                      className={
+                        "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                      }
                       style={{ fontWeight: 700 }}
                     >
                       {"It shouldn\u2019t be this way. "}
@@ -465,7 +478,9 @@ function PlasmicAbout__RenderFunc(props: {
                       }
                     </React.Fragment>
                     <span
-                      className={"plasmic_default__all plasmic_default__span"}
+                      className={
+                        "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                      }
                       style={{ fontWeight: 700 }}
                     >
                       {
@@ -478,7 +493,9 @@ function PlasmicAbout__RenderFunc(props: {
                       }
                     </React.Fragment>
                     <span
-                      className={"plasmic_default__all plasmic_default__span"}
+                      className={
+                        "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                      }
                       style={{ fontWeight: 700 }}
                     >
                       {"Which would you rather be?"}
@@ -520,6 +537,7 @@ function PlasmicAbout__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             projectcss.a,
+                            projectcss.a__8kaaM,
                             projectcss.__wab_text,
                             projectcss.plasmic_default__inline,
                             sty.link__reuHx
@@ -532,7 +550,7 @@ function PlasmicAbout__RenderFunc(props: {
                           <React.Fragment>
                             <span
                               className={
-                                "plasmic_default__all plasmic_default__span"
+                                "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
                               }
                               style={{
                                 textDecorationLine: "underline",

@@ -254,6 +254,7 @@ function PlasmicNewsletter__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
+                  projectcss.a__8kaaM,
                   projectcss.__wab_text,
                   sty.link
                 )}

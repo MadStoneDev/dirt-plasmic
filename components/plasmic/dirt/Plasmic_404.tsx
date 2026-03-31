@@ -226,6 +226,7 @@ function Plasmic_404__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
+                  projectcss.a__8kaaM,
                   projectcss.__wab_text,
                   sty.link__jszHm
                 )}
@@ -272,6 +273,7 @@ function Plasmic_404__RenderFunc(props: {
             className={classNames(
               projectcss.all,
               projectcss.h1,
+              projectcss.h1__8kaaM,
               projectcss.__wab_text,
               sty.h1
             )}
@@ -279,7 +281,9 @@ function Plasmic_404__RenderFunc(props: {
             <React.Fragment>
               <React.Fragment>{"The Page You're After is "}</React.Fragment>
               <span
-                className={"plasmic_default__all plasmic_default__span"}
+                className={
+                  "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                }
                 style={{ color: "#FE5C02" }}
               >
                 {"Six Feet Under"}
@@ -326,6 +330,7 @@ function Plasmic_404__RenderFunc(props: {
             className={classNames(
               projectcss.all,
               projectcss.a,
+              projectcss.a__8kaaM,
               sty.link___6CbZc
             )}
             component={Link}

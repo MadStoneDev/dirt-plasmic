@@ -288,6 +288,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
+                  projectcss.a__8kaaM,
                   projectcss.__wab_text,
                   sty.link
                 )}
@@ -448,7 +449,9 @@ function PlasmicHomepage__RenderFunc(props: {
                 >
                   <React.Fragment>
                     <span
-                      className={"plasmic_default__all plasmic_default__span"}
+                      className={
+                        "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                      }
                       style={{ fontWeight: 700 }}
                     >
                       {"DIRT is here to change that."}
