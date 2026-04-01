@@ -120,19 +120,19 @@ export type PageCtx = {
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title:
-      "The Agency for Construction and Property Business | DIRT",
+      "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
     description:
       "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities.",
     openGraph: {
       title:
-        "The Agency for Construction and Property Business | DIRT",
+        "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
       description:
         "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
     twitter: {
       card: "summary" as const,
       title:
-        "The Agency for Construction and Property Business | DIRT",
+        "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
       description:
         "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
@@ -1102,7 +1102,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     sty.prosConsItem__cAaui
                   )}
                   text={
-                    "If you find {green|this stock photo|link:https://www.gettyimages.com.au/detail/photo/smiling-workers-having-fun-while-testing-royalty-free-image/1260105466?adppopup=true:_blank} as funny as we do"
+                    "If you find {green|this stock photo|link:https://www.gettyimages.com.au/detail/photo/smiling-workers-having-fun-while-testing-royalty-free-image/1260105466?adppopup=true:_blank} as unhinged as we do"
                   }
                 />
               </React.Fragment>
