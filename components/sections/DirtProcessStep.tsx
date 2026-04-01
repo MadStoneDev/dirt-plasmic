@@ -25,10 +25,10 @@ export function DirtProcessStep({
 
   return (
     <div
-      className={`flex flex-col-reverse gap-4 md:gap-12 ${isEven ? "xl:flex-row-reverse" : "xl:flex-row"}`}
+      className={`flex flex-col-reverse gap-4 xl:gap-12 ${isEven ? "md:flex-row-reverse" : "md:flex-row"} max-w-full`}
     >
       {/* Info Column */}
-      <div className="bg-dirt-deep p-6 md:p-16 w-full xl:max-w-[40%] min-h-100 flex flex-col">
+      <div className="bg-dirt-deep p-6 lg:p-16 w-full md:max-w-[40%] min-h-100 flex flex-col">
         {heading && (
           <h3 className="font-display font-bold text-5xl xl:text-6xl text-dirt-pop mb-4" style={{
             letterSpacing: "-2%"
@@ -38,7 +38,7 @@ export function DirtProcessStep({
         )}
 
         {description && (
-          <p className="text-dirt-pop font-sans text-xl md:text-3xl whitespace-pre-line grow" style={{
+          <p className="text-dirt-pop font-sans text-xl xl:text-3xl whitespace-pre-line grow" style={{
             lineHeight: "135%",
           }}>
             {description}

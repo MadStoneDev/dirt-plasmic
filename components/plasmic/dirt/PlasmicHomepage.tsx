@@ -120,19 +120,19 @@ export type PageCtx = {
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title:
-      "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
+      "The Agency for Construction and Property Business | DIRT",
     description:
       "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities.",
     openGraph: {
       title:
-        "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
+        "The Agency for Construction and Property Business | DIRT",
       description:
         "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
     twitter: {
       card: "summary" as const,
       title:
-        "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
+        "The Agency for Construction and Property Business | DIRT",
       description:
         "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },

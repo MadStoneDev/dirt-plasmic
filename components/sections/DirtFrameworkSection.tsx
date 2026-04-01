@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState, ReactNode } from "react";
+import React, { useCallback, useEffect, useRef, useState, ReactNode } from "react";
 import { fmt } from "@/utils/formatText";
 
 export interface DirtFrameworkSectionProps {
@@ -29,8 +29,27 @@ export function DirtFrameworkSection({
   const displayChildren = reversed ? [...allChildren].reverse() : allChildren;
   const blockCount = allChildren.length;
 
+  // Track the tallest block so all blocks can match it
+  const blockRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [maxBlockHeight, setMaxBlockHeight] = useState(0);
+
+  const measureBlocks = useCallback(() => {
+    const heights = blockRefs.current
+      .filter(Boolean)
+      .map((el) => el!.scrollHeight);
+    if (heights.length > 0) {
+      setMaxBlockHeight(Math.max(...heights));
+    }
+  }, []);
+
+  useEffect(() => {
+    measureBlocks();
+    window.addEventListener("resize", measureBlocks);
+    return () => window.removeEventListener("resize", measureBlocks);
+  }, [measureBlocks, children]);
+
   // Block and layout dimensions (px) — no vh units, Plasmic-safe
-  const BLOCK_HEIGHT = 144; // matches h-36
+  const BLOCK_HEIGHT = maxBlockHeight || 144; // measured from tallest block, fallback to h-36
   const OVERLAP = 100;
   const GAP = 0;
   const STICKY_PAD = 64; // py-8 = 32px * 2
@@ -142,6 +161,7 @@ export function DirtFrameworkSection({
                 return (
                   <div
                     key={displayIndex}
+                    ref={(el) => { blockRefs.current[displayIndex] = el; }}
                     className="relative w-full"
                     style={{
                       zIndex,
@@ -149,7 +169,7 @@ export function DirtFrameworkSection({
                     }}
                   >
                     {React.isValidElement(child)
-                      ? React.cloneElement(child as React.ReactElement<any>, { originalIndex, scrollProgress })
+                      ? React.cloneElement(child as React.ReactElement<any>, { originalIndex, scrollProgress, minBlockHeight: maxBlockHeight || undefined })
                       : child}
                   </div>
                 );

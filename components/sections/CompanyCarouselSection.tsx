@@ -18,8 +18,9 @@ export function CompanyCarouselSection({
   children,
 }: CompanyCarouselSectionProps) {
   return (
+    // Temporarily hidden until we have more brands to list as per note from Trello
     <section
-      className="relative pt-16 md:pt-40 pb-16 md:pb-46 2xl:pb-72 w-full bg-dirt-pop overflow-hidden"
+      className="hidden relative pt-16 md:pt-40 pb-16 md:pb-46 2xl:pb-72 w-full bg-dirt-pop overflow-hidden"
       style={{ gridColumn: "1 / -1" }}
     >
         {backgroundImage && (

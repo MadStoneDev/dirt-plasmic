@@ -11,6 +11,7 @@ export interface DirtFrameworkBlockProps {
   // Injected by parent
   originalIndex?: number;
   scrollProgress?: number;
+  minBlockHeight?: number;
 }
 
 export function DirtFrameworkBlock({
@@ -20,11 +21,15 @@ export function DirtFrameworkBlock({
   overlayColor,
   originalIndex = 0,
   scrollProgress = 1,
+  minBlockHeight,
 }: DirtFrameworkBlockProps) {
   // Description fades in during the last 30% of the scroll animation
   const descriptionOpacity = Math.max(0, Math.min(1, (scrollProgress - 0.7) / 0.3));
   return (
-    <div className="relative lg:h-36 overflow-hidden">
+    <div
+      className="relative flex overflow-hidden"
+      style={minBlockHeight ? { minHeight: `${minBlockHeight}px` } : undefined}
+    >
       {/* Colour Overlay */}
       <div
         className="absolute inset-0"
@@ -55,7 +60,7 @@ export function DirtFrameworkBlock({
       </div>
 
       {/* Content */}
-      <div className="relative pt-8 md:pt-8 pb-8 px-20 md:px-32 grid md:grid-cols-2 items-center gap-4 md:gap-8 min-h-full z-10">
+      <div className="relative pt-6 pb-6 pl-20 md:pl-32 pr-16 grid md:grid-cols-2 items-center gap-4 md:gap-8 z-10">
         {heading && (
           <h4 className="font-display font-bold text-5xl md:text-6xl text-dirt-off-white">
             {fmt(heading)}
@@ -63,7 +68,7 @@ export function DirtFrameworkBlock({
         )}
         {description && (
           <p
-            className="text-dirt-off-white/90 text-xl font-sans whitespace-pre-line transition-opacity duration-150"
+            className="text-dirt-off-white/90 text-[22px] font-bold font-sans whitespace-pre-line transition-opacity duration-150"
             style={{ opacity: descriptionOpacity }}
           >
             {description}
