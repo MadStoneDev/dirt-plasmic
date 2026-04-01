@@ -592,7 +592,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__j4AKf)}
-              image={"/plasmic/dirt/images/dirtStack01Png2.png"}
+              image={"/plasmic/dirt/images/sliderDirt1Png2.png"}
               label={"Well-washed"}
               text={
                 "\u201cWe help construction and built-environment brands stand out with clear positioning and stronger messaging.\u201d"
@@ -601,7 +601,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__vludv)}
-              image={"/plasmic/dirt/images/dirtStack02Png2.png"}
+              image={"/plasmic/dirt/images/sliderDirt2Png2.png"}
               label={"Slightly \u2028smudged"}
               text={
                 "\u201cWe nudge your brand out of the \u2018safe and samey\u2019 zone and into territory with a little more edge.\u201d"
@@ -610,7 +610,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop___7LV8G)}
-              image={"/plasmic/dirt/images/dirtStack03Png.png"}
+              image={"/plasmic/dirt/images/sliderDirt3Png.png"}
               label={"Grimy"}
               text={
                 "\u201cStrategic brand messaging that\u2019s so on-point it wipes years of dust off your reputation.\u201d"
@@ -619,7 +619,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__uwXxm)}
-              image={"/plasmic/dirt/images/dirtStack04Png.png"}
+              image={"/plasmic/dirt/images/sliderDirt4Png.png"}
               label={"Filthy"}
               text={
                 "\u201cOther generic messaging agencies panic at the smell of wet cement. We breathe that sh*t in.\u201d"
@@ -628,7 +628,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__cvXh)}
-              image={"/plasmic/dirt/images/dirtStack05Png.png"}
+              image={"/plasmic/dirt/images/sliderDirt5Png.png"}
               label={"downright dirt-y"}
               text={
                 "\u201cWe take your limp, half-baked brand, drag it face-first through the mud and rebuild it so hard your competitors feel it in their kidneys.\u201d"
