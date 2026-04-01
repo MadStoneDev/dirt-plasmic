@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   align-content: flex-start;
-  justify-items: center;
+  justify-items: stretch;
   justify-content: flex-start;
   align-items: center;
   background: var(--token-DH19M0EtFwnR);

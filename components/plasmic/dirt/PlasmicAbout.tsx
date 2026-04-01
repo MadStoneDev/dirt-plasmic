@@ -691,7 +691,7 @@ function PlasmicAbout__RenderFunc(props: {
               )}
             >
               {
-                "Every member of our team is exceptional. We\u2019re strategists, copywriters, designers, and developers. More importantly, we\u2019re all specialists in the property and construction industries."
+                "Every member of our team is exceptional. We\u2019re strategists, copywriters, designers, and web developers. More importantly, we\u2019re all specialists in the property and construction industries."
               }
             </div>
           </section>
