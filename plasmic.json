@@ -527,6 +527,41 @@
           "id": "M3t0o4B17ksA",
           "name": "dirt files - techne.png",
           "filePath": "../public/plasmic/dirt/images/dirtFilesTechnePng.png"
+        },
+        {
+          "id": "Et25d1T-9Rrk",
+          "name": "slider-dirt-1.png",
+          "filePath": "../public/plasmic/dirt/images/sliderDirt1Png.png"
+        },
+        {
+          "id": "-msUo7bUFp5I",
+          "name": "slider-dirt-2.png",
+          "filePath": "../public/plasmic/dirt/images/sliderDirt2Png.png"
+        },
+        {
+          "id": "Y4Bj5_G_eHlx",
+          "name": "slider-dirt-1.png 2",
+          "filePath": "../public/plasmic/dirt/images/sliderDirt1Png2.png"
+        },
+        {
+          "id": "ExOEEFl7Hcnr",
+          "name": "slider-dirt-2.png 2",
+          "filePath": "../public/plasmic/dirt/images/sliderDirt2Png2.png"
+        },
+        {
+          "id": "4lr058F90110",
+          "name": "slider-dirt-3.png",
+          "filePath": "../public/plasmic/dirt/images/sliderDirt3Png.png"
+        },
+        {
+          "id": "bcPYwVm0TwH9",
+          "name": "slider-dirt-4.png",
+          "filePath": "../public/plasmic/dirt/images/sliderDirt4Png.png"
+        },
+        {
+          "id": "RukpFzS5T99k",
+          "name": "slider-dirt-5.png",
+          "filePath": "../public/plasmic/dirt/images/sliderDirt5Png.png"
         }
       ],
       "indirect": false,
