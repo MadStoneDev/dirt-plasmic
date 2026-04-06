@@ -562,6 +562,11 @@
           "id": "RukpFzS5T99k",
           "name": "slider-dirt-5.png",
           "filePath": "../public/plasmic/dirt/images/sliderDirt5Png.png"
+        },
+        {
+          "id": "HoD92UlhRmD3",
+          "name": "Mobile Footer DIRT Background.png 3",
+          "filePath": "../public/plasmic/dirt/images/mobileFooterDirtBackgroundPng3.png"
         }
       ],
       "indirect": false,
