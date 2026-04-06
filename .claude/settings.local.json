@@ -15,7 +15,8 @@
       "WebFetch(domain:forum.plasmic.app)",
       "Bash(curl:*)",
       "Bash(node:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(npm install:*)"
     ]
   }
 }

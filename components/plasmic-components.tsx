@@ -818,6 +818,29 @@ registerComponent(FooterSection, {
     // Form settings
     submitButtonText: { type: "string", hidden: (props: any) => !props.showHeroForm },
     recipientEmail: { type: "string", hidden: (props: any) => !props.showHeroForm },
+    contactFormMode: {
+      type: "choice",
+      options: [
+        { label: "SMTP", value: "smtp" },
+        { label: "ActiveCampaign", value: "activecampaign" },
+      ],
+      defaultValue: "smtp",
+      displayName: "Contact Form Delivery",
+      description: "Send via SMTP email or add to ActiveCampaign",
+      hidden: (props: any) => !props.showHeroForm,
+    },
+    contactListId: {
+      type: "string",
+      displayName: "Contact AC List ID",
+      description: "ActiveCampaign list ID for contact form submissions",
+      hidden: (props: any) => !props.showHeroForm || props.contactFormMode !== "activecampaign",
+    },
+    contactTags: {
+      type: "string",
+      displayName: "Contact AC Tags",
+      description: "Comma-separated tag names for contact form submissions",
+      hidden: (props: any) => !props.showHeroForm || props.contactFormMode !== "activecampaign",
+    },
     // Footer columns
     footerLogo: "imageUrl",
     footerDescription: "string",

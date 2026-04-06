@@ -1194,8 +1194,6 @@ Huge thanks to Nikita for creating  and her team!`}
               "Digging up branding insights, concrete messaging examples, and sharp takes on positioning. Delivered bi-monthly(ish)."
             }
             newsletterHeading={"Get DIRT Dispatch"}
-            newsletterListId={"DIRT list"}
-            newsletterTags={"DIRT form submission"}
             recipientEmail={"hello@thedirtagency.com"}
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
             showHeroForm={true}

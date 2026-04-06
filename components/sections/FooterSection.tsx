@@ -19,6 +19,10 @@ export interface FooterSectionProps {
   // Form settings
   submitButtonText?: string;
   recipientEmail?: string;
+  // Contact form delivery
+  contactFormMode?: "smtp" | "activecampaign";
+  contactListId?: string;
+  contactTags?: string;
   // Footer columns
   footerLogo?: string;
   footerDescription?: string;
@@ -71,6 +75,9 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
     description,
     submitButtonText,
     recipientEmail,
+    contactFormMode = "smtp",
+    contactListId,
+    contactTags,
     footerLogo,
     footerDescription,
     newsletterHeading,
@@ -104,6 +111,9 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
     referralName: "",
     message: "",
   });
+  const [contactSubmitting, setContactSubmitting] = useState(false);
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactError, setContactError] = useState("");
   const [newsletterFirstName, setNewsletterFirstName] = useState("");
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterSubmitting, setNewsletterSubmitting] = useState(false);
@@ -118,10 +128,34 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
     { text: link5Text, url: link5Url },
   ].filter((l) => l.text && l.url);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted:", formData, "to:", recipientEmail);
+    setContactError("");
+    setContactSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact-submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          mode: contactFormMode,
+          listId: contactListId,
+          tags: contactTags,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      setContactSubmitted(true);
+    } catch (err: any) {
+      setContactError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setContactSubmitting(false);
+    }
   };
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
@@ -234,92 +268,105 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
             )}
 
             {/* Contact Form */}
-            <form
-              onSubmit={handleSubmit}
-              className="mx-auto flex flex-col gap-6 max-w-xl"
-            >
-              <div className="grid md:grid-cols-2 gap-6">
+            {contactSubmitted ? (
+              <p className="text-2xl md:text-3xl font-display font-bold uppercase text-dirt-green">
+                Thanks for reaching out! We'll be in touch soon.
+              </p>
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="mx-auto flex flex-col gap-6 max-w-xl"
+              >
+                <div className="grid md:grid-cols-2 gap-6">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    required
+                    className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    required
+                    className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+                  />
+                </div>
                 <input
                   type="text"
-                  placeholder="First Name"
-                  value={formData.name}
+                  placeholder="Company"
+                  value={formData.company}
                   onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
+                    setFormData({ ...formData, company: e.target.value })
                   }
                   className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
                 />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  value={formData.email}
+                <select
+                  value={formData.heardAbout}
                   onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
+                    setFormData({
+                      ...formData,
+                      heardAbout: e.target.value,
+                      referralName: e.target.value !== "Referral" ? "" : formData.referralName,
+                    })
                   }
-                  className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
-                />
-              </div>
-              <input
-                type="text"
-                placeholder="Company"
-                value={formData.company}
-                onChange={(e) =>
-                  setFormData({ ...formData, company: e.target.value })
-                }
-                className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
-              />
-              <select
-                value={formData.heardAbout}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    heardAbout: e.target.value,
-                    referralName: e.target.value !== "Referral" ? "" : formData.referralName,
-                  })
-                }
-                required
-                className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans outline-none focus:ring-2 focus:ring-dirt-pop appearance-none"
-                style={!formData.heardAbout ? { color: "rgba(92, 0, 4, 0.5)" } : undefined}
-              >
-                <option value="" disabled>How did you hear about us?</option>
-                <option value="Google">Google</option>
-                <option value="LinkedIn">LinkedIn</option>
-                <option value="Podcast">Podcast</option>
-                <option value="Referral">Referral</option>
-              </select>
-              {formData.heardAbout === "Referral" && (
-                <input
-                  type="text"
-                  placeholder="Who referred you?"
-                  value={formData.referralName}
+                  required
+                  className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans outline-none focus:ring-2 focus:ring-dirt-pop appearance-none"
+                  style={!formData.heardAbout ? { color: "rgba(92, 0, 4, 0.5)" } : undefined}
+                >
+                  <option value="" disabled>How did you hear about us?</option>
+                  <option value="Google">Google</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="Podcast">Podcast</option>
+                  <option value="Referral">Referral</option>
+                </select>
+                {formData.heardAbout === "Referral" && (
+                  <input
+                    type="text"
+                    placeholder="Who referred you?"
+                    value={formData.referralName}
+                    onChange={(e) =>
+                      setFormData({ ...formData, referralName: e.target.value })
+                    }
+                    className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+                  />
+                )}
+                <textarea
+                  placeholder="What are you hoping DIRT can help you change, fix, or build?"
+                  rows={4}
+                  value={formData.message}
                   onChange={(e) =>
-                    setFormData({ ...formData, referralName: e.target.value })
+                    setFormData({ ...formData, message: e.target.value })
                   }
-                  className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+                  required
+                  className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop resize-none"
                 />
-              )}
-              <textarea
-                placeholder="What are you hoping DIRT can help you change, fix, or build?"
-                rows={4}
-                value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
-                className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop resize-none"
-              />
-              <button
-                type="submit"
-                className="px-8 py-4 flex items-center justify-center gap-1 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-lg hover:bg-dirt-pop-hover transition-all duration-300"
-              >
-                <Image
-                  src={`/90deg Arrow.png`}
-                  alt={`90 Degrees Arrow`}
-                  width={50}
-                  height={50}
-                  className={`w-6`}
-                />
-                {submitButtonText}
-              </button>
-            </form>
+                {contactError && (
+                  <p className="text-red-400 font-sans text-sm">{contactError}</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={contactSubmitting}
+                  className="px-8 py-4 flex items-center justify-center gap-1 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-lg hover:bg-dirt-pop-hover disabled:opacity-50 transition-all duration-300"
+                >
+                  <Image
+                    src={`/90deg Arrow.png`}
+                    alt={`90 Degrees Arrow`}
+                    width={50}
+                    height={50}
+                    className={`w-6`}
+                  />
+                  {contactSubmitting ? "Sending..." : submitButtonText}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       )}

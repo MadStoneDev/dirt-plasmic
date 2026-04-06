@@ -330,8 +330,6 @@ function PlasmicContact__RenderFunc(props: {
               "Digging up branding insights, concrete messaging examples, and sharp takes on positioning. Delivered bi-monthly(ish)."
             }
             newsletterHeading={"Get Dirt Dispatch"}
-            newsletterListId={"DIRT List"}
-            newsletterTags={"DIRT form submission"}
             recipientEmail={"hello@thedirtagency.com"}
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
             showHeroForm={true}
