@@ -739,7 +739,9 @@ function PlasmicAbout__RenderFunc(props: {
             link2Url={"/contact"}
             linksHeading={"Get your hands dirty"}
             mobileBackgroundImage={
-              "/plasmic/dirt/images/mobileFooterDirtBackgroundPng2.png"
+              hasVariant(globalVariants, "screen", "mobile")
+                ? "/plasmic/dirt/images/mobileFooterDirtBackgroundPng3.png"
+                : "/plasmic/dirt/images/mobileFooterDirtBackgroundPng2.png"
             }
             newsletterChildren={
               <PlasmicImg__

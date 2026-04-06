@@ -1165,7 +1165,9 @@ Huge thanks to Nikita for creating  and her team!`}
             link3Text={``}
             linksHeading={"Get your hands Dirty"}
             mobileBackgroundImage={
-              "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
+              hasVariant(globalVariants, "screen", "mobile")
+                ? "/plasmic/dirt/images/mobileFooterDirtBackgroundPng3.png"
+                : "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
             }
             newsletterChildren={
               <PlasmicImg__
