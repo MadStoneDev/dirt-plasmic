@@ -60,7 +60,7 @@ export function DirtFrameworkBlock({
       </div>
 
       {/* Content */}
-      <div className="relative pt-6 pb-6 pl-20 md:pl-32 pr-16 grid md:grid-cols-2 items-center gap-4 md:gap-8 z-10">
+      <div className="relative pt-6 pb-6 pl-20 md:pl-32 pr-32 flex flex-col md:flex-row items-center justify-between w-full gap-4 md:gap-8 z-10">
         {heading && (
           <h4 className="font-display font-bold text-5xl md:text-6xl text-dirt-off-white">
             {fmt(heading)}
@@ -68,7 +68,7 @@ export function DirtFrameworkBlock({
         )}
         {description && (
           <p
-            className="text-dirt-off-white/90 text-[22px] font-bold font-sans whitespace-pre-line transition-opacity duration-150"
+            className="grow max-w-3/5 text-dirt-off-white/90 text-[22px] font-bold font-sans whitespace-pre-line transition-opacity duration-150"
             style={{ opacity: descriptionOpacity }}
           >
             {description}

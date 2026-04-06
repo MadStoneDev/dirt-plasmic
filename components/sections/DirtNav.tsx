@@ -168,7 +168,7 @@ export function DirtNav({
 
       <nav
         ref={navRef}
-        className={`${navBg} border-b-[0.5px] border-dirt-pop/20 ${
+        className={`${navMode === "relative" ? navBg : "bg-dirt-deep"} border-b-[0.5px] border-dirt-pop/20 ${
           navMode === "relative"
             ? "relative w-full"
             : `fixed left-0 right-0 z-50 shadow-lg ${
@@ -276,7 +276,7 @@ export function DirtNav({
               <img
                   src={menuImage}
                   alt=""
-                  className="max-h-32 md:max-h-60 w-full object-bottom object-cover"
+                  className="max-h-40 md:max-h-120 w-full object-bottom object-cover"
               />
             </div>
         )}

@@ -50,7 +50,7 @@ export function DirtFrameworkSection({
 
   // Block and layout dimensions (px) — no vh units, Plasmic-safe
   const BLOCK_HEIGHT = maxBlockHeight || 144; // measured from tallest block, fallback to h-36
-  const OVERLAP = 100;
+  const OVERLAP = Math.round(BLOCK_HEIGHT * 0.4);
   const GAP = 0;
   const STICKY_PAD = 64; // py-8 = 32px * 2
   const HEADER_BUFFER = 250; // header area with padding
