@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, ReactNode } from "react";
+import React, { useState, useRef, useEffect, ReactNode } from "react";
 import { fmt } from "@/utils/formatText";
 
 export interface SliderSectionProps {
@@ -19,6 +19,15 @@ export function SliderSection({
   children,
 }: SliderSectionProps) {
   const [currentStep, setCurrentStep] = useState(0);
+  const [isLg, setIsLg] = useState(false);
+  const headingRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [imageTop, setImageTop] = useState(0);
+
+  // Responsive values: mobile / lg+
+  const topPadding = isLg ? 160 : 64;
+  const headingToSlider = isLg ? 80 : 48;
+  const bottomPadding = isLg ? 230 : 64;
 
   // Extract stops from children (SliderStop components)
   const stops = React.Children.toArray(children)
@@ -51,144 +60,184 @@ export function SliderSection({
     setCurrentStep(parseInt(e.target.value));
   };
 
+  // Track lg breakpoint (1024px) and measure where images should start
+  useEffect(() => {
+    const update = () => {
+      const lg = window.matchMedia("(min-width: 1024px)").matches;
+      setIsLg(lg);
+      const gap = lg ? 40 : 24;
+      if (headingRef.current && sectionRef.current) {
+        const headingBottom =
+          headingRef.current.getBoundingClientRect().bottom;
+        const sectionTop = sectionRef.current.getBoundingClientRect().top;
+        setImageTop(headingBottom - sectionTop + gap);
+      }
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, [headingStart, headingMiddle, headingEnd]);
+
   return (
     <section
-      className="relative px-5 md:px-8 h-250 bg-dirt-off-white pt-40 pb-[70px] md:pb-[215px]"
+      ref={sectionRef}
+      className="relative bg-dirt-off-white overflow-hidden"
       style={{
         gridColumn: "1 / -1",
+        paddingTop: `${topPadding}px`,
       }}
     >
-      {/* Section background image — starts 240px from top to clear heading */}
+      {/* Background image — starts 40px below heading, fills to bottom */}
       {backgroundImage && (
         <img
           src={backgroundImage}
           alt=""
-          className="absolute left-0 bottom-0 w-full object-cover"
-          style={{ top: "240px", height: "calc(100% - 240px)", zIndex: 0 }}
+          className="absolute left-0 w-full object-cover"
+          style={{
+            top: `${imageTop}px`,
+            height: `calc(100% - ${imageTop}px)`,
+            zIndex: 0,
+          }}
         />
       )}
-      {/* Step Images - fills section below 240px, changes with current step */}
+      {/* Step image — same position, changes with slider */}
       {stopsData[currentStep]?.image && (
         <img
           src={stopsData[currentStep].image}
           alt=""
-          className="absolute left-0 bottom-0 w-full object-cover transition-opacity duration-500"
-          style={{ top: "240px", height: "calc(100% - 240px)", zIndex: 0 }}
+          className="absolute left-0 w-full object-cover transition-opacity duration-500"
+          style={{
+            top: `${imageTop}px`,
+            height: `calc(100% - ${imageTop}px)`,
+            zIndex: 0,
+          }}
         />
       )}
 
-      {/* Heading */}
-      <h2
-        className="relative font-display font-bold text-5xl md:text-8xl mb-20 text-center"
-        style={{
-          lineHeight: "105%",
-          letterSpacing: "-2%",
-          zIndex: 1,
-        }}
-      >
-        <span className="text-dirt-pop">{fmt(headingStart)}</span>
-        <span className="text-dirt-deep">{fmt(headingMiddle)}</span>
-        <span className="text-dirt-pop">{fmt(headingEnd)}</span>
-      </h2>
-
-      {/* Slider Container */}
-      <div
-        className="relative mx-auto bg-dirt-deep border-2 border-dirt-pop"
-        style={{
-          maxWidth: "1100px",
-          padding: "50px 50px 90px",
-          zIndex: 1,
-        }}
-      >
-        {/* Slider Wrapper */}
-        <div
-          className="relative"
+      {/* Heading — in its own clean space, no images behind it */}
+      <div ref={headingRef} className="px-5 md:px-8">
+        <h2
+          className="font-display font-bold text-5xl md:text-8xl text-center"
           style={{
-            paddingLeft: `${EDGE_OFFSET}px`,
-            paddingRight: `${EDGE_OFFSET}px`,
+            lineHeight: "105%",
+            letterSpacing: "-2%",
           }}
         >
-          {/* Fake Track Background */}
-          <div
-            className="absolute top-1/2 left-0 right-0 bg-dirt-off-white"
-            style={{
-              height: "16px",
-              transform: "translateY(-50%)",
-              pointerEvents: "none",
-            }}
-          />
+          <span className="text-dirt-pop">{fmt(headingStart)}</span>
+          <span className="text-dirt-deep">{fmt(headingMiddle)}</span>
+          <span className="text-dirt-pop">{fmt(headingEnd)}</span>
+        </h2>
+      </div>
 
-          {/* Slider Input */}
-          <div className="relative">
-            <input
-              type="range"
-              min="0"
-              max={stopsData.length - 1}
-              value={currentStep}
-              onChange={handleSliderChange}
-              step="1"
-              className="w-full appearance-none bg-transparent cursor-pointer slider-input"
+      {/* Slider Container — 80px below heading (40px gap + 40px into image area) */}
+      <div
+        className="relative mx-auto px-5 md:px-8"
+        style={{
+          maxWidth: "1100px",
+          marginTop: `${headingToSlider}px`,
+          zIndex: 1,
+        }}
+      >
+        <div
+          className="bg-dirt-deep border-2 border-dirt-pop"
+          style={{
+            padding: "50px 50px 90px",
+          }}
+        >
+          {/* Slider Wrapper */}
+          <div
+            className="relative"
+            style={{
+              paddingLeft: `${EDGE_OFFSET}px`,
+              paddingRight: `${EDGE_OFFSET}px`,
+            }}
+          >
+            {/* Fake Track Background */}
+            <div
+              className="absolute top-1/2 left-0 right-0 bg-dirt-off-white"
               style={{
-                height: "64px",
+                height: "16px",
+                transform: "translateY(-50%)",
+                pointerEvents: "none",
               }}
             />
 
-            {/* Custom Thumb with Label */}
-            <div
-              className="absolute pointer-events-none transition-all duration-200 ease-out"
-              style={{
-                left: `calc(${(currentStep / (stopsData.length - 1)) * 100}%)`,
-                top: "50%",
-                transform: "translate(-50%, -50%)",
-              }}
-            >
-              {/* Wrapper for thumb and label */}
-              <div className="relative">
-                {/* Octagon Thumb */}
-                <div
-                  className="bg-dirt-pop w-11.25 lg:w-16 h-11.25 lg:h-16" style={{
-                    clipPath:
-                      "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
-                  }}
-                />
+            {/* Slider Input */}
+            <div className="relative">
+              <input
+                type="range"
+                min="0"
+                max={stopsData.length - 1}
+                value={currentStep}
+                onChange={handleSliderChange}
+                step="1"
+                className="w-full appearance-none bg-transparent cursor-pointer slider-input"
+                style={{
+                  height: "64px",
+                }}
+              />
 
-                {/* Label positioned below thumb */}
-                <div
-                  className="absolute left-1/2"
-                  style={{
-                    transform: "translateX(-50%)",
-                    top: "calc(100% + 8px)",
-                    width: "200px",
-                    textAlign: "center",
-                  }}
-                >
-                  <span
-                    className="text-dirt-pop uppercase font-sans font-semibold text-[14px] lg:text-xl"
+              {/* Custom Thumb with Label */}
+              <div
+                className="absolute pointer-events-none transition-all duration-200 ease-out"
+                style={{
+                  left: `calc(${(currentStep / (stopsData.length - 1)) * 100}%)`,
+                  top: "50%",
+                  transform: "translate(-50%, -50%)",
+                }}
+              >
+                {/* Wrapper for thumb and label */}
+                <div className="relative">
+                  {/* Octagon Thumb */}
+                  <div
+                    className="bg-dirt-pop w-11.25 lg:w-16 h-11.25 lg:h-16"
                     style={{
-                      lineHeight: "135%",
+                      clipPath:
+                        "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
+                    }}
+                  />
+
+                  {/* Label positioned below thumb */}
+                  <div
+                    className="absolute left-1/2"
+                    style={{
+                      transform: "translateX(-50%)",
+                      top: "calc(100% + 8px)",
+                      width: "200px",
+                      textAlign: "center",
                     }}
                   >
-                    {stopsData[currentStep]?.label}
-                  </span>
+                    <span
+                      className="text-dirt-pop uppercase font-sans font-semibold text-[14px] lg:text-xl"
+                      style={{
+                        lineHeight: "135%",
+                      }}
+                    >
+                      {stopsData[currentStep]?.label}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Step Content */}
-        <div className="mt-28">
-          <p
-            className="text-dirt-off-white font-sans font-bold text-2xl lg:text-[40px]"
-            style={{
-              lineHeight: "125%",
-              letterSpacing: "-2%",
-            }}
-          >
-            {stopsData[currentStep]?.text}
-          </p>
+          {/* Step Content */}
+          <div className="mt-28">
+            <p
+              className="text-dirt-off-white font-sans font-bold text-2xl lg:text-[40px]"
+              style={{
+                lineHeight: "125%",
+                letterSpacing: "-2%",
+              }}
+            >
+              {stopsData[currentStep]?.text}
+            </p>
+          </div>
         </div>
       </div>
+
+      {/* Bottom spacer — images still visible here */}
+      <div style={{ height: `${bottomPadding}px` }} />
 
       <style jsx>{`
         /* Hide default thumb completely */
