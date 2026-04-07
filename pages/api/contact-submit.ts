@@ -17,6 +17,55 @@ async function acFetch(path: string, options?: RequestInit) {
   });
 }
 
+async function resolveCustomFieldId(title: string): Promise<string | null> {
+  const search = await acFetch(`fields?search=${encodeURIComponent(title)}`);
+  if (search.ok) {
+    const data = await search.json();
+    const match = data.fields?.find(
+      (f: any) => f.title.toLowerCase() === title.toLowerCase()
+    );
+    if (match) return match.id;
+  }
+
+  // Create field if not found (type "textarea" for message, "text" for others)
+  const isLongText = title.toLowerCase().includes("message");
+  const create = await acFetch("fields", {
+    method: "POST",
+    body: JSON.stringify({
+      field: {
+        title,
+        type: isLongText ? "textarea" : "text",
+        visible: 1,
+      },
+    }),
+  });
+  if (create.ok) {
+    const data = await create.json();
+    return data.field?.id ?? null;
+  }
+
+  return null;
+}
+
+async function setCustomFieldValue(
+  contactId: string,
+  fieldTitle: string,
+  value: string
+): Promise<void> {
+  const fieldId = await resolveCustomFieldId(fieldTitle);
+  if (!fieldId) return;
+
+  const res = await acFetch("fieldValues", {
+    method: "POST",
+    body: JSON.stringify({
+      fieldValue: { contact: contactId, field: fieldId, value },
+    }),
+  });
+  if (!res.ok) {
+    console.error(`AC fieldValues failed for "${fieldTitle}":`, await res.text());
+  }
+}
+
 async function resolveTagId(name: string): Promise<string | null> {
   const search = await acFetch(`tags?search=${encodeURIComponent(name)}`);
   if (search.ok) {
@@ -211,7 +260,23 @@ export default async function handler(
       return res.status(502).json({ error: "No contact ID returned" });
     }
 
-    // 2. Subscribe to list (non-fatal)
+    // 2. Set custom fields (non-fatal)
+    const customFields: [string, string | undefined][] = [
+      ["Heard About", heardAbout],
+      ["Referral Name", referralName],
+      ["Message", message],
+    ];
+    for (const [title, value] of customFields) {
+      if (value) {
+        try {
+          await setCustomFieldValue(contactId, title, value);
+        } catch (err) {
+          console.error(`AC custom field error for "${title}":`, err);
+        }
+      }
+    }
+
+    // 3. Subscribe to list (non-fatal)
     if (listId) {
       try {
         const listRes = await acFetch("contactLists", {
@@ -228,7 +293,7 @@ export default async function handler(
       }
     }
 
-    // 3. Add tags (non-fatal)
+    // 4. Add tags (non-fatal)
     if (tags) {
       const tagNames = tags
         .split(",")
