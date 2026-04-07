@@ -334,7 +334,7 @@ function PlasmicContact__RenderFunc(props: {
             }
             newsletterHeading={"Get Dirt Dispatch"}
             newsletterListId={"DIRT List"}
-            newsletterTags={"DIRT form submission"}
+            newsletterTags={"DIRT newsletter submission"}
             recipientEmail={"hello@thedirtagency.com"}
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
             showHeroForm={true}
