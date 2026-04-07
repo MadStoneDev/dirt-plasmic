@@ -283,7 +283,10 @@ function PlasmicContact__RenderFunc(props: {
             contactDescription={
               "Dig what we're doing but don't need us at the moment? Refer a client to DIRT. \n\nWhen they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT.)"
             }
+            contactFormMode={"activecampaign"}
             contactHeading={"Refer & Earn"}
+            contactListId={"DIRT List"}
+            contactTags={"DIRT contact form"}
             copyrightText={
               "\u00a9 2026 DIRT Agency. All rights reserved. Built from the ground up."
             }
@@ -330,6 +333,8 @@ function PlasmicContact__RenderFunc(props: {
               "Digging up branding insights, concrete messaging examples, and sharp takes on positioning. Delivered bi-monthly(ish)."
             }
             newsletterHeading={"Get Dirt Dispatch"}
+            newsletterListId={"DIRT List"}
+            newsletterTags={"DIRT form submission"}
             recipientEmail={"hello@thedirtagency.com"}
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
             showHeroForm={true}

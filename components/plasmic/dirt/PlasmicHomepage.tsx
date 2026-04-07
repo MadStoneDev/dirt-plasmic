@@ -1144,7 +1144,10 @@ Huge thanks to Nikita for creating  and her team!`}
             contactDescription={
               "Dig what we're doing but don't need us at the moment? Refer a client to DIRT. \n\nWhen they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT.)"
             }
+            contactFormMode={"activecampaign"}
             contactHeading={"Refer & Earn"}
+            contactListId={"DIRT list"}
+            contactTags={"DIRT contact form"}
             copyrightText={
               "\u00a9 2026 DIRT Agency. All rights reserved. Built from the ground up."
             }
@@ -1194,6 +1197,8 @@ Huge thanks to Nikita for creating  and her team!`}
               "Digging up branding insights, concrete messaging examples, and sharp takes on positioning. Delivered bi-monthly(ish)."
             }
             newsletterHeading={"Get DIRT Dispatch"}
+            newsletterListId={"DIRT list"}
+            newsletterTags={"DIRT newsletter submission"}
             recipientEmail={"hello@thedirtagency.com"}
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
             showHeroForm={true}
