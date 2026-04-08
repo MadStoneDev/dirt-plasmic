@@ -243,7 +243,6 @@ export default async function handler(
         contact: {
           email,
           firstName: name,
-          ...(company ? { orgname: company } : {}),
         },
       }),
     });
@@ -262,8 +261,9 @@ export default async function handler(
 
     // 2. Set custom fields (non-fatal)
     const customFields: [string, string | undefined][] = [
-      ["Heard About", heardAbout],
-      ["Referral Name", referralName],
+      ["Company Name", company],
+      ["How did you hear about me?", heardAbout],
+      ["If referral, who is the kind human who reffered you to me", referralName],
       ["Message", message],
     ];
     for (const [title, value] of customFields) {
