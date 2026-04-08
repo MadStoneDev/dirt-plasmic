@@ -901,7 +901,7 @@ function PlasmicHomepage__RenderFunc(props: {
               buttonLink={"/contact"}
               className={classNames("__wab_instance", sty.dirtFile__nulPg)}
               heading={"StudioMX"}
-              image={"/plasmic/dirt/images/dirtFilesStudiomxPng.png"}
+              image={"/plasmic/dirt/images/studioMxMockupLaptopInDirtPng.png"}
               tag1={"Website"}
               tag2={"Branding"}
             >
@@ -943,7 +943,9 @@ function PlasmicHomepage__RenderFunc(props: {
               buttonLink={"/contact"}
               className={classNames("__wab_instance", sty.dirtFile__sKsj)}
               heading={"Techne"}
-              image={"/plasmic/dirt/images/dirtFilesTechnePng.png"}
+              image={
+                "/plasmic/dirt/images/techneMockupLaptopOnAPileOfDirtPng.png"
+              }
               tag1={"Website"}
               tag2={"Branding"}
             >
