@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState, useRef, useEffect, useCallback } from "react";
+import { ReactNode, useState } from "react";
 import Image from "next/image";
 import { fmt } from "@/utils/formatText";
 import { footerDefaults } from "@/config/section-defaults";
@@ -122,48 +122,6 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
   const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
   const [newsletterError, setNewsletterError] = useState("");
 
-  // Midground image positioning
-  const footerRef = useRef<HTMLElement>(null);
-  const formRef = useRef<HTMLDivElement>(null);
-  const midImgRef = useRef<HTMLImageElement | null>(null);
-  const [midgroundStyle, setMidgroundStyle] = useState<"bottom" | "underForm">("bottom");
-  const [midgroundTop, setMidgroundTop] = useState(0);
-
-  const updateMidground = useCallback(() => {
-    if (!footerRef.current || !midgroundImage) return;
-    const footerRect = footerRef.current.getBoundingClientRect();
-    const footerHeight = footerRef.current.offsetHeight;
-    const footerWidth = footerRect.width;
-
-    // Get actual image aspect ratio from the loaded image
-    const img = midImgRef.current || footerRef.current.querySelector<HTMLImageElement>("[data-midground]");
-    if (img) midImgRef.current = img;
-    const natW = img?.naturalWidth || 1920;
-    const natH = img?.naturalHeight || 800;
-    const imgScaledHeight = (footerWidth / natW) * natH;
-
-    if (showHeroForm && formRef.current) {
-      const formRect = formRef.current.getBoundingClientRect();
-      const formBottom = formRect.bottom - footerRect.top;
-      const spaceBelow = footerHeight - formBottom;
-
-      if (imgScaledHeight <= spaceBelow) {
-        setMidgroundStyle("bottom");
-      } else {
-        setMidgroundStyle("underForm");
-        setMidgroundTop(formBottom);
-      }
-    } else {
-      setMidgroundStyle("bottom");
-    }
-  }, [showHeroForm, midgroundImage]);
-
-  useEffect(() => {
-    updateMidground();
-    window.addEventListener("resize", updateMidground);
-    return () => window.removeEventListener("resize", updateMidground);
-  }, [updateMidground]);
-
   const links = [
     { text: link1Text, url: link1Url },
     { text: link2Text, url: link2Url },
@@ -236,7 +194,6 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
 
   return (
     <footer
-      ref={footerRef}
       className={`relative ${
         showHeroForm ? "pt-16 md:pt-40" : "pt-0 md:pt-250 xl:pt-300"
       } px-5 md:px-8 pb-110 md:pb-8 overflow-hidden`}
@@ -284,27 +241,20 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
 
       {/* Midground image — between background and content, desktop only */}
       {midgroundImage && (
-        <div
-          className="absolute left-0 right-0 pointer-events-none hidden sm:block z-[1]"
-          style={
-            midgroundStyle === "bottom"
-              ? { bottom: 0 }
-              : { top: `${midgroundTop}px` }
-          }
-        >
-          <img
-            data-midground
+        <div className="absolute bottom-0 left-0 right-0 pointer-events-none hidden sm:block z-[1]">
+          <Image
             src={midgroundImage}
             alt=""
-            className="w-full h-auto block"
-            onLoad={updateMidground}
+            width={1920}
+            height={800}
+            className="w-full h-auto"
           />
         </div>
       )}
 
       {/* Hero/Form Section */}
       {showHeroForm && (
-        <div ref={formRef} className="pb-74 md:pb-235 relative z-[2] flex flex-col justify-end">
+        <div className="pb-74 md:pb-235 relative z-[2] flex flex-col justify-end">
           <div className="relative z-10 max-w-3xl mx-auto text-center">
             {heading1 && (
               <h2

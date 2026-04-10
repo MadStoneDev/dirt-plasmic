@@ -12,6 +12,7 @@ export const footerDefaults: Partial<FooterSectionProps> = {
   backgroundColor: "#5C0004",
   backgroundImage: "/plasmic/dirt/images/footerImagePng.png",
   mobileBackgroundImage: "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png",
+  midgroundImage: "/plasmic/dirt/images/mainFooterMidgroundPng.png",
 
   // Hero / Form
   heading1: "Brilliant brands don\u2019t grow on trees.",
