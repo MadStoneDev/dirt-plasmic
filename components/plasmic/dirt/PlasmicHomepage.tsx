@@ -1137,7 +1137,7 @@ Huge thanks to Nikita for creating  and her team!`}
             data-plasmic-name={"footerSection"}
             data-plasmic-override={overrides.footerSection}
             backgroundColor={``}
-            backgroundImage={"/plasmic/dirt/images/footerImagePng.png"}
+            backgroundImage={"/plasmic/dirt/images/mainFooterBackdropPng.png"}
             bottomRightLink={
               "https://www.reddit.com/r/NatureIsFuckingLit/comments/1g015ns/elephant_throwing_dirt_on_a_crocodile_for_some/"
             }
@@ -1169,6 +1169,7 @@ Huge thanks to Nikita for creating  and her team!`}
             link2Url={"/contact"}
             link3Text={``}
             linksHeading={"Get your hands Dirty"}
+            midgroundImage={"/plasmic/dirt/images/mainFooterMidgroundPng.png"}
             mobileBackgroundImage={
               hasVariant(globalVariants, "screen", "mobile")
                 ? "/plasmic/dirt/images/mobileFooterDirtBackgroundPng3.png"

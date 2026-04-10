@@ -567,6 +567,16 @@
           "id": "HoD92UlhRmD3",
           "name": "Mobile Footer DIRT Background.png 3",
           "filePath": "../public/plasmic/dirt/images/mobileFooterDirtBackgroundPng3.png"
+        },
+        {
+          "id": "qioGXY7L_te7",
+          "name": "Main Footer Midground.png",
+          "filePath": "../public/plasmic/dirt/images/mainFooterMidgroundPng.png"
+        },
+        {
+          "id": "8gUSyTm9_DfM",
+          "name": "Main Footer Backdrop.png",
+          "filePath": "../public/plasmic/dirt/images/mainFooterBackdropPng.png"
         }
       ],
       "indirect": false,
@@ -1418,6 +1428,144 @@
           "name": "AntdBreadcrumbItem",
           "displayName": "plasmic-antd5-breadcrumb-item",
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
+        }
+      ],
+      "customFunctions": []
+    },
+    {
+      "projectId": "q8iq2J191QypeBqVSHzb6M",
+      "projectApiToken": "IZie2ZvFtL4oV9n5Mc14Cq86AS7zpZC0vbA5CGeU9h6Mi9YrnVTuGLd6nTz6JZTgkAb49v1rwr3xHYaY0aQ",
+      "projectName": "tiptap",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/tiptap/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "styleTokensProviderFilePath": "plasmic/tiptap/PlasmicStyleTokensProvider.tsx",
+      "dataTokensFilePath": "",
+      "projectModuleFilePath": "plasmic/tiptap/plasmic.tsx",
+      "codeComponents": [
+        {
+          "id": "WhqnWjQgXjAx",
+          "name": "Bold",
+          "displayName": "hostless-tiptap-extension-bold",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerBold"
+        },
+        {
+          "id": "EHC0R-wWOI0Z",
+          "name": "Code",
+          "displayName": "hostless-tiptap-extension-code",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerCode"
+        },
+        {
+          "id": "Y895zND_YNth",
+          "name": "Italic",
+          "displayName": "hostless-tiptap-extension-italic",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerItalic"
+        },
+        {
+          "id": "J8XPnq41IRbF",
+          "name": "Link",
+          "displayName": "hostless-tiptap-extension-link",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerLink"
+        },
+        {
+          "id": "VHaYjWq_ZYUZ",
+          "name": "Mention",
+          "displayName": "hostless-tiptap-extension-mention",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerMention"
+        },
+        {
+          "id": "NobWeKqsgk5L",
+          "name": "Strike",
+          "displayName": "hostless-tiptap-extension-strike",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerStrike"
+        },
+        {
+          "id": "xTprkxspH4MZ",
+          "name": "TiptapWrapper",
+          "displayName": "hostless-tiptap",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerTiptap"
+        },
+        {
+          "id": "CcQonxRGl6eE",
+          "name": "Underline",
+          "displayName": "hostless-tiptap-extension-underline",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerUnderline"
+        },
+        {
+          "id": "VsRY3FpbhGS5",
+          "name": "ToolbarBold",
+          "displayName": "hostless-tiptap-toolbar-bold",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarBold"
+        },
+        {
+          "id": "wtaTJrVCgUNe",
+          "name": "ToolbarCode",
+          "displayName": "hostless-tiptap-toolbar-code",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarCode"
+        },
+        {
+          "id": "NyB3qBzCfU3j",
+          "name": "ToolbarItalic",
+          "displayName": "hostless-tiptap-toolbar-italic",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarItalic"
+        },
+        {
+          "id": "-WlHZ-FR5Q-f",
+          "name": "ToolbarLink",
+          "displayName": "hostless-tiptap-toolbar-link",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarLink"
+        },
+        {
+          "id": "kMpnDu2MpaMS",
+          "name": "ToolbarMention",
+          "displayName": "hostless-tiptap-toolbar-mention",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarMention"
+        },
+        {
+          "id": "zNLtmNzK8sgS",
+          "name": "ToolbarStrike",
+          "displayName": "hostless-tiptap-toolbar-strike",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarStrike"
+        },
+        {
+          "id": "5OrGvEJP9ty6",
+          "name": "ToolbarUnderline",
+          "displayName": "hostless-tiptap-toolbar-underline",
+          "componentImportPath": "@plasmicpkgs/tiptap/skinny/registerToolbarUnderline"
+        }
+      ],
+      "customFunctions": []
+    },
+    {
+      "projectId": "vqeFwpZFQ6buChy6T9PGwQ",
+      "projectApiToken": "HoXrsW7thezPtv1YjHm4ylhJuxprHUDxJCCAqkbscy96N1h1mEgQ7wO2NZcpFk5lJnyvpOGcyI5XQsfu41Vg",
+      "projectName": "react-quill",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/react_quill/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "styleTokensProviderFilePath": "plasmic/react_quill/PlasmicStyleTokensProvider.tsx",
+      "dataTokensFilePath": "",
+      "projectModuleFilePath": "plasmic/react_quill/plasmic.tsx",
+      "codeComponents": [
+        {
+          "id": "ttF1HVZMBGN",
+          "name": "Quill",
+          "displayName": "hostless-react-quill",
+          "componentImportPath": "@plasmicpkgs/react-quill",
+          "helper": {
+            "name": "quillHelpers",
+            "importPath": "@plasmicpkgs/react-quill"
+          }
         }
       ],
       "customFunctions": []
