@@ -21,27 +21,35 @@ async function resolveCustomFieldId(title: string): Promise<string | null> {
   const search = await acFetch(`fields?search=${encodeURIComponent(title)}`);
   if (search.ok) {
     const data = await search.json();
+    console.log(`AC field search for "${title}" returned:`, data.fields?.map((f: any) => ({ id: f.id, title: f.title })));
     const match = data.fields?.find(
       (f: any) => f.title.toLowerCase() === title.toLowerCase()
     );
     if (match) return match.id;
+  } else {
+    console.error(`AC field search failed for "${title}":`, await search.text());
   }
 
   // Create field if not found (type "textarea" for message, "text" for others)
   const isLongText = title.toLowerCase().includes("message");
+  const perstag = title.toUpperCase().replace(/[^A-Z0-9]+/g, "_");
   const create = await acFetch("fields", {
     method: "POST",
     body: JSON.stringify({
       field: {
         title,
         type: isLongText ? "textarea" : "text",
+        perstag,
         visible: 1,
       },
     }),
   });
   if (create.ok) {
     const data = await create.json();
+    console.log(`AC field auto-created "${title}":`, data.field?.id);
     return data.field?.id ?? null;
+  } else {
+    console.error(`AC field auto-create failed for "${title}":`, await create.text());
   }
 
   return null;
@@ -64,6 +72,23 @@ async function setCustomFieldValue(
   if (!res.ok) {
     console.error(`AC fieldValues failed for "${fieldTitle}":`, await res.text());
   }
+}
+
+async function resolveListId(listIdOrName: string): Promise<string | null> {
+  // If it's already numeric, return as-is
+  if (/^\d+$/.test(listIdOrName)) return listIdOrName;
+
+  // Otherwise look up by name
+  const search = await acFetch(`lists?filters[name]=${encodeURIComponent(listIdOrName)}`);
+  if (search.ok) {
+    const data = await search.json();
+    const match = data.lists?.find(
+      (l: any) => l.name.toLowerCase() === listIdOrName.toLowerCase()
+    );
+    if (match) return match.id;
+  }
+  console.error(`AC list lookup failed for "${listIdOrName}"`);
+  return null;
 }
 
 async function resolveTagId(name: string): Promise<string | null> {
@@ -262,8 +287,8 @@ export default async function handler(
     // 2. Set custom fields (non-fatal)
     const customFields: [string, string | undefined][] = [
       ["Company Name", company],
-      ["How did you hear about me?", heardAbout],
-      ["If referral, who is the kind human who reffered you to me", referralName],
+      ["Heard About", heardAbout],
+      ["Referral Name", referralName],
       ["Message", message],
     ];
     for (const [title, value] of customFields) {
@@ -279,14 +304,17 @@ export default async function handler(
     // 3. Subscribe to list (non-fatal)
     if (listId) {
       try {
-        const listRes = await acFetch("contactLists", {
-          method: "POST",
-          body: JSON.stringify({
-            contactList: { list: listId, contact: contactId, status: 1 },
-          }),
-        });
-        if (!listRes.ok) {
-          console.error("AC contactLists failed:", await listRes.text());
+        const resolvedListId = await resolveListId(listId);
+        if (resolvedListId) {
+          const listRes = await acFetch("contactLists", {
+            method: "POST",
+            body: JSON.stringify({
+              contactList: { list: resolvedListId, contact: contactId, status: 1 },
+            }),
+          });
+          if (!listRes.ok) {
+            console.error("AC contactLists failed:", await listRes.text());
+          }
         }
       } catch (err) {
         console.error("AC contactLists error:", err);

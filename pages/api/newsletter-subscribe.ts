@@ -14,6 +14,21 @@ async function acFetch(path: string, options?: RequestInit) {
   });
 }
 
+async function resolveListId(listIdOrName: string): Promise<string | null> {
+  if (/^\d+$/.test(listIdOrName)) return listIdOrName;
+
+  const search = await acFetch(`lists?filters[name]=${encodeURIComponent(listIdOrName)}`);
+  if (search.ok) {
+    const data = await search.json();
+    const match = data.lists?.find(
+      (l: any) => l.name.toLowerCase() === listIdOrName.toLowerCase()
+    );
+    if (match) return match.id;
+  }
+  console.error(`AC list lookup failed for "${listIdOrName}"`);
+  return null;
+}
+
 async function resolveTagId(name: string): Promise<string | null> {
   // Search for existing tag
   const search = await acFetch(`tags?search=${encodeURIComponent(name)}`);
@@ -80,14 +95,17 @@ export default async function handler(
   // 2. Subscribe to list (non-fatal)
   if (listId) {
     try {
-      const listRes = await acFetch("contactLists", {
-        method: "POST",
-        body: JSON.stringify({
-          contactList: { list: listId, contact: contactId, status: 1 },
-        }),
-      });
-      if (!listRes.ok) {
-        console.error("AC contactLists failed:", await listRes.text());
+      const resolvedListId = await resolveListId(listId);
+      if (resolvedListId) {
+        const listRes = await acFetch("contactLists", {
+          method: "POST",
+          body: JSON.stringify({
+            contactList: { list: resolvedListId, contact: contactId, status: 1 },
+          }),
+        });
+        if (!listRes.ok) {
+          console.error("AC contactLists failed:", await listRes.text());
+        }
       }
     } catch (err) {
       console.error("AC contactLists error:", err);

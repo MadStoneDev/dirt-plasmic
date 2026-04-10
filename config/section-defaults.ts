@@ -28,6 +28,8 @@ export const footerDefaults: Partial<FooterSectionProps> = {
   newsletterHeading: "Get DIRT Dispatch",
   newsletterDescription:
     "Gritty strategic insights to help you win more clients. Delivered with love (and a smidge of mud) once monthly.",
+  newsletterListId: "DIRT List",
+  newsletterTags: "DIRT newsletter submission",
 
   // Contact
   contactHeading: "Refer & Earn",

@@ -30,7 +30,8 @@ function Newsletter() {
   return (
     <>
       <SEO
-        description="Subscribe to the DIRT newsletter for brand strategy insights, marketing tips, and honest advice on growing your business."
+        title="DIRT DISPATCH | The Newsletter"
+        description="For construction, contech, and building material teams who suspect their brand is holding them back."
       />
       <GlobalContextsProvider>
         <PlasmicQueryDataProvider>

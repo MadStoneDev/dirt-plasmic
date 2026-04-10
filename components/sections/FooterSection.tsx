@@ -11,6 +11,7 @@ export interface FooterSectionProps {
   // Hero area
   backgroundImage?: string;
   mobileBackgroundImage?: string;
+  midgroundImage?: string;
   backgroundColor?: string;
   heading1?: string;
   heading1Uppercase?: boolean;
@@ -68,6 +69,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
     showHeroForm = true,
     backgroundImage,
     mobileBackgroundImage,
+    midgroundImage,
     backgroundColor,
     heading1,
     heading1Uppercase = false,
@@ -235,6 +237,19 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
             </div>
           )}
         </>
+      )}
+
+      {/* Midground image — between background and content, desktop only */}
+      {midgroundImage && (
+        <div className="absolute bottom-0 left-0 right-0 pointer-events-none hidden sm:block" style={{ zIndex: 1 }}>
+          <Image
+            src={midgroundImage}
+            alt=""
+            width={1920}
+            height={800}
+            className="w-full h-auto object-cover"
+          />
+        </div>
       )}
 
       {/* Hero/Form Section */}
@@ -499,6 +514,13 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
               {copyrightText}
             </p>
           )}
+
+          {/* Legal links */}
+          <div className="flex items-center justify-center gap-3 mt-1 font-sans text-sm">
+            <a href="/privacy" data-custom-hover className="text-dirt-off-white/50 hover:text-dirt-pop transition-colors">Privacy Policy</a>
+            <span className="text-dirt-off-white/20">|</span>
+            <a href="/terms" data-custom-hover className="text-dirt-off-white/50 hover:text-dirt-pop transition-colors">Terms &amp; Conditions</a>
+          </div>
         </div>
       </div>
 

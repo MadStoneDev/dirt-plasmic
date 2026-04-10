@@ -804,6 +804,7 @@ registerComponent(FooterSection, {
     // Hero area
     backgroundImage: { type: "imageUrl", displayName: "Background Image (Desktop)" },
     mobileBackgroundImage: { type: "imageUrl", displayName: "Background Image (Mobile)" },
+    midgroundImage: { type: "imageUrl", displayName: "Midground Image (Desktop)" },
     backgroundColor: "string",
     heading1: { type: "string", hidden: (props: any) => !props.showHeroForm },
     heading1Uppercase: {

@@ -16,7 +16,18 @@
       "Bash(curl:*)",
       "Bash(node:*)",
       "Bash(git checkout:*)",
-      "Bash(npm install:*)"
+      "Bash(grep -r \"grid\" /mnt/g/Development-Sandbox/_Rumblebuffin/dirt-plasmic/components/plasmic/dirt/*.css)",
+      "Bash(sudo apt-get:*)",
+      "Bash(python3 -c ':*)",
+      "WebFetch(domain:developers.activecampaign.com)",
+      "Bash(grep -oP 'orgname.{0,200}')",
+      "Bash(grep -oP '\"contactList.{0,300}')",
+      "Bash(grep -oP '\"requestBody\":\\\\{[^}]*\"content\".{0,2000}')",
+      "Bash(grep -oP '/contact/sync.{0,1000}')",
+      "Bash(grep -oP '\"/contactLists\":\\\\{\"post\".{0,1500}')",
+      "WebFetch(domain:developers.zeorouteplanner.com)",
+      "WebFetch(domain:www.postman.com)",
+      "Bash(git pull:*)"
     ]
   }
 }
