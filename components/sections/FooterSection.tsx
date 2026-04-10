@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { fmt } from "@/utils/formatText";
 import { footerDefaults } from "@/config/section-defaults";
@@ -122,6 +122,36 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
   const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
   const [newsletterError, setNewsletterError] = useState("");
 
+  // Midground positioning: start at desired top, but if image doesn't reach
+  // the bottom of the footer, pin it to the bottom instead
+  const footerRef = useRef<HTMLElement>(null);
+  const [midgroundPos, setMidgroundPos] = useState<{ top: string } | { bottom: string }>({ bottom: "0" });
+  const updateMidground = useCallback(() => {
+    if (!footerRef.current || !midgroundImage) return;
+    const footerHeight = footerRef.current.offsetHeight;
+    const footerWidth = footerRef.current.offsetWidth;
+    const desiredTop = Math.round(footerHeight * 0.15);
+    const img = footerRef.current.querySelector<HTMLImageElement>("[data-midground]");
+    const natW = img?.naturalWidth || 1920;
+    const natH = img?.naturalHeight || 800;
+    const imgScaledHeight = (footerWidth / natW) * natH;
+
+    const imgBottom = desiredTop + imgScaledHeight;
+    if (imgBottom < footerHeight) {
+      // Image doesn't reach the bottom — pin to bottom
+      setMidgroundPos({ bottom: "0" });
+    } else {
+      // Image reaches or overflows — use desired top
+      setMidgroundPos({ top: `${desiredTop}px` });
+    }
+  }, [midgroundImage]);
+
+  useEffect(() => {
+    updateMidground();
+    window.addEventListener("resize", updateMidground);
+    return () => window.removeEventListener("resize", updateMidground);
+  }, [updateMidground]);
+
   const links = [
     { text: link1Text, url: link1Url },
     { text: link2Text, url: link2Url },
@@ -194,6 +224,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
 
   return (
     <footer
+      ref={footerRef}
       className={`relative ${
         showHeroForm ? "pt-16 md:pt-40" : "pt-0 md:pt-250 xl:pt-300"
       } px-5 md:px-8 pb-110 md:pb-8 overflow-hidden`}
@@ -209,7 +240,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
           <div
             className={`absolute inset-0 ${
               showHeroForm ? "" : "top-100"
-            } pointer-events-none sm:hidden`}
+            } pointer-events-none sm:hidden z-0`}
           >
             <Image
               src={mobileBackgroundImage || backgroundImage!}
@@ -222,7 +253,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
           {/* Desktop */}
           {backgroundImage && (
             <div
-              className="absolute inset-0 pointer-events-none hidden sm:block"
+              className="absolute inset-0 pointer-events-none hidden sm:block z-0"
             >
               <Image
                 src={backgroundImage}
@@ -373,18 +404,17 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
         </div>
       )}
 
-      {/* Midground image — starts under form area, desktop only */}
+      {/* Midground image — desktop only, between background and content */}
       {midgroundImage && (
-        <div
-          className="relative pointer-events-none hidden sm:block z-[1] -mx-5 md:-mx-8"
-          style={{ marginTop: showHeroForm ? "-235px" : 0 }}
-        >
+        <div className="absolute left-0 right-0 pointer-events-none hidden sm:block z-[1]" style={midgroundPos}>
           <Image
+            data-midground
             src={midgroundImage}
             alt=""
             width={1920}
             height={800}
             className="w-full h-auto"
+            onLoad={updateMidground}
           />
         </div>
       )}
