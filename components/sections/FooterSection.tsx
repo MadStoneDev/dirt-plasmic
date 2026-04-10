@@ -239,19 +239,6 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
         </>
       )}
 
-      {/* Midground image — between background and content, desktop only */}
-      {midgroundImage && (
-        <div className="absolute bottom-0 left-0 right-0 pointer-events-none hidden sm:block z-[1]">
-          <Image
-            src={midgroundImage}
-            alt=""
-            width={1920}
-            height={800}
-            className="w-full h-auto"
-          />
-        </div>
-      )}
-
       {/* Hero/Form Section */}
       {showHeroForm && (
         <div className="pb-74 md:pb-235 relative z-[2] flex flex-col justify-end">
@@ -383,6 +370,22 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
               </form>
             )}
           </div>
+        </div>
+      )}
+
+      {/* Midground image — starts under form area, desktop only */}
+      {midgroundImage && (
+        <div
+          className="relative pointer-events-none hidden sm:block z-[1] -mx-5 md:-mx-8"
+          style={{ marginTop: showHeroForm ? "-235px" : 0 }}
+        >
+          <Image
+            src={midgroundImage}
+            alt=""
+            width={1920}
+            height={800}
+            className="w-full h-auto"
+          />
         </div>
       )}
 
