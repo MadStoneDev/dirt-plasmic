@@ -241,7 +241,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
 
       {/* Midground image — between background and content, desktop only */}
       {midgroundImage && (
-        <div className="absolute bottom-0 left-0 right-0 pointer-events-none hidden sm:block" style={{ zIndex: 1 }}>
+        <div className="absolute bottom-0 left-0 right-0 pointer-events-none hidden sm:block z-[1]">
           <Image
             src={midgroundImage}
             alt=""
@@ -254,7 +254,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
 
       {/* Hero/Form Section */}
       {showHeroForm && (
-        <div className="pb-74 md:pb-235 relative flex flex-col justify-end">
+        <div className="pb-74 md:pb-235 relative z-[2] flex flex-col justify-end">
           <div className="relative z-10 max-w-3xl mx-auto text-center">
             {heading1 && (
               <h2
@@ -387,7 +387,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
       )}
 
       {/* Footer Columns Section */}
-      <div className={`bg-dirt-deep p-6 md:p-12 relative`}>
+      <div className={`bg-dirt-deep p-6 md:p-12 relative z-[2]`}>
         <div className="mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
             {/* Column 1 - Logo & Description */}
@@ -528,12 +528,12 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
       <img
         src={`/Mobile Footer DIRT Mound with Shovel.png`}
         alt=""
-        className={`md:hidden absolute bottom-0 left-0 right-0 w-full h-auto object-contain`}
+        className={`md:hidden absolute bottom-0 left-0 right-0 w-full h-auto object-contain z-[2]`}
       />
       <img
         src={`/Dirt and Shovel.png`}
         alt=""
-        className={`hidden md:block absolute bottom-0 left-auto right-0 w-120 h-auto object-contain`}
+        className={`hidden md:block absolute bottom-0 left-auto right-0 w-120 h-auto object-contain z-[2]`}
       />
 
       {/* Bottom Right Badge */}
@@ -541,7 +541,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
         <a
           href={bottomRightLink}
           target="_blank"
-          className="absolute right-0 bottom-0 px-3 py-2 max-w-48 bg-dirt-green text-dirt-deep text-center font-sans font-medium text-sm hover:bg-dirt-pop transition-colors"
+          className="absolute right-0 bottom-0 px-3 py-2 max-w-48 bg-dirt-green text-dirt-deep text-center font-sans font-medium text-sm hover:bg-dirt-pop transition-colors z-[3]"
           style={{ lineHeight: "115%", letterSpacing: "-2%" }}
         >
           {bottomRightText}
