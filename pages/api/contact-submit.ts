@@ -123,6 +123,8 @@ interface ContactBody {
   mode?: "smtp" | "activecampaign";
   listId?: string;
   tags?: string;
+  subscribeToNewsletter?: boolean;
+  newsletterTags?: string;
 }
 
 export default async function handler(
@@ -143,6 +145,8 @@ export default async function handler(
     mode = "smtp",
     listId,
     tags,
+    subscribeToNewsletter,
+    newsletterTags,
   } = req.body as ContactBody;
 
   if (!name || !email || !message) {
@@ -321,9 +325,15 @@ export default async function handler(
       }
     }
 
-    // 4. Add tags (non-fatal)
-    if (tags) {
-      const tagNames = tags
+    // 4. Add tags (non-fatal) — includes newsletter tags when opted in
+    const combinedTags = [
+      tags,
+      subscribeToNewsletter ? newsletterTags : undefined,
+    ]
+      .filter(Boolean)
+      .join(",");
+    if (combinedTags) {
+      const tagNames = combinedTags
         .split(",")
         .map((t: string) => t.trim())
         .filter(Boolean);

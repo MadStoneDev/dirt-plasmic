@@ -116,6 +116,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
   const [contactSubmitting, setContactSubmitting] = useState(false);
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [contactError, setContactError] = useState("");
+  const [subscribeToNewsletter, setSubscribeToNewsletter] = useState(false);
   const [newsletterFirstName, setNewsletterFirstName] = useState("");
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterSubmitting, setNewsletterSubmitting] = useState(false);
@@ -174,6 +175,8 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
           mode: contactFormMode,
           listId: contactListId,
           tags: contactTags,
+          subscribeToNewsletter,
+          newsletterTags,
         }),
       });
 
@@ -381,6 +384,15 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                   required
                   className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop resize-none"
                 />
+                <label className="flex items-center gap-3 text-left text-dirt-off-white font-sans text-base cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={subscribeToNewsletter}
+                    onChange={(e) => setSubscribeToNewsletter(e.target.checked)}
+                    className="w-5 h-5 accent-dirt-pop cursor-pointer"
+                  />
+                  I would like to opt in to the DIRT newsletter
+                </label>
                 {contactError && (
                   <p className="text-red-400 font-sans text-sm">{contactError}</p>
                 )}
