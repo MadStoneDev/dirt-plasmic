@@ -384,7 +384,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                   required
                   className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop resize-none"
                 />
-                <label className="flex items-center gap-3 text-left text-dirt-off-white font-sans text-base cursor-pointer select-none bg-dirt-off-white/10 px-4 py-3 rounded">
+                <label className="flex items-center gap-3 text-left text-dirt-off-white font-sans text-base cursor-pointer select-none bg-dirt-deep/60 px-4 py-3 rounded">
                   <input
                     type="checkbox"
                     checked={subscribeToNewsletter}
