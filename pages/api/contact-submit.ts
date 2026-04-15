@@ -182,7 +182,7 @@ export default async function handler(
       <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
         <!-- Header -->
         <tr><td style="background-color:#5C0004;padding:32px 40px;text-align:center;">
-          <img src="https://www.wearethedirt.com/logo.png" alt="DIRT" width="120" style="display:inline-block;" />
+          <img src="https://thedirtagency.com/logo.png" alt="DIRT" width="120" style="display:inline-block;" />
         </td></tr>
         <!-- Body -->
         <tr><td style="background-color:#FFFFFF;padding:40px;">
@@ -229,7 +229,7 @@ export default async function handler(
       <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
         <!-- Header -->
         <tr><td style="background-color:#5C0004;padding:32px 40px;text-align:center;">
-          <img src="https://www.wearethedirt.com/logo.png" alt="DIRT" width="120" style="display:inline-block;" />
+          <img src="https://thedirtagency.com/logo.png" alt="DIRT" width="120" style="display:inline-block;" />
         </td></tr>
         <!-- Body -->
         <tr><td style="background-color:#FFFFFF;padding:40px;text-align:center;">

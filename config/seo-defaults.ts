@@ -5,7 +5,7 @@
 
 export const seoDefaults = {
   siteName: "DIRT",
-  siteUrl: "https://www.wearethedirt.com",
+  siteUrl: "https://thedirtagency.com",
   locale: "en_AU",
   defaultTitle: "DIRT — We dig brands out of the dirt",
   defaultDescription:
@@ -15,8 +15,8 @@ export const seoDefaults = {
   // JSON-LD Organization (used on every page for AEO/GEO)
   organization: {
     name: "DIRT",
-    url: "https://www.wearethedirt.com",
-    logo: "https://www.wearethedirt.com/logo.png",
+    url: "https://thedirtagency.com",
+    logo: "https://thedirtagency.com/logo.png",
     sameAs: [
       // Add social profiles here — these help AI engines and Google Knowledge Panel
       // "https://www.linkedin.com/company/dirt",
