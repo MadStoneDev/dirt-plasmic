@@ -117,6 +117,7 @@ interface ContactBody {
   name: string;
   email: string;
   company?: string;
+  website?: string;
   heardAbout?: string;
   referralName?: string;
   message: string;
@@ -139,6 +140,7 @@ export default async function handler(
     name,
     email,
     company,
+    website,
     heardAbout,
     referralName,
     message,
@@ -191,6 +193,7 @@ export default async function handler(
             <tr><td style="padding:8px 0;border-bottom:1px solid #FAFAF2;"><strong>Name:</strong></td><td style="padding:8px 0;border-bottom:1px solid #FAFAF2;">${name}</td></tr>
             <tr><td style="padding:8px 0;border-bottom:1px solid #FAFAF2;"><strong>Email:</strong></td><td style="padding:8px 0;border-bottom:1px solid #FAFAF2;"><a href="mailto:${email}" style="color:#FE5C02;">${email}</a></td></tr>
             ${company ? `<tr><td style="padding:8px 0;border-bottom:1px solid #FAFAF2;"><strong>Company:</strong></td><td style="padding:8px 0;border-bottom:1px solid #FAFAF2;">${company}</td></tr>` : ""}
+            ${website ? `<tr><td style="padding:8px 0;border-bottom:1px solid #FAFAF2;"><strong>Website:</strong></td><td style="padding:8px 0;border-bottom:1px solid #FAFAF2;"><a href="${website}" style="color:#FE5C02;">${website}</a></td></tr>` : ""}
             ${heardLine ? `<tr><td colspan="2" style="padding:8px 0;border-bottom:1px solid #FAFAF2;">${heardLine}</td></tr>` : ""}
           </table>
           <div style="margin-top:24px;padding:20px;background-color:#FAFAF2;border-left:4px solid #FE5C02;">
@@ -291,6 +294,7 @@ export default async function handler(
     // 2. Set custom fields (non-fatal)
     const customFields: [string, string | undefined][] = [
       ["Company Name", company],
+      ["Website", website],
       ["Heard About", heardAbout],
       ["Referral Name", referralName],
       ["Message", message],

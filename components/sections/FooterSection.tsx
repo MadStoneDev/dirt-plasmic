@@ -109,6 +109,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
     name: "",
     email: "",
     company: "",
+    website: "",
     heardAbout: "",
     referralName: "",
     message: "",
@@ -341,6 +342,15 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                   value={formData.company}
                   onChange={(e) =>
                     setFormData({ ...formData, company: e.target.value })
+                  }
+                  className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
+                />
+                <input
+                  type="url"
+                  placeholder="Website"
+                  value={formData.website}
+                  onChange={(e) =>
+                    setFormData({ ...formData, website: e.target.value })
                   }
                   className="px-4 py-4 text-lg bg-dirt-off-white text-dirt-deep font-sans placeholder:text-dirt-deep/50 outline-none focus:ring-2 focus:ring-dirt-pop"
                 />
