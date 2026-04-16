@@ -184,9 +184,19 @@
 .ifWeHearTheWord > * {
   grid-column: 4;
 }
+@media (max-width: 1023px) {
+  .ifWeHearTheWord {
+    padding-bottom: 650px;
+  }
+}
+@media (max-width: 1023px) {
+  .ifWeHearTheWord > * {
+    grid-column: 4;
+  }
+}
 @media (max-width: 511px) {
   .ifWeHearTheWord {
-    padding: 64px 20px;
+    padding: 64px 20px 400px;
   }
 }
 @media (max-width: 511px) {
@@ -419,6 +429,11 @@
 }
 .builtWithSpecialists > * {
   grid-column: 4;
+}
+@media (max-width: 1023px) {
+  .builtWithSpecialists > * {
+    grid-column: 4;
+  }
 }
 @media (max-width: 511px) {
   .builtWithSpecialists {

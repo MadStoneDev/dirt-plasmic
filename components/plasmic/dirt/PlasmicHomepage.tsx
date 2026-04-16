@@ -1164,7 +1164,7 @@ Huge thanks to Nikita for creating  and her team!`}
             heading1Uppercase={true}
             heading2={"They grow in the DIRT."}
             link1Text={"About"}
-            link1Url={"/aout"}
+            link1Url={"/about"}
             link2Text={"Contact"}
             link2Url={"/contact"}
             link3Text={``}
