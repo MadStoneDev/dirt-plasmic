@@ -337,7 +337,7 @@ function PlasmicHomepage__RenderFunc(props: {
             ctaLabel={"Get the DIRT"}
             ctaLink={"/contact"}
             description={
-              "DIRT is the agency for construction, ConTech, property & building material companies who want a modern brand to match their capabilities."
+              "DIRT is the agency for construction, AEC software, property & building material companies who want a modern brand to match their capabilities."
             }
             foregroundImage={"/plasmic/dirt/images/dirtFrontPng.png"}
             heading={"Fresh messaging, branding, and positioning"}
@@ -701,7 +701,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.threeReasonsItem___8VKnb
               )}
               description={
-                "Don\u2019t waste your time explaining the basics to us. We eat, sleep, and breathe construction, ConTech, PropTech, building materials, and property  development (which might explain the silicosis)."
+                "Don\u2019t waste your time explaining the basics to us. We eat, sleep, and breathe construction, AEC software, PropTech, building materials, and property  development (which might explain the silicosis)."
               }
               heading={"ABC specialists"}
             />

@@ -20,10 +20,10 @@
 .taglineBanner > * {
   grid-column: 4;
 }
-.taglineBanner:hover {
+.taglineBanner:hover:hover {
   background: var(--token-BdW42BIhE9o2);
 }
-.taglineBanner:hover > * {
+.taglineBanner:hover:hover > * {
   grid-column: 4;
 }
 .freeBox {
