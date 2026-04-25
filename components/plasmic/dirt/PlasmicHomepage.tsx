@@ -732,7 +732,7 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.dirtFrameworkSection}
             className={classNames("__wab_instance", sty.dirtFrameworkSection)}
             description={
-              "Whether you\u2019re reimagining a legacy brand, targeting new markets, or pushing for more clients, **we\u2019ll position your brand to grow**."
+              "At DIRT, we have a tried & tested approach to building strategic brands. These are the four levels that lead to strong positioning and confident growth."
             }
             headingEnd={"framework"}
             headingHighlight={" DIRT "}
