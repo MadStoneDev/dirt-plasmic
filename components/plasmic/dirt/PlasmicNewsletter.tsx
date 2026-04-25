@@ -408,7 +408,7 @@ function PlasmicNewsletter__RenderFunc(props: {
                 fontSize={20}
                 tabletFontSize={28}
                 text={
-                  "Digging up branding insights, concrete messaging examples, and sharp takes on positioning. Delivered bi-monthly({blue|ish|or whenever the dirt settles}).\n\nFor construction, contech, and building material teams who suspect their brand is holding them back."
+                  "Digging up branding insights, concrete messaging examples, and sharp takes on positioning. Delivered bi-monthly({blue|ish|or whenever the dirt settles}).\n\nFor construction, AEC software, and building material teams who suspect their brand is holding them back."
                 }
                 textColour={"dirt-deep"}
               />

@@ -443,64 +443,125 @@ function PlasmicAbout__RenderFunc(props: {
                     sty.text__kqWR
                   )}
                 >
-                  <React.Fragment>
+                  {hasVariant(globalVariants, "screen", "tablet") ? (
                     <React.Fragment>
-                      {
-                        "We can\u2019t throw a rock without hitting yet another business offering \u201cinnovative solutions\u201d (and we\u2019re not apologising for the rock). "
-                      }
+                      <React.Fragment>
+                        {
+                          "We can\u2019t throw a rock without hitting yet another business offering \u201cinnovative solutions\u201d (and we\u2019re not apologising for the rock). "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={
+                          "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                        }
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "From construction firms to AEC software to building material companies, everyone sounds and looks the same."
+                        }
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\n\nOther sectors regularly reinvent and refresh themselves. They change and grow with the times. But most property and construction brands are still working with websites that haven\u2019t been updated since Y2K.\n\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={
+                          "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                        }
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"It shouldn\u2019t be this way. "}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\n\nAt DIRT, we believe the future of your business lies in your willingness to stand out. We\u2019re not just a \u201ccreative agency\u201d slapping a logo on more bland corporate speak. "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={
+                          "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                        }
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "We\u2019re your strategic partner, helping you show up and grow up."
+                        }
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\n\nBecause safe brands fade more with each passing year. But bold brands \u2014 the ones with a little grit under their nails \u2014 will structure and shape humanity for generations.\n\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={
+                          "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                        }
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"Which would you rather be?"}
+                      </span>
                     </React.Fragment>
-                    <span
-                      className={
-                        "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
-                      }
-                      style={{ fontWeight: 700 }}
-                    >
-                      {
-                        "From builders to designers to technology companies, everyone sounds and looks the same."
-                      }
-                    </span>
+                  ) : (
                     <React.Fragment>
-                      {
-                        "\n\nOther sectors regularly reinvent and refresh themselves. They change and grow with the times. But most property and construction brands are still working with websites that haven\u2019t been updated since Y2K.\n\n"
-                      }
+                      <React.Fragment>
+                        {
+                          "We can\u2019t throw a rock without hitting yet another business offering \u201cinnovative solutions\u201d (and we\u2019re not apologising for the rock). "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={
+                          "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                        }
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "From builders to designers to technology companies, everyone sounds and looks the same."
+                        }
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\n\nOther sectors regularly reinvent and refresh themselves. They change and grow with the times. But most property and construction brands are still working with websites that haven\u2019t been updated since Y2K.\n\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={
+                          "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                        }
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"It shouldn\u2019t be this way. "}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\n\nAt DIRT, we believe the future of your business lies in your willingness to stand out. We\u2019re not just a \u201ccreative agency\u201d slapping a logo on more bland corporate speak. "
+                        }
+                      </React.Fragment>
+                      <span
+                        className={
+                          "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                        }
+                        style={{ fontWeight: 700 }}
+                      >
+                        {
+                          "We\u2019re your strategic partner, helping you show up and grow up."
+                        }
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\n\nBecause safe brands fade more with each passing year. But bold brands \u2014 the ones with a little grit under their nails \u2014 will structure and shape humanity for generations.\n\n"
+                        }
+                      </React.Fragment>
+                      <span
+                        className={
+                          "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                        }
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"Which would you rather be?"}
+                      </span>
                     </React.Fragment>
-                    <span
-                      className={
-                        "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
-                      }
-                      style={{ fontWeight: 700 }}
-                    >
-                      {"It shouldn\u2019t be this way. "}
-                    </span>
-                    <React.Fragment>
-                      {
-                        "\n\nAt DIRT, we believe the future of your business lies in your willingness to stand out. We\u2019re not just a \u201ccreative agency\u201d slapping a logo on more bland corporate speak. "
-                      }
-                    </React.Fragment>
-                    <span
-                      className={
-                        "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
-                      }
-                      style={{ fontWeight: 700 }}
-                    >
-                      {
-                        "We\u2019re your strategic partner, helping you show up and grow up."
-                      }
-                    </span>
-                    <React.Fragment>
-                      {
-                        "\n\nBecause safe brands fade more with each passing year. But bold brands \u2014 the ones with a little grit under their nails \u2014 will structure and shape humanity for generations.\n\n"
-                      }
-                    </React.Fragment>
-                    <span
-                      className={
-                        "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
-                      }
-                      style={{ fontWeight: 700 }}
-                    >
-                      {"Which would you rather be?"}
-                    </span>
-                  </React.Fragment>
+                  )}
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__cpQpp)}>
                   <div

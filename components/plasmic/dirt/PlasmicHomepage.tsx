@@ -119,22 +119,21 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title:
-      "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
+    title: "The Agency for Construction, AEC Software & Property Firms | DIRT ",
     description:
-      "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities.",
+      "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities.",
     openGraph: {
       title:
-        "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
+        "The Agency for Construction, AEC Software & Property Firms | DIRT ",
       description:
-        "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities."
+        "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
     twitter: {
       card: "summary" as const,
       title:
-        "The Agency for Construction and Property Business | DIRT | Sydney, Australia",
+        "The Agency for Construction, AEC Software & Property Firms | DIRT ",
       description:
-        "DIRT is the agency for construction, property, design/build, & building material businesses who want a modern brand to match their capabilities."
+        "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
     alternates: { canonical: "/" }
   };
@@ -701,9 +700,9 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.threeReasonsItem___8VKnb
               )}
               description={
-                "Don\u2019t waste your time explaining the basics to us. We eat, sleep, and breathe construction, AEC software, PropTech, building materials, and property  development (which might explain the silicosis)."
+                "Don\u2019t waste your time explaining the basics to us. We eat, sleep, and breathe construction, AEC software, building materials, and property  development (which might explain the silicosis)."
               }
-              heading={"ABC specialists"}
+              heading={"AEC specialists"}
             />
 
             <ThreeReasonsItem
@@ -723,7 +722,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.threeReasonsItem__pAoFq
               )}
               description={
-                "Our DIRT Framework digs deep to unearth what makes you different. Then we build a brand that wins you more of the right projects."
+                "Our DIRT Framework digs deep to unearth what makes you different. Then we build a brand that wins you more of the right projects and cements your reputation."
               }
               heading={"Proven approach"}
             />
