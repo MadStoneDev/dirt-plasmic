@@ -37,7 +37,7 @@ export function WhatWeBelieveSection({
     return React.cloneElement(child as React.ReactElement<any>, {
       index,
       isActive: index === activeIndex,
-      onClick: () => setActiveIndex(index),
+      onPointerEnter: () => setActiveIndex(index),
     });
   });
 

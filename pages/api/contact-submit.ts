@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
+import { createClickUpContactTask } from "@/utils/clickup";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -259,6 +260,20 @@ export default async function handler(
       // Non-fatal — notification already sent
     }
 
+    try {
+      await createClickUpContactTask({
+        name,
+        email,
+        company,
+        website,
+        heardAbout,
+        referralName,
+        message,
+      });
+    } catch (err) {
+      console.error("ClickUp task error:", err);
+    }
+
     return res.status(200).json({ success: true });
   }
 
@@ -363,6 +378,20 @@ export default async function handler(
           console.error(`AC tag error for "${tagName}":`, err);
         }
       }
+    }
+
+    try {
+      await createClickUpContactTask({
+        name,
+        email,
+        company,
+        website,
+        heardAbout,
+        referralName,
+        message,
+      });
+    } catch (err) {
+      console.error("ClickUp task error:", err);
     }
 
     return res.status(200).json({ success: true });

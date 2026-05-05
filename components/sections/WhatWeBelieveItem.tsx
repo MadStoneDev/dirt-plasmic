@@ -7,20 +7,21 @@ export interface WhatWeBelieveItemProps {
   // Injected by parent
   index?: number;
   isActive?: boolean;
-  onClick?: () => void;
+  onPointerEnter?: () => void;
 }
 
 export function WhatWeBelieveItem({
   label,
   index = 0,
   isActive = false,
-  onClick,
+  onPointerEnter,
 }: WhatWeBelieveItemProps) {
   const number = String(index + 1).padStart(2, "0");
 
   return (
     <button
-      onClick={onClick}
+      type="button"
+      onPointerEnter={onPointerEnter}
       className="flex items-stretch gap-5 text-left min-h-18.5 cursor-pointer group"
     >
       {/* Indicator bar */}

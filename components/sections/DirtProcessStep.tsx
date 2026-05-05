@@ -61,7 +61,7 @@ export function DirtProcessStep({
       </div>
 
       {/* Image Column */}
-      <div className="grow relative min-h-100 lg:min-h-0 aspect-square border-[1.5px] border-dirt-black">
+      <div className="grow relative min-h-100 lg:min-h-0 md:aspect-square max-w-full border-[1.5px] border-dirt-black">
         {image ? (
           <Image
             src={image}

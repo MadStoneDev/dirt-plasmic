@@ -1,4 +1,5 @@
-import { registerComponent } from "@plasmicapp/host";
+import { registerComponent, registerGlobalContext } from "@plasmicapp/host";
+import { SiteSettings } from "./SiteSettings";
 import { DirtNavLink } from "./sections/DirtNavLink";
 import { DirtNav } from "./sections/DirtNav";
 import { HeroSection } from "./sections/HeroSection";
@@ -31,6 +32,50 @@ import { WhatWeBelieveItem } from "./sections/WhatWeBelieveItem";
 import { WhatWeBelieveDetail } from "./sections/WhatWeBelieveDetail";
 import { SliderSection } from "./sections/SliderSection";
 import { SliderStop } from "./sections/SliderStop";
+
+// Site Settings - global context with site-wide defaults editable in Plasmic Studio
+// Component props on individual sections override these. Empty strings from Studio
+// are treated as "unset" — see pickSetting() in ./SiteSettings.
+registerGlobalContext(SiteSettings, {
+  name: "SiteSettings",
+  props: {
+    contactEmail: {
+      type: "string",
+      displayName: "Contact Destination Email",
+      description: "Where SMTP contact form submissions are sent",
+    },
+    contactFormMode: {
+      type: "choice",
+      options: [
+        { label: "SMTP", value: "smtp" },
+        { label: "ActiveCampaign", value: "activecampaign" },
+      ],
+      displayName: "Contact Form Delivery",
+      description: "Default delivery mode for contact forms across the site",
+    },
+    contactListId: {
+      type: "string",
+      displayName: "Contact AC List ID",
+      description: "Default ActiveCampaign list for contact form submissions",
+    },
+    contactTags: {
+      type: "string",
+      displayName: "Contact AC Tags",
+      description: "Comma-separated default tags for contact form submissions",
+    },
+    newsletterListId: {
+      type: "string",
+      displayName: "Newsletter AC List ID",
+      description: "Default ActiveCampaign list for newsletter signups",
+    },
+    newsletterTags: {
+      type: "string",
+      displayName: "Newsletter AC Tags",
+      description: "Comma-separated default tags for newsletter signups",
+    },
+  },
+  importPath: "./components/SiteSettings",
+});
 
 // Dirt Nav Link - individual link for the navigation menu
 registerComponent(DirtNavLink, {
