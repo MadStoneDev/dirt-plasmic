@@ -9,7 +9,7 @@ export const seoDefaults = {
   locale: "en_AU",
   defaultTitle: "DIRT — We dig brands out of the dirt",
   defaultDescription:
-    "DIRT is a brand and marketing consultancy that helps businesses uncover what makes them different, build strategy that sticks, and grow with intention.",
+    "DIRT is a strategy-led branding and positioning agency for construction, AEC software, property development, and building material companies in Australia. Fresh messaging, brand identity, and websites built from the ground up.",
   defaultOgImage: "/og-default.jpg",
   twitterHandle: "",
   // JSON-LD Organization (used on every page for AEO/GEO)

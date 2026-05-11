@@ -93,6 +93,21 @@ export function SEO({
     },
   };
 
+  // ── Person JSON-LD (founder — strengthens entity link for GEO) ──
+  const founderLd = organization.founder
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: organization.founder.name,
+        jobTitle: "Founder",
+        worksFor: {
+          "@type": "Organization",
+          name: organization.name,
+          url: organization.url,
+        },
+      }
+    : null;
+
   // ── FAQ JSON-LD (AEO gold — drives featured snippets & AI answers) ──
   const faqLd =
     faqItems && faqItems.length > 0
@@ -145,6 +160,12 @@ export function SEO({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageLd) }}
       />
+      {founderLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(founderLd) }}
+        />
+      )}
       {faqLd && (
         <script
           type="application/ld+json"
