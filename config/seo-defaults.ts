@@ -15,12 +15,25 @@ export const seoDefaults = {
   // JSON-LD Organization (used on every page for AEO/GEO)
   organization: {
     name: "DIRT",
+    alternateName: "DIRT Agency",
     url: "https://thedirtagency.com",
     logo: "https://thedirtagency.com/logo.png",
+    description:
+      "DIRT is a strategy-led branding and positioning agency for construction, AEC software, property development, and building material businesses. Based in Sydney, Australia.",
     sameAs: [
-      // Add social profiles here — these help AI engines and Google Knowledge Panel
-      // "https://www.linkedin.com/company/dirt",
-      // "https://www.instagram.com/wearethedirt",
+      "https://www.instagram.com/thedirt.agency/",
+    ],
+    founder: {
+      name: "Nikita Morell",
+    },
+    areaServed: "AU",
+    knowsAbout: [
+      "Construction branding",
+      "AEC software marketing",
+      "Property development branding",
+      "Building materials marketing",
+      "Brand positioning",
+      "Brand strategy",
     ],
   },
 };

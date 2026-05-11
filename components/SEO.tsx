@@ -54,13 +54,26 @@ export function SEO({
   const canonicalUrl = canonical || `${siteUrl}${router.asPath.split("?")[0]}`;
 
   // ── Organization JSON-LD (every page) ──
-  const organizationLd = {
+  const organizationLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: organization.name,
+    ...(organization.alternateName && { alternateName: organization.alternateName }),
     url: organization.url,
     logo: organization.logo,
+    ...(organization.description && { description: organization.description }),
     ...(organization.sameAs.length > 0 && { sameAs: organization.sameAs }),
+    ...(organization.founder && {
+      founder: {
+        "@type": "Person",
+        name: organization.founder.name,
+      },
+    }),
+    ...(organization.areaServed && { areaServed: organization.areaServed }),
+    ...(organization.knowsAbout &&
+      organization.knowsAbout.length > 0 && {
+        knowsAbout: organization.knowsAbout,
+      }),
   };
 
   // ── Page-level JSON-LD ──
