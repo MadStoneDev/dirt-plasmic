@@ -457,7 +457,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                 />
               )}
               {footerDescription && (
-                <p className="text-dirt-off-white/80 font-sans text-sm">
+                <p className="text-dirt-off-white/80 font-sans text-lg">
                   {footerDescription}
                 </p>
               )}
@@ -472,12 +472,12 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
               )}
               {newsletterChildren}
               {newsletterDescription && (
-                <p className="text-dirt-off-white/80 font-sans text-sm mb-4">
+                <p className="text-dirt-off-white/80 font-sans text-lg mb-4">
                   {newsletterDescription}
                 </p>
               )}
               {newsletterSubmitted ? (
-                <p className="text-dirt-green font-display font-bold text-sm uppercase">
+                <p className="text-dirt-green font-display font-bold text-lg uppercase">
                   Thanks for subscribing!
                 </p>
               ) : (
@@ -488,7 +488,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                     value={newsletterFirstName}
                     onChange={(e) => setNewsletterFirstName(e.target.value)}
                     required
-                    className="px-3 py-2 bg-white text-dirt-deep font-sans text-sm placeholder:text-dirt-deep/50 outline-none"
+                    className="px-3 py-2 bg-white text-dirt-deep font-sans text-lg placeholder:text-dirt-deep/50 outline-none"
                   />
                   <div className="flex">
                     <input
@@ -497,12 +497,12 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                       value={newsletterEmail}
                       onChange={(e) => setNewsletterEmail(e.target.value)}
                       required
-                      className="grow px-3 py-2 bg-white text-dirt-deep font-sans text-sm placeholder:text-dirt-deep/50 outline-none"
+                      className="grow px-3 py-2 bg-white text-dirt-deep font-sans text-lg placeholder:text-dirt-deep/50 outline-none"
                     />
                     <button
                       type="submit"
                       disabled={newsletterSubmitting}
-                      className="px-4 py-2 bg-dirt-pop text-dirt-deep font-display font-bold text-sm uppercase hover:bg-dirt-green disabled:opacity-50 transition-colors"
+                      className="px-4 py-2 bg-dirt-pop text-dirt-deep font-display font-bold text-lg uppercase hover:bg-dirt-green disabled:opacity-50 transition-colors"
                     >
                       {newsletterSubmitting ? "..." : "Subscribe"}
                     </button>
@@ -522,7 +522,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                 </h4>
               )}
               {contactDescription && (
-                <p className="text-dirt-off-white/80 font-sans text-sm whitespace-pre-line">
+                <p className="text-dirt-off-white/80 font-sans text-lg whitespace-pre-line">
                   {contactDescription}
                 </p>
               )}
@@ -540,7 +540,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                   <a
                     key={index}
                     href={link.url}
-                    className="text-dirt-off-white/80 font-sans text-sm hover:text-dirt-pop transition-colors"
+                    className="text-dirt-off-white/80 font-sans text-lg hover:text-dirt-pop transition-colors"
                   >
                     {link.text}
                   </a>
@@ -565,13 +565,13 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
 
           {/* Copyright */}
           {copyrightText && (
-            <p className="mx-auto max-w-md text-dirt-off-white/50 font-sans text-sm text-center">
+            <p className="mx-auto max-w-xl text-dirt-off-white/50 font-sans text-lg text-center">
               {copyrightText}
             </p>
           )}
 
           {/* Legal links */}
-          <div className="flex items-center justify-center gap-3 mt-1 font-sans text-sm">
+          <div className="flex items-center justify-center gap-3 mt-1 font-sans text-lg">
             <a href="/privacy" data-custom-hover className="text-dirt-off-white/50 hover:text-dirt-pop transition-colors">Privacy Policy</a>
             <span className="text-dirt-off-white/20">|</span>
             <a href="/terms" data-custom-hover className="text-dirt-off-white/50 hover:text-dirt-pop transition-colors">Terms &amp; Conditions</a>
@@ -596,7 +596,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
         <a
           href={bottomRightLink}
           target="_blank"
-          className="absolute right-0 bottom-0 px-3 py-2 max-w-48 bg-dirt-green text-dirt-deep text-center font-sans font-medium text-sm hover:bg-dirt-pop transition-colors z-[3]"
+          className="absolute right-0 bottom-0 px-3 py-2 max-w-48 bg-dirt-green text-dirt-deep text-center font-sans font-medium text-lg hover:bg-dirt-pop transition-colors z-[3]"
           style={{ lineHeight: "115%", letterSpacing: "-2%" }}
         >
           {bottomRightText}

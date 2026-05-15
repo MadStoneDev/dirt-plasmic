@@ -57,7 +57,7 @@ export function ThreeReasonsSection({
                 alt=""
                 width={800}
                 height={600}
-                className="object-cover w-130"
+                className="object-cover w-130 lg:w-170"
               />
             </div>
           )}

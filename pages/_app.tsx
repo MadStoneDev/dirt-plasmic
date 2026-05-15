@@ -2,7 +2,14 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect } from "react";
+import { Inter } from "next/font/google";
 import "../styles/globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -44,7 +51,9 @@ export default function App({ Component, pageProps }: AppProps) {
           </Script>
         </>
       )}
-      <Component {...pageProps} />
+      <div className={inter.variable}>
+        <Component {...pageProps} />
+      </div>
     </>
   );
 }

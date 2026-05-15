@@ -27,7 +27,11 @@
       "Bash(grep -oP '\"/contactLists\":\\\\{\"post\".{0,1500}')",
       "WebFetch(domain:developers.zeorouteplanner.com)",
       "WebFetch(domain:www.postman.com)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(git push:*)",
+      "Bash(git stash:*)",
+      "Bash(npm install *)",
+      "Bash(npx next *)"
     ]
   }
 }

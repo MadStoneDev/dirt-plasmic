@@ -57,6 +57,17 @@ export function TestimonialSection({
       className={`relative py-16 md:py-40 px-5 md:px-20 ${bgClass} overflow-hidden`}
       style={{ gridColumn: "1 / -1", ...(isBgCustom && customBackgroundColor ? { backgroundColor: customBackgroundColor } : {}) }}
     >
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <Image
+          src="/quotation-mark.png"
+          alt=""
+          width={500}
+          height={500}
+          className="opacity-10 w-[300px] md:w-[500px] h-auto select-none"
+          aria-hidden="true"
+        />
+      </div>
+
       <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
         {logo && (
           <div className="mb-20">
