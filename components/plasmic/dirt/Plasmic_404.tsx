@@ -179,7 +179,7 @@ function Plasmic_404__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <title key="title">{pageMetadata.title}</title>
         <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta

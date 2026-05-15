@@ -9,18 +9,22 @@ import * as React from "react";
 
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { AntdConfigProvider } from "@plasmicpkgs/antd5/skinny/registerConfigProvider";
+import { SiteSettings } from "../../SiteSettings"; // plasmic-import: 2VcvXhbLkskw/codeComponent
 
 export interface GlobalContextsProviderProps {
   children?: React.ReactElement;
   antdConfigProviderProps?: Partial<
     Omit<React.ComponentProps<typeof AntdConfigProvider>, "children">
   >;
+  siteSettingsProps?: Partial<
+    Omit<React.ComponentProps<typeof SiteSettings>, "children">
+  >;
 }
 
 export default function GlobalContextsProvider(
   props: GlobalContextsProviderProps
 ) {
-  const { children, antdConfigProviderProps } = props;
+  const { children, antdConfigProviderProps, siteSettingsProps } = props;
 
   return (
     <AntdConfigProvider
@@ -115,7 +119,41 @@ export default function GlobalContextsProvider(
           : false
       }
     >
-      {children}
+      <SiteSettings
+        {...siteSettingsProps}
+        contactEmail={
+          siteSettingsProps && "contactEmail" in siteSettingsProps
+            ? siteSettingsProps.contactEmail!
+            : undefined
+        }
+        contactFormMode={
+          siteSettingsProps && "contactFormMode" in siteSettingsProps
+            ? siteSettingsProps.contactFormMode!
+            : undefined
+        }
+        contactListId={
+          siteSettingsProps && "contactListId" in siteSettingsProps
+            ? siteSettingsProps.contactListId!
+            : undefined
+        }
+        contactTags={
+          siteSettingsProps && "contactTags" in siteSettingsProps
+            ? siteSettingsProps.contactTags!
+            : undefined
+        }
+        newsletterListId={
+          siteSettingsProps && "newsletterListId" in siteSettingsProps
+            ? siteSettingsProps.newsletterListId!
+            : undefined
+        }
+        newsletterTags={
+          siteSettingsProps && "newsletterTags" in siteSettingsProps
+            ? siteSettingsProps.newsletterTags!
+            : undefined
+        }
+      >
+        {children}
+      </SiteSettings>
     </AntdConfigProvider>
   );
 }

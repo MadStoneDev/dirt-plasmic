@@ -577,6 +577,16 @@
           "id": "8gUSyTm9_DfM",
           "name": "Main Footer Backdrop.png",
           "filePath": "../public/plasmic/dirt/images/mainFooterBackdropPng.png"
+        },
+        {
+          "id": "9-PE73nS1VJ0",
+          "name": "ed_SOIL BACK.png",
+          "filePath": "../public/plasmic/dirt/images/edSoilBackPng.png"
+        },
+        {
+          "id": "DVgFcolPJbvv",
+          "name": "ed_SOIL FRONT.png",
+          "filePath": "../public/plasmic/dirt/images/edSoilFrontPng.png"
         }
       ],
       "indirect": false,
@@ -789,6 +799,12 @@
           "name": "SliderSection",
           "displayName": "SliderSection",
           "componentImportPath": "./components/sections/SliderSection"
+        },
+        {
+          "id": "2VcvXhbLkskw",
+          "name": "SiteSettings",
+          "displayName": "SiteSettings",
+          "componentImportPath": "./components/SiteSettings"
         }
       ],
       "customFunctions": []
@@ -1586,6 +1602,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.359",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.359/dist/plasmic.schema.json"
+  "cliVersion": "0.1.361",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.361/dist/plasmic.schema.json"
 }

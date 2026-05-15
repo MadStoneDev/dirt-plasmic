@@ -11,7 +11,7 @@
     "plasmic:fix": "node scripts/fix-plasmic-meta.js"
   },
   "dependencies": {
-    "@plasmicapp/cli": "^0.1.359",
+    "@plasmicapp/cli": "^0.1.361",
     "@plasmicapp/host": "^1.0.234",
     "@plasmicapp/loader-nextjs": "^1.0.451",
     "@plasmicapp/nextjs-app-router": "^1.0.20",

@@ -223,7 +223,7 @@ function PlasmicHomepage__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <title key="title">{pageMetadata.title}</title>
         <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
@@ -331,14 +331,14 @@ function PlasmicHomepage__RenderFunc(props: {
           <HeroSection
             data-plasmic-name={"heroSection"}
             data-plasmic-override={overrides.heroSection}
-            backgroundImage={"/plasmic/dirt/images/dirtBackPng.png"}
+            backgroundImage={"/plasmic/dirt/images/edSoilBackPng.png"}
             className={classNames("__wab_instance", sty.heroSection)}
             ctaLabel={"Get the DIRT"}
             ctaLink={"/contact"}
             description={
               "DIRT is the agency for construction, AEC software, property & building material companies who want a modern brand to match their capabilities."
             }
-            foregroundImage={"/plasmic/dirt/images/dirtFrontPng.png"}
+            foregroundImage={"/plasmic/dirt/images/edSoilFrontPng.png"}
             heading={"Fresh messaging, branding, and positioning"}
             midgroundImage={
               "/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"
@@ -671,7 +671,7 @@ function PlasmicHomepage__RenderFunc(props: {
             }
             backgroundColor={"dirt-green"}
             body={
-              "We struggled to tell our story in a way that felt true to who we are. Now, our website copy is clear, energised, and genuinely reflects our firm.\n\nThe process reconnected our team to what we stand for and gave us real confidence in how we communicate our value.\n\nThank you, Nikita! Our brand finally feels like us."
+              "We struggled to tell our story in a way that felt true to who we are. Now, our website copy is clear, energised, and genuinely reflects our firm. The process reconnected our team to what we stand for and gave us real confidence in how we communicate our value.\n\nThank you, Nikita! Our brand finally feels like us."
             }
             className={classNames(
               "__wab_instance",
@@ -732,7 +732,7 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.dirtFrameworkSection}
             className={classNames("__wab_instance", sty.dirtFrameworkSection)}
             description={
-              "At DIRT, we have a tried & tested approach to building strategic brands. These are the four levels that lead to strong positioning and confident growth."
+              "At DIRT, we have a proven approach to building strategic brands. These are the four levels that lead to strong positioning and confident market share growth."
             }
             headingEnd={"framework"}
             headingHighlight={" DIRT "}
@@ -1117,11 +1117,9 @@ function PlasmicHomepage__RenderFunc(props: {
             authorPhoto={"/plasmic/dirt/images/jasonDunlopPhotoJpg.jpg"}
             authorRole={"President, StudioMX"}
             backgroundColor={"dirt-blue"}
-            body={`Since launching the new website, clients have commented on how clear and strong the messaging is.
-
-The process helped us articulate what we’d always known about our practice but never put into words and that clarity has changed how we talk about our business, inside and out.
-
-Huge thanks to Nikita for creating  and her team!`}
+            body={
+              "Since launching the new website, clients have commented on how clear and strong the messaging is. The process helped us articulate what we\u2019d always known about our practice but never put into words and that clarity has changed how we talk about our business, inside and out.\n\nHuge thanks to Nikita for creating\u00a0 and her team!"
+            }
             className={classNames(
               "__wab_instance",
               sty.testimonialSection__xAfa
