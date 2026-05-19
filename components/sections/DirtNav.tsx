@@ -272,11 +272,11 @@ export function DirtNav({
 
         {/* Bottom image */}
         {menuImage && (
-            <div className="absolute bottom-0 left-0 right-0 shrink-0">
+            <div className="absolute top-[40%] left-0 right-0 shrink-0">
               <img
                   src={menuImage}
                   alt=""
-                  className="max-h-40 md:max-h-120 w-full object-bottom object-cover"
+                  className="w-full object-bottom object-cover"
               />
             </div>
         )}
