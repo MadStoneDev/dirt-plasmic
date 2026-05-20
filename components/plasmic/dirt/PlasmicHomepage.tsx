@@ -659,7 +659,7 @@ function PlasmicHomepage__RenderFunc(props: {
             <SignsCTAItem
               className={classNames("__wab_instance", sty.signsCtaItem__dgV7L)}
               text={
-                "Your brand is outdated and doesn't reflect your business today"
+                "You\u2019ve outgrown your brand. It no longer reflects the business you\u2019ve become"
               }
             />
           </SignsCTASection>
