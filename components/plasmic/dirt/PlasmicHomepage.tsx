@@ -646,9 +646,7 @@ function PlasmicHomepage__RenderFunc(props: {
           >
             <SignsCTAItem
               className={classNames("__wab_instance", sty.signsCtaItem__tnyCd)}
-              text={
-                "You\u2019re entering a new market or offering new services"
-              }
+              text={"New prospects can't figure our what you're selling"}
             />
 
             <SignsCTAItem
@@ -660,7 +658,9 @@ function PlasmicHomepage__RenderFunc(props: {
 
             <SignsCTAItem
               className={classNames("__wab_instance", sty.signsCtaItem__dgV7L)}
-              text={"Your brand is outdated, undefined, or just plain weak"}
+              text={
+                "Your brand is outdated and doesn't reflect your business today"
+              }
             />
           </SignsCTASection>
           <TestimonialSection
