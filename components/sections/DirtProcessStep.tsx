@@ -25,12 +25,12 @@ export function DirtProcessStep({
 
   return (
     <div
-      className={`flex flex-col-reverse gap-4 xl:gap-12 ${isEven ? "md:flex-row-reverse" : "md:flex-row"} max-w-full`}
+      className={`flex flex-col-reverse gap-4 xl:gap-10 ${isEven ? "md:flex-row-reverse" : "md:flex-row"} max-w-full`}
     >
       {/* Info Column */}
-      <div className="bg-dirt-deep p-6 lg:p-16 w-full md:max-w-[40%] min-h-100 flex flex-col">
+      <div className="bg-dirt-deep p-6 xl:p-16 w-full md:max-w-[35%] min-h-100 flex flex-col">
         {heading && (
-          <h3 className="font-display font-bold text-5xl xl:text-6xl text-dirt-pop mb-4" style={{
+          <h3 className="font-display font-bold text-3xl lg:text-5xl xl:text-6xl text-dirt-pop mb-4" style={{
             letterSpacing: "-2%"
           }}>
             {heading}
@@ -38,7 +38,7 @@ export function DirtProcessStep({
         )}
 
         {description && (
-          <p className="text-dirt-pop font-sans text-xl xl:text-3xl whitespace-pre-line grow" style={{
+          <p className="text-dirt-pop font-sans text-lg lg:text-xl xl:text-3xl whitespace-pre-line grow" style={{
             lineHeight: "135%",
           }}>
             {description}
@@ -46,11 +46,11 @@ export function DirtProcessStep({
         )}
 
         {parsedTags.length > 0 && (
-          <div className="max-w-xs md:max-w-none flex flex-wrap gap-2 mt-30 md:mt-8">
+          <div className="max-w-md lg:max-w-none flex flex-wrap gap-2 mt-30 md:mt-8">
             {parsedTags.map((tag, tagIndex) => (
               <span
                 key={tagIndex}
-                className="px-3 py-1 font-display uppercase text-base font-medium text-dirt-pop"
+                className="px-3 py-1 font-display uppercase text-sm lg:text-base font-medium text-dirt-pop"
                 style={{ backgroundColor: "rgba(254, 92, 2, 0.15)", letterSpacing: "1px" }}
               >
                 {tag}
@@ -61,7 +61,7 @@ export function DirtProcessStep({
       </div>
 
       {/* Image Column */}
-      <div className="grow relative min-h-100 lg:min-h-0 md:aspect-square max-w-full border-[1.5px] border-dirt-black">
+      <div className="grow relative min-h-100 lg:min-h-0 aspect-square md:aspect-5/4 max-w-full border-[1.5px] border-dirt-black">
         {image ? (
           <Image
             src={image}

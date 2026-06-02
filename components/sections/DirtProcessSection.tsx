@@ -37,7 +37,7 @@ export function DirtProcessSection({
         </h2>
 
         {/* Process Steps */}
-        <div className="flex flex-col gap-4 xl:gap-12">
+        <div className="mx-auto flex flex-col gap-4 xl:gap-12 max-w-350">
           {steps}
         </div>
 
