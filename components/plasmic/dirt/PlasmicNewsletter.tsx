@@ -71,7 +71,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectcss
 import sty from "./PlasmicNewsletter.module.css"; // plasmic-import: wWD7id8LzFyR/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -226,17 +225,17 @@ function PlasmicNewsletter__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_8kaaMUEQHxomwqwuKNMozy",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -255,10 +254,10 @@ function PlasmicNewsletter__RenderFunc(props: {
                 data-plasmic-name={"link"}
                 data-plasmic-override={overrides.link}
                 className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.a__8kaaM,
-                  projectcss.__wab_text,
+                  "all",
+                  "a",
+                  "a__8kaaM",
+                  "__wab_text",
                   sty.link
                 )}
                 component={Link}
@@ -298,15 +297,11 @@ function PlasmicNewsletter__RenderFunc(props: {
             stickyOnScroll={true}
           />
 
-          <section className={classNames(projectcss.all, sty.section__r2Ok8)}>
-            <div className={classNames(projectcss.all, sty.freeBox__zuBr)}>
-              <div className={classNames(projectcss.all, sty.freeBox__jBvT)}>
+          <section className={classNames("all", sty.section__r2Ok8)}>
+            <div className={classNames("all", sty.freeBox__zuBr)}>
+              <div className={classNames("all", sty.freeBox__jBvT)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___4HDF
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___4HDF)}
                 >
                   {"Subscribe to"}
                 </div>
@@ -332,20 +327,12 @@ function PlasmicNewsletter__RenderFunc(props: {
                   }}
                 />
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__pvBdK
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__pvBdK)}>
                 {
                   "The best newsletter in your inbox. If it\u2019s not, we\u2019ll backfill "
                 }
               </div>
-              <section
-                className={classNames(projectcss.all, sty.section__pqGmV)}
-              >
+              <section className={classNames("all", sty.section__pqGmV)}>
                 <NewsletterFormSection
                   className={classNames(
                     "__wab_instance",
@@ -359,14 +346,8 @@ function PlasmicNewsletter__RenderFunc(props: {
                 />
               </section>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__b2Ydi)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__vf9Jb
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__b2Ydi)}>
+              <div className={classNames("all", "__wab_text", sty.text__vf9Jb)}>
                 {
                   "The best newsletter in your inbox. If it\u2019s not, we\u2019ll backfill"
                 }
@@ -390,17 +371,11 @@ function PlasmicNewsletter__RenderFunc(props: {
               />
             </div>
           </section>
-          <section className={classNames(projectcss.all, sty.section__oQpX2)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__eBuX4
-              )}
-            >
+          <section className={classNames("all", sty.section__oQpX2)}>
+            <div className={classNames("all", "__wab_text", sty.text__eBuX4)}>
               {"The newsletter where nothing stays buried."}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__cFxK)}>
+            <div className={classNames("all", sty.freeBox__cFxK)}>
               <DirtRichText
                 data-plasmic-name={"dirtRichText"}
                 data-plasmic-override={overrides.dirtRichText}
@@ -414,17 +389,11 @@ function PlasmicNewsletter__RenderFunc(props: {
               />
             </div>
           </section>
-          <section className={classNames(projectcss.all, sty.section__jBqyz)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__aRqAb
-              )}
-            >
+          <section className={classNames("all", sty.section__jBqyz)}>
+            <div className={classNames("all", "__wab_text", sty.text__aRqAb)}>
               {"Unearth the good stuff"}
             </div>
-            <section className={classNames(projectcss.all, sty.section__mHVvw)}>
+            <section className={classNames("all", sty.section__mHVvw)}>
               <NewsletterFormSection
                 className={classNames(
                   "__wab_instance",
@@ -441,18 +410,12 @@ function PlasmicNewsletter__RenderFunc(props: {
           <section
             data-plasmic-name={"testimonials"}
             data-plasmic-override={overrides.testimonials}
-            className={classNames(projectcss.all, sty.testimonials)}
+            className={classNames("all", sty.testimonials)}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__kHady
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__kHady)}>
               {"Bet you\u2019ll love it as much as these subscribers"}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__bJn8)}>
+            <div className={classNames("all", sty.freeBox__bJn8)}>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__bicuv)}

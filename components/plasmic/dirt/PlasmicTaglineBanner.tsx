@@ -64,7 +64,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectcss
 import sty from "./PlasmicTaglineBanner.module.css"; // plasmic-import: cGGZJPgn9EgF/css
 
 createPlasmicElementProxy;
@@ -139,12 +138,12 @@ function PlasmicTaglineBanner__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.a,
-        projectcss.a__8kaaM,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "a",
+        "a__8kaaM",
+        "root_reset_8kaaMUEQHxomwqwuKNMozy",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.taglineBanner,
         "cursor-pointer"
@@ -184,16 +183,12 @@ function PlasmicTaglineBanner__RenderFunc(props: {
       <div
         data-plasmic-name={"freeBox"}
         data-plasmic-override={overrides.freeBox}
-        className={classNames(projectcss.all, sty.freeBox)}
+        className={classNames("all", sty.freeBox)}
       >
         <div
           data-plasmic-name={"text"}
           data-plasmic-override={overrides.text}
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text
-          )}
+          className={classNames("all", "__wab_text", sty.text)}
         >
           {"GET THE DIRT. Click Here"}
         </div>

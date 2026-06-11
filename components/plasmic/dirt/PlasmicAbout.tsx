@@ -72,7 +72,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectcss
 import sty from "./PlasmicAbout.module.css"; // plasmic-import: NOUe36PuEWFr/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -226,17 +225,17 @@ function PlasmicAbout__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_8kaaMUEQHxomwqwuKNMozy",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -253,10 +252,10 @@ function PlasmicAbout__RenderFunc(props: {
             actions={
               <PlasmicLink__
                 className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.a__8kaaM,
-                  projectcss.__wab_text,
+                  "all",
+                  "a",
+                  "a__8kaaM",
+                  "__wab_text",
                   sty.link___9CiQl
                 )}
                 component={Link}
@@ -299,16 +298,10 @@ function PlasmicAbout__RenderFunc(props: {
           <section
             data-plasmic-name={"aboutHero"}
             data-plasmic-override={overrides.aboutHero}
-            className={classNames(projectcss.all, sty.aboutHero)}
+            className={classNames("all", sty.aboutHero)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox___8QbQv)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__hOtI
-                )}
-              >
+            <div className={classNames("all", sty.freeBox___8QbQv)}>
+              <div className={classNames("all", "__wab_text", sty.text__hOtI)}>
                 <React.Fragment>
                   <React.Fragment>{"We build "}</React.Fragment>
                   <span
@@ -330,13 +323,7 @@ function PlasmicAbout__RenderFunc(props: {
                   </span>
                 </React.Fragment>
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__x8Tmz
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__x8Tmz)}>
                 <React.Fragment>
                   <React.Fragment>
                     {
@@ -380,7 +367,7 @@ function PlasmicAbout__RenderFunc(props: {
           <section
             data-plasmic-name={"ifWeHearTheWord"}
             data-plasmic-override={overrides.ifWeHearTheWord}
-            className={classNames(projectcss.all, sty.ifWeHearTheWord)}
+            className={classNames("all", sty.ifWeHearTheWord)}
           >
             <PlasmicImg__
               alt={""}
@@ -400,14 +387,8 @@ function PlasmicAbout__RenderFunc(props: {
               }}
             />
 
-            <div className={classNames(projectcss.all, sty.freeBox__w0WrB)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__kqBug
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__w0WrB)}>
+              <div className={classNames("all", "__wab_text", sty.text__kqBug)}>
                 <React.Fragment>
                   <React.Fragment>
                     {
@@ -424,24 +405,16 @@ function PlasmicAbout__RenderFunc(props: {
                   </span>
                 </React.Fragment>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox___3AIGw)}>
+              <div className={classNames("all", sty.freeBox___3AIGw)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__eNcf
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__eNcf)}
                 >
                   {
                     "Branding in the construction and property industries gets a bad rap. Honestly, it deserves it."
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kqWR
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__kqWR)}
                 >
                   {hasVariant(globalVariants, "screen", "tablet") ? (
                     <React.Fragment>
@@ -563,31 +536,19 @@ function PlasmicAbout__RenderFunc(props: {
                     </React.Fragment>
                   )}
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__cpQpp)}>
+                <div className={classNames("all", sty.freeBox__cpQpp)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__uCcVs
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__uCcVs)}
                   >
                     {"Nikita Morell*"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zYg7H
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__zYg7H)}
                   >
                     {"Founder, DIRT"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__gxtGd
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__gxtGd)}
                   >
                     <React.Fragment>
                       <React.Fragment>
@@ -596,11 +557,11 @@ function PlasmicAbout__RenderFunc(props: {
                       {
                         <PlasmicLink__
                           className={classNames(
-                            projectcss.all,
-                            projectcss.a,
-                            projectcss.a__8kaaM,
-                            projectcss.__wab_text,
-                            projectcss.plasmic_default__inline,
+                            "all",
+                            "a",
+                            "a__8kaaM",
+                            "__wab_text",
+                            "plasmic_default__inline",
                             sty.link__reuHx
                           )}
                           component={Link}
@@ -733,24 +694,12 @@ function PlasmicAbout__RenderFunc(props: {
           <section
             data-plasmic-name={"builtWithSpecialists"}
             data-plasmic-override={overrides.builtWithSpecialists}
-            className={classNames(projectcss.all, sty.builtWithSpecialists)}
+            className={classNames("all", sty.builtWithSpecialists)}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__hRrt8
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__hRrt8)}>
               {"Built with Specialists"}
             </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__ermkI
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__ermkI)}>
               {
                 "Every member of our team is exceptional. We\u2019re strategists, copywriters, designers, and web developers. More importantly, we\u2019re all specialists in the property and construction industries."
               }

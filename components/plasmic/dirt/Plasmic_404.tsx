@@ -67,7 +67,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectcss
 import sty from "./Plasmic_404.module.css"; // plasmic-import: OYBzaRbhDGXt/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -197,17 +196,17 @@ function Plasmic_404__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_8kaaMUEQHxomwqwuKNMozy",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -224,10 +223,10 @@ function Plasmic_404__RenderFunc(props: {
             actions={
               <PlasmicLink__
                 className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.a__8kaaM,
-                  projectcss.__wab_text,
+                  "all",
+                  "a",
+                  "a__8kaaM",
+                  "__wab_text",
                   sty.link__jszHm
                 )}
                 component={Link}
@@ -271,10 +270,10 @@ function Plasmic_404__RenderFunc(props: {
             data-plasmic-name={"h1"}
             data-plasmic-override={overrides.h1}
             className={classNames(
-              projectcss.all,
-              projectcss.h1,
-              projectcss.h1__8kaaM,
-              projectcss.__wab_text,
+              "all",
+              "h1",
+              "h1__8kaaM",
+              "__wab_text",
               sty.h1
             )}
           >
@@ -293,7 +292,7 @@ function Plasmic_404__RenderFunc(props: {
           <div
             data-plasmic-name={"freeBox"}
             data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
+            className={classNames("all", sty.freeBox)}
           >
             <PlasmicImg__
               alt={""}
@@ -315,24 +314,13 @@ function Plasmic_404__RenderFunc(props: {
               }}
             />
           </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__mq9Uy
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__mq9Uy)}>
             {
               "Good news: when it comes to brands, we know exactly where to dig."
             }
           </div>
           <PlasmicLink__
-            className={classNames(
-              projectcss.all,
-              projectcss.a,
-              projectcss.a__8kaaM,
-              sty.link___6CbZc
-            )}
+            className={classNames("all", "a", "a__8kaaM", sty.link___6CbZc)}
             component={Link}
             legacyBehavior={false}
             onClick={async event => {
@@ -385,13 +373,7 @@ function Plasmic_404__RenderFunc(props: {
               }}
             />
 
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__fg3K
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__fg3K)}>
               {"Take me home"}
             </div>
           </PlasmicLink__>

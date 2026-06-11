@@ -92,7 +92,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: PsrXtMg1_Gbw/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -256,17 +255,17 @@ function PlasmicHomepage__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"home"}
           data-plasmic-override={overrides.home}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_8kaaMUEQHxomwqwuKNMozy",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.home
           )}
@@ -285,10 +284,10 @@ function PlasmicHomepage__RenderFunc(props: {
                 data-plasmic-name={"link"}
                 data-plasmic-override={overrides.link}
                 className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.a__8kaaM,
-                  projectcss.__wab_text,
+                  "all",
+                  "a",
+                  "a__8kaaM",
+                  "__wab_text",
                   sty.link
                 )}
                 component={Link}
@@ -394,11 +393,7 @@ function PlasmicHomepage__RenderFunc(props: {
             richText={
               <React.Fragment>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wkMGr
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__wkMGr)}
                 >
                   {
                     "Building materials, methods, and tech have changed a LOT in the last 100 years."
@@ -418,33 +413,21 @@ function PlasmicHomepage__RenderFunc(props: {
                 />
 
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__fAXw2
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__fAXw2)}
                 >
                   {
                     "But your current brand isn't telling customers any of that. In fact, it's not telling them anything."
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__roSGp
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__roSGp)}
                 >
                   {
                     "Your business does so much more than your current messaging reflects. "
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__eDUmi
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__eDUmi)}
                 >
                   <React.Fragment>
                     <span
@@ -646,20 +629,20 @@ function PlasmicHomepage__RenderFunc(props: {
           >
             <SignsCTAItem
               className={classNames("__wab_instance", sty.signsCtaItem__tnyCd)}
-              text={"New prospects can't figure our what you're selling"}
+              text={"New prospects can't figure out what you're selling"}
             />
 
             <SignsCTAItem
               className={classNames("__wab_instance", sty.signsCtaItem__jjiZe)}
               text={
-                "You\u2019re getting ready to expand or merge your business, and need to look cohesive"
+                "You\u2019re entering a new GTM phase and need your value to land faster"
               }
             />
 
             <SignsCTAItem
               className={classNames("__wab_instance", sty.signsCtaItem__dgV7L)}
               text={
-                "You\u2019ve outgrown your brand. It no longer reflects the business you\u2019ve become"
+                "You\u2019ve outgrown your brand. It no longer reflects your business today"
               }
             />
           </SignsCTASection>
@@ -995,33 +978,21 @@ function PlasmicHomepage__RenderFunc(props: {
             richText={
               <React.Fragment>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__x6629
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__x6629)}
                 >
                   {
                     "DIRT was born from a decade of up-close and personal work with architects. Founder Nikita Morell has worked with over 200 architecture firms across 10 countries, and taught hundreds more how to win more (and better) projects. Now we\u2019re going deeper. "
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__v4TnA
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__v4TnA)}
                 >
                   {
                     "Every DIRT client gets a custom-assembled team of property, construction, and tech specialists to do the heavy lifting. And unlike other branding firms, we start with your message first \u2013 because as you know, it doesn\u2019t matter how lovely something looks on the outside if the inside is hollow."
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__uaaAw
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__uaaAw)}
                 >
                   {
                     "In these industries, every bid counts. You need to hit the right people hard, so your business can hit pay dirt."
