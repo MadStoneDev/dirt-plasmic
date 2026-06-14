@@ -340,8 +340,10 @@ function PlasmicNewsletter__RenderFunc(props: {
                   )}
                   listId={"DIRT List"}
                   submitButtonLabel={"Yes, Get me dirty"}
-                  successMessage={"Thanks for subscribing!"}
-                  successMessageColour={"dirt-green"}
+                  successMessage={
+                    "You're officially DIRT-y. Go check your inbox!"
+                  }
+                  successMessageColour={"black"}
                   tags={"DIRT newsletter submission"}
                 />
               </section>
