@@ -343,7 +343,7 @@ function PlasmicNewsletter__RenderFunc(props: {
                   successMessage={
                     "You're officially DIRT-y. Go check your inbox!"
                   }
-                  successMessageColour={"black"}
+                  successMessageColour={"white"}
                   tags={"DIRT newsletter submission"}
                 />
               </section>
@@ -404,7 +404,7 @@ function PlasmicNewsletter__RenderFunc(props: {
                 listId={"DIRT List"}
                 submitButtonLabel={"Yes, Get me Dirty"}
                 successMessage={"Thanks for subscribing!"}
-                successMessageColour={"dirt-green"}
+                successMessageColour={"white"}
                 tags={"DIRT newsletter submission"}
               />
             </section>
