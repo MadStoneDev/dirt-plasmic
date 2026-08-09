@@ -31,7 +31,8 @@ function Newsletter() {
     <>
       <SEO
         title="DIRT DISPATCH | The Newsletter"
-        description="For construction, contech, and building material teams who suspect their brand is holding them back."
+        pageName="DIRT Dispatch — The Newsletter"
+        description="DIRT Dispatch takes the dullest parts of the built environment and makes them witty, smart and worth talking about. For construction, ConTech and building-material teams."
       />
       <GlobalContextsProvider>
         <PlasmicQueryDataProvider>

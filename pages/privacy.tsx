@@ -30,7 +30,9 @@ export default function Privacy() {
     <>
       <SEO
         title="Privacy Policy - DIRT"
+        pageName="Privacy Policy — DIRT"
         description="How DIRT Creative collects, uses and protects your personal information."
+        pageAbout="none"
       />
       <div className="min-h-screen flex flex-col">
         <DirtNav

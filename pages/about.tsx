@@ -28,8 +28,11 @@ function About() {
   return (
     <>
       <SEO
-        description="Founded by Nikita Morell, DIRT helps construction, ConTech and product brands sharpen their positioning and messaging to win more work."
+        pageName="About DIRT"
+        description="Founded by Nikita Morell, DIRT helps construction, AEC software and product brands sharpen their positioning and messaging to win more work."
         jsonLdType="AboutPage"
+        pageAbout="nikita"
+        mainEntity="nikita"
       />
       <PageParamsProvider__
         route={useRouter()?.pathname}

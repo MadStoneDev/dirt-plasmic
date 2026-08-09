@@ -17,11 +17,19 @@ export interface SEOProps {
   noIndex?: boolean;
 
   // ── JSON-LD structured data (AEO / GEO) ──
-  /** JSON-LD page type — adds rich structured data for AI engines */
-  jsonLdType?: "WebPage" | "AboutPage" | "ContactPage" | "FAQPage";
-  /** FAQ items for FAQPage schema — great for AEO featured snippets */
+  /** Type of the page-level node in the @graph */
+  jsonLdType?: "WebPage" | "AboutPage" | "ContactPage" | "CollectionPage";
+  /** Name of the page node in JSON-LD (falls back to title, then siteName) */
+  pageName?: string;
+  /** Which sitewide entity this page is "about" (default: organization) */
+  pageAbout?: "organization" | "nikita" | "none";
+  /** Primary entity of the page — e.g. the About page is about the founder */
+  mainEntity?: "organization" | "nikita";
+  /** Reference the logo as the page's primary image (e.g. homepage) */
+  primaryImageOfPage?: boolean;
+  /** FAQ items — adds a FAQPage node. Answers MUST match visible on-page text. */
   faqItems?: { question: string; answer: string }[];
-  /** Article/page date for freshness signals */
+  /** Page dates for freshness signals */
   datePublished?: string;
   dateModified?: string;
 }
@@ -34,6 +42,10 @@ export function SEO({
   ogType = "website",
   noIndex = false,
   jsonLdType = "WebPage",
+  pageName,
+  pageAbout = "organization",
+  mainEntity,
+  primaryImageOfPage = false,
   faqItems,
   datePublished,
   dateModified,
@@ -42,88 +54,124 @@ export function SEO({
   const {
     siteName,
     siteUrl,
+    inLanguage,
     locale,
     defaultDescription,
     defaultOgImage,
     twitterHandle,
+    logo,
     organization,
+    founder,
   } = seoDefaults;
 
   const metaDescription = description || defaultDescription;
   const metaOgImage = resolveUrl(ogImage || defaultOgImage, siteUrl);
   const canonicalUrl = canonical || `${siteUrl}${router.asPath.split("?")[0]}`;
 
-  // ── Organization JSON-LD (every page) ──
-  const organizationLd: Record<string, unknown> = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
+  // ── Stable @id anchors for cross-references within the graph ──
+  const orgId = `${siteUrl}/#organization`;
+  const logoId = `${siteUrl}/#logo`;
+  const personId = `${siteUrl}/#nikita`;
+  const websiteId = `${siteUrl}/#website`;
+
+  // ── Organization ──
+  const organizationNode: Record<string, unknown> = {
+    // Multi-typed: Organization is the primary identity; ProfessionalService
+    // adds "service business" semantics for AI engines without committing to
+    // the LocalBusiness (physical-address) expectations.
+    "@type": ["Organization", "ProfessionalService"],
+    "@id": orgId,
     name: organization.name,
-    ...(organization.alternateName && { alternateName: organization.alternateName }),
-    url: organization.url,
-    logo: organization.logo,
-    ...(organization.description && { description: organization.description }),
-    ...(organization.sameAs.length > 0 && { sameAs: organization.sameAs }),
-    ...(organization.founder && {
-      founder: {
-        "@type": "Person",
-        name: organization.founder.name,
-      },
-    }),
-    ...(organization.areaServed && { areaServed: organization.areaServed }),
-    ...(organization.knowsAbout &&
-      organization.knowsAbout.length > 0 && {
-        knowsAbout: organization.knowsAbout,
-      }),
+    alternateName: organization.alternateName,
+    legalName: organization.legalName,
+    url: siteUrl,
+    logo: {
+      "@type": "ImageObject",
+      "@id": logoId,
+      url: resolveUrl(logo, siteUrl),
+      caption: organization.name,
+    },
+    image: { "@id": logoId },
+    description: organization.description,
+    email: organization.email,
+    foundingDate: organization.foundingDate,
+    founder: { "@id": personId },
+    areaServed: { "@type": "Place", name: organization.areaServed },
+    knowsAbout: organization.knowsAbout,
+    sameAs: organization.sameAs,
   };
 
-  // ── Page-level JSON-LD ──
-  const pageLd: Record<string, unknown> = {
-    "@context": "https://schema.org",
+  // ── Person (founder) ──
+  const personNode: Record<string, unknown> = {
+    "@type": "Person",
+    "@id": personId,
+    name: founder.name,
+    jobTitle: founder.jobTitle,
+    description: founder.description,
+    worksFor: { "@id": orgId },
+    knowsAbout: founder.knowsAbout,
+    sameAs: founder.sameAs,
+  };
+
+  // ── WebSite ──
+  const websiteNode: Record<string, unknown> = {
+    "@type": "WebSite",
+    "@id": websiteId,
+    name: siteName,
+    url: siteUrl,
+    publisher: { "@id": orgId },
+    inLanguage,
+  };
+
+  // ── Page-level node ──
+  const aboutId =
+    pageAbout === "none" ? null : pageAbout === "nikita" ? personId : orgId;
+  const mainEntityId =
+    mainEntity === "nikita"
+      ? personId
+      : mainEntity === "organization"
+        ? orgId
+        : null;
+
+  const pageNode: Record<string, unknown> = {
     "@type": jsonLdType,
-    name: title || siteName,
-    description: metaDescription,
+    "@id": `${canonicalUrl}#webpage`,
     url: canonicalUrl,
-    isPartOf: { "@type": "WebSite", name: siteName, url: siteUrl },
+    name: pageName || title || siteName,
+    description: metaDescription,
+    isPartOf: { "@id": websiteId },
+    ...(aboutId && { about: { "@id": aboutId } }),
+    ...(mainEntityId && { mainEntity: { "@id": mainEntityId } }),
+    ...(primaryImageOfPage && { primaryImageOfPage: { "@id": logoId } }),
+    inLanguage,
     ...(datePublished && { datePublished }),
     ...(dateModified && { dateModified }),
-    publisher: {
-      "@type": "Organization",
-      name: organization.name,
-      logo: { "@type": "ImageObject", url: organization.logo },
-    },
   };
 
-  // ── Person JSON-LD (founder — strengthens entity link for GEO) ──
-  const founderLd = organization.founder
-    ? {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        name: organization.founder.name,
-        jobTitle: "Founder",
-        worksFor: {
-          "@type": "Organization",
-          name: organization.name,
-          url: organization.url,
-        },
-      }
-    : null;
-
-  // ── FAQ JSON-LD (AEO gold — drives featured snippets & AI answers) ──
-  const faqLd =
+  // ── FAQ node (GEO / AI-answer signal; no longer drives Google snippets) ──
+  const faqNode =
     faqItems && faqItems.length > 0
       ? {
-          "@context": "https://schema.org",
           "@type": "FAQPage",
+          "@id": `${canonicalUrl}#faq`,
           mainEntity: faqItems.map((item) => ({
             "@type": "Question",
             name: item.question,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: item.answer,
-            },
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
           })),
         }
       : null;
+
+  const graph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationNode,
+      personNode,
+      websiteNode,
+      pageNode,
+      ...(faqNode ? [faqNode] : []),
+    ],
+  };
 
   return (
     <Head>
@@ -151,27 +199,11 @@ export function SEO({
       {/* ── GEO / AEO signals ── */}
       <meta name="author" content={organization.name} />
 
-      {/* ── JSON-LD Structured Data ── */}
+      {/* ── JSON-LD structured data (single linked graph) ── */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageLd) }}
-      />
-      {founderLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(founderLd) }}
-        />
-      )}
-      {faqLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
-        />
-      )}
     </Head>
   );
 }

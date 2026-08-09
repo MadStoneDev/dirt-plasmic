@@ -27,7 +27,12 @@ function _404() {
 
   return (
     <>
-      <SEO noIndex />
+      <SEO
+        noIndex
+        pageName="Page not found — DIRT"
+        description="Sorry, we couldn't find the page you're looking for."
+        pageAbout="none"
+      />
       <PageParamsProvider__
         route={useRouter()?.pathname}
         params={useRouter()?.query}

@@ -23,8 +23,10 @@ function Homepage() {
   return (
     <>
       <SEO
-        description="DIRT is a brand and marketing consultancy that helps businesses uncover what makes them different, build strategy that sticks, and grow with intention."
+        pageName="DIRT — Branding & Positioning for Construction, AEC Software & Property"
+        description="DIRT is the agency for construction, AEC software, property and building-material companies who want a brand that matches their capabilities."
         ogType="website"
+        primaryImageOfPage
       />
       <PageParamsProvider__
         route={useRouter()?.pathname}

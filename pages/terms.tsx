@@ -30,7 +30,9 @@ export default function Terms() {
     <>
       <SEO
         title="Terms and Conditions - DIRT"
+        pageName="Terms and Conditions — DIRT"
         description="Terms and Conditions for the provision of services by Dirt Creative Pty Ltd."
+        pageAbout="none"
       />
       <div className="min-h-screen flex flex-col">
         <DirtNav
