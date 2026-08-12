@@ -1,3 +1,8 @@
+// Kill switch for the ClickUp contact-task automation. Paused 2026-08-13.
+// Flip to true to resume creating a ClickUp task on contact-form submits.
+// The contact form itself keeps working regardless of this flag.
+const CLICKUP_ENABLED = false;
+
 const CLICKUP_API = "https://api.clickup.com/api/v2";
 const CLICKUP_API_TOKEN = process.env.CLICKUP_API_TOKEN;
 const CLICKUP_LIST_ID = process.env.CLICKUP_LIST_ID;
@@ -88,6 +93,9 @@ export interface ClickUpContactPayload {
 export async function createClickUpContactTask(
   payload: ClickUpContactPayload
 ): Promise<void> {
+  if (!CLICKUP_ENABLED) {
+    return;
+  }
   if (!CLICKUP_API_TOKEN || !CLICKUP_LIST_ID) {
     return;
   }
