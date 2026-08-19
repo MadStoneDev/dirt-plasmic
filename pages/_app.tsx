@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect } from "react";
 import { Inter } from "next/font/google";
+import { OpenPanelComponent } from "@openpanel/nextjs";
 import "../styles/globals.css";
 const inter = Inter({
   subsets: ["latin"],
@@ -11,6 +12,8 @@ const inter = Inter({
   display: "swap"
 });
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const OP_CLIENT_ID = process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID;
+const OP_API_URL = process.env.NEXT_PUBLIC_OPENPANEL_API_URL;
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
@@ -32,6 +35,15 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events]);
   return (
     <>
+      {OP_CLIENT_ID && (
+        <OpenPanelComponent
+          clientId={OP_CLIENT_ID}
+          {...(OP_API_URL ? { apiUrl: OP_API_URL } : {})}
+          trackScreenViews
+          trackOutgoingLinks
+          trackAttributes
+        />
+      )}
       {GA_ID && (
         <>
           <Script

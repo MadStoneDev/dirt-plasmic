@@ -4,13 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3258",
+    "prebuild": "node scripts/fix-plasmic-meta.js",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "eslint",
-    "plasmic:fix": "node scripts/fix-plasmic-meta.js"
+    "plasmic:fix": "node scripts/fix-plasmic-meta.js",
+    "plasmic:sync": "plasmic sync && npm run plasmic:fix"
   },
   "dependencies": {
+    "@openpanel/nextjs": "^1.5.1",
     "@plasmicapp/cli": "^0.1.364",
     "@plasmicapp/host": "^1.0.234",
     "@plasmicapp/loader-nextjs": "^1.0.451",

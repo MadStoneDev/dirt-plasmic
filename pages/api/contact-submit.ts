@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
 import { createClickUpContactTask } from "@/utils/clickup";
+import { trackServerEvent } from "@/utils/openpanel";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -274,6 +275,14 @@ export default async function handler(
       console.error("ClickUp task error:", err);
     }
 
+    // Server-side analytics (no-ops if OpenPanel isn't configured).
+    // Avoids sending raw PII (email/message) as event properties.
+    await trackServerEvent("contact_submitted", {
+      mode,
+      heardAbout,
+      hasReferral: Boolean(referralName),
+    });
+
     return res.status(200).json({ success: true });
   }
 
@@ -393,6 +402,14 @@ export default async function handler(
     } catch (err) {
       console.error("ClickUp task error:", err);
     }
+
+    // Server-side analytics (no-ops if OpenPanel isn't configured).
+    // Avoids sending raw PII (email/message) as event properties.
+    await trackServerEvent("contact_submitted", {
+      mode,
+      heardAbout,
+      hasReferral: Boolean(referralName),
+    });
 
     return res.status(200).json({ success: true });
   }
