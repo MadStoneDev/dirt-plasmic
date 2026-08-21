@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {OP_CLIENT_ID && (
         <OpenPanelComponent
           clientId={OP_CLIENT_ID}
-          cdnUrl="/api/op/op1.js"
+          scriptUrl="/api/op/vendor.js"
           apiUrl="/api/op"
           trackScreenViews
           trackOutgoingLinks
