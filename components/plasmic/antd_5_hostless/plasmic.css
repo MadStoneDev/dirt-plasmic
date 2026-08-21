@@ -1,4 +1,4 @@
-.plasmic_tokens {
+.plasmic_tokens_ohDidvG9XsCeFumugENU3J {
   --token-pRs3-4jrQ4XQ: var(--antd-colorPrimary);
   --plasmic-token-system-primary: var(--token-pRs3-4jrQ4XQ);
   --token-sn6Zb6km7CqW: var(--antd-colorSuccess);
@@ -393,6 +393,22 @@
   text-transform: inherit;
 }
 
+:where(.b) {
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-transform: inherit;
+}
+:where(.__wab_expr_html_text b) {
+  white-space: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-transform: inherit;
+}
+
 :where(.i) {
   font-family: inherit;
   line-height: inherit;
@@ -568,5 +584,5 @@
 .__wab_expr_html_text {
   white-space: normal;
 }
-:where(.root_reset) {
+:where(.root_reset_ohDidvG9XsCeFumugENU3J) {
 }

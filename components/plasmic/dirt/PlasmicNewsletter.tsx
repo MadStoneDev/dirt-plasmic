@@ -134,6 +134,7 @@ export type PlasmicNewsletter__OverridesType = {
   taglineBanner?: Flex__<typeof TaglineBanner>;
   dirtNav?: Flex__<typeof DirtNav>;
   link?: Flex__<"a"> & Partial<LinkProps>;
+  h1?: Flex__<"h1">;
   dirtRichText?: Flex__<typeof DirtRichText>;
   testimonials?: Flex__<"section">;
   footerSection?: Flex__<typeof FooterSection>;
@@ -343,17 +344,27 @@ function PlasmicNewsletter__RenderFunc(props: {
                   successMessage={
                     "You're officially DIRT-y. Go check your inbox!"
                   }
-                  successMessageColour={"white"}
+                  successMessageColour={"black"}
                   tags={"DIRT newsletter submission"}
                 />
               </section>
             </div>
             <div className={classNames("all", sty.freeBox__b2Ydi)}>
-              <div className={classNames("all", "__wab_text", sty.text__vf9Jb)}>
+              <h1
+                data-plasmic-name={"h1"}
+                data-plasmic-override={overrides.h1}
+                className={classNames(
+                  "all",
+                  "h1",
+                  "h1__8kaaM",
+                  "__wab_text",
+                  sty.h1
+                )}
+              >
                 {
                   "The best newsletter in your inbox. If it\u2019s not, we\u2019ll backfill"
                 }
-              </div>
+              </h1>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__jvJzU)}
@@ -404,7 +415,7 @@ function PlasmicNewsletter__RenderFunc(props: {
                 listId={"DIRT List"}
                 submitButtonLabel={"Yes, Get me Dirty"}
                 successMessage={"Thanks for subscribing!"}
-                successMessageColour={"white"}
+                successMessageColour={"dirt-green"}
                 tags={"DIRT newsletter submission"}
               />
             </section>
@@ -606,6 +617,7 @@ const PlasmicDescendants = {
     "taglineBanner",
     "dirtNav",
     "link",
+    "h1",
     "dirtRichText",
     "testimonials",
     "footerSection"
@@ -613,6 +625,7 @@ const PlasmicDescendants = {
   taglineBanner: ["taglineBanner"],
   dirtNav: ["dirtNav", "link"],
   link: ["link"],
+  h1: ["h1"],
   dirtRichText: ["dirtRichText"],
   testimonials: ["testimonials"],
   footerSection: ["footerSection"]
@@ -625,6 +638,7 @@ type NodeDefaultElementType = {
   taglineBanner: typeof TaglineBanner;
   dirtNav: typeof DirtNav;
   link: "a";
+  h1: "h1";
   dirtRichText: typeof DirtRichText;
   testimonials: "section";
   footerSection: typeof FooterSection;
@@ -695,6 +709,7 @@ export const PlasmicNewsletter = Object.assign(
     taglineBanner: makeNodeComponent("taglineBanner"),
     dirtNav: makeNodeComponent("dirtNav"),
     link: makeNodeComponent("link"),
+    h1: makeNodeComponent("h1"),
     dirtRichText: makeNodeComponent("dirtRichText"),
     testimonials: makeNodeComponent("testimonials"),
     footerSection: makeNodeComponent("footerSection"),

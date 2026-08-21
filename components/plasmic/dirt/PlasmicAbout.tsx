@@ -132,6 +132,7 @@ export type PlasmicAbout__OverridesType = {
   taglineBanner?: Flex__<typeof TaglineBanner>;
   dirtNav?: Flex__<typeof DirtNav>;
   aboutHero?: Flex__<"section">;
+  h1?: Flex__<"h1">;
   ifWeHearTheWord?: Flex__<"section">;
   whatWeBelieveSection?: Flex__<typeof WhatWeBelieveSection>;
   builtWithSpecialists?: Flex__<"section">;
@@ -301,7 +302,17 @@ function PlasmicAbout__RenderFunc(props: {
             className={classNames("all", sty.aboutHero)}
           >
             <div className={classNames("all", sty.freeBox___8QbQv)}>
-              <div className={classNames("all", "__wab_text", sty.text__hOtI)}>
+              <h1
+                data-plasmic-name={"h1"}
+                data-plasmic-override={overrides.h1}
+                className={classNames(
+                  "all",
+                  "h1",
+                  "h1__8kaaM",
+                  "__wab_text",
+                  sty.h1
+                )}
+              >
                 <React.Fragment>
                   <React.Fragment>{"We build "}</React.Fragment>
                   <span
@@ -322,7 +333,7 @@ function PlasmicAbout__RenderFunc(props: {
                     {"bids"}
                   </span>
                 </React.Fragment>
-              </div>
+              </h1>
               <div className={classNames("all", "__wab_text", sty.text__x8Tmz)}>
                 <React.Fragment>
                   <React.Fragment>
@@ -798,6 +809,7 @@ const PlasmicDescendants = {
     "taglineBanner",
     "dirtNav",
     "aboutHero",
+    "h1",
     "ifWeHearTheWord",
     "whatWeBelieveSection",
     "builtWithSpecialists",
@@ -806,7 +818,8 @@ const PlasmicDescendants = {
   ],
   taglineBanner: ["taglineBanner"],
   dirtNav: ["dirtNav"],
-  aboutHero: ["aboutHero"],
+  aboutHero: ["aboutHero", "h1"],
+  h1: ["h1"],
   ifWeHearTheWord: ["ifWeHearTheWord"],
   whatWeBelieveSection: ["whatWeBelieveSection"],
   builtWithSpecialists: ["builtWithSpecialists"],
@@ -821,6 +834,7 @@ type NodeDefaultElementType = {
   taglineBanner: typeof TaglineBanner;
   dirtNav: typeof DirtNav;
   aboutHero: "section";
+  h1: "h1";
   ifWeHearTheWord: "section";
   whatWeBelieveSection: typeof WhatWeBelieveSection;
   builtWithSpecialists: "section";
@@ -893,6 +907,7 @@ export const PlasmicAbout = Object.assign(
     taglineBanner: makeNodeComponent("taglineBanner"),
     dirtNav: makeNodeComponent("dirtNav"),
     aboutHero: makeNodeComponent("aboutHero"),
+    h1: makeNodeComponent("h1"),
     ifWeHearTheWord: makeNodeComponent("ifWeHearTheWord"),
     whatWeBelieveSection: makeNodeComponent("whatWeBelieveSection"),
     builtWithSpecialists: makeNodeComponent("builtWithSpecialists"),
