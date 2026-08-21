@@ -13,7 +13,6 @@ const inter = Inter({
 });
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 const OP_CLIENT_ID = process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID;
-const OP_API_URL = process.env.NEXT_PUBLIC_OPENPANEL_API_URL;
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
@@ -38,7 +37,8 @@ export default function App({ Component, pageProps }: AppProps) {
       {OP_CLIENT_ID && (
         <OpenPanelComponent
           clientId={OP_CLIENT_ID}
-          {...(OP_API_URL ? { apiUrl: OP_API_URL } : {})}
+          cdnUrl="/api/op/op1.js"
+          apiUrl="/api/op"
           trackScreenViews
           trackOutgoingLinks
           trackAttributes
