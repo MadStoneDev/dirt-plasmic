@@ -796,6 +796,7 @@ function PlasmicAbout__RenderFunc(props: {
             recipientEmail={"hello@thedirtagency.com"}
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
             showHeroForm={true}
+            useMainHeading={false}
           />
         </div>
       </div>

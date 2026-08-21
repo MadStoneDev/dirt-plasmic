@@ -604,6 +604,7 @@ function PlasmicNewsletter__RenderFunc(props: {
             recipientEmail={"hello@thedirtagency.com"}
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
             showHeroForm={false}
+            useMainHeading={false}
           />
         </div>
       </div>

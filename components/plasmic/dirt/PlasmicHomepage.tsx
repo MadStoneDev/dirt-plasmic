@@ -1174,6 +1174,7 @@ function PlasmicHomepage__RenderFunc(props: {
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
             showHeroForm={true}
             submitButtonText={"Get Dirty"}
+            useMainHeading={false}
           />
         </div>
       </div>

@@ -339,6 +339,7 @@ function PlasmicContact__RenderFunc(props: {
             separatorImage={"/plasmic/dirt/images/line2Png.png"}
             showHeroForm={true}
             submitButtonText={"Get Dirty"}
+            useMainHeading={true}
           />
         </div>
       </div>
