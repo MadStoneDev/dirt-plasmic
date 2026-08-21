@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState, useRef, useEffect, useCallback } from "react";
+import { ReactNode, ElementType, useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { fmt } from "@/utils/formatText";
 import { footerDefaults } from "@/config/section-defaults";
@@ -16,6 +16,7 @@ export interface FooterSectionProps {
   heading1?: string;
   heading1Uppercase?: boolean;
   heading2?: string;
+  useMainHeading?: boolean;
   description?: string;
   // Form settings
   submitButtonText?: string;
@@ -74,6 +75,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
     heading1,
     heading1Uppercase = false,
     heading2,
+    useMainHeading = false,
     description,
     submitButtonText,
     recipientEmail,
@@ -153,6 +155,13 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
     window.addEventListener("resize", updateMidground);
     return () => window.removeEventListener("resize", updateMidground);
   }, [updateMidground]);
+
+  // Hero heading levels. Default: Heading 1 → h2, Heading 2 → h3 (for pages
+  // that already carry an h1 elsewhere). When useMainHeading is on, promote
+  // both a level so the footer hero owns the page's h1. Styling is unchanged —
+  // only the semantic tag differs.
+  const Heading1Tag: ElementType = useMainHeading ? "h1" : "h2";
+  const Heading2Tag: ElementType = useMainHeading ? "h2" : "h3";
 
   const links = [
     { text: link1Text, url: link1Url },
@@ -279,24 +288,24 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
         <div className="pb-74 md:pb-235 relative z-[2] flex flex-col justify-end">
           <div className="relative z-10 max-w-3xl mx-auto text-center">
             {heading1 && (
-              <h2
+              <Heading1Tag
                 className={`mx-auto max-w-80 font-display font-bold text-5xl md:text-6xl text-dirt-off-white mb-2 ${
                   heading1Uppercase ? "md:max-w-150 uppercase" : "md:max-w-120"
                 }`}
                 style={{ lineHeight: "105%", letterSpacing: "-2%" }}
               >
                 {fmt(heading1)}
-              </h2>
+              </Heading1Tag>
             )}
             {heading2 && (
-              <h2
+              <Heading2Tag
                 className={`max-w-60 md:max-w-none mx-auto font-display font-bold text-5xl md:text-6xl text-dirt-pop mb-8 ${
                   heading1Uppercase ? "uppercase" : ""
                 }`}
                 style={{ lineHeight: "105%", letterSpacing: "-2%" }}
               >
                 {fmt(heading2)}
-              </h2>
+              </Heading2Tag>
             )}
             {description && (
               <p className="text-dirt-off-white/80 font-sans text-lg mb-12">

@@ -860,6 +860,13 @@ registerComponent(FooterSection, {
       hidden: (props: any) => !props.showHeroForm
     },
     heading2: { type: "string", hidden: (props: any) => !props.showHeroForm },
+    useMainHeading: {
+      type: "boolean",
+      defaultValue: false,
+      displayName: "Use as Main Page Heading (H1)",
+      description: "Off: Heading 1 renders as H2 and Heading 2 as H3 (for pages with an H1 elsewhere). On: Heading 1 becomes H1 and Heading 2 becomes H2. Visual styling is unchanged.",
+      hidden: (props: any) => !props.showHeroForm,
+    },
     description: { type: "string", hidden: (props: any) => !props.showHeroForm },
     // Form settings
     submitButtonText: { type: "string", hidden: (props: any) => !props.showHeroForm },
