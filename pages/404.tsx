@@ -32,6 +32,7 @@ function _404() {
         pageName="Page not found — DIRT"
         description="Sorry, we couldn't find the page you're looking for."
         pageAbout="none"
+        skipCanonical
       />
       <PageParamsProvider__
         route={useRouter()?.pathname}

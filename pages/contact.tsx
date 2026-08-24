@@ -31,6 +31,7 @@ function Contact() {
         pageName="Contact DIRT"
         description="Have a construction, AEC software, property or building-product brand that needs better positioning, messaging and branding? Get in touch."
         jsonLdType="ContactPage"
+        skipCanonical
       />
       <PageParamsProvider__
         route={useRouter()?.pathname}

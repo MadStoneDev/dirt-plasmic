@@ -33,6 +33,7 @@ function About() {
         jsonLdType="AboutPage"
         pageAbout="nikita"
         mainEntity="nikita"
+        skipCanonical
       />
       <PageParamsProvider__
         route={useRouter()?.pathname}

@@ -27,6 +27,7 @@ function Homepage() {
         description="DIRT is the agency for construction, AEC software, property and building-material companies who want a brand that matches their capabilities."
         ogType="website"
         primaryImageOfPage
+        skipCanonical
       />
       <PageParamsProvider__
         route={useRouter()?.pathname}

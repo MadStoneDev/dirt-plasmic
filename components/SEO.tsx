@@ -15,6 +15,12 @@ export interface SEOProps {
   ogType?: "website" | "article";
   /** Set to true for pages that shouldn't be indexed (e.g. plasmic-host) */
   noIndex?: boolean;
+  /**
+   * Skip rendering <link rel="canonical">. Set on pages backed by a Plasmic
+   * page component, which emits its own canonical — this avoids a duplicate.
+   * Leave off for standalone pages (privacy, terms) so SEO owns the canonical.
+   */
+  skipCanonical?: boolean;
 
   // ── JSON-LD structured data (AEO / GEO) ──
   /** Type of the page-level node in the @graph */
@@ -41,6 +47,7 @@ export function SEO({
   canonical,
   ogType = "website",
   noIndex = false,
+  skipCanonical = false,
   jsonLdType = "WebPage",
   pageName,
   pageAbout = "organization",
@@ -176,15 +183,23 @@ export function SEO({
   return (
     <Head>
       {/* ── Core meta ── */}
+      {/*
+        Title/description keys below match the keys Plasmic's generated <Head>
+        uses. next/head dedupes by key and the Plasmic page component renders
+        after this one, so on Plasmic-backed pages the Studio-edited value wins;
+        on standalone pages (privacy, terms) these are the only source. The
+        plain name="description" is intentionally left unkeyed — Plasmic emits a
+        non-standard property="description" that crawlers ignore, so we keep ours.
+      */}
       <meta name="description" content={metaDescription} />
-      <link rel="canonical" href={canonicalUrl} />
+      {!skipCanonical && <link rel="canonical" href={canonicalUrl} />}
       {noIndex && <meta name="robots" content="noindex, nofollow" />}
 
       {/* ── Open Graph ── */}
       <meta property="og:site_name" content={siteName} />
       <meta property="og:type" content={ogType} />
-      {title && <meta property="og:title" content={title} />}
-      <meta property="og:description" content={metaDescription} />
+      {title && <meta key="og:title" property="og:title" content={title} />}
+      <meta key="og:description" property="og:description" content={metaDescription} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={metaOgImage} />
       <meta property="og:locale" content={locale} />
@@ -192,8 +207,8 @@ export function SEO({
       {/* ── Twitter Card ── */}
       <meta name="twitter:card" content="summary_large_image" />
       {twitterHandle && <meta name="twitter:site" content={twitterHandle} />}
-      {title && <meta name="twitter:title" content={title} />}
-      <meta name="twitter:description" content={metaDescription} />
+      {title && <meta key="twitter:title" name="twitter:title" content={title} />}
+      <meta key="twitter:description" name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={metaOgImage} />
 
       {/* ── GEO / AEO signals ── */}

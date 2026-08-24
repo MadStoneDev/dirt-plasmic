@@ -29,6 +29,12 @@ function Newsletter() {
 
   return (
     <>
+      {/*
+        No skipCanonical here (unlike the other Plasmic pages): this page's
+        Plasmic Studio canonical is currently "/about", so SEO must keep
+        emitting the correct "/newsletter" canonical. Once the canonical is
+        fixed in Studio, add skipCanonical to drop the duplicate.
+      */}
       <SEO
         title="DIRT DISPATCH | The Newsletter"
         pageName="DIRT Dispatch — The Newsletter"
