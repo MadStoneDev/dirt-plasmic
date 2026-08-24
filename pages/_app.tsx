@@ -1,6 +1,7 @@
 import "../components/plasmic/dirt/plasmic.css"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectcss
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import Script from "next/script";
 import { useEffect } from "react";
 import { Inter } from "next/font/google";
@@ -63,6 +64,17 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className={inter.variable}>
         <Component {...pageProps} />
       </div>
+      {/*
+        Standardise the Twitter card to the large-image format across every
+        page. Plasmic's generated page <Head> hardcodes `summary` and its
+        Studio UI exposes no control for it. This <Head> renders after the page
+        component, so it wins next/head's last-one-wins dedup for the un-keyed
+        name="twitter:card" tag — making the large card apply everywhere,
+        sync-proof.
+      */}
+      <Head>
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
     </>
   );
 }
