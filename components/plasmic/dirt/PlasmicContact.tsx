@@ -94,14 +94,14 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "Contact - DIRT",
+    title: "Work With DIRT | Get in Touch",
 
     openGraph: {
-      title: "Contact - DIRT"
+      title: "Work With DIRT | Get in Touch"
     },
     twitter: {
       card: "summary" as const,
-      title: "Contact - DIRT"
+      title: "Work With DIRT | Get in Touch"
     },
     alternates: { canonical: "/contact" }
   };

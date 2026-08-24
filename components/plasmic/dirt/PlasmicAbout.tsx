@@ -98,17 +98,17 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "About - DIRT",
+    title: "About DIRT | Branding for the Built Environment",
     description:
       "In industries where every bid and every project counts, the brands that communicate best will win again and again. We know exactly how to create memorable, project-winning brands. In fact, we’ve done it for years.",
     openGraph: {
-      title: "About - DIRT",
+      title: "About DIRT | Branding for the Built Environment",
       description:
         "In industries where every bid and every project counts, the brands that communicate best will win again and again. We know exactly how to create memorable, project-winning brands. In fact, we’ve done it for years."
     },
     twitter: {
       card: "summary" as const,
-      title: "About - DIRT",
+      title: "About DIRT | Branding for the Built Environment",
       description:
         "In industries where every bid and every project counts, the brands that communicate best will win again and again. We know exactly how to create memorable, project-winning brands. In fact, we’ve done it for years."
     },

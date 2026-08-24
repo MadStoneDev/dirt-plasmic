@@ -118,19 +118,17 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "The Agency for Construction, AEC Software & Property Firms | DIRT ",
+    title: "Branding for Construction, AEC Software & Property | DIRT",
     description:
       "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities.",
     openGraph: {
-      title:
-        "The Agency for Construction, AEC Software & Property Firms | DIRT ",
+      title: "Branding for Construction, AEC Software & Property | DIRT",
       description:
         "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
     twitter: {
       card: "summary" as const,
-      title:
-        "The Agency for Construction, AEC Software & Property Firms | DIRT ",
+      title: "Branding for Construction, AEC Software & Property | DIRT",
       description:
         "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
