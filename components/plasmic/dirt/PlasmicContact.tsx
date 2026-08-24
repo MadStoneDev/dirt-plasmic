@@ -439,6 +439,9 @@ export const PlasmicContact = Object.assign(
     internalVariantProps: PlasmicContact__VariantProps,
     internalArgProps: PlasmicContact__ArgProps,
 
+    // Key-value metadata
+    metadata: { twitterCard: "summary_large_image" },
+
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
       pageRoute: "/contact",
       pagePath: "/contact",

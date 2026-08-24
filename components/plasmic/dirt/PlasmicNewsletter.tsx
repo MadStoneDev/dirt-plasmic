@@ -716,6 +716,9 @@ export const PlasmicNewsletter = Object.assign(
     internalVariantProps: PlasmicNewsletter__VariantProps,
     internalArgProps: PlasmicNewsletter__ArgProps,
 
+    // Key-value metadata
+    metadata: { twitterCard: "summary_large_image" },
+
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
       pageRoute: "/newsletter",
       pagePath: "/newsletter",

@@ -919,6 +919,9 @@ export const PlasmicAbout = Object.assign(
     internalVariantProps: PlasmicAbout__VariantProps,
     internalArgProps: PlasmicAbout__ArgProps,
 
+    // Key-value metadata
+    metadata: { twitterCard: "summary_large_image" },
+
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
       pageRoute: "/about",
       pagePath: "/about",
