@@ -475,9 +475,9 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
             {/* Column 2 - Newsletter */}
             <div className={`col-span-2`}>
               {newsletterHeading && (
-                <h4 className="font-display font-bold text-lg text-dirt-pop uppercase mb-4">
+                <h2 className="font-display font-bold text-lg text-dirt-pop uppercase mb-4">
                   {newsletterHeading}
-                </h4>
+                </h2>
               )}
               {newsletterChildren}
               {newsletterDescription && (
@@ -526,9 +526,9 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
             {/* Column 3 - Contact */}
             <div className={`col-span-2`}>
               {contactHeading && (
-                <h4 className="font-display font-bold text-lg text-dirt-pop uppercase mb-4">
+                <h2 className="font-display font-bold text-lg text-dirt-pop uppercase mb-4">
                   {contactHeading}
-                </h4>
+                </h2>
               )}
               {contactDescription && (
                 <p className="text-dirt-off-white/80 font-sans text-lg whitespace-pre-line">
@@ -540,9 +540,9 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
             {/* Column 4 - Links */}
             <div className={`col-span-2 md:col-span-1`}>
               {linksHeading && (
-                <h4 className="font-display font-bold text-lg text-dirt-pop uppercase mb-4">
+                <h2 className="font-display font-bold text-lg text-dirt-pop uppercase mb-4">
                   {linksHeading}
-                </h4>
+                </h2>
               )}
               <div className="flex flex-col gap-2">
                 {links.map((link, index) => (
