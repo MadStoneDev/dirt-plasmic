@@ -8,6 +8,8 @@ export interface TestimonialSectionProps {
   textColor?: "dirt-deep" | "dirt-pop" | "dirt-green" | "dirt-blue" | "dirt-off-white" | "white" | "black" | "custom";
   customTextColor?: string;
   logo?: string;
+  /** Client/company name — used for the logo's alt text (SEO + a11y) */
+  companyName?: string;
   body?: string;
   authorName?: string;
   authorRole?: string;
@@ -40,6 +42,7 @@ export function TestimonialSection({
   textColor = "dirt-deep",
   customTextColor,
   logo,
+  companyName,
   body,
   authorName,
   authorRole,
@@ -73,7 +76,7 @@ export function TestimonialSection({
           <div className="mb-20">
             <Image
               src={logo}
-              alt="Company logo"
+              alt={companyName ? `${companyName} logo` : "Client logo"}
               width={600}
               height={200}
               className="object-contain md:max-h-16"

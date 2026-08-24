@@ -422,7 +422,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                 >
                   <Image
                     src={`/90deg Arrow.png`}
-                    alt={`90 Degrees Arrow`}
+                    alt=""
                     width={50}
                     height={50}
                     className={`w-6`}
@@ -459,7 +459,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
               {footerLogo && (
                 <Image
                   src={footerLogo}
-                  alt="Logo"
+                  alt="DIRT"
                   width={150}
                   height={50}
                   className="object-contain mb-4"

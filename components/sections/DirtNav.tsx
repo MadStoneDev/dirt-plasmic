@@ -183,7 +183,7 @@ export function DirtNav({
             <a href="/" className="shrink-0">
               <img
                 src={logo}
-                alt="Logo"
+                alt="DIRT"
                 className="h-10 md:h-9 w-auto"
               />
             </a>
@@ -201,7 +201,7 @@ export function DirtNav({
               className="relative flex flex-col justify-center items-center bg-dirt-pop hover:bg-dirt-pop-hover w-10 h-10 gap-1.5 cursor-pointer border-0"
               aria-label="Open menu"
             >
-              <img src={`/Hamburger Button.png`} className={`w-6 h-auto`}  alt={`Menu Button`} />
+              <img src={`/Hamburger Button.png`} className={`w-6 h-auto`} alt="" />
             </button>
           </div>
         </div>
@@ -219,7 +219,7 @@ export function DirtNav({
         <a href="/" className="shrink-0 absolute top-5 left-5 md:top-8.5 md:left-8">
           <img
               src={`/Dirt Dark Logo.png`}
-              alt="Logo"
+              alt="DIRT"
               className="h-7 md:h-9 w-auto"
           />
         </a>

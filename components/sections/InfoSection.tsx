@@ -76,7 +76,7 @@ export function InfoSection({
                 href={ctaLink}
                 className="inline-flex justify-center items-center gap-1 px-8 py-4 bg-dirt-pop hover:bg-dirt-pop-hover text-dirt-deep font-display font-bold uppercase text-lg transition-colors duration-300 w-full"
               >
-                <Image src={`/90deg Arrow.png`} alt={`90 Degrees Arrow`} width={50} height={50} className={`w-4.5 h-3`} />
+                <Image src={`/90deg Arrow.png`} alt="" width={50} height={50} className={`w-4.5 h-3`} />
                 <span>{ctaLabel}</span>
               </a>
             )}

@@ -235,6 +235,11 @@ registerComponent(TestimonialSection, {
     },
     customTextColor: "string",
     logo: "imageUrl",
+    companyName: {
+      type: "string",
+      displayName: "Company Name",
+      description: "Client/company name — used as the logo's alt text for SEO & accessibility.",
+    },
     body: "string",
     authorName: "string",
     authorRole: "string",

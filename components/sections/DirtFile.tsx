@@ -62,7 +62,7 @@ export function DirtFile({
               >
                 <Image
                   src={"/Download 90deg Arrow.png"}
-                  alt={"Download Arrow"}
+                  alt=""
                   width={20}
                   height={14}
                   className={`w-3 h-2`}

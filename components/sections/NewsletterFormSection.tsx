@@ -117,7 +117,7 @@ export function NewsletterFormSection({
         >
           <Image
             src="/90deg Arrow.png"
-            alt="Arrow"
+            alt=""
             width={50}
             height={50}
             className="w-6"

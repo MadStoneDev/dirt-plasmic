@@ -99,7 +99,7 @@ export function ProsConsSection({
               >
                 <Image
                     src={`/90deg Arrow - White.png`}
-                    alt={`90 Degrees Arrow`}
+                    alt=""
                     width={50}
                     height={50}
                     className={`w-4`}
