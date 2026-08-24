@@ -35,6 +35,15 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events]);
   return (
     <>
+      {/* Skip link (WCAG 2.4.1). First focusable element on every page;
+          visually hidden until focused, then jumps past the nav to
+          #main-content (rendered by DirtNav, and the <main> on privacy/terms). */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[10000] focus:px-4 focus:py-2 focus:bg-dirt-pop focus:text-dirt-deep focus:font-display focus:font-bold focus:uppercase focus:no-underline focus:outline-none focus:ring-2 focus:ring-dirt-deep"
+      >
+        Skip to main content
+      </a>
       {OP_CLIENT_ID && (
         <OpenPanelComponent
           clientId={OP_CLIENT_ID}

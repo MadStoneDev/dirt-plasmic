@@ -281,6 +281,11 @@ export function DirtNav({
             </div>
         )}
       </div>
+
+      {/* Skip-link target — keyboard focus lands here, past the nav and menu
+          overlay, at the start of page content. Paired with the skip link in
+          _app.tsx (href="#main-content"). */}
+      <div id="main-content" tabIndex={-1} />
     </>
   );
 }
