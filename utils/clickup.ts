@@ -1,7 +1,7 @@
-// Kill switch for the ClickUp contact-task automation. Paused 2026-08-13.
-// Flip to true to resume creating a ClickUp task on contact-form submits.
+// Kill switch for the ClickUp contact-task automation.
+// Paused 2026-08-13, resumed 2026-09-09. Flip to false to pause again.
 // The contact form itself keeps working regardless of this flag.
-const CLICKUP_ENABLED = false;
+const CLICKUP_ENABLED = true;
 
 const CLICKUP_API = "https://api.clickup.com/api/v2";
 const CLICKUP_API_TOKEN = process.env.CLICKUP_API_TOKEN;
