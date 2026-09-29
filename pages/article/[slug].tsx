@@ -2,18 +2,18 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../components/plasmic/dirt/PlasmicGlobalContextsProvider";
+import GlobalContextsProvider from "../../components/plasmic/dirt/PlasmicGlobalContextsProvider";
 
-import { PlasmicBlog } from "../components/plasmic/dirt/PlasmicBlog";
+import { PlasmicArticlesTemplate } from "../../components/plasmic/dirt/PlasmicArticlesTemplate";
 import { useRouter } from "next/router";
 import { PlasmicQueryDataProvider } from "@plasmicapp/react-web/lib/query";
-import type { GetStaticProps } from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
 import { extractPlasmicQueryData } from "@plasmicapp/react-web/lib/prepass";
 
 export const getStaticProps: GetStaticProps = async context => {
   const queryCache = await extractPlasmicQueryData(
-    <PageParamsProvider__ route={"/blog"} params={context.params}>
-      <PlasmicBlog />
+    <PageParamsProvider__ route={"/article/[slug]"} params={context.params}>
+      <PlasmicArticlesTemplate />
     </PageParamsProvider__>
   );
   return {
@@ -21,20 +21,30 @@ export const getStaticProps: GetStaticProps = async context => {
   };
 };
 
-function Blog({ queryCache }: { queryCache?: any }) {
-  // Use PlasmicBlog to render this component as it was
+export const getStaticPaths: GetStaticPaths = async () => {
+  console.warn(
+    "getStaticPaths was called with an empty paths array. Update this with the set of pages you want to generate statically."
+  );
+  return {
+    paths: [],
+    fallback: "blocking"
+  };
+};
+
+function ArticlesTemplate({ queryCache }: { queryCache?: any }) {
+  // Use PlasmicArticlesTemplate to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicBlog are:
+  // Props you can pass into PlasmicArticlesTemplate are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicBlog is wrapped by your project's global
+  // By default, PlasmicArticlesTemplate is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -47,11 +57,11 @@ function Blog({ queryCache }: { queryCache?: any }) {
           params={useRouter()?.query}
           query={useRouter()?.query}
         >
-          <PlasmicBlog />
+          <PlasmicArticlesTemplate />
         </PageParamsProvider__>
       </PlasmicQueryDataProvider>
     </GlobalContextsProvider>
   );
 }
 
-export default Blog;
+export default ArticlesTemplate;

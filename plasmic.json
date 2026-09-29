@@ -122,17 +122,31 @@
         },
         {
           "id": "j_vMVTQjFfxV",
-          "name": "NewPage",
+          "name": "Blog",
           "type": "managed",
           "projectId": "8kaaMUEQHxomwqwuKNMozy",
-          "renderModuleFilePath": "plasmic/dirt/PlasmicNewPage.tsx",
+          "renderModuleFilePath": "plasmic/dirt/PlasmicBlog.tsx",
           "importSpec": {
             "modulePath": "../pages/blog.tsx"
           },
-          "cssFilePath": "plasmic/dirt/PlasmicNewPage.module.css",
+          "cssFilePath": "plasmic/dirt/PlasmicBlog.module.css",
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/blog"
+        },
+        {
+          "id": "Boo0whzpC_1V",
+          "name": "ArticlesTemplate",
+          "type": "managed",
+          "projectId": "8kaaMUEQHxomwqwuKNMozy",
+          "renderModuleFilePath": "plasmic/dirt/PlasmicArticlesTemplate.tsx",
+          "importSpec": {
+            "modulePath": "../pages/article/[slug].tsx"
+          },
+          "cssFilePath": "plasmic/dirt/PlasmicArticlesTemplate.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/article/[slug]"
         }
       ],
       "icons": [
