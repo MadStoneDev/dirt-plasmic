@@ -617,7 +617,8 @@ function PlasmicBlog__RenderFunc(props: {
             {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
               (() => {
                 try {
-                  return $q.query.data
+                  return ($q.query.data || [])
+                    .filter(a => new Date(a.data.publishedDate) <= new Date())
                     .slice(1)
                     .filter(
                       article =>
