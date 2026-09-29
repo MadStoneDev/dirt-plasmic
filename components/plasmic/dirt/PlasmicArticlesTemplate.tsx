@@ -70,6 +70,7 @@ import type { QueryComponentNode } from "@plasmicapp/react-web/lib/data-sources"
 
 import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
 import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { NewsletterFormSection } from "../../sections/NewsletterFormSection"; // plasmic-import: XfKpmE3Hd3LP/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
@@ -126,6 +127,7 @@ export const PlasmicArticlesTemplate__ArgProps = new Array<ArgPropType>();
 export type PlasmicArticlesTemplate__OverridesType = {
   root?: Flex__<"div">;
   dirtNav?: Flex__<typeof DirtNav>;
+  embedHtml?: Flex__<typeof Embed>;
   img?: Flex__<typeof PlasmicImg__>;
   newsletterFormSection?: Flex__<typeof NewsletterFormSection>;
 };
@@ -332,146 +334,347 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
             stickyOnScroll={false}
           />
 
-          <section className={classNames("all", sty.section___3YlKg)}>
-            <div className={classNames("all", sty.freeBox___6Jh8O)}>
-              <div className={classNames("all", "__wab_text", sty.text__ofBeU)}>
-                <React.Fragment>
-                  {
-                    $q.categories.data.find(
-                      c =>
-                        c.id ===
-                        $q.article.data.find(
-                          a => a.data.slug === $ctx.params.slug
-                        )?.data.category
-                    )?.data.name
-                  }
-                </React.Fragment>
-              </div>
-              <h1
-                className={classNames(
-                  "all",
-                  "h1",
-                  "h1__8kaaM",
-                  "__wab_text",
-                  sty.h1__kTig7
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $q.article.data.find(
-                        a => a.data.slug === $ctx.params.slug
-                      )?.data.title;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "You won't believe what happens next.";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </h1>
-              <div className={classNames("all", "__wab_text", sty.text__k9Ee)}>
-                <React.Fragment>
-                  {
-                    $q.article.data.find(a => a.data.slug === $ctx.params.slug)
-                      ?.data.excerpt
-                  }
-                </React.Fragment>
-              </div>
-            </div>
-            <div className={classNames("all", sty.freeBox__vD0D5)}>
-              <div
-                className={classNames("all", "__wab_text", sty.text___07Y61)}
-              >
-                {"Nikita Morell"}
-              </div>
-              <div className={classNames("all", "__wab_text", sty.text__b2E4O)}>
-                {"May 2026"}
-              </div>
-            </div>
-          </section>
-          <section className={classNames("all", sty.section__tytWo)}>
-            <div className={classNames("all", "__wab_text", sty.text__xufm9)}>
-              <React.Fragment>
-                {
-                  $q.article.data.find(a => a.data.slug === $ctx.params.slug)
-                    ?.data.body
+          {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+            (() => {
+              try {
+                return ($q.articles.data || []).filter((a, i) =>
+                  $ctx.params.slug
+                    ? (a.data.title || "")
+                        .toLowerCase()
+                        .trim()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/^-|-$/g, "") === $ctx.params.slug
+                    : i === 0
+                );
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return [];
                 }
-              </React.Fragment>
-            </div>
-          </section>
-          <section className={classNames("all", sty.section__kYf0)}>
-            <div className={classNames("all", sty.freeBox___4SrAh)}>
-              <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-
-                alt={""}
-                className={classNames(sty.img)}
-                displayHeight={"190px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"none"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"190px"}
-                loading={"lazy"}
-              />
-
-              <div className={classNames("all", sty.freeBox__y9Izt)}>
-                <div
-                  className={classNames("all", "__wab_text", sty.text___5IWaM)}
-                >
-                  {"Author"}
-                </div>
-                <div
-                  className={classNames("all", "__wab_text", sty.text__g5536)}
-                >
-                  {"Nikita Morell"}
-                </div>
-                <div
-                  className={classNames("all", "__wab_text", sty.text__zTmI)}
-                >
-                  {"Enter some text"}
-                </div>
-                <div className={classNames("all", sty.freeBox__tVTbL)}>
-                  <PlasmicLink__
-                    className={classNames(
-                      "all",
-                      "a",
-                      "a__8kaaM",
-                      "__wab_text",
-                      sty.link__kWmR5
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    legacyBehavior={false}
-                    platform={"nextjs"}
+                throw e;
+              }
+            })()
+          ).map((__plasmic_item_0, __plasmic_idx_0) => {
+            const currentItem = __plasmic_item_0;
+            const currentIndex = __plasmic_idx_0;
+            return (
+              <div
+                className={classNames("all", sty.freeBox___4EpJp)}
+                key={currentIndex}
+              >
+                <section className={classNames("all", sty.section___3YlKg)}>
+                  <div className={classNames("all", sty.freeBox___6Jh8O)}>
+                    <div className={classNames("all", sty.freeBox__c1EJf)}>
+                      <div
+                        className={classNames(
+                          "all",
+                          "__wab_text",
+                          sty.text__ofBeU
+                        )}
+                      >
+                        <React.Fragment>
+                          {
+                            $q.categories.data.find(
+                              c => c.id === currentItem.data.category
+                            )?.data.name
+                          }
+                        </React.Fragment>
+                      </div>
+                      <div
+                        className={classNames(
+                          "all",
+                          "__wab_text",
+                          sty.text__gKpKf
+                        )}
+                      >
+                        {"\u00b7"}
+                      </div>
+                      <div
+                        className={classNames(
+                          "all",
+                          "__wab_text",
+                          sty.text__qxLTc
+                        )}
+                      >
+                        <React.Fragment>
+                          {Math.max(
+                            1,
+                            Math.ceil(
+                              (currentItem.data.body || "")
+                                .replace(/<[^>]*>/g, " ")
+                                .trim()
+                                .split(/\s+/).length / 200
+                            )
+                          ) + " min read"}
+                        </React.Fragment>
+                      </div>
+                    </div>
+                    <h1
+                      className={classNames(
+                        "all",
+                        "h1",
+                        "h1__8kaaM",
+                        "__wab_text",
+                        sty.h1__kTig7
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return currentItem.data.title;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "You won't believe what happens next.";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </h1>
+                    <div
+                      className={classNames(
+                        "all",
+                        "__wab_text",
+                        sty.text__k9Ee
+                      )}
+                    >
+                      <React.Fragment>
+                        {currentItem.data.excerpt}
+                      </React.Fragment>
+                    </div>
+                  </div>
+                  <div className={classNames("all", sty.freeBox__vD0D5)}>
+                    <div
+                      className={classNames(
+                        "all",
+                        "__wab_text",
+                        sty.text___07Y61
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return $q.authors.data.find(
+                              au => au.id === currentItem.data.author
+                            )?.data.name;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "Nikita Morell";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                    <div
+                      className={classNames(
+                        "all",
+                        "__wab_text",
+                        sty.text__b2E4O
+                      )}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return new Date(
+                              currentItem.data.publishedDate
+                            ).toLocaleDateString("en-AU", {
+                              month: "long",
+                              year: "numeric"
+                            });
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "May 2026";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
+                    </div>
+                  </div>
+                </section>
+                <section className={classNames("all", sty.section__tytWo)}>
+                  <div
+                    className={classNames("all", "__wab_text", sty.text__xufm9)}
                   >
-                    {"LINKEDIN"}
-                  </PlasmicLink__>
-                  <PlasmicLink__
-                    className={classNames(
-                      "all",
-                      "a",
-                      "a__8kaaM",
-                      "__wab_text",
-                      sty.link__kiuqr
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    legacyBehavior={false}
-                    platform={"nextjs"}
-                  >
-                    {"WEBSITE"}
-                  </PlasmicLink__>
-                </div>
+                    <div
+                      className={"__wab_expr_html_text"}
+                      dangerouslySetInnerHTML={{
+                        __html: `<div class="article-body">${currentItem.data.body || ""}</div>`
+                      }}
+                    />
+                  </div>
+                  <Embed
+                    data-plasmic-name={"embedHtml"}
+                    data-plasmic-override={overrides.embedHtml}
+
+                    className={classNames("__wab_instance", sty.embedHtml)}
+                    code={
+                      '<style>\r\n  .article-body {\r\n    font-family: "Uncut Sans", sans-serif;\r\n    font-weight: 400;\r\n    font-size: 28px;\r\n    letter-spacing: -0.5px;\r\n    line-height: 38px;\r\n  }\r\n  .article-body h1, .article-body h2, .article-body h3,\r\n  .article-body h4, .article-body h5, .article-body h6 {\r\n    font-family: "Roboto Condensed", sans-serif;\r\n    text-transform: uppercase;\r\n    letter-spacing: normal;\r\n  }\r\n  .article-body h2 {\r\n    font-size: 60px;\r\n    font-weight: 700;\r\n  }\r\n  .article-body h3 {\r\n    font-size: 40px;\r\n    font-weight: 700;\r\n  }\r\n  @media (max-width: 1024px) {\r\n    .article-body { font-size: 24px; line-height: 30px; }\r\n    .article-body h2 { font-size: 40px; }\r\n    .article-body h2 { font-size: 30px; }\r\n  }\r\n  @media (max-width: 640px) {\r\n    .article-body { font-size: 20px; line-height: 26px; }\r\n    .article-body h2 { font-size: 30px; }\r\n    .article-body h2 { font-size: 24px; }\r\n  }\r\n</style>'
+                    }
+                  />
+                </section>
+                <section className={classNames("all", sty.section__kYf0)}>
+                  <div className={classNames("all", sty.freeBox___4SrAh)}>
+                    <PlasmicImg__
+                      data-plasmic-name={"img"}
+                      data-plasmic-override={overrides.img}
+
+                      alt={""}
+                      className={classNames(sty.img)}
+                      displayHeight={"190px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"none"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"190px"}
+                      loading={"lazy"}
+                      src={(() => {
+                        try {
+                          return $q.authors.data.find(
+                            au => au.id === currentItem.data.author
+                          )?.data.photo.url;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()}
+                    />
+
+                    <div className={classNames("all", sty.freeBox__y9Izt)}>
+                      <div
+                        className={classNames(
+                          "all",
+                          "__wab_text",
+                          sty.text___5IWaM
+                        )}
+                      >
+                        {"Author"}
+                      </div>
+                      <div
+                        className={classNames(
+                          "all",
+                          "__wab_text",
+                          sty.text__g5536
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $q.authors.data.find(
+                                au => au.id === currentItem.data.author
+                              )?.data.name;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "Nikita Morell";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                      <div
+                        className={classNames(
+                          "all",
+                          "__wab_text",
+                          sty.text__zTmI
+                        )}
+                      >
+                        <React.Fragment>
+                          {
+                            $q.authors.data.find(
+                              au => au.id === currentItem.data.author
+                            )?.data.bio
+                          }
+                        </React.Fragment>
+                      </div>
+                      <div className={classNames("all", sty.freeBox__tVTbL)}>
+                        <PlasmicLink__
+                          className={classNames(
+                            "all",
+                            "a",
+                            "a__8kaaM",
+                            "__wab_text",
+                            sty.link__kWmR5
+                          )}
+                          component={Link}
+                          href={(() => {
+                            try {
+                              return $q.authors.data.find(
+                                au => au.id === currentItem.data.author
+                              )?.data.linkedInLink;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "https://www.plasmic.app/";
+                              }
+                              throw e;
+                            }
+                          })()}
+                          legacyBehavior={false}
+                          platform={"nextjs"}
+                          target={"_blank"}
+                        >
+                          {"LINKEDIN"}
+                        </PlasmicLink__>
+                        <PlasmicLink__
+                          className={classNames(
+                            "all",
+                            "a",
+                            "a__8kaaM",
+                            "__wab_text",
+                            sty.link__kiuqr
+                          )}
+                          component={Link}
+                          href={(() => {
+                            try {
+                              return $q.authors.data.find(
+                                au => au.id === currentItem.data.author
+                              )?.data.website;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "https://www.plasmic.app/";
+                              }
+                              throw e;
+                            }
+                          })()}
+                          legacyBehavior={false}
+                          platform={"nextjs"}
+                          target={"_blank"}
+                        >
+                          {"WEBSITE"}
+                        </PlasmicLink__>
+                      </div>
+                    </div>
+                  </div>
+                </section>
               </div>
-            </div>
-          </section>
+            );
+          })}
           <section className={classNames("all", sty.section__agqZn)}>
             <div className={classNames("all", sty.freeBox__cxt8C)}>
               <h1
@@ -511,8 +714,9 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "dirtNav", "img", "newsletterFormSection"],
+  root: ["root", "dirtNav", "embedHtml", "img", "newsletterFormSection"],
   dirtNav: ["dirtNav"],
+  embedHtml: ["embedHtml"],
   img: ["img"],
   newsletterFormSection: ["newsletterFormSection"]
 } as const;
@@ -522,6 +726,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   dirtNav: typeof DirtNav;
+  embedHtml: typeof Embed;
   img: typeof PlasmicImg__;
   newsletterFormSection: typeof NewsletterFormSection;
 };
@@ -589,6 +794,7 @@ export const PlasmicArticlesTemplate = Object.assign(
   {
     // Helper components rendering sub-elements
     dirtNav: makeNodeComponent("dirtNav"),
+    embedHtml: makeNodeComponent("embedHtml"),
     img: makeNodeComponent("img"),
     newsletterFormSection: makeNodeComponent("newsletterFormSection"),
 

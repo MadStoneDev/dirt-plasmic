@@ -22,6 +22,7 @@
     "@plasmicpkgs/antd5": "^0.0.328",
     "@plasmicpkgs/cms": "^0.0.41",
     "@plasmicpkgs/fetch": "^0.0.54",
+    "@plasmicpkgs/plasmic-basic-components": "^0.0.291",
     "@plasmicpkgs/plasmic-cms": "^0.0.333",
     "@plasmicpkgs/plasmic-nav": "^0.0.209",
     "@plasmicpkgs/react-aria": "^0.0.167",
