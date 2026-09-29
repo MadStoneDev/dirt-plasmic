@@ -24,7 +24,12 @@ export interface SEOProps {
 
   // ── JSON-LD structured data (AEO / GEO) ──
   /** Type of the page-level node in the @graph */
-  jsonLdType?: "WebPage" | "AboutPage" | "ContactPage" | "CollectionPage";
+  jsonLdType?:
+    | "WebPage"
+    | "AboutPage"
+    | "ContactPage"
+    | "CollectionPage"
+    | "BlogPosting";
   /** Name of the page node in JSON-LD (falls back to title, then siteName) */
   pageName?: string;
   /** Which sitewide entity this page is "about" (default: organization) */
@@ -38,6 +43,15 @@ export interface SEOProps {
   /** Page dates for freshness signals */
   datePublished?: string;
   dateModified?: string;
+
+  // ── Article / BlogPosting (used when jsonLdType === "BlogPosting") ──
+  /** Article headline for the BlogPosting node (defaults to title/pageName) */
+  headline?: string;
+  /** Article author. If the name matches the site founder, the existing
+   *  Person node is referenced instead of duplicating it. */
+  articleAuthor?: { name: string; url?: string };
+  /** Article image (absolute or site-relative); falls back to the OG image */
+  articleImage?: string;
 }
 
 export function SEO({
@@ -56,6 +70,9 @@ export function SEO({
   faqItems,
   datePublished,
   dateModified,
+  headline,
+  articleAuthor,
+  articleImage,
 }: SEOProps) {
   const router = useRouter();
   const {
@@ -140,6 +157,20 @@ export function SEO({
         ? orgId
         : null;
 
+  const isBlogPosting = jsonLdType === "BlogPosting";
+
+  // Reuse the founder Person node when the author is Nikita; otherwise emit an
+  // inline Person so the article still credits a named human.
+  const articleAuthorRef = articleAuthor
+    ? articleAuthor.name === founder.name
+      ? { "@id": personId }
+      : {
+          "@type": "Person",
+          name: articleAuthor.name,
+          ...(articleAuthor.url && { url: articleAuthor.url }),
+        }
+    : { "@id": orgId };
+
   const pageNode: Record<string, unknown> = {
     "@type": jsonLdType,
     "@id": `${canonicalUrl}#webpage`,
@@ -153,6 +184,13 @@ export function SEO({
     inLanguage,
     ...(datePublished && { datePublished }),
     ...(dateModified && { dateModified }),
+    ...(isBlogPosting && {
+      headline: headline || title || pageName || siteName,
+      author: articleAuthorRef,
+      publisher: { "@id": orgId },
+      image: resolveUrl(articleImage || ogImage || defaultOgImage, siteUrl),
+      mainEntityOfPage: { "@id": `${canonicalUrl}#webpage` },
+    }),
   };
 
   // ── FAQ node (GEO / AI-answer signal; no longer drives Google snippets) ──
@@ -191,6 +229,13 @@ export function SEO({
         plain name="description" is intentionally left unkeyed — Plasmic emits a
         non-standard property="description" that crawlers ignore, so we keep ours.
       */}
+      {/*
+        <title> is emitted only when an explicit title is passed. Plasmic-backed
+        pages leave this to Studio's <title key="title"> (which renders after and
+        wins by key). Dynamic pages whose Plasmic component emits an empty <Head>
+        (e.g. the article template) pass `title` so SEO owns the document title.
+      */}
+      {title && <title key="title">{title}</title>}
       <meta name="description" content={metaDescription} />
       {!skipCanonical && <link rel="canonical" href={canonicalUrl} />}
       {noIndex && <meta name="robots" content="noindex, nofollow" />}
@@ -203,6 +248,15 @@ export function SEO({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={metaOgImage} />
       <meta property="og:locale" content={locale} />
+      {ogType === "article" && datePublished && (
+        <meta property="article:published_time" content={datePublished} />
+      )}
+      {ogType === "article" && dateModified && (
+        <meta property="article:modified_time" content={dateModified} />
+      )}
+      {ogType === "article" && articleAuthor?.name && (
+        <meta property="article:author" content={articleAuthor.name} />
+      )}
 
       {/* ── Twitter Card ── */}
       <meta name="twitter:card" content="summary_large_image" />

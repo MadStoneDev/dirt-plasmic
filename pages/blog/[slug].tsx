@@ -9,58 +9,91 @@ import { useRouter } from "next/router";
 import { PlasmicQueryDataProvider } from "@plasmicapp/react-web/lib/query";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import { extractPlasmicQueryData } from "@plasmicapp/react-web/lib/prepass";
+import { SEO } from "../../components/SEO";
+import { seoDefaults } from "@/config/seo-defaults";
+import {
+  getArticleBySlug,
+  getPublishedArticleSlugs,
+  slugify,
+  type ArticleWithAuthor,
+} from "../../utils/plasmic-cms";
 
 export const getStaticProps: GetStaticProps = async context => {
+  const slug = context.params?.slug;
+  if (typeof slug !== "string") {
+    return { notFound: true };
+  }
+
+  // Fetch the article's metadata for <SEO>. If it doesn't exist (or was
+  // unpublished), 404 rather than render an empty template.
+  const articleData = await getArticleBySlug(slug);
+  if (!articleData) {
+    return { notFound: true, revalidate: 60 };
+  }
+
+  // Prefetch the Plasmic CMS queries the template renders (the article body).
   const queryCache = await extractPlasmicQueryData(
-    <PageParamsProvider__ route={"/article/[slug]"} params={context.params}>
+    <PageParamsProvider__ route={"/blog/[slug]"} params={context.params}>
       <PlasmicArticlesTemplate />
     </PageParamsProvider__>
   );
+
   return {
-    props: { queryCache }
+    // Revalidate so edits/new articles publish without a redeploy (ISR).
+    props: { queryCache, articleData },
+    revalidate: 60,
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  console.warn(
-    "getStaticPaths was called with an empty paths array. Update this with the set of pages you want to generate statically."
-  );
+  const slugs = await getPublishedArticleSlugs();
   return {
-    paths: [],
-    fallback: "blocking"
+    paths: slugs.map(slug => ({ params: { slug } })),
+    // Articles added after build render on first request, then cache.
+    fallback: "blocking",
   };
 };
 
-function ArticlesTemplate({ queryCache }: { queryCache?: any }) {
-  // Use PlasmicArticlesTemplate to render this component as it was
-  // designed in Plasmic, by activating the appropriate variants,
-  // attaching the appropriate event handlers, etc.  You
-  // can also install whatever React hooks you need here to manage state or
-  // fetch data.
-  //
-  // Props you can pass into PlasmicArticlesTemplate are:
-  // 1. Variants you want to activate,
-  // 2. Contents for slots you want to fill,
-  // 3. Overrides for any named node in the component to attach behavior and data,
-  // 4. Props to set on the root node.
-  //
-  // By default, PlasmicArticlesTemplate is wrapped by your project's global
-  // variant context providers. These wrappers may be moved to
-  // Next.js Custom App component
-  // (https://nextjs.org/docs/advanced-features/custom-app).
+function ArticlesTemplate({
+  queryCache,
+  articleData,
+}: {
+  queryCache?: any;
+  articleData: ArticleWithAuthor;
+}) {
+  const { article, author, updatedAt } = articleData;
+  const authorName = author?.name;
+  const authorUrl = author?.website || author?.linkedInLink;
+  const canonical = `${seoDefaults.siteUrl}/blog/${slugify(article.title)}`;
 
   return (
-    <GlobalContextsProvider>
-      <PlasmicQueryDataProvider prefetchedCache={queryCache}>
-        <PageParamsProvider__
-          route={useRouter()?.pathname}
-          params={useRouter()?.query}
-          query={useRouter()?.query}
-        >
-          <PlasmicArticlesTemplate />
-        </PageParamsProvider__>
-      </PlasmicQueryDataProvider>
-    </GlobalContextsProvider>
+    <>
+      <SEO
+        title={article.title}
+        pageName={article.title}
+        description={article.excerpt}
+        canonical={canonical}
+        ogType="article"
+        jsonLdType="BlogPosting"
+        headline={article.title}
+        datePublished={article.publishedDate}
+        dateModified={updatedAt}
+        {...(authorName
+          ? { articleAuthor: { name: authorName, url: authorUrl } }
+          : {})}
+      />
+      <GlobalContextsProvider>
+        <PlasmicQueryDataProvider prefetchedCache={queryCache}>
+          <PageParamsProvider__
+            route={useRouter()?.pathname}
+            params={useRouter()?.query}
+            query={useRouter()?.query}
+          >
+            <PlasmicArticlesTemplate />
+          </PageParamsProvider__>
+        </PlasmicQueryDataProvider>
+      </GlobalContextsProvider>
+    </>
   );
 }
 

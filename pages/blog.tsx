@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { PlasmicQueryDataProvider } from "@plasmicapp/react-web/lib/query";
 import type { GetStaticProps } from "next";
 import { extractPlasmicQueryData } from "@plasmicapp/react-web/lib/prepass";
+import { SEO } from "../components/SEO";
 
 export const getStaticProps: GetStaticProps = async context => {
   const queryCache = await extractPlasmicQueryData(
@@ -17,7 +18,10 @@ export const getStaticProps: GetStaticProps = async context => {
     </PageParamsProvider__>
   );
   return {
-    props: { queryCache }
+    props: { queryCache },
+    // Revalidate so newly published articles appear in the list without a
+    // redeploy (ISR).
+    revalidate: 60
   };
 };
 
@@ -40,17 +44,25 @@ function Blog({ queryCache }: { queryCache?: any }) {
   // (https://nextjs.org/docs/advanced-features/custom-app).
 
   return (
-    <GlobalContextsProvider>
-      <PlasmicQueryDataProvider prefetchedCache={queryCache}>
-        <PageParamsProvider__
-          route={useRouter()?.pathname}
-          params={useRouter()?.query}
-          query={useRouter()?.query}
-        >
-          <PlasmicBlog />
-        </PageParamsProvider__>
-      </PlasmicQueryDataProvider>
-    </GlobalContextsProvider>
+    <>
+      <SEO
+        pageName="Blog"
+        description="Insights on branding, positioning and messaging for construction, AEC software, property and building-material companies — from the team at DIRT."
+        jsonLdType="CollectionPage"
+        skipCanonical
+      />
+      <GlobalContextsProvider>
+        <PlasmicQueryDataProvider prefetchedCache={queryCache}>
+          <PageParamsProvider__
+            route={useRouter()?.pathname}
+            params={useRouter()?.query}
+            query={useRouter()?.query}
+          >
+            <PlasmicBlog />
+          </PageParamsProvider__>
+        </PlasmicQueryDataProvider>
+      </GlobalContextsProvider>
+    </>
   );
 }
 
