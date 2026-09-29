@@ -15,10 +15,8 @@
   "dependencies": {
     "@openpanel/nextjs": "^1.5.1",
     "@plasmicapp/cli": "^0.1.381",
-    "@plasmicapp/host": "^1.0.234",
-    "@plasmicapp/loader-nextjs": "^1.0.451",
-    "@plasmicapp/nextjs-app-router": "^1.0.20",
-    "@plasmicapp/react-web": "^0.2.422",
+    "@plasmicapp/host": "^2.0.19",
+    "@plasmicapp/react-web": "^1.0.39",
     "@plasmicpkgs/antd5": "^0.0.328",
     "@plasmicpkgs/cms": "^0.0.41",
     "@plasmicpkgs/fetch": "^0.0.54",
