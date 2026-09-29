@@ -22,6 +22,11 @@
 .root > * {
   grid-column: 4;
 }
+@media (max-width: 511px) {
+  .root > * {
+    grid-column: 4;
+  }
+}
 .dirtNav:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;

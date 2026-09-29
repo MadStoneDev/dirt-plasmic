@@ -597,8 +597,8 @@ export const PlasmicArticlesTemplate = Object.assign(
     internalArgProps: PlasmicArticlesTemplate__ArgProps,
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
-      pageRoute: "/article/[slug]",
-      pagePath: "/article/[slug]",
+      pageRoute: "/blog/[slug]",
+      pagePath: "/blog/[slug]",
       params: {},
       query: {}
     })
