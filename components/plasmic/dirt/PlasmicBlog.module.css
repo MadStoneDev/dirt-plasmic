@@ -26,21 +26,16 @@
   max-width: 100%;
   object-fit: cover;
 }
-.dirtNavLink__fXg5Q:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
 .dirtNavLink__txzde:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.dirtNavLink__ekd1H:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
 .dirtNavLink__k7Q8E:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
+}
+.navigationContactButton:global(.__wab_instance) {
+  max-width: 100%;
 }
 .section___4AWga {
   display: grid;
@@ -143,7 +138,7 @@
 }
 @media (max-width: 511px) {
   .section__c1VZj {
-    padding: 0px;
+    padding: 10px;
   }
 }
 @media (max-width: 511px) {

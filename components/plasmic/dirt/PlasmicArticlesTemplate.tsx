@@ -70,6 +70,7 @@ import type { QueryComponentNode } from "@plasmicapp/react-web/lib/data-sources"
 
 import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
 import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
+import NavigationContactButton from "../../NavigationContactButton"; // plasmic-import: etjyWldN73kr/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { NewsletterFormSection } from "../../sections/NewsletterFormSection"; // plasmic-import: XfKpmE3Hd3LP/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
@@ -127,6 +128,7 @@ export const PlasmicArticlesTemplate__ArgProps = new Array<ArgPropType>();
 export type PlasmicArticlesTemplate__OverridesType = {
   root?: Flex__<"div">;
   dirtNav?: Flex__<typeof DirtNav>;
+  navigationContactButton?: Flex__<typeof NavigationContactButton>;
   embedHtml?: Flex__<typeof Embed>;
   img?: Flex__<typeof PlasmicImg__>;
   newsletterFormSection?: Flex__<typeof NewsletterFormSection>;
@@ -287,6 +289,17 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
 
+            actions={
+              <NavigationContactButton
+                data-plasmic-name={"navigationContactButton"}
+                data-plasmic-override={overrides.navigationContactButton}
+
+                className={classNames(
+                  "__wab_instance",
+                  sty.navigationContactButton
+                )}
+              />
+            }
             className={classNames("__wab_instance", sty.dirtNav)}
             logo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
             menuBackground={"dirt-pop"}
@@ -296,28 +309,10 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                 <DirtNavLink
                   className={classNames(
                     "__wab_instance",
-                    sty.dirtNavLink__uEb6S
-                  )}
-                  href={"/"}
-                  label={"Home"}
-                />
-
-                <DirtNavLink
-                  className={classNames(
-                    "__wab_instance",
                     sty.dirtNavLink__tBuBs
                   )}
                   href={"/about"}
                   label={"About"}
-                />
-
-                <DirtNavLink
-                  className={classNames(
-                    "__wab_instance",
-                    sty.dirtNavLink__szMhc
-                  )}
-                  href={"/services"}
-                  label={"Services"}
                 />
 
                 <DirtNavLink
@@ -714,8 +709,16 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "dirtNav", "embedHtml", "img", "newsletterFormSection"],
-  dirtNav: ["dirtNav"],
+  root: [
+    "root",
+    "dirtNav",
+    "navigationContactButton",
+    "embedHtml",
+    "img",
+    "newsletterFormSection"
+  ],
+  dirtNav: ["dirtNav", "navigationContactButton"],
+  navigationContactButton: ["navigationContactButton"],
   embedHtml: ["embedHtml"],
   img: ["img"],
   newsletterFormSection: ["newsletterFormSection"]
@@ -726,6 +729,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   dirtNav: typeof DirtNav;
+  navigationContactButton: typeof NavigationContactButton;
   embedHtml: typeof Embed;
   img: typeof PlasmicImg__;
   newsletterFormSection: typeof NewsletterFormSection;
@@ -794,6 +798,7 @@ export const PlasmicArticlesTemplate = Object.assign(
   {
     // Helper components rendering sub-elements
     dirtNav: makeNodeComponent("dirtNav"),
+    navigationContactButton: makeNodeComponent("navigationContactButton"),
     embedHtml: makeNodeComponent("embedHtml"),
     img: makeNodeComponent("img"),
     newsletterFormSection: makeNodeComponent("newsletterFormSection"),

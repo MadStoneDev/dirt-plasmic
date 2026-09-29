@@ -147,6 +147,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/article/[slug]"
+        },
+        {
+          "id": "etjyWldN73kr",
+          "name": "NavigationContactButton",
+          "type": "managed",
+          "projectId": "8kaaMUEQHxomwqwuKNMozy",
+          "renderModuleFilePath": "plasmic/dirt/PlasmicNavigationContactButton.tsx",
+          "importSpec": {
+            "modulePath": "NavigationContactButton.tsx"
+          },
+          "cssFilePath": "plasmic/dirt/PlasmicNavigationContactButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

@@ -71,6 +71,7 @@ import type { QueryComponentNode } from "@plasmicapp/react-web/lib/data-sources"
 import TaglineBanner from "../../TaglineBanner"; // plasmic-import: cGGZJPgn9EgF/component
 import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
 import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
+import NavigationContactButton from "../../NavigationContactButton"; // plasmic-import: etjyWldN73kr/component
 import { HeroSection } from "../../sections/HeroSection"; // plasmic-import: oYTAqFgzizOu/codeComponent
 import { CompanyCarouselSection } from "../../sections/CompanyCarouselSection"; // plasmic-import: UzUry5mU4ozT/codeComponent
 import { BrandItem } from "../../sections/BrandItem"; // plasmic-import: n6yARC8wCw5J/codeComponent
@@ -164,7 +165,7 @@ export type PlasmicHomepage__OverridesType = {
   home?: Flex__<"div">;
   taglineBanner?: Flex__<typeof TaglineBanner>;
   dirtNav?: Flex__<typeof DirtNav>;
-  link?: Flex__<"a"> & Partial<LinkProps>;
+  navigationContactButton?: Flex__<typeof NavigationContactButton>;
   heroSection?: Flex__<typeof HeroSection>;
   companiesWeCoveredInDirt?: Flex__<typeof CompanyCarouselSection>;
   dirtRichText?: Flex__<typeof DirtRichText>;
@@ -328,24 +329,15 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.dirtNav}
 
             actions={
-              <PlasmicLink__
-                data-plasmic-name={"link"}
-                data-plasmic-override={overrides.link}
+              <NavigationContactButton
+                data-plasmic-name={"navigationContactButton"}
+                data-plasmic-override={overrides.navigationContactButton}
 
                 className={classNames(
-                  "all",
-                  "a",
-                  "a__8kaaM",
-                  "__wab_text",
-                  sty.link
+                  "__wab_instance",
+                  sty.navigationContactButton
                 )}
-                component={Link}
-                href={`/contact`}
-                legacyBehavior={false}
-                platform={"nextjs"}
-              >
-                {"Contact Us"}
-              </PlasmicLink__>
+              />
             }
             className={classNames("__wab_instance", sty.dirtNav)}
             logo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
@@ -1310,7 +1302,7 @@ const PlasmicDescendants = {
     "home",
     "taglineBanner",
     "dirtNav",
-    "link",
+    "navigationContactButton",
     "heroSection",
     "companiesWeCoveredInDirt",
     "dirtRichText",
@@ -1329,8 +1321,8 @@ const PlasmicDescendants = {
     "cmsEntryField"
   ],
   taglineBanner: ["taglineBanner"],
-  dirtNav: ["dirtNav", "link"],
-  link: ["link"],
+  dirtNav: ["dirtNav", "navigationContactButton"],
+  navigationContactButton: ["navigationContactButton"],
   heroSection: ["heroSection"],
   companiesWeCoveredInDirt: ["companiesWeCoveredInDirt"],
   dirtRichText: ["dirtRichText"],
@@ -1355,7 +1347,7 @@ type NodeDefaultElementType = {
   home: "div";
   taglineBanner: typeof TaglineBanner;
   dirtNav: typeof DirtNav;
-  link: "a";
+  navigationContactButton: typeof NavigationContactButton;
   heroSection: typeof HeroSection;
   companiesWeCoveredInDirt: typeof CompanyCarouselSection;
   dirtRichText: typeof DirtRichText;
@@ -1438,7 +1430,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     taglineBanner: makeNodeComponent("taglineBanner"),
     dirtNav: makeNodeComponent("dirtNav"),
-    link: makeNodeComponent("link"),
+    navigationContactButton: makeNodeComponent("navigationContactButton"),
     heroSection: makeNodeComponent("heroSection"),
     companiesWeCoveredInDirt: makeNodeComponent("companiesWeCoveredInDirt"),
     dirtRichText: makeNodeComponent("dirtRichText"),

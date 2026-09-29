@@ -70,6 +70,7 @@ import type { QueryComponentNode } from "@plasmicapp/react-web/lib/data-sources"
 
 import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
 import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
+import NavigationContactButton from "../../NavigationContactButton"; // plasmic-import: etjyWldN73kr/component
 import { NewsletterFormSection } from "../../sections/NewsletterFormSection"; // plasmic-import: XfKpmE3Hd3LP/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
@@ -130,6 +131,7 @@ export const PlasmicBlog__ArgProps = new Array<ArgPropType>();
 export type PlasmicBlog__OverridesType = {
   root?: Flex__<"div">;
   dirtNav?: Flex__<typeof DirtNav>;
+  navigationContactButton?: Flex__<typeof NavigationContactButton>;
   h1?: Flex__<"h1">;
   h3?: Flex__<"h3">;
   newsletterFormSection?: Flex__<typeof NewsletterFormSection>;
@@ -333,6 +335,17 @@ function PlasmicBlog__RenderFunc(props: {
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
 
+            actions={
+              <NavigationContactButton
+                data-plasmic-name={"navigationContactButton"}
+                data-plasmic-override={overrides.navigationContactButton}
+
+                className={classNames(
+                  "__wab_instance",
+                  sty.navigationContactButton
+                )}
+              />
+            }
             className={classNames("__wab_instance", sty.dirtNav)}
             logo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
             menuBackground={"dirt-pop"}
@@ -342,28 +355,10 @@ function PlasmicBlog__RenderFunc(props: {
                 <DirtNavLink
                   className={classNames(
                     "__wab_instance",
-                    sty.dirtNavLink__fXg5Q
-                  )}
-                  href={"/"}
-                  label={"Home"}
-                />
-
-                <DirtNavLink
-                  className={classNames(
-                    "__wab_instance",
                     sty.dirtNavLink__txzde
                   )}
                   href={"/about"}
                   label={"About"}
-                />
-
-                <DirtNavLink
-                  className={classNames(
-                    "__wab_instance",
-                    sty.dirtNavLink__ekd1H
-                  )}
-                  href={"/services"}
-                  label={"Services"}
                 />
 
                 <DirtNavLink
@@ -459,6 +454,43 @@ function PlasmicBlog__RenderFunc(props: {
                   "__wab_text",
                   sty.h2__kzGx
                 )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToPage"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          destination:
+                            "/blog/" +
+                            $q.query.data[0].data.title
+                              .toLowerCase()
+                              .trim()
+                              .replace(/[^a-z0-9]+/g, "-")
+                              .replace(/^-|-$/g, "")
+                        };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToPage"] != null &&
+                    typeof $steps["goToPage"] === "object" &&
+                    typeof $steps["goToPage"].then === "function"
+                  ) {
+                    $steps["goToPage"] = await $steps["goToPage"];
+                  }
+                }}
+                style={{ cursor: "pointer" }}
               >
                 <React.Fragment>
                   {(() => {
@@ -702,6 +734,7 @@ function PlasmicBlog__RenderFunc(props: {
                           $steps["goToPage"] = await $steps["goToPage"];
                         }
                       }}
+                      style={{ cursor: "pointer" }}
                     >
                       <React.Fragment>
                         {(() => {
@@ -816,8 +849,16 @@ function PlasmicBlog__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "dirtNav", "h1", "h3", "newsletterFormSection"],
-  dirtNav: ["dirtNav"],
+  root: [
+    "root",
+    "dirtNav",
+    "navigationContactButton",
+    "h1",
+    "h3",
+    "newsletterFormSection"
+  ],
+  dirtNav: ["dirtNav", "navigationContactButton"],
+  navigationContactButton: ["navigationContactButton"],
   h1: ["h1"],
   h3: ["h3"],
   newsletterFormSection: ["newsletterFormSection"]
@@ -828,6 +869,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   dirtNav: typeof DirtNav;
+  navigationContactButton: typeof NavigationContactButton;
   h1: "h1";
   h3: "h3";
   newsletterFormSection: typeof NewsletterFormSection;
@@ -896,6 +938,7 @@ export const PlasmicBlog = Object.assign(
   {
     // Helper components rendering sub-elements
     dirtNav: makeNodeComponent("dirtNav"),
+    navigationContactButton: makeNodeComponent("navigationContactButton"),
     h1: makeNodeComponent("h1"),
     h3: makeNodeComponent("h3"),
     newsletterFormSection: makeNodeComponent("newsletterFormSection"),
