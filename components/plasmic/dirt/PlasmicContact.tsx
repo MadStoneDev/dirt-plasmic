@@ -216,16 +216,19 @@ function PlasmicContact__RenderFunc(props: {
           <TaglineBanner
             data-plasmic-name={"taglineBanner"}
             data-plasmic-override={overrides.taglineBanner}
+
             className={classNames("__wab_instance", sty.taglineBanner)}
           />
 
           <DirtNav
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
+
             actions={
               <PlasmicLink__
                 data-plasmic-name={"link"}
                 data-plasmic-override={overrides.link}
+
                 className={classNames(
                   "all",
                   "a",
@@ -273,6 +276,7 @@ function PlasmicContact__RenderFunc(props: {
           <FooterSection
             data-plasmic-name={"footerSection"}
             data-plasmic-override={overrides.footerSection}
+
             backgroundImage={"/plasmic/dirt/images/mainFooterBackdropPng.png"}
             bottomRightLink={
               "https://www.reddit.com/r/NatureIsFuckingLit/comments/1g015ns/elephant_throwing_dirt_on_a_crocodile_for_some/"
@@ -312,6 +316,7 @@ function PlasmicContact__RenderFunc(props: {
               <PlasmicImg__
                 data-plasmic-name={"img"}
                 data-plasmic-override={overrides.img}
+
                 alt={""}
                 className={classNames(sty.img)}
                 displayHeight={"auto"}
@@ -438,9 +443,6 @@ export const PlasmicContact = Object.assign(
     // Metadata about props expected for PlasmicContact
     internalVariantProps: PlasmicContact__VariantProps,
     internalArgProps: PlasmicContact__ArgProps,
-
-    // Key-value metadata
-    metadata: { twitterCard: "summary_large_image" },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
       pageRoute: "/contact",

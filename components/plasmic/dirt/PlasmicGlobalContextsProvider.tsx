@@ -10,22 +10,30 @@ import * as React from "react";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { AntdConfigProvider } from "@plasmicpkgs/antd5/skinny/registerConfigProvider";
 import { SiteSettings } from "../../SiteSettings"; // plasmic-import: 2VcvXhbLkskw/codeComponent
+import { CmsCredentialsProvider } from "@plasmicpkgs/plasmic-cms";
 
 export interface GlobalContextsProviderProps {
   children?: React.ReactElement;
   antdConfigProviderProps?: Partial<
     Omit<React.ComponentProps<typeof AntdConfigProvider>, "children">
   >;
-
   siteSettingsProps?: Partial<
     Omit<React.ComponentProps<typeof SiteSettings>, "children">
+  >;
+  cmsCredentialsProviderProps?: Partial<
+    Omit<React.ComponentProps<typeof CmsCredentialsProvider>, "children">
   >;
 }
 
 export default function GlobalContextsProvider(
   props: GlobalContextsProviderProps
 ) {
-  const { children, antdConfigProviderProps, siteSettingsProps } = props;
+  const {
+    children,
+    antdConfigProviderProps,
+    siteSettingsProps,
+    cmsCredentialsProviderProps
+  } = props;
 
   return (
     <AntdConfigProvider
@@ -153,7 +161,34 @@ export default function GlobalContextsProvider(
             : undefined
         }
       >
-        {children}
+        <CmsCredentialsProvider
+          {...cmsCredentialsProviderProps}
+          databaseId={
+            cmsCredentialsProviderProps &&
+            "databaseId" in cmsCredentialsProviderProps
+              ? cmsCredentialsProviderProps.databaseId!
+              : undefined
+          }
+          databaseToken={
+            cmsCredentialsProviderProps &&
+            "databaseToken" in cmsCredentialsProviderProps
+              ? cmsCredentialsProviderProps.databaseToken!
+              : undefined
+          }
+          host={
+            cmsCredentialsProviderProps && "host" in cmsCredentialsProviderProps
+              ? cmsCredentialsProviderProps.host!
+              : "https://data.plasmic.app"
+          }
+          locale={
+            cmsCredentialsProviderProps &&
+            "locale" in cmsCredentialsProviderProps
+              ? cmsCredentialsProviderProps.locale!
+              : undefined
+          }
+        >
+          {children}
+        </CmsCredentialsProvider>
       </SiteSettings>
     </AntdConfigProvider>
   );

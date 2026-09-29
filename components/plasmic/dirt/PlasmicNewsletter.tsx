@@ -241,16 +241,19 @@ function PlasmicNewsletter__RenderFunc(props: {
           <TaglineBanner
             data-plasmic-name={"taglineBanner"}
             data-plasmic-override={overrides.taglineBanner}
+
             className={classNames("__wab_instance", sty.taglineBanner)}
           />
 
           <DirtNav
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
+
             actions={
               <PlasmicLink__
                 data-plasmic-name={"link"}
                 data-plasmic-override={overrides.link}
+
                 className={classNames(
                   "all",
                   "a",
@@ -350,6 +353,7 @@ function PlasmicNewsletter__RenderFunc(props: {
               <h1
                 data-plasmic-name={"h1"}
                 data-plasmic-override={overrides.h1}
+
                 className={classNames(
                   "all",
                   "h1",
@@ -389,6 +393,7 @@ function PlasmicNewsletter__RenderFunc(props: {
               <DirtRichText
                 data-plasmic-name={"dirtRichText"}
                 data-plasmic-override={overrides.dirtRichText}
+
                 className={classNames("__wab_instance", sty.dirtRichText)}
                 fontSize={20}
                 tabletFontSize={28}
@@ -420,6 +425,7 @@ function PlasmicNewsletter__RenderFunc(props: {
           <section
             data-plasmic-name={"testimonials"}
             data-plasmic-override={overrides.testimonials}
+
             className={classNames("all", sty.testimonials)}
           >
             <div className={classNames("all", "__wab_text", sty.text__kHady)}>
@@ -538,6 +544,7 @@ function PlasmicNewsletter__RenderFunc(props: {
           <FooterSection
             data-plasmic-name={"footerSection"}
             data-plasmic-override={overrides.footerSection}
+
             backgroundImage={"/plasmic/dirt/images/mainFooterBackdropPng.png"}
             bottomRightLink={
               "https://www.reddit.com/r/NatureIsFuckingLit/comments/1g015ns/elephant_throwing_dirt_on_a_crocodile_for_some/"
@@ -715,9 +722,6 @@ export const PlasmicNewsletter = Object.assign(
     // Metadata about props expected for PlasmicNewsletter
     internalVariantProps: PlasmicNewsletter__VariantProps,
     internalArgProps: PlasmicNewsletter__ArgProps,
-
-    // Key-value metadata
-    metadata: { twitterCard: "summary_large_image" },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
       pageRoute: "/newsletter",

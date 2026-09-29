@@ -119,6 +119,20 @@
           "cssFilePath": "plasmic/dirt/PlasmicTaglineBanner.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "j_vMVTQjFfxV",
+          "name": "NewPage",
+          "type": "managed",
+          "projectId": "8kaaMUEQHxomwqwuKNMozy",
+          "renderModuleFilePath": "plasmic/dirt/PlasmicNewPage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/blog.tsx"
+          },
+          "cssFilePath": "plasmic/dirt/PlasmicNewPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/blog"
         }
       ],
       "icons": [
@@ -1581,6 +1595,133 @@
         }
       ],
       "customFunctions": []
+    },
+    {
+      "projectId": "xht6ggYXPaEbYDhYJJ7oxU",
+      "projectApiToken": "KIMQgJfi79CvxnH9zBJcMKtcz2wYzpsoPNukHQwsVXI7zV3eLoReOs5nSRMsZTOk1xHvUywnPdg6Z41KJg",
+      "projectName": "@plasmicpkgs/fetch",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/plasmicpkgs_fetch/plasmic.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "styleTokensProviderFilePath": "plasmic/plasmicpkgs_fetch/PlasmicStyleTokensProvider.tsx",
+      "dataTokensFilePath": "",
+      "projectModuleFilePath": "plasmic/plasmicpkgs_fetch/plasmic.tsx",
+      "codeComponents": [],
+      "customFunctions": [
+        {
+          "defaultExport": false,
+          "id": "fetch",
+          "importPath": "@plasmicpkgs/fetch",
+          "name": "fetch",
+          "namespace": null
+        }
+      ]
+    },
+    {
+      "projectId": "hjKYmYi6HMwK6TRyk7ew5R",
+      "projectApiToken": "L5kqyh9xqKCqpdc8gqCglVcLZTxdkkP1Dt9pLUlWpyKVItIbbXr5272ePgMpZZiezhSe0AIOuQB353jQnw",
+      "projectName": "plasmic-cms",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/plasmic_cms/plasmic.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "plasmic/plasmic_cms/PlasmicGlobalContextsProvider.tsx",
+      "splitsProviderFilePath": "",
+      "styleTokensProviderFilePath": "plasmic/plasmic_cms/PlasmicStyleTokensProvider.tsx",
+      "dataTokensFilePath": "",
+      "projectModuleFilePath": "plasmic/plasmic_cms/plasmic.tsx",
+      "codeComponents": [
+        {
+          "id": "w6HdOz-Pcn",
+          "name": "CmsRowField",
+          "displayName": "hostless-plasmic-cms-row-field",
+          "componentImportPath": "@plasmicpkgs/plasmic-cms"
+        },
+        {
+          "id": "Ds6UdKRHmq",
+          "name": "CmsRowLink",
+          "displayName": "hostless-plasmic-cms-row-link",
+          "componentImportPath": "@plasmicpkgs/plasmic-cms"
+        },
+        {
+          "id": "dj_Vc2QmFA",
+          "name": "CmsRowImage",
+          "displayName": "hostless-plasmic-cms-row-image",
+          "componentImportPath": "@plasmicpkgs/plasmic-cms"
+        },
+        {
+          "id": "r3UO4W-xcR",
+          "name": "CmsRowFieldValue",
+          "displayName": "hostless-plasmic-cms-row-value",
+          "componentImportPath": "@plasmicpkgs/plasmic-cms"
+        },
+        {
+          "id": "OREVbGCcgN",
+          "name": "CmsCredentialsProvider",
+          "displayName": "hostless-plasmic-cms-credentials-provider",
+          "componentImportPath": "@plasmicpkgs/plasmic-cms"
+        },
+        {
+          "id": "8N9-WfZSaq",
+          "name": "CmsQueryRepeater",
+          "displayName": "hostless-plasmic-cms-query-repeater",
+          "componentImportPath": "@plasmicpkgs/plasmic-cms"
+        },
+        {
+          "id": "8uEaibqi6348",
+          "name": "CmsCount",
+          "displayName": "hostless-plasmic-cms-count",
+          "componentImportPath": "@plasmicpkgs/plasmic-cms"
+        }
+      ],
+      "customFunctions": []
+    },
+    {
+      "projectId": "hPz6Q3nQJn9Q8DTBgANGwo",
+      "projectApiToken": "LjSpKE3KGAP0BTj4Pw8tdHYXzQ9mZeNg0L7YRJ25qLJhCZwbS2n1ybcTImjPg1BuEA0QKeRAjEW1DLKh0VQ",
+      "projectName": "cms",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/cms/plasmic.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "styleTokensProviderFilePath": "plasmic/cms/PlasmicStyleTokensProvider.tsx",
+      "dataTokensFilePath": "",
+      "projectModuleFilePath": "plasmic/cms/plasmic.tsx",
+      "codeComponents": [],
+      "customFunctions": [
+        {
+          "defaultExport": false,
+          "id": "plasmicCms.fetchTables",
+          "importPath": "@plasmicpkgs/cms",
+          "name": "fetchTables",
+          "namespace": "plasmicCms"
+        },
+        {
+          "defaultExport": false,
+          "id": "plasmicCms.fetchContent",
+          "importPath": "@plasmicpkgs/cms",
+          "name": "fetchContent",
+          "namespace": "plasmicCms"
+        },
+        {
+          "defaultExport": false,
+          "id": "plasmicCms.fetchCount",
+          "importPath": "@plasmicpkgs/cms",
+          "name": "fetchCount",
+          "namespace": "plasmicCms"
+        }
+      ]
     }
   ],
   "globalVariants": {
@@ -1602,6 +1743,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.373",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.373/dist/plasmic.schema.json"
+  "cliVersion": "0.1.381",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.381/dist/plasmic.schema.json"
 }

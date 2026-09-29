@@ -59,6 +59,15 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { useMutablePlasmicQueryData } from "@plasmicapp/query";
+
+import { usePlasmicQueries } from "@plasmicapp/react-web/lib/data-sources";
+import type {
+  PlasmicQuery,
+  PlasmicQueryResult
+} from "@plasmicapp/react-web/lib/data-sources";
+import type { QueryComponentNode } from "@plasmicapp/react-web/lib/data-sources";
+
 import TaglineBanner from "../../TaglineBanner"; // plasmic-import: cGGZJPgn9EgF/component
 import { DirtNav } from "../../sections/DirtNav"; // plasmic-import: CKU2TJ7qFh0A/codeComponent
 import { DirtNavLink } from "../../sections/DirtNavLink"; // plasmic-import: djxf9UfRwps8/codeComponent
@@ -87,12 +96,16 @@ import { DirtFileSubItem } from "../../sections/DirtFileSubItem"; // plasmic-imp
 import { ProsConsSection } from "../../sections/ProsConsSection"; // plasmic-import: qgjtoWkw9uzC/codeComponent
 import { ProsConsItem } from "../../sections/ProsConsItem"; // plasmic-import: xQe3SecThtay/codeComponent
 import { FooterSection } from "../../sections/FooterSection"; // plasmic-import: I7Z-mxcvFz5C/codeComponent
+import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms";
+import { CmsRowField } from "@plasmicpkgs/plasmic-cms";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: PsrXtMg1_Gbw/css
+
+import { fetchTables as __fn_plasmicCms__fetchTables } from "@plasmicpkgs/cms";
 
 const emptyProxy: any = new Proxy(() => "", {
   get(_, prop) {
@@ -165,11 +178,44 @@ export type PlasmicHomepage__OverridesType = {
   prosConsSection?: Flex__<typeof ProsConsSection>;
   footerSection?: Flex__<typeof FooterSection>;
   img?: Flex__<typeof PlasmicImg__>;
+  cmsDataFetcher?: Flex__<typeof CmsQueryRepeater>;
+  freeBox?: Flex__<"div">;
+  cmsEntryField?: Flex__<typeof CmsRowField>;
 };
 
 export interface DefaultHomepageProps {}
 
-const $$ = {};
+const $$ = {
+  plasmicCms: {
+    fetchTables: __fn_plasmicCms__fetchTables
+  }
+};
+
+export const serverQueryTree: QueryComponentNode = {
+  type: "component",
+  queries: {
+    query: {
+      id: "plasmicCms.fetchTables",
+      fn: $$.plasmicCms.fetchTables,
+      args: ({ $q, $props, $ctx, $state }) => [
+        (() => {
+          const __composite = {
+            host: "https://data.plasmic.app",
+            cmsId: null,
+            cmsPublicToken: null
+          };
+          __composite["cmsId"] = "oddQjnTUVWDpYkuyZHTBcK";
+          __composite["cmsPublicToken"] =
+            "SEDPH2yp15PlCcWNciTlp1E5wPDR5TvMxlZienZrDz8CxW3LaZkyZan3a8SYXGum1ZR0xOLLh9KmanzfqsQ";
+          return __composite;
+        })()
+      ]
+    }
+  },
+  propsContext: {},
+  stateSpecs: [],
+  children: []
+};
 
 function useNextRouter() {
   try {
@@ -208,10 +254,12 @@ function PlasmicHomepage__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const $q = usePlasmicQueries(serverQueryTree, { $ctx, $props, $state: null });
+
   const globalVariants = _useGlobalVariants();
 
   const pageMetadata = generateDynamicMetadata(
-    wrapQueriesWithLoadingProxy({}),
+    wrapQueriesWithLoadingProxy($q),
     $ctx as PageCtx
   );
 
@@ -271,16 +319,19 @@ function PlasmicHomepage__RenderFunc(props: {
           <TaglineBanner
             data-plasmic-name={"taglineBanner"}
             data-plasmic-override={overrides.taglineBanner}
+
             className={classNames("__wab_instance", sty.taglineBanner)}
           />
 
           <DirtNav
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
+
             actions={
               <PlasmicLink__
                 data-plasmic-name={"link"}
                 data-plasmic-override={overrides.link}
+
                 className={classNames(
                   "all",
                   "a",
@@ -328,6 +379,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <HeroSection
             data-plasmic-name={"heroSection"}
             data-plasmic-override={overrides.heroSection}
+
             backgroundImage={"/plasmic/dirt/images/edSoilBackPng.png"}
             className={classNames("__wab_instance", sty.heroSection)}
             ctaLabel={"Get the DIRT"}
@@ -346,6 +398,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <CompanyCarouselSection
             data-plasmic-name={"companiesWeCoveredInDirt"}
             data-plasmic-override={overrides.companiesWeCoveredInDirt}
+
             backgroundImage={"/plasmic/dirt/images/cutCompaniesDirtBgPng.png"}
             className={classNames(
               "__wab_instance",
@@ -400,6 +453,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 <DirtRichText
                   data-plasmic-name={"dirtRichText"}
                   data-plasmic-override={overrides.dirtRichText}
+
                   className={classNames("__wab_instance", sty.dirtRichText)}
                   desktopFontSize={20}
                   fontSize={16}
@@ -446,6 +500,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <PainPointsSection
             data-plasmic-name={"painPointsSection"}
             data-plasmic-override={overrides.painPointsSection}
+
             className={classNames("__wab_instance", sty.painPointsSection)}
             heading={"What\u2019s stopping clients from choosing you?"}
             slides={
@@ -556,6 +611,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <SliderSection
             data-plasmic-name={"sliderSection"}
             data-plasmic-override={overrides.sliderSection}
+
             backgroundImage={"/plasmic/dirt/images/buildingsBackgroundJpg.jpg"}
             className={classNames("__wab_instance", sty.sliderSection)}
             headingEnd={"the message"}
@@ -618,6 +674,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <SignsCTASection
             data-plasmic-name={"signsCtaSection"}
             data-plasmic-override={overrides.signsCtaSection}
+
             className={classNames("__wab_instance", sty.signsCtaSection)}
             ctaLabel={"Dig in with a call"}
             ctaLink={"/contact"}
@@ -666,6 +723,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <ThreeReasonsSection
             data-plasmic-name={"threeReasonsSection"}
             data-plasmic-override={overrides.threeReasonsSection}
+
             className={classNames("__wab_instance", sty.threeReasonsSection)}
             description={
               "Whether you\u2019re reimagining a legacy brand, targeting new markets, or pushing for more clients, we\u2019ll position your brand to grow."
@@ -711,6 +769,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <DirtFrameworkSection
             data-plasmic-name={"dirtFrameworkSection"}
             data-plasmic-override={overrides.dirtFrameworkSection}
+
             className={classNames("__wab_instance", sty.dirtFrameworkSection)}
             description={
               "At DIRT, we have a proven approach to building strategic brands. These are the four levels that lead to strong positioning and confident market share growth."
@@ -775,6 +834,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <DirtProcessSection
             data-plasmic-name={"dirtProcessSection"}
             data-plasmic-override={overrides.dirtProcessSection}
+
             bottomDescription={
               "DIRT nails your positioning and messaging first. Then we bring in a designer with a style that matches your message. Instead of a generic template, you get the perfect creative partner for your project."
             }
@@ -828,6 +888,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <DirtFilesSection
             data-plasmic-name={"dirtFilesSection"}
             data-plasmic-override={overrides.dirtFilesSection}
+
             className={classNames("__wab_instance", sty.dirtFilesSection)}
             description={"Scratch the surface of our latest work and launches."}
             headingEnd={" files"}
@@ -1004,6 +1065,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <ProsConsSection
             data-plasmic-name={"prosConsSection"}
             data-plasmic-override={overrides.prosConsSection}
+
             className={classNames("__wab_instance", sty.prosConsSection)}
             cons={
               <React.Fragment>
@@ -1102,6 +1164,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <FooterSection
             data-plasmic-name={"footerSection"}
             data-plasmic-override={overrides.footerSection}
+
             backgroundColor={``}
             backgroundImage={"/plasmic/dirt/images/mainFooterBackdropPng.png"}
             bottomRightLink={
@@ -1145,6 +1208,7 @@ function PlasmicHomepage__RenderFunc(props: {
               <PlasmicImg__
                 data-plasmic-name={"img"}
                 data-plasmic-override={overrides.img}
+
                 alt={""}
                 className={classNames(sty.img)}
                 displayHeight={"auto"}
@@ -1174,6 +1238,67 @@ function PlasmicHomepage__RenderFunc(props: {
             submitButtonText={"Get Dirty"}
             useMainHeading={false}
           />
+
+          <CmsQueryRepeater
+            data-plasmic-name={"cmsDataFetcher"}
+            data-plasmic-override={overrides.cmsDataFetcher}
+
+            className={classNames("__wab_instance", sty.cmsDataFetcher)}
+            desc={false}
+            emptyMessage={
+              <DataCtxReader__>
+                {$ctx => (
+                  <div
+                    className={classNames("all", "__wab_text", sty.text__nKCd5)}
+                  >
+                    {"No matching published entries found."}
+                  </div>
+                )}
+              </DataCtxReader__>
+            }
+            forceEmptyState={false}
+            forceLoadingState={false}
+            limit={0}
+            loadingMessage={
+              <DataCtxReader__>
+                {$ctx => (
+                  <div
+                    className={classNames("all", "__wab_text", sty.text__cBL2)}
+                  >
+                    {"Loading..."}
+                  </div>
+                )}
+              </DataCtxReader__>
+            }
+            noAutoRepeat={false}
+            noLayout={false}
+            useDraft={false}
+          >
+            <DataCtxReader__>
+              {$ctx => (
+                <div
+                  data-plasmic-name={"freeBox"}
+                  data-plasmic-override={overrides.freeBox}
+
+                  className={classNames("all", sty.freeBox)}
+                >
+                  <CmsRowField
+                    data-plasmic-name={"cmsEntryField"}
+                    data-plasmic-override={overrides.cmsEntryField}
+
+                    className={classNames("__wab_instance", sty.cmsEntryField)}
+                    themeResetClassName={classNames(
+                      "root_reset_8kaaMUEQHxomwqwuKNMozy",
+                      "root_reset_8kaaMUEQHxomwqwuKNMozy_tags",
+                      "plasmic_default_styles",
+                      "plasmic_mixins",
+                      styleTokensClassNames
+                    )}
+                  />
+                </div>
+              )}
+            </DataCtxReader__>
+          </CmsQueryRepeater>
         </div>
       </div>
     </React.Fragment>
@@ -1198,7 +1323,10 @@ const PlasmicDescendants = {
     "dirtFilesSection",
     "prosConsSection",
     "footerSection",
-    "img"
+    "img",
+    "cmsDataFetcher",
+    "freeBox",
+    "cmsEntryField"
   ],
   taglineBanner: ["taglineBanner"],
   dirtNav: ["dirtNav", "link"],
@@ -1215,7 +1343,10 @@ const PlasmicDescendants = {
   dirtFilesSection: ["dirtFilesSection"],
   prosConsSection: ["prosConsSection"],
   footerSection: ["footerSection", "img"],
-  img: ["img"]
+  img: ["img"],
+  cmsDataFetcher: ["cmsDataFetcher", "freeBox", "cmsEntryField"],
+  freeBox: ["freeBox", "cmsEntryField"],
+  cmsEntryField: ["cmsEntryField"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1238,6 +1369,9 @@ type NodeDefaultElementType = {
   prosConsSection: typeof ProsConsSection;
   footerSection: typeof FooterSection;
   img: typeof PlasmicImg__;
+  cmsDataFetcher: typeof CmsQueryRepeater;
+  freeBox: "div";
+  cmsEntryField: typeof CmsRowField;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1318,13 +1452,13 @@ export const PlasmicHomepage = Object.assign(
     prosConsSection: makeNodeComponent("prosConsSection"),
     footerSection: makeNodeComponent("footerSection"),
     img: makeNodeComponent("img"),
+    cmsDataFetcher: makeNodeComponent("cmsDataFetcher"),
+    freeBox: makeNodeComponent("freeBox"),
+    cmsEntryField: makeNodeComponent("cmsEntryField"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
     internalArgProps: PlasmicHomepage__ArgProps,
-
-    // Key-value metadata
-    metadata: { twitterCard: "summary_large_image" },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
       pageRoute: "/",
