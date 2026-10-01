@@ -420,24 +420,43 @@ function PlasmicBlog__RenderFunc(props: {
             </h1>
             <div className={classNames("all", "__wab_text", sty.text__xeaIs)}>
               <React.Fragment>
-                <React.Fragment>
-                  {
-                    "In industries where every bid and every project counts, the brands that communicate best will win again and again. "
-                  }
-                </React.Fragment>
                 <span
                   className={
                     "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
                   }
                   style={{ fontWeight: 700 }}
                 >
-                  {
-                    "We know exactly how to create memorable, project-winning brands."
-                  }
+                  {"The Archive: "}
                 </span>
                 <React.Fragment>
-                  {" In fact, we\u2019ve done it for years."}
+                  {"Dig through every DIRT Dispatch and DIRT Teardown issue.\n"}
                 </React.Fragment>
+                <span
+                  className={
+                    "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                  }
+                  style={{ fontStyle: "italic" }}
+                >
+                  {"Warning: All content is "}
+                </span>
+                <React.Fragment>{""}</React.Fragment>
+                <span
+                  className={
+                    "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                  }
+                  style={{ fontStyle: "italic", fontWeight: 700 }}
+                >
+                  {"opinionated AF"}
+                </span>
+                <React.Fragment>{""}</React.Fragment>
+                <span
+                  className={
+                    "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                  }
+                  style={{ fontStyle: "italic" }}
+                >
+                  {"."}
+                </span>
               </React.Fragment>
             </div>
           </section>

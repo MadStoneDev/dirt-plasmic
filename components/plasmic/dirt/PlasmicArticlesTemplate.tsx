@@ -129,7 +129,7 @@ export type PlasmicArticlesTemplate__OverridesType = {
   root?: Flex__<"div">;
   dirtNav?: Flex__<typeof DirtNav>;
   navigationContactButton?: Flex__<typeof NavigationContactButton>;
-  embedHtml?: Flex__<typeof Embed>;
+  customPageStyling?: Flex__<typeof Embed>;
   img?: Flex__<typeof PlasmicImg__>;
   newsletterFormSection?: Flex__<typeof NewsletterFormSection>;
 };
@@ -431,17 +431,6 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                         })()}
                       </React.Fragment>
                     </h1>
-                    <div
-                      className={classNames(
-                        "all",
-                        "__wab_text",
-                        sty.text__k9Ee
-                      )}
-                    >
-                      <React.Fragment>
-                        {currentItem.data.excerpt}
-                      </React.Fragment>
-                    </div>
                   </div>
                   <div className={classNames("all", sty.freeBox__vD0D5)}>
                     <div
@@ -469,34 +458,6 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                         })()}
                       </React.Fragment>
                     </div>
-                    <div
-                      className={classNames(
-                        "all",
-                        "__wab_text",
-                        sty.text__b2E4O
-                      )}
-                    >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return new Date(
-                              currentItem.data.publishedDate
-                            ).toLocaleDateString("en-AU", {
-                              month: "long",
-                              year: "numeric"
-                            });
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "May 2026";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    </div>
                   </div>
                 </section>
                 <section className={classNames("all", sty.section__tytWo)}>
@@ -511,12 +472,15 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                     />
                   </div>
                   <Embed
-                    data-plasmic-name={"embedHtml"}
-                    data-plasmic-override={overrides.embedHtml}
+                    data-plasmic-name={"customPageStyling"}
+                    data-plasmic-override={overrides.customPageStyling}
 
-                    className={classNames("__wab_instance", sty.embedHtml)}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.customPageStyling
+                    )}
                     code={
-                      '<style>\r\n  .article-body {\r\n    font-family: "Uncut Sans", sans-serif;\r\n    font-weight: 400;\r\n    font-size: 28px;\r\n    letter-spacing: -0.5px;\r\n    line-height: 38px;\r\n  }\r\n  .article-body h1, .article-body h2, .article-body h3,\r\n  .article-body h4, .article-body h5, .article-body h6 {\r\n    font-family: "Roboto Condensed", sans-serif;\r\n    text-transform: uppercase;\r\n    letter-spacing: normal;\r\n  }\r\n  .article-body h2 {\r\n    font-size: 60px;\r\n    font-weight: 700;\r\n  }\r\n  .article-body h3 {\r\n    font-size: 40px;\r\n    font-weight: 700;\r\n  }\r\n  @media (max-width: 1024px) {\r\n    .article-body { font-size: 24px; line-height: 30px; }\r\n    .article-body h2 { font-size: 40px; }\r\n    .article-body h2 { font-size: 30px; }\r\n  }\r\n  @media (max-width: 640px) {\r\n    .article-body { font-size: 20px; line-height: 26px; }\r\n    .article-body h2 { font-size: 30px; }\r\n    .article-body h2 { font-size: 24px; }\r\n  }\r\n</style>'
+                      '<style>\r\n  .article-body {\r\n    font-family: "Uncut Sans", sans-serif;\r\n    font-weight: 400;\r\n    font-size: 28px;\r\n    letter-spacing: -0.5px;\r\n    line-height: 38px;\r\n  }\r\n  .article-body a{\r\n    color: #fe5c02;\r\n  }\r\n  .article-body a:hover{\r\n    opacity:0.8;\r\n  }\r\n  .article-body h1, .article-body h2, .article-body h3,\r\n  .article-body h4, .article-body h5, .article-body h6 {\r\n    font-family: "Roboto Condensed", sans-serif;\r\n    text-transform: uppercase;\r\n    letter-spacing: normal;\r\n  }\r\n  .article-body h2 {\r\n    font-size: 60px;\r\n    font-weight: 700;\r\n  }\r\n  .article-body h3 {\r\n    font-size: 40px;\r\n    font-weight: 700;\r\n  }\r\n  @media (max-width: 1024px) {\r\n    .article-body { font-size: 24px; line-height: 30px; }\r\n    .article-body h2 { font-size: 40px; }\r\n    .article-body h2 { font-size: 30px; }\r\n  }\r\n  @media (max-width: 640px) {\r\n    .article-body { font-size: 20px; line-height: 26px; }\r\n    .article-body h2 { font-size: 30px; }\r\n    .article-body h2 { font-size: 24px; }\r\n  }\r\n</style>'
                     }
                   />
                 </section>
@@ -713,13 +677,13 @@ const PlasmicDescendants = {
     "root",
     "dirtNav",
     "navigationContactButton",
-    "embedHtml",
+    "customPageStyling",
     "img",
     "newsletterFormSection"
   ],
   dirtNav: ["dirtNav", "navigationContactButton"],
   navigationContactButton: ["navigationContactButton"],
-  embedHtml: ["embedHtml"],
+  customPageStyling: ["customPageStyling"],
   img: ["img"],
   newsletterFormSection: ["newsletterFormSection"]
 } as const;
@@ -730,7 +694,7 @@ type NodeDefaultElementType = {
   root: "div";
   dirtNav: typeof DirtNav;
   navigationContactButton: typeof NavigationContactButton;
-  embedHtml: typeof Embed;
+  customPageStyling: typeof Embed;
   img: typeof PlasmicImg__;
   newsletterFormSection: typeof NewsletterFormSection;
 };
@@ -799,7 +763,7 @@ export const PlasmicArticlesTemplate = Object.assign(
     // Helper components rendering sub-elements
     dirtNav: makeNodeComponent("dirtNav"),
     navigationContactButton: makeNodeComponent("navigationContactButton"),
-    embedHtml: makeNodeComponent("embedHtml"),
+    customPageStyling: makeNodeComponent("customPageStyling"),
     img: makeNodeComponent("img"),
     newsletterFormSection: makeNodeComponent("newsletterFormSection"),
 
