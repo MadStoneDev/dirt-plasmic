@@ -434,33 +434,6 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                       </React.Fragment>
                     </h1>
                   </div>
-                  <div className={classNames("all", sty.freeBox__vD0D5)}>
-                    <div
-                      className={classNames(
-                        "all",
-                        "__wab_text",
-                        sty.text___07Y61
-                      )}
-                    >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $q.authors.data.find(
-                              au => au.id === currentItem.data.author
-                            )?.data.name;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "Nikita Morell";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    </div>
-                  </div>
                 </section>
                 <section className={classNames("all", sty.section__tytWo)}>
                   <div
@@ -484,7 +457,7 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                     code={
                       hasVariant(globalVariants, "screen", "tablet")
                         ? '<style>\r\n  .article-body {\r\n    font-family: "Uncut Sans", sans-serif;\r\n    font-weight: 400;\r\n    font-size: 28px;\r\n    letter-spacing: -0.5px;\r\n    line-height: 38px;\r\n  }\r\n  .article-body a{\r\n    color: #fe5c02;\r\n    text-transform: none;\r\n  }\r\n  .article-body a:hover{\r\n    opacity:0.8;\r\n  }\r\n  .article-body h1, .article-body h2, .article-body h3,\r\n  .article-body h4, .article-body h5, .article-body h6 {\r\n    font-family: "Roboto Condensed", sans-serif;\r\n    text-transform: uppercase;\r\n    letter-spacing: normal;\r\n    color: #5C0004;\r\n  }\r\n  .article-body h2 {\r\n    font-size: 60px;\r\n    font-weight: 700;\r\n  }\r\n  .article-body h3 {\r\n    font-size: 40px;\r\n    font-weight: 700;\r\n  }\r\n  .article-body p {\r\n    opacity: 0.9;\r\n  }\r\n  @media (max-width: 1024px) {\r\n    .article-body { font-size: 24px; line-height: 30px; }\r\n    .article-body h2 { font-size: 40px; }\r\n    .article-body h2 { font-size: 30px; }\r\n  }\r\n  @media (max-width: 640px) {\r\n    .article-body { font-size: 20px; line-height: 26px; }\r\n    .article-body h2 { font-size: 30px; }\r\n    .article-body h2 { font-size: 24px; }\r\n  }\r\n</style>'
-                        : '<style>\r\n  .article-body {\r\n    font-family: "Uncut Sans", sans-serif;\r\n    font-weight: 400;\r\n    font-size: 28px;\r\n    letter-spacing: -0.5px;\r\n    line-height: 38px;\r\n  }\r\n  .article-body a{\r\n    color: #fe5c02;\r\n  }\r\n  .article-body a:hover{\r\n    opacity:0.8;\r\n  }\r\n  .article-body h1, .article-body h2, .article-body h3,\r\n  .article-body h4, .article-body h5, .article-body h6 {\r\n    font-family: "Roboto Condensed", sans-serif;\r\n    text-transform: uppercase;\r\n    letter-spacing: normal;\r\n    color: #5C0004;\r\n  }\r\n  .article-body h2 {\r\n    font-size: 60px;\r\n    font-weight: 700;\r\n  }\r\n  .article-body h3 {\r\n    font-size: 40px;\r\n    font-weight: 700;\r\n  }\r\n  .article-body p {\r\n    opacity: 0.9;\r\n  }\r\n  @media (max-width: 1024px) {\r\n    .article-body { font-size: 24px; line-height: 30px; }\r\n    .article-body h2 { font-size: 40px; }\r\n    .article-body h2 { font-size: 30px; }\r\n  }\r\n  @media (max-width: 640px) {\r\n    .article-body { font-size: 20px; line-height: 26px; }\r\n    .article-body h2 { font-size: 30px; }\r\n    .article-body h2 { font-size: 24px; }\r\n  }\r\n</style>'
+                        : '<style>\r\n  .article-body {\r\n    font-family: "Uncut Sans", sans-serif;\r\n    font-weight: 400;\r\n    font-size: 28px;\r\n    letter-spacing: -0.5px;\r\n    line-height: 38px;\r\n  }\r\n  .article-body a{\r\n    color: #fe5c02;\r\n  }\r\n  .article-body a:hover{\r\n    color: #fe5c02;\r\n    opacity:0.8;\r\n  }\r\n  .article-body h1, .article-body h2, .article-body h3,\r\n  .article-body h4, .article-body h5, .article-body h6 {\r\n    font-family: "Roboto Condensed", sans-serif;\r\n    text-transform: uppercase;\r\n    letter-spacing: normal;\r\n    color: #5C0004;\r\n  }\r\n  .article-body h2 {\r\n    font-size: 60px;\r\n    font-weight: 700;\r\n  }\r\n  .article-body h3 {\r\n    font-size: 40px;\r\n    font-weight: 700;\r\n  }\r\n  .article-body p {\r\n    opacity: 0.9;\r\n  }\r\n  @media (max-width: 1024px) {\r\n    .article-body { font-size: 24px; line-height: 30px; }\r\n    .article-body h2 { font-size: 40px; }\r\n    .article-body h2 { font-size: 30px; }\r\n  }\r\n  @media (max-width: 640px) {\r\n    .article-body { font-size: 20px; line-height: 26px; }\r\n    .article-body h2 { font-size: 30px; }\r\n    .article-body h2 { font-size: 24px; }\r\n  }\r\n</style>'
                     }
                   />
                 </section>
