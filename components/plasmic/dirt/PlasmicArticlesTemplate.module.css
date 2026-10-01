@@ -137,12 +137,17 @@
   width: auto;
   height: auto;
   max-width: 100%;
-  color: #ffffff;
+  color: var(--token-5joSP94EMVrt);
   font-size: 18px;
   font-family: "Uncut Sans";
   text-transform: uppercase;
   letter-spacing: 7px;
   font-weight: 500;
+  text-decoration-line: none;
+}
+.root .link__ofBeU:hover {
+  color: var(--token-5joSP94EMVrt);
+  opacity: 0.8;
 }
 .text__gKpKf {
   position: relative;

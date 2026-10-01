@@ -378,7 +378,7 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                         legacyBehavior={false}
                         platform={"nextjs"}
                       >
-                        {"Blog"}
+                        {"< Blog"}
                       </PlasmicLink__>
                       <div
                         className={classNames(
