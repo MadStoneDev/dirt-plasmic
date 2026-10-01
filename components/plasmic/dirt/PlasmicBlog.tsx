@@ -766,14 +766,7 @@ function PlasmicBlog__RenderFunc(props: {
                               const actionArgs = {
                                 destination: (() => {
                                   try {
-                                    return (
-                                      "/blog/" +
-                                      currentItem.data.title
-                                        .toLowerCase()
-                                        .trim()
-                                        .replace(/[^a-z0-9]+/g, "-")
-                                        .replace(/^-|-$/g, "")
-                                    );
+                                    return "/blog/" + currentItem.data.slug;
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
