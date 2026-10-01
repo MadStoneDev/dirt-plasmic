@@ -334,15 +334,16 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
           {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
             (() => {
               try {
-                return ($q.articles.data || []).filter((a, i) =>
-                  $ctx.params.slug
-                    ? (a.data.title || "")
-                        .toLowerCase()
-                        .trim()
-                        .replace(/[^a-z0-9]+/g, "-")
-                        .replace(/^-|-$/g, "") === $ctx.params.slug
-                    : i === 0
-                );
+                return (() => {
+                  const valid = ($q.articles.data || []).filter(
+                    a =>
+                      /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(a.data.slug || "") &&
+                      new Date(a.data.publishedDate) <= new Date()
+                  );
+                  return $ctx.params.slug
+                    ? valid.filter(a => a.data.slug === $ctx.params.slug)
+                    : valid.slice(0, 1);
+                })();
               } catch (e) {
                 if (
                   e instanceof TypeError ||

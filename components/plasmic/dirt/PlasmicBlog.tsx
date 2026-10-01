@@ -461,109 +461,148 @@ function PlasmicBlog__RenderFunc(props: {
             </div>
           </section>
           <section className={classNames("all", sty.section__c1VZj)}>
-            <div className={classNames("all", sty.freeBox__yrqvu)}>
-              <div className={classNames("all", "__wab_text", sty.text__on5Vu)}>
-                {"Featured"}
-              </div>
-              <h2
-                className={classNames(
-                  "all",
-                  "h2",
-                  "h2__8kaaM",
-                  "__wab_text",
-                  sty.h2__kzGx
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["goToPage"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          destination:
-                            "/blog/" +
-                            $q.query.data[0].data.title
-                              .toLowerCase()
-                              .trim()
-                              .replace(/[^a-z0-9]+/g, "-")
-                              .replace(/^-|-$/g, "")
-                        };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
+            {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+              (() => {
+                try {
+                  return ($q.query.data || [])
+                    .filter(
+                      a =>
+                        /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(a.data.slug || "") &&
+                        new Date(a.data.publishedDate) <= new Date()
+                    )
+                    .slice(0, 1);
+                } catch (e) {
                   if (
-                    $steps["goToPage"] != null &&
-                    typeof $steps["goToPage"] === "object" &&
-                    typeof $steps["goToPage"].then === "function"
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
                   ) {
-                    $steps["goToPage"] = await $steps["goToPage"];
+                    return [];
                   }
-                }}
-                style={{ cursor: "pointer" }}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $q.query.data[0].data.title;
-                    } catch (e) {
+                  throw e;
+                }
+              })()
+            ).map((__plasmic_item_0, __plasmic_idx_0) => {
+              const currentItem = __plasmic_item_0;
+              const currentIndex = __plasmic_idx_0;
+              return (
+                <div
+                  className={classNames("all", sty.freeBox__yrqvu)}
+                  key={currentIndex}
+                >
+                  <div
+                    className={classNames("all", "__wab_text", sty.text__on5Vu)}
+                  >
+                    {"Featured"}
+                  </div>
+                  <h2
+                    className={classNames(
+                      "all",
+                      "h2",
+                      "h2__8kaaM",
+                      "__wab_text",
+                      sty.h2__kzGx
+                    )}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["goToPage"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination: "/blog/" + currentItem.data.slug
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
                       if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
+                        $steps["goToPage"] != null &&
+                        typeof $steps["goToPage"] === "object" &&
+                        typeof $steps["goToPage"].then === "function"
                       ) {
-                        return "";
+                        $steps["goToPage"] = await $steps["goToPage"];
                       }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </h2>
-              <div className={classNames("all", "__wab_text", sty.text__mn9FN)}>
-                <React.Fragment>{$q.query.data[0].data.excerpt}</React.Fragment>
-              </div>
-              <div className={classNames("all", sty.freeBox__kuc65)}>
-                <div
-                  className={classNames("all", "__wab_text", sty.text__krVb0)}
-                >
-                  <React.Fragment>
-                    {
-                      $q.authors.data.find(
-                        author => author.id === $q.query.data[0].data.author
-                      )?.data.name
-                    }
-                  </React.Fragment>
+                    }}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return currentItem.data.title;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </h2>
+                  <div
+                    className={classNames("all", "__wab_text", sty.text__mn9FN)}
+                  >
+                    <React.Fragment>{currentItem.data.excerpt}</React.Fragment>
+                  </div>
+                  <div className={classNames("all", sty.freeBox__kuc65)}>
+                    <div
+                      className={classNames(
+                        "all",
+                        "__wab_text",
+                        sty.text__krVb0
+                      )}
+                    >
+                      <React.Fragment>
+                        {
+                          $q.authors.data.find(
+                            author => author.id === currentItem.data.author
+                          )?.data.name
+                        }
+                      </React.Fragment>
+                    </div>
+                    <div
+                      className={classNames(
+                        "all",
+                        "__wab_text",
+                        sty.text__vLfcJ
+                      )}
+                    >
+                      {"\u00b7"}
+                    </div>
+                    <div
+                      className={classNames(
+                        "all",
+                        "__wab_text",
+                        sty.text__s9Kh3
+                      )}
+                    >
+                      <React.Fragment>
+                        {Math.max(
+                          1,
+                          Math.ceil(
+                            (currentItem.data.body || "")
+                              .replace(/<[^>]*>/g, " ")
+                              .trim()
+                              .split(/\s+/).length / 200
+                          )
+                        ) + " min read"}
+                      </React.Fragment>
+                    </div>
+                  </div>
                 </div>
-                <div
-                  className={classNames("all", "__wab_text", sty.text__vLfcJ)}
-                >
-                  {"\u00b7"}
-                </div>
-                <div
-                  className={classNames("all", "__wab_text", sty.text__s9Kh3)}
-                >
-                  <React.Fragment>
-                    {Math.max(
-                      1,
-                      Math.ceil(
-                        ($q.query.data[0].data.body || "")
-                          .replace(/<[^>]*>/g, " ")
-                          .trim()
-                          .split(/\s+/).length / 200
-                      )
-                    ) + " min read"}
-                  </React.Fragment>
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </section>
           <section className={classNames("all", sty.section__t7Dqp)}>
             <div className={classNames("all", sty.freeBox__mseZo)}>
@@ -681,12 +720,16 @@ function PlasmicBlog__RenderFunc(props: {
               (() => {
                 try {
                   return ($q.query.data || [])
-                    .filter(a => new Date(a.data.publishedDate) <= new Date())
+                    .filter(
+                      a =>
+                        /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(a.data.slug || "") &&
+                        new Date(a.data.publishedDate) <= new Date()
+                    )
                     .slice(1)
                     .filter(
-                      article =>
+                      a =>
                         !$state.selectedCategory ||
-                        article.data.category === $state.selectedCategory
+                        a.data.category === $state.selectedCategory
                     );
                 } catch (e) {
                   if (
