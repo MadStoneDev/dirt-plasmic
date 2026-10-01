@@ -365,11 +365,35 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                 <section className={classNames("all", sty.section___3YlKg)}>
                   <div className={classNames("all", sty.freeBox___6Jh8O)}>
                     <div className={classNames("all", sty.freeBox__c1EJf)}>
+                      <PlasmicLink__
+                        className={classNames(
+                          "all",
+                          "a",
+                          "a__8kaaM",
+                          "__wab_text",
+                          sty.link__ofBeU
+                        )}
+                        component={Link}
+                        href={`/blog`}
+                        legacyBehavior={false}
+                        platform={"nextjs"}
+                      >
+                        {"Blog"}
+                      </PlasmicLink__>
                       <div
                         className={classNames(
                           "all",
                           "__wab_text",
-                          sty.text__ofBeU
+                          sty.text__gKpKf
+                        )}
+                      >
+                        {"\u00b7"}
+                      </div>
+                      <div
+                        className={classNames(
+                          "all",
+                          "__wab_text",
+                          sty.text__opCSy
                         )}
                       >
                         <React.Fragment>
@@ -384,7 +408,7 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                         className={classNames(
                           "all",
                           "__wab_text",
-                          sty.text__gKpKf
+                          sty.text__uIBfJ
                         )}
                       >
                         {"\u00b7"}
