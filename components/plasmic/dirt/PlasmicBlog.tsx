@@ -618,16 +618,28 @@ function PlasmicBlog__RenderFunc(props: {
                         }
                       }}
                       style={{
-                        color: currentItem.data.colour,
+                        backgroundColor: currentItem.data.colour,
                         opacity:
-                          $state.selectedCategory === currentItem.id ? 1 : 0.5,
+                          !$state.selectedCategory ||
+                          $state.selectedCategory === currentItem.id
+                            ? 1
+                            : 0.5,
                         cursor: "pointer"
                       }}
                     >
                       <React.Fragment>
                         {(() => {
                           try {
-                            return currentItem.data.name;
+                            return (
+                              currentItem.data.name +
+                              " (" +
+                              ($q.query.data || []).filter(
+                                a =>
+                                  a.data.category === currentItem.id &&
+                                  new Date(a.data.publishedDate) <= new Date()
+                              ).length +
+                              ")"
+                            );
                           } catch (e) {
                             if (
                               e instanceof TypeError ||

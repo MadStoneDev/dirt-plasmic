@@ -214,12 +214,14 @@ function Plasmic_404__RenderFunc(props: {
           <TaglineBanner
             data-plasmic-name={"taglineBanner"}
             data-plasmic-override={overrides.taglineBanner}
+
             className={classNames("__wab_instance", sty.taglineBanner)}
           />
 
           <DirtNav
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
+
             actions={
               <PlasmicLink__
                 className={classNames(
@@ -269,6 +271,7 @@ function Plasmic_404__RenderFunc(props: {
           <h1
             data-plasmic-name={"h1"}
             data-plasmic-override={overrides.h1}
+
             className={classNames(
               "all",
               "h1",
@@ -292,6 +295,7 @@ function Plasmic_404__RenderFunc(props: {
           <div
             data-plasmic-name={"freeBox"}
             data-plasmic-override={overrides.freeBox}
+
             className={classNames("all", sty.freeBox)}
           >
             <PlasmicImg__
