@@ -22,22 +22,13 @@ const AUTHORS_PUBLIC_TOKEN =
   "Oq9HoSuLbH8xdIIUvRFBwjXFzBdrqx4S2jNviKrGncu8V47IRi1QctzJsiHhRH09AZHTuxps8bHVAPU5oGMQ";
 
 /**
- * Derive a URL slug from an article title. This MUST stay byte-for-byte
- * identical to the expression used in Plasmic (the index card links and the
- * article-template match), or URLs won't resolve:
- *
- *   title.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
- *
- * There is no separate `slug` field in play — the slug is always derived from
- * the title, everywhere.
+ * A URL slug is a required, manually-entered CMS field. It must be lowercase
+ * alphanumeric words separated by single hyphens (no leading/trailing/double
+ * hyphens) — the same shape the Studio link expressions produce and match on.
+ * An article is only routable when its slug passes this, it is published, and
+ * its publishedDate is not in the future.
  */
-export function slugify(title: string): string {
-  return (title || "")
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-}
+const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 export interface CmsRow<T> {
   id: string;
@@ -94,16 +85,29 @@ async function cmsQuery<T>(
   return json.rows ?? [];
 }
 
-/** All published article slugs (derived from titles) — for getStaticPaths. */
+/**
+ * Slugs of every routable article — for getStaticPaths. A row is routable only
+ * when it is published, its slug is well-formed, and its publishedDate has
+ * arrived (future-dated/scheduled articles are excluded until their date).
+ */
 export async function getPublishedArticleSlugs(): Promise<string[]> {
-  const rows = await cmsQuery<Pick<ArticleData, "title">>(
+  const now = new Date();
+  const rows = await cmsQuery<Pick<ArticleData, "slug" | "publishedDate">>(
     "articles",
     ARTICLES_PUBLIC_TOKEN,
-    { where: { published: true }, fields: ["title"], limit: 1000 },
+    {
+      where: { published: true },
+      fields: ["slug", "publishedDate"],
+      limit: 1000,
+    },
   );
   return rows
-    .map((r) => slugify(r.data?.title || ""))
-    .filter((s) => s.length > 0);
+    .filter(
+      (r) =>
+        SLUG_RE.test(r.data?.slug || "") &&
+        new Date(r.data.publishedDate) <= now,
+    )
+    .map((r) => r.data.slug);
 }
 
 export interface ArticleWithAuthor {
@@ -113,19 +117,26 @@ export interface ArticleWithAuthor {
   author: AuthorData | null;
 }
 
-/** A single published article by slug (derived from title), author resolved. */
+/**
+ * A single routable article by slug, author resolved — or null (→ 404) when the
+ * slug is malformed, unknown, unpublished, or its publishedDate is in the
+ * future. The slug is matched against the CMS `slug` field directly.
+ */
 export async function getArticleBySlug(
   slug: string,
 ): Promise<ArticleWithAuthor | null> {
-  // The slug is derived from the title, so the CMS `where` filter can't match
-  // it server-side — fetch published articles and slugify their titles here,
-  // using the same transform as the site's links and the Plasmic template.
+  // Reject anything that isn't a well-formed slug before hitting the CMS.
+  if (!SLUG_RE.test(slug)) return null;
+
   const rows = await cmsQuery<ArticleData>("articles", ARTICLES_PUBLIC_TOKEN, {
-    where: { published: true },
-    limit: 1000,
+    where: { slug, published: true },
+    limit: 1,
   });
-  const row = rows.find((r) => slugify(r.data.title) === slug);
+  const row = rows[0];
   if (!row) return null;
+
+  // Scheduled articles 404 until their publishedDate arrives.
+  if (new Date(row.data.publishedDate) > new Date()) return null;
 
   const author = row.data.author
     ? await getAuthorById(row.data.author)

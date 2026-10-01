@@ -14,7 +14,6 @@ import { seoDefaults } from "@/config/seo-defaults";
 import {
   getArticleBySlug,
   getPublishedArticleSlugs,
-  slugify,
   type ArticleWithAuthor,
 } from "../../utils/plasmic-cms";
 
@@ -64,7 +63,7 @@ function ArticlesTemplate({
   const { article, author, updatedAt } = articleData;
   const authorName = author?.name;
   const authorUrl = author?.website || author?.linkedInLink;
-  const canonical = `${seoDefaults.siteUrl}/blog/${slugify(article.title)}`;
+  const canonical = `${seoDefaults.siteUrl}/blog/${article.slug}`;
 
   return (
     <>
