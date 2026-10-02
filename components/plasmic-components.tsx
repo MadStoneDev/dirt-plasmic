@@ -439,6 +439,32 @@ registerComponent(NewsletterFormSection, {
       displayName: "Custom Success Message Colour (hex)",
       hidden: (props: any) => props.successMessageColour !== "custom",
     },
+    width: {
+      type: "choice",
+      displayName: "Form Width",
+      description: "Max width of the form. Full width by default.",
+      options: [
+        { label: "Full width", value: "full" },
+        { label: "Large", value: "large" },
+        { label: "Medium", value: "medium" },
+        { label: "Small", value: "small" },
+      ],
+      defaultValue: "full",
+    },
+    inlineEmailButton: {
+      type: "boolean",
+      displayName: "Inline Email & Button",
+      description:
+        "Place the email field and the subscribe button on the same row.",
+      defaultValue: false,
+    },
+    inlineGap: {
+      type: "boolean",
+      displayName: "Gap Between Email & Button",
+      description: "Add spacing between the email field and the button.",
+      defaultValue: true,
+      hidden: (props: any) => !props.inlineEmailButton,
+    },
   },
   importPath: "./components/sections/NewsletterFormSection",
 });
