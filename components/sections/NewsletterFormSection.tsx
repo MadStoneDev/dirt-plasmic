@@ -23,6 +23,13 @@ const WIDTH_CLASSES: Record<string, string> = {
   small: "w-full max-w-md",
 };
 
+/* ─── Form position presets (horizontal alignment when not full width) ─── */
+const POSITION_CLASSES: Record<string, string> = {
+  left: "mr-auto",
+  center: "mx-auto",
+  right: "ml-auto",
+};
+
 export interface NewsletterFormSectionProps {
   listId?: string;
   tags?: string;
@@ -32,6 +39,8 @@ export interface NewsletterFormSectionProps {
   customSuccessMessageColour?: string;
   /** Max width of the form. Defaults to full width. */
   width?: "full" | "large" | "medium" | "small";
+  /** Horizontal alignment of the form when it isn't full width. */
+  position?: "left" | "center" | "right";
   /** Place the email field and the subscribe button on the same row. */
   inlineEmailButton?: boolean;
   /** When inline, add spacing between the email field and the button. */
@@ -46,6 +55,7 @@ export function NewsletterFormSection({
   successMessageColour = "dirt-green",
   customSuccessMessageColour,
   width = "full",
+  position = "center",
   inlineEmailButton = false,
   inlineGap = true,
 }: NewsletterFormSectionProps) {
@@ -61,6 +71,10 @@ export function NewsletterFormSection({
       : TEXT_COLOURS[successMessageColour] || TEXT_COLOURS["dirt-green"];
 
   const widthClass = WIDTH_CLASSES[width] || WIDTH_CLASSES.full;
+  const positionClass =
+    width === "full"
+      ? "mx-auto"
+      : POSITION_CLASSES[position] || POSITION_CLASSES.center;
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -143,7 +157,7 @@ export function NewsletterFormSection({
     <section className="w-full" style={{ gridColumn: "1 / -1" }}>
       <form
         onSubmit={handleSubmit}
-        className={`flex flex-col items-stretch gap-6 mx-auto ${widthClass}`}
+        className={`flex flex-col items-stretch gap-6 ${positionClass} ${widthClass}`}
       >
         <input
           type="text"

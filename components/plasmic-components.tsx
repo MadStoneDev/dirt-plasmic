@@ -451,6 +451,19 @@ registerComponent(NewsletterFormSection, {
       ],
       defaultValue: "full",
     },
+    position: {
+      type: "choice",
+      displayName: "Position",
+      description:
+        "Horizontal alignment of the form. Only applies when the form isn't full width.",
+      options: [
+        { label: "To the Left", value: "left" },
+        { label: "Centered", value: "center" },
+        { label: "To the Right", value: "right" },
+      ],
+      defaultValue: "center",
+      hidden: (props: any) => props.width === "full" || !props.width,
+    },
     inlineEmailButton: {
       type: "boolean",
       displayName: "Inline Email & Button",
