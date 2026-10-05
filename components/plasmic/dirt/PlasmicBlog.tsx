@@ -903,9 +903,17 @@ function PlasmicBlog__RenderFunc(props: {
                   "__wab_instance",
                   sty.newsletterFormSection
                 )}
+                inlineEmailButton={true}
+                inlineGap={false}
+                position={"left"}
                 submitButtonLabel={"Subscribe"}
                 successMessage={"Thanks for subscribing!"}
                 successMessageColour={"dirt-green"}
+                width={
+                  hasVariant(globalVariants, "screen", "tablet")
+                    ? "full"
+                    : "large"
+                }
               />
             </div>
           </section>

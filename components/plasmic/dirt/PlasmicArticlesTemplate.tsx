@@ -662,9 +662,13 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                   "__wab_instance",
                   sty.newsletterFormSection
                 )}
+                inlineEmailButton={false}
+                inlineGap={true}
+                position={"center"}
                 submitButtonLabel={"Subscribe"}
                 successMessage={"Thanks for subscribing!"}
                 successMessageColour={"dirt-green"}
+                width={"full"}
               />
             </div>
           </section>

@@ -339,13 +339,17 @@ function PlasmicNewsletter__RenderFunc(props: {
                     "__wab_instance",
                     sty.newsletterFormSection__y7ZHg
                   )}
+                  inlineEmailButton={false}
+                  inlineGap={true}
                   listId={"DIRT List"}
+                  position={"center"}
                   submitButtonLabel={"Yes, Get me dirty"}
                   successMessage={
                     "You're officially DIRT-y. Go check your inbox!"
                   }
                   successMessageColour={"black"}
                   tags={"DIRT newsletter submission"}
+                  width={"full"}
                 />
               </section>
             </div>
@@ -414,11 +418,15 @@ function PlasmicNewsletter__RenderFunc(props: {
                   "__wab_instance",
                   sty.newsletterFormSection__zabzP
                 )}
+                inlineEmailButton={false}
+                inlineGap={true}
                 listId={"DIRT List"}
+                position={"center"}
                 submitButtonLabel={"Yes, Get me Dirty"}
                 successMessage={"Thanks for subscribing!"}
                 successMessageColour={"dirt-green"}
                 tags={"DIRT newsletter submission"}
+                width={"full"}
               />
             </section>
           </section>
