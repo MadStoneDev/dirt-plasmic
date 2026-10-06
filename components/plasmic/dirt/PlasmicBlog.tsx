@@ -470,6 +470,11 @@ function PlasmicBlog__RenderFunc(props: {
                         /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(a.data.slug || "") &&
                         new Date(a.data.publishedDate) <= new Date()
                     )
+                    .sort(
+                      (a, b) =>
+                        new Date(b.data.publishedDate).getTime() -
+                        new Date(a.data.publishedDate).getTime()
+                    )
                     .slice(0, 1);
                 } catch (e) {
                   if (
@@ -724,6 +729,11 @@ function PlasmicBlog__RenderFunc(props: {
                       a =>
                         /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(a.data.slug || "") &&
                         new Date(a.data.publishedDate) <= new Date()
+                    )
+                    .sort(
+                      (a, b) =>
+                        new Date(b.data.publishedDate).getTime() -
+                        new Date(a.data.publishedDate).getTime()
                     )
                     .slice(1)
                     .filter(
