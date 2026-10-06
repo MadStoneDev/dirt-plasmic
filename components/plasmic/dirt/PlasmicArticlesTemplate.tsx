@@ -488,36 +488,60 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                 </section>
                 <section className={classNames("all", sty.section__kYf0)}>
                   <div className={classNames("all", sty.freeBox___4SrAh)}>
-                    <PlasmicImg__
-                      data-plasmic-name={"img"}
-                      data-plasmic-override={overrides.img}
+                    <div className={classNames("all", sty.freeBox__sJn9Z)}>
+                      <PlasmicImg__
+                        data-plasmic-name={"img"}
+                        data-plasmic-override={overrides.img}
 
-                      alt={""}
-                      className={classNames(sty.img)}
-                      displayHeight={"190px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"none"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"190px"}
-                      loading={"lazy"}
-                      src={(() => {
-                        try {
-                          return $q.authors.data.find(
-                            au => au.id === currentItem.data.author
-                          )?.data.photo.url;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
+                        alt={""}
+                        className={classNames(sty.img)}
+                        displayHeight={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "150px"
+                            : "190px"
                         }
-                      })()}
-                    />
-
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"none"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "150px"
+                            : "190px"
+                        }
+                        height={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "150px"
+                            : "190px"
+                        }
+                        loading={"lazy"}
+                        quality={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? 100
+                            : 100
+                        }
+                        src={(() => {
+                          try {
+                            return $q.authors.data.find(
+                              au => au.id === currentItem.data.author
+                            )?.data.photo.url;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                        width={
+                          hasVariant(globalVariants, "screen", "mobile")
+                            ? "150px"
+                            : "190px"
+                        }
+                      />
+                    </div>
                     <div className={classNames("all", sty.freeBox__y9Izt)}>
                       <div
                         className={classNames(
@@ -662,13 +686,21 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                   "__wab_instance",
                   sty.newsletterFormSection
                 )}
-                inlineEmailButton={false}
-                inlineGap={true}
-                position={"center"}
+                inlineEmailButton={
+                  hasVariant(globalVariants, "screen", "mobile") ? false : true
+                }
+                inlineGap={false}
+                position={"left"}
+                submitButtonBgColour={"dirt-pop"}
                 submitButtonLabel={"Subscribe"}
+                submitButtonTextColour={"dirt-deep"}
                 successMessage={"Thanks for subscribing!"}
                 successMessageColour={"dirt-green"}
-                width={"full"}
+                width={
+                  hasVariant(globalVariants, "screen", "tablet")
+                    ? "full"
+                    : "large"
+                }
               />
             </div>
           </section>
