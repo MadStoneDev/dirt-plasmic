@@ -186,9 +186,10 @@
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 35%;
-  color: var(--token-88Oxp1lx31pA);
-  background: var(--token-DH19M0EtFwnR);
+  color: var(--token-DH19M0EtFwnR);
+  background: var(--token-88Oxp1lx31pA);
   text-align: center;
+  opacity: 1;
   border-radius: 100px;
   padding: 5px 10px 3px 15px;
 }
