@@ -10,6 +10,10 @@ import { PlasmicQueryDataProvider } from "@plasmicapp/react-web/lib/query";
 import type { GetStaticProps } from "next";
 import { extractPlasmicQueryData } from "@plasmicapp/react-web/lib/prepass";
 import { SEO } from "../components/SEO";
+import {
+  getPublishedArticles,
+  type ArticleListItem,
+} from "../utils/plasmic-cms";
 
 export const getStaticProps: GetStaticProps = async context => {
   const queryCache = await extractPlasmicQueryData(
@@ -17,15 +21,23 @@ export const getStaticProps: GetStaticProps = async context => {
       <PlasmicBlog />
     </PageParamsProvider__>
   );
+  // Article summaries for the ItemList JSON-LD (newest first).
+  const articles = await getPublishedArticles();
   return {
-    props: { queryCache },
+    props: { queryCache, articles },
     // Revalidate so newly published articles appear in the list without a
     // redeploy (ISR).
     revalidate: 60
   };
 };
 
-function Blog({ queryCache }: { queryCache?: any }) {
+function Blog({
+  queryCache,
+  articles = [],
+}: {
+  queryCache?: any;
+  articles?: ArticleListItem[];
+}) {
   // Use PlasmicBlog to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
@@ -50,6 +62,15 @@ function Blog({ queryCache }: { queryCache?: any }) {
         description="Insights on branding, positioning and messaging for construction, AEC software, property and building-material companies — from the team at DIRT."
         jsonLdType="CollectionPage"
         skipCanonical
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+        ]}
+        itemList={articles.map(a => ({
+          title: a.title,
+          url: `/blog/${a.slug}`,
+          datePublished: a.publishedDate,
+        }))}
       />
       <GlobalContextsProvider>
         <PlasmicQueryDataProvider prefetchedCache={queryCache}>

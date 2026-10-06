@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import Image from "next/image";
 
 /* ─── Text colour presets (same as DirtRichText) ─── */
 const TEXT_COLOURS: Record<string, string> = {
@@ -34,6 +33,12 @@ export interface NewsletterFormSectionProps {
   listId?: string;
   tags?: string;
   submitButtonLabel?: string;
+  /** Background colour of the submit button. Defaults to DIRT Pop. */
+  submitButtonBgColour?: string;
+  customSubmitButtonBgColour?: string;
+  /** Text (and icon) colour of the submit button. Defaults to DIRT Deep Red. */
+  submitButtonTextColour?: string;
+  customSubmitButtonTextColour?: string;
   successMessage?: string;
   successMessageColour?: string;
   customSuccessMessageColour?: string;
@@ -51,6 +56,10 @@ export function NewsletterFormSection({
   listId,
   tags,
   submitButtonLabel = "Subscribe",
+  submitButtonBgColour = "dirt-pop",
+  customSubmitButtonBgColour,
+  submitButtonTextColour = "dirt-deep",
+  customSubmitButtonTextColour,
   successMessage = "Thanks for subscribing!",
   successMessageColour = "dirt-green",
   customSuccessMessageColour,
@@ -69,6 +78,16 @@ export function NewsletterFormSection({
     successMessageColour === "custom" && customSuccessMessageColour
       ? customSuccessMessageColour
       : TEXT_COLOURS[successMessageColour] || TEXT_COLOURS["dirt-green"];
+
+  const resolvedButtonBg =
+    submitButtonBgColour === "custom" && customSubmitButtonBgColour
+      ? customSubmitButtonBgColour
+      : TEXT_COLOURS[submitButtonBgColour] || TEXT_COLOURS["dirt-pop"];
+
+  const resolvedButtonText =
+    submitButtonTextColour === "custom" && customSubmitButtonTextColour
+      ? customSubmitButtonTextColour
+      : TEXT_COLOURS[submitButtonTextColour] || TEXT_COLOURS["dirt-deep"];
 
   const widthClass = WIDTH_CLASSES[width] || WIDTH_CLASSES.full;
   const positionClass =
@@ -134,17 +153,21 @@ export function NewsletterFormSection({
     <button
       type="submit"
       disabled={isSubmitting}
-      className={`px-8 py-4 flex items-center justify-center gap-2 bg-dirt-pop text-dirt-deep font-display font-bold uppercase text-3xl hover:bg-dirt-pop-hover disabled:opacity-50 transition-all duration-300${
+      className={`px-8 py-4 flex items-center justify-center gap-2 font-display font-bold uppercase text-3xl hover:brightness-90 disabled:opacity-50 transition-all duration-300${
         inlineEmailButton ? " whitespace-nowrap shrink-0" : ""
       }`}
+      style={{ backgroundColor: resolvedButtonBg, color: resolvedButtonText }}
     >
-      <Image
-        src="/90deg Arrow.png"
-        alt=""
-        width={50}
-        height={50}
-        className="w-6"
-      />
+      <svg
+        viewBox="0 0 41 29"
+        aria-hidden="true"
+        focusable="false"
+        className="w-6 h-auto shrink-0"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M25.097,18.037L0.003,18.037L0.003,0L3.003,0L3.003,15.037L25.097,15.037L25.097,5.062L40.397,16.537L25.097,28.012L25.097,18.037Z" />
+      </svg>
       {isSubmitting ? "Subscribing..." : submitButtonLabel}
     </button>
   );

@@ -53,6 +53,10 @@ export const seoDefaults = {
     jobTitle: "Founder",
     description:
       "Nikita Morell is the founder of DIRT and has spent over a decade helping firms in the built environment sharpen their positioning and messaging to win more work. She previously built a successful agency specialising in copywriting and brand strategy for architects.",
+    /** Canonical personal site — doubles as the Person node's url. */
+    url: "https://nikitamorell.com",
+    /** Headshot (Plasmic CDN asset); surfaces as the Person node's image. */
+    image: "https://site-assets.plasmic.app/e6fec99b55d4e4b1b72654ea80fa0c1e.png",
     knowsAbout: [
       "Brand positioning",
       "Messaging strategy",

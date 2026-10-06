@@ -43,15 +43,38 @@ export interface SEOProps {
   /** Page dates for freshness signals */
   datePublished?: string;
   dateModified?: string;
+  /**
+   * Breadcrumb trail (root → current), rendered as a BreadcrumbList node.
+   * `url` may be absolute or site-relative; the last item is the current page.
+   */
+  breadcrumbs?: { name: string; url: string }[];
+  /**
+   * Blog-listing posts — rendered as an ItemList (the page's mainEntity).
+   * Each becomes a BlogPosting entry with url + headline + datePublished.
+   */
+  itemList?: { title: string; url: string; datePublished?: string }[];
 
   // ── Article / BlogPosting (used when jsonLdType === "BlogPosting") ──
   /** Article headline for the BlogPosting node (defaults to title/pageName) */
   headline?: string;
   /** Article author. If the name matches the site founder, the existing
    *  Person node is referenced instead of duplicating it. */
-  articleAuthor?: { name: string; url?: string };
+  articleAuthor?: {
+    name: string;
+    url?: string;
+    image?: string;
+    sameAs?: string[];
+  };
   /** Article image (absolute or site-relative); falls back to the OG image */
   articleImage?: string;
+  /** Plain-text article body (AEO signal; answer engines parse articleBody) */
+  articleBody?: string;
+  /** Word count of the article body */
+  wordCount?: number;
+  /** Section/category the article belongs to */
+  articleSection?: string;
+  /** Article keywords/tags */
+  keywords?: string[];
 }
 
 export function SEO({
@@ -70,9 +93,15 @@ export function SEO({
   faqItems,
   datePublished,
   dateModified,
+  breadcrumbs,
+  itemList,
   headline,
   articleAuthor,
   articleImage,
+  articleBody,
+  wordCount,
+  articleSection,
+  keywords,
 }: SEOProps) {
   const router = useRouter();
   const {
@@ -132,6 +161,14 @@ export function SEO({
     name: founder.name,
     jobTitle: founder.jobTitle,
     description: founder.description,
+    ...(founder.url && { url: founder.url }),
+    ...(founder.image && {
+      image: {
+        "@type": "ImageObject",
+        url: resolveUrl(founder.image, siteUrl),
+        caption: founder.name,
+      },
+    }),
     worksFor: { "@id": orgId },
     knowsAbout: founder.knowsAbout,
     sameAs: founder.sameAs,
@@ -168,8 +205,39 @@ export function SEO({
           "@type": "Person",
           name: articleAuthor.name,
           ...(articleAuthor.url && { url: articleAuthor.url }),
+          ...(articleAuthor.image && {
+            image: {
+              "@type": "ImageObject",
+              url: resolveUrl(articleAuthor.image, siteUrl),
+              caption: articleAuthor.name,
+            },
+          }),
+          ...(articleAuthor.sameAs &&
+            articleAuthor.sameAs.length > 0 && {
+              sameAs: articleAuthor.sameAs,
+            }),
         }
     : { "@id": orgId };
+
+  // Build an ItemList of posts for the blog listing (the page's mainEntity).
+  const itemListEntity =
+    itemList && itemList.length > 0
+      ? {
+          "@type": "ItemList",
+          itemListElement: itemList.map((post, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            url: resolveUrl(post.url, siteUrl),
+            item: {
+              "@type": "BlogPosting",
+              "@id": `${resolveUrl(post.url, siteUrl)}#webpage`,
+              headline: post.title,
+              url: resolveUrl(post.url, siteUrl),
+              ...(post.datePublished && { datePublished: post.datePublished }),
+            },
+          })),
+        }
+      : null;
 
   const pageNode: Record<string, unknown> = {
     "@type": jsonLdType,
@@ -178,8 +246,14 @@ export function SEO({
     name: pageName || title || siteName,
     description: metaDescription,
     isPartOf: { "@id": websiteId },
+    ...(breadcrumbs &&
+      breadcrumbs.length > 0 && {
+        breadcrumb: { "@id": `${canonicalUrl}#breadcrumb` },
+      }),
     ...(aboutId && { about: { "@id": aboutId } }),
-    ...(mainEntityId && { mainEntity: { "@id": mainEntityId } }),
+    ...(mainEntityId
+      ? { mainEntity: { "@id": mainEntityId } }
+      : itemListEntity && { mainEntity: itemListEntity }),
     ...(primaryImageOfPage && { primaryImageOfPage: { "@id": logoId } }),
     inLanguage,
     ...(datePublished && { datePublished }),
@@ -190,8 +264,28 @@ export function SEO({
       publisher: { "@id": orgId },
       image: resolveUrl(articleImage || ogImage || defaultOgImage, siteUrl),
       mainEntityOfPage: { "@id": `${canonicalUrl}#webpage` },
+      ...(articleBody && { articleBody }),
+      ...(typeof wordCount === "number" &&
+        wordCount > 0 && { wordCount }),
+      ...(articleSection && { articleSection }),
+      ...(keywords && keywords.length > 0 && { keywords }),
     }),
   };
+
+  // ── Breadcrumbs ──
+  const breadcrumbNode =
+    breadcrumbs && breadcrumbs.length > 0
+      ? {
+          "@type": "BreadcrumbList",
+          "@id": `${canonicalUrl}#breadcrumb`,
+          itemListElement: breadcrumbs.map((crumb, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: crumb.name,
+            item: resolveUrl(crumb.url, siteUrl),
+          })),
+        }
+      : null;
 
   // ── FAQ node (GEO / AI-answer signal; no longer drives Google snippets) ──
   const faqNode =
@@ -214,6 +308,7 @@ export function SEO({
       personNode,
       websiteNode,
       pageNode,
+      ...(breadcrumbNode ? [breadcrumbNode] : []),
       ...(faqNode ? [faqNode] : []),
     ],
   };

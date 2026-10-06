@@ -14,6 +14,8 @@ import { seoDefaults } from "@/config/seo-defaults";
 import {
   getArticleBySlug,
   getPublishedArticleSlugs,
+  htmlToPlainText,
+  countWords,
   type ArticleWithAuthor,
 } from "../../utils/plasmic-cms";
 
@@ -60,10 +62,17 @@ function ArticlesTemplate({
   queryCache?: any;
   articleData: ArticleWithAuthor;
 }) {
-  const { article, author, updatedAt } = articleData;
+  const { article, author, updatedAt, categoryName } = articleData;
   const authorName = author?.name;
   const authorUrl = author?.website || author?.linkedInLink;
+  const authorSameAs = [author?.linkedInLink, author?.website].filter(
+    (u): u is string => Boolean(u),
+  );
   const canonical = `${seoDefaults.siteUrl}/blog/${article.slug}`;
+  const coverImage = article.coverImage?.url;
+
+  const plainBody = htmlToPlainText(article.body);
+  const wordCount = countWords(plainBody);
 
   return (
     <>
@@ -77,8 +86,25 @@ function ArticlesTemplate({
         headline={article.title}
         datePublished={article.publishedDate}
         dateModified={updatedAt}
+        {...(coverImage ? { ogImage: coverImage, articleImage: coverImage } : {})}
+        {...(plainBody ? { articleBody: plainBody, wordCount } : {})}
+        {...(categoryName
+          ? { articleSection: categoryName, keywords: [categoryName] }
+          : {})}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: article.title, url: `/blog/${article.slug}` },
+        ]}
         {...(authorName
-          ? { articleAuthor: { name: authorName, url: authorUrl } }
+          ? {
+              articleAuthor: {
+                name: authorName,
+                url: authorUrl,
+                ...(author?.photo?.url ? { image: author.photo.url } : {}),
+                ...(authorSameAs.length > 0 ? { sameAs: authorSameAs } : {}),
+              },
+            }
           : {})}
       />
       <GlobalContextsProvider>
