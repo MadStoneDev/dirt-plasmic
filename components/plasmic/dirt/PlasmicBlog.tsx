@@ -906,7 +906,9 @@ function PlasmicBlog__RenderFunc(props: {
                 inlineEmailButton={true}
                 inlineGap={false}
                 position={"left"}
+                submitButtonBgColour={"dirt-pop"}
                 submitButtonLabel={"Subscribe"}
+                submitButtonTextColour={"dirt-deep"}
                 successMessage={"Thanks for subscribing!"}
                 successMessageColour={"dirt-green"}
                 width={

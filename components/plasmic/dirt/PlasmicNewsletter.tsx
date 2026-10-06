@@ -343,7 +343,9 @@ function PlasmicNewsletter__RenderFunc(props: {
                   inlineGap={true}
                   listId={"DIRT List"}
                   position={"center"}
+                  submitButtonBgColour={"dirt-pop"}
                   submitButtonLabel={"Yes, Get me dirty"}
+                  submitButtonTextColour={"dirt-deep"}
                   successMessage={
                     "You're officially DIRT-y. Go check your inbox!"
                   }
@@ -422,7 +424,9 @@ function PlasmicNewsletter__RenderFunc(props: {
                 inlineGap={true}
                 listId={"DIRT List"}
                 position={"center"}
+                submitButtonBgColour={"dirt-pop"}
                 submitButtonLabel={"Yes, Get me Dirty"}
+                submitButtonTextColour={"dirt-deep"}
                 successMessage={"Thanks for subscribing!"}
                 successMessageColour={"dirt-green"}
                 tags={"DIRT newsletter submission"}

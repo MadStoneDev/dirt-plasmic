@@ -59,7 +59,7 @@
   align-content: flex-start;
   justify-items: flex-start;
   width: 100%;
-  background: var(--token-88Oxp1lx31pA);
+  background: var(--token-K3AsUici94Wb);
   left: auto;
   top: auto;
   bottom: auto;
@@ -310,7 +310,7 @@
   display: flex;
   flex-direction: row;
   position: relative;
-  align-items: stretch;
+  align-items: center;
   justify-content: flex-start;
   width: 100%;
   height: auto;
@@ -328,15 +328,67 @@
     row-gap: 0px;
   }
 }
+@media (max-width: 511px) {
+  .freeBox___4SrAh {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    column-gap: 0px;
+  }
+}
+.freeBox__sJn9Z {
+  display: flex;
+  position: relative;
+  width: 190px;
+  height: 190px;
+  max-width: 100%;
+  background: var(--token-AoZrGFsuVse6);
+  align-self: center;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 100%;
+  padding: 0px;
+}
+@media (max-width: 511px) {
+  .freeBox__sJn9Z {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+  }
+}
 .img {
   object-fit: cover;
   width: 190px;
   height: 190px;
+  position: relative;
+  left: auto;
+  top: auto;
   flex-shrink: 0;
   border-radius: 100%;
 }
 .img > picture > img {
   object-fit: cover;
+}
+@media (max-width: 511px) {
+  .img {
+    position: relative;
+    left: auto;
+    top: auto;
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 511px) {
+  .img > picture > img {
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
 }
 .freeBox__y9Izt {
   display: flex;
@@ -366,6 +418,7 @@
 @media (max-width: 511px) {
   .text___5IWaM {
     font-size: 18px;
+    text-align: center;
   }
 }
 .text__g5536 {
@@ -385,6 +438,7 @@
 @media (max-width: 511px) {
   .text__g5536 {
     font-size: 40px;
+    text-align: center;
   }
 }
 .text__zTmI {
@@ -409,6 +463,7 @@
 @media (max-width: 511px) {
   .text__zTmI {
     font-size: 20px;
+    margin: 30px 0px;
   }
 }
 .freeBox__tVTbL {
@@ -427,6 +482,8 @@
 @media (max-width: 511px) {
   .freeBox__tVTbL {
     column-gap: 20px;
+    justify-content: center;
+    align-items: center;
     row-gap: 0px;
   }
 }
@@ -473,7 +530,7 @@
   align-content: center;
   justify-items: flex-start;
   width: 100%;
-  background: var(--token-DH19M0EtFwnR);
+  background: var(--token-AoZrGFsuVse6);
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
   grid-template-columns:
