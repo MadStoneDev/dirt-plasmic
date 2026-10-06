@@ -40,6 +40,20 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // Canonicalise the host: www → apex (thedirtagency.com), matching
+      // siteUrl and every sitemap/canonical URL. A permanent (308) redirect
+      // so search engines consolidate signals on the apex. http → https is
+      // handled upstream by the reverse proxy.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.thedirtagency.com" }],
+        destination: "https://thedirtagency.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
