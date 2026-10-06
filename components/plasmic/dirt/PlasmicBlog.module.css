@@ -178,7 +178,7 @@
 }
 .text__on5Vu {
   position: relative;
-  width: 100%;
+  width: auto;
   height: auto;
   max-width: 100%;
   font-family: "Uncut Sans";
@@ -187,7 +187,11 @@
   text-transform: uppercase;
   letter-spacing: 35%;
   color: var(--token-DH19M0EtFwnR);
-  min-width: 0;
+  background: var(--token-88Oxp1lx31pA);
+  text-align: center;
+  opacity: 1;
+  border-radius: 100px;
+  padding: 5px 10px 3px 15px;
 }
 .h2__kzGx {
   width: 100%;
