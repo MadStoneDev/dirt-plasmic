@@ -129,11 +129,14 @@ export interface ArticleWithAuthor {
   categoryName: string | null;
 }
 
-/** A lightweight article summary for the blog-listing ItemList JSON-LD. */
+/** A lightweight article summary for the blog-listing ItemList JSON-LD and
+ *  the dynamic sitemap. */
 export interface ArticleListItem {
   title: string;
   slug: string;
   publishedDate: string;
+  /** Row-level last-modified timestamp (for sitemap <lastmod>). */
+  updatedAt: string;
 }
 
 /**
@@ -198,6 +201,7 @@ export async function getPublishedArticles(): Promise<ArticleListItem[]> {
       title: r.data.title,
       slug: r.data.slug,
       publishedDate: r.data.publishedDate,
+      updatedAt: r.updatedAt,
     }));
 }
 
