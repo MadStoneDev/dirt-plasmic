@@ -327,7 +327,7 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                 />
               </React.Fragment>
             }
-            navBackground={"dirt-black"}
+            navBackground={"dirt-deep"}
             stickyOnScroll={false}
           />
 
