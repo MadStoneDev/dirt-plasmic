@@ -77,7 +77,7 @@ function ArticlesTemplate({
   return (
     <>
       <SEO
-        title={article.title}
+        title={`${article.title} | DIRT`}
         pageName={article.title}
         description={article.excerpt}
         canonical={canonical}
