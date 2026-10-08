@@ -97,17 +97,17 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "Dirt Dispatch | Branding Takes for the Built World",
+    title: "DIRT Newsletter | Branding Takes for the Built World",
     description:
       "In industries where every bid and every project counts, the brands that communicate best will win again and again. We know exactly how to create memorable, project-winning brands. In fact, we’ve done it for years.",
     openGraph: {
-      title: "Dirt Dispatch | Branding Takes for the Built World",
+      title: "DIRT Newsletter | Branding Takes for the Built World",
       description:
         "In industries where every bid and every project counts, the brands that communicate best will win again and again. We know exactly how to create memorable, project-winning brands. In fact, we’ve done it for years."
     },
     twitter: {
       card: "summary" as const,
-      title: "Dirt Dispatch | Branding Takes for the Built World",
+      title: "DIRT Newsletter | Branding Takes for the Built World",
       description:
         "In industries where every bid and every project counts, the brands that communicate best will win again and again. We know exactly how to create memorable, project-winning brands. In fact, we’ve done it for years."
     },

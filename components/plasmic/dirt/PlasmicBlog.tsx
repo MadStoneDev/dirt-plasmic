@@ -105,14 +105,14 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "Dispatch",
+    title: "DIRT Dispatch | Branding Takes for the Built World",
 
     openGraph: {
-      title: "Dispatch"
+      title: "DIRT Dispatch | Branding Takes for the Built World"
     },
     twitter: {
       card: "summary" as const,
-      title: "Dispatch"
+      title: "DIRT Dispatch | Branding Takes for the Built World"
     }
   };
 }
