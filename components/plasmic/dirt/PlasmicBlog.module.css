@@ -193,6 +193,11 @@
   border-radius: 100px;
   padding: 5px 10px 3px 15px;
 }
+@media (max-width: 511px) {
+  .text__on5Vu {
+    font-size: 14px;
+  }
+}
 .h2__kzGx {
   width: 100%;
   height: auto;

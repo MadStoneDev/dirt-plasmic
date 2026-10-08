@@ -460,155 +460,180 @@ function PlasmicBlog__RenderFunc(props: {
               </React.Fragment>
             </div>
           </section>
-          <section className={classNames("all", sty.section__c1VZj)}>
-            {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-              (() => {
-                try {
-                  return ($q.query.data || [])
-                    .filter(
-                      a =>
-                        /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(a.data.slug || "") &&
-                        new Date(a.data.publishedDate) <= new Date()
-                    )
-                    .sort(
-                      (a, b) =>
-                        new Date(b.data.publishedDate).getTime() -
-                        new Date(a.data.publishedDate).getTime()
-                    )
-                    .slice(0, 1);
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return [];
+          {(() => {
+            try {
+              return !$state.selectedCategory;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <section className={classNames("all", sty.section__c1VZj)}>
+              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                (() => {
+                  try {
+                    return ($q.query.data || [])
+                      .filter(
+                        a =>
+                          /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(
+                            a.data.slug || ""
+                          ) && new Date(a.data.publishedDate) <= new Date()
+                      )
+                      .sort(
+                        (a, b) =>
+                          new Date(b.data.publishedDate).getTime() -
+                          new Date(a.data.publishedDate).getTime()
+                      )
+                      .slice(0, 1);
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })()
-            ).map((__plasmic_item_0, __plasmic_idx_0) => {
-              const currentItem = __plasmic_item_0;
-              const currentIndex = __plasmic_idx_0;
-              return (
-                <div
-                  className={classNames("all", sty.freeBox__yrqvu)}
-                  key={currentIndex}
-                >
+                })()
+              ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                const currentItem = __plasmic_item_0;
+                const currentIndex = __plasmic_idx_0;
+                return (
                   <div
-                    className={classNames("all", "__wab_text", sty.text__on5Vu)}
+                    className={classNames("all", sty.freeBox__yrqvu)}
+                    key={currentIndex}
                   >
-                    {"Featured"}
-                  </div>
-                  <h2
-                    className={classNames(
-                      "all",
-                      "h2",
-                      "h2__8kaaM",
-                      "__wab_text",
-                      sty.h2__kzGx
-                    )}
-                    onClick={async event => {
-                      const $steps = {};
+                    <div
+                      className={classNames(
+                        "all",
+                        "__wab_text",
+                        sty.text__on5Vu
+                      )}
+                    >
+                      {"Latest"}
+                    </div>
+                    <h2
+                      className={classNames(
+                        "all",
+                        "h2",
+                        "h2__8kaaM",
+                        "__wab_text",
+                        sty.h2__kzGx
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
 
-                      $steps["goToPage"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              destination: "/blog/" + currentItem.data.slug
-                            };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["goToPage"] != null &&
-                        typeof $steps["goToPage"] === "object" &&
-                        typeof $steps["goToPage"].then === "function"
-                      ) {
-                        $steps["goToPage"] = await $steps["goToPage"];
-                      }
-                    }}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return currentItem.data.title;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "";
+                        $steps["goToPage"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                destination: "/blog/" + currentItem.data.slug
+                              };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["goToPage"] != null &&
+                          typeof $steps["goToPage"] === "object" &&
+                          typeof $steps["goToPage"].then === "function"
+                        ) {
+                          $steps["goToPage"] = await $steps["goToPage"];
+                        }
+                      }}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return currentItem.data.title;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "";
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </h2>
-                  <div
-                    className={classNames("all", "__wab_text", sty.text__mn9FN)}
-                  >
-                    <React.Fragment>{currentItem.data.excerpt}</React.Fragment>
-                  </div>
-                  <div className={classNames("all", sty.freeBox__kuc65)}>
+                        })()}
+                      </React.Fragment>
+                    </h2>
                     <div
                       className={classNames(
                         "all",
                         "__wab_text",
-                        sty.text__krVb0
+                        sty.text__mn9FN
                       )}
                     >
                       <React.Fragment>
-                        {
-                          $q.authors.data.find(
-                            author => author.id === currentItem.data.author
-                          )?.data.name
-                        }
+                        {currentItem.data.excerpt}
                       </React.Fragment>
                     </div>
-                    <div
-                      className={classNames(
-                        "all",
-                        "__wab_text",
-                        sty.text__vLfcJ
-                      )}
-                    >
-                      {"\u00b7"}
-                    </div>
-                    <div
-                      className={classNames(
-                        "all",
-                        "__wab_text",
-                        sty.text__s9Kh3
-                      )}
-                    >
-                      <React.Fragment>
-                        {Math.max(
-                          1,
-                          Math.ceil(
-                            (currentItem.data.body || "")
-                              .replace(/<[^>]*>/g, " ")
-                              .trim()
-                              .split(/\s+/).length / 200
-                          )
-                        ) + " min read"}
-                      </React.Fragment>
+                    <div className={classNames("all", sty.freeBox__kuc65)}>
+                      <div
+                        className={classNames(
+                          "all",
+                          "__wab_text",
+                          sty.text__krVb0
+                        )}
+                      >
+                        <React.Fragment>
+                          {
+                            $q.authors.data.find(
+                              author => author.id === currentItem.data.author
+                            )?.data.name
+                          }
+                        </React.Fragment>
+                      </div>
+                      <div
+                        className={classNames(
+                          "all",
+                          "__wab_text",
+                          sty.text__vLfcJ
+                        )}
+                      >
+                        {"\u00b7"}
+                      </div>
+                      <div
+                        className={classNames(
+                          "all",
+                          "__wab_text",
+                          sty.text__s9Kh3
+                        )}
+                      >
+                        <React.Fragment>
+                          {Math.max(
+                            1,
+                            Math.ceil(
+                              (currentItem.data.body || "")
+                                .replace(/<[^>]*>/g, " ")
+                                .trim()
+                                .split(/\s+/).length / 200
+                            )
+                          ) + " min read"}
+                        </React.Fragment>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </section>
+                );
+              })}
+            </section>
+          ) : null}
           <section className={classNames("all", sty.section__t7Dqp)}>
             <div className={classNames("all", sty.freeBox__mseZo)}>
               <div className={classNames("all", sty.freeBox__ucq7D)}>
@@ -724,23 +749,25 @@ function PlasmicBlog__RenderFunc(props: {
             {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
               (() => {
                 try {
-                  return ($q.query.data || [])
-                    .filter(
-                      a =>
-                        /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(a.data.slug || "") &&
-                        new Date(a.data.publishedDate) <= new Date()
-                    )
-                    .sort(
-                      (a, b) =>
-                        new Date(b.data.publishedDate).getTime() -
-                        new Date(a.data.publishedDate).getTime()
-                    )
-                    .slice(1)
-                    .filter(
-                      a =>
-                        !$state.selectedCategory ||
-                        a.data.category === $state.selectedCategory
-                    );
+                  return (() => {
+                    const posts = ($q.query.data || [])
+                      .filter(
+                        a =>
+                          /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(
+                            a.data.slug || ""
+                          ) && new Date(a.data.publishedDate) <= new Date()
+                      )
+                      .sort(
+                        (a, b) =>
+                          new Date(b.data.publishedDate).getTime() -
+                          new Date(a.data.publishedDate).getTime()
+                      );
+                    return $state.selectedCategory
+                      ? posts.filter(
+                          a => a.data.category === $state.selectedCategory
+                        )
+                      : posts.slice(1);
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
