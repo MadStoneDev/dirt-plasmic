@@ -13,7 +13,6 @@
     "plasmic:sync": "plasmic sync && npm run plasmic:fix"
   },
   "dependencies": {
-    "@openpanel/nextjs": "^1.5.1",
     "@plasmicapp/cli": "^0.1.381",
     "@plasmicapp/host": "^2.0.19",
     "@plasmicapp/react-web": "^1.0.39",

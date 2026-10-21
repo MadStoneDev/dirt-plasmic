@@ -5,7 +5,6 @@ import Head from "next/head";
 import Script from "next/script";
 import { useEffect } from "react";
 import { Inter } from "next/font/google";
-import { OpenPanelComponent } from "@openpanel/nextjs";
 import "../styles/globals.css";
 const inter = Inter({
   subsets: ["latin"],
@@ -13,7 +12,6 @@ const inter = Inter({
   display: "swap"
 });
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
-const OP_CLIENT_ID = process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID;
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
@@ -44,16 +42,6 @@ export default function App({ Component, pageProps }: AppProps) {
       >
         Skip to main content
       </a>
-      {OP_CLIENT_ID && (
-        <OpenPanelComponent
-          clientId={OP_CLIENT_ID}
-          scriptUrl="/api/op/vendor.js"
-          apiUrl="/api/op"
-          trackScreenViews
-          trackOutgoingLinks
-          trackAttributes
-        />
-      )}
       {GA_ID && (
         <>
           <Script

@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 // Sitewide security headers. Applied to every response via headers() below.
 // CSP is intentionally omitted here — it needs a nonce/allowlist for the inline
-// GA + OpenPanel + JSON-LD scripts and should be rolled out Report-Only first.
+// GA + JSON-LD scripts and should be rolled out Report-Only first.
 const securityHeaders = [
   {
     key: "Strict-Transport-Security",
