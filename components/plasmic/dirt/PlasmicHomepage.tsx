@@ -377,7 +377,7 @@ function PlasmicHomepage__RenderFunc(props: {
             ctaLabel={"Get the DIRT"}
             ctaLink={"/contact"}
             description={
-              "DIRT is the agency for construction, AEC software, property & building material companies who want a modern brand to match their capabilities."
+              "DIRT is the positioning agency for AEC software and construction companies ready to carve out what makes them different and turn it into a competitive advantage."
             }
             foregroundImage={"/plasmic/dirt/images/edSoilFrontPng.png"}
             heading={"Fresh messaging, branding, and positioning"}

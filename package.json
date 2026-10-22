@@ -13,7 +13,7 @@
     "plasmic:sync": "plasmic sync && npm run plasmic:fix"
   },
   "dependencies": {
-    "@plasmicapp/cli": "^0.1.381",
+    "@plasmicapp/cli": "^0.1.382",
     "@plasmicapp/host": "^2.0.19",
     "@plasmicapp/react-web": "^1.0.39",
     "@plasmicpkgs/antd5": "^0.0.328",
