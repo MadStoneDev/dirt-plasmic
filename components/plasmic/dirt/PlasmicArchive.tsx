@@ -77,7 +77,7 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import sty from "./PlasmicBlog.module.css"; // plasmic-import: j_vMVTQjFfxV/css
+import sty from "./PlasmicArchive.module.css"; // plasmic-import: j_vMVTQjFfxV/css
 
 import { fetchContent as __fn_plasmicCms__fetchContent } from "@plasmicpkgs/cms";
 
@@ -105,30 +105,33 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "DIRT Dispatch | Branding Takes for the Built World",
+    title:
+      "DIRT Dispatch | Messasging + Positioning Newsletter for AEC tech and Construction",
 
     openGraph: {
-      title: "DIRT Dispatch | Branding Takes for the Built World"
+      title:
+        "DIRT Dispatch | Messasging + Positioning Newsletter for AEC tech and Construction"
     },
     twitter: {
       card: "summary" as const,
-      title: "DIRT Dispatch | Branding Takes for the Built World"
+      title:
+        "DIRT Dispatch | Messasging + Positioning Newsletter for AEC tech and Construction"
     }
   };
 }
 
 createPlasmicElementProxy;
 
-export type PlasmicBlog__VariantMembers = {};
-export type PlasmicBlog__VariantsArgs = {};
-type VariantPropType = keyof PlasmicBlog__VariantsArgs;
-export const PlasmicBlog__VariantProps = new Array<VariantPropType>();
+export type PlasmicArchive__VariantMembers = {};
+export type PlasmicArchive__VariantsArgs = {};
+type VariantPropType = keyof PlasmicArchive__VariantsArgs;
+export const PlasmicArchive__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicBlog__ArgsType = {};
-type ArgPropType = keyof PlasmicBlog__ArgsType;
-export const PlasmicBlog__ArgProps = new Array<ArgPropType>();
+export type PlasmicArchive__ArgsType = {};
+type ArgPropType = keyof PlasmicArchive__ArgsType;
+export const PlasmicArchive__ArgProps = new Array<ArgPropType>();
 
-export type PlasmicBlog__OverridesType = {
+export type PlasmicArchive__OverridesType = {
   root?: Flex__<"div">;
   dirtNav?: Flex__<typeof DirtNav>;
   navigationContactButton?: Flex__<typeof NavigationContactButton>;
@@ -137,7 +140,7 @@ export type PlasmicBlog__OverridesType = {
   newsletterFormSection?: Flex__<typeof NewsletterFormSection>;
 };
 
-export interface DefaultBlogProps {}
+export interface DefaultArchiveProps {}
 
 const $$ = {
   plasmicCms: {
@@ -231,10 +234,10 @@ function useNextRouter() {
   return undefined;
 }
 
-function PlasmicBlog__RenderFunc(props: {
-  variants: PlasmicBlog__VariantsArgs;
-  args: PlasmicBlog__ArgsType;
-  overrides: PlasmicBlog__OverridesType;
+function PlasmicArchive__RenderFunc(props: {
+  variants: PlasmicArchive__VariantsArgs;
+  args: PlasmicArchive__ArgsType;
+  overrides: PlasmicArchive__OverridesType;
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
@@ -991,20 +994,20 @@ type NodeDefaultElementType = {
 
 type ReservedPropsType = "variants" | "args" | "overrides";
 type NodeOverridesType<T extends NodeNameType> = Pick<
-  PlasmicBlog__OverridesType,
+  PlasmicArchive__OverridesType,
   DescendantsType<T>
 >;
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
-    variants?: PlasmicBlog__VariantsArgs;
-    args?: PlasmicBlog__ArgsType;
+    variants?: PlasmicArchive__VariantsArgs;
+    args?: PlasmicArchive__ArgsType;
     overrides?: NodeOverridesType<T>;
   } &
     // Specify variants directly as props
-    Omit<PlasmicBlog__VariantsArgs, ReservedPropsType> &
+    Omit<PlasmicArchive__VariantsArgs, ReservedPropsType> &
     // Specify args directly as props
-    Omit<PlasmicBlog__ArgsType, ReservedPropsType> &
+    Omit<PlasmicArchive__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
     Omit<
       NodeOverridesType<T>,
@@ -1026,12 +1029,12 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         deriveRenderOpts(props, {
           name: nodeName,
           descendantNames: PlasmicDescendants[nodeName],
-          internalArgPropNames: PlasmicBlog__ArgProps,
-          internalVariantPropNames: PlasmicBlog__VariantProps
+          internalArgPropNames: PlasmicArchive__ArgProps,
+          internalVariantPropNames: PlasmicArchive__VariantProps
         }),
       [props, nodeName]
     );
-    return PlasmicBlog__RenderFunc({
+    return PlasmicArchive__RenderFunc({
       variants,
       args,
       overrides,
@@ -1039,15 +1042,15 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
     });
   };
   if (nodeName === "root") {
-    func.displayName = "PlasmicBlog";
+    func.displayName = "PlasmicArchive";
   } else {
-    func.displayName = `PlasmicBlog.${nodeName}`;
+    func.displayName = `PlasmicArchive.${nodeName}`;
   }
   return func;
 }
 
-export const PlasmicBlog = Object.assign(
-  // Top-level PlasmicBlog renders the root element
+export const PlasmicArchive = Object.assign(
+  // Top-level PlasmicArchive renders the root element
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
@@ -1057,18 +1060,18 @@ export const PlasmicBlog = Object.assign(
     h3: makeNodeComponent("h3"),
     newsletterFormSection: makeNodeComponent("newsletterFormSection"),
 
-    // Metadata about props expected for PlasmicBlog
-    internalVariantProps: PlasmicBlog__VariantProps,
-    internalArgProps: PlasmicBlog__ArgProps,
+    // Metadata about props expected for PlasmicArchive
+    internalVariantProps: PlasmicArchive__VariantProps,
+    internalArgProps: PlasmicArchive__ArgProps,
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
-      pageRoute: "/blog",
-      pagePath: "/blog",
+      pageRoute: "/archive",
+      pagePath: "/archive",
       params: {},
       query: {}
     })
   }
 );
 
-export default PlasmicBlog;
+export default PlasmicArchive;
 /* prettier-ignore-end */

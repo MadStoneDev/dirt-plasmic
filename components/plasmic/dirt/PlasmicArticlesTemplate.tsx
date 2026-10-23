@@ -374,7 +374,7 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                           sty.link__ofBeU
                         )}
                         component={Link}
-                        href={`/blog`}
+                        href={`/archive`}
                         legacyBehavior={false}
                         platform={"nextjs"}
                       >
