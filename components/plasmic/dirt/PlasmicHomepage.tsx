@@ -132,17 +132,17 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "Branding for Construction, AEC Software & Property | DIRT",
+    title: "Positioning for Construction and AEC Software  | DIRT",
     description:
       "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities.",
     openGraph: {
-      title: "Branding for Construction, AEC Software & Property | DIRT",
+      title: "Positioning for Construction and AEC Software  | DIRT",
       description:
         "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
     twitter: {
       card: "summary" as const,
-      title: "Branding for Construction, AEC Software & Property | DIRT",
+      title: "Positioning for Construction and AEC Software  | DIRT",
       description:
         "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
@@ -377,10 +377,10 @@ function PlasmicHomepage__RenderFunc(props: {
             ctaLabel={"Get the DIRT"}
             ctaLink={"/contact"}
             description={
-              "DIRT is the positioning agency for AEC software and construction companies ready to carve out what makes them different and turn it into a competitive advantage."
+              "DIRT is the positioning agency for AEC software and construction companies ready to carve out what makes them different - so they can win on value not price."
             }
             foregroundImage={"/plasmic/dirt/images/edSoilFrontPng.png"}
-            heading={"Fresh messaging, branding, and positioning"}
+            heading={"Fresh positioning \nand messaging"}
             midgroundImage={
               "/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"
             }
@@ -429,7 +429,7 @@ function PlasmicHomepage__RenderFunc(props: {
             ctaLabel={"Dig in with a call"}
             ctaLink={"/contact"}
             heading={
-              "The next evolution of property, construction, and built-tech is here"
+              "Everyone's fighting to get chosen. And saying the same damn thing."
             }
             image={"/plasmic/dirt/images/manSittingOnAChairOnTheMoonJpg.jpg"}
             layout={"imageLeft"}
@@ -438,37 +438,33 @@ function PlasmicHomepage__RenderFunc(props: {
                 <div
                   className={classNames("all", "__wab_text", sty.text__wkMGr)}
                 >
-                  {
-                    "Building materials, methods, and tech have changed a LOT in the last 100 years."
-                  }
-                </div>
-                <DirtRichText
-                  data-plasmic-name={"dirtRichText"}
-                  data-plasmic-override={overrides.dirtRichText}
-
-                  className={classNames("__wab_instance", sty.dirtRichText)}
-                  desktopFontSize={20}
-                  fontSize={16}
-                  tabletFontSize={20}
-                  text={
-                    "From  {green|3D printing|First, they did houses and offices. Next? Who knows.}, Advanced Composites, and  {blue|self-healing concrete|Water-activated bacteria produce calcium carbonate to seal cracks. Bonkers.} to {pop|AI-driven predictive analytics|AI adoption in construction jumped from 26% in 2023 to 37% in 2025. We see where this is going.}, 5D BIM, and {green|Digital Twins|We've thought about getting one for ourselves, but we've watched too much Black Mirror.}."
-                  }
-                  textColour={"dirt-black"}
-                />
-
-                <div
-                  className={classNames("all", "__wab_text", sty.text__fAXw2)}
-                >
-                  {
-                    "But your current brand isn't telling customers any of that. In fact, it's not telling them anything."
-                  }
-                </div>
-                <div
-                  className={classNames("all", "__wab_text", sty.text__roSGp)}
-                >
-                  {
-                    "Your business does so much more than your current messaging reflects. "
-                  }
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "Somewhere beneath the industry jargon, generic promises and suspiciously similar websites ("
+                      }
+                    </React.Fragment>
+                    <span
+                      className={
+                        "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                      }
+                      style={{ fontStyle: "italic" }}
+                    >
+                      {"cough"}
+                    </span>
+                    <React.Fragment>{" AI "}</React.Fragment>
+                    <span
+                      className={
+                        "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
+                      }
+                      style={{ fontStyle: "italic" }}
+                    >
+                      {"cough"}
+                    </span>
+                    <React.Fragment>
+                      {") is the stuff that sets your company apart."}
+                    </React.Fragment>
+                  </React.Fragment>
                 </div>
                 <div
                   className={classNames("all", "__wab_text", sty.text__eDUmi)}
@@ -480,13 +476,32 @@ function PlasmicHomepage__RenderFunc(props: {
                       }
                       style={{ fontWeight: 700 }}
                     >
-                      {"DIRT is here to change that."}
+                      {"We dig up what makes you different."}
                     </span>
                   </React.Fragment>
                 </div>
+                <DirtRichText
+                  data-plasmic-name={"dirtRichText"}
+                  data-plasmic-override={overrides.dirtRichText}
+
+                  className={classNames("__wab_instance", sty.dirtRichText)}
+                  desktopFontSize={20}
+                  fontSize={16}
+                  tabletFontSize={20}
+                  text={""}
+                  textColour={"dirt-black"}
+                />
+
+                <div
+                  className={classNames("all", "__wab_text", sty.text__fAXw2)}
+                >
+                  {
+                    "And bring it to life on your website, proposals, capability statements, sales decks, etc. through strategic messaging and a distinct brand voice so you stand out, win more customers and grow your market share."
+                  }
+                </div>
               </React.Fragment>
             }
-            subheading={"Shouldn't your brand evolve too?"}
+            subheading={"So why would anyone pay more for you?"}
           />
 
           <PainPointsSection
@@ -494,7 +509,7 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.painPointsSection}
 
             className={classNames("__wab_instance", sty.painPointsSection)}
-            heading={"What\u2019s stopping clients from choosing you?"}
+            heading={"They went with someone else. Ouch. Why?"}
             slides={
               <React.Fragment>
                 <PainPointSlide
@@ -552,9 +567,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 />
               </React.Fragment>
             }
-            subheading={
-              "Check the boxes that feel true to see if DIRT can help:"
-            }
+            subheading={"Click whatever stings:"}
           >
             <PainPointCheckbox
               className={classNames(
@@ -595,9 +608,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 "__wab_instance",
                 sty.painPointCheckbox__cYgsp
               )}
-              label={
-                "Marketing results don\u2019t match the size of your ambitions"
-              }
+              label={"Your website looks good, but it's bringing in work."}
             />
           </PainPointsSection>
           <SliderSection
@@ -1039,14 +1050,14 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames("all", "__wab_text", sty.text__v4TnA)}
                 >
                   {
-                    "Every DIRT client gets a custom-assembled team of property, construction, and tech specialists to do the heavy lifting. And unlike other branding firms, we start with your message first \u2013 because as you know, it doesn\u2019t matter how lovely something looks on the outside if the inside is hollow."
+                    "Every DIRT client gets a custom-assembled team of AEC specialists to do the heavy lifting. And unlike other branding firms, we start with your positioning first \u2013 because as you know, it doesn\u2019t matter how lovely something looks on the outside if the inside is hollow."
                   }
                 </div>
                 <div
                   className={classNames("all", "__wab_text", sty.text__uaaAw)}
                 >
                   {
-                    "In these industries, every bid counts. You need to hit the right people hard, so your business can hit pay dirt."
+                    "We help you make the tough calls about who to target, what makes you worth choosing, and how to win. "
                   }
                 </div>
               </React.Fragment>
