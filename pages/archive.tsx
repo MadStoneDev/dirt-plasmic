@@ -4,7 +4,7 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../components/plasmic/dirt/PlasmicGlobalContextsProvider";
 
-import { PlasmicBlog } from "../components/plasmic/dirt/PlasmicBlog";
+import { PlasmicArchive } from "../components/plasmic/dirt/PlasmicArchive";
 import { useRouter } from "next/router";
 import { PlasmicQueryDataProvider } from "@plasmicapp/react-web/lib/query";
 import type { GetStaticProps } from "next";
@@ -18,7 +18,7 @@ import {
 export const getStaticProps: GetStaticProps = async context => {
   const queryCache = await extractPlasmicQueryData(
     <PageParamsProvider__ route={"/blog"} params={context.params}>
-      <PlasmicBlog />
+      <PlasmicArchive />
     </PageParamsProvider__>
   );
   // Article summaries for the ItemList JSON-LD (newest first).
@@ -38,19 +38,19 @@ function Blog({
   queryCache?: any;
   articles?: ArticleListItem[];
 }) {
-  // Use PlasmicBlog to render this component as it was
+  // Use PlasmicArchive to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicBlog are:
+  // Props you can pass into PlasmicArchive are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicBlog is wrapped by your project's global
+  // By default, PlasmicArchive is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -79,7 +79,7 @@ function Blog({
             params={useRouter()?.query}
             query={useRouter()?.query}
           >
-            <PlasmicBlog />
+            <PlasmicArchive />
           </PageParamsProvider__>
         </PlasmicQueryDataProvider>
       </GlobalContextsProvider>
