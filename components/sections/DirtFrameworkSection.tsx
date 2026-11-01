@@ -169,7 +169,7 @@ export function DirtFrameworkSection({
                     }}
                   >
                     {React.isValidElement(child)
-                      ? React.cloneElement(child as React.ReactElement<any>, { originalIndex, scrollProgress, minBlockHeight: maxBlockHeight || undefined })
+                      ? React.cloneElement(child as React.ReactElement<any>, { originalIndex, scrollProgress, minBlockHeight: isMd ? (maxBlockHeight || undefined) : undefined })
                       : child}
                   </div>
                 );

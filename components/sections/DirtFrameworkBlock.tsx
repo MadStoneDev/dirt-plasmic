@@ -60,7 +60,7 @@ export function DirtFrameworkBlock({
       </div>
 
       {/* Content */}
-      <div className="relative pt-6 pb-6 pl-20 md:pl-32 pr-32 flex flex-col md:flex-row items-center justify-between w-full gap-4 md:gap-8 z-10">
+      <div className="relative pt-20 pb-20 px-[30px] md:pt-6 md:pb-6 md:px-32 flex flex-col md:flex-row items-center justify-between w-full gap-4 md:gap-8 z-10">
         {heading && (
           <h3 className="font-display font-bold text-5xl md:text-6xl text-dirt-off-white">
             {fmt(heading)}
