@@ -784,7 +784,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.dirtFrameworkBlock___6ZNob
               )}
               description={
-                "Find the X-factor that makes you different. Plant your stake."
+                "Find the X factor that makes you different. Plant your stake so you become the obvious choice."
               }
               heading={"Identify"}
               overlayColor={"dirt-pop"}
@@ -797,7 +797,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.dirtFrameworkBlock__gCvvr
               )}
               description={
-                "Sift out the jargon to find the jewels. This is where messaging and positioning combine."
+                "Turn your positioning into messaging that speaks to the problems your buyers care about."
               }
               heading={"Refine"}
               overlayColor={"dirt-green"}
