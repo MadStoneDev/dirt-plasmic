@@ -132,17 +132,17 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "Positioning for Construction and AEC Software  | DIRT",
+    title: "Positioning & Messaging for AEC Software  | DIRT",
     description:
       "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities.",
     openGraph: {
-      title: "Positioning for Construction and AEC Software  | DIRT",
+      title: "Positioning & Messaging for AEC Software  | DIRT",
       description:
         "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
     twitter: {
       card: "summary" as const,
-      title: "Positioning for Construction and AEC Software  | DIRT",
+      title: "Positioning & Messaging for AEC Software  | DIRT",
       description:
         "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
@@ -377,10 +377,10 @@ function PlasmicHomepage__RenderFunc(props: {
             ctaLabel={"Get the DIRT"}
             ctaLink={"/contact"}
             description={
-              "DIRT is the positioning agency for AEC software and construction companies ready to carve out what makes them different - so they can win on value not price."
+              "From startups to scale-ups, we dig up what makes you different, so you can bury the competition and win more deals."
             }
             foregroundImage={"/plasmic/dirt/images/edSoilFrontPng.png"}
-            heading={"Fresh positioning \nand messaging"}
+            heading={"Fresh positioning \nand messaging for AEC software"}
             midgroundImage={
               "/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"
             }
