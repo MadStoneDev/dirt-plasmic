@@ -810,7 +810,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.dirtFrameworkBlock__c8Sit
               )}
               description={
-                "Share your message with the distinctive voice and vibe your brand has been missing."
+                "Turn your messaging into a website, sales deck, socials and more, in a distinct brand voice."
               }
               heading={"Tell"}
               overlayColor={"dirt-blue"}
