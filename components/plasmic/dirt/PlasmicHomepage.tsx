@@ -668,7 +668,7 @@ function PlasmicHomepage__RenderFunc(props: {
             <SignsCTAItem
               className={classNames("__wab_instance", sty.signsCtaItem__tnyCd)}
               text={
-                "You just closed your seed round. Your first 10 customers cane from your network. The next 50 won't."
+                "You just closed your seed round. Your first 10 customers came from your network. The next 50 won't."
               }
             />
 
