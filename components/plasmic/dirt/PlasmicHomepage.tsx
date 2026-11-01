@@ -380,7 +380,7 @@ function PlasmicHomepage__RenderFunc(props: {
               "From startups to scale-ups, we dig up what makes you different, so you can bury the competition and win more deals."
             }
             foregroundImage={"/plasmic/dirt/images/edSoilFrontPng.png"}
-            heading={"Fresh positioning \nand messaging for AEC software"}
+            heading={"Positioning and messaging for AEC software"}
             midgroundImage={
               "/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"
             }
@@ -438,33 +438,9 @@ function PlasmicHomepage__RenderFunc(props: {
                 <div
                   className={classNames("all", "__wab_text", sty.text__wkMGr)}
                 >
-                  <React.Fragment>
-                    <React.Fragment>
-                      {
-                        "Somewhere beneath the industry jargon, generic promises and suspiciously similar websites ("
-                      }
-                    </React.Fragment>
-                    <span
-                      className={
-                        "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
-                      }
-                      style={{ fontStyle: "italic" }}
-                    >
-                      {"cough"}
-                    </span>
-                    <React.Fragment>{" AI "}</React.Fragment>
-                    <span
-                      className={
-                        "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
-                      }
-                      style={{ fontStyle: "italic" }}
-                    >
-                      {"cough"}
-                    </span>
-                    <React.Fragment>
-                      {") is the stuff that sets your company apart."}
-                    </React.Fragment>
-                  </React.Fragment>
+                  {
+                    "Somewhere beneath the industry jargon, generic promises and suspiciously similar websites is the stuff that sets your company apart."
+                  }
                 </div>
                 <div
                   className={classNames("all", "__wab_text", sty.text__eDUmi)}
@@ -476,7 +452,9 @@ function PlasmicHomepage__RenderFunc(props: {
                       }
                       style={{ fontWeight: 700 }}
                     >
-                      {"We dig up what makes you different."}
+                      {
+                        "We dig up what makes you different. Then put that difference to work."
+                      }
                     </span>
                   </React.Fragment>
                 </div>
@@ -496,7 +474,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames("all", "__wab_text", sty.text__fAXw2)}
                 >
                   {
-                    "And bring it to life on your website, proposals, capability statements, sales decks, etc. through strategic messaging and a distinct brand voice so you stand out, win more customers and grow your market share."
+                    "Through strategic messaging and a distinct brand voice, we bring it to life across your website, sales decks, social media and more - giving buyers a compelling reason to choose you, so you can win more deals and grow your market share."
                   }
                 </div>
               </React.Fragment>
@@ -509,7 +487,7 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.painPointsSection}
 
             className={classNames("__wab_instance", sty.painPointsSection)}
-            heading={"They went with someone else. Ouch. Why?"}
+            heading={"They didn't buy. Why?"}
             slides={
               <React.Fragment>
                 <PainPointSlide
@@ -574,7 +552,9 @@ function PlasmicHomepage__RenderFunc(props: {
                 "__wab_instance",
                 sty.painPointCheckbox__xYxr
               )}
-              label={"Trouble scaling beyond word-of-mouth referrals"}
+              label={
+                "Every buyer wants a different feature. You're trying to sell them all."
+              }
             />
 
             <PainPointCheckbox
@@ -582,9 +562,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 "__wab_instance",
                 sty.painPointCheckbox__wNdgU
               )}
-              label={
-                "Clients don\u2019t \u201cget\u201d what makes you different"
-              }
+              label={"It came down to price. It always comes down to price. "}
             />
 
             <PainPointCheckbox
@@ -592,7 +570,9 @@ function PlasmicHomepage__RenderFunc(props: {
                 "__wab_instance",
                 sty.painPointCheckbox__m3L4Z
               )}
-              label={"Losing bids to cheaper competitors"}
+              label={
+                "Your buyers need a 30-min demo just to understand what you sell."
+              }
             />
 
             <PainPointCheckbox
@@ -600,7 +580,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 "__wab_instance",
                 sty.painPointCheckbox__nM1RJ
               )}
-              label={"Limited visibility in new markets"}
+              label={"Only your founder can close the deal."}
             />
 
             <PainPointCheckbox
@@ -608,7 +588,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 "__wab_instance",
                 sty.painPointCheckbox__cYgsp
               )}
-              label={"Your website looks good, but it's bringing in work."}
+              label={"Everyone wants a free trial. Nobody wants to pay."}
             />
           </PainPointsSection>
           <SliderSection
@@ -687,20 +667,22 @@ function PlasmicHomepage__RenderFunc(props: {
           >
             <SignsCTAItem
               className={classNames("__wab_instance", sty.signsCtaItem__tnyCd)}
-              text={"New prospects can't figure out what you're selling"}
+              text={
+                "You just closed your seed round. Your first 10 customers cane from your network. The next 50 won't."
+              }
             />
 
             <SignsCTAItem
               className={classNames("__wab_instance", sty.signsCtaItem__jjiZe)}
               text={
-                "You\u2019re entering a new GTM phase and need your value to land faster"
+                "You\u2019ve launched a second product. Your team explains it in three different ways."
               }
             />
 
             <SignsCTAItem
               className={classNames("__wab_instance", sty.signsCtaItem__dgV7L)}
               text={
-                "You\u2019ve outgrown your brand. It no longer reflects your business today"
+                "You're about to make your first marketing hire. Right now their onboarding pack is a pitch deck."
               }
             />
           </SignsCTASection>

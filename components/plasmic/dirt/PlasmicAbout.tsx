@@ -318,23 +318,23 @@ function PlasmicAbout__RenderFunc(props: {
                 )}
               >
                 <React.Fragment>
-                  <React.Fragment>{"We build "}</React.Fragment>
+                  <React.Fragment>{"We DIG UP WHAT MAKES YOU "}</React.Fragment>
                   <span
                     className={
                       "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
                     }
                     style={{ color: "var(--token-5joSP94EMVrt)" }}
                   >
-                    {"brands"}
+                    {"DIFFERENT. "}
                   </span>
-                  <React.Fragment>{" that win "}</React.Fragment>
+                  <React.Fragment>{"thEN MAKE IT "}</React.Fragment>
                   <span
                     className={
                       "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
                     }
                     style={{ color: "var(--token-5joSP94EMVrt)" }}
                   >
-                    {"bids"}
+                    {"sELL."}
                   </span>
                 </React.Fragment>
               </h1>
@@ -342,7 +342,7 @@ function PlasmicAbout__RenderFunc(props: {
                 <React.Fragment>
                   <React.Fragment>
                     {
-                      "In industries where every bid and every project counts, the brands that communicate best will win again and again. "
+                      "When buyers can't tell you apart, they pick the cheapest or stick with what they're doing. That's weak positioning. "
                     }
                   </React.Fragment>
                   <span
@@ -352,11 +352,13 @@ function PlasmicAbout__RenderFunc(props: {
                     style={{ fontWeight: 700 }}
                   >
                     {
-                      "We know exactly how to create memorable, project-winning brands."
+                      "We know, because we've been fixing it for over a decade in the architecture industry"
                     }
                   </span>
                   <React.Fragment>
-                    {" In fact, we\u2019ve done it for years."}
+                    {
+                      ". Now we do it for AEC software companies, from seed to Series B."
+                    }
                   </React.Fragment>
                 </React.Fragment>
               </div>
@@ -407,9 +409,7 @@ function PlasmicAbout__RenderFunc(props: {
               <div className={classNames("all", "__wab_text", sty.text__kqBug)}>
                 <React.Fragment>
                   <React.Fragment>
-                    {
-                      "If we hear the word \n\u201cinnovative\u201d one more time, \n"
-                    }
+                    {"If we see \u201cAI-powered\u201d \none more time, \n"}
                   </React.Fragment>
                   <span
                     className={
@@ -426,7 +426,7 @@ function PlasmicAbout__RenderFunc(props: {
                   className={classNames("all", "__wab_text", sty.text__eNcf)}
                 >
                   {
-                    "Branding in the construction and property industries gets a bad rap. Honestly, it deserves it."
+                    "Branding in AEC software industry gets a bad rap. Honestly, it deserves it."
                   }
                 </div>
                 <div
@@ -505,12 +505,12 @@ function PlasmicAbout__RenderFunc(props: {
                         style={{ fontWeight: 700 }}
                       >
                         {
-                          "From builders to designers to technology companies, everyone sounds and looks the same."
+                          "From takeoff tools to field apps to AEC proposal software, everyone looks and sounds the same. And this sameness kills deals."
                         }
                       </span>
                       <React.Fragment>
                         {
-                          "\n\nOther sectors regularly reinvent and refresh themselves. They change and grow with the times. But most property and construction brands are still working with websites that haven\u2019t been updated since Y2K.\n\n"
+                          "\n\nOther sectors regularly reinvent and refresh themselves. They change and grow with the times. But most AEC software companies are still working with websites written two pivots ago.\n\n"
                         }
                       </React.Fragment>
                       <span
@@ -523,7 +523,7 @@ function PlasmicAbout__RenderFunc(props: {
                       </span>
                       <React.Fragment>
                         {
-                          "\n\nAt DIRT, we believe the future of your business lies in your willingness to stand out. We\u2019re not just a \u201ccreative agency\u201d slapping a logo on more bland corporate speak. "
+                          "\n\nAt DIRT, we believe the AEC software companies that win in the next decade will be the ones buyers can tell apart in five seconds. Your difference already exists. It's buried under a pile of features. "
                         }
                       </React.Fragment>
                       <span
@@ -538,7 +538,7 @@ function PlasmicAbout__RenderFunc(props: {
                       </span>
                       <React.Fragment>
                         {
-                          "\n\nBecause safe brands fade more with each passing year. But bold brands \u2014 the ones with a little grit under their nails \u2014 will structure and shape humanity for generations.\n\n"
+                          "\n\nBecause safe brands get ignored. But bold brands \u2014 the ones with a little grit under their nails \u2014 become the tool the team refuses to work without.\n\n"
                         }
                       </React.Fragment>
                       <span
@@ -719,7 +719,7 @@ function PlasmicAbout__RenderFunc(props: {
             </div>
             <div className={classNames("all", "__wab_text", sty.text__ermkI)}>
               {
-                "Every member of our team is exceptional. We\u2019re strategists, copywriters, designers, and web developers. More importantly, we\u2019re all specialists in the property and construction industries."
+                "Every member of our team is exceptional. We\u2019re strategists, copywriters, designers, and web developers. More importantly, we\u2019re all are specialists in the AEC space."
               }
             </div>
           </section>

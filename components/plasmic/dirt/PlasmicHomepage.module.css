@@ -85,6 +85,7 @@
   font-weight: 700;
   font-family: "Uncut Sans";
   color: #30261d;
+  padding-left: 0px;
   min-width: 0;
 }
 @media (max-width: 511px) {
