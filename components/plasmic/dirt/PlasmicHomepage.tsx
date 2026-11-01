@@ -771,7 +771,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.dirtFrameworkBlock__r8Q2R
               )}
               description={
-                "Dig deep to unearth your brand. This is the groundwork."
+                "Dig deep to unearth your ideal customers, what drives their decisions and where the biggest market opportunities lie."
               }
               heading={"Discover"}
               overlayColor={"dirt-deep"}
