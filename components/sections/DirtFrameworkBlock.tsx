@@ -68,7 +68,7 @@ export function DirtFrameworkBlock({
         )}
         {description && (
           <p
-            className="grow max-w-3/5 text-dirt-off-white/90 text-[22px] font-bold font-sans whitespace-pre-line transition-opacity duration-150"
+            className="grow max-w-full md:max-w-3/5 text-dirt-off-white/90 text-[22px] font-bold font-sans whitespace-pre-line transition-opacity duration-150"
             style={{ opacity: descriptionOpacity }}
           >
             {description}
