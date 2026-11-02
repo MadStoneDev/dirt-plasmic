@@ -377,10 +377,10 @@ function PlasmicHomepage__RenderFunc(props: {
             ctaLabel={"Get the DIRT"}
             ctaLink={"/contact"}
             description={
-              "From startups to scale-ups, we dig up what makes you different, so you can bury the competition and win more deals."
+              "From startups to scale-ups, we dig up your competitive edge and turn it into messaging and websites that wins deals."
             }
             foregroundImage={"/plasmic/dirt/images/edSoilFrontPng.png"}
-            heading={"Positioning and messaging for AEC software"}
+            heading={"Positioning, messaging and websites for \nAEC software"}
             midgroundImage={
               "/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"
             }
