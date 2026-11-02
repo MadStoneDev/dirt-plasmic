@@ -439,7 +439,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames("all", "__wab_text", sty.text__wkMGr)}
                 >
                   {
-                    "Somewhere beneath the industry jargon, generic promises and suspiciously similar websites is the stuff that sets your company apart."
+                    "Your buyer gets pitched three new tools a week. Everyone makes the same promises - faster projects, more wins, less admin. Nothing that haven't heard before. So they stick with the spreadsheets and clunky processes."
                   }
                 </div>
                 <div
@@ -453,7 +453,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       style={{ fontWeight: 700 }}
                     >
                       {
-                        "We dig up what makes you different. Then put that difference to work."
+                        "We dig up what makes you different. Then bring it to life on your website, sales deck, socials, and more."
                       }
                     </span>
                   </React.Fragment>
@@ -474,12 +474,12 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames("all", "__wab_text", sty.text__fAXw2)}
                 >
                   {
-                    "Through strategic messaging and a distinct brand voice, we bring it to life across your website, sales decks, social media and more - giving buyers a compelling reason to choose you, so you can win more deals and grow your market share."
+                    "We give buyers a reason to switch and choose you, so you can win more deals and grow your market share."
                   }
                 </div>
               </React.Fragment>
             }
-            subheading={"So why would anyone pay more for you?"}
+            subheading={"So why would a contractor switch to you?"}
           />
 
           <PainPointsSection
