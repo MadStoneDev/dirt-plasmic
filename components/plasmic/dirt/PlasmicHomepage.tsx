@@ -132,17 +132,17 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "Positioning & Messaging for AEC Software | DIRT",
+    title: "Messaging & Websites for AEC Software | DIRT",
     description:
       "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities.",
     openGraph: {
-      title: "Positioning & Messaging for AEC Software | DIRT",
+      title: "Messaging & Websites for AEC Software | DIRT",
       description:
         "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
     twitter: {
       card: "summary" as const,
-      title: "Positioning & Messaging for AEC Software | DIRT",
+      title: "Messaging & Websites for AEC Software | DIRT",
       description:
         "DIRT is a strategy-led agency for construction, AEC software, property, design/build, & building material businesses who want a modern brand to match their capabilities."
     },
@@ -171,7 +171,6 @@ export type PlasmicHomepage__OverridesType = {
   dirtRichText?: Flex__<typeof DirtRichText>;
   painPointsSection?: Flex__<typeof PainPointsSection>;
   sliderSection?: Flex__<typeof SliderSection>;
-  signsCtaSection?: Flex__<typeof SignsCTASection>;
   threeReasonsSection?: Flex__<typeof ThreeReasonsSection>;
   dirtFrameworkSection?: Flex__<typeof DirtFrameworkSection>;
   dirtProcessSection?: Flex__<typeof DirtProcessSection>;
@@ -655,10 +654,28 @@ function PlasmicHomepage__RenderFunc(props: {
             />
           </SliderSection>
           <SignsCTASection
-            data-plasmic-name={"signsCtaSection"}
-            data-plasmic-override={overrides.signsCtaSection}
+            className={classNames("__wab_instance", sty.signsCtaSection__aumDp)}
+          >
+            <SignsCTAItem
+              className={classNames("__wab_instance", sty.signsCtaItem__iDQl)}
+              text={"Sign 1"}
+            />
 
-            className={classNames("__wab_instance", sty.signsCtaSection)}
+            <SignsCTAItem
+              className={classNames("__wab_instance", sty.signsCtaItem__eThfk)}
+              text={"Sign 2"}
+            />
+
+            <SignsCTAItem
+              className={classNames("__wab_instance", sty.signsCtaItem__hD5Gb)}
+              text={"Sign 3"}
+            />
+          </SignsCTASection>
+          <SignsCTASection
+            className={classNames(
+              "__wab_instance",
+              sty.signsCtaSection___8Of17
+            )}
             ctaLabel={"Dig in with a call"}
             ctaLink={"/contact"}
             headingEnd={"y"}
@@ -1301,7 +1318,6 @@ const PlasmicDescendants = {
     "dirtRichText",
     "painPointsSection",
     "sliderSection",
-    "signsCtaSection",
     "threeReasonsSection",
     "dirtFrameworkSection",
     "dirtProcessSection",
@@ -1321,7 +1337,6 @@ const PlasmicDescendants = {
   dirtRichText: ["dirtRichText"],
   painPointsSection: ["painPointsSection"],
   sliderSection: ["sliderSection"],
-  signsCtaSection: ["signsCtaSection"],
   threeReasonsSection: ["threeReasonsSection"],
   dirtFrameworkSection: ["dirtFrameworkSection"],
   dirtProcessSection: ["dirtProcessSection"],
@@ -1346,7 +1361,6 @@ type NodeDefaultElementType = {
   dirtRichText: typeof DirtRichText;
   painPointsSection: typeof PainPointsSection;
   sliderSection: typeof SliderSection;
-  signsCtaSection: typeof SignsCTASection;
   threeReasonsSection: typeof ThreeReasonsSection;
   dirtFrameworkSection: typeof DirtFrameworkSection;
   dirtProcessSection: typeof DirtProcessSection;
@@ -1429,7 +1443,6 @@ export const PlasmicHomepage = Object.assign(
     dirtRichText: makeNodeComponent("dirtRichText"),
     painPointsSection: makeNodeComponent("painPointsSection"),
     sliderSection: makeNodeComponent("sliderSection"),
-    signsCtaSection: makeNodeComponent("signsCtaSection"),
     threeReasonsSection: makeNodeComponent("threeReasonsSection"),
     dirtFrameworkSection: makeNodeComponent("dirtFrameworkSection"),
     dirtProcessSection: makeNodeComponent("dirtProcessSection"),

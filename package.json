@@ -23,6 +23,7 @@
     "@plasmicpkgs/plasmic-cms": "^0.0.333",
     "@plasmicpkgs/plasmic-nav": "^0.0.209",
     "@plasmicpkgs/react-aria": "^0.0.167",
+    "@plasmicpkgs/react-awesome-reveal": "^3.8.266",
     "@plasmicpkgs/react-quill": "^1.0.106",
     "@plasmicpkgs/tiptap": "^0.0.25",
     "@tiptap/core": "^3.22.3",
