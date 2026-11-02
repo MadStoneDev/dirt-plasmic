@@ -114,7 +114,7 @@
   --plasmic-token-success-success-soft-foreground: var(--token-OkNLCxtpsrFP);
   --token-e4ro7RHp17uz: #713f12;
   --plasmic-token-warning-warning-soft-foreground: var(--token-e4ro7RHp17uz);
-  --token-K3AsUici94Wb: #7f1d1d;
+  --token-K3AsUici94Wb: var(--token-88Oxp1lx31pA);
   --plasmic-token-destructive-destructive-soft-foreground: var(
     --token-K3AsUici94Wb
   );

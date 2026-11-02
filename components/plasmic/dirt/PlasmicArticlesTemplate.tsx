@@ -380,6 +380,23 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                       >
                         {"< Blog"}
                       </PlasmicLink__>
+                      <PlasmicLink__
+                        className={classNames(
+                          "all",
+                          "a",
+                          "a__8kaaM",
+                          "__wab_text",
+                          sty.link__acdur
+                        )}
+                        component={Link}
+                        href={`/archive`}
+                        legacyBehavior={false}
+                        platform={"nextjs"}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobile")
+                          ? "<"
+                          : "< Blog"}
+                      </PlasmicLink__>
                       <div
                         className={classNames(
                           "all",
