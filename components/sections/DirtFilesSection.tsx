@@ -40,12 +40,12 @@ export function DirtFilesSection({
 
   return (
     <section
-      className="py-16 lg:py-40 px-5 lg:px-8 bg-dirt-deep"
+      className="py-16 lg:py-40 px-0 lg:px-8 bg-dirt-deep"
       style={{ gridColumn: "1 / -1" }}
     >
       {/*<div className="max-w-7xl mx-auto">*/}
         {/* Header */}
-        <div className="mb-12 lg:mb-20">
+        <div className="px-5 lg:px-0 mb-12 lg:mb-20">
           <h2 className="font-display font-bold text-5xl lg:text-8xl mb-6">
             <span className="text-dirt-pop">{fmt(headingStart)}</span>
             <span className="text-dirt-off-white uppercase">
