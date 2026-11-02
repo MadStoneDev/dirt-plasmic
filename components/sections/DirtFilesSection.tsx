@@ -61,25 +61,9 @@ export function DirtFilesSection({
         </div>
 
         {/* Two Column Layout - 40% / 60% */}
+        {/* On mobile the active DirtFile renders its own mobileImage inline (below its heading); */}
+        {/* the shared image column below is desktop-only (lg+). */}
         <div className="grid lg:grid-cols-[45fr_55fr] gap-8">
-          {/* Image on Mobile Only */}
-          <div className="lg:hidden relative w-full aspect-square border-[1.5px] border-dirt-pop">
-            {currentImage ? (
-                <Image
-                    src={currentImage}
-                    alt=""
-                    fill
-                    className="object-cover transition-opacity duration-300"
-                />
-            ) : (
-                <div className="w-full h-full bg-dirt-deep/10 flex items-center justify-center">
-                <span className="text-dirt-deep/50 font-sans">
-                  Upload images
-                </span>
-                </div>
-            )}
-          </div>
-          
           {/* Left - Accordion */}
           <div className="flex flex-col">
             {files}

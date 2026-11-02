@@ -728,6 +728,7 @@ registerComponent(DirtFile, {
     buttonLabel: "string",
     buttonLink: "string",
     image: "imageUrl",
+    mobileImage: "imageUrl",
     children: {
       type: "slot",
       displayName: "Sub Items",

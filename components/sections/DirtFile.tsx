@@ -10,6 +10,8 @@ export interface DirtFileProps {
   buttonLabel?: string;
   buttonLink?: string;
   image?: string;
+  /** Mobile-only image shown inside the active case study (below the heading). */
+  mobileImage?: string;
   children?: ReactNode;
   // Injected by parent
   isActive?: boolean;
@@ -22,6 +24,7 @@ export function DirtFile({
   tag2,
   buttonLabel,
   buttonLink,
+  mobileImage,
   children,
   isActive = false,
   onClick,
@@ -30,7 +33,7 @@ export function DirtFile({
     <div className="mb-2">
       <button
         onClick={onClick}
-        className={`w-full text-left p-8 transition-all duration-300 ${
+        className={`w-full text-left p-4 lg:p-8 transition-all duration-300 ${
           isActive
             ? "bg-dirt-pop"
             : "bg-transparent hover:bg-dirt-pop/10"
@@ -80,6 +83,18 @@ export function DirtFile({
         >
           {heading}
         </h3>
+
+        {/* Mobile-only image for the active case study (desktop uses the right column) */}
+        {isActive && mobileImage && (
+          <div className="lg:hidden relative w-full aspect-square border-[1.5px] border-dirt-pop mt-4">
+            <Image
+              src={mobileImage}
+              alt=""
+              fill
+              className="object-cover"
+            />
+          </div>
+        )}
 
         {isActive && children && (
           <div className="mt-4 flex flex-col gap-4">
