@@ -246,6 +246,13 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
         backgroundColor: backgroundColor || "#5C0004",
       }}
     >
+      {/* Maroon base — fills the entire footer so the background image layers on top of it */}
+      <div
+        aria-hidden
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{ backgroundColor: backgroundColor || "#5C0004" }}
+      />
+
       {/* Background images — mobile vs desktop */}
       {(mobileBackgroundImage || backgroundImage) && (
         <>
@@ -452,10 +459,10 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
 
       {/* Footer Columns Section */}
       <div className={`bg-dirt-deep p-6 md:p-12 relative z-[2]`}>
-        <div className="mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
+        <div className="w-full max-w-full min-w-0 mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12 min-w-0">
             {/* Column 1 - Logo & Description */}
-            <div className={`col-span-2 md:col-span-1`}>
+            <div className={`col-span-2 md:col-span-1 min-w-0`}>
               {footerLogo && (
                 <Image
                   src={footerLogo}
@@ -473,7 +480,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
             </div>
 
             {/* Column 2 - Newsletter */}
-            <div className={`col-span-2`}>
+            <div className={`col-span-2 min-w-0`}>
               {newsletterHeading && (
                 <h2 className="font-display font-bold text-lg text-dirt-pop uppercase mb-4">
                   {newsletterHeading}
@@ -499,14 +506,14 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
                     required
                     className="px-3 py-2 bg-white text-dirt-deep font-sans text-lg placeholder:text-dirt-deep/50 outline-none"
                   />
-                  <div className="flex">
+                  <div className="flex min-w-0">
                     <input
                       type="email"
                       placeholder="Your email"
                       value={newsletterEmail}
                       onChange={(e) => setNewsletterEmail(e.target.value)}
                       required
-                      className="grow px-3 py-2 bg-white text-dirt-deep font-sans text-lg placeholder:text-dirt-deep/50 outline-none"
+                      className="grow min-w-0 px-3 py-2 bg-white text-dirt-deep font-sans text-lg placeholder:text-dirt-deep/50 outline-none"
                     />
                     <button
                       type="submit"
@@ -524,7 +531,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
             </div>
 
             {/* Column 3 - Contact */}
-            <div className={`col-span-2`}>
+            <div className={`col-span-2 min-w-0`}>
               {contactHeading && (
                 <h2 className="font-display font-bold text-lg text-dirt-pop uppercase mb-4">
                   {contactHeading}
@@ -538,7 +545,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
             </div>
 
             {/* Column 4 - Links */}
-            <div className={`col-span-2 md:col-span-1`}>
+            <div className={`col-span-2 md:col-span-1 min-w-0`}>
               {linksHeading && (
                 <h2 className="font-display font-bold text-lg text-dirt-pop uppercase mb-4">
                   {linksHeading}
