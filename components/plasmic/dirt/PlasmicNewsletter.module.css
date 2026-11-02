@@ -232,13 +232,8 @@
   font-weight: 700;
   color: var(--token-88Oxp1lx31pA);
   text-align: left;
-}
-.img__jvJzU {
-  object-fit: cover;
-  max-width: 100%;
-}
-.img__jvJzU > picture > img {
-  object-fit: cover;
+  padding-bottom: 0px;
+  padding-right: 88px;
 }
 .section__oQpX2 {
   display: grid;

@@ -369,26 +369,9 @@ function PlasmicNewsletter__RenderFunc(props: {
                 )}
               >
                 {
-                  "The best newsletter in your inbox. If it\u2019s not, we\u2019ll backfill"
+                  "The AEC software newsletter with a dirty mouth and sharp eye."
                 }
               </h1>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__jvJzU)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/dirt/images/littleShovelPng.png",
-                  fullWidth: 56,
-                  fullHeight: 56,
-                  aspectRatio: undefined
-                }}
-              />
             </div>
           </section>
           <section className={classNames("all", sty.section__oQpX2)}>
