@@ -21,8 +21,10 @@ export function DirtFrameworkSection({
   children,
 }: DirtFrameworkSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const triggerRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  // Scroll-driven expansion disabled — blocks are open by default.
+  // const triggerRef = useRef<HTMLDivElement>(null);
+  // const [scrollProgress, setScrollProgress] = useState(0);
+  const scrollProgress = 1; // fully open
   const [isMd, setIsMd] = useState(false);
 
   const allChildren = React.Children.toArray(children);
@@ -48,6 +50,7 @@ export function DirtFrameworkSection({
     return () => window.removeEventListener("resize", measureBlocks);
   }, [measureBlocks, children]);
 
+  /* Scroll/sticky sizing disabled — blocks are open by default (kept for reference).
   // Block and layout dimensions (px) — no vh units, Plasmic-safe
   const BLOCK_HEIGHT = maxBlockHeight || 144; // measured from tallest block, fallback to h-36
   const OVERLAP = Math.round(BLOCK_HEIGHT * 0.4);
@@ -59,13 +62,14 @@ export function DirtFrameworkSection({
   const expandedHeight = blockCount * (BLOCK_HEIGHT + GAP);
   const stickyHeight = expandedHeight + STICKY_PAD;
 
-  // Scroll animation distance — how much scrolling drives the 0→1 expansion
+  // Scroll animation distance — how much scrolling drives the 0->1 expansion
   const animationDistance = 500;
   // Extra hold after cards are fully open before section releases
   const holdDistance = 400;
 
   // Total section height = header + sticky content + animation + hold
   const sectionHeight = HEADER_BUFFER + stickyHeight + animationDistance + holdDistance;
+  */
 
   // Track md breakpoint (768px)
   useEffect(() => {
@@ -76,6 +80,7 @@ export function DirtFrameworkSection({
     return () => mql.removeEventListener("change", onChange);
   }, []);
 
+  /* Scroll-driven expansion disabled — blocks are open by default (kept for reference).
   useEffect(() => {
     // On mobile, skip scroll mechanic — blocks are fully expanded
     if (!isMd) {
@@ -115,21 +120,22 @@ export function DirtFrameworkSection({
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMd]);
+  */
 
   return (
     <section
       ref={sectionRef}
       className="relative pt-16 md:pt-40 pb-2 md:pb-8 px-5 md:px-8 bg-dirt-off-white"
       style={{
-        height: isMd ? `${sectionHeight}px` : "auto",
+        height: "auto", // scroll animation removed — was: isMd ? `${sectionHeight}px` : "auto"
         gridColumn: "1 / -1",
       }}
     >
-      {/* Trigger — scrolls normally, drives animation progress */}
-      <div ref={triggerRef} className="absolute" style={{ top: 0, left: 0 }} />
+      {/* Trigger — scrolls normally, drives animation progress (disabled) */}
+      {/* <div ref={triggerRef} className="absolute" style={{ top: 0, left: 0 }} /> */}
 
-      {/* Sticky container — heading + blocks pin together */}
-      <div className="md:sticky top-0" style={{ height: isMd ? `${stickyHeight + HEADER_BUFFER}px` : "auto" }}>
+      {/* Sticky pinning disabled — was: className="md:sticky top-0", height stickyHeight+HEADER_BUFFER */}
+      <div className="" style={{ height: "auto" }}>
         {/* Header */}
         <div className="mb-0 pt-4">
           <h2 className="max-w-xs md:max-w-none mx-auto font-display font-bold text-5xl md:text-8xl text-center mb-6">
@@ -151,12 +157,12 @@ export function DirtFrameworkSection({
                 const originalIndex = reversed ? allChildren.length - 1 - displayIndex : displayIndex;
                 const zIndex = reversed ? displayIndex + 1 : blockCount - displayIndex;
 
-                // Stacked: negative margin pulls cards up to overlap
-                // Expanded: 0 overlap + gap
-                const mt =
-                  displayIndex === 0
-                    ? 0
-                    : -OVERLAP + scrollProgress * (OVERLAP + GAP);
+                // Stacking/overlap disabled — blocks sit open with no negative margin.
+                // const mt =
+                //   displayIndex === 0
+                //     ? 0
+                //     : -OVERLAP + scrollProgress * (OVERLAP + GAP);
+                const mt = 0;
 
                 return (
                   <div

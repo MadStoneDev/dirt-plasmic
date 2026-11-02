@@ -23,8 +23,8 @@ export function DirtFrameworkBlock({
   scrollProgress = 1,
   minBlockHeight,
 }: DirtFrameworkBlockProps) {
-  // Description fades in during the last 30% of the scroll animation
-  const descriptionOpacity = Math.max(0, Math.min(1, (scrollProgress - 0.7) / 0.3));
+  // Scroll-driven fade disabled — description is visible by default (kept for reference).
+  // const descriptionOpacity = Math.max(0, Math.min(1, (scrollProgress - 0.7) / 0.3));
   return (
     <div
       className="relative flex overflow-hidden"
@@ -67,9 +67,9 @@ export function DirtFrameworkBlock({
           </h3>
         )}
         {description && (
+          // Scroll fade/transition disabled — was: "transition-opacity duration-150" + style={{ opacity: descriptionOpacity }}
           <p
-            className="grow max-w-full md:max-w-3/5 text-dirt-off-white/90 text-[22px] font-bold font-sans whitespace-pre-line transition-opacity duration-150"
-            style={{ opacity: descriptionOpacity }}
+            className="grow max-w-full md:max-w-3/5 text-dirt-off-white/90 text-[22px] font-bold font-sans whitespace-pre-line"
           >
             {description}
           </p>
