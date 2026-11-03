@@ -605,7 +605,7 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames("__wab_instance", sty.sliderStop__azpEe)}
               label={"BORING AF"}
               text={
-                '"Leverage AI-powered generative design intelligence to optimise site feasibility workflows."'
+                '"Leverage AI-powered proposal intelligence to streamline pursuit workflows, optimise content management and accelerate business growth."'
               }
             />
 
@@ -614,7 +614,7 @@ function PlasmicHomepage__RenderFunc(props: {
               image={"/plasmic/dirt/images/sliderDirt1Png2.png"}
               label={"WELL, THAT'S A START"}
               text={
-                '"Generate building layouts and test development potential with automated site feasibility software."'
+                '"AI-powered proposal software that helps architecture and engineering firms create proposals faster."'
               }
             />
 
@@ -623,7 +623,7 @@ function PlasmicHomepage__RenderFunc(props: {
               image={"/plasmic/dirt/images/sliderDirt2Png2.png"}
               label={"GETTING WARMER"}
               text={
-                '"Property developers can test building layouts, site yield, setbacks and parking requirements."'
+                '"Help AEC marketing teams write proposals faster using existing project experience, staff CVs and past submissions."'
               }
             />
 
@@ -632,7 +632,7 @@ function PlasmicHomepage__RenderFunc(props: {
               image={"/plasmic/dirt/images/sliderDirt3Png.png"}
               label={"YOU'VE GOT MY ATTENTION"}
               text={
-                '"Test building layouts, unit yields and parking requirements before committing to a site."'
+                '"Find the right project examples, staff CVs and proposal content without digging through old files."'
               }
             />
 
@@ -641,7 +641,7 @@ function PlasmicHomepage__RenderFunc(props: {
               image={"/plasmic/dirt/images/sliderDirt4Png.png"}
               label={"WELL, WHY DIDN'T YOU SAY SO?"}
               text={
-                '"Automate site feasibility studies and test multiple development scenarios in minutes."'
+                '"Build proposals faster using your best project experience, staff CVs and past submissions."'
               }
             />
 
@@ -649,7 +649,7 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames("__wab_instance", sty.sliderStop__cvXh)}
               image={"/plasmic/dirt/images/sliderDirt5Png.png"}
               label={"NOW WE'VE STRUCK DIRT"}
-              text={'"Know which sites are worth chasing in minutes."'}
+              text={'"Turn past projects into winning proposals in minutes."'}
             />
           </SliderSection>
           <SignsCTASection
