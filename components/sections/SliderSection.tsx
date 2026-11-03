@@ -132,12 +132,15 @@ export function SliderSection({
             style={{ zIndex: 0 }}
           />
         )}
-        {/* Step image */}
+        {/* Step image — pinned to the bottom of the section at full width and
+            natural height. It is absolutely positioned, so it never adds to the
+            section's height; any overflow above is clipped by overflow-hidden.
+            Anchoring to bottom-0 means the dirt always shows (incl. on mobile). */}
         {stopsData[displayStep]?.image && (
           <img
             src={stopsData[displayStep].image}
             alt=""
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+            className="absolute bottom-0 left-0 w-full h-auto transition-opacity duration-500"
             style={{ zIndex: 0 }}
           />
         )}
