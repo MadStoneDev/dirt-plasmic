@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect, ReactNode } from "react";
+import { usePlasmicCanvasContext } from "@plasmicapp/host";
 import { fmt } from "@/utils/formatText";
 
 export interface SliderSectionProps {
@@ -8,6 +9,11 @@ export interface SliderSectionProps {
   headingMiddle?: string;
   headingEnd?: string;
   backgroundImage?: string;
+  /** Which stop (1-based) is active when the page loads. */
+  defaultStop?: number;
+  /** Editor only: which stop (1-based) to show in Plasmic so you can edit it.
+      Has no effect on the live site — the slider stays interactive there. */
+  editorActiveStop?: number;
   children?: ReactNode;
 }
 
@@ -16,10 +22,16 @@ export function SliderSection({
   headingMiddle,
   headingEnd,
   backgroundImage,
+  defaultStop,
+  editorActiveStop,
   children,
 }: SliderSectionProps) {
-  const [currentStep, setCurrentStep] = useState(0);
+  // Convert the 1-based props to a 0-based index (default to the first stop).
+  const defaultIndex = Math.max(0, (defaultStop ?? 1) - 1);
+  const [currentStep, setCurrentStep] = useState(defaultIndex);
   const [isLg, setIsLg] = useState(false);
+  // Truthy only while rendering inside the Plasmic Studio canvas.
+  const inEditor = !!usePlasmicCanvasContext();
 
   // Responsive values: mobile / lg+
   const topPadding = isLg ? 160 : 64;
@@ -52,6 +64,15 @@ export function SliderSection({
           { label: "Stop 5", text: "Content for stop 5", image: "", content: undefined as ReactNode },
           { label: "Stop 6", text: "Content for stop 6", image: "", content: undefined as ReactNode },
         ];
+
+  // Which stop is actually shown. In the Plasmic editor, the "editorActiveStop"
+  // prop (1-based) forces a specific stop so each one can be edited; everywhere
+  // else the slider is interactive (currentStep). Clamp to a valid index.
+  const clamp = (n: number) => Math.max(0, Math.min(stopsData.length - 1, n));
+  const displayStep =
+    inEditor && typeof editorActiveStop === "number"
+      ? clamp(editorActiveStop - 1)
+      : clamp(currentStep);
 
   // Inset of the slider track from the box edge. Keeps the thumb's centered
   // label from spilling past the box; smaller on mobile so the thumb sits
@@ -112,9 +133,9 @@ export function SliderSection({
           />
         )}
         {/* Step image */}
-        {stopsData[currentStep]?.image && (
+        {stopsData[displayStep]?.image && (
           <img
-            src={stopsData[currentStep].image}
+            src={stopsData[displayStep].image}
             alt=""
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
             style={{ zIndex: 0 }}
@@ -160,7 +181,7 @@ export function SliderSection({
                   type="range"
                   min="0"
                   max={stopsData.length - 1}
-                  value={currentStep}
+                  value={displayStep}
                   onChange={handleSliderChange}
                   step="1"
                   className="w-full appearance-none bg-transparent cursor-pointer slider-input"
@@ -173,7 +194,7 @@ export function SliderSection({
                 <div
                   className="absolute pointer-events-none transition-all duration-200 ease-out"
                   style={{
-                    left: `calc(${(currentStep / (stopsData.length - 1)) * 100}%)`,
+                    left: `calc(${(displayStep / (stopsData.length - 1)) * 100}%)`,
                     top: "50%",
                     transform: "translate(-50%, -50%)",
                   }}
@@ -206,7 +227,7 @@ export function SliderSection({
                           lineHeight: "135%",
                         }}
                       >
-                        {stopsData[currentStep]?.label}
+                        {stopsData[displayStep]?.label}
                       </span>
                     </div>
                   </div>
@@ -216,8 +237,8 @@ export function SliderSection({
 
             {/* Step Content — the active stop's slot content, or its text fallback */}
             <div className="mt-28">
-              {React.Children.count(stopsData[currentStep]?.content) > 0 ? (
-                stopsData[currentStep]?.content
+              {React.Children.count(stopsData[displayStep]?.content) > 0 ? (
+                stopsData[displayStep]?.content
               ) : (
                 <p
                   className="text-dirt-off-white font-sans font-bold text-2xl lg:text-[40px]"
@@ -226,7 +247,7 @@ export function SliderSection({
                     letterSpacing: "-2%",
                   }}
                 >
-                  {stopsData[currentStep]?.text}
+                  {stopsData[displayStep]?.text}
                 </p>
               )}
             </div>

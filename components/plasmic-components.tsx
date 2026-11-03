@@ -1045,6 +1045,20 @@ registerComponent(SliderSection, {
     headingMiddle: "string",
     headingEnd: "string",
     backgroundImage: "imageUrl",
+    defaultStop: {
+      type: "number",
+      displayName: "Default active stop (on load)",
+      description: "Which stop (1-based) is active when the page first loads.",
+      defaultValueHint: 1,
+      min: 1,
+    },
+    editorActiveStop: {
+      type: "number",
+      displayName: "Editor: show this stop",
+      description:
+        "Editor only — set to a stop number (1-based) to display and edit that stop here in Plasmic. Has no effect on the live site; the slider stays interactive there.",
+      min: 1,
+    },
     children: {
       type: "slot",
       displayName: "Stops",
