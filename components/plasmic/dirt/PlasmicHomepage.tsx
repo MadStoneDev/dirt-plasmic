@@ -171,6 +171,7 @@ export type PlasmicHomepage__OverridesType = {
   dirtRichText?: Flex__<typeof DirtRichText>;
   painPointsSection?: Flex__<typeof PainPointsSection>;
   sliderSection?: Flex__<typeof SliderSection>;
+  signsCtaSection?: Flex__<typeof SignsCTASection>;
   threeReasonsSection?: Flex__<typeof ThreeReasonsSection>;
   dirtFrameworkSection?: Flex__<typeof DirtFrameworkSection>;
   dirtProcessSection?: Flex__<typeof DirtProcessSection>;
@@ -596,25 +597,23 @@ function PlasmicHomepage__RenderFunc(props: {
 
             backgroundImage={"/plasmic/dirt/images/buildingsBackgroundJpg.jpg"}
             className={classNames("__wab_instance", sty.sliderSection)}
-            headingEnd={"the message"}
+            headingEnd={"the tech talk"}
             headingMiddle={"DIRT-ify "}
             headingStart={"Slide to "}
           >
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__azpEe)}
-              label={"Squeaky clean \u2028(and boring af)"}
+              label={"BORING AF"}
               text={
-                "\u201cWe provide tailored branding and messaging solutions to help construction companies position themselves effectively.\u201d"
+                '"Accelerate site feasibility workflows using AI-powered generative design intelligence to drive better investment outcomes."'
               }
             />
 
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__j4AKf)}
               image={"/plasmic/dirt/images/sliderDirt1Png2.png"}
-              label={"Well-washed"}
-              text={
-                "\u201cWe help construction and built-environment brands stand out with clear positioning and stronger messaging.\u201d"
-              }
+              label={"Smells like tech talk"}
+              text={'"Automate site feasibility and planning studies."'}
             />
 
             <SliderStop
@@ -654,28 +653,10 @@ function PlasmicHomepage__RenderFunc(props: {
             />
           </SliderSection>
           <SignsCTASection
-            className={classNames("__wab_instance", sty.signsCtaSection__aumDp)}
-          >
-            <SignsCTAItem
-              className={classNames("__wab_instance", sty.signsCtaItem__iDQl)}
-              text={"Sign 1"}
-            />
+            data-plasmic-name={"signsCtaSection"}
+            data-plasmic-override={overrides.signsCtaSection}
 
-            <SignsCTAItem
-              className={classNames("__wab_instance", sty.signsCtaItem__eThfk)}
-              text={"Sign 2"}
-            />
-
-            <SignsCTAItem
-              className={classNames("__wab_instance", sty.signsCtaItem__hD5Gb)}
-              text={"Sign 3"}
-            />
-          </SignsCTASection>
-          <SignsCTASection
-            className={classNames(
-              "__wab_instance",
-              sty.signsCtaSection___8Of17
-            )}
+            className={classNames("__wab_instance", sty.signsCtaSection)}
             ctaLabel={"Dig in with a call"}
             ctaLink={"/contact"}
             headingEnd={"y"}
@@ -1318,6 +1299,7 @@ const PlasmicDescendants = {
     "dirtRichText",
     "painPointsSection",
     "sliderSection",
+    "signsCtaSection",
     "threeReasonsSection",
     "dirtFrameworkSection",
     "dirtProcessSection",
@@ -1337,6 +1319,7 @@ const PlasmicDescendants = {
   dirtRichText: ["dirtRichText"],
   painPointsSection: ["painPointsSection"],
   sliderSection: ["sliderSection"],
+  signsCtaSection: ["signsCtaSection"],
   threeReasonsSection: ["threeReasonsSection"],
   dirtFrameworkSection: ["dirtFrameworkSection"],
   dirtProcessSection: ["dirtProcessSection"],
@@ -1361,6 +1344,7 @@ type NodeDefaultElementType = {
   dirtRichText: typeof DirtRichText;
   painPointsSection: typeof PainPointsSection;
   sliderSection: typeof SliderSection;
+  signsCtaSection: typeof SignsCTASection;
   threeReasonsSection: typeof ThreeReasonsSection;
   dirtFrameworkSection: typeof DirtFrameworkSection;
   dirtProcessSection: typeof DirtProcessSection;
@@ -1443,6 +1427,7 @@ export const PlasmicHomepage = Object.assign(
     dirtRichText: makeNodeComponent("dirtRichText"),
     painPointsSection: makeNodeComponent("painPointsSection"),
     sliderSection: makeNodeComponent("sliderSection"),
+    signsCtaSection: makeNodeComponent("signsCtaSection"),
     threeReasonsSection: makeNodeComponent("threeReasonsSection"),
     dirtFrameworkSection: makeNodeComponent("dirtFrameworkSection"),
     dirtProcessSection: makeNodeComponent("dirtProcessSection"),
