@@ -37,6 +37,7 @@ export function SliderSection({
       label: child.props?.label || "",
       text: child.props?.text || "",
       image: child.props?.image || "",
+      content: child.props?.children,
     }));
 
   // Default stops if none provided
@@ -44,12 +45,12 @@ export function SliderSection({
     stops.length > 0
       ? stops
       : [
-          { label: "Stop 1", text: "Content for stop 1", image: "" },
-          { label: "Stop 2", text: "Content for stop 2", image: "" },
-          { label: "Stop 3", text: "Content for stop 3", image: "" },
-          { label: "Stop 4", text: "Content for stop 4", image: "" },
-          { label: "Stop 5", text: "Content for stop 5", image: "" },
-          { label: "Stop 6", text: "Content for stop 6", image: "" },
+          { label: "Stop 1", text: "Content for stop 1", image: "", content: undefined as ReactNode },
+          { label: "Stop 2", text: "Content for stop 2", image: "", content: undefined as ReactNode },
+          { label: "Stop 3", text: "Content for stop 3", image: "", content: undefined as ReactNode },
+          { label: "Stop 4", text: "Content for stop 4", image: "", content: undefined as ReactNode },
+          { label: "Stop 5", text: "Content for stop 5", image: "", content: undefined as ReactNode },
+          { label: "Stop 6", text: "Content for stop 6", image: "", content: undefined as ReactNode },
         ];
 
   // Calculate the offset needed for the label to reach the edge
@@ -205,17 +206,21 @@ export function SliderSection({
               </div>
             </div>
 
-            {/* Step Content */}
+            {/* Step Content — the active stop's slot content, or its text fallback */}
             <div className="mt-28">
-              <p
-                className="text-dirt-off-white font-sans font-bold text-2xl lg:text-[40px]"
-                style={{
-                  lineHeight: "125%",
-                  letterSpacing: "-2%",
-                }}
-              >
-                {stopsData[currentStep]?.text}
-              </p>
+              {React.Children.count(stopsData[currentStep]?.content) > 0 ? (
+                stopsData[currentStep]?.content
+              ) : (
+                <p
+                  className="text-dirt-off-white font-sans font-bold text-2xl lg:text-[40px]"
+                  style={{
+                    lineHeight: "125%",
+                    letterSpacing: "-2%",
+                  }}
+                >
+                  {stopsData[currentStep]?.text}
+                </p>
+              )}
             </div>
           </div>
         </div>

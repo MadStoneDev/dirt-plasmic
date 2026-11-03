@@ -1029,6 +1029,10 @@ registerComponent(SliderStop, {
     label: "string",
     text: "string",
     image: "imageUrl",
+    children: {
+      type: "slot",
+      displayName: "Content (optional — overrides Text)",
+    },
   },
   importPath: "./components/sections/SliderStop",
 });
@@ -1048,32 +1052,50 @@ registerComponent(SliderSection, {
         {
           type: "component",
           name: "SliderStop",
-          props: { label: "Stop 1", text: "Content for stop 1" },
+          props: {
+            label: "BORING AF",
+            text: '"Leverage AI-powered generative design intelligence to optimise site feasibility workflows."',
+          },
         },
         {
           type: "component",
           name: "SliderStop",
-          props: { label: "Stop 2", text: "Content for stop 2" },
+          props: {
+            label: "WELL, THAT'S A START",
+            text: '"Generate building layouts and test development potential with automated site feasibility software."',
+          },
         },
         {
           type: "component",
           name: "SliderStop",
-          props: { label: "Stop 3", text: "Content for stop 3" },
+          props: {
+            label: "GETTING WARMER",
+            text: '"Property developers can test building layouts, site yield, setbacks and parking requirements."',
+          },
         },
         {
           type: "component",
           name: "SliderStop",
-          props: { label: "Stop 4", text: "Content for stop 4" },
+          props: {
+            label: "YOU'VE GOT MY ATTENTION",
+            text: '"Test building layouts, unit yields and parking requirements before committing to a site."',
+          },
         },
         {
           type: "component",
           name: "SliderStop",
-          props: { label: "Stop 5", text: "Content for stop 5" },
+          props: {
+            label: "WELL, WHY DIDN'T YOU SAY SO?",
+            text: '"Automate site feasibility studies and test multiple development scenarios in minutes."',
+          },
         },
         {
           type: "component",
           name: "SliderStop",
-          props: { label: "Stop 6", text: "Content for stop 6" },
+          props: {
+            label: "NOW WE'VE STRUCK DIRT",
+            text: '"Know which sites are worth chasing in minutes."',
+          },
         },
       ],
     },
