@@ -315,7 +315,7 @@ function PlasmicContact__RenderFunc(props: {
             linksHeading={"Get your hands dirty"}
             midgroundImage={"/plasmic/dirt/images/mainFooterMidgroundPng.png"}
             mobileBackgroundImage={
-              "/plasmic/dirt/images/mobileFooterDirtBackgroundPng3.png"
+              "/plasmic/dirt/images/mobileFooterDirtBackgroundPng2.png"
             }
             newsletterChildren={
               <PlasmicImg__
