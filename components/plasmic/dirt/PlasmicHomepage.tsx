@@ -379,7 +379,7 @@ function PlasmicHomepage__RenderFunc(props: {
               "From startups to scale-ups, we dig up your competitive edge and turn it into websites and sales materials that wins deals."
             }
             foregroundImage={"/plasmic/dirt/images/edSoilFrontPng.png"}
-            heading={"STRATEGY-LED WEBSITES FOR AEC SOFTWARE"}
+            heading={"STRATEGY-LED WEBSITES FOR \nAEC SOFTWARE"}
             midgroundImage={
               "/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"
             }
