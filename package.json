@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "@plasmicapp/cli": "^0.1.385",
-    "@plasmicapp/host": "^2.0.19",
-    "@plasmicapp/react-web": "^1.0.39",
+    "@plasmicapp/host": "^2.0.21",
+    "@plasmicapp/react-web": "^1.0.43",
     "@plasmicpkgs/antd5": "^0.0.328",
     "@plasmicpkgs/cms": "^0.0.41",
     "@plasmicpkgs/fetch": "^0.0.54",
