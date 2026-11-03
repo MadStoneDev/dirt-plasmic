@@ -605,7 +605,7 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames("__wab_instance", sty.sliderStop__azpEe)}
               label={"BORING AF"}
               text={
-                '"Accelerate site feasibility workflows using AI-powered generative design intelligence to drive better investment outcomes."'
+                '"Leverage AI-powered generative design intelligence to optimise site feasibility workflows."'
               }
             />
 
