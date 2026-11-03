@@ -244,14 +244,12 @@ function PlasmicAbout__RenderFunc(props: {
           <TaglineBanner
             data-plasmic-name={"taglineBanner"}
             data-plasmic-override={overrides.taglineBanner}
-
             className={classNames("__wab_instance", sty.taglineBanner)}
           />
 
           <DirtNav
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
-
             actions={
               <PlasmicLink__
                 className={classNames(
@@ -310,14 +308,12 @@ function PlasmicAbout__RenderFunc(props: {
           <section
             data-plasmic-name={"aboutHero"}
             data-plasmic-override={overrides.aboutHero}
-
             className={classNames("all", sty.aboutHero)}
           >
             <div className={classNames("all", sty.freeBox___8QbQv)}>
               <h1
                 data-plasmic-name={"h1"}
                 data-plasmic-override={overrides.h1}
-
                 className={classNames(
                   "all",
                   "h1",
@@ -393,7 +389,6 @@ function PlasmicAbout__RenderFunc(props: {
           <section
             data-plasmic-name={"ifWeHearTheWord"}
             data-plasmic-override={overrides.ifWeHearTheWord}
-
             className={classNames("all", sty.ifWeHearTheWord)}
           >
             <PlasmicImg__
@@ -619,7 +614,6 @@ function PlasmicAbout__RenderFunc(props: {
           <WhatWeBelieveSection
             data-plasmic-name={"whatWeBelieveSection"}
             data-plasmic-override={overrides.whatWeBelieveSection}
-
             className={classNames("__wab_instance", sty.whatWeBelieveSection)}
             details={
               <React.Fragment>
@@ -720,7 +714,6 @@ function PlasmicAbout__RenderFunc(props: {
           <section
             data-plasmic-name={"builtWithSpecialists"}
             data-plasmic-override={overrides.builtWithSpecialists}
-
             className={classNames("all", sty.builtWithSpecialists)}
           >
             <div className={classNames("all", "__wab_text", sty.text__hRrt8)}>
@@ -735,7 +728,6 @@ function PlasmicAbout__RenderFunc(props: {
           <TestimonialSection
             data-plasmic-name={"testimonialSection"}
             data-plasmic-override={overrides.testimonialSection}
-
             authorName={"Mark Taylor"}
             authorPhoto={"/plasmic/dirt/images/markTaylorJpg.jpg"}
             authorRole={"Core FDM"}
@@ -748,7 +740,6 @@ function PlasmicAbout__RenderFunc(props: {
           <FooterSection
             data-plasmic-name={"footerSection"}
             data-plasmic-override={overrides.footerSection}
-
             backgroundImage={"/plasmic/dirt/images/mainFooterBackdropPng.png"}
             bottomRightLink={
               "https://www.reddit.com/r/NatureIsFuckingLit/comments/1g015ns/elephant_throwing_dirt_on_a_crocodile_for_some/"

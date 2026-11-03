@@ -96,6 +96,7 @@ import { DirtFile } from "../../sections/DirtFile"; // plasmic-import: dvgTT-ZEN
 import { DirtFileSubItem } from "../../sections/DirtFileSubItem"; // plasmic-import: 3uB7FZW9uHTa/codeComponent
 import { ProsConsSection } from "../../sections/ProsConsSection"; // plasmic-import: qgjtoWkw9uzC/codeComponent
 import { ProsConsItem } from "../../sections/ProsConsItem"; // plasmic-import: xQe3SecThtay/codeComponent
+import { FooterSection } from "../../sections/FooterSection"; // plasmic-import: I7Z-mxcvFz5C/codeComponent
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 8kaaMUEQHxomwqwuKNMozy/styleTokensProvider
 
@@ -250,6 +251,8 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const $q = usePlasmicQueries(serverQueryTree, { $ctx, $props, $state: null });
 
+  const globalVariants = _useGlobalVariants();
+
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy($q),
     $ctx as PageCtx
@@ -311,19 +314,16 @@ function PlasmicHomepage__RenderFunc(props: {
           <TaglineBanner
             data-plasmic-name={"taglineBanner"}
             data-plasmic-override={overrides.taglineBanner}
-
             className={classNames("__wab_instance", sty.taglineBanner)}
           />
 
           <DirtNav
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
-
             actions={
               <NavigationContactButton
                 data-plasmic-name={"navigationContactButton"}
                 data-plasmic-override={overrides.navigationContactButton}
-
                 className={classNames(
                   "__wab_instance",
                   sty.navigationContactButton
@@ -371,7 +371,6 @@ function PlasmicHomepage__RenderFunc(props: {
           <HeroSection
             data-plasmic-name={"heroSection"}
             data-plasmic-override={overrides.heroSection}
-
             backgroundImage={"/plasmic/dirt/images/edSoilBackPng.png"}
             className={classNames("__wab_instance", sty.heroSection)}
             ctaLabel={"Get the DIRT"}
@@ -390,7 +389,6 @@ function PlasmicHomepage__RenderFunc(props: {
           <CompanyCarouselSection
             data-plasmic-name={"companiesWeCoveredInDirt"}
             data-plasmic-override={overrides.companiesWeCoveredInDirt}
-
             backgroundImage={"/plasmic/dirt/images/cutCompaniesDirtBgPng.png"}
             className={classNames(
               "__wab_instance",
@@ -461,7 +459,6 @@ function PlasmicHomepage__RenderFunc(props: {
                 <DirtRichText
                   data-plasmic-name={"dirtRichText"}
                   data-plasmic-override={overrides.dirtRichText}
-
                   className={classNames("__wab_instance", sty.dirtRichText)}
                   desktopFontSize={20}
                   fontSize={16}
@@ -485,7 +482,6 @@ function PlasmicHomepage__RenderFunc(props: {
           <PainPointsSection
             data-plasmic-name={"painPointsSection"}
             data-plasmic-override={overrides.painPointsSection}
-
             className={classNames("__wab_instance", sty.painPointsSection)}
             heading={"They didn't buy. Why?"}
             slides={
@@ -562,7 +558,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 "__wab_instance",
                 sty.painPointCheckbox__wNdgU
               )}
-              label={"It came down to price. It always comes down to price. "}
+              label={"The cost of switching is too high."}
             />
 
             <PainPointCheckbox
@@ -594,7 +590,6 @@ function PlasmicHomepage__RenderFunc(props: {
           <SliderSection
             data-plasmic-name={"sliderSection"}
             data-plasmic-override={overrides.sliderSection}
-
             backgroundImage={"/plasmic/dirt/images/buildingsBackgroundJpg.jpg"}
             className={classNames("__wab_instance", sty.sliderSection)}
             editorActiveStop={3}
@@ -684,7 +679,6 @@ function PlasmicHomepage__RenderFunc(props: {
                 data-plasmic-override={
                   overrides.turnPastProjectsIntoWinningProposalsInMinutes
                 }
-
                 className={classNames(
                   "all",
                   "__wab_text",
@@ -700,7 +694,6 @@ function PlasmicHomepage__RenderFunc(props: {
           <SignsCTASection
             data-plasmic-name={"signsCtaSection"}
             data-plasmic-override={overrides.signsCtaSection}
-
             className={classNames("__wab_instance", sty.signsCtaSection)}
             ctaLabel={"Dig in with a call"}
             ctaLink={"/contact"}
@@ -751,7 +744,6 @@ function PlasmicHomepage__RenderFunc(props: {
           <ThreeReasonsSection
             data-plasmic-name={"threeReasonsSection"}
             data-plasmic-override={overrides.threeReasonsSection}
-
             className={classNames("__wab_instance", sty.threeReasonsSection)}
             description={
               "Whether you\u2019re reimagining a legacy brand, targeting new markets, or pushing for more clients, we\u2019ll position your brand to grow."
@@ -797,7 +789,6 @@ function PlasmicHomepage__RenderFunc(props: {
           <DirtFrameworkSection
             data-plasmic-name={"dirtFrameworkSection"}
             data-plasmic-override={overrides.dirtFrameworkSection}
-
             className={classNames("__wab_instance", sty.dirtFrameworkSection)}
             description={
               "Yes, we have a framework. Conveniently, it spells DIRT. \n\nWe don\u2019t stop at the strategy. You get the words to use, written and ready to go."
@@ -862,7 +853,6 @@ function PlasmicHomepage__RenderFunc(props: {
           <DirtProcessSection
             data-plasmic-name={"dirtProcessSection"}
             data-plasmic-override={overrides.dirtProcessSection}
-
             bottomDescription={
               "DIRT nails your positioning and messaging first. Then we bring in a designer with a style that matches your message. Instead of a generic template, you get the perfect creative partner for your project."
             }
@@ -916,7 +906,6 @@ function PlasmicHomepage__RenderFunc(props: {
           <DirtFilesSection
             data-plasmic-name={"dirtFilesSection"}
             data-plasmic-override={overrides.dirtFilesSection}
-
             className={classNames("__wab_instance", sty.dirtFilesSection)}
             description={"Scratch the surface of our latest work and launches."}
             headingEnd={" files"}
@@ -1093,7 +1082,6 @@ function PlasmicHomepage__RenderFunc(props: {
           <ProsConsSection
             data-plasmic-name={"prosConsSection"}
             data-plasmic-override={overrides.prosConsSection}
-
             className={classNames("__wab_instance", sty.prosConsSection)}
             cons={
               <React.Fragment>
@@ -1187,6 +1175,152 @@ function PlasmicHomepage__RenderFunc(props: {
             customTextColor={``}
             logo={"/plasmic/dirt/images/studiomxLogoPng.png"}
             textColor={"dirt-deep"}
+          />
+
+          {(hasVariant(globalVariants, "screen", "tablet") ? true : false) ? (
+            <FooterSection
+              backgroundImage={"/plasmic/dirt/images/mainFooterBackdropPng.png"}
+              bottomRightLink={
+                "https://www.reddit.com/r/NatureIsFuckingLit/comments/1g015ns/elephant_throwing_dirt_on_a_crocodile_for_some/"
+              }
+              bottomRightText={
+                "Click here to  toss some DIRT on the competition"
+              }
+              className={classNames(
+                "__wab_instance",
+                sty.footerSection___3Puei
+              )}
+              contactDescription={
+                "Dig what we're doing but don't need us at the moment? Refer a client to DIRT. \n\nWhen they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT.)"
+              }
+              contactFormMode={"activecampaign"}
+              contactHeading={"Refer & Earn"}
+              contactListId={"DIRT List"}
+              contactTags={"DIRT contact form"}
+              copyrightText={
+                "\u00a9 2026 DIRT Agency. All rights reserved. Built from the ground up."
+              }
+              description={
+                "Tell us your DIRTiest dreams and we'll make them come true:"
+              }
+              footerDescription={
+                "Fresh messaging, branding, and positioning from the ground up."
+              }
+              footerLogo={
+                "/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"
+              }
+              heading1={"Brilliant brands don\u2019t grow on trees."}
+              heading1Uppercase={true}
+              heading2={"They grow in the DIRT."}
+              link1Text={"About"}
+              link1Url={"/about"}
+              link2Text={"Contact"}
+              link2Url={"/contact"}
+              linksHeading={"Get your hands dirty"}
+              midgroundImage={"/plasmic/dirt/images/mainFooterMidgroundPng.png"}
+              mobileBackgroundImage={
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? "/plasmic/dirt/images/mobileFooterDirtBackgroundPng3.png"
+                  : "/plasmic/dirt/images/mobileFooterDirtBackgroundPng2.png"
+              }
+              newsletterChildren={
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__vpewu)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"70px"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/dirt/images/dirtDispatchFooterLogoPng.png",
+                    fullWidth: 98,
+                    fullHeight: 53,
+                    aspectRatio: undefined
+                  }}
+                />
+              }
+              newsletterDescription={
+                "Digging up branding insights, concrete messaging examples, and sharp takes on positioning. Delivered bi-monthly(ish)."
+              }
+              newsletterHeading={"Get Dirt Dispatch"}
+              newsletterListId={"DIRT List"}
+              newsletterTags={"DIRT newsletter submission"}
+              recipientEmail={"hello@thedirtagency.com"}
+              separatorImage={"/plasmic/dirt/images/line2Png.png"}
+              showHeroForm={true}
+              useMainHeading={false}
+            />
+          ) : null}
+          <FooterSection
+            backgroundImage={"/plasmic/dirt/images/mainFooterBackdropPng.png"}
+            bottomRightLink={
+              "https://www.reddit.com/r/NatureIsFuckingLit/comments/1g015ns/elephant_throwing_dirt_on_a_crocodile_for_some/"
+            }
+            bottomRightText={"Click here to  toss some DIRT on the competition"}
+            className={classNames("__wab_instance", sty.footerSection__e03Pt)}
+            contactDescription={
+              "Dig what we're doing but don't need us at the moment? Refer a client to DIRT. \n\nWhen they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT.)"
+            }
+            contactFormMode={"activecampaign"}
+            contactHeading={"Refer & Earn"}
+            contactListId={"DIRT List"}
+            contactTags={"DIRT contact form"}
+            copyrightText={
+              "\u00a9 2026 DIRT Agency. All rights reserved. Built from the ground up."
+            }
+            description={
+              "Tell us your DIRTiest dreams and we'll make them come true:"
+            }
+            footerDescription={
+              "Fresh messaging, branding, and positioning from the ground up."
+            }
+            footerLogo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
+            heading1={"Brilliant brands don\u2019t grow on trees."}
+            heading1Uppercase={true}
+            heading2={"They grow in the DIRT."}
+            link1Text={"About"}
+            link1Url={"/about"}
+            link2Text={"Contact"}
+            link2Url={"/contact"}
+            linksHeading={"Get your hands dirty"}
+            midgroundImage={"/plasmic/dirt/images/mainFooterMidgroundPng.png"}
+            mobileBackgroundImage={
+              hasVariant(globalVariants, "screen", "mobile")
+                ? "/plasmic/dirt/images/mobileFooterDirtBackgroundPng3.png"
+                : "/plasmic/dirt/images/mobileFooterDirtBackgroundPng2.png"
+            }
+            newsletterChildren={
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__arTwa)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"70px"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/dirt/images/dirtDispatchFooterLogoPng.png",
+                  fullWidth: 98,
+                  fullHeight: 53,
+                  aspectRatio: undefined
+                }}
+              />
+            }
+            newsletterDescription={
+              "Digging up branding insights, concrete messaging examples, and sharp takes on positioning. Delivered bi-monthly(ish)."
+            }
+            newsletterHeading={"Get Dirt Dispatch"}
+            newsletterListId={"DIRT List"}
+            newsletterTags={"DIRT newsletter submission"}
+            recipientEmail={"hello@thedirtagency.com"}
+            separatorImage={"/plasmic/dirt/images/line2Png.png"}
+            showHeroForm={true}
+            useMainHeading={false}
           />
         </div>
       </div>

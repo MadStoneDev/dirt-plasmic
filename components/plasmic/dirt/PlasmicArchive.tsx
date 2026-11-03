@@ -337,12 +337,10 @@ function PlasmicArchive__RenderFunc(props: {
           <DirtNav
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
-
             actions={
               <NavigationContactButton
                 data-plasmic-name={"navigationContactButton"}
                 data-plasmic-override={overrides.navigationContactButton}
-
                 className={classNames(
                   "__wab_instance",
                   sty.navigationContactButton
@@ -391,7 +389,6 @@ function PlasmicArchive__RenderFunc(props: {
             <h1
               data-plasmic-name={"h1"}
               data-plasmic-override={overrides.h1}
-
               className={classNames(
                 "all",
                 "h1",
@@ -928,7 +925,6 @@ function PlasmicArchive__RenderFunc(props: {
               <h3
                 data-plasmic-name={"h3"}
                 data-plasmic-override={overrides.h3}
-
                 className={classNames(
                   "all",
                   "h3",
@@ -947,7 +943,6 @@ function PlasmicArchive__RenderFunc(props: {
               <NewsletterFormSection
                 data-plasmic-name={"newsletterFormSection"}
                 data-plasmic-override={overrides.newsletterFormSection}
-
                 className={classNames(
                   "__wab_instance",
                   sty.newsletterFormSection

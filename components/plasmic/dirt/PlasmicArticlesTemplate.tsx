@@ -290,12 +290,10 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
           <DirtNav
             data-plasmic-name={"dirtNav"}
             data-plasmic-override={overrides.dirtNav}
-
             actions={
               <NavigationContactButton
                 data-plasmic-name={"navigationContactButton"}
                 data-plasmic-override={overrides.navigationContactButton}
-
                 className={classNames(
                   "__wab_instance",
                   sty.navigationContactButton
@@ -500,7 +498,6 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                   <Embed
                     data-plasmic-name={"customPageStyling"}
                     data-plasmic-override={overrides.customPageStyling}
-
                     className={classNames(
                       "__wab_instance",
                       sty.customPageStyling
@@ -518,7 +515,6 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                       <PlasmicImg__
                         data-plasmic-name={"img"}
                         data-plasmic-override={overrides.img}
-
                         alt={""}
                         className={classNames(sty.img)}
                         displayHeight={
@@ -707,7 +703,6 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
               <NewsletterFormSection
                 data-plasmic-name={"newsletterFormSection"}
                 data-plasmic-override={overrides.newsletterFormSection}
-
                 className={classNames(
                   "__wab_instance",
                   sty.newsletterFormSection
