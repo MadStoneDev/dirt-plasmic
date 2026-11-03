@@ -480,51 +480,27 @@
   max-width: 100%;
   object-fit: cover;
 }
-.footerSection___3Puei:global(.__wab_instance) {
+.footerSection:global(.__wab_instance) {
   animation: none;
   max-width: 100%;
   object-fit: cover;
 }
 @media (max-width: 1023px) {
-  .footerSection___3Puei:global(.__wab_instance) {
+  .footerSection:global(.__wab_instance) {
     animation: none;
   }
 }
 @media (max-width: 511px) {
-  .footerSection___3Puei:global(.__wab_instance) {
+  .footerSection:global(.__wab_instance) {
     animation: none;
   }
 }
-.img__vpewu {
+.img {
   animation: none;
   object-fit: cover;
   max-width: 70px;
   margin-bottom: 12px;
 }
-.img__vpewu > picture > img {
-  object-fit: cover;
-}
-.footerSection__e03Pt:global(.__wab_instance) {
-  animation: none;
-  max-width: 100%;
-  object-fit: cover;
-}
-@media (max-width: 1023px) {
-  .footerSection__e03Pt:global(.__wab_instance) {
-    animation: none;
-  }
-}
-@media (max-width: 511px) {
-  .footerSection__e03Pt:global(.__wab_instance) {
-    animation: none;
-  }
-}
-.img__arTwa {
-  animation: none;
-  object-fit: cover;
-  max-width: 70px;
-  margin-bottom: 12px;
-}
-.img__arTwa > picture > img {
+.img > picture > img {
   object-fit: cover;
 }

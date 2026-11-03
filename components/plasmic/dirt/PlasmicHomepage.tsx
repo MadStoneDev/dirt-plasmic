@@ -176,6 +176,8 @@ export type PlasmicHomepage__OverridesType = {
   dirtProcessSection?: Flex__<typeof DirtProcessSection>;
   dirtFilesSection?: Flex__<typeof DirtFilesSection>;
   prosConsSection?: Flex__<typeof ProsConsSection>;
+  footerSection?: Flex__<typeof FooterSection>;
+  img?: Flex__<typeof PlasmicImg__>;
 };
 
 export interface DefaultHomepageProps {}
@@ -1177,90 +1179,15 @@ function PlasmicHomepage__RenderFunc(props: {
             textColor={"dirt-deep"}
           />
 
-          {(hasVariant(globalVariants, "screen", "tablet") ? true : false) ? (
-            <FooterSection
-              backgroundImage={"/plasmic/dirt/images/mainFooterBackdropPng.png"}
-              bottomRightLink={
-                "https://www.reddit.com/r/NatureIsFuckingLit/comments/1g015ns/elephant_throwing_dirt_on_a_crocodile_for_some/"
-              }
-              bottomRightText={
-                "Click here to  toss some DIRT on the competition"
-              }
-              className={classNames(
-                "__wab_instance",
-                sty.footerSection___3Puei
-              )}
-              contactDescription={
-                "Dig what we're doing but don't need us at the moment? Refer a client to DIRT. \n\nWhen they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT.)"
-              }
-              contactFormMode={"activecampaign"}
-              contactHeading={"Refer & Earn"}
-              contactListId={"DIRT List"}
-              contactTags={"DIRT contact form"}
-              copyrightText={
-                "\u00a9 2026 DIRT Agency. All rights reserved. Built from the ground up."
-              }
-              description={
-                "Tell us your DIRTiest dreams and we'll make them come true:"
-              }
-              footerDescription={
-                "Fresh messaging, branding, and positioning from the ground up."
-              }
-              footerLogo={
-                "/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"
-              }
-              heading1={"Brilliant brands don\u2019t grow on trees."}
-              heading1Uppercase={true}
-              heading2={"They grow in the DIRT."}
-              link1Text={"About"}
-              link1Url={"/about"}
-              link2Text={"Contact"}
-              link2Url={"/contact"}
-              linksHeading={"Get your hands dirty"}
-              midgroundImage={"/plasmic/dirt/images/mainFooterMidgroundPng.png"}
-              mobileBackgroundImage={
-                hasVariant(globalVariants, "screen", "mobile")
-                  ? "/plasmic/dirt/images/mobileFooterDirtBackgroundPng3.png"
-                  : "/plasmic/dirt/images/mobileFooterDirtBackgroundPng2.png"
-              }
-              newsletterChildren={
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__vpewu)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"70px"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/dirt/images/dirtDispatchFooterLogoPng.png",
-                    fullWidth: 98,
-                    fullHeight: 53,
-                    aspectRatio: undefined
-                  }}
-                />
-              }
-              newsletterDescription={
-                "Digging up branding insights, concrete messaging examples, and sharp takes on positioning. Delivered bi-monthly(ish)."
-              }
-              newsletterHeading={"Get Dirt Dispatch"}
-              newsletterListId={"DIRT List"}
-              newsletterTags={"DIRT newsletter submission"}
-              recipientEmail={"hello@thedirtagency.com"}
-              separatorImage={"/plasmic/dirt/images/line2Png.png"}
-              showHeroForm={true}
-              useMainHeading={false}
-            />
-          ) : null}
           <FooterSection
+            data-plasmic-name={"footerSection"}
+            data-plasmic-override={overrides.footerSection}
             backgroundImage={"/plasmic/dirt/images/mainFooterBackdropPng.png"}
             bottomRightLink={
               "https://www.reddit.com/r/NatureIsFuckingLit/comments/1g015ns/elephant_throwing_dirt_on_a_crocodile_for_some/"
             }
             bottomRightText={"Click here to  toss some DIRT on the competition"}
-            className={classNames("__wab_instance", sty.footerSection__e03Pt)}
+            className={classNames("__wab_instance", sty.footerSection)}
             contactDescription={
               "Dig what we're doing but don't need us at the moment? Refer a client to DIRT. \n\nWhen they sign on, we'll send you a 5% referral fee. (A little thank you for spreading the DIRT.)"
             }
@@ -1294,8 +1221,10 @@ function PlasmicHomepage__RenderFunc(props: {
             }
             newsletterChildren={
               <PlasmicImg__
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img__arTwa)}
+                className={classNames(sty.img)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"70px"}
@@ -1345,7 +1274,9 @@ const PlasmicDescendants = {
     "dirtFrameworkSection",
     "dirtProcessSection",
     "dirtFilesSection",
-    "prosConsSection"
+    "prosConsSection",
+    "footerSection",
+    "img"
   ],
   taglineBanner: ["taglineBanner"],
   dirtNav: ["dirtNav", "navigationContactButton"],
@@ -1366,7 +1297,9 @@ const PlasmicDescendants = {
   dirtFrameworkSection: ["dirtFrameworkSection"],
   dirtProcessSection: ["dirtProcessSection"],
   dirtFilesSection: ["dirtFilesSection"],
-  prosConsSection: ["prosConsSection"]
+  prosConsSection: ["prosConsSection"],
+  footerSection: ["footerSection", "img"],
+  img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1388,6 +1321,8 @@ type NodeDefaultElementType = {
   dirtProcessSection: typeof DirtProcessSection;
   dirtFilesSection: typeof DirtFilesSection;
   prosConsSection: typeof ProsConsSection;
+  footerSection: typeof FooterSection;
+  img: typeof PlasmicImg__;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1469,6 +1404,8 @@ export const PlasmicHomepage = Object.assign(
     dirtProcessSection: makeNodeComponent("dirtProcessSection"),
     dirtFilesSection: makeNodeComponent("dirtFilesSection"),
     prosConsSection: makeNodeComponent("prosConsSection"),
+    footerSection: makeNodeComponent("footerSection"),
+    img: makeNodeComponent("img"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
