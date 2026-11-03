@@ -287,6 +287,15 @@ function PlasmicNewsletter__RenderFunc(props: {
                 <DirtNavLink
                   className={classNames(
                     "__wab_instance",
+                    sty.dirtNavLink___00GxW
+                  )}
+                  href={"/archive"}
+                  label={"Blog"}
+                />
+
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
                     sty.dirtNavLink__qzdyE
                   )}
                   href={"/contact"}

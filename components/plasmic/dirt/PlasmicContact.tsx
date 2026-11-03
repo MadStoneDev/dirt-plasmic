@@ -253,6 +253,15 @@ function PlasmicContact__RenderFunc(props: {
                 <DirtNavLink
                   className={classNames(
                     "__wab_instance",
+                    sty.dirtNavLink__hSjhL
+                  )}
+                  href={"/archive"}
+                  label={"Blog"}
+                />
+
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
                     sty.dirtNavLink___5Jhnt
                   )}
                   href={"/about"}

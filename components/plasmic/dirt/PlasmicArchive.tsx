@@ -367,6 +367,15 @@ function PlasmicArchive__RenderFunc(props: {
                 <DirtNavLink
                   className={classNames(
                     "__wab_instance",
+                    sty.dirtNavLink__ugduj
+                  )}
+                  href={"/archive"}
+                  label={"Blog"}
+                />
+
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
                     sty.dirtNavLink__k7Q8E
                   )}
                   href={"/contact"}

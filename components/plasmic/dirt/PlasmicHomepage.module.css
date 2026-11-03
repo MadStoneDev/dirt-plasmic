@@ -30,6 +30,10 @@
   max-width: 100%;
   object-fit: cover;
 }
+.dirtNavLink__ggi8U:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
 .dirtNavLink__yXRrJ:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -475,54 +479,4 @@
 .testimonialSection__xAfa:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
-}
-.footerSection:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.img {
-  object-fit: contain;
-  max-width: 70px;
-  margin-bottom: 12px;
-}
-.img > picture > img {
-  object-fit: contain;
-}
-.cmsDataFetcher:global(.__wab_instance) {
-  width: 100%;
-  display: flex;
-  max-width: 100%;
-  flex-direction: column;
-  object-fit: cover;
-  min-width: 0;
-}
-.freeBox {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
-}
-.cmsEntryField:global(.__wab_instance) {
-  object-fit: cover;
-  max-width: 100%;
-}
-.text__nKCd5 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.text__cBL2 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
 }

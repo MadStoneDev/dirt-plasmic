@@ -320,6 +320,15 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                 <DirtNavLink
                   className={classNames(
                     "__wab_instance",
+                    sty.dirtNavLink__aVeJg
+                  )}
+                  href={"/archive"}
+                  label={"Blog"}
+                />
+
+                <DirtNavLink
+                  className={classNames(
+                    "__wab_instance",
                     sty.dirtNavLink__dq5Sc
                   )}
                   href={"/contact"}
