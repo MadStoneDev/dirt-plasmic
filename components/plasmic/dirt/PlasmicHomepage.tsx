@@ -598,7 +598,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
             backgroundImage={"/plasmic/dirt/images/buildingsBackgroundJpg.jpg"}
             className={classNames("__wab_instance", sty.sliderSection)}
-            editorActiveStop={1}
+            editorActiveStop={4}
             headingEnd={"the tech talk"}
             headingMiddle={"DIRT-ify "}
             headingStart={"Slide to "}
@@ -801,7 +801,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
             className={classNames("__wab_instance", sty.dirtFrameworkSection)}
             description={
-              "Yes, we have a framework. Conveniently, it spells DIRT. \n\nEvery phase ends with something you can hold, use and hand to your team."
+              "Yes, we have a framework. Conveniently, it spells DIRT. \n\nWe don\u2019t stop at the strategy. You get the words to use, written and ready to go."
             }
             headingEnd={"framework"}
             headingHighlight={" DIRT "}
@@ -815,7 +815,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.dirtFrameworkBlock__r8Q2R
               )}
               description={
-                "Dig deep to uncover why customers pick you over everything else. We interview users, review your sales calls what drives their decisions and where the biggest market opportunities lie."
+                "We dig deep to uncover why customers choose you. We interview users, review your sales calls and map you you're up against. "
               }
               heading={"Discover"}
               overlayColor={"dirt-deep"}
@@ -828,7 +828,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.dirtFrameworkBlock___6ZNob
               )}
               description={
-                "Find the X factor that makes you different. Plant your stake so you become the obvious choice."
+                "We find the X factor that makes you different. We make the hard calls with you: who you\u2019re for, what you replace and why you\u2019re the obvious choice."
               }
               heading={"Identify"}
               overlayColor={"dirt-pop"}
@@ -841,7 +841,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.dirtFrameworkBlock__gCvvr
               )}
               description={
-                "Turn your positioning into messaging that speaks to the problems your buyers care about."
+                "We turn your positioning into messages for each buyer, with proof points and answers to the objections that stall deals."
               }
               heading={"Refine"}
               overlayColor={"dirt-green"}
@@ -854,7 +854,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.dirtFrameworkBlock__c8Sit
               )}
               description={
-                "Turn your messaging into a website, sales deck, socials and more, in a distinct brand voice."
+                "We put your messaging strategy to work, writing website copy, sales decks, demo scrips, LinkedIn posts and more, all in one distinct brand voice."
               }
               heading={"Tell"}
               overlayColor={"dirt-blue"}
