@@ -612,44 +612,44 @@ function PlasmicHomepage__RenderFunc(props: {
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__j4AKf)}
               image={"/plasmic/dirt/images/sliderDirt1Png2.png"}
-              label={"Smells like tech talk"}
-              text={'"Automate site feasibility and planning studies."'}
+              label={"WELL, THAT'S A START"}
+              text={
+                '"Automate site planning and feasibility studies with software that generates building layouts and tests development potential."'
+              }
             />
 
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__vludv)}
               image={"/plasmic/dirt/images/sliderDirt2Png2.png"}
-              label={"Slightly \u2028smudged"}
+              label={"GETTING WARMER"}
               text={
-                "\u201cWe nudge your brand out of the \u2018safe and samey\u2019 zone and into territory with a little more edge.\u201d"
+                '"Property developers can test site yield, building massing, setbacks and parking before committing to a land purchase."'
               }
             />
 
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop___7LV8G)}
               image={"/plasmic/dirt/images/sliderDirt3Png.png"}
-              label={"Grimy"}
+              label={"YOU'VE GOT MY ATTENTION"}
               text={
-                "\u201cStrategic brand messaging that\u2019s so on-point it wipes years of dust off your reputation.\u201d"
+                '"Test building layouts, unit yields and parking requirements before committing to a site."'
               }
             />
 
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__uwXxm)}
               image={"/plasmic/dirt/images/sliderDirt4Png.png"}
-              label={"Filthy"}
+              label={"WELL, WHY DIDN'T YOU SAY SO?"}
               text={
-                "\u201cOther generic messaging agencies panic at the smell of wet cement. We breathe that sh*t in.\u201d"
+                '"Automate site feasibility studies and test multiple development scenarios in minutes."'
               }
             />
 
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__cvXh)}
               image={"/plasmic/dirt/images/sliderDirt5Png.png"}
-              label={"downright dirt-y"}
-              text={
-                "\u201cWe take your limp, half-baked brand, drag it face-first through the mud and rebuild it so hard your competitors feel it in their kidneys.\u201d"
-              }
+              label={"NOW WE'VE STRUCK DIRT"}
+              text={'"Know which sites are worth chasing in minutes."'}
             />
           </SliderSection>
           <SignsCTASection
