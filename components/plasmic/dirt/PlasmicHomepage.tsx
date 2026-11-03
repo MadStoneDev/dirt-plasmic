@@ -171,6 +171,7 @@ export type PlasmicHomepage__OverridesType = {
   dirtRichText?: Flex__<typeof DirtRichText>;
   painPointsSection?: Flex__<typeof PainPointsSection>;
   sliderSection?: Flex__<typeof SliderSection>;
+  turnPastProjectsIntoWinningProposalsInMinutes?: Flex__<"div">;
   signsCtaSection?: Flex__<typeof SignsCTASection>;
   threeReasonsSection?: Flex__<typeof ThreeReasonsSection>;
   dirtFrameworkSection?: Flex__<typeof DirtFrameworkSection>;
@@ -597,6 +598,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
             backgroundImage={"/plasmic/dirt/images/buildingsBackgroundJpg.jpg"}
             className={classNames("__wab_instance", sty.sliderSection)}
+            editorActiveStop={1}
             headingEnd={"the tech talk"}
             headingMiddle={"DIRT-ify "}
             headingStart={"Slide to "}
@@ -607,8 +609,13 @@ function PlasmicHomepage__RenderFunc(props: {
               text={
                 '"Leverage AI-powered proposal intelligence to streamline pursuit workflows, optimise content management and accelerate business growth."'
               }
-            />
-
+            >
+              <div className={classNames("all", "__wab_text", sty.text__qyKw7)}>
+                {
+                  '"Leverage AI-powered proposal intelligence to streamline pursuit workflows, optimise content management and accelerate business growth."'
+                }
+              </div>
+            </SliderStop>
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__j4AKf)}
               image={"/plasmic/dirt/images/sliderDirt1Png2.png"}
@@ -616,8 +623,13 @@ function PlasmicHomepage__RenderFunc(props: {
               text={
                 '"AI-powered proposal software that helps architecture and engineering firms create proposals faster."'
               }
-            />
-
+            >
+              <div className={classNames("all", "__wab_text", sty.text__sPgxZ)}>
+                {
+                  '"AI-powered proposal software that helps architecture and engineering firms create proposals faster."'
+                }
+              </div>
+            </SliderStop>
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__vludv)}
               image={"/plasmic/dirt/images/sliderDirt2Png2.png"}
@@ -625,8 +637,13 @@ function PlasmicHomepage__RenderFunc(props: {
               text={
                 '"Help AEC marketing teams write proposals faster using existing project experience, staff CVs and past submissions."'
               }
-            />
-
+            >
+              <div className={classNames("all", "__wab_text", sty.text__lvuhh)}>
+                {
+                  '"Help AEC marketing teams write proposals faster using existing project experience, staff CVs and past submissions."'
+                }
+              </div>
+            </SliderStop>
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop___7LV8G)}
               image={"/plasmic/dirt/images/sliderDirt3Png.png"}
@@ -634,8 +651,13 @@ function PlasmicHomepage__RenderFunc(props: {
               text={
                 '"Find the right project examples, staff CVs and proposal content without digging through old files."'
               }
-            />
-
+            >
+              <div className={classNames("all", "__wab_text", sty.text__gTb1U)}>
+                {
+                  '"Find the right project examples, staff CVs and proposal content without digging through old files."'
+                }
+              </div>
+            </SliderStop>
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__uwXxm)}
               image={"/plasmic/dirt/images/sliderDirt4Png.png"}
@@ -643,14 +665,38 @@ function PlasmicHomepage__RenderFunc(props: {
               text={
                 '"Build proposals faster using your best project experience, staff CVs and past submissions."'
               }
-            />
-
+            >
+              <div className={classNames("all", "__wab_text", sty.text__hWVbY)}>
+                {
+                  '"Build proposals faster using your best project experience, staff CVs and past submissions."'
+                }
+              </div>
+            </SliderStop>
             <SliderStop
               className={classNames("__wab_instance", sty.sliderStop__cvXh)}
               image={"/plasmic/dirt/images/sliderDirt5Png.png"}
               label={"NOW WE'VE STRUCK DIRT"}
               text={'"Turn past projects into winning proposals in minutes."'}
-            />
+            >
+              <div
+                data-plasmic-name={
+                  "turnPastProjectsIntoWinningProposalsInMinutes"
+                }
+                data-plasmic-override={
+                  overrides.turnPastProjectsIntoWinningProposalsInMinutes
+                }
+
+                className={classNames(
+                  "all",
+                  "__wab_text",
+                  sty.turnPastProjectsIntoWinningProposalsInMinutes
+                )}
+              >
+                {
+                  '"Build proposals faster using your best project experience, staff CVs and past submissions."'
+                }
+              </div>
+            </SliderStop>
           </SliderSection>
           <SignsCTASection
             data-plasmic-name={"signsCtaSection"}
@@ -755,7 +801,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
             className={classNames("__wab_instance", sty.dirtFrameworkSection)}
             description={
-              "At DIRT, we have a proven approach to building strategic brands. These are the four levels that lead to strong positioning and confident market share growth."
+              "Yes, we have a framework. Conveniently, it spells DIRT. \n\nEvery phase ends with something you can hold, use and hand to your team."
             }
             headingEnd={"framework"}
             headingHighlight={" DIRT "}
@@ -769,7 +815,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.dirtFrameworkBlock__r8Q2R
               )}
               description={
-                "Dig deep to unearth your ideal customers, what drives their decisions and where the biggest market opportunities lie."
+                "Dig deep to uncover why customers pick you over everything else. We interview users, review your sales calls what drives their decisions and where the biggest market opportunities lie."
               }
               heading={"Discover"}
               overlayColor={"dirt-deep"}
@@ -1299,6 +1345,7 @@ const PlasmicDescendants = {
     "dirtRichText",
     "painPointsSection",
     "sliderSection",
+    "turnPastProjectsIntoWinningProposalsInMinutes",
     "signsCtaSection",
     "threeReasonsSection",
     "dirtFrameworkSection",
@@ -1318,7 +1365,13 @@ const PlasmicDescendants = {
   companiesWeCoveredInDirt: ["companiesWeCoveredInDirt"],
   dirtRichText: ["dirtRichText"],
   painPointsSection: ["painPointsSection"],
-  sliderSection: ["sliderSection"],
+  sliderSection: [
+    "sliderSection",
+    "turnPastProjectsIntoWinningProposalsInMinutes"
+  ],
+  turnPastProjectsIntoWinningProposalsInMinutes: [
+    "turnPastProjectsIntoWinningProposalsInMinutes"
+  ],
   signsCtaSection: ["signsCtaSection"],
   threeReasonsSection: ["threeReasonsSection"],
   dirtFrameworkSection: ["dirtFrameworkSection"],
@@ -1344,6 +1397,7 @@ type NodeDefaultElementType = {
   dirtRichText: typeof DirtRichText;
   painPointsSection: typeof PainPointsSection;
   sliderSection: typeof SliderSection;
+  turnPastProjectsIntoWinningProposalsInMinutes: "div";
   signsCtaSection: typeof SignsCTASection;
   threeReasonsSection: typeof ThreeReasonsSection;
   dirtFrameworkSection: typeof DirtFrameworkSection;
@@ -1427,6 +1481,9 @@ export const PlasmicHomepage = Object.assign(
     dirtRichText: makeNodeComponent("dirtRichText"),
     painPointsSection: makeNodeComponent("painPointsSection"),
     sliderSection: makeNodeComponent("sliderSection"),
+    turnPastProjectsIntoWinningProposalsInMinutes: makeNodeComponent(
+      "turnPastProjectsIntoWinningProposalsInMinutes"
+    ),
     signsCtaSection: makeNodeComponent("signsCtaSection"),
     threeReasonsSection: makeNodeComponent("threeReasonsSection"),
     dirtFrameworkSection: makeNodeComponent("dirtFrameworkSection"),
