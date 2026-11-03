@@ -598,7 +598,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
             backgroundImage={"/plasmic/dirt/images/buildingsBackgroundJpg.jpg"}
             className={classNames("__wab_instance", sty.sliderSection)}
-            editorActiveStop={4}
+            editorActiveStop={3}
             headingEnd={"the tech talk"}
             headingMiddle={"DIRT-ify "}
             headingStart={"Slide to "}
@@ -869,9 +869,9 @@ function PlasmicHomepage__RenderFunc(props: {
             }
             bottomHeading={"*Note: The DIRT Design Bench is deep and wide"}
             className={classNames("__wab_instance", sty.dirtProcessSection)}
-            headingEnd={", we get to work"}
-            headingHighlight={"grounded"}
-            headingStart={"Once you're "}
+            headingEnd={". Then we build around it"}
+            headingHighlight={"message"}
+            headingStart={"First, we nail the "}
           >
             <DirtProcessStep
               className={classNames(

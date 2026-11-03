@@ -624,6 +624,11 @@
           "id": "DVgFcolPJbvv",
           "name": "ed_SOIL FRONT.png",
           "filePath": "../public/plasmic/dirt/images/edSoilFrontPng.png"
+        },
+        {
+          "id": "lO7TXgP-EqmB",
+          "name": "Logo.png",
+          "filePath": "../public/plasmic/dirt/images/logoPng.png"
         }
       ],
       "indirect": false,
