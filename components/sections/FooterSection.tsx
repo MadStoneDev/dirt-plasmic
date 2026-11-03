@@ -257,16 +257,21 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
       {(mobileBackgroundImage || backgroundImage) && (
         <>
           {/* Mobile */}
+          {/* The mobile asset has an opaque (non-transparent) dark band baked into its
+              top edge. `isolate` + a maroon backdrop + `mix-blend-lighten` blends that
+              black away to maroon while leaving the dirt intact, so the band disappears
+              without editing the Plasmic-managed image. */}
           <div
             className={`absolute inset-0 ${
               showHeroForm ? "" : "top-100"
-            } pointer-events-none sm:hidden z-0`}
+            } pointer-events-none sm:hidden z-0 isolate`}
+            style={{ backgroundColor: backgroundColor || "#5C0004" }}
           >
             <Image
               src={mobileBackgroundImage || backgroundImage!}
               alt=""
               fill
-              className="w-full object-cover object-[50%_300px]"
+              className="w-full object-cover object-[50%_300px] mix-blend-lighten"
             />
           </div>
 
