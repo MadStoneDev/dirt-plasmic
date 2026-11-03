@@ -614,7 +614,7 @@ function PlasmicHomepage__RenderFunc(props: {
               image={"/plasmic/dirt/images/sliderDirt1Png2.png"}
               label={"WELL, THAT'S A START"}
               text={
-                '"Automate site planning and feasibility studies with software that generates building layouts and tests development potential."'
+                '"Generate building layouts and test development potential with automated site feasibility software."'
               }
             />
 
@@ -623,7 +623,7 @@ function PlasmicHomepage__RenderFunc(props: {
               image={"/plasmic/dirt/images/sliderDirt2Png2.png"}
               label={"GETTING WARMER"}
               text={
-                '"Property developers can test site yield, building massing, setbacks and parking before committing to a land purchase."'
+                '"Property developers can test building layouts, site yield, setbacks and parking requirements."'
               }
             />
 
