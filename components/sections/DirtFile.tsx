@@ -24,6 +24,7 @@ export function DirtFile({
   tag2,
   buttonLabel,
   buttonLink,
+  image,
   mobileImage,
   children,
   isActive = false,
@@ -84,11 +85,13 @@ export function DirtFile({
           {heading}
         </h3>
 
-        {/* Mobile-only image for the active case study (desktop uses the right column) */}
-        {isActive && mobileImage && (
+        {/* Mobile-only image for the active case study (desktop uses the right column).
+            Defaults to this case study's own already-selected `image`; `mobileImage`
+            is an optional override if a different image is wanted on mobile. */}
+        {isActive && (mobileImage || image) && (
           <div className="lg:hidden relative w-full aspect-square border-[1.5px] border-dirt-pop mt-4">
             <Image
-              src={mobileImage}
+              src={mobileImage || image!}
               alt=""
               fill
               className="object-cover"
