@@ -53,8 +53,15 @@ export function SliderSection({
           { label: "Stop 6", text: "Content for stop 6", image: "", content: undefined as ReactNode },
         ];
 
-  // Calculate the offset needed for the label to reach the edge
-  const EDGE_OFFSET = 75;
+  // Inset of the slider track from the box edge. Keeps the thumb's centered
+  // label from spilling past the box; smaller on mobile so the thumb sits
+  // closer to the edges. Must be >= half the label's max width minus the box
+  // side padding, or the label overflows at the first/last stops.
+  const EDGE_OFFSET = isLg ? 60 : 30;
+  // Box side padding (also responsive) — tighter on mobile.
+  const boxPadX = isLg ? 50 : 24;
+  // Max width of the thumb label (centered under the thumb).
+  const labelMaxWidth = isLg ? 200 : 108;
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentStep(parseInt(e.target.value));
@@ -126,7 +133,7 @@ export function SliderSection({
           <div
             className="bg-dirt-deep border-2 border-dirt-pop"
             style={{
-              padding: "50px 50px 90px",
+              padding: isLg ? `50px ${boxPadX}px 90px` : `28px ${boxPadX}px 70px`,
             }}
           >
             {/* Slider Wrapper */}
@@ -188,7 +195,8 @@ export function SliderSection({
                       style={{
                         transform: "translateX(-50%)",
                         top: "calc(100% + 8px)",
-                        width: "200px",
+                        maxWidth: `${labelMaxWidth}px`,
+                        width: "max-content",
                         textAlign: "center",
                       }}
                     >

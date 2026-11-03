@@ -1054,7 +1054,7 @@ registerComponent(SliderSection, {
           name: "SliderStop",
           props: {
             label: "BORING AF",
-            text: '"Leverage AI-powered generative design intelligence to optimise site feasibility workflows."',
+            text: '"Leverage AI-powered proposal intelligence to streamline pursuit workflows, optimise content management and accelerate business growth."',
           },
         },
         {
@@ -1062,7 +1062,7 @@ registerComponent(SliderSection, {
           name: "SliderStop",
           props: {
             label: "WELL, THAT'S A START",
-            text: '"Generate building layouts and test development potential with automated site feasibility software."',
+            text: '"AI-powered proposal software that helps architecture and engineering firms create proposals faster."',
           },
         },
         {
@@ -1070,7 +1070,7 @@ registerComponent(SliderSection, {
           name: "SliderStop",
           props: {
             label: "GETTING WARMER",
-            text: '"Property developers can test building layouts, site yield, setbacks and parking requirements."',
+            text: '"Help AEC marketing teams write proposals faster using existing project experience, staff CVs and past submissions."',
           },
         },
         {
@@ -1078,7 +1078,7 @@ registerComponent(SliderSection, {
           name: "SliderStop",
           props: {
             label: "YOU'VE GOT MY ATTENTION",
-            text: '"Test building layouts, unit yields and parking requirements before committing to a site."',
+            text: '"Find the right project examples, staff CVs and proposal content without digging through old files."',
           },
         },
         {
@@ -1086,7 +1086,7 @@ registerComponent(SliderSection, {
           name: "SliderStop",
           props: {
             label: "WELL, WHY DIDN'T YOU SAY SO?",
-            text: '"Automate site feasibility studies and test multiple development scenarios in minutes."',
+            text: '"Build proposals faster using your best project experience, staff CVs and past submissions."',
           },
         },
         {
@@ -1094,7 +1094,7 @@ registerComponent(SliderSection, {
           name: "SliderStop",
           props: {
             label: "NOW WE'VE STRUCK DIRT",
-            text: '"Know which sites are worth chasing in minutes."',
+            text: '"Turn past projects into winning proposals in minutes."',
           },
         },
       ],
