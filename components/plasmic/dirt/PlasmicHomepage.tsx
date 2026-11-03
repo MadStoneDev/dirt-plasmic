@@ -1216,7 +1216,7 @@ function PlasmicHomepage__RenderFunc(props: {
             midgroundImage={"/plasmic/dirt/images/mainFooterMidgroundPng.png"}
             mobileBackgroundImage={
               hasVariant(globalVariants, "screen", "mobile")
-                ? "/plasmic/dirt/images/mobileFooterDirtBackgroundPng3.png"
+                ? "/plasmic/dirt/images/mobileFooterDirtBackgroundPng2.png"
                 : "/plasmic/dirt/images/mobileFooterDirtBackgroundPng2.png"
             }
             newsletterChildren={
