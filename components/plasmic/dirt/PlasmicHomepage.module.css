@@ -186,6 +186,11 @@
   letter-spacing: -2.5%;
   min-width: 0;
 }
+@media (max-width: 511px) {
+  .text__qyKw7 {
+    font-size: 20px;
+  }
+}
 .sliderStop__j4AKf:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -200,6 +205,11 @@
   font-weight: 700;
   letter-spacing: -2.5%;
   min-width: 0;
+}
+@media (max-width: 511px) {
+  .text__sPgxZ {
+    font-size: 20px;
+  }
 }
 .sliderStop__vludv:global(.__wab_instance) {
   max-width: 100%;
@@ -216,6 +226,11 @@
   letter-spacing: -2.5%;
   min-width: 0;
 }
+@media (max-width: 511px) {
+  .text__lvuhh {
+    font-size: 20px;
+  }
+}
 .sliderStop___7LV8G:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -230,6 +245,11 @@
   font-weight: 700;
   letter-spacing: -2.5%;
   min-width: 0;
+}
+@media (max-width: 511px) {
+  .text__gTb1U {
+    font-size: 20px;
+  }
 }
 .sliderStop__uwXxm:global(.__wab_instance) {
   max-width: 100%;
@@ -246,6 +266,11 @@
   letter-spacing: -2.5%;
   min-width: 0;
 }
+@media (max-width: 511px) {
+  .text__hWVbY {
+    font-size: 20px;
+  }
+}
 .sliderStop__cvXh:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -260,6 +285,11 @@
   font-weight: 700;
   letter-spacing: -2.5%;
   min-width: 0;
+}
+@media (max-width: 511px) {
+  .turnPastProjectsIntoWinningProposalsInMinutes {
+    font-size: 20px;
+  }
 }
 .signsCtaSection:global(.__wab_instance) {
   max-width: 100%;

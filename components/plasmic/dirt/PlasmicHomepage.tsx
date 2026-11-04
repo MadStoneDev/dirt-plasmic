@@ -594,7 +594,9 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.sliderSection}
             backgroundImage={"/plasmic/dirt/images/buildingsBackgroundJpg.jpg"}
             className={classNames("__wab_instance", sty.sliderSection)}
-            editorActiveStop={3}
+            editorActiveStop={
+              hasVariant(globalVariants, "screen", "mobile") ? 6 : 3
+            }
             headingEnd={"the tech talk"}
             headingMiddle={"DIRT-ify "}
             headingStart={"Slide to "}
