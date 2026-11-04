@@ -629,6 +629,36 @@
           "id": "lO7TXgP-EqmB",
           "name": "Logo.png",
           "filePath": "../public/plasmic/dirt/images/logoPng.png"
+        },
+        {
+          "id": "XMScy3EoP0ye",
+          "name": "New Mobile - Footer DIRT Background.png",
+          "filePath": "../public/plasmic/dirt/images/newMobileFooterDirtBackgroundPng.png"
+        },
+        {
+          "id": "6DdW0-GNa8cG",
+          "name": "Background - Footer Mobile New.png",
+          "filePath": "../public/plasmic/dirt/images/backgroundFooterMobileNewPng.png"
+        },
+        {
+          "id": "8QVZeLsdrZbv",
+          "name": "Background - Footer New.png",
+          "filePath": "../public/plasmic/dirt/images/backgroundFooterNewPng.png"
+        },
+        {
+          "id": "3-gc49T9zSuS",
+          "name": "Background - Footer Midground New.png",
+          "filePath": "../public/plasmic/dirt/images/backgroundFooterMidgroundNewPng.png"
+        },
+        {
+          "id": "lL6Gy3l-rZde",
+          "name": "Background - Footer Backdrop New.png",
+          "filePath": "../public/plasmic/dirt/images/backgroundFooterBackdropNewPng.png"
+        },
+        {
+          "id": "iErznrh1EFVT",
+          "name": "Background - Footer Adjusted Midground New.png",
+          "filePath": "../public/plasmic/dirt/images/backgroundFooterAdjustedMidgroundNewPng.png"
         }
       ],
       "indirect": false,

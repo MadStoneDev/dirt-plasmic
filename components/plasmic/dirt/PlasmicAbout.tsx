@@ -740,7 +740,9 @@ function PlasmicAbout__RenderFunc(props: {
           <FooterSection
             data-plasmic-name={"footerSection"}
             data-plasmic-override={overrides.footerSection}
-            backgroundImage={"/plasmic/dirt/images/mainFooterBackdropPng.png"}
+            backgroundImage={
+              "/plasmic/dirt/images/backgroundFooterBackdropNewPng.png"
+            }
             bottomRightLink={
               "https://www.reddit.com/r/NatureIsFuckingLit/comments/1g015ns/elephant_throwing_dirt_on_a_crocodile_for_some/"
             }
@@ -771,11 +773,13 @@ function PlasmicAbout__RenderFunc(props: {
             link2Text={"Contact"}
             link2Url={"/contact"}
             linksHeading={"Get your hands dirty"}
-            midgroundImage={"/plasmic/dirt/images/mainFooterMidgroundPng.png"}
+            midgroundImage={
+              "/plasmic/dirt/images/backgroundFooterAdjustedMidgroundNewPng.png"
+            }
             mobileBackgroundImage={
               hasVariant(globalVariants, "screen", "mobile")
-                ? "/plasmic/dirt/images/mobileFooterDirtBackgroundPng.png"
-                : "/plasmic/dirt/images/mobileFooterDirtBackgroundPng2.png"
+                ? "/plasmic/dirt/images/backgroundFooterMobileNewPng.png"
+                : "/plasmic/dirt/images/backgroundFooterMobileNewPng.png"
             }
             newsletterChildren={
               <PlasmicImg__
