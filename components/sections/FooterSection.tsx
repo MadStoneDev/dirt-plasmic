@@ -607,7 +607,7 @@ export function FooterSection(plasmicProps: FooterSectionProps) {
         className={`md:hidden absolute bottom-0 left-0 right-0 w-full h-auto object-contain z-[2]`}
       />
       <img
-        src={`/Dirt and Shovel.png`}
+        src={`/Footer Dirt and Shovel.png`}
         alt=""
         className={`hidden md:block absolute bottom-0 left-auto right-0 w-120 h-auto object-contain z-[2]`}
       />
