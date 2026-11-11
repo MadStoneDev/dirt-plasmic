@@ -321,7 +321,7 @@ function PlasmicArticlesTemplate__RenderFunc(props: {
                     sty.dirtNavLink__aVeJg
                   )}
                   href={"/archive"}
-                  label={"Blog"}
+                  label={"The Archive"}
                 />
 
                 <DirtNavLink
@@ -831,8 +831,8 @@ export const PlasmicArticlesTemplate = Object.assign(
     internalArgProps: PlasmicArticlesTemplate__ArgProps,
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
-      pageRoute: "/blog/[slug]",
-      pagePath: "/blog/[slug]",
+      pageRoute: "/thearchive/[slug]",
+      pagePath: "/thearchive/[slug]",
       params: {},
       query: {}
     })

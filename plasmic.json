@@ -127,7 +127,7 @@
           "projectId": "8kaaMUEQHxomwqwuKNMozy",
           "renderModuleFilePath": "plasmic/dirt/PlasmicArticlesTemplate.tsx",
           "importSpec": {
-            "modulePath": "../pages/blog/[slug].tsx"
+            "modulePath": "../pages/thearchive/[slug].tsx"
           },
           "cssFilePath": "plasmic/dirt/PlasmicArticlesTemplate.module.css",
           "scheme": "blackbox",

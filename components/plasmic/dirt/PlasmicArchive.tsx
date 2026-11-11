@@ -819,7 +819,7 @@ function PlasmicArchive__RenderFunc(props: {
                                       e?.plasmicType ===
                                         "PlasmicUndefinedDataError"
                                     ) {
-                                      return `/blog/${encodeURIComponent("value")}`;
+                                      return `/thearchive/${encodeURIComponent("value")}`;
                                     }
                                     throw e;
                                   }

@@ -1206,10 +1206,10 @@ function PlasmicHomepage__RenderFunc(props: {
               "Tell us your DIRTiest dreams and we'll make them come true:"
             }
             footerDescription={
-              "Fresh messaging, branding, and positioning from the ground up."
+              "Fresh positioning, messaging and websites, from the ground up."
             }
             footerLogo={"/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"}
-            heading1={"Brilliant brands don\u2019t grow on trees."}
+            heading1={"Brilliant AEC brands don\u2019t grow on trees."}
             heading1Uppercase={true}
             heading2={"They grow in the DIRT."}
             link1Text={"About"}
