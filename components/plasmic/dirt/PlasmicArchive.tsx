@@ -411,35 +411,37 @@ function PlasmicArchive__RenderFunc(props: {
                   <React.Fragment>{" title"}</React.Fragment>
                 </React.Fragment>
               ) : (
-                <React.Fragment>
-                  <React.Fragment>
-                    {"A very strong and catchy\r\n"}
-                  </React.Fragment>
-                  <span
-                    className={
-                      "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
-                    }
-                    style={{ color: "var(--token-5joSP94EMVrt)" }}
-                  >
-                    {"nikita-esque"}
-                  </span>
-                  <React.Fragment>{" title"}</React.Fragment>
-                </React.Fragment>
+                "THE ARCHIVE"
               )}
             </h1>
             <div className={classNames("all", "__wab_text", sty.text__xeaIs)}>
               <React.Fragment>
+                <React.Fragment>{""}</React.Fragment>
+                {
+                  <h2
+                    className={classNames(
+                      "all",
+                      "h2",
+                      "h2__8kaaM",
+                      "__wab_text",
+                      sty.h2__zcwAr
+                    )}
+                  >
+                    {
+                      "All the DIRT, none of the digging. \n\nEvery newsletter and AEC software teardown in one place."
+                    }
+                  </h2>
+                }
+                <React.Fragment>{""}</React.Fragment>
                 <span
                   className={
                     "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
                   }
-                  style={{ fontWeight: 700 }}
+                  style={{ fontStyle: "italic" }}
                 >
-                  {"The Archive: "}
+                  {""}
                 </span>
-                <React.Fragment>
-                  {"Dig through every DIRT Dispatch and DIRT Teardown issue.\n"}
-                </React.Fragment>
+                <React.Fragment>{"\n"}</React.Fragment>
                 <span
                   className={
                     "plasmic_default__all plasmic_default__span plasmic_default__span__8kaaM"
