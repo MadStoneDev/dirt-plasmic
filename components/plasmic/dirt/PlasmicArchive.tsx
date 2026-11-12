@@ -428,7 +428,7 @@ function PlasmicArchive__RenderFunc(props: {
                     )}
                   >
                     {
-                      "All the DIRT, none of the digging. \n\nEvery newsletter and AEC software teardown in one place."
+                      "All the DIRT, none of the digging. \n\nDIRT Dispatch newsletters and AEC software teardowns in one place."
                     }
                   </h2>
                 }
@@ -542,7 +542,7 @@ function PlasmicArchive__RenderFunc(props: {
                         $steps["goToPage"] = true
                           ? (() => {
                               const actionArgs = {
-                                destination: "/blog/" + currentItem.data.slug
+                                destination: "/archive/" + currentItem.data.slug
                               };
                               return (({ destination }) => {
                                 if (
@@ -814,14 +814,14 @@ function PlasmicArchive__RenderFunc(props: {
                               const actionArgs = {
                                 destination: (() => {
                                   try {
-                                    return "/blog/" + currentItem.data.slug;
+                                    return "/archive/" + currentItem.data.slug;
                                   } catch (e) {
                                     if (
                                       e instanceof TypeError ||
                                       e?.plasmicType ===
                                         "PlasmicUndefinedDataError"
                                     ) {
-                                      return `/thearchive/${encodeURIComponent("value")}`;
+                                      return `/archive/${encodeURIComponent("value")}`;
                                     }
                                     throw e;
                                   }
