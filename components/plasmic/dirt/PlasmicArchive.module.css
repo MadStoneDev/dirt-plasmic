@@ -518,9 +518,18 @@
   height: auto;
   max-width: 875px;
   font-family: "Uncut Sans";
-  font-size: 21px;
+  font-size: 20px;
   line-height: 1.3;
   min-width: 0;
+}
+.link {
+  color: var(--token-5joSP94EMVrt);
+  font-family: "Uncut Sans";
+  font-weight: 600;
+  text-transform: none;
+  font-size: 20px;
+  letter-spacing: 3%;
+  margin-top: 20px;
 }
 .text__yIGss {
   position: relative;
