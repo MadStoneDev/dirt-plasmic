@@ -530,6 +530,10 @@
   font-size: 20px;
   letter-spacing: 3%;
   margin-top: 20px;
+  opacity: 1;
+}
+.root .link:hover {
+  opacity: 0.8;
 }
 .text__yIGss {
   position: relative;
