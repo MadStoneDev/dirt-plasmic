@@ -136,6 +136,7 @@ export type PlasmicArchive__OverridesType = {
   dirtNav?: Flex__<typeof DirtNav>;
   navigationContactButton?: Flex__<typeof NavigationContactButton>;
   h1?: Flex__<"h1">;
+  link?: Flex__<"a"> & Partial<LinkProps>;
   h3?: Flex__<"h3">;
   newsletterFormSection?: Flex__<typeof NewsletterFormSection>;
 };
@@ -890,6 +891,35 @@ function PlasmicArchive__RenderFunc(props: {
                         })()}
                       </React.Fragment>
                     </div>
+                    <PlasmicLink__
+                      data-plasmic-name={"link"}
+                      data-plasmic-override={overrides.link}
+                      className={classNames(
+                        "all",
+                        "a",
+                        "a__8kaaM",
+                        "__wab_text",
+                        sty.link
+                      )}
+                      component={Link}
+                      href={(() => {
+                        try {
+                          return "/archive/" + currentItem.data.slug;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "";
+                          }
+                          throw e;
+                        }
+                      })()}
+                      legacyBehavior={false}
+                      platform={"nextjs"}
+                    >
+                      {"Click to read"}
+                    </PlasmicLink__>
                   </div>
                   <div
                     className={classNames("all", "__wab_text", sty.text__yIGss)}
@@ -977,12 +1007,14 @@ const PlasmicDescendants = {
     "dirtNav",
     "navigationContactButton",
     "h1",
+    "link",
     "h3",
     "newsletterFormSection"
   ],
   dirtNav: ["dirtNav", "navigationContactButton"],
   navigationContactButton: ["navigationContactButton"],
   h1: ["h1"],
+  link: ["link"],
   h3: ["h3"],
   newsletterFormSection: ["newsletterFormSection"]
 } as const;
@@ -994,6 +1026,7 @@ type NodeDefaultElementType = {
   dirtNav: typeof DirtNav;
   navigationContactButton: typeof NavigationContactButton;
   h1: "h1";
+  link: "a";
   h3: "h3";
   newsletterFormSection: typeof NewsletterFormSection;
 };
@@ -1063,6 +1096,7 @@ export const PlasmicArchive = Object.assign(
     dirtNav: makeNodeComponent("dirtNav"),
     navigationContactButton: makeNodeComponent("navigationContactButton"),
     h1: makeNodeComponent("h1"),
+    link: makeNodeComponent("link"),
     h3: makeNodeComponent("h3"),
     newsletterFormSection: makeNodeComponent("newsletterFormSection"),
 
