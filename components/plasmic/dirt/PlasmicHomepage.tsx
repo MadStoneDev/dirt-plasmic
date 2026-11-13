@@ -862,9 +862,9 @@ function PlasmicHomepage__RenderFunc(props: {
             }
             bottomHeading={"*Note: The DIRT Design Bench is deep and wide"}
             className={classNames("__wab_instance", sty.dirtProcessSection)}
-            headingEnd={". Then we build around it"}
-            headingHighlight={"message"}
-            headingStart={"First, we nail the "}
+            headingEnd={". Then we bring it to life."}
+            headingHighlight={"positioning"}
+            headingStart={"First, we nail your "}
           >
             <DirtProcessStep
               className={classNames(
