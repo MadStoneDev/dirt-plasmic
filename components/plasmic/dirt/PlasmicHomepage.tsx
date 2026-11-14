@@ -381,7 +381,7 @@ function PlasmicHomepage__RenderFunc(props: {
               "From startups to scale-ups, we dig up your competitive edge and turn it into websites and sales materials that wins deals."
             }
             foregroundImage={"/plasmic/dirt/images/edSoilFrontPng.png"}
-            heading={"STRATEGY-LED WEBSITES FOR \nAEC SOFTWARE"}
+            heading={"POSITIONING-LED WEBSITES FOR AEC SOFTWARE"}
             midgroundImage={
               "/plasmic/dirt/images/dirtFinalIdentityLogos06Png.png"
             }
@@ -478,7 +478,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 </div>
               </React.Fragment>
             }
-            subheading={"So why would a contractor switch to you?"}
+            subheading={"So why would a buyer switch to you?"}
           />
 
           <PainPointsSection
@@ -627,7 +627,7 @@ function PlasmicHomepage__RenderFunc(props: {
             description={
               "In four weeks, you walk away with a rewritten homepage and the positioning behind it."
             }
-            headingEnd={"Positioning Intensive"}
+            headingEnd={"Homepage Overhaul"}
             headingHighlight={" DIRT "}
             headingStart={"The"}
             reversed={true}
@@ -760,7 +760,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames("all", "__wab_text", sty.text__v4TnA)}
                 >
                   {
-                    "Every DIRT client gets a custom-assembled team of AEC specialists to do the heavy lifting. And unlike other branding firms, we start with your positioning first \u2013 because as you know, it doesn\u2019t matter how lovely something looks on the outside if the inside is hollow."
+                    "Every DIRT client gets a custom-assembled team of AEC specialists, handpicked for the job. And unlike other agencies, we're not learning your industry on your dime. We know the workflows, technical jargon and painfully slow decision-making processes that come with selling into AEC."
                   }
                 </div>
                 <div
@@ -772,7 +772,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 </div>
               </React.Fragment>
             }
-            subheading={"10+ years of foundational strategy for fertile brands"}
+            subheading={"10+ years working with the firms you're selling to"}
           />
 
           <TestimonialSection
