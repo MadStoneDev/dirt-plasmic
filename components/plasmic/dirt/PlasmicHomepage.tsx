@@ -80,15 +80,15 @@ import { DirtRichText } from "../../sections/DirtRichText"; // plasmic-import: n
 import { PainPointsSection } from "../../sections/PainPointsSection"; // plasmic-import: a6zcK0cc2pSa/codeComponent
 import { PainPointCheckbox } from "../../sections/PainPointCheckbox"; // plasmic-import: -4VXY6ZJhgvD/codeComponent
 import { PainPointSlide } from "../../sections/PainPointSlide"; // plasmic-import: 5HzjLrOXVhOC/codeComponent
-import { SliderSection } from "../../sections/SliderSection"; // plasmic-import: rEkupWVe7ncE/codeComponent
-import { SliderStop } from "../../sections/SliderStop"; // plasmic-import: 8ktG5wYjJs7S/codeComponent
 import { SignsCTASection } from "../../sections/SignsCTASection"; // plasmic-import: 3hNXXIJF-DSf/codeComponent
 import { SignsCTAItem } from "../../sections/SignsCTAItem"; // plasmic-import: qYuP0KLLo7r4/codeComponent
+import { SliderSection } from "../../sections/SliderSection"; // plasmic-import: rEkupWVe7ncE/codeComponent
+import { SliderStop } from "../../sections/SliderStop"; // plasmic-import: 8ktG5wYjJs7S/codeComponent
 import { TestimonialSection } from "../../sections/TestimonialSection"; // plasmic-import: 19614fshNGrI/codeComponent
-import { ThreeReasonsSection } from "../../sections/ThreeReasonsSection"; // plasmic-import: wg-w-3Zg2_WL/codeComponent
-import { ThreeReasonsItem } from "../../sections/ThreeReasonsItem"; // plasmic-import: it6z1sUkm2kP/codeComponent
 import { DirtFrameworkSection } from "../../sections/DirtFrameworkSection"; // plasmic-import: hjSOs7Mv8Nv8/codeComponent
 import { DirtFrameworkBlock } from "../../sections/DirtFrameworkBlock"; // plasmic-import: ks6B6gJ4vFGq/codeComponent
+import { ThreeReasonsSection } from "../../sections/ThreeReasonsSection"; // plasmic-import: wg-w-3Zg2_WL/codeComponent
+import { ThreeReasonsItem } from "../../sections/ThreeReasonsItem"; // plasmic-import: it6z1sUkm2kP/codeComponent
 import { DirtProcessSection } from "../../sections/DirtProcessSection"; // plasmic-import: RtT6x1K_HM6p/codeComponent
 import { DirtProcessStep } from "../../sections/DirtProcessStep"; // plasmic-import: eRsQ7U7TAK34/codeComponent
 import { DirtFilesSection } from "../../sections/DirtFilesSection"; // plasmic-import: BPSe7oQrItqb/codeComponent
@@ -168,11 +168,11 @@ export type PlasmicHomepage__OverridesType = {
   companiesWeCoveredInDirt?: Flex__<typeof CompanyCarouselSection>;
   dirtRichText?: Flex__<typeof DirtRichText>;
   painPointsSection?: Flex__<typeof PainPointsSection>;
+  signsCtaSection?: Flex__<typeof SignsCTASection>;
   sliderSection?: Flex__<typeof SliderSection>;
   turnProjects?: Flex__<"div">;
-  signsCtaSection?: Flex__<typeof SignsCTASection>;
-  threeReasonsSection?: Flex__<typeof ThreeReasonsSection>;
   dirtFrameworkSection?: Flex__<typeof DirtFrameworkSection>;
+  threeReasonsSection?: Flex__<typeof ThreeReasonsSection>;
   dirtProcessSection?: Flex__<typeof DirtProcessSection>;
   dirtFilesSection?: Flex__<typeof DirtFilesSection>;
   prosConsSection?: Flex__<typeof ProsConsSection>;
@@ -589,6 +589,37 @@ function PlasmicHomepage__RenderFunc(props: {
               label={"Everyone wants a free trial. Nobody wants to pay."}
             />
           </PainPointsSection>
+          <SignsCTASection
+            data-plasmic-name={"signsCtaSection"}
+            data-plasmic-override={overrides.signsCtaSection}
+            className={classNames("__wab_instance", sty.signsCtaSection)}
+            ctaLabel={"Dig in with a call"}
+            ctaLink={"/contact"}
+            headingEnd={"y"}
+            headingHighlight={"DIRT"}
+            headingStart={"Signs it\u2019s time to get "}
+          >
+            <SignsCTAItem
+              className={classNames("__wab_instance", sty.signsCtaItem__tnyCd)}
+              text={
+                "You just closed your seed round. Your first 10 customers came from your network. The next 50 won't."
+              }
+            />
+
+            <SignsCTAItem
+              className={classNames("__wab_instance", sty.signsCtaItem__jjiZe)}
+              text={
+                "You\u2019ve launched a second product. Your team explains it in three different ways."
+              }
+            />
+
+            <SignsCTAItem
+              className={classNames("__wab_instance", sty.signsCtaItem__dgV7L)}
+              text={
+                "You're about to make your first marketing hire. Right now their onboarding pack is a pitch deck."
+              }
+            />
+          </SignsCTASection>
           <SliderSection
             data-plasmic-name={"sliderSection"}
             data-plasmic-override={overrides.sliderSection}
@@ -685,37 +716,6 @@ function PlasmicHomepage__RenderFunc(props: {
               </div>
             </SliderStop>
           </SliderSection>
-          <SignsCTASection
-            data-plasmic-name={"signsCtaSection"}
-            data-plasmic-override={overrides.signsCtaSection}
-            className={classNames("__wab_instance", sty.signsCtaSection)}
-            ctaLabel={"Dig in with a call"}
-            ctaLink={"/contact"}
-            headingEnd={"y"}
-            headingHighlight={"DIRT"}
-            headingStart={"Signs it\u2019s time to get "}
-          >
-            <SignsCTAItem
-              className={classNames("__wab_instance", sty.signsCtaItem__tnyCd)}
-              text={
-                "You just closed your seed round. Your first 10 customers came from your network. The next 50 won't."
-              }
-            />
-
-            <SignsCTAItem
-              className={classNames("__wab_instance", sty.signsCtaItem__jjiZe)}
-              text={
-                "You\u2019ve launched a second product. Your team explains it in three different ways."
-              }
-            />
-
-            <SignsCTAItem
-              className={classNames("__wab_instance", sty.signsCtaItem__dgV7L)}
-              text={
-                "You're about to make your first marketing hire. Right now their onboarding pack is a pitch deck."
-              }
-            />
-          </SignsCTASection>
           <TestimonialSection
             authorName={"David Koren"}
             authorPhoto={"/plasmic/dirt/images/davidKorenPhotoJpg.jpg"}
@@ -735,6 +735,70 @@ function PlasmicHomepage__RenderFunc(props: {
             textColor={"dirt-deep"}
           />
 
+          <DirtFrameworkSection
+            data-plasmic-name={"dirtFrameworkSection"}
+            data-plasmic-override={overrides.dirtFrameworkSection}
+            className={classNames("__wab_instance", sty.dirtFrameworkSection)}
+            description={
+              "In four weeks, you walk away with a rewritten homepage and the positioning behind it."
+            }
+            headingEnd={"Positioning Intensive"}
+            headingHighlight={" DIRT "}
+            headingStart={"The"}
+            reversed={true}
+          >
+            <DirtFrameworkBlock
+              backgroundImage={"/plasmic/dirt/images/discoverBackgroundJpg.jpg"}
+              className={classNames(
+                "__wab_instance",
+                sty.dirtFrameworkBlock__r8Q2R
+              )}
+              description={
+                "We interview three of your buyers, review your demo and sales calls and map who you're up against. "
+              }
+              heading={"Discover"}
+              overlayColor={"dirt-deep"}
+            />
+
+            <DirtFrameworkBlock
+              backgroundImage={"/plasmic/dirt/images/identifyBackgroundJpg.jpg"}
+              className={classNames(
+                "__wab_instance",
+                sty.dirtFrameworkBlock___6ZNob
+              )}
+              description={
+                "We bring 3-5 positioning options and make the hard calls with you: who you\u2019re for, what you replace and why you win. You pick one."
+              }
+              heading={"Identify"}
+              overlayColor={"dirt-pop"}
+            />
+
+            <DirtFrameworkBlock
+              backgroundImage={"/plasmic/dirt/images/refineBackgroundJpg.jpg"}
+              className={classNames(
+                "__wab_instance",
+                sty.dirtFrameworkBlock__gCvvr
+              )}
+              description={
+                "We turn it into a 10-slide strategy deck. Ideal buyer, competitive alternatives, point of difference, key messages with proof, brand voice. No 60-page PDF gathering digital dust."
+              }
+              heading={"Refine"}
+              overlayColor={"dirt-green"}
+            />
+
+            <DirtFrameworkBlock
+              backgroundImage={"/plasmic/dirt/images/tellBackgroundJpg.jpg"}
+              className={classNames(
+                "__wab_instance",
+                sty.dirtFrameworkBlock__c8Sit
+              )}
+              description={
+                "We rewrite your homepage, structure and copy, so buyers understand what you do and why it matters in one scroll. Hand it to your developer or have us build it."
+              }
+              heading={"Tell"}
+              overlayColor={"dirt-blue"}
+            />
+          </DirtFrameworkSection>
           <ThreeReasonsSection
             data-plasmic-name={"threeReasonsSection"}
             data-plasmic-override={overrides.threeReasonsSection}
@@ -780,70 +844,6 @@ function PlasmicHomepage__RenderFunc(props: {
               heading={"We don't stop at strategy"}
             />
           </ThreeReasonsSection>
-          <DirtFrameworkSection
-            data-plasmic-name={"dirtFrameworkSection"}
-            data-plasmic-override={overrides.dirtFrameworkSection}
-            className={classNames("__wab_instance", sty.dirtFrameworkSection)}
-            description={
-              "Yes, we have a framework. Conveniently, it spells DIRT. \n\nWe don\u2019t stop at the strategy. You get the words to use, written and ready to go."
-            }
-            headingEnd={"framework"}
-            headingHighlight={" DIRT "}
-            headingStart={"The"}
-            reversed={true}
-          >
-            <DirtFrameworkBlock
-              backgroundImage={"/plasmic/dirt/images/discoverBackgroundJpg.jpg"}
-              className={classNames(
-                "__wab_instance",
-                sty.dirtFrameworkBlock__r8Q2R
-              )}
-              description={
-                "We dig deep to uncover why customers choose you. We interview users, review your sales calls and map you you're up against. "
-              }
-              heading={"Discover"}
-              overlayColor={"dirt-deep"}
-            />
-
-            <DirtFrameworkBlock
-              backgroundImage={"/plasmic/dirt/images/identifyBackgroundJpg.jpg"}
-              className={classNames(
-                "__wab_instance",
-                sty.dirtFrameworkBlock___6ZNob
-              )}
-              description={
-                "We find the X factor that makes you different. We make the hard calls with you: who you\u2019re for, what you replace and why you\u2019re the obvious choice."
-              }
-              heading={"Identify"}
-              overlayColor={"dirt-pop"}
-            />
-
-            <DirtFrameworkBlock
-              backgroundImage={"/plasmic/dirt/images/refineBackgroundJpg.jpg"}
-              className={classNames(
-                "__wab_instance",
-                sty.dirtFrameworkBlock__gCvvr
-              )}
-              description={
-                "We turn your positioning into messages for each buyer, with proof points and answers to the objections that stall deals."
-              }
-              heading={"Refine"}
-              overlayColor={"dirt-green"}
-            />
-
-            <DirtFrameworkBlock
-              backgroundImage={"/plasmic/dirt/images/tellBackgroundJpg.jpg"}
-              className={classNames(
-                "__wab_instance",
-                sty.dirtFrameworkBlock__c8Sit
-              )}
-              description={
-                "We put your messaging strategy to work, writing website copy, sales decks, demo scrips, LinkedIn posts and more, all in one distinct brand voice."
-              }
-              heading={"Tell"}
-              overlayColor={"dirt-blue"}
-            />
-          </DirtFrameworkSection>
           <DirtProcessSection
             data-plasmic-name={"dirtProcessSection"}
             data-plasmic-override={overrides.dirtProcessSection}
@@ -852,9 +852,9 @@ function PlasmicHomepage__RenderFunc(props: {
             }
             bottomHeading={"*Note: The DIRT Design Bench is deep and wide"}
             className={classNames("__wab_instance", sty.dirtProcessSection)}
-            headingEnd={". Then we bring it to life."}
-            headingHighlight={"positioning"}
-            headingStart={"First, we nail your "}
+            headingEnd={""}
+            headingHighlight={"What's next?"}
+            headingStart={"Positioning nailed. Homepage sorted. "}
           >
             <DirtProcessStep
               className={classNames(
@@ -877,9 +877,9 @@ function PlasmicHomepage__RenderFunc(props: {
               description={
                 "Your work is state-of-the-art. Your website should be, too."
               }
-              heading={"Website"}
+              heading={"Website design + build"}
               image={"/plasmic/dirt/images/websitePng.png"}
-              tags={"Copywriting, Design*, Development, Maintenance, Naming"}
+              tags={"Design, Development, Maintenance"}
             />
 
             <DirtProcessStep
@@ -888,12 +888,12 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.dirtProcessStep___2398S
               )}
               description={
-                "Persuasive, plain-English tools that make it easy for clients to say \u201cYou\u2019re the one.\u201d"
+                "We put your positioning to work across sales decks, demo scripts, product launches and feature announcements, case studies and campaigns."
               }
-              heading={"Winning assets"}
+              heading={"Sales + Marketing Copy"}
               image={"/plasmic/dirt/images/winningAssetsPng.png"}
               tags={
-                "Fee Proposals, Bid Submissions, Pitch Decks, Case Studies, Safety & Compliance Content"
+                "Sales Decks, Buyer-specific Landing Pages, Competitor Comparison Pages, Case Studies"
               }
             />
           </DirtProcessSection>
@@ -1263,11 +1263,11 @@ const PlasmicDescendants = {
     "companiesWeCoveredInDirt",
     "dirtRichText",
     "painPointsSection",
+    "signsCtaSection",
     "sliderSection",
     "turnProjects",
-    "signsCtaSection",
-    "threeReasonsSection",
     "dirtFrameworkSection",
+    "threeReasonsSection",
     "dirtProcessSection",
     "dirtFilesSection",
     "prosConsSection",
@@ -1281,11 +1281,11 @@ const PlasmicDescendants = {
   companiesWeCoveredInDirt: ["companiesWeCoveredInDirt"],
   dirtRichText: ["dirtRichText"],
   painPointsSection: ["painPointsSection"],
+  signsCtaSection: ["signsCtaSection"],
   sliderSection: ["sliderSection", "turnProjects"],
   turnProjects: ["turnProjects"],
-  signsCtaSection: ["signsCtaSection"],
-  threeReasonsSection: ["threeReasonsSection"],
   dirtFrameworkSection: ["dirtFrameworkSection"],
+  threeReasonsSection: ["threeReasonsSection"],
   dirtProcessSection: ["dirtProcessSection"],
   dirtFilesSection: ["dirtFilesSection"],
   prosConsSection: ["prosConsSection"],
@@ -1304,11 +1304,11 @@ type NodeDefaultElementType = {
   companiesWeCoveredInDirt: typeof CompanyCarouselSection;
   dirtRichText: typeof DirtRichText;
   painPointsSection: typeof PainPointsSection;
+  signsCtaSection: typeof SignsCTASection;
   sliderSection: typeof SliderSection;
   turnProjects: "div";
-  signsCtaSection: typeof SignsCTASection;
-  threeReasonsSection: typeof ThreeReasonsSection;
   dirtFrameworkSection: typeof DirtFrameworkSection;
+  threeReasonsSection: typeof ThreeReasonsSection;
   dirtProcessSection: typeof DirtProcessSection;
   dirtFilesSection: typeof DirtFilesSection;
   prosConsSection: typeof ProsConsSection;
@@ -1385,11 +1385,11 @@ export const PlasmicHomepage = Object.assign(
     companiesWeCoveredInDirt: makeNodeComponent("companiesWeCoveredInDirt"),
     dirtRichText: makeNodeComponent("dirtRichText"),
     painPointsSection: makeNodeComponent("painPointsSection"),
+    signsCtaSection: makeNodeComponent("signsCtaSection"),
     sliderSection: makeNodeComponent("sliderSection"),
     turnProjects: makeNodeComponent("turnProjects"),
-    signsCtaSection: makeNodeComponent("signsCtaSection"),
-    threeReasonsSection: makeNodeComponent("threeReasonsSection"),
     dirtFrameworkSection: makeNodeComponent("dirtFrameworkSection"),
+    threeReasonsSection: makeNodeComponent("threeReasonsSection"),
     dirtProcessSection: makeNodeComponent("dirtProcessSection"),
     dirtFilesSection: makeNodeComponent("dirtFilesSection"),
     prosConsSection: makeNodeComponent("prosConsSection"),
