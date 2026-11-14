@@ -169,7 +169,6 @@ export type PlasmicHomepage__OverridesType = {
   dirtRichText?: Flex__<typeof DirtRichText>;
   painPointsSection?: Flex__<typeof PainPointsSection>;
   sliderSection?: Flex__<typeof SliderSection>;
-  turnPastProjectsIntoWinningProposalsInMinutes?: Flex__<"div">;
   signsCtaSection?: Flex__<typeof SignsCTASection>;
   threeReasonsSection?: Flex__<typeof ThreeReasonsSection>;
   dirtFrameworkSection?: Flex__<typeof DirtFrameworkSection>;
@@ -676,21 +675,6 @@ function PlasmicHomepage__RenderFunc(props: {
               label={"NOW WE'VE STRUCK DIRT"}
               text={'"Turn past projects into winning proposals in minutes."'}
             >
-              <div
-                data-plasmic-name={
-                  "turnPastProjectsIntoWinningProposalsInMinutes"
-                }
-                data-plasmic-override={
-                  overrides.turnPastProjectsIntoWinningProposalsInMinutes
-                }
-                className={classNames(
-                  "all",
-                  "__wab_text",
-                  sty.turnPastProjectsIntoWinningProposalsInMinutes
-                )}
-              >
-                {""}
-              </div>
               <div className={classNames("all", "__wab_text", sty.text__plYzc)}>
                 {'"Turn past projects into winning proposals in minutes."'}
               </div>
@@ -1275,7 +1259,6 @@ const PlasmicDescendants = {
     "dirtRichText",
     "painPointsSection",
     "sliderSection",
-    "turnPastProjectsIntoWinningProposalsInMinutes",
     "signsCtaSection",
     "threeReasonsSection",
     "dirtFrameworkSection",
@@ -1292,13 +1275,7 @@ const PlasmicDescendants = {
   companiesWeCoveredInDirt: ["companiesWeCoveredInDirt"],
   dirtRichText: ["dirtRichText"],
   painPointsSection: ["painPointsSection"],
-  sliderSection: [
-    "sliderSection",
-    "turnPastProjectsIntoWinningProposalsInMinutes"
-  ],
-  turnPastProjectsIntoWinningProposalsInMinutes: [
-    "turnPastProjectsIntoWinningProposalsInMinutes"
-  ],
+  sliderSection: ["sliderSection"],
   signsCtaSection: ["signsCtaSection"],
   threeReasonsSection: ["threeReasonsSection"],
   dirtFrameworkSection: ["dirtFrameworkSection"],
@@ -1321,7 +1298,6 @@ type NodeDefaultElementType = {
   dirtRichText: typeof DirtRichText;
   painPointsSection: typeof PainPointsSection;
   sliderSection: typeof SliderSection;
-  turnPastProjectsIntoWinningProposalsInMinutes: "div";
   signsCtaSection: typeof SignsCTASection;
   threeReasonsSection: typeof ThreeReasonsSection;
   dirtFrameworkSection: typeof DirtFrameworkSection;
@@ -1402,9 +1378,6 @@ export const PlasmicHomepage = Object.assign(
     dirtRichText: makeNodeComponent("dirtRichText"),
     painPointsSection: makeNodeComponent("painPointsSection"),
     sliderSection: makeNodeComponent("sliderSection"),
-    turnPastProjectsIntoWinningProposalsInMinutes: makeNodeComponent(
-      "turnPastProjectsIntoWinningProposalsInMinutes"
-    ),
     signsCtaSection: makeNodeComponent("signsCtaSection"),
     threeReasonsSection: makeNodeComponent("threeReasonsSection"),
     dirtFrameworkSection: makeNodeComponent("dirtFrameworkSection"),
