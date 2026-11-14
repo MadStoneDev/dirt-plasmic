@@ -689,9 +689,10 @@ function PlasmicHomepage__RenderFunc(props: {
                   sty.turnPastProjectsIntoWinningProposalsInMinutes
                 )}
               >
-                {
-                  '"Build proposals faster using your best project experience, staff CVs and past submissions."'
-                }
+                {""}
+              </div>
+              <div className={classNames("all", "__wab_text", sty.text__plYzc)}>
+                {'"Turn past projects into winning proposals in minutes."'}
               </div>
             </SliderStop>
           </SliderSection>
