@@ -169,6 +169,7 @@ export type PlasmicHomepage__OverridesType = {
   dirtRichText?: Flex__<typeof DirtRichText>;
   painPointsSection?: Flex__<typeof PainPointsSection>;
   sliderSection?: Flex__<typeof SliderSection>;
+  turnProjects?: Flex__<"div">;
   signsCtaSection?: Flex__<typeof SignsCTASection>;
   threeReasonsSection?: Flex__<typeof ThreeReasonsSection>;
   dirtFrameworkSection?: Flex__<typeof DirtFrameworkSection>;
@@ -675,7 +676,11 @@ function PlasmicHomepage__RenderFunc(props: {
               label={"NOW WE'VE STRUCK DIRT"}
               text={'"Turn past projects into winning proposals in minutes."'}
             >
-              <div className={classNames("all", "__wab_text", sty.text__plYzc)}>
+              <div
+                data-plasmic-name={"turnProjects"}
+                data-plasmic-override={overrides.turnProjects}
+                className={classNames("all", "__wab_text", sty.turnProjects)}
+              >
                 {'"Turn past projects into winning proposals in minutes."'}
               </div>
             </SliderStop>
@@ -735,7 +740,7 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.threeReasonsSection}
             className={classNames("__wab_instance", sty.threeReasonsSection)}
             description={
-              "Whether you\u2019re reimagining a legacy brand, targeting new markets, or pushing for more clients, we\u2019ll position your brand to grow."
+              "Whether you're launching, scaling or overdue for a website overhaul, we turn what makes your software different into clear messaging and a website that does more of the selling."
             }
             headerImage={"/plasmic/dirt/images/craneInDirtWithSilosPng.png"}
             headingEnd={"gives you three things you won\u2019t find elsewhere"}
@@ -748,9 +753,9 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.threeReasonsItem___8VKnb
               )}
               description={
-                "Don\u2019t waste your time explaining the basics to us. We eat, sleep, and breathe construction, AEC software, building materials, and property  development (which might explain the silicosis)."
+                "We've spent over a decade working with architects and AEC businesses. The very people you're trying to sell your software to. We know their workflows, frustrations and technical language. So you won't spend half the project explaining your industry to us."
               }
-              heading={"AEC specialists"}
+              heading={"We know architects and AEC businesses"}
             />
 
             <ThreeReasonsItem
@@ -759,9 +764,9 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.threeReasonsItem__exwEv
               )}
               description={
-                "Smart strategy, memorable messaging, and striking design \u2014 all done under one roof."
+                "We talk to your buyers and  dig into why they bought, what nearly put them off and what they value most. (Spoiler: It's probably not your seamless integration.)"
               }
-              heading={"Everything in one"}
+              heading={"We interview your buyers"}
             />
 
             <ThreeReasonsItem
@@ -770,9 +775,9 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.threeReasonsItem__pAoFq
               )}
               description={
-                "Our DIRT Framework digs deep to unearth what makes you different. Then we build a brand that wins you more of the right projects and cements your reputation."
+                "A positioning deck won't sell your software on its own. We turn the strategy into a commercially credible homepage, sales decks, use case stories, and more. And if you need the website designed and built too, we can handle that too."
               }
-              heading={"Proven approach"}
+              heading={"We don't stop at strategy"}
             />
           </ThreeReasonsSection>
           <DirtFrameworkSection
@@ -1259,6 +1264,7 @@ const PlasmicDescendants = {
     "dirtRichText",
     "painPointsSection",
     "sliderSection",
+    "turnProjects",
     "signsCtaSection",
     "threeReasonsSection",
     "dirtFrameworkSection",
@@ -1275,7 +1281,8 @@ const PlasmicDescendants = {
   companiesWeCoveredInDirt: ["companiesWeCoveredInDirt"],
   dirtRichText: ["dirtRichText"],
   painPointsSection: ["painPointsSection"],
-  sliderSection: ["sliderSection"],
+  sliderSection: ["sliderSection", "turnProjects"],
+  turnProjects: ["turnProjects"],
   signsCtaSection: ["signsCtaSection"],
   threeReasonsSection: ["threeReasonsSection"],
   dirtFrameworkSection: ["dirtFrameworkSection"],
@@ -1298,6 +1305,7 @@ type NodeDefaultElementType = {
   dirtRichText: typeof DirtRichText;
   painPointsSection: typeof PainPointsSection;
   sliderSection: typeof SliderSection;
+  turnProjects: "div";
   signsCtaSection: typeof SignsCTASection;
   threeReasonsSection: typeof ThreeReasonsSection;
   dirtFrameworkSection: typeof DirtFrameworkSection;
@@ -1378,6 +1386,7 @@ export const PlasmicHomepage = Object.assign(
     dirtRichText: makeNodeComponent("dirtRichText"),
     painPointsSection: makeNodeComponent("painPointsSection"),
     sliderSection: makeNodeComponent("sliderSection"),
+    turnProjects: makeNodeComponent("turnProjects"),
     signsCtaSection: makeNodeComponent("signsCtaSection"),
     threeReasonsSection: makeNodeComponent("threeReasonsSection"),
     dirtFrameworkSection: makeNodeComponent("dirtFrameworkSection"),

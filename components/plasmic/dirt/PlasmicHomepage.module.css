@@ -275,7 +275,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.text__plYzc {
+.turnProjects {
   font-family: "Uncut Sans";
   font-weight: 700;
   color: #ffffff;
@@ -284,6 +284,7 @@
   letter-spacing: -2.5%;
   min-width: 100px;
   height: auto;
+  display: none;
 }
 .signsCtaSection:global(.__wab_instance) {
   max-width: 100%;
