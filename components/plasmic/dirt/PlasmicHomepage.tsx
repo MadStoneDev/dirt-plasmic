@@ -429,7 +429,7 @@ function PlasmicHomepage__RenderFunc(props: {
             ctaLabel={"Dig in with a call"}
             ctaLink={"/contact"}
             heading={
-              "Everyone's fighting to get chosen. And saying the same damn thing."
+              "Your website can explain your software. And still not sell a damn thing."
             }
             image={"/plasmic/dirt/images/manSittingOnAChairOnTheMoonJpg.jpg"}
             layout={"imageLeft"}
@@ -439,7 +439,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames("all", "__wab_text", sty.text__wkMGr)}
                 >
                   {
-                    "Your buyer gets pitched three new tools a week. Everyone makes the same promises - faster projects, more wins, less admin. Nothing that haven't heard before. So they stick with the spreadsheets and clunky processes."
+                    "Explaining what your software does is one thing. Making a convincing case for why it's worth paying for, implementing and changing existing workflows for is another."
                   }
                 </div>
                 <div
@@ -453,7 +453,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       style={{ fontWeight: 700 }}
                     >
                       {
-                        "We dig up what makes you different. Then bring it to life on your website, sales deck, socials, and more."
+                        "We dig into why your customers buy and what you're up against. Then rewrite your homepage to make that case before the demo."
                       }
                     </span>
                   </React.Fragment>
@@ -478,7 +478,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 </div>
               </React.Fragment>
             }
-            subheading={"So why would a buyer switch to you?"}
+            subheading={"Because adopting new software is a pain in the grass."}
           />
 
           <PainPointsSection
