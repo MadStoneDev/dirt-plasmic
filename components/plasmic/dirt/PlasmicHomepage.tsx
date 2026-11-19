@@ -609,7 +609,7 @@ function PlasmicHomepage__RenderFunc(props: {
             <SignsCTAItem
               className={classNames("__wab_instance", sty.signsCtaItem__jjiZe)}
               text={
-                "You\u2019ve launched a second product. Your team explains it in three different ways."
+                "Your product has changed a LOT since launch. Your homepage is still selling version 1.0."
               }
             />
 
@@ -845,7 +845,7 @@ function PlasmicHomepage__RenderFunc(props: {
             backgroundImage={"/plasmic/dirt/images/buildingsBackgroundJpg.jpg"}
             className={classNames("__wab_instance", sty.sliderSection)}
             editorActiveStop={
-              hasVariant(globalVariants, "screen", "mobile") ? 6 : 3
+              hasVariant(globalVariants, "screen", "mobile") ? 6 : 1
             }
             headingEnd={"the tech talk"}
             headingMiddle={"DIRT-ify "}
